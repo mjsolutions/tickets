@@ -14,6 +14,8 @@ class UniqueTests extends TestCase
 
     /**
      * Test uniqueness of generated slugs.
+     *
+     * @test
      */
     public function testUnique()
     {
@@ -31,6 +33,8 @@ class UniqueTests extends TestCase
 
     /**
      * Test uniqueness after deletion.
+     *
+     * @test
      */
     public function testUniqueAfterDelete()
     {
@@ -53,7 +57,9 @@ class UniqueTests extends TestCase
     }
 
     /**
-     * Test custom unique query scopes.
+     * Test
+     *
+     * @test
      */
     public function testCustomUniqueQueryScope()
     {

@@ -14,6 +14,7 @@ class EventTests extends TestCase
     /**
      * Test that the "slugging" event is fired.
      *
+     * @test
      * @todo Figure out how to accurately test Eloquent model events
      */
     public function testEventsAreFired()
@@ -33,6 +34,7 @@ class EventTests extends TestCase
     /**
      * Test that the "slugging" event can be cancelled.
      *
+     * @test
      * @todo Figure out how to accurately test Eloquent model events
      */
     public function testCancelSluggingEvent()
@@ -59,6 +61,7 @@ class EventTests extends TestCase
     /**
      * Test that the "slugged" event is fired.
      *
+     * @test
      * @todo Figure out how to accurately test Eloquent model events
      */
     public function testSluggedEvent()

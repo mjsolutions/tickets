@@ -23,6 +23,10 @@ abstract class TestCase extends Orchestra
         $realpath = realpath(__DIR__ . '/../resources/database/migrations');
 
         $this->loadMigrationsFrom($realpath);
+
+//        $this->beforeApplicationDestroyed(function () use ($realpath) {
+//            $this->artisan('migrate:rollback', $realpath);
+//        });
     }
 
     /**
@@ -33,6 +37,9 @@ abstract class TestCase extends Orchestra
      */
     protected function getEnvironmentSetUp($app)
     {
+        //        // reset base path to point to our package's src directory
+        //        $app['path.base'] = __DIR__ . '/../src';
+        //
         // set up database configuration
         $app['config']->set('database.default', 'testbench');
         $app['config']->set('database.connections.testbench', [

@@ -13,6 +13,8 @@ class OnUpdateTests extends TestCase
 
     /**
      * Test that the slug isn't regenerated if onUpdate is false.
+     *
+     * @test
      */
     public function testSlugDoesntChangeWithoutOnUpdate()
     {
@@ -30,6 +32,8 @@ class OnUpdateTests extends TestCase
 
     /**
      * Test that the slug is regenerated if the field is emptied manually.
+     *
+     * @test
      */
     public function testSlugDoesChangeWhenEmptiedManually()
     {
@@ -48,6 +52,8 @@ class OnUpdateTests extends TestCase
 
     /**
      * Test that the slug is regenerated if onUpdate is true.
+     *
+     * @test
      */
     public function testSlugDoesChangeWithOnUpdate()
     {
@@ -61,47 +67,5 @@ class OnUpdateTests extends TestCase
             'title' => 'A New Title'
         ]);
         $this->assertEquals('a-new-title', $post->slug);
-    }
-
-    /**
-     * Test that the slug is not regenerated if onUpdate is true
-     * but the source fields didn't change.
-     */
-    public function testSlugDoesNotChangeIfSourceDoesNotChange()
-    {
-        $post = PostWithOnUpdate::create([
-            'title' => 'My First Post'
-        ]);
-        $post->save();
-        $this->assertEquals('my-first-post', $post->slug);
-
-        $post->update([
-            'subtitle' => 'A Subtitle'
-        ]);
-        $this->assertEquals('my-first-post', $post->slug);
-    }
-
-    /**
-     * Test that the slug is not regenerated if onUpdate is true
-     * but the source fields didn't change, even with multiple
-     * increments of the same slug.
-     *
-     * @see https://github.com/cviebrock/eloquent-sluggable/issues/317
-     */
-    public function testSlugDoesNotChangeIfSourceDoesNotChangeMultiple()
-    {
-        $data = [
-            'title' => 'My First Post'
-        ];
-        $post0 = PostWithOnUpdate::create($data);
-        $post1 = PostWithOnUpdate::create($data);
-        $post2 = PostWithOnUpdate::create($data);
-        $post3 = PostWithOnUpdate::create($data);
-        $this->assertEquals('my-first-post-3', $post3->slug);
-
-        $post3->update([
-            'subtitle' => 'A Subtitle'
-        ]);
-        $this->assertEquals('my-first-post-3', $post3->slug);
     }
 }

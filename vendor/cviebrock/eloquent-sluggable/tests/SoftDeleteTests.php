@@ -14,6 +14,8 @@ class SoftDeleteTests extends TestCase
 
     /**
      * Test uniqueness with soft deletes when we ignore trashed models.
+     *
+     * @test
      */
     public function testSoftDeletesWithoutTrashed()
     {
@@ -32,6 +34,8 @@ class SoftDeleteTests extends TestCase
 
     /**
      * Test uniqueness with soft deletes when we include trashed models.
+     *
+     * @test
      */
     public function testSoftDeletesWithTrashed()
     {
@@ -50,6 +54,8 @@ class SoftDeleteTests extends TestCase
 
     /**
      * Test that include_trashed is ignored if the model doesn't use the softDelete trait.
+     *
+     * @test
      */
     public function testSoftDeletesWithNonSoftDeleteModel()
     {
