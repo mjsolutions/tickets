@@ -19,7 +19,7 @@
 			<div id="inicio"></div>
 			<div id="contenido">
 				<div class='row'>
-					<div class='col s6 offset-s3'>
+					<div class='col s8' style="float: none; margin: 0 auto;">
 						<div class='card horizontal hoverable'>
 							<div class='card-stacked'>
 								<div class='card-content'>
@@ -118,11 +118,14 @@
 										</div>
 									</div>
 									<div class="row">
-										<label for="fecha_limite" class="">Fecha Límite</label>
-										<input class="datepicker picker__input" name="" type="text" id="fecha_nacimiento" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="fecha_nacimiento_root">
-
-										<label for="fecha_limite" class="">Fecha Límite</label>
-										<input class="datepicker picker__input" name="" type="text" id="fecha_nacimiento" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="fecha_nacimiento_root">
+										<div class="input-field col s6">
+											<label for="fecha_limite" class="">Fecha Límite</label>
+											<input class="datepicker picker__input" name="" type="text" id="fecha_nacimiento" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="fecha_nacimiento_root">
+										</div>
+										<div class="input-field col s6">
+											<label for="fecha_limite" class="">Fecha Límite</label>
+											<input class="datepicker picker__input" name="" type="text" id="fecha_nacimiento" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="fecha_nacimiento_root">
+										</div>
 									</div>
 								</div>
 							</div>
@@ -195,11 +198,11 @@
 
 												<li>
 													<label for="fecha_inicio" class="">Fecha de Inicio</label>
-													<input class="datepicker picker__input" name="" type="text" id="fecha_nacimiento" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="fecha_nacimiento_root">
+													<input class="datepicker picker__input" name="" type="text" id="fecha_inicio" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false">
 												</li>
 												<li>
 													<label for="fecha_limite" class="">Fecha Límite</label>
-													<input class="datepicker picker__input" name="" type="text" id="fecha_nacimiento" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="fecha_nacimiento_root">
+													<input class="datepicker picker__input" name="" type="text" id="fecha_limite" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false">
 												</li>
 											</ul>
 										</div>
@@ -427,142 +430,6 @@
 									</div>
 								</div>
 							</div>
-							<div class="col m4 m4">
-								<div class="card horizontal hoverable">
-									<div class="card-image">
-										<img src="http://lorempixel.com/100/190/nature/6">
-									</div>
-									<div class="card-stacked">
-										<div class="card-content">
-											<p><strong>Titulo o nombre del evento</strong></p>
-											<p>Lugar del evento</p>
-											<p>Fecha del evento</p>
-										</div>
-										<div class="card-action">
-											<a href="#">Detalles del evento</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col m4 m4">
-								<div class="card horizontal hoverable">
-									<div class="card-image">
-										<img src="http://lorempixel.com/100/190/nature/6">
-									</div>
-									<div class="card-stacked">
-										<div class="card-content">
-											<p><strong>Titulo o nombre del evento</strong></p>
-											<p>Lugar del evento</p>
-											<p>Fecha del evento</p>
-										</div>
-										<div class="card-action">
-											<a href="#">Detalles del evento</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col m4 m4">
-								<div class="card horizontal hoverable">
-									<div class="card-image">
-										<img src="http://lorempixel.com/100/190/nature/6">
-									</div>
-									<div class="card-stacked">
-										<div class="card-content">
-											<p><strong>Titulo o nombre del evento</strong></p>
-											<p>Lugar del evento</p>
-											<p>Fecha del evento</p>
-										</div>
-										<div class="card-action">
-											<a href="#">Detalles del evento</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col m4 m4">
-								<div class="card horizontal hoverable">
-									<div class="card-image">
-										<img src="http://lorempixel.com/100/190/nature/6">
-									</div>
-									<div class="card-stacked">
-										<div class="card-content">
-											<p><strong>Titulo o nombre del evento</strong></p>
-											<p>Lugar del evento</p>
-											<p>Fecha del evento</p>
-										</div>
-										<div class="card-action">
-											<a href="#">Detalles del evento</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col m4 m4">
-								<div class="card horizontal hoverable">
-									<div class="card-image">
-										<img src="http://lorempixel.com/100/190/nature/6">
-									</div>
-									<div class="card-stacked">
-										<div class="card-content">
-											<p><strong>Titulo o nombre del evento</strong></p>
-											<p>Lugar del evento</p>
-											<p>Fecha del evento</p>
-										</div>
-										<div class="card-action">
-											<a href="#">Detalles del evento</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col m4 m4">
-								<div class="card horizontal hoverable">
-									<div class="card-image">
-										<img src="http://lorempixel.com/100/190/nature/6">
-									</div>
-									<div class="card-stacked">
-										<div class="card-content">
-											<p><strong>Titulo o nombre del evento</strong></p>
-											<p>Lugar del evento</p>
-											<p>Fecha del evento</p>
-										</div>
-										<div class="card-action">
-											<a href="#">Detalles del evento</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col m4 m4">
-								<div class="card horizontal hoverable">
-									<div class="card-image">
-										<img src="http://lorempixel.com/100/190/nature/6">
-									</div>
-									<div class="card-stacked">
-										<div class="card-content">
-											<p><strong>Titulo o nombre del evento</strong></p>
-											<p>Lugar del evento</p>
-											<p>Fecha del evento</p>
-										</div>
-										<div class="card-action">
-											<a href="#">Detalles del evento</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col m4 m4">
-								<div class="card horizontal hoverable">
-									<div class="card-image">
-										<img src="http://lorempixel.com/100/190/nature/6">
-									</div>
-									<div class="card-stacked">
-										<div class="card-content">
-											<p><strong>Titulo o nombre del evento</strong></p>
-											<p>Lugar del evento</p>
-											<p>Fecha del evento</p>
-										</div>
-										<div class="card-action">
-											<a href="#">Detalles del evento</a>
-										</div>
-									</div>
-								</div>
-							</div>
 						</ul>
 
 						<div class="col-md-12">
@@ -575,9 +442,6 @@
 					</div>
 				</div>
 			</div>
-		</section>
-		<section id="calendario">
-			<h2>Calendario</h2>
 		</section>
 	</main>
 
@@ -631,18 +495,41 @@
 				}, 1500, 'easeInOutExpo');
 				event.preventDefault();
 			});
-		});
-	</script>
-	<script type="text/javascript">
-		var date = new Date();
-		initDatepicker({
-			selectYears: 100,
-			min: [date.getFullYear() - 100, date.getMonth(), date.getDate()],
-			max: [date.getFullYear(), date.getMonth(), date.getDate()],
-			hiddenName: 'fecha',
-			hiddenSuffix: '_nacimiento'
-		});
 
+			$('.datepicker').pickadate({
+			    selectMonths: true, // Creates a dropdown to control month
+			    formatSubmit: 'yyyy-mm-dd',
+
+			    // The title label to use for the month nav buttons
+			    labelMonthNext: 'Mes siguiente',
+			    labelMonthPrev: 'Mes anterior',
+
+			    // The title label to use for the dropdown selectors
+			    labelMonthSelect: 'Selecciona un mes',
+			    labelYearSelect: 'Selecciona un año',
+
+			    // Months and weekdays
+			    monthsFull: [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre' ],
+			    monthsShort: [ 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ],
+			    weekdaysFull: [ 'Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado' ],
+			    weekdaysShort: [ 'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab' ],
+
+			    // Materialize modified
+			    weekdaysLetter: [ 'D', 'L', 'M', 'I', 'J', 'V', 'S' ],
+
+			    // Today and clear
+			    today: 'Hoy',
+			    clear: 'Limpiar',
+			    close: 'Cerrar',
+
+			    onSet: function (ele) {
+			    	if(ele.select){
+			    		this.close();
+			    	}
+			    },
+			});
+
+		});
 	</script>
 </body>
 </html>

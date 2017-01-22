@@ -162,7 +162,7 @@ header{
 }
 
 .container{
-	max-width: 1580px;
+	max-width: none;
 	width: 90%;
 }
 
@@ -185,7 +185,7 @@ header{
 	background: url("../images/slide1.jpg")no-repeat top center fixed;
 	background-size: cover;
 	opacity: 0.6;
-	height: 100vh;
+	height: 105vh;
 	z-index: 1;
 	margin-top: -100px;
 }
@@ -193,8 +193,8 @@ header{
 #contenido{
 	position: absolute;
 	top: 33.33%;
-	left: 25%;
-	width: 100%;
+	left: 20%;
+	/*width: 100%;*/
 }
 
 .filter-elements {

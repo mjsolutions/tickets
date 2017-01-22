@@ -13,8 +13,8 @@
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
         <li><a class="menu page-scroll" href="#eventos">Eventos</a></li>
-          <li><a class="menu page-scroll" href="#">Contacto</a></li>
-          <li><a class="menu page-scroll" href="#">Ayuda</a></li>
+          <li><a class="menu" href="#">Contacto</a></li>
+          <li><a class="menu" href="#">Ayuda</a></li>
           {{-- <li><a class="menu" href="">Mi cuenta</a></li> --}}
           <li><a class="menu dropdown-button" href="#!" data-activates="user_options">Arquimides<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
