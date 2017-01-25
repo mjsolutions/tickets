@@ -8,9 +8,9 @@ class Event extends Model
 {
     protected $table = "events";
 
-    protected $fillable = ['name', 'date', 'online_sell', 'date_online_sell', 'description','tel','website','email'];
+    protected $fillable = ['name', 'date', 'online_sell', 'date_online_sell', 'description','tel','website','email','place_id'];
 
-    public function gallery()
+    public function galleries()
     {
     	return $this->hasMany('App\Gallery');
     }

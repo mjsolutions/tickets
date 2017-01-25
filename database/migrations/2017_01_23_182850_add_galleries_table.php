@@ -17,8 +17,8 @@ class AddGalleriesTable extends Migration
             $table->increments('id');
             $table->enum('type',['galeria','flyer','evento']);
             $table->string('route');
-            $table->integer('evento_id')->unsigned();
-            $table->foreign('evento_id')->references('id')->on('events')->onDelete('cascade');
+            $table->integer('event_id')->unsigned();
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -8,7 +8,7 @@ class Gallery extends Model
 {
 	protected $table = 'galleries';
 
-	protected $fillable = ['type', 'route'];
+	protected $fillable = ['type', 'route','event_id'];
 
 	public function event()
 	{

@@ -22,7 +22,7 @@ class AddArtistsTable extends Migration
 
         //Pivote entre artistas y eventos
 
-        Schema::create('event_artist', function (Blueprint $table) {
+        Schema::create('artist_event', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('artist_id')->unsigned();
             $table->integer('event_id')->unsigned();
@@ -41,7 +41,7 @@ class AddArtistsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('event_artist');
+        Schema::drop('artist_event');
         Schema::dropIfExists('artists');
     }
 }
