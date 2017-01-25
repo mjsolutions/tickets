@@ -7,9 +7,12 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddArtistsTable' => $baseDir . '/database/migrations/2017_01_23_183510_add_artists_table.php',
+    'AddConfigsTable' => $baseDir . '/database/migrations/2017_01_24_212428_add_configs_table.php',
     'AddEventsTable' => $baseDir . '/database/migrations/2017_01_23_182425_add_events_table.php',
     'AddGalleriesTable' => $baseDir . '/database/migrations/2017_01_23_182850_add_galleries_table.php',
     'AddPlacesTable' => $baseDir . '/database/migrations/2017_01_23_182416_add_places_table.php',
+    'AddRowTableTable' => $baseDir . '/database/migrations/2017_01_24_215157_add_row_table_table.php',
+    'AddSectionsTable' => $baseDir . '/database/migrations/2017_01_24_213443_add_sections_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
