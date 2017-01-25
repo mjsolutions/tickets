@@ -13,7 +13,7 @@ class AddRowTableTable extends Migration
      */
     public function up()
     {
-        Schema::create('row_table', function (Blueprint $table) {
+        Schema::create('rows_tables', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('init_num');
             $table->integer('final_num');
@@ -31,6 +31,6 @@ class AddRowTableTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('row_table');
+        Schema::dropIfExists('rows_tables');
     }
 }
