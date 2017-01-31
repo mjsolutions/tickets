@@ -27,6 +27,20 @@ Route::group(['prefix' => 'admin'], function() {
 	})->name('paypal.index');
 });
 
+/*
+| Rutas para usuarios
+*/
+Route::group(['prefix'=>'bolematico'],function(){
+
+	Route::get('/', function(){
+		return view('bolematico.index');
+	});
+
+	Route::get('inicio', function(){
+		return view('bolematico.index');
+	})->name('bolematico.inicio');
+});
+
 // Route::get('payment', array(
 // 	'as' => 'payment',
 // 	'uses' => 'PaypalIndexController@postPayment',
