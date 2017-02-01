@@ -190,7 +190,7 @@
 								<div class="col s12">
 									<div class="qcTabTitle"><h4>Boletos<span> Asegura tu lugar y compra tu boleto!</span></h4></div>
 									<!-- ## MODULE TITLE ## -->
-{{-- 									<div class="qcModTitle">
+									{{--<div class="qcModTitle">
 										<h2>Tabla de precios</h2>
 										<p>Paquetes de boletos & precios</p>
 									</div> --}}
@@ -299,14 +299,16 @@
 
 				$('select').material_select();
 
-			$(".dropdown-button").dropdown(); //puede funcionar sin esta declaracion
+				$('.materialboxed').materialbox();//puede funcionar sin esta declaracion
 
-			@if($errors)
-			@foreach($errors->all() as $error)
-			Materialize.toast('{{ $error }}', 4000);
-			@endforeach
-			@endif
-		});
-	</script>
-</body>
-</html>
+				$(".dropdown-button").dropdown(); //puede funcionar sin esta declaracion
+
+				@if($errors)
+				@foreach($errors->all() as $error)
+				Materialize.toast('{{ $error }}', 4000);
+				@endforeach
+				@endif
+			});
+		</script>
+	</body>
+	</html>
