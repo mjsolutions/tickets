@@ -22,7 +22,7 @@ Route::group(['prefix' => 'admin'], function() {
 		'as'	=>	'users.destroy'
 		]);
 
-	Route::get('paypal/index', function() {
+	Route::get('paypal', function() {
 		return view('admin.paypal.index');
 	})->name('paypal.index');
 });
@@ -37,7 +37,14 @@ Route::group(['prefix' => 'admin'], function() {
 // 	'uses' => 'PaypalIndexController@getPaymentStatus',
 // 	));
 
-// You can use "get" or "post" method below for payment..
-Route::get('payment', 'PaypalIndexController@postPayment')->name('payment');
-// This must be get method.
-Route::get('payment/status', 'PaypalIndexController@getPaymentStatus');
+// Se envia el pedido a Paypal
+Route::get('payment', array(
+	'as'	=>	'payment',
+	'uses'	=>	'PaypalIndexController@postPayment',
+	));
+
+//Paypal redirecciona a esta ruta
+Route::get('payment/status', array(
+	'as'	=>	'payment.status',
+	'uses'	=>	'PaypalIndexController@getPaymentStatus',
+	));

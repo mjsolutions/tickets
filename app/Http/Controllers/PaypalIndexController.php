@@ -91,7 +91,7 @@ class PaypalIndexController extends Controller
 				exit;
 			} else {
 				Flash::error('Something went wrong, Sorry for inconvenience');
-				return  redirect('/');
+				return redirect()->route('home');
 			}
 		}
 		// try {
@@ -120,7 +120,7 @@ class PaypalIndexController extends Controller
 			return redirect($redirect_url);
 		}
 		Flash::error('Unknown error occurred');
-		return  redirect('/');
+		return redirect()->route('home');
 
 	}
 
@@ -135,7 +135,7 @@ class PaypalIndexController extends Controller
 		//Si no hay alguno de los datos anteriores se redirecciona con un mensaje de error
 		if(empty($request->input('PayerID')) || empty($request->input('token'))){
 			Flash::error('Payment Failed');
-			return redirect('/');
+			return redirect()->route('home');
 		}
 
 		//Se obtiene el id del pago
@@ -150,10 +150,10 @@ class PaypalIndexController extends Controller
 		if($result->getState() == 'approved'){
 			//Se puede usar esta parte para guardar en la BD
 			Flash::success('Payment Successful');
-			return  redirect('users.index');
+			return redirect()->route('paypal.index');
 		}
 		Flash::error('Payment Failed');
-		return redirect('/');
+		return redirect()->route('home');
 
 	}
 
