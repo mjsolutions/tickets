@@ -16,74 +16,74 @@
 			var canvas = document.getElementById("myCanvas");
 			var context = canvas.getContext("2d");
 
-    // clear canvas
-    context.clearRect(0, 0, canvas.width, canvas.height);
+		    // clear canvas
+		    context.clearRect(0, 0, canvas.width, canvas.height);
 
-    context.save();
-    var mapa = new Image();
-    mapa.src = "{{asset('img/teatro-morelos.svg')}}";
+		    context.save();
+		    var mapa = new Image();
+		    mapa.src = "{{asset('img/teatro-morelos.svg')}}";
 
-    mapa.addEventListener('load', mostrar_imagen, false);
+		    mapa.addEventListener('load', mostrar_imagen, false);
 
-    function mostrar_imagen() {
-    	context.drawImage(mapa, translatePos.x-375, translatePos.y-250, 750*scale, 500*scale);  
-    }       
-}
+		    function mostrar_imagen() {
+		    	context.drawImage(mapa, translatePos.x-375, translatePos.y-250, 750*scale, 500*scale);  
+		    }       
+		}
 
-window.onload = function(){
-	var canvas = document.getElementById("myCanvas");
+		window.onload = function(){
+			var canvas = document.getElementById("myCanvas");
 
-	var translatePos = {
-		x: canvas.width / 2,
-		y: canvas.height / 2
-	};
+			var translatePos = {
+				x: canvas.width / 2,
+				y: canvas.height / 2
+			};
 
-	var scale = 1.0;
-	var scaleMultiplier = 0.8;
-	var startDragOffset = {};
-	var mouseDown = false;
+			var scale = 1.0;
+			var scaleMultiplier = 0.8;
+			var startDragOffset = {};
+			var mouseDown = false;
 
-    // add button event listeners
-    document.getElementById("plus").addEventListener("click", function(){
-    	scale /= scaleMultiplier;
-    	draw(scale, translatePos);
-    }, false);
+		    // add button event listeners
+		    document.getElementById("plus").addEventListener("click", function(){
+		    	scale /= scaleMultiplier;
+		    	draw(scale, translatePos);
+		    }, false);
 
-    document.getElementById("minus").addEventListener("click", function(){
-    	scale *= scaleMultiplier;
-    	draw(scale, translatePos);
-    }, false);
+		    document.getElementById("minus").addEventListener("click", function(){
+		    	scale *= scaleMultiplier;
+		    	draw(scale, translatePos);
+		    }, false);
 
-    // add event listeners to handle screen drag
-    canvas.addEventListener("mousedown", function(evt){
-    	mouseDown = true;
-    	startDragOffset.x = evt.clientX - translatePos.x;
-    	startDragOffset.y = evt.clientY - translatePos.y;
-    });
+		    // add event listeners to handle screen drag
+		    canvas.addEventListener("mousedown", function(evt){
+		    	mouseDown = true;
+		    	startDragOffset.x = evt.clientX - translatePos.x;
+		    	startDragOffset.y = evt.clientY - translatePos.y;
+		    });
 
-    canvas.addEventListener("mouseup", function(evt){
-    	mouseDown = false;
-    });
+		    canvas.addEventListener("mouseup", function(evt){
+		    	mouseDown = false;
+		    });
 
-    canvas.addEventListener("mouseover", function(evt){
-    	mouseDown = false;
-    });
+		    canvas.addEventListener("mouseover", function(evt){
+		    	mouseDown = false;
+		    });
 
-    canvas.addEventListener("mouseout", function(evt){
-    	mouseDown = false;
-    });
+		    canvas.addEventListener("mouseout", function(evt){
+		    	mouseDown = false;
+		    });
 
-    canvas.addEventListener("mousemove", function(evt){
-    	if (mouseDown) {
-    		translatePos.x = evt.clientX - startDragOffset.x;
-    		translatePos.y = evt.clientY - startDragOffset.y;
-    		draw(scale, translatePos);
-    	}
-    });
+		    canvas.addEventListener("mousemove", function(evt){
+		    	if (mouseDown) {
+		    		translatePos.x = evt.clientX - startDragOffset.x;
+		    		translatePos.y = evt.clientY - startDragOffset.y;
+		    		draw(scale, translatePos);
+		    	}
+		    });
 
-    draw(scale, translatePos);
-};
-</script>
+		    draw(scale, translatePos);
+		};
+	</script>
 </head>
 <body onmousedown="return false;">
 	<header>
@@ -101,10 +101,9 @@ window.onload = function(){
 						<li class="tab col s3 disabled"><a href="#test-swipe-3"><i class="icon-book-open icon"></i> <span>Galería (Proximamente)</span></a></li>
 						<li class="tab col s3" style="background-color: darkorange;"><a href="#test-swipe-4" style="background-color: darkorange;"><i class="icon-book-open icon"></i> <span style="color: white;">Buscar boletos</span></a></li>
 					</ul>
-					<div id="test-swipe-1" class="col s12" style="border-bottom: 4px #555 solid;">
-						<!-- ## ROW ## -->
-						<div class="row">
 
+					<div id="test-swipe-1" class="col s12" style="border-bottom: 4px #555 solid;">
+						<div class="row">
 							<!-- ## TAB TITLE & DESC ## -->
 							<div class="col s8">
 								<div class="qcTabTitle">
@@ -125,17 +124,15 @@ window.onload = function(){
 								<div class="col s4">
 									<div class="owl-carousel owl-theme" style="padding-top: 33.3%;">
 										<div class="item" data-merge="1"><img src="{{ asset('img/mike_salazar.jpeg') }}"></div>
-										<div class="item" data-merge="1"><img src="{{ asset('img/mike_salazar.jpeg') }}"></div>
-										<div class="item" data-merge="1"><img src="{{ asset('img/mike_salazar.jpeg') }}"></div>
-										<div class="item" data-merge="1"><img src="{{ asset('img/mike_salazar.jpeg') }}"></div>
+										<div class="item" data-merge="1"><img src="{{ asset('img/mike1.jpg') }}"></div>
+										<div class="item" data-merge="1"><img src="{{ asset('img/mike2.jpg') }}"></div>
 									</div>
 								</div>
 
 							</div>
-							<!-- ## ROW END ## -->
 						</div>
+
 						<div id="test-swipe-2" class="col s12" style="border-bottom: 4px #555 solid;">
-							<!-- ## ROW ## -->
 							<div class="row">
 
 								<!-- ## TAB TITLE ## -->
@@ -155,11 +152,8 @@ window.onload = function(){
 										<li><i class="medium material-icons">language</i><p><strong>PÁGINA WEB</strong>: <a title="website" href="http://ceconexpo.com/teatro-morelos/" target="_blank">http://ceconexpo.com/teatro-morelos/</a></p></li>
 									</ul>
 								</div>
-
 							</div>
-							<!-- ## ROW END ## -->
 
-							<!-- ## ROW ## -->
 							<div class="dblBorder">
 								<div class="row">
 									<div class="col s12">
@@ -168,13 +162,7 @@ window.onload = function(){
 										<div class="qcEventlayout">
 											<h1>Diagrama del lugar</h1>
 											<div class="row">
-												<div id="canvas-wrapper" style="margin: 0 auto;">
-													<canvas id="myCanvas" width="750" height="500">
-													</canvas>
-													<div id="button-canvas-wrapper">
-														<input type="button" id="plus" value="+"><input type="button" id="minus" value="-">
-													</div>
-												</div>
+												<img class="materialboxed" width="100%" src="{{asset('img/teatro-morelos-fondo.svg')}}">
 											</div>
 										</div>
 
@@ -188,92 +176,128 @@ window.onload = function(){
 									</div>
 								</div>
 							</div>
-							<!-- ## ROW END ## -->
 						</div>
+
 						<div id="test-swipe-3" class="col s12" style="border-bottom: 4px #555 solid;">
-							<!-- ## ROW ## -->
 							<div class="row">
 
 
 							</div>
-							<!-- ## ROW END ## -->
 						</div>
+
 						<div id="test-swipe-4" class="col s12" style="border-bottom: 4px #555 solid;">
-							<!-- ## ROW ## -->
 							<div class="row">
-
-								<!-- ## TAB TITLE & DESC ## -->
-								<div class="col s8">
-									<div class="qcTabTitle">
-										<h4>Biografía<span> Conoce más acerca del artista</span></h4>
-									</div>
-									<p class="qcPageDesc">Miguel Angel Salazar, conocido como Mike Salazar "El Caballero de la Comedia" nació en Santiago, Nuevo León, México el 30 de agosto de 1989.<br><br>
-
-										Mike Salazar ha sido reconocido en México por su talento en comedia y acción; Gracias a su entusiasmo y gran talento, tiene la oportunidad de tener apariciones especiales en programas de televisión como Sabadazo, Guerra de Chistes, XE Marilé y otros ... Todos los programas de TV de Televisa México.<br><br>
-
-										Debido a su enorme talento como actor, comediante y cantante; Mike Salazar está entre el pequeño porcentaje que ha subido a la cima entre los comediantes hispanos.<br><br>
-
-										Mike Salazar ha viajado con éxito por todo México con su programa de comedia; Que realiza una rutina de buen humor, mimetismo y canciones. Su show se ha presentado en varios lugares de México, como en bares, ferias, teatros, eventos masivos y privados.<br><br>
-
-										<strong>Obtenido de: IMDb</strong></p>
-									</div>
-
-									<!-- ## SLIDER ## -->
-									<div class="col s4">
-										<div class="owl-carousel owl-theme" style="padding-top: 33.3%;">
-											<div class="item" data-merge="1"><img src="{{ asset('img/mike_salazar.jpeg') }}"><p>Descripcion, como el tamaño, color, etc, y aqui puede ir más texto, y más texto, y más texto...</p></div>
-											<div class="item" data-merge="1"><img src="{{ asset('img/mike_salazar.jpeg') }}"><p>Descripcion, como el tamaño, color, etc, y aqui puede ir más texto, y más texto, y más texto...</p></div>
-											<div class="item" data-merge="1"><img src="{{ asset('img/mike_salazar.jpeg') }}"><p>Descripcion, como el tamaño, color, etc, y aqui puede ir más texto, y más texto, y más texto...</p></div>
-											<div class="item" data-merge="1"><img src="{{ asset('img/mike_salazar.jpeg') }}"><p>Descripcion, como el tamaño, color, etc, y aqui puede ir más texto, y más texto, y más texto...</p></div>
+								<div class="col s12">
+									<div class="qcTabTitle"><h4>Boletos<span> Asegura tu lugar y compra tu boleto!</span></h4></div>
+									<!-- ## MODULE TITLE ## -->
+{{-- 									<div class="qcModTitle">
+										<h2>Tabla de precios</h2>
+										<p>Paquetes de boletos & precios</p>
+									</div> --}}
+									<!-- ## PRICING ## -->
+									<div class="qcPricingWrapper">
+										<!-- ## PRICING 1 ## -->
+										<div class="qcPricing col s4 center">
+											<div class="box">
+												<header>PLATA</header>
+												<div class="price"><span>$250</span> Por entrada</div>
+												<ul class="texto-precio">
+													<li>Filas Y a Z</li>
+												</ul>
+												<footer><a href="#">Comprar ahora</a></footer>
+											</div>
+										</div>
+										<!-- ## PRICING 2 ## -->
+										<div class="qcPricing col s4 center">
+											<div class="box">
+												<header>ORO</header>
+												<div class="price"><span>$350</span> Por entrada</div>
+												<ul class="texto-precio">
+													<li>Filas Q a X</li>
+												</ul>
+												<footer><a href="#">Comprar ahora</a></footer>
+											</div>
+										</div>
+										<!-- ## PRICING 3 ## -->
+										<div class="qcPricing col s4 center">
+											<div class="box">
+												<header>DIAMANTE</header>
+												<div class="price"><span>$450</span> Por entrada</div>
+												<ul class="texto-precio">
+													<li>Filas A a Ñ</li>
+												</ul>
+												<footer><a href="#">Comprar ahora</a></footer>
+											</div>
 										</div>
 									</div>
-
 								</div>
-								<!-- ## ROW END ## -->
+							</div>
+
+							<div class="dblBorder">
+								<div class="row">
+									<div class="col s12">
+
+										<!-- ## VENUE LAYOUT PLAN ## -->
+										<div class="qcEventlayout">
+											<h1>Diagrama del lugar</h1>
+											<div class="row">
+												<div id="canvas-wrapper" style="margin: 0 auto;">
+													<canvas id="myCanvas" width="750" height="500"></canvas>
+													<div id="button-canvas-wrapper">
+														<input type="button" id="plus" value="+"><input type="button" id="minus" value="-">
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</main>
+			</div>
+		</main>
 
-			<footer class="page-footer grey darken-3">
+		<footer class="page-footer grey darken-3">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="white-text">Bolematico.com.mx</h5>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright">
 				<div class="container">
 					<div class="row">
-						<div class="col l6 s12">
-							<h5 class="white-text">Bolematico.com.mx</h5>
+						<div class="col l6">
+							Todos los derechos reservados.	    			
+						</div>
+						<div class="col l6 right-align">
+							© {!! date('Y') !!}
 						</div>
 					</div>
 				</div>
-				<div class="footer-copyright">
-					<div class="container">
-						<div class="row">
-							<div class="col l6">
-								Todos los derechos reservados.	    			
-							</div>
-							<div class="col l6 right-align">
-								© {!! date('Y') !!}
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+			</div>
+		</footer>
 
-			<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-			<script type="text/javascript" src="{{asset('js/materialize.js')}}"></script>
-			<script type="text/javascript" src="{{asset('js/owl.carousel.js')}}"></script>
-			<script>
-				$(document).ready(function(){
-					$(".button-collapse").sideNav({
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="{{asset('js/materialize.js')}}"></script>
+		<script type="text/javascript" src="{{asset('js/owl.carousel.js')}}"></script>
+		<script>
+			$(document).ready(function(){
+				$(".button-collapse").sideNav({
 				 edge: 'right', // Choose the horizontal origin
 				 closeOnClick: true
 				});
 
-					$('.owl-carousel').owlCarousel({
-						items:1,
-						margin: 25
-					});
+				$('.owl-carousel').owlCarousel({
+					items:1,
+					margin: 25,
+					loop: true
+				});
 
-					$('select').material_select();
+				$('select').material_select();
 
 			$(".dropdown-button").dropdown(); //puede funcionar sin esta declaracion
 

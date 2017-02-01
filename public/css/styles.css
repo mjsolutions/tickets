@@ -673,7 +673,7 @@ ul.qcAddress li a {
 
 #canvas-wrapper {
 	position: relative;
-	background-color: aliceblue;
+	/*background-color: aliceblue;*/
 	/*border: 1px solid #9C9898;*/
 	width: 750px;
 	height: 500px;
@@ -694,4 +694,78 @@ ul.qcAddress li a {
 	padding: 5px;
 	width: 30px;
 	margin: 0px 0px 2px 0px;
+}
+
+/* === PRICING  === */
+
+.qcPricingWrapper {
+    margin: 60px 0;
+}
+#qcContent .row .qcPricing.col > .box {
+    padding: 0;
+    margin: 20px;
+    border: 0;
+    text-align: center;
+}
+.qcPricing header {
+    color: #fff;
+    font: 300 28px/100px "Roboto", Helvetica,Arial,sans-serif;
+    background: #FF4D00;
+    letter-spacing: -0px;
+    text-transform: uppercase;
+    border-radius: 3px 3px 0 0;
+}
+.qcPricing:nth-child(1) header {
+    background: #B2B3B7;
+}
+.qcPricing:nth-child(2) header {
+    background: #FAAF5E;
+}
+.qcPricing:nth-child(3) header {
+    background: #84D0D0;
+}
+.qcPricing .price {
+    color: #777;
+    font: 400 14px/55px "Open sans", Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    background: #f8f8f8;
+    border: 1px #ccc solid;
+    border-top: 0;
+    letter-spacing: 1px;
+}
+.qcPricing .price span {
+    margin-right: 3px;
+    color: #666;
+    font: 400 24px/55px "Open sans", Helvetica,Arial,sans-serif;
+    letter-spacing: 0px;
+}
+.qcPricing ul {
+    list-style: none;
+    padding: 20px 0;
+    border-right: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+}
+.qcPricing li {
+    margin: 18px 10px;
+    color: #777;
+    font: 300 16px/30px "Roboto", Helvetica,Arial,sans-serif;
+}
+.qcPricing footer a {
+    display: block;
+    color: #ff952e;
+    font: 300 18px/80px "Open sans", Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    background: #fff6e9;
+    border: 1px #ff952e solid;
+    border-top: 0;
+    border-radius: 0 0 3px 3px;
+    letter-spacing: 1px;
+}
+.qcPricing:hover footer a {
+    color: #fff;
+    background: #ffba00;
+}
+
+.texto-precio{
+	margin: 0;
 }

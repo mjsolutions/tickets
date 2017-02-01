@@ -143,9 +143,9 @@
 					<div class="col m3 s12">
 						<h1 class="titulo-h1">Eventos <span>(1)</span></h1>
 						<div class="filter-elements">
-							<a class="btn waves-effect waves-light green disabled" href="#!">Todos los Eventos</a>
-							<a class="btn waves-effect waves-light blue disabled" href="#!">Eventos Próximos</a>
-							<a class="btn waves-effect waves-light orange disabled" href="#!">Eventos Pasados</a>
+							<a class="btn waves-effect waves-light green" href="#!">Todos los Eventos</a>
+							<a class="btn waves-effect waves-light blue" href="#!">Eventos Próximos</a>
+							<a class="btn waves-effect waves-light orange" href="#!">Eventos Pasados</a>
 							<div class="filter-container">
 								<strong class="big-font">Filtra lo que buscas:</strong>
 
