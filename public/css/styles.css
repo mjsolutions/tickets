@@ -425,12 +425,14 @@ img {
 	display: none; 
 }
 #qcTabNav {
+	height: 100%;
 	position: relative;
 	text-align: center;
 	border-bottom: 4px #555 solid;
 	z-index: 9;
 }
 #qcTabNav li {
+	height: 80px;
 	display: inline-block;
 	position: relative;
 	margin-left: -4px;
@@ -441,7 +443,7 @@ img {
 }
 #qcTabNav li a {
 	display: block;
-	/*padding: 40px 0;*/
+	padding: 15px 0;
 	color: #444;
 	font: 600 14px/14px "Open sans", Helvetica, sans-serif;
 	text-align: center;
@@ -660,13 +662,13 @@ ul.qcAddress li a {
 }
 
 /* === FAQ === */
-
+/*
 .qcEventlayout {
 	color: #000;
 	font: 300 48px/48px "Roboto", Helvetica,Arial,sans-serif;
 	letter-spacing: -1px;
 }
-
+*/
 /* === Canvas === */
 
 #canvas-wrapper {
