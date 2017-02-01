@@ -1,22 +1,33 @@
 <ul id="user_options" class="dropdown-content">
-  <li><a href="#!">Ver Perfil</a></li>
-  <li><a href="#!">Otro</a></li>
-  <li class="divider"></li>
-  <li><a href="">Salir</a></li>
+  {{-- <li><a href="#!">Ver Perfil</a></li> --}}
+  {{-- <li><a href="#!">Otro</a></li> --}}
+  {{-- <li class="divider"></li> --}}
+  <li>
+    <a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
+    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
+  </li>
 </ul>
 
 <div class="navbar-fixed">
   <nav class="transparent-header">
     <div class="nav-wrapper">
-      <div class="container">
-        <a href="#home" class="brand-logo mt-5 page-scroll"><img class="responsive-img" width="150px" style="height:90px;" src="{{asset('img/logotipo-negro-tipo2.svg')}}"></a>
+      <div class="container row">
+        <a href="{{ route('home') }}" class="brand-logo col s1 mt-10 page-scroll">
+          <img class="responsive-img" src="{{asset('img/logotipo-negro-tipo2.svg')}}">
+        </a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
+        <ul class="right hide-on-med-and-down mt-15">
         <li><a class="menu page-scroll" href="#eventos">Eventos</a></li>
           <li><a class="menu" href="#">Contacto</a></li>
           <li><a class="menu" href="#">Ayuda</a></li>
           {{-- <li><a class="menu" href="">Mi cuenta</a></li> --}}
-          <li><a class="menu dropdown-button" href="#!" data-activates="user_options">Arquimides<i class="material-icons right">arrow_drop_down</i></a></li>
+           @if (Auth::guest())
+            <li><a class="menu" href="{{ url('/login') }}">Login</a></li>            
+           @else
+            <li><a class="menu dropdown-button" href="#!" data-activates="user_options">{{ Auth::user()->name }}<i class="material-icons right ml-0" style="margin-top: -5px;">arrow_drop_down</i></a></li>
+           @endif
         </ul>
       </div>
       <ul class="center-align side-nav" id="mobile-demo">

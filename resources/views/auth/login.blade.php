@@ -1,68 +1,118 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Bolematico | @yield('title','Inicio')</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/materialize.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
+    <link href="https://file.myfontastic.com/p33ryNdn2ug99gf3MgkiUK/icons.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        @include('bolematico.nav2')
+    </header>
+        <main>
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+            <div class="row">
+                <div class="col s12 m4 col-center mt-50">
+
+                    <form class="card  col s12" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                        <p class="card-title center-align">Bienvenido</p>
+                        
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="input-field col s12 {{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="email" type="email" class="validate" name="email" value="{{ old('email') }}" required autofocus>
+                                    
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                    <label for="email">Ingres tu email</label>     
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
+                                    
+                            <div class="row">
+                                <div class="input-field col s12 {{ $errors->has('password') ? ' has-error' : '' }}">
+                                    <i class="material-icons prefix">lock_outline</i>
+                                    <input id="password" type="password" class="validate" name="password" required>
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                    <label for="password" class="validate">Password</label>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}> Remember Me
-                                    </label>
+                            <div class="row">
+                                <div class="input-field col s5 col-center">                            
+                                    <button type="submit" class="waves-effect waves-light btn pull-right">
+                                        Registrar
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">
-                                    Forgot Your Password?
+                        <div class="card-action">
+                            <div class="col s8 mb-30 center-align">
+                                <a class="blue-text" href="{{ url('/password/reset') }}">
+                                    ¿Olvidaste tu contraseña?
                                 </a>
+                            </div>
+                            <div class="col s4 mb-30 center-align">
+                                <a class="blue-text" href="{{ url('/register') }}">Registrarse</a>
                             </div>
                         </div>
                     </form>
+
+                </div>
+            </div>
+        </main>
+
+    <footer class="page-footer grey darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Bolematico.com.mx</h5>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6">
+                        Todos los derechos reservados.                  
+                    </div>
+                    <div class="col l6 right-align">
+                        © {!! date('Y') !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{{asset('js/materialize.js')}}"></script>
+    <script>
+        $(document).ready(function(){
+            $(".button-collapse").sideNav({
+                 edge: 'right', // Choose the horizontal origin
+                 closeOnClick: true
+                });
+
+            @if($errors)
+            @foreach($errors->all() as $error)
+            Materialize.toast('{{ $error }}', 4000);
+            @endforeach
+            @endif
+
+        });
+    </script>
+</body>
+</html>

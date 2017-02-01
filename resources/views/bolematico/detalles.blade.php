@@ -87,7 +87,7 @@
 </head>
 <body onmousedown="return false;">
 	<header>
-		@include('bolematico.nav2')
+		@include('bolematico.nav')
 	</header>
 
 	<main>
