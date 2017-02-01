@@ -404,3 +404,292 @@ img {
 .mensaje_inicio{
 	padding-bottom: 25px;
 }
+
+#imagen-header{
+	background: url("../img/slide1.jpg")no-repeat top center fixed;
+	background-size: cover;
+	opacity: 0.6;
+	max-width: 66.6%;
+	height: 33.3vh;
+	z-index: 1;
+	margin: 0 auto;
+	margin-top: -100px;
+
+}
+
+/* Landng de evento */
+
+/* === TAB NAVIGATION === */
+
+#qcMbTrigger { 
+	display: none; 
+}
+#qcTabNav {
+	position: relative;
+	text-align: center;
+	border-bottom: 4px #555 solid;
+	z-index: 9;
+}
+#qcTabNav li {
+	display: inline-block;
+	position: relative;
+	margin-left: -4px;
+	border-left: 1px #aaa solid;
+}
+#qcTabNav li:first-child {
+	border-left: 0;
+}
+#qcTabNav li a {
+	display: block;
+	/*padding: 40px 0;*/
+	color: #444;
+	font: 600 14px/14px "Open sans", Helvetica, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+}
+#qcTabNav li a span {
+	position: relative;
+	top: 18px;
+}
+#qcTabNav li a i {
+	position: absolute;
+	width: 100%;
+	top: 22px;
+	left: 0;
+	color: #c4c4c4;
+	font-size: 22px;
+	margin-right: 3px;
+}
+#qcTabNav li a:hover {
+	color: #000;
+	background: #fafafa;
+}
+
+#qcTabNav li.active {
+	border-left: 1px #aaa solid;
+	box-shadow: 0 5px 0 #fff;
+}
+#qcTabNav li:last-child.active {
+	border-right: 1px #aaa solid;
+}
+#qcTabNav li.active a, #qcTabNav li.active a:hover {
+	color: #FF4E00;
+	background: #fff;
+}
+#qcTabNav li.active a i {
+	color: #FF4E00;
+}
+
+/* ----------------------------------------------------------------*/
+/* 	MISCELLANEOUS  */
+/* ----------------------------------------------------------------*/
+
+.qcPageDesc, .small-box p.qcPageDesc {
+	color: #888;
+	font: 300 16px/32px "Roboto", Helvetica,Arial,sans-serif;
+	padding: 40px 20px 20px 0;
+}
+.qcPageDesc.full {
+	padding-top: 20px;
+}
+.qcTabTitle {
+	padding: 60px 0px 50px 0;
+	border-bottom: 1px #ccc solid;
+}
+.qcTabTitle h4 {
+	color: #FF4E00;
+	font: 100 70px/70px "Roboto", Helvetica, Arial, sans-serif;
+	letter-spacing: -2px;
+}
+.qcTabTitle:after {
+	position: absolute;
+	margin-top: 50px;
+	content: "";
+	width: 50px;
+	border-top: 4px #444 solid;
+}
+.qcTabTitle.no-border {
+	border: 0;
+}
+.qcTabTitle.no-border:after {
+	display: none;
+}
+.qcTabTitle h4 span {
+	display: block;
+	color: #666;
+	font: 100 16px/48px "Roboto", Helvetica, Arial, sans-serif;
+	letter-spacing: 1px;
+	font-weight: 700;
+}
+.dblBorder {
+	position: relative;
+	width: 100%;
+	border-top: 1px #ccc solid;
+}
+.dblBorder:after {
+	position: absolute;
+	top: 0px;
+	content: "";
+	width: 50px;
+	border-top: 4px #444 solid;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/*  CONDITIONAL LAYOUT CSS FOR MOBILE / TABLET DEVICES [ MEDIA QUERIES ]  */
+/* ---------------------------------------------------------------------------------- */
+
+/* === TABLET === */
+
+@media only screen and (min-width: 768px) and (max-width: 1080px) {
+	.qcTabTitle h4 {
+		font-size: 60px;
+		line-height: 60px;
+	}
+}
+
+
+/* === MOBILE PORTRAIT === */
+
+@media only screen and (max-width: 767px) {
+	#qcTabNav { 
+		display: none;    
+		position: absolute;
+		top: 59px;
+		width: 99.3%;
+		padding: 6px 0;
+		background: #f4f4f4;
+		border: 1px #aaa solid;
+		border-top: 0;
+	}
+	#qcTabNav li {
+		float: none;
+		display: block;
+		width: 100%;
+		margin-left: 0;
+		border: 0;
+	}
+	#qcTabNav li.active {
+		border: 0;
+		box-shadow: none;
+	}
+	#qcTabNav li.active a, #qcTabNav li.active:hover a {
+		background: none;
+	}
+	#qcTabNav li:hover a {
+		background: #fff;
+	}
+	#qcTabNav li a {
+		padding: 15px 0;
+		font-size: 11px;
+		text-align: left;
+	}
+	#qcTabNav li a i {
+		display: inline-block;
+		top: 13px;
+		padding-left: 15px;
+		font-size: 18px;
+	}
+	#qcTabNav li a span {
+		display: inline-block;
+		position: relative;
+		top: 0;
+		left: 46px;
+		font-size: 13px;
+	}
+	.qcTabTitle {
+		padding: 30px 0;
+	}
+	.qcTabTitle:after {
+		margin-top: 30px;
+	}
+	.qcTabTitle h4 {
+		font-size: 54px;
+		line-height: 54px;
+	}
+}
+
+/* === EVENT LAYOUT === */
+
+.qcEventlayout {
+	padding: 65px 0;
+}
+.qcEventlayout h1 {
+	color: #222;
+	font: 600 24px/36px "Open sans", Helvetica, Arial, sans-serif;
+	margin-bottom: 30px;
+	letter-spacing: -0px;
+	text-transform: uppercase;
+}
+.qcEventlayout img {
+	display: block;
+	width: 100%;
+}
+
+/* === ADDRESS LIST === */
+
+ul.qcAddress {
+	padding: 50px 0;
+}
+ul.qcAddress li {
+	list-style: none;
+	padding: 8px 0;
+	color: #888;
+	font-size: 13px;
+}
+ul.qcAddress li:last-child {
+	border-bottom: 0;
+}
+ul.qcAddress li i {
+	font-size: 14px;
+}
+ul.qcAddress li p {
+	display: inline-block;
+	color: #666;
+	margin: 0 0 0 10px;
+}
+ul.qcAddress li p strong {
+	display: inline-block;
+	width: 100px;
+	color: #000;
+}
+.icon-map {
+	top: -31px;
+}
+ul.qcAddress li a {
+	color: #aaa;
+}
+
+/* === FAQ === */
+
+.qcEventlayout {
+	color: #000;
+	font: 300 48px/48px "Roboto", Helvetica,Arial,sans-serif;
+	letter-spacing: -1px;
+}
+
+/* === Canvas === */
+
+#canvas-wrapper {
+	position: relative;
+	background-color: aliceblue;
+	/*border: 1px solid #9C9898;*/
+	width: 750px;
+	height: 500px;
+
+	box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14),0 6px 30px 5px rgba(0,0,0,0.12),0 8px 10px -5px rgba(0,0,0,0.3);
+
+}
+
+#button-canvas-wrapper {
+	position: absolute;
+	width: 30px;
+	top: 2px;
+	right: 2px;
+}
+
+#button-canvas-wrapper input[type =
+"button"] {
+	padding: 5px;
+	width: 30px;
+	margin: 0px 0px 2px 0px;
+}

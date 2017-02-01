@@ -39,6 +39,10 @@ Route::group(['prefix'=>'bolematico'],function(){
 	Route::get('inicio', function(){
 		return view('bolematico.index');
 	})->name('bolematico.inicio');
+
+	Route::get('detalles', function(){
+		return view('bolematico.detalles');
+	})->name('bolematico.detalles');
 });
 
 // Route::get('payment', array(

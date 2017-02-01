@@ -239,7 +239,7 @@
 											<p>23 de Febrero</p>
 										</div>
 										<div class="card-action">
-											<a href="#">Detalles</a>
+											<a href="{{ route('bolematico.detalles') }}">Detalles</a>
 										</div>
 									</div>
 								</div>
