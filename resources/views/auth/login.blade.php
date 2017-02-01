@@ -34,7 +34,7 @@
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                                     @endif
-                                    <label for="email">Ingres tu email</label>     
+                                    <label for="email">Ingresa tu email</label>     
                                 </div>
                             </div>
                                     
@@ -47,7 +47,7 @@
                                             <strong>{{ $errors->first('password') }}</strong>
                                         </span>
                                     @endif
-                                    <label for="password" class="validate">Password</label>
+                                    <label for="password" class="validate">Contraseña</label>
                                 </div>
                             </div>
                             <div class="row">
