@@ -66,3 +66,6 @@ Route::get('payment/status', array(
 	'as'	=>	'payment.status',
 	'uses'	=>	'PaypalIndexController@getPaymentStatus',
 	));
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
