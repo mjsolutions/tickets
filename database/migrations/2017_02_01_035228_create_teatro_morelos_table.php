@@ -21,6 +21,7 @@ class CreateTeatroMorelosTable extends Migration
             $table->boolean('status')->default(0);
             $table->boolean('confirmacion')->default(0);
             $table->string('forma_pago')->nullable();
+            $table->string('folio')->nullable();
             $table->string('user')->nullable();
             $table->timestamps();
         });
