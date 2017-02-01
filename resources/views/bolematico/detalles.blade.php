@@ -21,7 +21,7 @@
 
     context.save();
     var mapa = new Image();
-    mapa.src ="teatro-morelos.svg";
+    mapa.src = "{{asset('img/teatro-morelos.svg')}}";
 
     mapa.addEventListener('load', mostrar_imagen, false);
 
