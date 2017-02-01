@@ -189,12 +189,6 @@
 							<div class="row">
 								<div class="col s12">
 									<div class="qcTabTitle"><h4>Boletos<span> Asegura tu lugar y compra tu boleto!</span></h4></div>
-									<!-- ## MODULE TITLE ## -->
-									{{--<div class="qcModTitle">
-										<h2>Tabla de precios</h2>
-										<p>Paquetes de boletos & precios</p>
-									</div> --}}
-									<!-- ## PRICING ## -->
 									<div class="qcPricingWrapper">
 										<!-- ## PRICING 1 ## -->
 										<div class="qcPricing col s4 center">
@@ -249,34 +243,33 @@
 											</div>
 										</div>
 										<div class="col s12">
+											{!! Form::open(['route'=>'payment.store', 'method'=>'POST']) !!}
 											<div class="row">
 												<div class="col l4">
 													<div class="input-field">
 														<i class="material-icons prefix">account_circle</i>
-														{!! Form::label('name','Nombre(s)') !!}
-														{!! Form::text('name', null, ['class'=>'validate','required']) !!}
+														{!! Form::select('c_boletos',[1,2,3,4,5,6,7,8,9,10], null,['id'=>'c_boletos','placeholder'=>'Elige el número de boletos']) !!}
 													</div>      
 												</div>
 
 												<div class="col l4">
 													<div class="input-field">
 														<i class="material-icons prefix">account_circle</i>
-														{!! Form::label('last_name','Apellido paterno') !!}
-														{!! Form::text('last_name', null, ['class'=>'validate','required']) !!}
+														{!! Form::select('seccion',[], null,['id'=>'seccion','placeholder'=>'Elige una sección']) !!}
 													</div>
 												</div>
 
 												<div class="col l4">
 													<div class="input-field">
 														<i class="material-icons prefix">account_circle</i>
-														{!! Form::label('second_name','Apellido materno') !!}
-														{!! Form::text('second_name', null, ['class'=>'validate','required']) !!}
+														{!! Form::select('fila',[], null,['id'=>'fila','placeholder'=>'Elige una fila']) !!}
 													</div>
 												</div>
 												<div class="input-field center-align">
-													{!! Form::submit('Guardar',['class'=>'btn btn-large btn-block btn-block-large waves-effect waves-light']) !!}
+													{!! Form::submit('Comprar',['class'=>'btn btn-large btn-block btn-block-large waves-effect waves-light']) !!}
 												</div>
 											</div>
+											{!! Form::close() !!}
 
 										</div>
 									</div>

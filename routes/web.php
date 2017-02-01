@@ -43,6 +43,8 @@ Route::group(['prefix'=>'bolematico'],function(){
 	Route::get('detalles', function(){
 		return view('bolematico.detalles');
 	})->name('bolematico.detalles');
+
+	Route::resource('payment','PaymentController');
 });
 
 // Route::get('payment', array(
