@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        @include('bolematico.nav2')
+        @include('bolematico.nav')
     </header>
         <main>
 

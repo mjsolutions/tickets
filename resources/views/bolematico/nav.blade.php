@@ -14,12 +14,12 @@
   <nav class="transparent-header">
     <div class="nav-wrapper">
       <div class="container row">
-        <a href="{{ route('home') }}" class="brand-logo col s1 mt-10 page-scroll">
+        <a href="{{ route('home') }}#home" class="brand-logo col s1 mt-10 page-scroll">
           <img class="responsive-img" src="{{asset('img/logotipo-negro-tipo2.svg')}}">
         </a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down mt-15">
-        <li><a class="menu page-scroll" href="#eventos">Eventos</a></li>
+        <li><a class="menu page-scroll" href="{{ route('home') }}#eventos">Eventos</a></li>
           <li><a class="menu" href="#">Contacto</a></li>
           <li><a class="menu" href="#">Ayuda</a></li>
           {{-- <li><a class="menu" href="">Mi cuenta</a></li> --}}
