@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','last_name','second_lname', 'birthdate', 'sex', 'city', 'state', 'country', 'address', 'colony', 'zip', 'tel', 'status', 'photo'
+        'name', 'email', 'password', 'type','last_name','second_lname', 'birthdate', 'sex', 'city', 'state', 'country', 'address', 'colony', 'zip', 'tel', 'status', 'photo'
     ];
 
     /**
@@ -26,4 +26,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //Funciones para middlewares
+    public function isSuper() {
+        return $this->type === 'super';
+    }
+
+    public function isP_venta() {
+        return $this->type === 'p_venta';
+    }
+
+    public function isCliente() {
+        return $this->type === 'cliente';
+    }
 }

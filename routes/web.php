@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-	return view('welcome');
+	return view('bolematico.index');
 })->name('home');
 
 Route::group(['prefix' => 'admin'], function() {
