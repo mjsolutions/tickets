@@ -204,7 +204,7 @@
 												<ul class="texto-precio">
 													<li>Filas Y a Z</li>
 												</ul>
-												<footer><a href="#">Comprar ahora</a></footer>
+												<footer><a class="page-scroll" href="#compra">Comprar ahora</a></footer>
 											</div>
 										</div>
 										<!-- ## PRICING 2 ## -->
@@ -215,7 +215,7 @@
 												<ul class="texto-precio">
 													<li>Filas Q a X</li>
 												</ul>
-												<footer><a href="#">Comprar ahora</a></footer>
+												<footer><a class="page-scroll" href="#compra">Comprar ahora</a></footer>
 											</div>
 										</div>
 										<!-- ## PRICING 3 ## -->
@@ -226,33 +226,62 @@
 												<ul class="texto-precio">
 													<li>Filas A a Ñ</li>
 												</ul>
-												<footer><a href="#">Comprar ahora</a></footer>
+												<footer><a class="page-scroll" href="#compra">Comprar ahora</a></footer>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 
-							<div class="dblBorder">
-								<div class="row">
-									<div class="col s12">
-
-										<!-- ## VENUE LAYOUT PLAN ## -->
-										<div class="qcEventlayout">
-											<h1>Diagrama del lugar</h1>
-											<div class="row">
-												<div id="canvas-wrapper" style="margin: 0 auto;">
-													<canvas id="myCanvas" width="750" height="500"></canvas>
-													<div id="button-canvas-wrapper">
-														<input type="button" id="plus" value="+"><input type="button" id="minus" value="-">
+							<section id="compra">
+								<div class="dblBorder">
+									<div class="row">
+										<div class="col s12">
+											<div class="qcEventlayout">
+												<div class="row">
+													<div id="canvas-wrapper" style="margin: 0 auto;">
+														<canvas id="myCanvas" width="750" height="500"></canvas>
+														<div id="button-canvas-wrapper">
+															<input type="button" id="plus" value="+"><input type="button" id="minus" value="-">
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
+										<div class="col s12">
+											<div class="row">
+												<div class="col l4">
+													<div class="input-field">
+														<i class="material-icons prefix">account_circle</i>
+														{!! Form::label('name','Nombre(s)') !!}
+														{!! Form::text('name', null, ['class'=>'validate','required']) !!}
+													</div>      
+												</div>
 
+												<div class="col l4">
+													<div class="input-field">
+														<i class="material-icons prefix">account_circle</i>
+														{!! Form::label('last_name','Apellido paterno') !!}
+														{!! Form::text('last_name', null, ['class'=>'validate','required']) !!}
+													</div>
+												</div>
+
+												<div class="col l4">
+													<div class="input-field">
+														<i class="material-icons prefix">account_circle</i>
+														{!! Form::label('second_name','Apellido materno') !!}
+														{!! Form::text('second_name', null, ['class'=>'validate','required']) !!}
+													</div>
+												</div>
+												<div class="input-field center-align">
+													{!! Form::submit('Guardar',['class'=>'btn btn-large btn-block btn-block-large waves-effect waves-light']) !!}
+												</div>
+											</div>
+
+										</div>
 									</div>
 								</div>
-							</div>
+							</section>
 						</div>
 					</div>
 				</div>
@@ -295,6 +324,14 @@
 					items:1,
 					margin: 25,
 					loop: true
+				});
+
+				$('a.page-scroll').on('click', function(event) {
+					var $anchor = $(this);
+					$('html, body').stop().animate({
+						scrollTop: $($anchor.attr('href')).offset().top
+					}, 1500, 'easeInOutExpo');
+					event.preventDefault();
 				});
 
 				$('select').material_select();
