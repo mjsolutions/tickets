@@ -50,7 +50,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">lock_outline</i>
-                                    <input id="password_confirm" type="password" class="validate" name="password_confirm" required>
+                                    <input id="password_confirm" type="password" class="validate" name="password_confirmation" required>
                                     <label for="password" class="validate">Confirme Password</label>
                                 </div>
                             </div>

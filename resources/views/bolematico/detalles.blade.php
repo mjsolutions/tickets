@@ -243,7 +243,7 @@
 											</div>
 										</div>
 										<div class="col s12">
-											{!! Form::open(['route'=>'payment.store', 'method'=>'POST']) !!}
+											{!! Form::open(['route'=>'home', 'method'=>'POST']) !!}
 											<div class="row">
 												<div class="col l4">
 													<div class="input-field">
