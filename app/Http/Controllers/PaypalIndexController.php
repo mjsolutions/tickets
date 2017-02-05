@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 use Laracasts\Flash\Flash;
 use Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 
 use PayPal\Rest\ApiContext;
@@ -72,8 +73,8 @@ class PaypalIndexController extends Controller
 		->setDescription('Boleto comprado alv los morrillos');
 
 		$redirect_urls = new RedirectUrls();	//Redirección para ver si se completa la compra
-		$redirect_urls->setReturnUrl(url('payment.status'))
-		->setCancelUrl(url('payment/status'));
+		$redirect_urls->setReturnUrl(route('payment.status'))
+		->setCancelUrl(route('payment.status'));
 
 		$payment = new Payment();		//Se le pasan los objetos que se crearon anteriormente parade una manera encapsularlos
 		$payment->setIntent('Sale')
@@ -133,17 +134,17 @@ class PaypalIndexController extends Controller
 		Session::forget('paypal_payment_id');
 
 		//Si no hay alguno de los datos anteriores se redirecciona con un mensaje de error
-		if(empty($request->input('PayerID')) || empty($request->input('token'))){
-			Flash::error('Payment Failed');
-			return redirect()->route('home');
-		}
+		// if(empty($request->input('PayerID')) || empty($request->input('token'))){
+		// 	Flash::error('Payment Failed');
+		// 	return redirect()->route('home');
+		// }
 
 		//Se obtiene el id del pago
 		$payment = Payment::get($payment_id, $this->_api_context);
 
 		//Se ejecuta el pago con la ID del pagador
 		$execution = new PaymentExecution();
-		$execution->setPayerId($request->input('PayerID'));
+		$execution->setPayerId(Input::get('PayerID'));
 		$result = $payment->execute($execution, $this->_api_context);
 
 		//Muestra el resultado dependiendo de la respuesta de la ejecución anterior

@@ -15,7 +15,7 @@
     <div class="nav-wrapper">
       <div class="container row">
         <a href="{{ route('home') }}#home" class="brand-logo col s1 mt-10 page-scroll">
-          <img class="responsive-img" src="{{asset('img/logotipo-negro-tipo2.svg')}}">
+          <img class="responsive-img" src="{{asset('img/logotipo-nuevo-negro.svg')}}" style="width: 70%">
         </a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down mt-15">
