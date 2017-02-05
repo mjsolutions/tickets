@@ -247,21 +247,18 @@
 											<div class="row">
 												<div class="col l4">
 													<div class="input-field">
-														<i class="material-icons prefix">account_circle</i>
-														{!! Form::select('c_boletos',[1,2,3,4,5,6,7,8,9,10], null,['id'=>'c_boletos','placeholder'=>'Elige el número de boletos']) !!}
+														{!! Form::select('c_boletos', ['1' => '1', '2' => '2', '3' => '3'], null, ['class' => 'select-dropdown', 'required', 'id' => 'c_boletos', 'placeholder' => 'Elije la cantidad de boletos']) !!}
 													</div>      
 												</div>
 
 												<div class="col l4">
 													<div class="input-field">
-														<i class="material-icons prefix">account_circle</i>
 														{!! Form::select('seccion',[], null,['id'=>'seccion','placeholder'=>'Elige una sección']) !!}
 													</div>
 												</div>
 
 												<div class="col l4">
 													<div class="input-field">
-														<i class="material-icons prefix">account_circle</i>
 														{!! Form::select('fila',[], null,['id'=>'fila','placeholder'=>'Elige una fila']) !!}
 													</div>
 												</div>
@@ -269,8 +266,10 @@
 													{!! Form::submit('Comprar',['class'=>'btn btn-large btn-block btn-block-large waves-effect waves-light']) !!}
 												</div>
 											</div>
-											{!! Form::close() !!}
+											{!! Form::close() !!} --}}
 
+
+											
 										</div>
 									</div>
 								</div>
