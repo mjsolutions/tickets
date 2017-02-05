@@ -181,6 +181,11 @@ header{
 	z-index: 199;
 }
 
+.bg-1 {
+	background: url('../img/slide1.jpg')no-repeat center center fixed;
+	background-size: cover;
+}
+
 .container{
 	max-width: none;
 	width: 90%;

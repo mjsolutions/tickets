@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Bolematico | @yield('title','Inicio')</title>
+    <title>Bolematico | @yield('title','Login')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
     <link href="https://file.myfontastic.com/p33ryNdn2ug99gf3MgkiUK/icons.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-1">
     <header>
         @include('bolematico.nav')
     </header>
@@ -25,10 +25,9 @@
                         
                         <div class="card-content">
                             <div class="row">
-                                <div class="input-field col s12 {{ $errors->has('email') ? ' has-error' : '' }}">
+                                <div class="input-field col s12">
                                     <i class="material-icons prefix">account_circle</i>
                                     <input id="email" type="email" class="validate" name="email" value="{{ old('email') }}" required autofocus>
-                                    
                                     @if ($errors->has('email'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -39,7 +38,7 @@
                             </div>
                                     
                             <div class="row">
-                                <div class="input-field col s12 {{ $errors->has('password') ? ' has-error' : '' }}">
+                                <div class="input-field col s12">
                                     <i class="material-icons prefix">lock_outline</i>
                                     <input id="password" type="password" class="validate" name="password" required>
                                     @if ($errors->has('password'))
@@ -53,7 +52,7 @@
                             <div class="row">
                                 <div class="input-field col s5 col-center">                            
                                     <button type="submit" class="waves-effect waves-light btn pull-right">
-                                        Registrar
+                                        Ingresar
                                     </button>
                                 </div>
                             </div>
@@ -61,7 +60,10 @@
 
                         <div class="card-action">
                             <div class="col s8 mb-30 center-align">
-                                <a class="blue-text" href="{{ url('/password/reset') }}">
+                                {{-- <a class="blue-text" href="{{ url('/password/reset') }}">
+                                    ¿Olvidaste tu contraseña?
+                                </a> --}}
+                                <a class="blue-text" href="#!">
                                     ¿Olvidaste tu contraseña?
                                 </a>
                             </div>
@@ -75,7 +77,7 @@
             </div>
         </main>
 
-    <footer class="page-footer grey darken-3">
+    <footer class="page-footer grey darken-3" style="border-top: 2px solid #2bbbad">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
