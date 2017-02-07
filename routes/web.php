@@ -45,20 +45,14 @@ Route::group(['prefix'=>'bolematico'],function(){
 	})->name('bolematico.detalles');
 
 	Route::resource('payment','PaymentController');
+
+	Route::get('compra', function(){
+		return view('bolematico.compra');
+	})->name('bolematico.compra');
 });
 
-// Route::get('payment', array(
-// 	'as' => 'payment',
-// 	'uses' => 'PaypalIndexController@postPayment',
-// 	));
-
-// Route::get('payment/status', array(
-// 	'as' => 'payment.status',
-// 	'uses' => 'PaypalIndexController@getPaymentStatus',
-// 	));
-
 // Se envia el pedido a Paypal
-Route::get('payment', array(
+Route::post('payment', array(
 	'as'	=>	'payment',
 	'uses'	=>	'PaypalIndexController@postPayment',
 	));
@@ -71,3 +65,7 @@ Route::get('payment/status', array(
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+// Route::get('api/getFilas', function() {
+// 	return json_encode('value');
+// });
