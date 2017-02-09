@@ -44,7 +44,7 @@ Route::group(['prefix'=>'bolematico'],function(){
 		return view('bolematico.detalles');
 	})->name('bolematico.detalles');
 
-	Route::resource('payment','PaymentController');
+	Route::resource('payment','PaypalIndexController');
 });
 
 // Route::get('payment', array(
