@@ -28,8 +28,12 @@
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">account_circle</i>
                                     <input id="email" type="email" class="validate" name="email" value="{{ old('email') }}" required autofocus>
-
-                                    <label for="email">Ingres tu email</label>     
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                    <label for="email">Ingresa tu email</label>     
                                 </div>
                             </div>
                                     
@@ -37,8 +41,12 @@
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">lock_outline</i>
                                     <input id="password" type="password" class="validate" name="password" required>
-
-                                    <label for="password" class="validate">Password</label>
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                    <label for="password" class="validate">Contraseña</label>
                                 </div>
                             </div>
                             <div class="row">

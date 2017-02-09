@@ -85,7 +85,7 @@
 		};
 	</script>
 </head>
-<body onmousedown="return false;">
+<body>
 	<header>
 		@include('bolematico.nav')
 	</header>
@@ -96,96 +96,13 @@
 			<div class="row">
 				<div class="col s8 offset-s2">
 					<ul id="qcTabNav" class="tabs">
-						<li class="tab col s3"><a class="active" href="#test-swipe-1"><i class="icon-book-open icon"></i> <span>Descripción</span></a></li>
-						<li class="tab col s3"><a href="#test-swipe-2"><i class="icon-book-open icon"></i> <span>Lugar y mapa</span></a></li>
-						<li class="tab col s3 disabled"><a href="#test-swipe-3"><i class="icon-book-open icon"></i> <span>Galería (Proximamente)</span></a></li>
-						<li class="tab col s3" style="background-color: darkorange;"><a href="#test-swipe-4" style="background-color: darkorange;"><i class="icon-book-open icon"></i> <span style="color: white;">Buscar boletos</span></a></li>
+						<li class="tab col s3" style="background-color: darkorange;"><a href="#test-swipe-1" style="background-color: darkorange;" class="active"><i class="icon-book-open icon"></i> <span style="color: white;">Buscar boletos</span></a></li>
+						<li class="tab col s3"><a href="#test-swipe-2"><i class="icon-book-open icon"></i> <span>Descripción</span></a></li>
+						<li class="tab col s3"><a href="#test-swipe-3"><i class="icon-book-open icon"></i> <span>Lugar y mapa</span></a></li>
+						<li class="tab col s3 disabled"><a href="#test-swipe-4"><i class="icon-book-open icon"></i> <span>Galería (Proximamente)</span></a></li>
 					</ul>
 
 					<div id="test-swipe-1" class="col s12" style="border-bottom: 4px #555 solid;">
-						<div class="row">
-							<!-- ## TAB TITLE & DESC ## -->
-							<div class="col s8">
-								<div class="qcTabTitle">
-									<h4>Biografía<span> Conoce más acerca del artista</span></h4>
-								</div>
-								<p class="qcPageDesc">Miguel Angel Salazar, conocido como Mike Salazar "El Caballero de la Comedia" nació en Santiago, Nuevo León, México el 30 de agosto de 1989.<br><br>
-
-									Mike Salazar ha sido reconocido en México por su talento en comedia y acción; Gracias a su entusiasmo y gran talento, tiene la oportunidad de tener apariciones especiales en programas de televisión como Sabadazo, Guerra de Chistes, XE Marilé y otros ... Todos los programas de TV de Televisa México.<br><br>
-
-									Debido a su enorme talento como actor, comediante y cantante; Mike Salazar está entre el pequeño porcentaje que ha subido a la cima entre los comediantes hispanos.<br><br>
-
-									Mike Salazar ha viajado con éxito por todo México con su programa de comedia; Que realiza una rutina de buen humor, mimetismo y canciones. Su show se ha presentado en varios lugares de México, como en bares, ferias, teatros, eventos masivos y privados.<br><br>
-
-									<strong>Obtenido de: IMDb</strong></p>
-								</div>
-
-								<!-- ## SLIDER ## -->
-								<div class="col s4">
-									<div class="owl-carousel owl-theme" style="padding-top: 33.3%;">
-										<div class="item" data-merge="1"><img src="{{ asset('img/mike_salazar.jpeg') }}"></div>
-										<div class="item" data-merge="1"><img src="{{ asset('img/mike1.jpg') }}"></div>
-										<div class="item" data-merge="1"><img src="{{ asset('img/mike2.jpg') }}"></div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-						<div id="test-swipe-2" class="col s12" style="border-bottom: 4px #555 solid;">
-							<div class="row">
-
-								<!-- ## TAB TITLE ## -->
-								<div class="col s5">
-									<div class="qcTabTitle no-border">
-										<h4>Lugar & mapa<span> Ubicación y diagrama del lugar del evento</span></h4>
-									</div>
-								</div>
-
-								<!-- ## ADDRESS LIST ## -->
-								<div class="col s7">
-									<ul class="qcAddress">
-										<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Av. Ventura Puente s/n, Félix Ireta, 58070 Morelia, MICH</p></li>
-										<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 01 443 232 4400</p></li>
-										<li><i class="medium material-icons">description</i><p><strong>FAX</strong>: No disponible</p></li>
-										<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-										<li><i class="medium material-icons">language</i><p><strong>PÁGINA WEB</strong>: <a title="website" href="http://ceconexpo.com/teatro-morelos/" target="_blank">http://ceconexpo.com/teatro-morelos/</a></p></li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="dblBorder">
-								<div class="row">
-									<div class="col s12">
-
-										<!-- ## VENUE LAYOUT PLAN ## -->
-										<div class="qcEventlayout">
-											<h1>Diagrama del lugar</h1>
-											<div class="row">
-												<img class="materialboxed" width="100%" src="{{asset('img/teatro-morelos-fondo.svg')}}">
-											</div>
-										</div>
-
-										<div class="dblBorder only"></div>
-
-										<!-- ## VENUE MAP ## -->
-										<div class="qcEventlayout">
-											<h1>Mapa</h1>
-											<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d120214.61682735915!2d-101.25314044715232!3d19.68251142368705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x842d0de872e8d51b%3A0x12e74c7f08b607c2!2sTeatro+Jos%C3%A9+Mar%C3%ADa+Morelos%2C+Av.+Ventura+Puente+s%2Fn%2C+F%C3%A9lix+Ireta%2C+58070+Morelia%2C+MICH%2C+M%C3%A9xico!3m2!1d19.682525!2d-101.1831!5e0!3m2!1ses-419!2s!4v1485801304418" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div id="test-swipe-3" class="col s12" style="border-bottom: 4px #555 solid;">
-							<div class="row">
-
-
-							</div>
-						</div>
-
-						<div id="test-swipe-4" class="col s12" style="border-bottom: 4px #555 solid;">
 							<div class="row">
 								<div class="col s12">
 									<div class="qcTabTitle"><h4>Boletos<span> Asegura tu lugar y compra tu boleto!</span></h4></div>
@@ -243,39 +160,133 @@
 											</div>
 										</div>
 										<div class="col s12">
-											{!! Form::open(['route'=>'home', 'method'=>'POST']) !!}
-											<div class="row">
-												<div class="col l4">
-													<div class="input-field">
-														<i class="material-icons prefix">account_circle</i>
-														{!! Form::select('c_boletos',[1,2,3,4,5,6,7,8,9,10], null,['id'=>'c_boletos','placeholder'=>'Elige el número de boletos']) !!}
-													</div>      
-												</div>
 
-												<div class="col l4">
-													<div class="input-field">
-														<i class="material-icons prefix">account_circle</i>
-														{!! Form::select('seccion',[], null,['id'=>'seccion','placeholder'=>'Elige una sección']) !!}
+											@if(Auth()->check())
+												<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
+												{!! Form::open(['route'=>'payment', 'method'=>'POST']) !!}
+													<div class="row">
+
+														<div class="input-field col s4">
+															{!! Form::select('zona', ['Diamante' => 'Diamante', 'Oro' => 'Oro', 'Plata' => 'Plata'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Seleccione una zona']) !!}
+															{!! Form::label('zona', 'Zona') !!}
+														</div>
+														<div class="input-field col s4">
+															{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Seleccione primero una zona']) !!}
+															{!! Form::label('fila', 'Fila') !!}
+														</div>
+														<div class="input-field col s4">
+															{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
+															{!! Form::label('asiento', 'Asiento') !!}
+														</div>
+														
 													</div>
-												</div>
 
-												<div class="col l4">
-													<div class="input-field">
-														<i class="material-icons prefix">account_circle</i>
-														{!! Form::select('fila',[], null,['id'=>'fila','placeholder'=>'Elige una fila']) !!}
+													<div class="row">
+													
+														<div class="input-field center-align">
+															{!! Form::submit('Comprar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
+														</div>	
+													
 													</div>
+														
+												{!! Form::close() !!}
+											@else
+												<p class="center-align">Debes iniciar sesion para ver poder realizar la compra</p>
+												<div class="col s3 col-center">
+													<a href="{{ route('login') }}" class="btn waves-light orange accent-3">Login</a>
 												</div>
-												<div class="input-field center-align">
-													{!! Form::submit('Comprar',['class'=>'btn btn-large btn-block btn-block-large waves-effect waves-light']) !!}
-												</div>
-											</div>
-											{!! Form::close() !!}
+											@endif
 
+											
 										</div>
 									</div>
 								</div>
 							</section>
 						</div>
+
+					<div id="test-swipe-2" class="col s12" style="border-bottom: 4px #555 solid;">
+						<div class="row">
+							<!-- ## TAB TITLE & DESC ## -->
+							<div class="col s8">
+								<div class="qcTabTitle">
+									<h4>Biografía<span> Conoce más acerca del artista</span></h4>
+								</div>
+								<p class="qcPageDesc">Miguel Angel Salazar, conocido como Mike Salazar "El Caballero de la Comedia" nació en Santiago, Nuevo León, México el 30 de agosto de 1989.<br><br>
+
+									Mike Salazar ha sido reconocido en México por su talento en comedia y acción; Gracias a su entusiasmo y gran talento, tiene la oportunidad de tener apariciones especiales en programas de televisión como Sabadazo, Guerra de Chistes, XE Marilé y otros ... Todos los programas de TV de Televisa México.<br><br>
+
+									Debido a su enorme talento como actor, comediante y cantante; Mike Salazar está entre el pequeño porcentaje que ha subido a la cima entre los comediantes hispanos.<br><br>
+
+									Mike Salazar ha viajado con éxito por todo México con su programa de comedia; Que realiza una rutina de buen humor, mimetismo y canciones. Su show se ha presentado en varios lugares de México, como en bares, ferias, teatros, eventos masivos y privados.<br><br>
+
+									<strong>Obtenido de: IMDb</strong></p>
+								</div>
+
+								<!-- ## SLIDER ## -->
+								<div class="col s4">
+									<div class="owl-carousel owl-theme" style="padding-top: 33.3%;">
+										<div class="item" data-merge="1"><img src="{{ asset('img/mike_salazar.jpeg') }}"></div>
+										<div class="item" data-merge="1"><img src="{{ asset('img/mike1.jpg') }}"></div>
+										<div class="item" data-merge="1"><img src="{{ asset('img/mike2.jpg') }}"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div id="test-swipe-3" class="col s12" style="border-bottom: 4px #555 solid;">
+							<div class="row">
+
+								<!-- ## TAB TITLE ## -->
+								<div class="col s5">
+									<div class="qcTabTitle no-border">
+										<h4>Lugar & mapa<span> Ubicación y diagrama del lugar del evento</span></h4>
+									</div>
+								</div>
+
+								<!-- ## ADDRESS LIST ## -->
+								<div class="col s7">
+									<ul class="qcAddress">
+										<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Av. Ventura Puente s/n, Félix Ireta, 58070 Morelia, MICH</p></li>
+										<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 01 443 232 4400</p></li>
+										<li><i class="medium material-icons">description</i><p><strong>FAX</strong>: No disponible</p></li>
+										<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
+										<li><i class="medium material-icons">language</i><p><strong>PÁGINA WEB</strong>: <a title="website" href="http://ceconexpo.com/teatro-morelos/" target="_blank">http://ceconexpo.com/teatro-morelos/</a></p></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="dblBorder">
+								<div class="col s12">
+									<div class="row">
+
+										<!-- ## VENUE LAYOUT PLAN ## -->
+										<div class="qcEventlayout">
+											<h1>Diagrama del lugar</h1>
+											<div class="row">
+												<img class="materialboxed" width="100%" src="{{asset('img/teatro-morelos-fondo.svg')}}">
+											</div>
+										</div>
+
+										<div class="dblBorder only"></div>
+
+										<!-- ## VENUE MAP ## -->
+										<div class="qcEventlayout">
+											<h1>Mapa</h1>
+											<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d120214.61682735915!2d-101.25314044715232!3d19.68251142368705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x842d0de872e8d51b%3A0x12e74c7f08b607c2!2sTeatro+Jos%C3%A9+Mar%C3%ADa+Morelos%2C+Av.+Ventura+Puente+s%2Fn%2C+F%C3%A9lix+Ireta%2C+58070+Morelia%2C+MICH%2C+M%C3%A9xico!3m2!1d19.682525!2d-101.1831!5e0!3m2!1ses-419!2s!4v1485801304418" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="test-swipe-4" class="col s12" style="border-bottom: 4px #555 solid;">
+							<div class="row">
+
+
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -318,6 +329,50 @@
 					margin: 25,
 					loop: true
 				});
+
+				$("#zona").change(function(){
+					var id = $(this).val();
+					$.ajax({
+						url: '{{url('/api/getFilas')}}/' + id,
+						method: 'GET',
+						// data: 'id=' + id,
+						success: function(res){
+							var filas = res;
+							var options = "<option value='' selected disabled>Selecciona una fila</option>";
+							for(i=0; i<filas.length; i++){
+								options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
+							}
+							$("#fila").html(options);
+							$("#fila").material_select();
+
+						}
+					});
+				});
+
+				$("#fila").change(function(){
+					var id = $(this).val();
+					$.ajax({
+						url: '{{url('/api/getAsientos')}}/' + id,
+						method: 'GET',
+						// data: 'id=' + id,
+						success: function(res){
+							var asientos = res;
+							var options = "<option value='' selected disabled>Seleccione los asientos</option>";
+							for(i=0; i<asientos.length; i++){
+								options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
+							}
+							$("#asiento").html(options);
+							$("#asiento").material_select();
+
+						}
+					});
+				});
+
+				// $("form").submit(function(e){
+				// 	e.preventDefault();
+				// 	var form = $(this)[0];
+				// 	alert(form);
+				// });
 
 				$('a.page-scroll').on('click', function(event) {
 					var $anchor = $(this);

@@ -15,7 +15,7 @@
     <div class="nav-wrapper">
       <div class="container row">
         <a href="{{ route('home') }}#home" class="brand-logo col s1 mt-10 page-scroll">
-          <img class="responsive-img" src="{{asset('img/logotipo-negro-tipo2.svg')}}">
+          <img class="responsive-img" src="{{asset('img/logotipo-nuevo-negro.svg')}}" style="width: 70%">
         </a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down mt-15">
@@ -34,14 +34,14 @@
         <div class="row mb-0">
           <div class="col s10 col-center mt-30">
             <a href="">
-              <img class="responsive-img" src="{{asset('img/Logo_Negro.svg')}}">
+              <img class="responsive-img" src="{{asset('img/logotipo-negro-tipo2.svg')}}">
             </a>
           </div>
         </div>
         <div class="row">
           <div class="col s8 col-center divider"></div>
         </div>
-        <li><a href="">Eventos</a></li>
+        <li><a href="{{ route('home') }}#eventos">Eventos</a></li>
         <li><a href="">Contacto</a></li>
         <li><a href="">Ayuda</a></li>
         <li><a href="">Mi cuenta</a></li>
