@@ -227,19 +227,36 @@
 						</div>
 
 						<ul class="row produktliste">
-							<div class="col m4 m4">
+							<div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
 										<img src="{{asset('img/mike_salazar.jpeg')}}">
 									</div>
 									<div class="card-stacked">
 										<div class="card-content">
-											<h5><strong>Mike Salazar</strong></h5>
+											<h6><strong>Mike Salazar</strong></h6>
 											<p>Teatro Morelos</p>
 											<p>23 de Febrero</p>
 										</div>
 										<div class="card-action">
 											<a href="{{ route('bolematico.detalles') }}">Detalles</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col m4">
+								<div class="card horizontal hoverable">
+									<div class="card-image">
+										<img src="{{asset('img/sofia.jpg')}}">
+									</div>
+									<div class="card-stacked">
+										<div class="card-content">
+											<h6><strong>Sofia Niño de Rivera</strong></h6>
+											<p>Teatro Morelos</p>
+											<p>02 de Marzo</p>
+										</div>
+										<div class="card-action">
+											<a href="{{ route('bolematico.sofia') }}">Detalles</a>
 										</div>
 									</div>
 								</div>

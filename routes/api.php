@@ -20,3 +20,7 @@ Route::get('/user', function (Request $request) {
 Route::get('/getFilas/{zona}', 'ApiController@getFilas');
 
 Route::get('/getAsientos/{fila}', 'ApiController@getAsientos');
+
+Route::get('/getFilasSofia/{zona}', 'ApiController@getFilasSofia');
+
+Route::get('/getAsientosSofia/{fila}', 'ApiController@getAsientosSofia');

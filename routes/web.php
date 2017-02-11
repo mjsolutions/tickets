@@ -44,6 +44,10 @@ Route::group(['prefix'=>'bolematico'],function(){
 		return view('bolematico.detalles');
 	})->name('bolematico.detalles');
 
+	Route::get('sofia', function(){
+		return view('bolematico.sofia');
+	})->name('bolematico.sofia');
+
 	Route::resource('payment','PaymentController');
 
 	Route::get('compra', function(){
@@ -62,6 +66,19 @@ Route::get('payment/status', array(
 	'as'	=>	'payment.status',
 	'uses'	=>	'PaypalIndexController@getPaymentStatus',
 	));
+
+// Rutas para evento de sofia
+Route::post('paymentsofia', array(
+	'as'	=>	'paymentsofia',
+	'uses'	=>	'PaypalSofiaController@postPayment',
+	));
+
+//Paypal redirecciona a esta ruta
+Route::get('paymentsofia/status', array(
+	'as'	=>	'payment.status',
+	'uses'	=>	'PaypalSofiaController@getPaymentStatus',
+	));
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
