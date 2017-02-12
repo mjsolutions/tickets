@@ -261,23 +261,70 @@
 									</div>
 								</div>
 							</div>
-							{{-- <div class="col m4 m4">
+
+							<div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
-										<img src="http://lorempixel.com/100/190/nature/6">
+										<img src="{{asset('img/saldana-cuernavaca.jpg')}}">
 									</div>
 									<div class="card-stacked">
 										<div class="card-content">
-											<p><strong>Titulo o nombre del evento</strong></p>
-											<p>Lugar del evento</p>
-											<p>Fecha del evento</p>
+											<h6><strong>Alan Saldaña</strong></h6>
+											{{-- <p>Cuernavaca</p> --}}
+											<p><i>Clasico Cuerna</i></p>
+											<p>10 de Marzo</p>
+											<p>11:30 pm.</p>
+											<p class="center-align grey lighten-2 mt-10"><b>$280</b></p>
 										</div>
-										<div class="card-action">
-											<a href="#">Detalles del evento</a>
+										<div class="card-action nopadding center-align">
+											<p class="orange-text">Boletos en taquilla</p>
 										</div>
 									</div>
 								</div>
-							</div> --}}
+							</div>
+
+							<div class="col m4">
+								<div class="card horizontal hoverable">
+									<div class="card-image">
+										<img src="{{asset('img/saldana-metepec.jpg')}}">
+									</div>
+									<div class="card-stacked">
+										<div class="card-content">
+											<h6><strong>Alan Saldaña</strong></h6>
+											{{-- <p>Cuernavaca</p> --}}
+											<p><i>19 Comedy Bar</i></p>
+											<p>09 de Marzo</p>
+											<p>10:30 pm.</p>
+											<p class="center-align grey lighten-2 mt-10"><b>$350</b></p>
+										</div>
+										<div class="card-action nopadding center-align">
+											<p class="orange-text">Boletos en taquilla</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col m4">
+								<div class="card horizontal hoverable">
+									<div class="card-image">
+										<img src="{{asset('img/saldana-zitacuaro.jpg')}}">
+									</div>
+									<div class="card-stacked">
+										<div class="card-content">
+											<h6><strong>Alan Saldaña</strong></h6>
+											{{-- <p>Cuernavaca</p> --}}
+											<p><i>Up</i></p>
+											<p>11 de Marzo</p>
+											<p>9:00 pm.</p>
+											<p class="center-align grey lighten-2 mt-10"><b>$280</b></p>
+										</div>
+										<div class="card-action nopadding center-align">
+											<p class="orange-text">Boletos en taquilla</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</ul>
 
 {{-- 						<div class="col-md-12">

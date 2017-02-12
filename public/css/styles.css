@@ -81,10 +81,10 @@ Margin
 	margin-top: 0!important; 
 }
 .mt-5{
-	margin-top: 5px;
+	margin-top: 5px!important;
 }
 .mt-10{
-	margin-top: 10px;
+	margin-top: 10px!important;
 }
 .mt-15{
 	margin-top: 15px;
@@ -344,11 +344,11 @@ header{
 	cursor: pointer;
 }
 
-.produktliste .card-content {
+/*.produktliste .card-content {
 	height: 120px;
 	max-height: 120px;
 }
-
+*/
 .produktliste .card-image {
 	/*height: 250px;*/
 	max-height: 250px;
@@ -736,23 +736,46 @@ ul.qcAddress li a {
     border: 0;
     text-align: center;
 }
+
+.qcPricing {
+	border: 1px solid #ccc;
+	padding: 0!important;
+}
 .qcPricing header {
     color: #fff;
-    font: 300 28px/100px "Roboto", Helvetica,Arial,sans-serif;
+    font: 300 22px/50px "Roboto", Helvetica,Arial,sans-serif;
     background: #FF4D00;
     letter-spacing: -0px;
     text-transform: uppercase;
-    border-radius: 3px 3px 0 0;
+    /*border-radius: 3px 3px 0 0;*/
 }
-.qcPricing:nth-child(1) header {
+
+.qcPricing:nth-child(1) header div{
     background: #B2B3B7;
 }
-.qcPricing:nth-child(2) header {
+.qcPricing:nth-child(2) header div{
     background: #FAAF5E;
 }
-.qcPricing:nth-child(3) header {
+.qcPricing:nth-child(3) header div{
     background: #84D0D0;
 }
+
+.btn-buy > a {
+	font-size: 1rem;
+	display: block;
+	background: #fff6e9;
+	color: #ff952e;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	transition: all 0.3s linear;
+	line-height: 48px;
+}
+.btn-buy > a:hover {
+	color: #fff;
+    background: #ffba00;
+    border: inline 1px solid #ff952e;
+}
+
 .qcPricing .price {
     color: #777;
     font: 400 14px/55px "Open sans", Helvetica,Arial,sans-serif;
@@ -767,6 +790,10 @@ ul.qcAddress li a {
     color: #666;
     font: 400 24px/55px "Open sans", Helvetica,Arial,sans-serif;
     letter-spacing: 0px;
+}
+.qcPricing .filas {
+	color: #777;
+	padding-top: 15px;
 }
 .qcPricing ul {
     list-style: none;

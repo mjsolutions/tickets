@@ -94,7 +94,7 @@
 		<div id="imagen-header"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col s8 offset-s2">
+				<div class="col s10 offset-s1">
 					<ul id="qcTabNav" class="tabs">
 						<li class="tab col s3" style="background-color: darkorange;"><a href="#test-swipe-1" style="background-color: darkorange;" class="active"><i class="icon-book-open icon"></i> <span style="color: white;">Buscar boletos</span></a></li>
 						<li class="tab col s3"><a href="#test-swipe-2"><i class="icon-book-open icon"></i> <span>Descripción</span></a></li>
@@ -107,39 +107,48 @@
 								<div class="col s12">
 									<div class="qcTabTitle"><h4>Boletos<span> Asegura tu lugar y compra tu boleto!</span></h4></div>
 									<div class="qcPricingWrapper">
-										<!-- ## PRICING 1 ## -->
-										<div class="qcPricing col s4 center">
-											<div class="box">
-												<header>PLATA</header>
-												<div class="price"><span>$250</span> Por entrada</div>
-												<ul class="texto-precio">
-													<li>Filas Y a Z</li>
-												</ul>
-												<footer><a class="page-scroll" href="#compra">Comprar ahora</a></footer>
+
+										<div class="col m9">
+											<div class="qcPricing col s12 center hoverable mb-10">
+												<div class="box ">
+													<header>
+														<div class="col s12 m8">PLATA</div>
+														<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div>
+													</header>
+													<div class="price col s6"><span>$250</span> Por entrada</div>
+													<div class="filas col s6">Filas: Y - Z</div>
+													<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div>
+												</div>
+											</div>
+											<!-- ## PRICING 2 ## -->
+											<div class="qcPricing col s12 center hoverable mb-10">
+												<div class="box">
+													<header>
+														<div class="col s12 m8">ORO</div>
+														<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div>
+													</header>
+													<div class="price col s6"><span>$350</span> Por entrada</div>
+													<div class="filas col s6">Filas: Q - X</div>
+													<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div>
+												</div>
+											</div>
+											<!-- ## PRICING 3 ## -->
+											<div class="qcPricing col s12 center hoverable mb-10">
+												<div class="box">
+													<header>
+														<div class="col s12 m8">DIAMANTE</div>
+														<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div>
+													</header>
+													<div class="price col s6"><span>$450</span> Por entrada</div>
+													<div class="filas col s6">Filas: A - Ñ</div>
+													<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div>
+												</div>
 											</div>
 										</div>
-										<!-- ## PRICING 2 ## -->
-										<div class="qcPricing col s4 center">
-											<div class="box">
-												<header>ORO</header>
-												<div class="price"><span>$350</span> Por entrada</div>
-												<ul class="texto-precio">
-													<li>Filas Q a X</li>
-												</ul>
-												<footer><a class="page-scroll" href="#compra">Comprar ahora</a></footer>
-											</div>
+										<div class="col m3">
+											<img src="{{ asset('img/mike_salazar.jpeg') }}" class="responsive-img">
 										</div>
-										<!-- ## PRICING 3 ## -->
-										<div class="qcPricing col s4 center">
-											<div class="box">
-												<header>DIAMANTE</header>
-												<div class="price"><span>$450</span> Por entrada</div>
-												<ul class="texto-precio">
-													<li>Filas A a Ñ</li>
-												</ul>
-												<footer><a class="page-scroll" href="#compra">Comprar ahora</a></footer>
-											</div>
-										</div>
+
 									</div>
 								</div>
 							</div>
@@ -192,8 +201,8 @@
 												{!! Form::close() !!}
 											@else
 												<p class="center-align">Debes iniciar sesion para ver poder realizar la compra</p>
-												<div class="col s3 col-center">
-													<a href="{{ route('login') }}" class="btn waves-light orange accent-3">Login</a>
+												<div class="col s2 col-center">
+													<a href="{{ route('login') }}" class="btn btn-block waves-light orange accent-3">Login</a>
 												</div>
 											@endif
 
