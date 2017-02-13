@@ -325,6 +325,111 @@
 								</div>
 							</div>
 
+							<div class="col m4">
+								<div class="card horizontal hoverable">
+									<div class="card-image">
+										<img src="{{asset('img/saldana-uruapan.jpeg')}}">
+									</div>
+									<div class="card-stacked">
+										<div class="card-content">
+											<h6><strong>Alan Saldaña</strong></h6>
+											{{-- <p>Cuernavaca</p> --}}
+											<p><i>La Reina Discoteque</i></p>
+											<p>24 de Febrero</p>
+											{{-- <p>9:00 pm.</p> --}}
+											{{-- <p class="center-align grey lighten-2 mt-10"><b>$280</b></p> --}}
+										</div>
+										<div class="card-action nopadding center-align">
+											<p class="orange-text">Boletos en taquilla</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col m4">
+								<div class="card horizontal hoverable">
+									<div class="card-image">
+										<img src="{{asset('img/saldana-zamora.jpeg')}}">
+									</div>
+									<div class="card-stacked">
+										<div class="card-content">
+											<h6><strong>Alan Saldaña</strong></h6>
+											{{-- <p>Cuernavaca</p> --}}
+											<p><i>El Diablo Wings</i></p>
+											<p>23 de Febrero</p>
+											{{-- <p>9:00 pm.</p> --}}
+											{{-- <p class="center-align grey lighten-2 mt-10"><b>$280</b></p> --}}
+										</div>
+										<div class="card-action nopadding center-align">
+											<p class="orange-text">Boletos en taquilla</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col m4">
+								<div class="card horizontal hoverable">
+									<div class="card-image">
+										<img src="{{asset('img/saldana-zihua.jpeg')}}">
+									</div>
+									<div class="card-stacked">
+										<div class="card-content">
+											<h6><strong>Alan Saldaña</strong></h6>
+											{{-- <p>Cuernavaca</p> --}}
+											<p><i>El Partenón</i></p>
+											<p>25 de Febrero</p>
+											{{-- <p>9:00 pm.</p> --}}
+											{{-- <p class="center-align grey lighten-2 mt-10"><b>$280</b></p> --}}
+										</div>
+										<div class="card-action nopadding center-align">
+											<p class="orange-text">Boletos en taquilla</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col m4">
+								<div class="card horizontal hoverable">
+									<div class="card-image">
+										<img src="{{asset('img/ska.jpeg')}}">
+									</div>
+									<div class="card-stacked">
+										<div class="card-content">
+											<h6><strong>Ska & Reggae Sessions</strong></h6>
+											{{-- <p>Cuernavaca</p> --}}
+											<p><i>Salón Arena</i></p>
+											<p>25 de Marzo</p>
+											<p>6:00 pm.</p>
+											{{-- <p class="center-align grey lighten-2 mt-10"><b>$280</b></p> --}}
+										</div>
+										<div class="card-action nopadding center-align">
+											<p class="orange-text">Boletos en taquilla</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col m4">
+								<div class="card horizontal hoverable">
+									<div class="card-image">
+										<img src="{{asset('img/norteno.jpeg')}}">
+									</div>
+									<div class="card-stacked">
+										<div class="card-content">
+											<h6><strong>El Norteño</strong></h6>
+											<p><i>Pronto más Información</i></p>
+											{{-- <p><i>La Reina Discoteque</i></p>
+											<p>24 de Febrero</p>
+											<p>9:00 pm.</p> --}}
+											{{-- <p class="center-align grey lighten-2 mt-10"><b>$280</b></p> --}}
+										</div>
+										<div class="card-action nopadding center-align">
+											<p class="orange-text">Proximamente</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</ul>
 
 {{-- 						<div class="col-md-12">
