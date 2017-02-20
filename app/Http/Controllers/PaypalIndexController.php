@@ -146,6 +146,11 @@ class PaypalIndexController extends Controller
 			DB::beginTransaction();
 
 			try{
+				//Corroborar que siguen disponibles los boletos
+				$asientos = Morelos::WhereIn('id', $id)->where('status', 1)->get();
+				if($asientos->count() > 0){
+					return redirect()->route('bolematico.detalles')->withErrors('Lo sentimos los boletos ya no estan disponibles');
+				}
 
 				//Bloqueamos los boletos
 				Morelos::whereIn('id', $id)->update(['status' => 1]);

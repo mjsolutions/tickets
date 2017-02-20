@@ -146,7 +146,11 @@ class PaypalSofiaController extends Controller
 			DB::beginTransaction();
 
 			try{
-
+				//Corroborar que siguen disponibles los boletos
+				$asientos = Sofia::WhereIn('id', $id)->where('status', 1)->get();
+				if($asientos->count() > 0){
+					return redirect()->route('bolematico.sofia')->withErrors('Lo sentimos los boletos ya no estan disponibles');
+				}
 				//Bloqueamos los boletos
 				Sofia::whereIn('id', $id)->update(['status' => 1]);
 
@@ -236,6 +240,8 @@ class PaypalSofiaController extends Controller
 
 			Flash::success('Gracias por su compra');
 			return redirect()->route('bolematico.compra');
+		}else{
+			//Poner en que esta
 		}
 		// Flash::error('Payment Failed');
 		return redirect()->route('bolematico.sofia')->withErrors('Pago fallo');
