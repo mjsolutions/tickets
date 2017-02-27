@@ -207,7 +207,7 @@
 												</div>
 											@endif
 
-											
+											{{-- <p class="center-align">Por mantenimiento, contamos momentaneamente solo con venta de boletos en taquilla</p> --}}
 										</div>
 									</div>
 								</div>

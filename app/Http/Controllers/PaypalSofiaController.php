@@ -104,8 +104,8 @@ class PaypalSofiaController extends Controller
 		->setDescription('Boleto(s) Sofia Niño de Rivera. '.$description);
 
 		$redirect_urls = new RedirectUrls();	//Redirección para ver si se completa la compra
-		$redirect_urls->setReturnUrl(route('payment.status'))
-		->setCancelUrl(route('payment.status'));
+		$redirect_urls->setReturnUrl(route('paymentsofia.status'))
+		->setCancelUrl(route('paymentsofia.status'));
 
 		$payment = new Payment();		//Se le pasan los objetos que se crearon anteriormente parade una manera encapsularlos
 		$payment->setIntent('Sale')

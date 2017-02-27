@@ -75,7 +75,7 @@ Route::post('paymentsofia', array(
 
 //Paypal redirecciona a esta ruta
 Route::get('paymentsofia/status', array(
-	'as'	=>	'payment.status',
+	'as'	=>	'paymentsofia.status',
 	'uses'	=>	'PaypalSofiaController@getPaymentStatus',
 	));
 

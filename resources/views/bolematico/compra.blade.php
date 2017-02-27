@@ -22,8 +22,8 @@
 				
 				<h3 class="center-align white-text">¡GRACIAS POR TU COMPRA!</h3>
 				<div class="divider col-center col s10"></div>
-				<p class="center-align white-text"><i>*En tu cuenta de Paypal encontraras los detalles de la compra para poder cambiarlos en taquilla por tus boletos</i></p>
-				<p class="center-align white-text"><i>*No olvides presentar una identificacion oficial vigente.</i></p>
+				<p class="center-align white-text"><i>*En tu cuenta de Paypal encontraras los detalles de la compra.</i></p>
+				<p class="center-align white-text"><i>*Para recoger tus boletos no olvides presentar original y una copia de tu identificacion oficial vigente y el comprobante impreso de tu compra en Paypal.</i></p>
 
 			</div>
 

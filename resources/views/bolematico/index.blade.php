@@ -227,7 +227,7 @@
 						</div>
 
 						<ul class="row produktliste">
-							<div class="col m4">
+							{{-- <div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
 										<img src="{{asset('img/mike_salazar.jpeg')}}">
@@ -243,7 +243,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 							<div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
@@ -325,7 +325,7 @@
 								</div>
 							</div>
 
-							<div class="col m4">
+							{{-- <div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
 										<img src="{{asset('img/saldana-uruapan.jpeg')}}">
@@ -333,20 +333,20 @@
 									<div class="card-stacked">
 										<div class="card-content">
 											<h6><strong>Alan Saldaña</strong></h6>
-											{{-- <p>Cuernavaca</p> --}}
+										
 											<p><i>La Reina Discoteque</i></p>
 											<p>24 de Febrero</p>
-											{{-- <p>9:00 pm.</p> --}}
-											{{-- <p class="center-align grey lighten-2 mt-10"><b>$280</b></p> --}}
+										
+										
 										</div>
 										<div class="card-action nopadding center-align">
 											<p class="orange-text">Boletos en taquilla</p>
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 
-							<div class="col m4">
+							{{-- <div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
 										<img src="{{asset('img/saldana-zamora.jpeg')}}">
@@ -354,20 +354,19 @@
 									<div class="card-stacked">
 										<div class="card-content">
 											<h6><strong>Alan Saldaña</strong></h6>
-											{{-- <p>Cuernavaca</p> --}}
+											
 											<p><i>El Diablo Wings</i></p>
 											<p>23 de Febrero</p>
-											{{-- <p>9:00 pm.</p> --}}
-											{{-- <p class="center-align grey lighten-2 mt-10"><b>$280</b></p> --}}
+											
 										</div>
 										<div class="card-action nopadding center-align">
 											<p class="orange-text">Boletos en taquilla</p>
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 
-							<div class="col m4">
+							{{-- <div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
 										<img src="{{asset('img/saldana-zihua.jpeg')}}">
@@ -375,18 +374,17 @@
 									<div class="card-stacked">
 										<div class="card-content">
 											<h6><strong>Alan Saldaña</strong></h6>
-											{{-- <p>Cuernavaca</p> --}}
+											
 											<p><i>El Partenón</i></p>
 											<p>25 de Febrero</p>
-											{{-- <p>9:00 pm.</p> --}}
-											{{-- <p class="center-align grey lighten-2 mt-10"><b>$280</b></p> --}}
+											
 										</div>
 										<div class="card-action nopadding center-align">
 											<p class="orange-text">Boletos en taquilla</p>
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 
 							<div class="col m4">
 								<div class="card horizontal hoverable">
