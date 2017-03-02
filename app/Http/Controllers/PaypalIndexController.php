@@ -42,13 +42,13 @@ class PaypalIndexController extends Controller
 		$cantidad = count($request->asiento);
 		switch ($request->zona) {
 			case 'Diamante':
-				$price = 450;
+				$price = 480;
 				break;
 			case 'Oro':
-				$price = 350;
+				$price = 380;
 				break;
 			case 'Plata':
-				$price = 250;
+				$price = 280;
 				break;
 		}
 		$description = "Zona: ".$request->zona." Fila: ".$request->fila." Asientos:";
@@ -80,9 +80,9 @@ class PaypalIndexController extends Controller
 		$subtotal = $price * $cantidad;		//Subtotal de los items
 		$total = $subtotal * 1.10;
 
-		$item->setName('Boleto Mike Salazar')	//Nombre del item
+		$item->setName('Boleto El Norteño')	//Nombre del item
 		->setCurrency('MXN')		//Moneda
-		->setDescription('Boleto(s) Mike Salazar. '.$description)
+		->setDescription('Boleto(s) El Norteño. '.$description)
 		->setQuantity(1)			//Cantidad de items
 		->setPrice($subtotal);			//Precio de cada item
 
@@ -101,7 +101,7 @@ class PaypalIndexController extends Controller
 		$transaction = new Transaction();	//Objeto para generar la transacción y pasar los items
 		$transaction->setAmount($amount)
 		->setItemList($item_list)
-		->setDescription('Boleto(s) Mike Salazar. '.$description);
+		->setDescription('Boleto(s) El Norteño. '.$description);
 
 		$redirect_urls = new RedirectUrls();	//Redirección para ver si se completa la compra
 		$redirect_urls->setReturnUrl(route('payment.status'))
@@ -123,7 +123,7 @@ class PaypalIndexController extends Controller
 				exit;
 			} else {
 				// Flash::error('Something went wrong, Sorry for inconvenience');
-				return redirect()->route('bolematico.detalles')->withErrors('Algo salio mal perdon por el inconveniente');
+				return redirect()->route('eventos.norteno-morelia')->withErrors('Algo salio mal perdon por el inconveniente');
 			}
 		}
 
@@ -149,7 +149,7 @@ class PaypalIndexController extends Controller
 				//Corroborar que siguen disponibles los boletos
 				$asientos = Morelos::WhereIn('id', $id)->where('status', 1)->get();
 				if($asientos->count() > 0){
-					return redirect()->route('bolematico.detalles')->withErrors('Lo sentimos los boletos ya no estan disponibles');
+					return redirect()->route('eventos.norteno-morelia')->withErrors('Lo sentimos los boletos ya no estan disponibles');
 				}
 
 				//Bloqueamos los boletos
@@ -160,14 +160,14 @@ class PaypalIndexController extends Controller
 
 			}catch(\Exception $e) {
 				DB::rollBack();
-				return redirect()->route('bolematico.detalles')->withErrors('A ocurrido un error db');
+				return redirect()->route('eventos.norteno-morelia')->withErrors('A ocurrido un error db');
 			}
 
 			//Redirecciona a ventana de login de paypal para iniciar porceso de compra
 			return redirect($redirect_url);
 		}
 		// Flash::error('Unknown error occurred');
-		return redirect()->route('bolematico.detalles')->withErrors('A ocurrido un error');
+		return redirect()->route('eventos.norteno-morelia')->withErrors('A ocurrido un error');
 	}
 
 	public function getPaymentStatus(Request $request)
@@ -194,11 +194,11 @@ class PaypalIndexController extends Controller
 
 			}catch(\Exception $e) {
 				DB::rollBack();
-				return redirect()->route('bolematico.detalles')->withErrors('A ocurrido un error');
+				return redirect()->route('eventos.norteno-morelia')->withErrors('A ocurrido un error');
 			}
 
 			// Flash::error('Payment Failed');
-			return redirect()->route('bolematico.detalles')->withErrors('Proceso de compra cancelado');
+			return redirect()->route('eventos.norteno-morelia')->withErrors('Proceso de compra cancelado');
 		}
 
 		//Se obtiene el id del pago
@@ -236,14 +236,14 @@ class PaypalIndexController extends Controller
 
 			}catch(\Exception $e) {
 				DB::rollBack();
-				return redirect()->route('bolematico.detalles')->withErrors('A ocurrido un error');
+				return redirect()->route('eventos.norteno-morelia')->withErrors('A ocurrido un error');
 			}
 
 			Flash::success('Gracias por su compra');
-			return redirect()->route('bolematico.compra');
+			return redirect()->route('eventos.compra');
 		}
 		// Flash::error('Payment Failed');
-		return redirect()->route('bolematico.detalles')->withErrors('Pago fallo');
+		return redirect()->route('eventos.norteno-morelia')->withErrors('Pago fallo');
 
 	}
 

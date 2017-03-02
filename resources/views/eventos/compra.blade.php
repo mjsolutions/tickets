@@ -77,69 +77,10 @@
 				loop: true
 			});
 
-			$("#zona").change(function(){
-				var id = $(this).val();
-				$.ajax({
-					url: '{{url('/api/getFilas')}}/' + id,
-					method: 'GET',
-					// data: 'id=' + id,
-					success: function(res){
-						var filas = res;
-						var options = "<option value='' selected disabled>Selecciona una fila</option>";
-						for(i=0; i<filas.length; i++){
-							options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
-						}
-						$("#fila").html(options);
-						$("#fila").material_select();
-
-					}
-				});
-			});
-
-			$("#fila").change(function(){
-				var id = $(this).val();
-				$.ajax({
-					url: '{{url('/api/getAsientos')}}/' + id,
-					method: 'GET',
-					// data: 'id=' + id,
-					success: function(res){
-						var asientos = res;
-						var options = "<option value='' selected disabled>Seleccione los asientos</option>";
-						for(i=0; i<asientos.length; i++){
-							options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
-						}
-						$("#asiento").html(options);
-						$("#asiento").material_select();
-
-					}
-				});
-			});
-
-			// $("form").submit(function(e){
-			// 	e.preventDefault();
-			// 	var form = $(this)[0];
-			// 	alert(form);
-			// });
-
-			$('a.page-scroll').on('click', function(event) {
-				var $anchor = $(this);
-				$('html, body').stop().animate({
-					scrollTop: $($anchor.attr('href')).offset().top
-				}, 1500, 'easeInOutExpo');
-				event.preventDefault();
-			});
-
-			$('select').material_select();
-
 			$('.materialboxed').materialbox();//puede funcionar sin esta declaracion
 
 			$(".dropdown-button").dropdown(); //puede funcionar sin esta declaracion
 
-			@if($errors)
-			@foreach($errors->all() as $error)
-			Materialize.toast('{{ $error }}', 4000);
-			@endforeach
-			@endif
 		});
 	</script>
 </body>

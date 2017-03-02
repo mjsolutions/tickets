@@ -171,7 +171,7 @@
 										</div>
 										<div class="col s12">
 
-											@if(Auth()->check())
+{{-- 											@if(Auth()->check())
 												<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
 												{!! Form::open(['route'=>'paymentsofia', 'method'=>'POST']) !!}
 													<div class="row">
@@ -201,13 +201,13 @@
 														
 												{!! Form::close() !!}
 											@else
-												<p class="center-align">Debes iniciar sesion para ver poder realizar la compra</p>
+												<p class="center-align">Debes iniciar sesion para poder realizar la compra</p>
 												<div class="col s2 col-center">
 													<a href="{{ route('login') }}" class="btn btn-block waves-light orange accent-3">Login</a>
 												</div>
-											@endif
+											@endif --}}
 
-											{{-- <p class="center-align">Por mantenimiento, contamos momentaneamente solo con venta de boletos en taquilla</p> --}}
+											<p class="center-align">La venta en línea para este evento se ha terminado.<br>Si requiere comprar o adquirir más boletos, únicamente estarán a la venta en las <strong>taquillas del planetario</strong> el día de hoy (01-Marzo-2017), o el día de mañana (Día del evento: 02-Marzo-2017) en la <strong>taquilla del Teatro Morelos</strong>. <br><span style="font-size: 18px; letter-spacing: 3px;"><b>¡Gracias!</b></span></p>
 										</div>
 									</div>
 								</div>
@@ -248,7 +248,6 @@
 
 						<div id="test-swipe-3" class="col s12" style="border-bottom: 4px #555 solid;">
 							<div class="row">
-
 								<!-- ## TAB TITLE ## -->
 								<div class="col s5">
 									<div class="qcTabTitle no-border">

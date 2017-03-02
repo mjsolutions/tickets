@@ -32,27 +32,30 @@ Route::group(['prefix' => 'admin'], function() {
 */
 Route::group(['prefix'=>'bolematico'],function(){
 
-	Route::get('/', function(){
-		return view('bolematico.index');
-	});
-
 	Route::get('inicio', function(){
 		return view('bolematico.index');
 	})->name('bolematico.inicio');
-
-	Route::get('detalles', function(){
-		return view('bolematico.detalles');
-	})->name('bolematico.detalles');
 
 	Route::get('sofia', function(){
 		return view('bolematico.sofia');
 	})->name('bolematico.sofia');
 
-	Route::resource('payment','PaymentController');
+});
+
+/*
+| Rutas para eventos
+*/
+
+Route::group(['prefix'=>'eventos'],function(){
+
+	Route::get('norteno-morelia', function(){
+		return view('eventos.norteno-morelia');
+	})->name('eventos.norteno-morelia');
+
 
 	Route::get('compra', function(){
-		return view('bolematico.compra');
-	})->name('bolematico.compra');
+		return view('eventos.compra');
+	})->name('eventos.compra');
 });
 
 // Se envia el pedido a Paypal
