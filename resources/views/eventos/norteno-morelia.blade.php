@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Bolematico | @yield('title','Eventos')</title>
+	<title>El Norteño en Morelia | Bolematico</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/materialize.min.css')}}">
@@ -326,7 +326,7 @@
 										<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: (443) 312 4639</p></li>
 										<li><i class="medium material-icons">description</i><p><strong>FAX</strong>: No disponible</p></li>
 										<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-										<li><i class="medium material-icons">language</i><p><strong>PÁGINA WEB</strong>: <a title="website" href="http://ceconexpo.com/teatro-morelos/" target="_blank">http://ceconexpo.com/teatro-morelos/</a></p></li>
+										<li><i class="medium material-icons">language</i><p><strong>PÁGINA WEB</strong>: <a title="website" href="http://www.rsviajes.com/" target="_blank">http://www.rsviajes.com/</a></p></li>
 									</ul>
 								</div>
 
@@ -373,7 +373,10 @@
 				$('.owl-carousel').owlCarousel({
 					items:1,
 					margin: 25,
-					loop: true
+					loop: true, 
+					autoplay:true,
+					autoplayTimeout:4000,
+					autoplayHoverPause:true
 				});
 
 				$("#zona").change(function(){

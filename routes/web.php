@@ -52,6 +52,10 @@ Route::group(['prefix'=>'eventos'],function(){
 		return view('eventos.norteno-morelia');
 	})->name('eventos.norteno-morelia');
 
+	Route::get('norteno-zamora', function(){
+		return view('eventos.norteno-zamora');
+	})->name('eventos.norteno-zamora');
+
 
 	Route::get('compra', function(){
 		return view('eventos.compra');
