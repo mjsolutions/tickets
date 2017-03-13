@@ -242,7 +242,7 @@
 											<p>9:00 pm.</p>
 										</div>
 										<div class="card-action">
-											<a href="{{ route('eventos.norteno-morelia') }}">Detalles</a>
+											<a href="{{ url('eventos/norteno-morelia') }}">Detalles</a>
 										</div>
 									</div>
 								</div>
@@ -251,16 +251,18 @@
 							<div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
-										<img src="{{asset('img/sofia.jpg')}}">
+										<img src="{{asset('img/norteno-uruapan.jpeg')}}">
 									</div>
 									<div class="card-stacked">
 										<div class="card-content">
-											<h6><strong>Sofia Niño de Rivera</strong></h6>
-											<p>Teatro Morelos</p>
-											<p>02 de Marzo</p>
+											<h6><strong>El Norteño</strong></h6>
+											<p><i>Uruapan</i></p>
+											<p>La Reina Discoteque</p>
+											<p>16 de Marzo</p>
+											{{-- <p>9:30 pm.</p> --}}
 										</div>
 										<div class="card-action">
-											<a href="{{ route('bolematico.sofia') }}">Detalles</a>
+											<a href="{{ url('eventos/norteno-uruapan') }}">Detalles</a>
 										</div>
 									</div>
 								</div>
@@ -269,19 +271,18 @@
 							<div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
-										<img src="{{asset('img/saldana-cuernavaca.jpg')}}">
+										<img src="{{asset('img/norteno-zamora.jpeg')}}">
 									</div>
 									<div class="card-stacked">
 										<div class="card-content">
-											<h6><strong>Alan Saldaña</strong></h6>
-											{{-- <p>Cuernavaca</p> --}}
-											<p><i>Clasico Cuerna</i></p>
-											<p>10 de Marzo</p>
-											<p>11:30 pm.</p>
-											<p class="center-align grey lighten-2 mt-10"><b>$280</b></p>
+											<h6><strong>El Norteño</strong></h6>
+											<p><i>Zamora</i></p>
+											<p>Diablo Wings</p>
+											<p>15 de Marzo</p>
+											{{-- <p>9:00 pm.</p> --}}
 										</div>
-										<div class="card-action nopadding center-align">
-											<p class="orange-text">Boletos en taquilla</p>
+										<div class="card-action">
+											<a href="{{ url('eventos/norteno-zamora') }}">Detalles</a>
 										</div>
 									</div>
 								</div>
@@ -290,44 +291,24 @@
 							<div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
-										<img src="{{asset('img/saldana-metepec.jpg')}}">
+										<img src="{{asset('img/norteno-zitacuaro.jpeg')}}">
 									</div>
 									<div class="card-stacked">
 										<div class="card-content">
-											<h6><strong>Alan Saldaña</strong></h6>
-											{{-- <p>Cuernavaca</p> --}}
-											<p><i>19 Comedy Bar</i></p>
-											<p>09 de Marzo</p>
-											<p>10:30 pm.</p>
-											<p class="center-align grey lighten-2 mt-10"><b>$350</b></p>
+											<h6><strong>El Norteño</strong></h6>
+											<p><i>Zitacuaro</i></p>
+											<p>Up</p>
+											<p>17 de Marzo</p>
+											{{-- <p>9:00 pm.</p> --}}
 										</div>
-										<div class="card-action nopadding center-align">
-											<p class="orange-text">Boletos en taquilla</p>
+										<div class="card-action">
+											<a href="{{ url('eventos/norteno-zitacuaro') }}">Detalles</a>
 										</div>
 									</div>
 								</div>
 							</div>
 
-							<div class="col m4">
-								<div class="card horizontal hoverable">
-									<div class="card-image">
-										<img src="{{asset('img/saldana-zitacuaro.jpg')}}">
-									</div>
-									<div class="card-stacked">
-										<div class="card-content">
-											<h6><strong>Alan Saldaña</strong></h6>
-											{{-- <p>Cuernavaca</p> --}}
-											<p><i>Up</i></p>
-											<p>11 de Marzo</p>
-											<p>9:00 pm.</p>
-											<p class="center-align grey lighten-2 mt-10"><b>$280</b></p>
-										</div>
-										<div class="card-action nopadding center-align">
-											<p class="orange-text">Boletos en taquilla</p>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 
 
 							<div class="col m4">

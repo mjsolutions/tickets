@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>El Norteño en Zamora | Bolematico</title>
+	<title>El Norteño en Zitacuaro | Bolematico</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/materialize.min.css')}}">
@@ -41,7 +41,7 @@
 												<header>
 													<div class="col s12 blue">Precios por entrada</div>
 												</header>
-												<div class="price col s12"><span>$420 / $320</span></div>
+												<div class="price col s12"><span>$320</span></div>
 												
 											</div>
 										</div>
@@ -60,7 +60,7 @@
 									<!-- ## SLIDER ## -->
 									<div class="col s4">
 										<div class="owl-carousel owl-theme mt-30">
-											<div class="item" data-merge="1"><img src="{{ asset('img/norteno-zamora.jpeg') }}"></div>
+											<div class="item" data-merge="1"><img src="{{ asset('img/norteno-zitacuaro.jpeg') }}"></div>
 											<div class="item" data-merge="1"><img src="{{ asset('img/norteno1.jpg') }}"></div>
 											<div class="item" data-merge="1"><img src="{{ asset('img/norteno2.jpg') }}"></div>
 										</div>
@@ -84,13 +84,13 @@
 
 
 							<div class="row">
-								<div class="col s12 mt-30">
-									<h5>Diablo Wings</h5>
+								<div class=" col s12 mt-30">
+									<h5>Up</h5>
 								</div>
 								<div class="col s6">									
 									<!-- ## VENUE MAP ## -->
 									<div class="qcEventlayout">
-										<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14998.649612371011!2d-102.290882!3d19.980695!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6dad7dee7bbb895e!2sDiablo+Wings!5e0!3m2!1ses!2smx!4v1488664690591" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+										<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15050.629420208927!2d-100.3437235!3d19.4272052!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1953734ef7a74bc4!2sUp+Zitacuaro!5e0!3m2!1ses!2smx!4v1488756754545" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 									</div>
 									
 								</div>
@@ -98,11 +98,11 @@
 								<!-- ## ADDRESS LIST ## -->
 								<div class="col s6">
 									<ul class="qcAddress">
-										<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Martinez de Navarrete 20, Nueva Luneta, Centro, 59675 Zamora, MICH</p></li>
-										<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>:  044 33 2078 0985</p></li>
+										<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Joaquín Amaro oriente #71 61514 Heroica Zitácuaro, Mich.</p></li>
+										<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 715 153 3501</p></li>
 										<li><i class="medium material-icons">description</i><p><strong>FAX</strong>: No disponible</p></li>
 										<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-										<li><i class="medium material-icons">language</i><p><strong>Facebook</strong>: <a title="website" href="https://www.facebook.com/diablohotwings/" target="_blank">https://www.facebook.com/diablohotwings/</a></p></li>
+										<li><i class="medium material-icons">language</i><p><strong>Facebook</strong>: <a title="website" href="https://www.facebook.com/Up-Zitacuaro-1811507289063276/" target="_blank">https://www.facebook.com/Up-Zitacuaro-1811507289063276/</a></p></li>
 									</ul>
 								</div>
 							</div>
@@ -118,23 +118,73 @@
 								</div>
 							</div>
 							
-							<div class="mb-15 col s12 mt-30">
-								<h5>Diablos Wings</h5>
-							</div>
-							<div class="col m6">
-								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14998.649612371011!2d-102.290882!3d19.980695!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6dad7dee7bbb895e!2sDiablo+Wings!5e0!3m2!1ses!2smx!4v1488664690591" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
-							</div>
-							
-							<div class="col m6">
-								<ul class="qcAddress">
-									<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Av. Martinez de Navarrete 20, Col. Nueva Luneta, Centro, 59675 Zamora, MICH</p></li>
-									<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>:  044 33 2078 0985</p></li>
-									<li><i class="medium material-icons">description</i><p><strong>FAX</strong>: No disponible</p></li>
-									<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-									<li><i class="medium material-icons">language</i><p><strong>Facebook</strong>: <a title="website" href="https://www.facebook.com/diablohotwings/" target="_blank">https://www.facebook.com/diablohotwings/</a></p></li>
-								</ul>
-							</div>
+							<div class="row">
+								<div class=" col s12 mt-30">
+									<h5>Up</h5>
+								</div>
+								<div class="col s6">									
+									<!-- ## VENUE MAP ## -->
+									<div class="qcEventlayout">
+										<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15050.629420208927!2d-100.3437235!3d19.4272052!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1953734ef7a74bc4!2sUp+Zitacuaro!5e0!3m2!1ses!2smx!4v1488756754545" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+									</div>
+									
+								</div>
+								
+								<!-- ## ADDRESS LIST ## -->
+								<div class="col s6">
+									<ul class="qcAddress">
+										<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Joaquín Amaro oriente #71 61514 Heroica Zitácuaro, Mich.</p></li>
+										<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 715 153 3501</p></li>
+										<li><i class="medium material-icons">description</i><p><strong>FAX</strong>: No disponible</p></li>
+										<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
+										<li><i class="medium material-icons">language</i><p><strong>Facebook</strong>: <a title="website" href="https://www.facebook.com/Up-Zitacuaro-1811507289063276/" target="_blank">https://www.facebook.com/Up-Zitacuaro-1811507289063276/</a></p></li>
+									</ul>
+								</div>
 
+								<div class=" col s12 mt-30">
+									<h5>El Ranchero Chido</h5>
+								</div>
+								<div class="col s6">									
+									<!-- ## VENUE MAP ## -->
+									<div class="qcEventlayout">
+										<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15050.629420208927!2d-100.3437235!3d19.4272052!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1953734ef7a74bc4!2sUp+Zitacuaro!5e0!3m2!1ses!2smx!4v1488756754545" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+									</div>
+									
+								</div>
+								
+								<!-- ## ADDRESS LIST ## -->
+								<div class="col s6">
+									<ul class="qcAddress">
+										<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Cuahutemoc poniente 51 #51 61518 José Ma. Morelos Zitácuaro, Mich.</p></li>
+										<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 715 153 0017</p></li>
+										<li><i class="medium material-icons">description</i><p><strong>FAX</strong>: No disponible</p></li>
+										<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
+										<li><i class="medium material-icons">language</i><p><strong>Facebook</strong>: <a title="website" href="https://www.facebook.com/rodeo.chido/" target="_blank">https://www.facebook.com/rodeo.chido/</a></p></li>
+									</ul>
+								</div>
+
+								<div class=" col s12 mt-30">
+									<h5>María Bonita La Cervecería</h5>
+								</div>
+								<div class="col s6">									
+									<!-- ## VENUE MAP ## -->
+									<div class="qcEventlayout">
+										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6484427721807!2d-100.34539248552572!3d19.42758998688712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2a364b13f9669%3A0x1e4cd86c4e0560f!2sJoaqu%C3%ADn+Amaro+Ote.+77%2C+El+Moral%2C+61514+Zit%C3%A1cuaro%2C+Mich.!5e0!3m2!1ses!2smx!4v1488757649342" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+									</div>
+									
+								</div>
+								
+								<!-- ## ADDRESS LIST ## -->
+								<div class="col s6">
+									<ul class="qcAddress">
+										<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Joaquin Amaro oriente #77 61514 Zitácuaro, Mich.</p></li>
+										<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 715 104 1076</p></li>
+										<li><i class="medium material-icons">description</i><p><strong>FAX</strong>: No disponible</p></li>
+										<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
+										<li><i class="medium material-icons">language</i><p><strong>Facebook</strong>: <a title="website" href="https://www.facebook.com/mariabonita.cerveceria/" target="_blank">https://www.facebook.com/mariabonita.cerveceria/</a></p></li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 

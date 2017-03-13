@@ -15,6 +15,18 @@ Route::get('/', function () {
 	return view('bolematico.index');
 })->name('home');
 
+
+Route::get('contacto', function () {
+	return view('contacto');
+})->name('contacto');
+
+
+Route::post('contactForm', array(
+	'as'	=>	'contactForm',
+	'uses'	=>	'MailController@contactForm',
+));
+
+
 Route::group(['prefix' => 'admin'], function() {
 	Route::resource('users', 'UsersController');
 	Route::get('users/{id}/destroy', [
@@ -36,10 +48,6 @@ Route::group(['prefix'=>'bolematico'],function(){
 		return view('bolematico.index');
 	})->name('bolematico.inicio');
 
-	Route::get('sofia', function(){
-		return view('bolematico.sofia');
-	})->name('bolematico.sofia');
-
 });
 
 /*
@@ -48,18 +56,16 @@ Route::group(['prefix'=>'bolematico'],function(){
 
 Route::group(['prefix'=>'eventos'],function(){
 
-	Route::get('norteno-morelia', function(){
-		return view('eventos.norteno-morelia');
-	})->name('eventos.norteno-morelia');
-
-	Route::get('norteno-zamora', function(){
-		return view('eventos.norteno-zamora');
-	})->name('eventos.norteno-zamora');
-
+	$v = "";
+	Route::get('{view}', function($view){
+		$v = 'eventos.'.$view;
+		return view($v);
+	});
 
 	Route::get('compra', function(){
 		return view('eventos.compra');
 	})->name('eventos.compra');
+
 });
 
 // Se envia el pedido a Paypal
@@ -74,17 +80,6 @@ Route::get('payment/status', array(
 	'uses'	=>	'PaypalIndexController@getPaymentStatus',
 	));
 
-// Rutas para evento de sofia
-Route::post('paymentsofia', array(
-	'as'	=>	'paymentsofia',
-	'uses'	=>	'PaypalSofiaController@postPayment',
-	));
-
-//Paypal redirecciona a esta ruta
-Route::get('paymentsofia/status', array(
-	'as'	=>	'paymentsofia.status',
-	'uses'	=>	'PaypalSofiaController@getPaymentStatus',
-	));
 
 Auth::routes();
 

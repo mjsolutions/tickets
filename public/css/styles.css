@@ -535,13 +535,13 @@ img {
 	font: 100 70px/70px "Roboto", Helvetica, Arial, sans-serif;
 	letter-spacing: -2px;
 }
-.qcTabTitle:after {
+/*.qcTabTitle:after {
 	position: absolute;
 	margin-top: 50px;
 	content: "";
 	width: 50px;
 	border-top: 4px #444 solid;
-}
+}*/
 .qcTabTitle.no-border {
 	border: 0;
 }

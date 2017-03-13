@@ -20,7 +20,7 @@
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down mt-15">
         <li><a class="menu page-scroll" href="{{ route('home') }}#eventos">Eventos</a></li>
-          <li><a class="menu" href="#">Contacto</a></li>
+          <li><a class="menu" href="{{ route('contacto') }}">Contacto</a></li>
           <li><a class="menu" href="#">Ayuda</a></li>
           {{-- <li><a class="menu" href="">Mi cuenta</a></li> --}}
            @if (Auth::guest())
