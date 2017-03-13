@@ -40,6 +40,6 @@ class ContactForm extends Mailable
             // ->from($form->email, $form->name)
             // ->subject($form->subject);
         ->from($this->form['email'], $this->form['email'])
-        ->subject($this->form['subject']);
+        ->subject('WebForm Bolematico | '.$this->form['subject']);
     }
 }

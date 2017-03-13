@@ -24,7 +24,7 @@
 					
 					<h3 class="center-align white-text">¡GRACIAS POR TU MENSAJE!</h3>
 					<div class="divider col-center col s10"></div>
-					<p class="center-align white-text">En breve nos pondreomos en contacto contigo</p>
+					<p class="center-align white-text">En breve nos pondremos en contacto contigo</p>
 
 				</div>
 
@@ -71,7 +71,7 @@
 						<div class="input-field col s12">
 
 							{!! Form::label('message','Mensaje') !!}
-							{!! Form::textarea('message', null, ['class' => 'materialize-textarea', 'length' => 20,'required']) !!}
+							{!! Form::textarea('message', null, ['class' => 'materialize-textarea','required']) !!}
 
 						</div>
 
