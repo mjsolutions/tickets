@@ -19,16 +19,16 @@
 			<div id="inicio"></div>
 			<div id="contenido">
 				<div class='row'>
-					<div class='col s8' style="float: none; margin: 0 auto;">
+					<div class='col s10 m6' style="float: none; margin: 0 auto;">
 						<div class='card horizontal hoverable'>
 							<div class='card-stacked'>
 								<div class='card-content'>
-									<div class="mensaje_inicio">
+									<div class="mensaje_inicio hide-on-small-only">
 										<p><strong>Haz click en ver todos los eventos o usa los controles que vienen en la parte inferior de este mensaje, para encontrar más rápidamente el evento que buscas.</strong></p>
 									</div>
 
 									<div class="row">
-										<div class="input-field col s4">
+										<div class="input-field col m4 s12">
 											<select multiple>
 												<option value="" disabled selected>Eliga un estado</option>
 												<option value="1">Aguascalientes</option>
@@ -66,7 +66,7 @@
 											<label>Estado</label>
 										</div>
 
-										<div class="input-field col s4">
+										<div class="input-field col m4 s12">
 											<select multiple>
 												<option value="" disabled selected>Eliga una Ciudad</option>
 												<option value="1">Aguascalientes</option>
@@ -105,7 +105,7 @@
 											<label>Ciudad</label>
 										</div>
 
-										<div class="input-field col s4">
+										<div class="input-field col m4 s12">
 											<select multiple>
 												<option value="" disabled selected>Eliga una categoría</option>
 												<option value="1">Conciertos</option>
@@ -375,8 +375,8 @@
 	<script>
 		$(document).ready(function(){
 			$(".button-collapse").sideNav({
-				 edge: 'right', // Choose the horizontal origin
-				 closeOnClick: true
+				 edge: 'left', // Choose the horizontal origin
+				 // closeOnClick: true
 				});
 			if($('#flash-overlay-modal')[0]){
 				$('#flash-overlay-modal').openModal();   

@@ -14,10 +14,10 @@
   <nav class="transparent-header">
     <div class="nav-wrapper">
       <div class="container row">
-        <a href="{{ route('home') }}#home" class="brand-logo col s1 mt-10 page-scroll">
-          <img class="responsive-img" src="{{asset('img/logotipo-nuevo-negro.svg')}}" style="width: 70%">
+        <a href="{{ route('home') }}#home" class="brand-logo col l1 m1 offset-m5 s2 offset-s5 mt-10 page-scroll">
+          <img class="responsive-img" src="{{asset('img/logotipo-nuevo-negro.svg')}}">
         </a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black-text mt-15">menu</i></a>
         <ul class="right hide-on-med-and-down mt-15">
         <li><a class="menu page-scroll" href="{{ route('home') }}#eventos">Eventos</a></li>
           <li><a class="menu" href="{{ route('contacto') }}">Contacto</a></li>
@@ -30,21 +30,42 @@
            @endif
         </ul>
       </div>
-      <ul class="center-align side-nav" id="mobile-demo">
-        <div class="row mb-0">
-          <div class="col s10 col-center mt-30">
-            <a href="">
+      <ul class="side-nav" id="mobile-demo">
+        <li class="row">
+          <div class="col s8 col-center mt-30">
+            
               <img class="responsive-img" src="{{asset('img/logotipo-negro-tipo2.svg')}}">
-            </a>
+            
           </div>
-        </div>
+        </li>
         <div class="row">
           <div class="col s8 col-center divider"></div>
         </div>
-        <li><a href="{{ route('home') }}#eventos">Eventos</a></li>
-        <li><a href="">Contacto</a></li>
-        <li><a href="">Ayuda</a></li>
-        <li><a href="">Mi cuenta</a></li>
+        <li class="pl-30"><a href="{{ route('home') }}#eventos">Home</a></li>
+        <li class="pl-30"><a href="{{ route('contacto') }}">Contacto</a></li>
+        <li class="pl-30"><a href="">Ayuda</a></li>
+        <li class="pl-30"><div class="col s8 col-center divider"></div></li>
+         @if (Auth::guest())
+        <li class="pl-30"><a class="menu" href="{{ url('/login') }}">Login</a></li>            
+        @else
+        <li class="pl-30">
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header">{{ Auth::user()->name }} <i class="material-icons right ml-0">arrow_drop_down</i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                    </form>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        @endif
       </ul>
     </div>
   </nav>

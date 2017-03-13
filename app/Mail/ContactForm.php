@@ -37,9 +37,8 @@ class ContactForm extends Mailable
     {
         // dd($this->form);
         return $this->view('emails.contactform')
-            // ->from($form->email, $form->name)
-            // ->subject($form->subject);
-        ->from($this->form['email'], $this->form['email'])
+        // ->from('contacto@bolematico.mx', $this->form['name']) //aceptar cualquier mail aunque no exista
+        ->from($this->form['email'], $this->form['name']) //acepta solo mails que existen
         ->subject('WebForm Bolematico | '.$this->form['subject']);
     }
 }

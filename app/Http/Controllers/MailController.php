@@ -14,7 +14,7 @@ class MailController extends Controller
 
     	$form = $request->all();
 
-    	Mail::to('martinalanis.dev@gmail.com', 'Martin Alanis')
+    	Mail::to('arquimides@bolematico.com.mx', 'Arquimides Sanchez')
 			->send(new ContactForm($form));
 
 		$response = true;

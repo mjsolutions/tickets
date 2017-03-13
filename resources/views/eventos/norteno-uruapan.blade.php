@@ -22,8 +22,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col s10 offset-s1">
-					<ul id="qcTabNav" class="tabs">
-						<li class="tab col s3" style="background-color: darkorange;"><a href="#test-swipe-1" style="background-color: darkorange;" class="active"><i class="icon-book-open icon"></i> <span style="color: white;">Detalles</span></a></li>					
+					<ul class="tabs">
+						<li class="tab col s3"><a href="#test-swipe-1" class="active"><i class="icon-book-open icon"></i> <span>Detalles</span></a></li>					
 						<li class="tab col s3"><a href="#test-swipe-2"><i class="icon-book-open icon"></i> <span>Lugar</span></a></li>
 						<li class="tab col s3"><a href="#test-swipe-3"><i class="icon-book-open icon"></i> <span>Puntos de Venta</span></a></li>
 					</ul>
@@ -34,7 +34,15 @@
 								<div class="qcTabTitle"><h4>Detalles<span> Conoce más sobre este evento</span></h4></div>
 								
 								<div class="row">
-									<div class="col s8">
+									<div class="col m8 s12">
+
+										<div class="col s12 hide-on-med-and-up">
+											<div class="owl-carousel owl-theme mt-30">
+												<div class="item" data-merge="1"><img src="{{ asset('img/norteno-uruapan.jpeg') }}"></div>
+												<div class="item" data-merge="1"><img src="{{ asset('img/norteno1.jpg') }}"></div>
+												<div class="item" data-merge="1"><img src="{{ asset('img/norteno2.jpg') }}"></div>
+											</div>
+										</div>
 
 										<div class="qcPricing col s12 center hoverable mb-15 mt-30">
 											<div class="box ">
@@ -58,7 +66,7 @@
 									</div>
 									
 									<!-- ## SLIDER ## -->
-									<div class="col s4">
+									<div class="col m4 hide-on-small-only">
 										<div class="owl-carousel owl-theme mt-30">
 											<div class="item" data-merge="1"><img src="{{ asset('img/norteno-uruapan.jpeg') }}"></div>
 											<div class="item" data-merge="1"><img src="{{ asset('img/norteno1.jpg') }}"></div>
@@ -158,8 +166,8 @@
 		<script>
 			$(document).ready(function(){
 				$(".button-collapse").sideNav({
-				 edge: 'right', // Choose the horizontal origin
-				 closeOnClick: true
+				 edge: 'left', // Choose the horizontal origin
+				 // closeOnClick: true
 				});
 
 				$('.owl-carousel').owlCarousel({

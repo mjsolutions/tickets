@@ -95,8 +95,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col s10 offset-s1">
-					<ul id="qcTabNav" class="tabs">
-						<li class="tab col s3" style="background-color: darkorange;"><a href="#test-swipe-1" style="background-color: darkorange;" class="active"><i class="icon-book-open icon"></i> <span style="color: white;">Buscar boletos</span></a></li>
+					<ul class="tabs">
+						<li class="tab col s3"><a href="#test-swipe-1" class="active"><i class="icon-book-open icon"></i> <span>Buscar boletos</span></a></li>
 						<li class="tab col s3"><a href="#test-swipe-2"><i class="icon-book-open icon"></i> <span>Descripción</span></a></li>
 						<li class="tab col s3"><a href="#test-swipe-3"><i class="icon-book-open icon"></i> <span>Lugar</span></a></li>
 						<li class="tab col s3"><a href="#test-swipe-4"><i class="icon-book-open icon"></i> <span>Puntos de Venta</span></a></li>
@@ -156,7 +156,7 @@
 							<section id="compra">
 								<div class="dblBorder">
 									<div class="row">
-										<div class="col s12">
+										<div class="col s12 hide-on-small-only">
 											<div class="qcEventlayout">
 												<div class="row">
 													<div id="canvas-wrapper" style="margin: 0 auto;">
@@ -201,7 +201,7 @@
 												{!! Form::close() !!}
 											@else
 												<p class="center-align">Debes iniciar sesion para poder realizar la compra</p>
-												<div class="col s2 col-center">
+												<div class="col s6 m3 col-center">
 													<a href="{{ route('login') }}" class="btn btn-block waves-light orange accent-3">Login</a>
 												</div>
 											@endif
@@ -366,8 +366,8 @@
 		<script>
 			$(document).ready(function(){
 				$(".button-collapse").sideNav({
-				 edge: 'right', // Choose the horizontal origin
-				 closeOnClick: true
+				 edge: 'left', // Choose the horizontal origin
+				 // closeOnClick: true
 				});
 
 				$('.owl-carousel').owlCarousel({

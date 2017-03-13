@@ -48,20 +48,20 @@
 
 					<div class="row">
 
-						<div class="input-field col s4">
+						<div class="input-field col m4 s12">
 
 							{!! Form::label('name','Nombre') !!}
 							{!! Form::text('name', null, ['class' => 'validate', 'required']) !!}
 
 						</div>
-						<div class="input-field col s4">
+						<div class="input-field col m4 s12">
 
 							{!! Form::label('email','Email') !!}
 							{!! Form::email('email', null, ['class' => 'validate', 'required']) !!}
 
 						</div>
 
-						<div class="input-field col s4">
+						<div class="input-field col m4 s12">
 
 							{!! Form::label('subject','Asunto') !!}
 							{!! Form::text('subject', null, ['class' => 'validate', 'required']) !!}
@@ -121,9 +121,9 @@
 	<script>
 		$(document).ready(function(){
 			$(".button-collapse").sideNav({
-			 edge: 'right', // Choose the horizontal origin
-			 closeOnClick: true
-			});
+				 edge: 'left', // Choose the horizontal origin
+				 // closeOnClick: true
+				});
 
 			$('.owl-carousel').owlCarousel({
 				items:1,
