@@ -231,58 +231,18 @@
 							<div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
-										<img src="{{asset('img/norteno.jpeg')}}">
+										<img src="{{asset('img/franco.jpg')}}">
 									</div>
 									<div class="card-stacked">
 										<div class="card-content">
-											<h6><strong>El Norteño</strong></h6>
-											<p><i>Morelia</i></p>
-											<p>Teatro Morelos</p>
-											<p>19 de Marzo</p>
-											<p>9:00 pm.</p>
-										</div>
-										<div class="card-action">
-											<a href="{{ url('eventos/norteno-morelia') }}">Detalles</a>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col m4">
-								<div class="card horizontal hoverable">
-									<div class="card-image">
-										<img src="{{asset('img/norteno-uruapan.jpeg')}}">
-									</div>
-									<div class="card-stacked">
-										<div class="card-content">
-											<h6><strong>El Norteño</strong></h6>
-											<p><i>Uruapan</i></p>
-											<p>La Reina Discoteque</p>
-											<p>16 de Marzo</p>
-											{{-- <p>9:30 pm.</p> --}}
-										</div>
-										<div class="card-action">
-											<a href="{{ url('eventos/norteno-uruapan') }}">Detalles</a>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col m4">
-								<div class="card horizontal hoverable">
-									<div class="card-image">
-										<img src="{{asset('img/norteno-zamora.jpeg')}}">
-									</div>
-									<div class="card-stacked">
-										<div class="card-content">
-											<h6><strong>El Norteño</strong></h6>
-											<p><i>Zamora</i></p>
-											<p>Diablo Wings</p>
-											<p>15 de Marzo</p>
+											<h6><strong>Franco Escamilla</strong></h6>
+											<p><i>Guanajuato</i></p>
+											{{-- <p>Teatro Morelos</p> --}}
+											{{-- <p>22 de Junio</p> --}}
 											{{-- <p>9:00 pm.</p> --}}
 										</div>
-										<div class="card-action">
-											<a href="{{ url('eventos/norteno-zamora') }}">Detalles</a>
+										<div class="card-action orange-text" style="padding: 0 20px;">
+											<p>Proximamente</p>
 										</div>
 									</div>
 								</div>
@@ -291,46 +251,103 @@
 							<div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
-										<img src="{{asset('img/norteno-zitacuaro.jpeg')}}">
+										<img src="{{asset('img/franco.jpg')}}">
 									</div>
 									<div class="card-stacked">
 										<div class="card-content">
-											<h6><strong>El Norteño</strong></h6>
-											<p><i>Zitacuaro</i></p>
-											<p>Up</p>
-											<p>17 de Marzo</p>
+											<h6><strong>Franco Escamilla</strong></h6>
+											<p><i>Celaya</i></p>
+											{{-- <p>Teatro Morelos</p> --}}
+											{{-- <p>23 de Junio</p> --}}
 											{{-- <p>9:00 pm.</p> --}}
 										</div>
-										<div class="card-action">
-											<a href="{{ url('eventos/norteno-zitacuaro') }}">Detalles</a>
+										<div class="card-action orange-text" style="padding: 0 20px;">
+											<p>Proximamente</p>
 										</div>
 									</div>
 								</div>
 							</div>
 
+							<div class="col m4">
+								<div class="card horizontal hoverable">
+									<div class="card-image">
+										<img src="{{asset('img/franco.jpg')}}">
+									</div>
+									<div class="card-stacked">
+										<div class="card-content">
+											<h6><strong>Franco Escamilla</strong></h6>
+											<p><i>San Miguel de Allende</i></p>
+											{{-- <p>Teatro Morelos</p> --}}
+											{{-- <p>24 de Junio</p> --}}
+											{{-- <p>9:00 pm.</p> --}}
+										</div>
+										<div class="card-action orange-text" style="padding: 0 20px;">
+											<p>Proximamente</p>
+										</div>
+									</div>
+								</div>
+							</div>
 							
-
-
 							<div class="col m4">
 								<div class="card horizontal hoverable">
 									<div class="card-image">
-										<img src="{{asset('img/ska.jpeg')}}">
+										<img src="{{asset('img/franco.jpg')}}">
 									</div>
 									<div class="card-stacked">
 										<div class="card-content">
-											<h6><strong>Ska & Reggae Sessions</strong></h6>
-											{{-- <p>Cuernavaca</p> --}}
-											<p><i>Salón Arena</i></p>
-											<p>25 de Marzo</p>
-											<p>6:00 pm.</p>
-											{{-- <p class="center-align grey lighten-2 mt-10"><b>$280</b></p> --}}
+											<h6><strong>Franco Escamilla</strong></h6>
+											<p><i>Morelia</i></p>
+											{{-- <p>Teatro Morelos</p> --}}
+											{{-- <p>6 y 7 de Julio</p> --}}
+											{{-- <p>9:00 pm.</p> --}}
 										</div>
-										<div class="card-action nopadding center-align">
-											<p class="orange-text">Boletos en taquilla</p>
+										<div class="card-action orange-text" style="padding: 0 20px;">
+											<p>Proximamente</p>
 										</div>
 									</div>
 								</div>
 							</div>
+
+							<div class="col m4">
+								<div class="card horizontal hoverable">
+									<div class="card-image">
+										<img src="{{asset('img/daniel.jpg')}}">
+									</div>
+									<div class="card-stacked">
+										<div class="card-content">
+											<h6><strong>Daniel Sosa</strong></h6>
+											<p><i>Morelia</i></p>
+											{{-- <p>Teatro Morelos</p> --}}
+											{{-- <p>16 de Junio</p> --}}
+											{{-- <p>9:00 pm.</p> --}}
+										</div>
+										<div class="card-action orange-text" style="padding: 0 20px;">
+											<p>Proximamente</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col m4">
+								<div class="card horizontal hoverable">
+									<div class="card-image">
+										<img src="{{asset('img/alex-fernandez.jpeg')}}">
+									</div>
+									<div class="card-stacked">
+										<div class="card-content">
+											<h6><strong>Alex Fernandez</strong></h6>
+											<p><i>Morelia</i></p>
+											{{-- <p>Teatro Morelos</p> --}}
+											{{-- <p>30 de Junio</p> --}}
+											{{-- <p>9:00 pm.</p> --}}
+										</div>
+										<div class="card-action orange-text" style="padding: 0 20px;">
+											<p>Proximamente</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							
 
 
 						</ul>
