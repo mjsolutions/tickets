@@ -1,120 +1,62 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>Bolematico | @yield('title','Login')</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/materialize.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
-    <link href="https://file.myfontastic.com/p33ryNdn2ug99gf3MgkiUK/icons.css" rel="stylesheet">
-</head>
-<body class="bg-1">
-    <header>
-        @include('bolematico.nav')
-    </header>
-        <main>
+@extends('layouts.main')
 
-            <div class="row">
-                <div class="col s12 m4 col-center mt-50">
+@section('title', 'Inicio')
 
-                    <form class="card  col s12" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
+@section('description', '')
 
-                        <p class="card-title center-align">Bienvenido</p>
-                        
-                        <div class="card-content">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="email" type="email" class="validate" name="email" value="{{ old('email') }}" required autofocus>
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
-                                    <label for="email">Ingresa tu email</label>     
-                                </div>
-                            </div>
-                                    
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">lock_outline</i>
-                                    <input id="password" type="password" class="validate" name="password" required>
-                                    @if ($errors->has('password'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
-                                    <label for="password" class="validate">Contraseña</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s5 col-center">                            
-                                    <button type="submit" class="waves-effect waves-light btn pull-right">
-                                        Ingresar
-                                    </button>
-                                </div>
-                            </div>
+@section('styles')
+
+body {
+    background: url('{{ asset('img/slide1.jpg') }}')no-repeat center center fixed;
+    background-size: cover;
+}
+
+@endsection
+
+@section('content')
+
+<div class="row">
+    <div class="col s12 m4 col-center mt-50">
+
+        <form class="card col s12" method="POST" action="{{url('/login')}}">
+                {{ csrf_field() }}
+                
+                <p class="center-align mb-15">BIENVENIDO</p>
+
+                <div class="divider mb-15"></div>
+
+                <div class="card-content">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="email" type="email" class="validate" name="email" value="{{ old('email') }}" required autofocus>
+                            <label for="email">Ingresa tu email</label>     
                         </div>
-
-                        <div class="card-action">
-                            <div class="col s8 mb-30 center-align">
-                                {{-- <a class="blue-text" href="{{ url('/password/reset') }}">
-                                    ¿Olvidaste tu contraseña?
-                                </a> --}}
-                                <a class="blue-text" href="#!">
-                                    ¿Olvidaste tu contraseña?
-                                </a>
-                            </div>
-                            <div class="col s4 mb-30 center-align">
-                                <a class="blue-text" href="{{ url('/register') }}">Registrarse</a>
-                            </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock_outline</i>
+                            <input id="password" type="password" class="validate" name="password" required>
+                            <label for="password" class="validate">Contraseña</label>
                         </div>
-                    </form>
-
-                </div>
-            </div>
-        </main>
-
-    <footer class="page-footer grey darken-3" style="border-top: 2px solid #2bbbad">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Bolematico.com.mx</h5>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6">
-                        Todos los derechos reservados.                  
                     </div>
-                    <div class="col l6 right-align">
-                        © {!! date('Y') !!}
+
+                    <div class="row">
+                        <div class="input-field col s6 nopadding">                            
+                            <a class="blue-text center-align waves-effect waves-light btn-flat btn-block" href="{{ url('/register') }}">Registrarse</a>
+                        </div>
+                        <div class="input-field col s6 nopadding">                            
+                            <input type="submit" class="blue waves-effect waves-teal btn btn-block">
+                        </div>                      
                     </div>
                 </div>
-            </div>
-        </div>
-    </footer>
+                <div class="divider"></div>
+                <div class="row  mb-0">
+                    <div class="mt-10 mb-15 center-align">
+                        <a class="red-text underline" href="!#">Olvide mi contraseña</a>
+                    </div>
+                </div>
+            </form>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="{{asset('js/materialize.js')}}"></script>
-    <script>
-        $(document).ready(function(){
-            $(".button-collapse").sideNav({
-                 edge: 'right', // Choose the horizontal origin
-                 closeOnClick: true
-                });
+    </div>
+</div>
 
-            @if($errors)
-            @foreach($errors->all() as $error)
-            Materialize.toast('{{ $error }}', 4000);
-            @endforeach
-            @endif
-
-        });
-    </script>
-</body>
-</html>
+@endsection

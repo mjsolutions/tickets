@@ -11,21 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-	return view('bolematico.index');
-})->name('home');
+/**
+ * Generales
+ */
 
+Route::get('/', function () { return view('index'); })->name('index');
 
-Route::get('contacto', function () {
-	return view('contacto');
-})->name('contacto');
+Route::get('/contacto', function () { return view('contacto'); })->name('contacto');
 
+Route::get('/quienes-somos', function () { return view('quienes-somos'); })->name('quienes-somos');
+
+/**
+ * Email
+ */
 
 Route::post('contactForm', array(
 	'as'	=>	'contactForm',
 	'uses'	=>	'MailController@contactForm',
 ));
 
+/**
+ * Control Panel
+ */
 
 Route::group(['prefix' => 'admin'], function() {
 	Route::resource('users', 'UsersController');
@@ -39,21 +46,10 @@ Route::group(['prefix' => 'admin'], function() {
 	})->name('paypal.index');
 });
 
-/*
-| Rutas para usuarios
-*/
-Route::group(['prefix'=>'bolematico'],function(){
 
-	Route::get('inicio', function(){
-		return view('bolematico.index');
-	})->name('bolematico.inicio');
-
-});
-
-/*
-| Rutas para eventos
-*/
-
+/**
+ * Eventos
+ */
 Route::group(['prefix'=>'eventos'],function(){
 
 	$v = "";
@@ -68,7 +64,9 @@ Route::group(['prefix'=>'eventos'],function(){
 
 });
 
-// Se envia el pedido a Paypal
+/**
+ * Paypal
+ */
 Route::post('payment', array(
 	'as'	=>	'payment',
 	'uses'	=>	'PaypalIndexController@postPayment',
@@ -80,11 +78,7 @@ Route::get('payment/status', array(
 	'uses'	=>	'PaypalIndexController@getPaymentStatus',
 	));
 
-
+/**
+ * Autenticacion
+ */
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-// Route::get('api/getFilas', function() {
-// 	return json_encode('value');
-// });

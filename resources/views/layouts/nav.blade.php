@@ -14,17 +14,17 @@
   <nav class="transparent-header">
     <div class="nav-wrapper">
       <div class="container row">
-        <a href="{{ route('home') }}#home" class="brand-logo col l1 m1 offset-m5 s2 offset-s5 mt-10 page-scroll">
+        <a href="{{ route('index') }}#home" class="brand-logo col l1 m1 offset-m5 s2 offset-s5 mt-10 page-scroll">
           <img class="responsive-img" src="{{asset('img/logotipo-nuevo-negro.svg')}}">
         </a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black-text mt-15">menu</i></a>
         <ul class="right hide-on-med-and-down mt-15">
-        <li><a class="menu page-scroll" href="{{ route('home') }}#eventos">Eventos</a></li>
+        <li><a class="menu page-scroll" href="{{ route('index') }}#eventos">Eventos</a></li>
           <li><a class="menu" href="{{ route('contacto') }}">Contacto</a></li>
           <li><a class="menu" href="#">Ayuda</a></li>
           {{-- <li><a class="menu" href="">Mi cuenta</a></li> --}}
            @if (Auth::guest())
-            <li><a class="menu" href="{{ url('/login') }}">Login</a></li>            
+            <li><a class="menu" id="modal-login-open" href="#modal-login">Login</a></li>            
            @else
             <li><a class="menu dropdown-button" href="#!" data-activates="user_options">{{ Auth::user()->name }}<i class="material-icons right ml-0" style="margin-top: -5px;">arrow_drop_down</i></a></li>
            @endif
@@ -41,7 +41,7 @@
         <div class="row">
           <div class="col s8 col-center divider"></div>
         </div>
-        <li class="pl-30"><a href="{{ route('home') }}#eventos">Home</a></li>
+        <li class="pl-30"><a href="{{ route('index') }}#eventos">Home</a></li>
         <li class="pl-30"><a href="{{ route('contacto') }}">Contacto</a></li>
         <li class="pl-30"><a href="">Ayuda</a></li>
         <li class="pl-30"><div class="col s8 col-center divider"></div></li>
