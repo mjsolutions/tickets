@@ -129,7 +129,7 @@
 <section id="eventos">
 	<div class="container">
 		<div class="row">
-			<div class="col m3 s12">
+			<div class="col m2 s12">
 				<h1 class="titulo-h1">Eventos <span>(1)</span></h1>
 				<div class="filter-elements">
 					<a class="btn waves-effect waves-light green" href="#!">Todos los Eventos</a>
@@ -205,7 +205,7 @@
 			</div> <!-- //end filter-->
 
 
-			<div class="col m9 s12">
+			<div class="col m10 s12 mb-30">
 				<div class="row header-produktliste">
 					<div class="col m8 s12 modelsearch offset-m2">
 						<div class="input-field col s12">
@@ -215,97 +215,206 @@
 					</div>
 				</div>
 
-				<ul class="row produktliste">
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/alex-metepec.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Alex Fernandez</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Metepec</b></p>
+									<p><i>19 Comedy Bar</i></p>
+									<p>29 de Abril</p>
+									<p>10:00 pm.</p>
+								</div>
+								<a href="{{ url('/eventos/alex-fernandez-metepec') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/oceransky-veracruz.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Edgar Oceransky</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Puerto Veracruz</b></p>
+									<p><i>La puerta de Alcalá</i></p>
+									<p>17 de Mayo</p>
+									<p>9:00 pm.</p>
+								</div>
+								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/oceransky-xalapa.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Edgar Oceransky</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Xalapa, Veracruz</b></p>
+									<p><i>Xcape Xalapa</i></p>
+									<p>18 de Mayo</p>
+									<p>10:00 pm.</p>
+								</div>
+								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/oceransky-orizaba.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Edgar Oceransky</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-0"><b>Orizaba, Veracruz</b></p>
+									<p><i>Mercadito * Comedor Artesanal</i></p>
+									<p>19 de Mayo</p>
+									<p>9:00 pm.</p>
+								</div>
+								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/santiago-morelia.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Santiago Cruz</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Morelia</b></p>
+									<p><i>Teatro Ocampo</i></p>
+									<p>3 de Junio</p>
+									<p>8:30 pm.</p>
+								</div>
+								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
 					
 					<div class="col m4">
-						<div class="card horizontal hoverable">
+						<div class="card horizontal ">
 							<div class="card-image">
 								<img src="{{asset('img/franco.jpg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h6><strong>Franco Escamilla</strong></h6>
-									<p><i>Guanajuato</i></p>
+									<h5><strong>Franco Escamilla</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Guanajuato</b></p>
 									{{-- <p>Teatro Morelos</p> --}}
-									{{-- <p>22 de Junio</p> --}}
+									<p>22 de Junio</p>
 									{{-- <p>9:00 pm.</p> --}}
 								</div>
-								<div class="card-action orange-text" style="padding: 0 20px;">
-									<p>Proximamente</p>
-								</div>
+								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
 
 					<div class="col m4">
-						<div class="card horizontal hoverable">
+						<div class="card horizontal ">
 							<div class="card-image">
 								<img src="{{asset('img/franco.jpg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h6><strong>Franco Escamilla</strong></h6>
-									<p><i>Celaya</i></p>
+									<h5><strong>Franco Escamilla</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Celaya</b></p>
 									{{-- <p>Teatro Morelos</p> --}}
-									{{-- <p>23 de Junio</p> --}}
+									<p>23 de Junio</p>
 									{{-- <p>9:00 pm.</p> --}}
 								</div>
-								<div class="card-action orange-text" style="padding: 0 20px;">
-									<p>Proximamente</p>
-								</div>
+								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
 
 					<div class="col m4">
-						<div class="card horizontal hoverable">
+						<div class="card horizontal ">
 							<div class="card-image">
 								<img src="{{asset('img/franco.jpg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h6><strong>Franco Escamilla</strong></h6>
-									<p><i>San Miguel de Allende</i></p>
+									<h5><strong>Franco Escamilla</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>San Miguel de Allende</b></p>
 									{{-- <p>Teatro Morelos</p> --}}
-									{{-- <p>24 de Junio</p> --}}
+									<p>24 de Junio</p>
 									{{-- <p>9:00 pm.</p> --}}
 								</div>
-								<div class="card-action orange-text" style="padding: 0 20px;">
-									<p>Proximamente</p>
-								</div>
+								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
 					
 					<div class="col m4">
-						<div class="card horizontal hoverable">
+						<div class="card horizontal ">
 							<div class="card-image">
-								<img src="{{asset('img/franco.jpg')}}">
+								<img src="{{asset('img/franco-morelia.jpg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h6><strong>Franco Escamilla</strong></h6>
-									<p><i>Morelia</i></p>
-									{{-- <p>Teatro Morelos</p> --}}
-									{{-- <p>6 y 7 de Julio</p> --}}
-									{{-- <p>9:00 pm.</p> --}}
+									<h5><strong>Franco Escamilla</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10">Morelia</p>
+									<p>Teatro Morelos</p>
+									<p>6 de Julio</p>
+									<p>9:30 pm.</p>
 								</div>
-								<div class="card-action orange-text" style="padding: 0 20px;">
-									<p>Proximamente</p>
-								</div>
+								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
 
 					<div class="col m4">
-						<div class="card horizontal hoverable">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/franco-morelia.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Franco Escamilla</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10">Morelia</p>
+									<p>Teatro Morelos</p>
+									<p>7 de Julio</p>
+									<p>9:30 pm.</p>
+								</div>
+								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
 							<div class="card-image">
 								<img src="{{asset('img/daniel.jpg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h6><strong>Daniel Sosa</strong></h6>
-									<p><i>Morelia</i></p>
+									<h5><strong>Daniel Sosa</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10">Morelia</p>
 									{{-- <p>Teatro Morelos</p> --}}
 									{{-- <p>16 de Junio</p> --}}
 									{{-- <p>9:00 pm.</p> --}}
@@ -317,27 +426,6 @@
 						</div>
 					</div>
 
-					<div class="col m4">
-						<div class="card horizontal hoverable">
-							<div class="card-image">
-								<img src="{{asset('img/alex-fernandez.jpeg')}}">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h6><strong>Alex Fernandez</strong></h6>
-									<p><i>Morelia</i></p>
-									{{-- <p>Teatro Morelos</p> --}}
-									{{-- <p>30 de Junio</p> --}}
-									{{-- <p>9:00 pm.</p> --}}
-								</div>
-								<div class="card-action orange-text" style="padding: 0 20px;">
-									<p>Proximamente</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-				</ul>
 			</div>
 		</div>
 	</div>

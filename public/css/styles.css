@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 @font-face {
 	font-family: 'Glyphter';
 	src: url('../fonts/Glyphter.ttf') format('truetype'),
@@ -9,17 +10,15 @@
 Labels
 ------------ */
 body{
-	display: flex;
-	min-height: 100vh;
-	flex-direction: column;
+	/*display: flex;*/
+	/*font-family: 'Raleway', sans-serif;*/
+	/*min-height: 100vh;*/
+	/*flex-direction: column;*/
 }
-main{
+/*main{
 	flex: 1 0 auto;
 }
-nav {
-	line-height: 100%!important;
-}
-
+*/
 nav .nav-wrapper i {
 	line-height: 100%;
 	height: auto;
@@ -135,6 +134,9 @@ Margin
 .mb-30{
 	margin-bottom: 30px;
 }
+.mb-50{
+	margin-bottom: 50px;
+}
 
 /* ------------
 Heights
@@ -157,9 +159,108 @@ Colors
 .c-blue-grey{
 	color: #37474f;
 }
+
+/* ------------
+Overlays
+------------ */
+.overlay {
+	position: relative;
+}
+
+.overlay .row {
+	position: absolute;
+	top: 20%;
+	left: 0;
+	padding: 0 5%;
+}
+
+.overlay .btn {
+	position: absolute;
+	right: 5%;
+	bottom: 5%;
+
+}
+
+.overlay:before {
+ position: absolute;
+ content: "";
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+
+.overlay-3:before {
+	 background: rgba(0,0,0,0.3);
+}
+
+.overlay-4:before {
+	 background: rgba(0,0,0,0.4);
+}
+
+.overlay-5:before {
+	 background: rgba(0,0,0,0.5);
+}
+
+.overlay-6:before {
+	 background: rgba(0,0,0,0.6);
+}
+
+.overlay-7:before {
+	 background: rgba(0,0,0,0.7);
+}
+
+.overlay-8:before {
+	 background: rgba(0,0,0,0.8);
+}
+
+.overlay-9:before {
+	 background: rgba(0,0,0,0.9);
+}
+
+/* ------------
+Backgrounds
+------------ */
+
+.image-header{
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	/*background-position: center center; */
+	height: 250px;
+}
+
+.bg-1 {
+	background-image: url("../img/slide1.jpg");
+}
+
+.bg-2 {
+	background-image: url("../img/bg2.jpg");
+}
+
+.bg-3 {
+	background-image: url("../img/bg3.jpg");
+}
+
+.bg-4 {
+	background-image: url("../img/bg4.jpg");
+}
+
+.bg-5 {
+	background-image: url("../img/bg5.jpg");
+}
+
+.bg-morelos {
+	background-image: url("../img/bg-morelos.jpg");
+}
+
 /* ------------
 borders
 ------------ */
+.border-left {
+	border-left: 1px solid #ddd;
+}
+
 .br-2{
 	border-radius: 2px;
 }
@@ -187,34 +288,56 @@ icons size
 }
 
 
-
-
 /* ------------
 Pendientes de acomodar
 ------------ */
-header{
-	/*z-index: 199;*/
+
+.raleway {
+	font-family: 'Raleway', sans-serif;
+}
+
+.quote {
+	border-left: 3px solid #FF3400;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .container{
-	max-width: none;
+	max-width: 1280px;
 	width: 90%;
-}
-
-.transparent-header {
-	/*background: 0 0;*/
-	background: rgba(255,255,255,0.6);
-	border-bottom: none;
-	border-bottom-color: #EEE;
-	height: 80px;
 }
 
 .menu {
 	font-size: 1.2rem;
-	padding-top: 18px;
-	padding-bottom: 18px;
-	font-weight: 700;
-	color: #444;
+	position: relative;
+/*	padding-top: 18px;
+	padding-bottom: 18px;*/
+	/*font-weight: 700;*/
+	color: #333;
+}
+
+nav ul a.menu:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 0;
+	background: #2196f3;
+}
+nav ul a:hover {
+	background: transparent;
+	color: #2196f3;
+}
+
+nav ul a:hover:before{
+	height: 4px;
+	transition: all 0.3s ease-in-out;
+}
+
+footer {
+	padding: 40px 0;
 }
 
 #inicio{
@@ -303,15 +426,15 @@ header{
 	-webkit-tap-highlight-color: transparent;
 }
 
+.btn.light-blue.darken-1:hover {
+	background: #03a9f4!important;
+}
+
 .container .row {
 	margin-left: -0.75rem;
 	margin-right: -0.75rem;
 }
 
-/*.row .col.s6 {
-	width: 50%;
-	margin-left: 0;
-}*/
 
 .row .col {
 	-webkit-transition: all .3s;
@@ -346,20 +469,6 @@ header{
 	margin: 0 !important;
 	padding-left: 10px;
 	padding-right: 10px;
-}
-
-.produktliste .card {
-	cursor: pointer;
-}
-
-/*.produktliste .card-content {
-	height: 120px;
-	max-height: 120px;
-}
-*/
-.produktliste .card-image {
-	/*height: 250px;*/
-	max-height: 250px;
 }
 
 .produktliste img {
@@ -403,7 +512,9 @@ img {
 }
 
 .card .card-content {
-	padding: 20px;
+	padding: 10px 15px 5px 15px;
+	max-height: 206px;
+	/*padding: 20px;*/
 	-webkit-border-radius: 0 0 2px 2px;
 	-moz-border-radius: 0 0 2px 2px;
 	border-radius: 0 0 2px 2px;
@@ -413,9 +524,19 @@ img {
 	box-sizing: border-box;
 }
 
+.card .card-content h5 {
+	margin-top: 0;
+}
+
+.card .card-content .material-icons {
+	font-size: 15px;
+	color: #777;
+}
+
 .card .card-action {
 	border-top: 1px solid rgba(160,160,160,0.2);
-	padding: 20px;
+	padding: 10px;
+	text-align: center;
 }
 
 .produktliste .price {
@@ -442,17 +563,7 @@ img {
 	padding-bottom: 25px;
 }
 
-#imagen-header{
-	background: url("../img/slide1.jpg")no-repeat top center fixed;
-	background-size: cover;
-	opacity: 0.6;
-	max-width: 66.6%;
-	height: 33.3vh;
-	z-index: 1;
-	margin: 0 auto;
-	margin-top: -100px;
 
-}
 
 /* Landng de evento */
 
@@ -664,7 +775,7 @@ img {
 /* === EVENT LAYOUT === */
 
 .qcEventlayout {
-	padding: 65px 0;
+	padding: 20px 0;
 }
 .qcEventlayout h1 {
 	color: #222;
@@ -680,13 +791,13 @@ img {
 
 /* === ADDRESS LIST === */
 
-ul.qcAddress {
-	padding: 50px 0;
-}
+/*ul.qcAddress {
+	padding: 20px 0;
+}*/
 ul.qcAddress li {
 	list-style: none;
 	padding: 8px 0;
-	color: #888;
+	color: #444;
 	font-size: 13px;
 }
 ul.qcAddress li:last-child {
@@ -697,7 +808,7 @@ ul.qcAddress li i {
 }
 ul.qcAddress li p {
 	display: inline-block;
-	color: #666;
+	color: #444;
 	margin: 0 0 0 10px;
 }
 ul.qcAddress li p strong {
@@ -709,7 +820,7 @@ ul.qcAddress li p strong {
 	top: -31px;
 }
 ul.qcAddress li a {
-	color: #aaa;
+	color: #444;
 }
 
 /* === FAQ === */
@@ -760,9 +871,14 @@ ul.qcAddress li a {
 }
 
 .qcPricing {
+	padding: 0 30px!important;
+}
+
+.qcPricing .box {
 	border: 1px solid #ccc;
 	padding: 0!important;
 }
+
 .qcPricing header {
     color: #fff;
     font: 300 22px/50px "Roboto", Helvetica,Arial,sans-serif;
@@ -799,7 +915,7 @@ ul.qcAddress li a {
 }
 
 .qcPricing .price {
-    color: #777;
+    color: #555;
     font: 400 14px/55px "Open sans", Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     background: #f8f8f8;
@@ -809,12 +925,12 @@ ul.qcAddress li a {
 }
 .qcPricing .price span {
     margin-right: 3px;
-    color: #666;
+    color: #444;
     font: 400 24px/55px "Open sans", Helvetica,Arial,sans-serif;
     letter-spacing: 0px;
 }
 .qcPricing .filas {
-	color: #777;
+	color: #555;
 	padding-top: 15px;
 }
 .qcPricing ul {
@@ -825,7 +941,7 @@ ul.qcAddress li a {
 }
 .qcPricing li {
     margin: 18px 10px;
-    color: #777;
+    color: #555;
     font: 300 16px/30px "Roboto", Helvetica,Arial,sans-serif;
 }
 .qcPricing footer a {
@@ -848,8 +964,126 @@ ul.qcAddress li a {
 	margin: 0;
 }
 
-@media only screen and (min-width: 992px) {
+.ls-1 {
+	letter-spacing: 3px;
+}
+
+.brand-logo {
+	width: 60px;
+}
+
+.tab-content {
+	padding: 40px 0!important;
+}
+
+.tabs .tab a {
+	color: #2196f3;
+}
+
+.tabs .tab a:hover {
+	color: #222;
+}
+
+.tabs .indicator {
+    background-color: transparent!important;
+}
+
+.tab a.active,
+.tab a.active:hover {
+	background-color: #2196f3;
+	color: #FFF;
+}
+
+.section-video {
+	height: 350px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center 20%;
+}
+
+.section-video .row {
+	width: 100%;
+	top: 25%;
+}
+
+.section-video a i {
+	font-size: 6rem;
+}
+
+.modal-large {
+	width: 65%;
+}
+
+.section-lugar {
+	position: relative;
+	height: 350px;
+}
+
+.section-lugar .info-lugar {
+	position: absolute;
+	top: 0;
+	right: 15%;
+	width: 25%;
+	background-color: rgba(255,255,255, 0.9);
+	padding: 15px 20px;
+	height: 350px;
+}
+
+.section-lugar .info-lugar i {
+	font-size: 15px;
+	color: #222;
+	margin-right: 10px;
+}
+
+.section-lugar .info-lugar a {
+	color: #444;
+}
+
+#map {
+	/*position: absolute;*/
+	z-index: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 350px;
+}
+
+@media only screen and (max-width: 600px) {
 	.brand-logo > img {
-		width: 70%;
+		width: 52px;
+	}
+
+	.button-collapse {
+		margin-top: 10px;
+	}
+
+	.modal-large {
+		width: 90%;
+	}
+
+}
+
+@media only screen and (max-width: 992px){
+	#map {
+		height: 250px;
+	}
+
+	.section-lugar {
+		height: 500px;
+	}
+
+	.section-lugar .info-lugar {
+		position: relative;
+		right: 0;
+		width: 100%;
+		height: 250px;
+	}
+
+	.section-lugar .info-lugar .mb-30 {
+		margin-bottom: 15px; 
+	}
+
+	.section-lugar .info-lugar p {
+		margin: 5px 0;
 	}
 }

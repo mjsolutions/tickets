@@ -14,11 +14,11 @@
 </head>
 <body>
 	<header>
-		@include('bolematico.nav')
+		@include('layouts.nav')
 	</header>
 
 	<main>
-		<div id="imagen-header"></div>
+		<div class="image-header bg-morelos overlay overlay-7"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col s10 offset-s1">

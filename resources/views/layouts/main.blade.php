@@ -21,6 +21,10 @@
 		@include('flash::message')
 		@yield('content')
 	</main>
+	<div class="clearfix"></div>
+	<footer class="grey darken-4">
+		@include('layouts.footer')
+	</footer>
 
 	{{-- Login Modal --}}
 	<div id="modal-login" class="modal">
@@ -70,10 +74,6 @@
 		</div>
 	</div>
 
-	<footer class="page-footer grey darken-3">
-		@include('layouts.footer')
-	</footer>
-
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="{{asset('js/materialize.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/scripts.js')}}"></script>
@@ -83,7 +83,7 @@
             	Materialize.toast('{{ $error }}', 4000);
         	@endforeach
         @endif
-        @yield('scripts')
 	</script>
+    @yield('scripts')
 </body>
 </html>

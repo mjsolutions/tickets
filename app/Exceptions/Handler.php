@@ -45,7 +45,8 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        // if($e instanceof InvalidArgumentException && str_contains($e->getFile(), 'FileViewFinder')) abort(404);
+        if ($e instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException || ($e instanceof \InvalidArgumentException && str_contains($e->getFile(), 'FileViewFinder')))
+            return response(view('errors.404'), 404);
         return parent::render($request, $e);
     }
 
