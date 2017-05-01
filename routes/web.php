@@ -15,11 +15,28 @@
  * Generales
  */
 
+
 Route::get('/', function () { return view('index'); })->name('index');
 
 Route::get('/contacto', function () { return view('contacto'); })->name('contacto');
 
 Route::get('/quienes-somos', function () { return view('quienes-somos'); })->name('quienes-somos');
+
+// Route::get('/mail', function () { 
+// 		$data['img'] = "img/franco-morelia.jpg";
+// 		$data['evento'] = "Franco Escamilla en Morelia";
+// 			$data['img'] = "img/franco-morelia.jpg";
+// 			$data['lugar'] = "Teatro Morelos";
+// 			$data['fecha'] = "6 de Julio";
+// 			$data['hr'] = "9:30 pm";
+// 			$data['folios'] = "065465,0364684,063548";
+// 			$data['descripcion'] = "fila...";
+// 			$data['transaccion'] = "fddñflkgd";
+// 			$data['user'] = "Auth::user()->name";
+// 			$data['email'] = "Auth::user()->email";
+// 	return view('emails.compra', ['data' => $data]); 
+// });
+
 
 /**
  * Email
@@ -56,7 +73,7 @@ Route::group(['prefix'=>'eventos'],function(){
 	Route::get('{view}', function($view){
 		$v = 'eventos.'.$view;
 		return view($v);
-	});
+	})->name($v);
 
 	Route::get('compra', function(){
 		return view('eventos.compra');
@@ -67,16 +84,31 @@ Route::group(['prefix'=>'eventos'],function(){
 /**
  * Paypal
  */
-Route::post('payment', array(
-	'as'	=>	'payment',
-	'uses'	=>	'PaypalIndexController@postPayment',
+Route::group(['prefix'=>'payment'],function(){
+	Route::post('franco6', array(
+	'as'	=>	'payment.franco6',
+	'uses'	=>	'PaypalFranco6Controller@postPayment',
 	));
 
-//Paypal redirecciona a esta ruta
-Route::get('payment/status', array(
-	'as'	=>	'payment.status',
-	'uses'	=>	'PaypalIndexController@getPaymentStatus',
+	//Paypal redirecciona a esta ruta
+	Route::get('franco6/status', array(
+	'as'	=>	'payment.franco6.status',
+	'uses'	=>	'PaypalFranco6Controller@getPaymentStatus',
 	));
+
+
+	Route::post('franco7', array(
+	'as'	=>	'payment.franco7',
+	'uses'	=>	'PaypalFranco7Controller@postPayment',
+	));
+
+	//Paypal redirecciona a esta ruta
+	Route::get('franco7/status', array(
+	'as'	=>	'payment.franco7.status',
+	'uses'	=>	'PaypalFranco7Controller@getPaymentStatus',
+	));
+});
+
 
 /**
  * Autenticacion

@@ -6,7 +6,12 @@
 
 @section('content')
 
-<div id="imagen-header"></div>
+<div class="image-header bg-5 overlay overlay-5">
+	<div class="row white-text">
+		<h4>Contacto</h4>
+		<div class="divider"></div>
+	</div>
+</div>
 
 @if (session('response'))
 	
@@ -33,7 +38,10 @@
 	
 	<div class="row">
 		<div class="col s8 offset-s2 mb-30">
-			<div class="qcTabTitle no-border mb-30"><h4>Contacto<span><br> Nos interesa escuchar tu opinión.</span> </h4></div>
+			<div class="row">
+				<h5 class="mt-30 raleway quote">Nos interesa conocer tu opinión</h5>
+				<p><i>* Todos los campos son requeridos</i></p>
+			</div>
 
 			{!! Form::open(['route' => 'contactForm', 'method' => 'POST', 'id' => 'contactForm'])!!}
 

@@ -17,9 +17,9 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::get('/getFilas/{zona}', 'ApiController@getFilas');
+Route::get('/getFilas/{table}/{zona}', 'ApiController@getFilas');
 
-Route::get('/getAsientos/{fila}', 'ApiController@getAsientos');
+Route::get('/getAsientos/{table}/{fila}', 'ApiController@getAsientos');
 
 Route::get('/getFilasSofia/{zona}', 'ApiController@getFilasSofia');
 

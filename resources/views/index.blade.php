@@ -248,7 +248,7 @@
 									<p>17 de Mayo</p>
 									<p>9:00 pm.</p>
 								</div>
-								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/edgar-oceransky-puerto') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
@@ -267,7 +267,7 @@
 									<p>18 de Mayo</p>
 									<p>10:00 pm.</p>
 								</div>
-								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/edgar-oceransky-xalapa') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
@@ -286,7 +286,26 @@
 									<p>19 de Mayo</p>
 									<p>9:00 pm.</p>
 								</div>
-								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/edgar-oceransky-orizaba') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/santiago-pachuca.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Santiago Cruz</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Pachuca</b></p>
+									<p><i>Barceló</i></p>
+									<p>2 de Junio</p>
+									<p>9:30 pm.</p>
+								</div>
+								<a href="{{ url('/eventos/santiago-cruz-pachuca') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
@@ -305,7 +324,7 @@
 									<p>3 de Junio</p>
 									<p>8:30 pm.</p>
 								</div>
-								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/santiago-cruz-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
@@ -324,7 +343,8 @@
 									<p>22 de Junio</p>
 									{{-- <p>9:00 pm.</p> --}}
 								</div>
-								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="{{ url('/eventos/franco-escamilla-guanajuato') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
+								<a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
@@ -343,7 +363,8 @@
 									<p>23 de Junio</p>
 									{{-- <p>9:00 pm.</p> --}}
 								</div>
-								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="{{ url('/eventos/franco-escamilla-celaya') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
+								<a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
@@ -362,7 +383,8 @@
 									<p>24 de Junio</p>
 									{{-- <p>9:00 pm.</p> --}}
 								</div>
-								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="{{ url('/eventos/franco-escamilla-san-miguel-de-allende') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
+								<a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
@@ -376,12 +398,13 @@
 								<div class="card-content">
 									<h5><strong>Franco Escamilla</strong></h5>
 									<div class="divider"></div>
-									<p class="mt-10">Morelia</p>
+									<p class="mt-10"><b>Morelia</b></p>
 									<p>Teatro Morelos</p>
 									<p>6 de Julio</p>
 									<p>9:30 pm.</p>
 								</div>
-								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="{{ url('/eventos/franco-escamilla-morelia-6') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
+								<a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
@@ -395,12 +418,13 @@
 								<div class="card-content">
 									<h5><strong>Franco Escamilla</strong></h5>
 									<div class="divider"></div>
-									<p class="mt-10">Morelia</p>
+									<p class="mt-10"><b>Morelia</b></p>
 									<p>Teatro Morelos</p>
 									<p>7 de Julio</p>
 									<p>9:30 pm.</p>
 								</div>
-								<a href="!#" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="{{ url('/eventos/franco-escamilla-morelia-7') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
+								<a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>

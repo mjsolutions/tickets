@@ -6,10 +6,13 @@
 
 @section('styles')
 
-body {
+<style>
+ body {
     background: url('{{ asset('img/slide1.jpg') }}')no-repeat center center fixed;
     background-size: cover;
-}
+}   
+</style>
+
 
 @endsection
 

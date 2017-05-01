@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     $('.modal-trigger').leanModal();
 
-    $('#modal-login-open').leanModal({
+    $('.modal-login-open').leanModal({
         complete: function() { 
             $('#login-form')[0].reset();
              $("#message-error").html("");
@@ -24,7 +24,7 @@ $(document).ready(function(){
     $('a.page-scroll').on('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
+            scrollTop: $($anchor.attr('href')).offset().top - 80
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });

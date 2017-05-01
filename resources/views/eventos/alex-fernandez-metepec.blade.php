@@ -2,7 +2,7 @@
 
 @section('title', 'Alex Fernandez en Metepec')
 
-@section('description', 'Alex Fernandez en Metepec')
+@section('description', 'Alex Fernandez en Metepec, 29 de Abril, boletos en 19 Comedy Bar')
 
 @section('content')
 
@@ -27,7 +27,7 @@
 		</div>
 		<div id="descripcion" class="col s12 tab-content">
 			<div class="col s8 offset-s2 m3 mb-30">
-				<img src="{{ asset('img/alex-metepec.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/alex-metepec.jpg') }}" alt="Alex Fernandez Metepec" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 offset-m1">
