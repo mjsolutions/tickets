@@ -24,7 +24,7 @@ class BuyTicketRequest extends FormRequest
     public function rules()
     {
         return [
-        'asiento' => 'required|array|max:10',
+        // 'asiento' => 'required|array|max:10',
         ];
     }
 

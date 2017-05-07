@@ -100,6 +100,9 @@ trait AuthenticatesUsers
 
         $this->clearLoginAttempts($request);
 
+        if($request->ajax()){
+            return response('success');            
+        }
         return $this->authenticated($request, $this->guard()->user())
                 ?: redirect()->intended($this->redirectPath());
     }
@@ -124,11 +127,15 @@ trait AuthenticatesUsers
      */
     protected function sendFailedLoginResponse(Request $request)
     {
+        if($request->ajax()){
+            return response(Lang::get('auth.failed'));
+        }
         return redirect()->back()
             ->withInput($request->only($this->username(), 'remember'))
             ->withErrors([
                 $this->username() => Lang::get('auth.failed'),
             ]);
+        
     }
 
     /**

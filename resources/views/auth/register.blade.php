@@ -1,111 +1,62 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>Bolematico | @yield('title','Registro')</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/materialize.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
-    <link href="https://file.myfontastic.com/p33ryNdn2ug99gf3MgkiUK/icons.css" rel="stylesheet">
-</head>
-<body class="bg-1">
-    <header>
-        @include('bolematico.nav')
-    </header>
-        <main>
-            <div class="row">
-                <div class="col s12 m4 col-center mt-50">
+@extends('layouts.main')
 
-                    <form class="card  col s12" method="POST" action="{{ url('/register') }}">
-                        {{ csrf_field() }}
+@section('title', 'Inicio')
 
-                        <p class="card-title center-align">Registro | Bienvenido</p>
-                        
-                        <div class="card-content">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="name" type="text" class="validate" name="name" value="{{ old('name') }}" required autofocus>
-                                    <label for="email">Ingres tu Nombre</label>     
-                                </div>
-                            </div>
+@section('description', '')
 
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">email</i>
-                                    <input id="email" type="email" class="validate" name="email" value="{{ old('email') }}" required autofocus>
-                                    <label for="email">Ingres tu email</label>     
-                                </div>
-                            </div>
-                                    
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">lock_outline</i>
-                                    <input id="password" type="password" class="validate" name="password" required>
-                                    <label for="password" class="validate">Password</label>
-                                </div>
-                            </div>
+@section('content')
 
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">lock_outline</i>
-                                    <input id="password_confirm" type="password" class="validate" name="password_confirmation" required>
-                                    <label for="password" class="validate">Confirme Password</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s5 col-center">                            
-                                    <button type="submit" class="waves-effect waves-light btn pull-right">
-                                        Registrar
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+<div class="row">
+    <div class="col s12 m4 col-center mt-50">
 
-                </div>
-            </div>
-        </main>
+        <form class="card  col s12" method="POST" action="{{ url('/register') }}">
+            {{ csrf_field() }}
 
-    <footer class="page-footer grey darken-3" style="border-top: 2px solid #2bbbad">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Bolematico.com.mx</h5>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
+            <p class="card-title center-align">Registro | Bienvenido</p>
+            
+            <div class="card-content">
                 <div class="row">
-                    <div class="col l6">
-                        Todos los derechos reservados.                  
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="name" type="text" class="validate" name="name" value="{{ old('name') }}" required autofocus>
+                        <label for="email">Ingres tu Nombre</label>     
                     </div>
-                    <div class="col l6 right-align">
-                        © {!! date('Y') !!}
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="email" class="validate" name="email" value="{{ old('email') }}" required autofocus>
+                        <label for="email">Ingres tu email</label>     
+                    </div>
+                </div>
+                        
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input id="password" type="password" class="validate" name="password" required>
+                        <label for="password" class="validate">Password</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input id="password_confirm" type="password" class="validate" name="password_confirmation" required>
+                        <label for="password" class="validate">Confirme Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s5 col-center">                            
+                        <button type="submit" class="waves-effect waves-light btn pull-right">
+                            Registrar
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </form>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="{{asset('js/materialize.js')}}"></script>
-    <script>
-        $(document).ready(function(){
-            $(".button-collapse").sideNav({
-                 edge: 'right', // Choose the horizontal origin
-                 closeOnClick: true
-                });
+    </div>
+</div>
 
-            @if($errors)
-            @foreach($errors->all() as $error)
-            Materialize.toast('{{ $error }}', 4000);
-            @endforeach
-            @endif
-
-        });
-    </script>
-</body>
-</html>
+@endsection
