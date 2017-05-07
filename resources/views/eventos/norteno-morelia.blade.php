@@ -169,7 +169,7 @@
 											</div>
 										</div>
 										<div class="col s12">
-
+{{-- 
 											@if(Auth()->check())
 												<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
 												{!! Form::open(['route'=>'payment', 'method'=>'POST']) !!}
@@ -204,9 +204,9 @@
 												<div class="col s6 m3 col-center">
 													<a href="{{ route('login') }}" class="btn btn-block waves-light orange accent-3">Login</a>
 												</div>
-											@endif
+											@endif --}}
 
-											{{-- <p class="center-align">Por mantenimiento, contamos momentaneamente solo con venta de boletos en taquilla</p> --}}
+											<p class="center-align"><strong>* Venta en línea Agotada *</strong><br>Todavía puede adquirir sus boletos en las taquillas del planetario o del teatro Morelos. <STRONG> Gracias.</STRONG></p>
 										</div>
 									</div>
 								</div>
