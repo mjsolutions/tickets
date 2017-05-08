@@ -44,13 +44,13 @@ class PaypalFranco6Controller extends Controller
 		$cantidad = count($request->asiento);
 		switch ($request->zona) {
 			case 'Diamante':
-				$price = 0.01;
+				$price = 640;
 				break;
 			case 'Oro':
-				$price = 0.01;
+				$price = 540;
 				break;
 			case 'Plata':
-				$price = 0.01;
+				$price = 440;
 				break;
 		}
 		$description = "Zona: ".$request->zona." Fila: ".$request->fila." Asientos:";
@@ -156,7 +156,7 @@ class PaypalFranco6Controller extends Controller
 				}
 
 				//Bloqueamos los boletos
-				Franco6::whereIn('id', $id)->update(['status' => 1]);
+				Franco6::whereIn('id', $id)->update(['status' => 1, 'user' => Auth::user()->id]);
 
 				//Se ejecuta la transaccion y se bloquean los boletos
 				DB::commit();
@@ -193,8 +193,8 @@ class PaypalFranco6Controller extends Controller
 
 			try{
 				
-				Franco6::whereIn('id', $asientos_id)->update(['status' => 0]);
-				//Se ejecuta la transaccion y se bloquean los boletos
+				Franco6::whereIn('id', $asientos_id)->update(['status' => 0, 'user' => NULL]);
+				//Se ejecuta la transaccion y se desbloquean los boletos
 				DB::commit();
 
 			}catch(\Exception $e) {
@@ -237,7 +237,7 @@ class PaypalFranco6Controller extends Controller
 				foreach ($asientos_id as $asiento) {
 
 					Franco6::where('id', $asiento)->update(['folio' => ($folio + $i)]);
-					$buydata['folios'] .= " *".$folio + $i;
+					$buydata['folios'] .= " *".($folio + $i);
 					$i++;
 				}
 				
@@ -260,8 +260,8 @@ class PaypalFranco6Controller extends Controller
 			$buydata['user'] = Auth::user()->name;
 			$buydata['email'] = Auth::user()->email;
 
-			// Mail::to(Auth::user()->email, Auth::user()->name)
-			// ->send(new Compra($buydata));
+			Mail::to(Auth::user()->email, Auth::user()->name)
+			->send(new Compra($buydata));
 
 			Flash::success('Gracias por su compra');
 			return redirect()->route('eventos.compra');

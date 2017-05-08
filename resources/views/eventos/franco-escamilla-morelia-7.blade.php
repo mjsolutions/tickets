@@ -70,7 +70,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m8 orange accent-4">Zona diamante</div>
+								<div class="col s12 m8 teal accent-4">Zona diamante</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s6"><span>$640</span> Por entrada</div>
@@ -83,7 +83,7 @@
 
 				<div class="row">
 					<div class="divider"></div>
-					<p class="center-align mt-30">Todos los boletos tienen un cargo extra de <b>$40</b> por concepto de servicio, ya incluido en el precio</p>
+					<p class="center-align mt-30">Al realizar tu compra en línea Payapl realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
 				</div>
 			</div>
 		</div>

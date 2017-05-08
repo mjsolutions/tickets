@@ -2,7 +2,11 @@
 
 @section('title', 'Franco Escamilla Guanajuato')
 
-@section('description', 'Franco Escamilla en Guanajuato, 22 de Junio, 9:30 pm boletos en ')
+@section('description', 'Franco Escamilla en Guanajuato, 22 de Junio, 9:30 pm, Auditorio del estado, boletos en bolematico.mx')
+
+@section('styles')
+<script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
+@endsection
 
 @section('content')
 
@@ -11,7 +15,7 @@
 	<div class="row white-text">
 		<h4>Franco Escamilla</h4>
 		<div class="divider"></div>
-		<p><i>Guanajuato - </i></p>
+		<p><i>Guanajuato - Auditorio del estado</i></p>
 	</div>
 	{{-- <button class="btn waves-light waves-effect red">COMPRAR BOLETOS</button> --}}
 </div>
@@ -32,69 +36,46 @@
 			</div>
 
 			<div class="col s8 offset-s2 m3 mb-30">
-				<img src="{{ asset('img/franco.jpg') }}" alt="Franco Escamilla" class="responsive-img">
+				<img src="{{ asset('img/franco-guanajuato.jpg') }}" alt="Franco Escamilla" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 offset-m1">				
 
 				<div class="row mt-30">
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box ">
-							<header>
-								<div class="col s12 m12 grey lighten-5 black-text" style="border: 1px solid #ccc;">Zona general</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
-							</header>
-							<div class="price col s12"><span>$350</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
-						</div>
-					</div>
 
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box ">
+						<div class="box col s12">
 							<header>
-								<div class="col s12 m12 grey lighten-1">Zona plata</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+								<div class="col s12 m8 grey lighten-1">Zona plata</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$500</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+							<div class="price col s6"><span>$440</span> Por entrada</div>
+							<div class="filas col s6">Filas: Y - Z</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 					
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box ">
+						<div class="box col s12">
 							<header>
-								<div class="col s12 m12 amber accent-4">Zona oro</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+								<div class="col s12 m8">Zona oro</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$700</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+							<div class="price col s6"><span>$540</span> Por entrada</div>
+							<div class="filas col s6">Filas: Q - X</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box ">
+						<div class="box col s12">
 							<header>
-								<div class="col s12 m12 light-blue accent-2">Zona platino (sillas)</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+								<div class="col s12 m8 teal accent-4">Zona diamante</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$650</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
-						</div>
-					</div>
-
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box ">
-							<header>
-								<div class="col s12 m12 orange accent-4">Zona diamante</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
-							</header>
-							<div class="price col s12"><span>$850</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+							<div class="price col s6"><span>$640</span> Por entrada</div>
+							<div class="filas col s6">Filas: A - Ñ</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 
@@ -102,7 +83,8 @@
 
 				<div class="row">
 					<div class="divider"></div>
-					<p class="center-align mt-30">Venta de boletos en </p>
+					{{-- <p class="center-align mt-30">Al realizar tu compra en línea Payapl realiza un cargo extra de <b>10%</b> por concepto de servicio.</p> --}}
+					<p class="center-align">Venta de boletos a partir del <b>08 de Mayo</b> a través de esta página</p>
 				</div>
 			</div>
 		</div>
@@ -146,7 +128,7 @@
 			<div class="row">
 				<h4 class="mt-0 raleway quote">LUGARES DE VENTA</h4>
 			</div>
-			<div class="row">
+			{{-- <div class="row">
 				<div class="col s12">
 					<h5>Café Galería "Puerta Niebla"</h5>
 				</div>
@@ -167,7 +149,7 @@
 						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/puertaniebla/" target="_blank">https://www.facebook.com/puertaniebla</a></p></li>
 					</ul>
 				</div>
-			</div>
+			</div> --}}
 
 		</div>
 
@@ -180,8 +162,8 @@
 	</div>
 </section>
 
-<section class="section-comprar">
-	<h5 class="mt-50 center-align raleway">Preventa de boletos a partir de 01 de Mayo a través de nuesto sitio web</h5>
+<section id="compra" class="section-comprar">
+	<h5 class="mt-50 center-align raleway">Venta de boletos a partir del <b>08 de Mayo</b> a través de esta página</h5>
 	<div class="row">
 		<div class="col s6 offset-s3 mt-30">
 			<div class="divider"></div>
@@ -197,13 +179,13 @@
 	<div id="map"></div>
 	
 	<div class="info-lugar">
-		<h5 class="raleway quote mb-30">Lugar del evento</h5>
-		<div class="divider mb-30"></div>
-		{{-- <p><b>Barceló Concert live</b></p> --}}
-		<p><i class="material-icons">location_on</i>Blvd. Everardo Márquez S/N 42080 Pachuca de Soto</p>
-		<p><i class="material-icons">call</i> 01 771 709 0020</p>
+		<h5 class="raleway quote mb-15">Lugar del evento</h5>
+		<div class="divider mb-15"></div>
+		<p><b>Auditorio del Estado</b></p>
+		<p><i class="material-icons">location_on</i>Pueblito de Rocha S/N, Auditorio del Estado Centro de Convenciones, 36040 Guanajuato, Gto.</p>
+		<p><i class="material-icons">call</i> 01 473 732 5019</p>
 		<p><i class="material-icons">email</i> No disponible</p>
-		<p><i class="material-icons">language</i> <a title="website" href="https://www.facebook.com/Barceló-Pachuca-1640544489581641/" target="_blank">https://www.facebook.com/Barceló...</a></p>
+		<p><i class="material-icons">language</i> <a title="website" href="http://www.centrodeconvenciones.guanajuato.gob.mx/auditorio.php/" target="_blank">Website</a></p>
 	</div>
 </section>
 
@@ -230,13 +212,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 20.1131757, lng: -98.7493329};
+		        var uluru = {lat: 21.0130174, lng: -101.2741785};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 17,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 20.1131757, lng: -98.7493329}
+		          center: {lat: 21.0130174, lng: -101.2721822}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

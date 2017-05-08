@@ -218,25 +218,6 @@
 					<div class="col m4">
 						<div class="card horizontal ">
 							<div class="card-image">
-								<img src="{{asset('img/alex-metepec.jpg')}}">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong>Alex Fernandez</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10"><b>Metepec</b></p>
-									<p><i>19 Comedy Bar</i></p>
-									<p>29 de Abril</p>
-									<p>10:00 pm.</p>
-								</div>
-								<a href="{{ url('/eventos/alex-fernandez-metepec') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col m4">
-						<div class="card horizontal ">
-							<div class="card-image">
 								<img src="{{asset('img/oceransky-veracruz.jpg')}}">
 							</div>
 							<div class="card-stacked">
@@ -332,19 +313,19 @@
 					<div class="col m4">
 						<div class="card horizontal ">
 							<div class="card-image">
-								<img src="{{asset('img/franco.jpg')}}">
+								<img src="{{asset('img/franco-guanajuato.jpg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
 									<h5><strong>Franco Escamilla</strong></h5>
 									<div class="divider"></div>
 									<p class="mt-10"><b>Guanajuato</b></p>
-									{{-- <p>Teatro Morelos</p> --}}
+									<p>Auditorio del Estado</p>
 									<p>22 de Junio</p>
-									{{-- <p>9:00 pm.</p> --}}
+									<p>9:30 pm.</p>
 								</div>
-								{{-- <a href="{{ url('/eventos/franco-escamilla-guanajuato') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
-								<a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/franco-escamilla-guanajuato') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
 							</div>
 						</div>
 					</div>
@@ -352,19 +333,19 @@
 					<div class="col m4">
 						<div class="card horizontal ">
 							<div class="card-image">
-								<img src="{{asset('img/franco.jpg')}}">
+								<img src="{{asset('img/franco-celaya.jpg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
 									<h5><strong>Franco Escamilla</strong></h5>
 									<div class="divider"></div>
 									<p class="mt-10"><b>Celaya</b></p>
-									{{-- <p>Teatro Morelos</p> --}}
+									<p>Centro de Convenciones</p>
 									<p>23 de Junio</p>
-									{{-- <p>9:00 pm.</p> --}}
+									<p>9:30 pm.</p>
 								</div>
-								{{-- <a href="{{ url('/eventos/franco-escamilla-celaya') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
-								<a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/franco-escamilla-celaya') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
 							</div>
 						</div>
 					</div>
@@ -372,19 +353,19 @@
 					<div class="col m4">
 						<div class="card horizontal ">
 							<div class="card-image">
-								<img src="{{asset('img/franco.jpg')}}">
+								<img src="{{asset('img/franco-sma.jpg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
 									<h5><strong>Franco Escamilla</strong></h5>
 									<div class="divider"></div>
 									<p class="mt-10"><b>San Miguel de Allende</b></p>
-									{{-- <p>Teatro Morelos</p> --}}
+									<p>Centro de convenciones</p>
 									<p>24 de Junio</p>
-									{{-- <p>9:00 pm.</p> --}}
+									<p>9:30 pm.</p>
 								</div>
-								{{-- <a href="{{ url('/eventos/franco-escamilla-san-miguel-de-allende') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
-								<a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/franco-escamilla-san-miguel-de-allende') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
 							</div>
 						</div>
 					</div>
@@ -403,8 +384,8 @@
 									<p>6 de Julio</p>
 									<p>9:30 pm.</p>
 								</div>
-								{{-- <a href="{{ url('/eventos/franco-escamilla-morelia-6') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
-								<a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/franco-escamilla-morelia-6') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
 							</div>
 						</div>
 					</div>
@@ -423,8 +404,8 @@
 									<p>7 de Julio</p>
 									<p>9:30 pm.</p>
 								</div>
-								{{-- <a href="{{ url('/eventos/franco-escamilla-morelia-7') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
-								<a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/franco-escamilla-morelia-7') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
 							</div>
 						</div>
 					</div>
