@@ -4,7 +4,7 @@
 	<title>@yield('title') | Bolematico</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<meta name="description" content="@yield('description', 'Empresa michoacana')">
+	<meta name="description" content="@yield('description', 'Empresa michoacana, desarrollamos aplicaciones complejas de boletaje electrónico para la industria del entretenimiento, expedicion de boletos, venta por internet, control de acceso, servicios de mailing.')">
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/normalize.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/materialize.min.css')}}">
@@ -19,7 +19,6 @@
 
 	  ga('create', 'UA-98399731-1', 'auto');
 	  ga('send', 'pageview');
-
 	</script>
 </head>
 <body>

@@ -2,7 +2,11 @@
 
 @section('title', 'Franco Escamilla Celaya')
 
-@section('description', 'Franco Escamilla en Celaya, 23 de Junio, 9:30 pm boletos en ')
+@section('description', 'Franco Escamilla en Celaya, 23 de Junio, 9:30 pm, centro de convenciones de Celaya, boletos en bolematico.mx y Barra Galera restaurante')
+
+@section('styles')
+<script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
+@endsection
 
 @section('content')
 
@@ -11,7 +15,7 @@
 	<div class="row white-text">
 		<h4>Franco Escamilla</h4>
 		<div class="divider"></div>
-		<p><i>Celaya - </i></p>
+		<p><i>Celaya - Centro de Convenciones de Celaya</i></p>
 	</div>
 	{{-- <button class="btn waves-light waves-effect red">COMPRAR BOLETOS</button> --}}
 </div>
@@ -32,69 +36,46 @@
 			</div>
 
 			<div class="col s8 offset-s2 m3 mb-30">
-				<img src="{{ asset('img/franco.jpg') }}" alt="Franco Escamilla" class="responsive-img">
+				<img src="{{ asset('img/franco-celaya.jpg') }}" alt="Franco Escamilla" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 offset-m1">				
 
 				<div class="row mt-30">
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box ">
-							<header>
-								<div class="col s12 m12 grey lighten-5 black-text" style="border: 1px solid #ccc;">Zona general</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
-							</header>
-							<div class="price col s12"><span>$350</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
-						</div>
-					</div>
 
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box ">
+						<div class="box col s12">
 							<header>
-								<div class="col s12 m12 grey lighten-1">Zona plata</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+								<div class="col s12 m8 grey lighten-1">Zona plata</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$500</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+							<div class="price col s6"><span>$440</span> Por entrada</div>
+							<div class="filas col s6">Filas: Y - Z</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 					
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box ">
+						<div class="box col s12">
 							<header>
-								<div class="col s12 m12 amber accent-4">Zona oro</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+								<div class="col s12 m8">Zona oro</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$700</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+							<div class="price col s6"><span>$540</span> Por entrada</div>
+							<div class="filas col s6">Filas: Q - X</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box ">
+						<div class="box col s12">
 							<header>
-								<div class="col s12 m12 light-blue accent-2">Zona platino (sillas)</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+								<div class="col s12 m8 teal accent-4">Zona diamante</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$650</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
-						</div>
-					</div>
-
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box ">
-							<header>
-								<div class="col s12 m12 orange accent-4">Zona diamante</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
-							</header>
-							<div class="price col s12"><span>$850</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+							<div class="price col s6"><span>$640</span> Por entrada</div>
+							<div class="filas col s6">Filas: A - Ñ</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 
@@ -102,7 +83,8 @@
 
 				<div class="row">
 					<div class="divider"></div>
-					<p class="center-align mt-30">Venta de boletos en </p>
+					<p class="center-align">Venta de boletos a partir del <b>08 de Mayo</b> a través de esta página y en Restaurante Barra Galera</p>
+					{{-- <p class="center-align mt-30">Al realizar tu compra en línea Payapl realiza un cargo extra de <b>10%</b> por concepto de servicio.</p> --}}
 				</div>
 			</div>
 		</div>
@@ -148,12 +130,12 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>Café Galería "Puerta Niebla"</h5>
+					<h5>Restaurante Barra Galera</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14985.316181449147!2d-98.7321878!3d20.1203156!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3e8165c8571979db!2sPuerta+Niebla+Caf%C3%A9!5e0!3m2!1ses!2smx!4v1493429242940" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12567.942558393283!2d-100.80935967680544!3d20.52787324553463!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x49b4b032b0ba3902!2sBarra+Galera!5e0!3m2!1ses!2smx!4v1494017681230" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 
 				</div>
@@ -161,10 +143,10 @@
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Parque Hidalgo 174, Ex Hacienda de Guadalupe, 42050 Pachuca de Soto, Hgo.</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 01 771 718 6073</p></li>
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Nuevo León 306, Alameda, 38050 Celaya, Gto.</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 01 461 612 0498</p></li>
 						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/puertaniebla/" target="_blank">https://www.facebook.com/puertaniebla</a></p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/BarraGalera/" target="_blank">https://www.facebook.com/BarraGalera</a></p></li>
 					</ul>
 				</div>
 			</div>
@@ -180,8 +162,8 @@
 	</div>
 </section>
 
-<section class="section-comprar">
-	<h5 class="mt-50 center-align raleway">Preventa de boletos a partir de 01 de Mayo a través de nuesto sitio web</h5>
+<section id="compra" class="section-comprar">
+	<h5 class="mt-50 center-align raleway">Venta de boletos a partir del <b>08 de Mayo</b> a través de esta página y en Restaurante Barra Galera</h5>
 	<div class="row">
 		<div class="col s6 offset-s3 mt-30">
 			<div class="divider"></div>
@@ -199,11 +181,11 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		{{-- <p><b>Barceló Concert live</b></p> --}}
-		<p><i class="material-icons">location_on</i>Blvd. Everardo Márquez S/N 42080 Pachuca de Soto</p>
-		<p><i class="material-icons">call</i> 01 771 709 0020</p>
+		<p><b>Centro de convenciones de Celaya</b></p>
+		<p><i class="material-icons">location_on</i>México 51 2418, 10 de Abril, Celaya, Gto.</p>
+		<p><i class="material-icons">call</i> No disponible</p>
 		<p><i class="material-icons">email</i> No disponible</p>
-		<p><i class="material-icons">language</i> <a title="website" href="https://www.facebook.com/Barceló-Pachuca-1640544489581641/" target="_blank">https://www.facebook.com/Barceló...</a></p>
+		<p><i class="material-icons">language</i> <a title="website" href="!#" target="_blank">No disponible</a></p>
 	</div>
 </section>
 
@@ -230,13 +212,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 20.1131757, lng: -98.7493329};
+		        var uluru = {lat: 20.5709379, lng: -100.8235291};
 		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 17,
+		          zoom: 15,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 20.1131757, lng: -98.7493329}
+		          center: {lat: 20.5709379, lng: -100.8165291}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

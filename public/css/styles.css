@@ -362,7 +362,7 @@ footer {
 	width: 100%;
 }
 #user_options {
-	top: 70px!important;
+	top: 64px!important;
 }
 .filter-elements {
 	margin-top: 10px;
@@ -698,6 +698,30 @@ img {
 	position: absolute;
 	top: 10px;
 	right: 0;
+}
+
+#search-sma-diamante,
+#search-sma-oro,
+#search-sma-plata {
+	position: absolute;
+	width: 90%;
+	right: 0;
+	cursor: zoom-in;
+}
+
+#search-sma-diamante{
+	height: 40%;
+	top: 11%;
+}
+
+#search-sma-oro {
+	height: 17.5%;
+	top: 51%;
+}
+
+#search-sma-plata {
+	height: 31.5%;
+	top: 68.5%;
 }
 
 /* ---------------------------------------------------------------------------------- */
