@@ -84,7 +84,7 @@
 				<div class="row">
 					<div class="divider"></div>
 					{{-- <p class="center-align mt-30">Al realizar tu compra en línea Payapl realiza un cargo extra de <b>10%</b> por concepto de servicio.</p> --}}
-					<p class="center-align">Venta de boletos a partir del <b>08 de Mayo</b> a través de esta página y en el lugar del evento</p>
+					<p class="center-align">Venta de boletos próximamente a través de esta página y en el lugar del evento</p>
 				</div>
 			</div>
 		</div>
@@ -163,7 +163,7 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	{{-- <h5 class="mt-50 center-align raleway">Venta de boletos a partir del <b>08 de Mayo</b> a través de esta página y en el Centro de Convenciones La Casona</h5>
+	<h5 class="mt-50 center-align raleway">Venta de boletos próximamente a través de esta página y en el Centro de Convenciones La Casona</h5>
 	<div class="row">
 		<div class="col s6 offset-s3 mt-30">
 			<div class="divider"></div>
@@ -172,8 +172,8 @@
 	<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
 	<div class="row center-align">
 		<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
-	</div> --}}
-	<div class="row">
+	</div>
+	{{-- <div class="row">
 		<div class="col s12 m6" style="position: relative;">
 			<img src="{{asset('img/sma.jpg')}}" alt="Teatro Morelos" class="responsive-img">
 			<div class="zoom-sma" id="search-sma-diamante" data-img="{{ asset('img/sma-diamante.jpg') }}"></div>
@@ -218,7 +218,7 @@
 				</div>
 			@endif
 		</div>
-	</div>
+	</div> --}}
 </section>
 
 <section class="section-lugar">
