@@ -95,7 +95,7 @@
 			</div>
 			<div class="col s12 m9">
 				<h4 class="mt-0 raleway quote">BIOGRAFÍA</h4>		
-				<p>Franco Escamilla, mejor conocido como “El Diablo” o “El Amo del Sarcasmo” , nació un 29 de abril de 1981 en Cuautla Morelos, México, es un músico, comediante y locutor.</p>
+				<p>Franco Escamilla, mejor conocido como “El Diablo” o “El Amo del Sarcasmo”, nació un 29 de abril de 1981 en Cuautla Morelos, México, es un músico, comediante y locutor.</p>
 				<p>A sus 16 años se muda para Monterrey a trabajar en bares, restaurantes y cantinas. Desde muy pequeño estudió durante 3 años y medio en el ESMYDM (Escuela Superior de Música y Danza de Monterrey). Luego culminó sus estudios y se mantuvo presente en el ambiente musical.</p>
 				<p>Franco se considera a sí mismo una persona aferrada, ya que desde pequeño soñó con tener su propio programa de radio, lo cual consiguió gracias a su actitud y empeño de dar todo con su esfuerzo.</p>
 				<p>Entre sus pasatiempos se destacan la lectura, es jugador amateur armando cubos rubik y amante de los videojuegos, a lo que él mismo se considera como un verdadero gamer.</p>
