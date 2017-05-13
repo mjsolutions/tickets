@@ -139,7 +139,7 @@
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107648.69463823391!2d-117.08867126680884!3d32.52556719256526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d948450997f0a1%3A0xe25a7867f1dc2cfb!2sDECO!5e0!3m2!1ses!2smx!4v1494638989844" width="100%" height="320" frameborder="0" style="border:2px solid #aaa" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107648.69463823391!2d-117.08867126680884!3d32.52556719256526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d948450997f0a1%3A0xe25a7867f1dc2cfb!2sDECO!5e0!3m2!1ses!2smx!4v1494638989844" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 
 				</div>

@@ -130,7 +130,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col m2 s12">
-				<h1 class="titulo-h1">Eventos <span>(1)</span></h1>
+				<h1 class="titulo-h1">Eventos {{-- <span>(1)</span> --}}</h1>
 				<div class="filter-elements">
 					<a class="btn waves-effect waves-light green" href="#!">Todos los Eventos</a>
 					<a class="btn waves-effect waves-light blue" href="#!">Eventos Próximos</a>
