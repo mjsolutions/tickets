@@ -163,6 +163,52 @@
 </section>
 
 <section id="compra" class="section-comprar">
+	<div class="row">
+		<div class="col s12 m6">
+			{{-- <img src="{{asset('')}}" alt="" class="responsive-img"> --}}
+		</div>
+		<div class="col s12 m6">
+			@if(Auth()->check())
+				<h5 class="quote raleway">Seleccione sus boletos</h5>
+				{!! Form::open(['route'=>'payment.franco_guanajuato', 'method'=>'POST']) !!}
+					<div class="row">
+
+						<div class="input-field col s12">
+							{!! Form::select('zona', ['Diamante' => 'Diamante', 'Oro' => 'Oro', 'Plata' => 'Plata'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Seleccione una zona']) !!}
+							{!! Form::label('zona', 'Zona') !!}
+						</div>
+						<div class="input-field col s12">
+							{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Seleccione primero una zona']) !!}
+							{!! Form::label('fila', 'Fila') !!}
+						</div>
+						<div class="input-field col s12">
+							{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
+							{!! Form::label('asiento', 'Asiento') !!}
+						</div>
+						
+					</div>
+					<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
+
+					<div class="row">
+					
+						<div class="input-field center-align">
+							{!! Form::submit('Comprar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
+						</div>	
+					
+					</div>
+						
+				{!! Form::close() !!}
+			@else
+				<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
+				<div class="col s6 m4 col-center">
+					<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
+				</div>
+			@endif
+		</div>
+	</div>
+</section>
+
+{{-- <section id="compra" class="section-comprar">
 	<h5 class="mt-50 center-align raleway">Venta de boletos próximamente a través de esta página</h5>
 	<div class="row">
 		<div class="col s6 offset-s3 mt-30">
@@ -173,7 +219,7 @@
 	<div class="row center-align">
 		<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
 	</div>
-</section>
+</section> --}}
 
 <section class="section-lugar">
 	<div id="map"></div>

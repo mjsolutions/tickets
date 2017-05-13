@@ -118,6 +118,28 @@ Route::group(['prefix'=>'payment'],function(){
 	'as'	=>	'payment.franco_sma.status',
 	'uses'	=>	'PaypalFranco_smaController@getPaymentStatus',
 	));
+
+	Route::post('franco_celaya', array(
+	'as'	=>	'payment.franco_celaya',
+	'uses'	=>	'PaypalFranco_cekayaController@postPayment',
+	));
+
+	//Paypal redirecciona a esta ruta
+	Route::get('franco_celaya/status', array(
+	'as'	=>	'payment.franco_celaya.status',
+	'uses'	=>	'PaypalFranco_celayaController@getPaymentStatus',
+	));
+
+		Route::post('franco_guanajuato', array(
+	'as'	=>	'payment.franco_guanajuato',
+	'uses'	=>	'PaypalFranco_guanajuatoController@postPayment',
+	));
+
+	//Paypal redirecciona a esta ruta
+	Route::get('franco_guanajuato/status', array(
+	'as'	=>	'payment.franco_guanajuato.status',
+	'uses'	=>	'PaypalFranco_guanajuatoController@getPaymentStatus',
+	));
 });
 
 
