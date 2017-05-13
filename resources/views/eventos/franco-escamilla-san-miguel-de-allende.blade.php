@@ -2,7 +2,7 @@
 
 @section('title', 'Franco Escamilla San Miguel de Allende')
 
-@section('description', 'Franco Escamilla en San Miguel de Allende, 24 de Junio, 9:30 pm boletos en ')
+@section('description', 'Franco Escamilla en San Miguel de Allende, 24 de Junio, 9:30 pm boletos en bolematico.mx')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
