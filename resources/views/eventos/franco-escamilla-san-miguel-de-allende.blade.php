@@ -41,7 +41,7 @@
 			
 			<div class="col s12 m8 offset-m1">				
 
-				<<div class="row mt-30">
+				<div class="row mt-30">
 
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
