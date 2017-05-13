@@ -328,6 +328,25 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/santiago-tijuana.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Santiago Cruz</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Tijuana</b></p>
+									<p><i>Teatro Zaragoza</i></p>
+									<p>10 de Junio</p>
+									<p>8:30 pm.</p>
+								</div>
+								<a href="{{ url('/eventos/santiago-cruz-tijuana') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
 					
 					<div class="col m4">
 						<div class="card horizontal ">
