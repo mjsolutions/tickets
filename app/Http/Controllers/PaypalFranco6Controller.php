@@ -118,7 +118,7 @@ class PaypalFranco6Controller extends Controller
 		//Redirección a la página de paypal para que haga las operaciones necesarias
 		try {		
 			$payment->create($this->_api_context);
-		} catch (\PayPal\Exception\PPConnectionException $ex) {
+		} catch (\PayPal\Exception\PayPalConnectionException $ex) {
 			if (\config('app.debug')) {
 				echo "Exception: " . $ex->getMessage() . PHP_EOL;
 				$err_data = json_decode($ex->getData(), true);

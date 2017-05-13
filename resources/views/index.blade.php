@@ -130,7 +130,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col m2 s12">
-				<h1 class="titulo-h1">Eventos <span>(1)</span></h1>
+				<h1 class="titulo-h1">Eventos {{-- <span>(1)</span> --}}</h1>
 				<div class="filter-elements">
 					<a class="btn waves-effect waves-light green" href="#!">Todos los Eventos</a>
 					<a class="btn waves-effect waves-light blue" href="#!">Eventos Próximos</a>
@@ -306,6 +306,44 @@
 									<p>8:30 pm.</p>
 								</div>
 								<a href="{{ url('/eventos/santiago-cruz-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/santiago-leon.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Santiago Cruz</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>León</b></p>
+									<p><i>Maybach</i></p>
+									<p>7 de Junio</p>
+									<p>9:00 pm.</p>
+								</div>
+								<a href="{{ url('/eventos/santiago-cruz-leon') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/santiago-tijuana.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Santiago Cruz</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Tijuana</b></p>
+									<p><i>Teatro Zaragoza</i></p>
+									<p>10 de Junio</p>
+									<p>8:30 pm.</p>
+								</div>
+								<a href="{{ url('/eventos/santiago-cruz-tijuana') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>

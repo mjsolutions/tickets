@@ -107,6 +107,17 @@ Route::group(['prefix'=>'payment'],function(){
 	'as'	=>	'payment.franco7.status',
 	'uses'	=>	'PaypalFranco7Controller@getPaymentStatus',
 	));
+
+	Route::post('franco_sma', array(
+	'as'	=>	'payment.franco_sma',
+	'uses'	=>	'PaypalFranco_smaController@postPayment',
+	));
+
+	//Paypal redirecciona a esta ruta
+	Route::get('franco_sma/status', array(
+	'as'	=>	'payment.franco_sma.status',
+	'uses'	=>	'PaypalFranco_smaController@getPaymentStatus',
+	));
 });
 
 

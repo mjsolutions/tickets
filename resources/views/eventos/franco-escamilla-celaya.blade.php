@@ -83,7 +83,7 @@
 
 				<div class="row">
 					<div class="divider"></div>
-					<p class="center-align">Venta de boletos a partir del <b>08 de Mayo</b> a través de esta página y en Restaurante Barra Galera</p>
+					<p class="center-align">Venta de boletos próximamente a través de esta página y en Restaurante Barra Galera</p>
 					{{-- <p class="center-align mt-30">Al realizar tu compra en línea Payapl realiza un cargo extra de <b>10%</b> por concepto de servicio.</p> --}}
 				</div>
 			</div>
@@ -163,7 +163,7 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	<h5 class="mt-50 center-align raleway">Venta de boletos a partir del <b>08 de Mayo</b> a través de esta página y en Restaurante Barra Galera</h5>
+	<h5 class="mt-50 center-align raleway">Venta de boletos próximamente a través de esta página y en Restaurante Barra Galera</h5>
 	<div class="row">
 		<div class="col s6 offset-s3 mt-30">
 			<div class="divider"></div>

@@ -5,6 +5,31 @@
 @section('description', 'Franco Escamilla en San Miguel de Allende, 24 de Junio, 9:30 pm boletos en bolematico.mx')
 
 @section('styles')
+<style type="text/css">
+	#search-sma-diamante,
+	#search-sma-oro,
+	#search-sma-plata {
+		position: absolute;
+		width: 90%;
+		right: 0;
+		cursor: zoom-in;
+	}
+
+	#search-sma-diamante{
+		height: 40%;
+		top: 11%;
+	}
+
+	#search-sma-oro {
+		height: 17.5%;
+		top: 51%;
+	}
+
+	#search-sma-plata {
+		height: 31.5%;
+		top: 68.5%;
+	}
+</style>
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
 
@@ -17,7 +42,7 @@
 		<div class="divider"></div>
 		<p><i>San Miguel de Allende - Centro de Convenciones La Casona </i></p>
 	</div>
-	{{-- <button class="btn waves-light waves-effect red">COMPRAR BOLETOS</button> --}}
+	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a>
 </div>
 
 <section class="container">
@@ -84,7 +109,7 @@
 				<div class="row">
 					<div class="divider"></div>
 					{{-- <p class="center-align mt-30">Al realizar tu compra en línea Payapl realiza un cargo extra de <b>10%</b> por concepto de servicio.</p> --}}
-					<p class="center-align">Venta de boletos a partir del <b>08 de Mayo</b> a través de esta página y en el lugar del evento</p>
+					<p class="center-align">Venta de boletos próximamente a través de esta página y en el lugar del evento</p>
 				</div>
 			</div>
 		</div>
@@ -163,8 +188,7 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	{{-- <h5 class="mt-50 center-align raleway">Venta de boletos a partir del <b>08 de Mayo</b> a través de esta página y en el Centro de Convenciones La Casona</h5>
-	<div class="row">
+	{{-- <div class="row">
 		<div class="col s6 offset-s3 mt-30">
 			<div class="divider"></div>
 		</div>
@@ -181,9 +205,11 @@
 			<div class="zoom-sma" id="search-sma-plata" data-img="{{ asset('img/sma-plata.jpg')}}"></div>
 		</div>
 		<div class="col s12 m6">
+				<h5 class="mt-50 center-align raleway">Venta de boletos a través de esta página y en el Centro de Convenciones La Casona</h5>
+				<div class="divider"></div>
 			@if(Auth()->check())
 				<h5 class="quote raleway">Seleccione sus boletos</h5>
-				{!! Form::open(['route'=>'payment.franco6', 'method'=>'POST']) !!}
+				{!! Form::open(['route'=>'payment.franco_sma', 'method'=>'POST']) !!}
 					<div class="row">
 
 						<div class="input-field col s12">
@@ -284,6 +310,44 @@
 			var img = $(this).attr('data-img');
 			$("#modal-diamante img").attr('src', img);
 			$("#modal-diamante").openModal();
+		});
+
+		$("#zona").change(function(){
+			var id = $(this).val();
+			$.ajax({
+				url: '{{url('/api/getFilas')}}/Franco_sma/' + id,
+				method: 'GET',
+				// data: 'id=' + id,
+				success: function(res){
+					var filas = res;
+					var options = "<option value='' selected disabled>Selecciona una fila</option>";
+					for(i=0; i<filas.length; i++){
+						options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
+					}
+					$("#fila").html(options);
+					$("#fila").material_select();
+
+				}
+			});
+		});
+
+		$("#fila").change(function(){
+			var id = $(this).val();
+			$.ajax({
+				url: '{{url('/api/getAsientos')}}/Franco_sma/' + id,
+				method: 'GET',
+				// data: 'id=' + id,
+				success: function(res){
+					var asientos = res;
+					var options = "<option value='' selected disabled>Seleccione los asientos</option>";
+					for(i=0; i<asientos.length; i++){
+						options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
+					}
+					$("#asiento").html(options);
+					$("#asiento").material_select();
+
+				}
+			});
 		});
 	</script>
 
