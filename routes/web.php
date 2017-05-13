@@ -121,7 +121,7 @@ Route::group(['prefix'=>'payment'],function(){
 
 	Route::post('franco_celaya', array(
 	'as'	=>	'payment.franco_celaya',
-	'uses'	=>	'PaypalFranco_cekayaController@postPayment',
+	'uses'	=>	'PaypalFranco_celayaController@postPayment',
 	));
 
 	//Paypal redirecciona a esta ruta

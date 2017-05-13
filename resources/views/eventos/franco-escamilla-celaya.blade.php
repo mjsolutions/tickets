@@ -17,7 +17,7 @@
 		<div class="divider"></div>
 		<p><i>Celaya - Centro de Convenciones de Celaya</i></p>
 	</div>
-	{{-- <button class="btn waves-light waves-effect red">COMPRAR BOLETOS</button> --}}
+	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a>
 </div>
 
 <section class="container">
@@ -271,6 +271,44 @@
 		          map: map
 		        });
 		      }
+
+		$("#zona").change(function(){
+			var id = $(this).val();
+			$.ajax({
+				url: '{{url('/api/getFilas')}}/Franco_celaya/' + id,
+				method: 'GET',
+				// data: 'id=' + id,
+				success: function(res){
+					var filas = res;
+					var options = "<option value='' selected disabled>Selecciona una fila</option>";
+					for(i=0; i<filas.length; i++){
+						options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
+					}
+					$("#fila").html(options);
+					$("#fila").material_select();
+
+				}
+			});
+		});
+
+		$("#fila").change(function(){
+			var id = $(this).val();
+			$.ajax({
+				url: '{{url('/api/getAsientos')}}/Franco_celaya/' + id,
+				method: 'GET',
+				// data: 'id=' + id,
+				success: function(res){
+					var asientos = res;
+					var options = "<option value='' selected disabled>Seleccione los asientos</option>";
+					for(i=0; i<asientos.length; i++){
+						options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
+					}
+					$("#asiento").html(options);
+					$("#asiento").material_select();
+
+				}
+			});
+		});
 	</script>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>

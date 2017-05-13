@@ -120,9 +120,9 @@ class PaypalFranco6Controller extends Controller
 			$payment->create($this->_api_context);
 		} catch (\PayPal\Exception\PayPalConnectionException $ex) {
 			if (\config('app.debug')) {
-				echo "Exception: " . $ex->getMessage() . PHP_EOL;
-				$err_data = json_decode($ex->getData(), true);
-				exit;
+				echo "Exception: " . $ex->getMessage() . $ex->getData() . PHP_EOL;
+                $err_data = json_decode($ex->getData(), true);                
+                return redirect('eventos/franco-escamilla-morelia-6')->withErrors('Error: '.$err_data['message']);
 			} else {
 				// Flash::error('Something went wrong, Sorry for inconvenience');
 				return redirect('eventos/franco-escamilla-morelia-6')->withErrors('Algo salio mal perdon por el inconveniente');

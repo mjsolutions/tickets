@@ -120,9 +120,9 @@ class PaypalFranco_celayaController extends Controller
             $payment->create($this->_api_context);
         } catch (\PayPal\Exception\PayPalConnectionException $ex) {
             if (\config('app.debug')) {
-                echo "Exception: " . $ex->getMessage() . PHP_EOL;
-                $err_data = json_decode($ex->getData(), true);
-                exit;
+                echo "Exception: " . $ex->getMessage() . $ex->getData() . PHP_EOL;
+                $err_data = json_decode($ex->getData(), true);                
+                return redirect('eventos/franco-escamilla-celaya')->withErrors('Error: '.$err_data['message']);
             } else {
                 // Flash::error('Something went wrong, Sorry for inconvenience');
                 return redirect('eventos/franco-escamilla-celaya')->withErrors('Algo salio mal perdon por el inconveniente');
@@ -236,7 +236,7 @@ class PaypalFranco_celayaController extends Controller
                 
                 foreach ($asientos_id as $asiento) {
 
-                    Franco6::where('id', $asiento)->update(['folio' => ($folio + $i)]);
+                    Franco_celaya::where('id', $asiento)->update(['folio' => ($folio + $i)]);
                     $buydata['folios'] .= " *".($folio + $i);
                     $i++;
                 }
@@ -252,7 +252,7 @@ class PaypalFranco_celayaController extends Controller
             
             $buydata['evento'] = "Franco Escamilla en Celaya";
             $buydata['img'] = "img/franco-celaya.jpg";
-            $buydata['lugar'] = "Teatro Morelos";
+            $buydata['lugar'] = "Centro de Convenciones de Celaya";
             $buydata['fecha'] = "23 de Junio";
             $buydata['hr'] = "9:30 pm";
             $buydata['descripcion'] = $descripcion;
@@ -260,8 +260,8 @@ class PaypalFranco_celayaController extends Controller
             $buydata['user'] = Auth::user()->name;
             $buydata['email'] = Auth::user()->email;
 
-            Mail::to(Auth::user()->email, Auth::user()->name)
-            ->send(new Compra($buydata));
+            // Mail::to(Auth::user()->email, Auth::user()->name)
+            // ->send(new Compra($buydata));
 
             Flash::success('Gracias por su compra');
             return redirect()->route('eventos.compra');

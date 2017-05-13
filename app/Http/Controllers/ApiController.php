@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Franco6;
 use App\Franco7;
 use App\Franco_sma;
+use App\Franco_celaya;
+use App\Franco_guanajuato;
 
 class ApiController extends Controller
 {
