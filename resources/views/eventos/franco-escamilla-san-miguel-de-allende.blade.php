@@ -199,7 +199,7 @@
 	</div> --}}
 	<div class="row">
 		<div class="col s12 m6" style="position: relative;">
-			<img src="{{asset('img/sma.jpg')}}" alt="Teatro Morelos" class="responsive-img">
+			<img src="{{asset('img/sma.jpg')}}" alt="Centro de convenciones SMA" class="responsive-img">
 			<div class="zoom-sma" id="search-sma-diamante" data-img="{{ asset('img/sma-diamante.jpg') }}"></div>
 			<div class="zoom-sma" id="search-sma-oro" data-img="{{ asset('img/sma-oro.jpg')}}"></div>
 			<div class="zoom-sma" id="search-sma-plata" data-img="{{ asset('img/sma-plata.jpg')}}"></div>

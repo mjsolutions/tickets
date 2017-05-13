@@ -165,7 +165,7 @@
 <section id="compra" class="section-comprar">
 	<div class="row">
 		<div class="col s12 m6">
-			{{-- <img src="{{asset('')}}" alt="" class="responsive-img"> --}}
+			<img src="{{asset('img/celaya.jpg')}}" alt="" class="responsive-img">
 		</div>
 		<div class="col s12 m6">
 			@if(Auth()->check())
