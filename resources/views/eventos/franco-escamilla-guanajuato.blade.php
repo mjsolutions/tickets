@@ -165,52 +165,47 @@
 <section id="compra" class="section-comprar">
 	<div class="row">
 		<div class="col s12 m6">
-			<ul class="tabs">
-				<li class="tab col s6"><a class="active" href="#planta-baja">Planta Baja</a></li>
-				<li class="tab col s6"><a href="#planta-alta">Planta Alta</a></li>
-			</ul>
-			<div id="planta-baja" class="col s12"><img src="{{asset('img/gto-planta-baja.jpg')}}" alt="Centro de convenciones Gto" class="responsive-img"></div>
-			<div id="planta-alta" class="col s12"><img src="{{asset('img/gto-planta-alta.jpg')}}" alt="Centro de convenciones Gto" class="responsive-img"></div>
+			{{-- <img src="{{asset('')}}" alt="" class="responsive-img"> --}}
 		</div>
-	<div class="col s12 m6">
-		@if(Auth()->check())
-		<h5 class="quote raleway">Seleccione sus boletos</h5>
-		{!! Form::open(['route'=>'payment.franco_guanajuato', 'method'=>'POST']) !!}
-		<div class="row">
+		<div class="col s12 m6">
+			@if(Auth()->check())
+				<h5 class="quote raleway">Seleccione sus boletos</h5>
+				{!! Form::open(['route'=>'payment.franco_guanajuato', 'method'=>'POST']) !!}
+					<div class="row">
 
-			<div class="input-field col s12">
-				{!! Form::select('zona', ['Diamante' => 'Diamante', 'Oro' => 'Oro', 'Plata' => 'Plata'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Seleccione una zona']) !!}
-				{!! Form::label('zona', 'Zona') !!}
-			</div>
-			<div class="input-field col s12">
-				{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Seleccione primero una zona']) !!}
-				{!! Form::label('fila', 'Fila') !!}
-			</div>
-			<div class="input-field col s12">
-				{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
-				{!! Form::label('asiento', 'Asiento') !!}
-			</div>
+						<div class="input-field col s12">
+							{!! Form::select('zona', ['Diamante' => 'Diamante', 'Oro' => 'Oro', 'Plata' => 'Plata'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Seleccione una zona']) !!}
+							{!! Form::label('zona', 'Zona') !!}
+						</div>
+						<div class="input-field col s12">
+							{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Seleccione primero una zona']) !!}
+							{!! Form::label('fila', 'Fila') !!}
+						</div>
+						<div class="input-field col s12">
+							{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
+							{!! Form::label('asiento', 'Asiento') !!}
+						</div>
+						
+					</div>
+					<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
 
+					<div class="row">
+					
+						<div class="input-field center-align">
+							{!! Form::submit('Comprar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
+						</div>	
+					
+					</div>
+						
+				{!! Form::close() !!}
+			@else
+				<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
+				<div class="col s6 m4 col-center">
+					<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
+				</div>
+			@endif
 		</div>
-		<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
-
-		<div class="row">
-
-			<div class="input-field center-align">
-				{!! Form::submit('Comprar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
-			</div>	
-
-		</div>
-
-		{!! Form::close() !!}
-		@else
-		<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
-		<div class="col s6 m4 col-center">
-			<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
-		</div>
-		@endif
 	</div>
-</div>
 </section>
 
 {{-- <section id="compra" class="section-comprar">
@@ -250,38 +245,38 @@
 @endsection
 
 @section('scripts')
-<script>
-	$('#modal-video-open').leanModal({
-		opacity: .8,
-		ready: function() {
-			var videoSCR = $('#modal-video-open').attr("data-video");
-			var videoSCRPlay = videoSCR + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1";
-			$("#iframe").attr('src', videoSCRPlay);
-		},
-		complete: function() { 
-			$("#iframe").attr('src', $('#modal-video-open').attr("data-video"));
-		}
-	});
-	function initMap() {
-		var uluru = {lat: 21.0130174, lng: -101.2741785};
-		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 17,
-			scrollwheel: false,
-			navigationControl: true,
-			draggable: true,
-			center: {lat: 21.0130174, lng: -101.2721822}
-		});
-		var marker = new google.maps.Marker({
-			position: uluru,
-			map: map
-		});
-	}
+	<script>
+		$('#modal-video-open').leanModal({
+			opacity: .8,
+			ready: function() {
+				var videoSCR = $('#modal-video-open').attr("data-video");
+				var videoSCRPlay = videoSCR + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1";
+				$("#iframe").attr('src', videoSCRPlay);
+			},
+		        complete: function() { 
+		           $("#iframe").attr('src', $('#modal-video-open').attr("data-video"));
+		        }
+		    });
+		function initMap() {
+		        var uluru = {lat: 21.0130174, lng: -101.2741785};
+		        var map = new google.maps.Map(document.getElementById('map'), {
+		          zoom: 17,
+		          scrollwheel: false,
+		          navigationControl: true,
+		          draggable: true,
+		          center: {lat: 21.0130174, lng: -101.2721822}
+		        });
+		        var marker = new google.maps.Marker({
+		          position: uluru,
+		          map: map
+		        });
+		      }
 
-	$("#zona").change(function(){
-		var id = $(this).val();
-		$.ajax({
-			url: '{{url('/api/getFilas')}}/Franco_guanajuato/' + id,
-			method: 'GET',
+		$("#zona").change(function(){
+			var id = $(this).val();
+			$.ajax({
+				url: '{{url('/api/getFilas')}}/Franco_guanajuato/' + id,
+				method: 'GET',
 				// data: 'id=' + id,
 				success: function(res){
 					var filas = res;
@@ -294,13 +289,13 @@
 
 				}
 			});
-	});
+		});
 
-	$("#fila").change(function(){
-		var id = $(this).val();
-		$.ajax({
-			url: '{{url('/api/getAsientos')}}/Franco_guanajuato/' + id,
-			method: 'GET',
+		$("#fila").change(function(){
+			var id = $(this).val();
+			$.ajax({
+				url: '{{url('/api/getAsientos')}}/Franco_guanajuato/' + id,
+				method: 'GET',
 				// data: 'id=' + id,
 				success: function(res){
 					var asientos = res;
@@ -313,8 +308,8 @@
 
 				}
 			});
-	});
-</script>
+		});
+	</script>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
 @endsection
