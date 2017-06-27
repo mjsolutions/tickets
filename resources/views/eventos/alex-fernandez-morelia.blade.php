@@ -1,17 +1,17 @@
 @extends('layouts.main')
 
-@section('title', 'Alex Fernandez Morelia')
+@section('title', 'Alex Fernandez en Morelia')
 
-@section('description', 'Alex Fernandez en Morelia, 30 de Junio, 9:00 pm en Cocktail Live Altozano')
+@section('description', 'Alex Fernandez en Morelia, Cocktail Altozano 30 de Junio, 9:30 pm.')
 
 @section('content')
 
 <div class="image-header bg-4 overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Daniel Sosa</h4>
+		<h4>Alex Fernandez</h4>
 		<div class="divider"></div>
-		<p><i>Morelia - Cocktail Live Altozano</i></p>
+		<p><i>Morelia - Cocktail Bar Altozano</i></p>
 	</div>
 	{{-- <button class="btn waves-light waves-effect red">COMPRAR BOLETOS</button> --}}
 </div>
@@ -26,80 +26,65 @@
 			</ul>
 		</div>
 		<div id="descripcion" class="col s12 tab-content">
-			<div class="row">
-				<h4 class="mt-0 raleway quote">PRECIOS</h4>
-				{{-- <div class="divider"></div> --}}
-			</div>
-
 			<div class="col s8 offset-s2 m3 mb-30">
-				<img src="{{ asset('img/daniel.jpg') }}" alt="Daniel Sosa Morelia" class="responsive-img">
+				<img src="{{ asset('img/alex-metepec.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
-			<div class="col s12 m8 offset-m1">				
+			<div class="col s12 m8 offset-m1">
+				<div class="row">
+					<h4 class="mt-0 raleway quote">PRECIOS</h4>
+					{{-- <div class="divider"></div> --}}
+				</div>
+				
 
 				<div class="row mt-30">
+					<div class="qcPricing col s12 m6 center-align mb-10">
+						<div class="box ">
+							<header>
+								<div class="col s12 m12">Preventa</div>
+								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+							</header>
+							<div class="price col s12"><span>$150</span> Por entrada</div>
+							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
+							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
+						</div>
+					</div>
 					
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
+					<div class="qcPricing col s12 m6 center-align mb-10 border-left">
+						<div class="box ">
 							<header>
-								<div class="col s12 m12 amber accent-4">Zona oro</div>
+								<div class="col s12 m12">Dia del evento</div>
 								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
 							</header>
-							<div class="price col s12"><span>$350</span> Por entrada</div>
+							<div class="price col s12"><span>$200</span> Por entrada</div>
 							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
 							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
 						</div>
 					</div>
-
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
-							<header>
-								<div class="col s12 m12 teal accent-4">Zona Meet & Green</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
-							</header>
-							<div class="price col s12"><span>$680</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b></a></div> --}}
-						</div>
-					</div>
-
 				</div>
 
 				<div class="row">
 					<div class="divider"></div>
-					<p class="center-align mt-30">Venta de boletos en Cocktail Live Altozano</p>
+					<p class="center-align mt-30">Venta de boletos exlusivamente en el lugar del evento</p>
 				</div>
 			</div>
 		</div>
 
 		<div id="biografia" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/daniel-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/alex-bio.jpg') }}" class="responsive-img">
 			</div>
 				
 			<div class="col s12 m9">
 				<h4 class="mt-0 raleway quote">BIOGRAFÍA</h4>		
-				<p>Con  una manera de hacer stand up más aterrizada y en cierta forma metódica, Daniel Sosa comenzó a desarrollar su talento para la comedia desde hace aproximadamente 3 años y define su estilo como una combinación entre lo identificacional y observacional.</p>
-				<p>Con tan solo 23 años de edad y cuatro de trayectoria como comediante, Daniel está totalmente convencido de que lo mejor que pudo haber hecho fue renunciar a su vida godín para dedicarse por completo a su verdadera pasión, el mundo de la comedia.</p>
-				<p>“Trabajaba en una cadena de supermercados, era lo que se conoce normalmente como un Godínez y un buen día me dije a mí mismo, si vas a fracasar que sea en algo que te gusta y no que odias”.</p>
-				<p>El comediante mexicano está en todo: lanzó un especial en Netflix Daniel Sosafado.</p>
+				<p>Alex Fernández cree firmemente que todos tienen derecho a reír. Hace stand-up, escribe y en sus ratos libres piensa que sería maravilloso adoptar un niño albino, pero después se da cuenta que al niño lo van a molestar mucho en la escuela y entonces decide ya no adoptarlo. No cree en la fama, pero si llega, está dispuesto a negociar con ella.</p>
+				<p>Es una de las estrellas Mexicanas de Comedy Central, la mecca de los comediantes y es todo un experto en el arte de llevar sus propias experiencias a otros enfoques, logrando así la total identificación con el público. Pero sobretodo manteniendo la línea del respeto y de no caer en lo vulgar. Sin embargo, Alex Fernández sabe que en este medio se necesita de disciplina, constancia y perseverancia, pero sobretodo, el tomar cada experiencia como un aprendizaje para tener crecimiento tanto personal como profesional, lo cual aprendió desde sus primeros shows donde paso por altas y bajas.</p>
+				<p>Fuente:</p>
+				<p><small>http://standupia.com/index.php/standuperos/item/51-alexfernandez <br>https://www.smartspeakers.mx/comicos-y-stand-up/alex-fernandez.html</small></p>
 			</div>
 			<div class="col s3 hide-on-small-only">
-				<img src="{{ asset('img/daniel-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/alex-bio.jpg') }}" class="responsive-img">
 			</div>
-			<div class="clearfix"></div>
-			<div class="col s8 offset-s2 m4">
-				<img src="{{ asset('img/daniel-bio2.jpg') }}" class="responsive-img">
-			</div>
-			<div class="col s12 m8">
-				<p class="mt-0">Después de eso, Sosa, que también es conocido por su faceta en el mundo de los vines, se preparó a nivel profesional en el Teatro de la Comedia y a pesar de que la situación en su casa no fue tan motivante como él esperaba, estaba completamente decidido, se subió al escenario por primera vez y su sorpresa fue más grande que sus nervios.</p>
-				<p>Como él lo dice: ríe siempre de cada detalle de la vida. Daniel cuenta sus anécdotas desde un humor que hará que te sientas identificado a cada momento.</p>
-			</div>
-			<div class="clearfix"></div>
-			<p>Fuente:</p>
-			<p><small>https://www.timeoutmexico.mx/ciudad-de-mexico/teatro/entrevista-con-el-standupero-daniel-sosa</small></p>
-			<p><small>http://saboresmodelo.com/publicacion/daniel-sosa-un-ex-godin-buena-vibra</small></p>
-			
 		</div>
 
 		<div id="lugares" class="col s12 tab-content">
@@ -108,12 +93,12 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>Cocktail Live Altozano</h5>
+					<h5>19 Comedy Bar</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15027.98842948285!2d-101.1706844!3d19.6701288!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf42f9ad8634df860!2sCocktail+Live!5e0!3m2!1ses!2smx!4v1496295365504" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15065.965656603876!2d-99.6255707!3d19.2609846!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x51bf84a2e5845a76!2s19+Comedy+Bar!5e0!3m2!1ses!2smx!4v1493395113840" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 
 				</div>
@@ -121,10 +106,10 @@
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Blvrd. Juan Pablo II 1735, Morelia, Mich</p></li>
-						<li><i class="medium material-icons">schedule</i><p><strong>HORARIO</strong>: Martes a Domingo de 12pm a 11pm</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 6901120</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/CocktaiLiveMariscosBar/" target="_blank">https://www.facebook.com/CocktaiLiveMariscosBar/</a></p></li>
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Avenida Leona Vicario, Coaxustenco, Metepec, Méx</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 01 722 217 0327</p></li>
+						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: <a href="mailto:info@comedybar.mx">info@comedybar.mx</a></p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="http://www.comedybar.mx/" target="_blank">www.comedybar.mx</a></p></li>
 					</ul>
 				</div>
 			</div>
@@ -133,15 +118,15 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/u8ZtE_p-f0I/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/HH6E_Z2YDWI/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/u8ZtE_p-f0I"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Daniel Sosa - Comedy Central Standup</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/HH6E_Z2YDWI"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Alex Fernández @ #StandUpEnComedy</i></p>
 	</div>
 </section>
 
 <section class="section-comprar">
-	<h5 class="mt-50 center-align raleway">Venta de boletos en Cocktail Live Altozano</h5>
+	<h5 class="mt-50 center-align raleway">Venta de boletos exlusivamente en el lugar del evento</h5>
 	<div class="row">
 		<div class="col s6 offset-s3 mt-30">
 			<div class="divider"></div>
@@ -157,13 +142,12 @@
 	<div id="map"></div>
 	
 	<div class="info-lugar">
-		<h5 class="raleway quote mb-15">Lugar del evento</h5>
-		<div class="divider mb-15"></div>
-		<p><b>Cocktail Live Altozano</b></p>
-		<p><i class="material-icons">location_on</i> Blvrd. Juan Pablo II 1735, Morelia, Mich.</p>
-		<p><i class="material-icons">schedule</i><strong>HORARIO</strong>: Martes a Domingo de 12pm a 11pm</p>
-		<p><i class="material-icons">call</i> 6901120</p>
-		<p><i class="material-icons">language</i> <a title="website" href="https://www.facebook.com/CocktaiLiveMariscosBar/" target="_blank">fb/CocktaiLiveMariscosBar</a></p>
+		<h5 class="raleway quote mb-30">Lugar del evento</h5>
+		<div class="divider mb-30"></div>
+		<p><i class="material-icons">location_on</i> Avenida Leona Vicario, Coaxustenco, Metepec, Méx</p>
+		<p><i class="material-icons">call</i> 01 722 217 0327</p>
+		<p><i class="material-icons">email</i> <a href="mailto:info@comedybar.mx">info@comedybar.mx</a></p>
+		<p><i class="material-icons">language</i> <a title="website" href="http://www.comedybar.mx/" target="_blank">www.comedybar.mx</a></p>
 	</div>
 </section>
 
@@ -190,13 +174,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.6701288, lng: -101.1706844};
+		        var uluru = {lat: 19.2609846, lng: -99.6255707};
 		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 18,
+		          zoom: 15,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.6701288, lng: -101.1700844}
+		          center: {lat: 19.2609846, lng: -99.6155707}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,
