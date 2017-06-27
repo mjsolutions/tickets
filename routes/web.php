@@ -119,6 +119,17 @@ Route::group(['prefix'=>'payment'],function(){
 	'uses'	=>	'PaypalFranco_smaController@getPaymentStatus',
 	));
 
+	Route::post('franco_sma7', array(
+	'as'	=>	'payment.franco_sma7',
+	'uses'	=>	'PaypalFranco_sma7Controller@postPayment',
+	));
+
+	//Paypal redirecciona a esta ruta
+	Route::get('franco_sma7/status', array(
+	'as'	=>	'payment.franco_sma7.status',
+	'uses'	=>	'PaypalFranco_sma7Controller@getPaymentStatus',
+	));
+
 	Route::post('franco_celaya', array(
 	'as'	=>	'payment.franco_celaya',
 	'uses'	=>	'PaypalFranco_celayaController@postPayment',
@@ -139,6 +150,17 @@ Route::group(['prefix'=>'payment'],function(){
 	Route::get('franco_guanajuato/status', array(
 	'as'	=>	'payment.franco_guanajuato.status',
 	'uses'	=>	'PaypalFranco_guanajuatoController@getPaymentStatus',
+	));
+
+	Route::post('santiago_tijuana', array(
+	'as'	=>	'payment.santiago_tijuana',
+	'uses'	=>	'PaypalSantiago_tijuanaController@postPayment',
+	));
+
+	//Paypal redirecciona a esta ruta
+	Route::get('santiago_tijuana/status', array(
+	'as'	=>	'payment.santiago_tijuana.status',
+	'uses'	=>	'PaypalSantiago_tijuanaController@getPaymentStatus',
 	));
 });
 

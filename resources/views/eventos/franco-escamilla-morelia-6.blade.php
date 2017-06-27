@@ -15,7 +15,7 @@
 	<div class="row white-text">
 		<h4>Franco Escamilla</h4>
 		<div class="divider"></div>
-		<p><i>Morelia - Teatro Morelos 6 de Julio</i></p>
+		<p><i>Morelia - Teatro Morelos 21 de Julio</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a>
 </div>
@@ -31,7 +31,7 @@
 		</div>
 		<div id="descripcion" class="col s12 tab-content">
 			<div class="row">
-				<h4 class="mt-0 raleway quote">PRECIOS (6 de Julio)</h4>
+				<h4 class="mt-0 raleway quote">PRECIOS (21 de Julio)</h4>
 				{{-- <div class="divider"></div> --}}
 			</div>
 

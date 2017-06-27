@@ -82,7 +82,7 @@ class PaypalFranco6Controller extends Controller
 		$subtotal = $price * $cantidad;		//Subtotal de los items
 		$total = $subtotal * 1.10;
 
-		$item->setName('Franco Escamilla Morelia 6 Julio')	//Nombre del item
+		$item->setName('Franco Escamilla Morelia 21 Julio')	//Nombre del item
 		->setCurrency('MXN')		//Moneda
 		->setDescription('Boleto(s) Franco Escamilla. '.$description)
 		->setQuantity(1)			//Cantidad de items
@@ -103,7 +103,7 @@ class PaypalFranco6Controller extends Controller
 		$transaction = new Transaction();	//Objeto para generar la transacción y pasar los items
 		$transaction->setAmount($amount)
 		->setItemList($item_list)
-		->setDescription('Boleto(s) Franco Escamilla Morelia 6 Julio. '.$description);
+		->setDescription('Boleto(s) Franco Escamilla Morelia 21 Julio. '.$description);
 
 		$redirect_urls = new RedirectUrls();	//Redirección para ver si se completa la compra
 		$redirect_urls->setReturnUrl(route('payment.franco6.status'))
@@ -253,7 +253,7 @@ class PaypalFranco6Controller extends Controller
 			$buydata['evento'] = "Franco Escamilla en Morelia";
 			$buydata['img'] = "img/franco-morelia.jpg";
 			$buydata['lugar'] = "Teatro Morelos";
-			$buydata['fecha'] = "6 de Julio";
+			$buydata['fecha'] = "21 de Julio";
 			$buydata['hr'] = "9:30 pm";
 			$buydata['descripcion'] = $descripcion;
 			$buydata['transaccion'] = $transaction_id;

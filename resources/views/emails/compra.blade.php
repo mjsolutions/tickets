@@ -29,7 +29,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<p style="text-align: center">Este email es tu comprobante para poder recoger tus boletos, no olvides imprimirlo y presentarlo junto con una identificación oficial vigente</p>
+		<p style="text-align: center">Este email es tu comprobante para poder recoger tus boletos, no olvides imprimirlo y presentarlo junto con una copia de tu identificación oficial vigente</p>
 	</div>
 	<div class="row" style="color: #FFF; background: #222; margin-bottom: 0; padding: 20px 0;">
 		<p style="text-align: center;">Todos los derechos reservados  © Bolematico {!! date('Y') !!} </p>
