@@ -214,8 +214,46 @@
 
 					</div>
 				</div>
-					
-					
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/alex-zamora.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Alex Fernandez</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Zamora</b></p>
+									<p>Diablos Wings</p>
+									<p>29 de Junio</p>
+									<p>9:30 pm.</p>
+								</div>
+								<a href="{{ url('/eventos/alex-fernandez-zamora') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/alex-morelia.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Alex Fernandez</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Morelia</b></p>
+									<p>Cocktail Live</p>
+									<p>30 de Junio</p>
+									<p>9:30 pm.</p>
+								</div>
+								<a href="{{ url('/eventos/alex-fernandez-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
+							</div>
+						</div>
+					</div>					
 
 					<div class="col m4">
 						<div class="card horizontal ">

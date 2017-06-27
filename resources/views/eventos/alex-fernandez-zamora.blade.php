@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Alex Fernandez en Morelia')
+@section('title', 'Alex Fernandez en Zamora')
 
-@section('description', 'Alex Fernandez en Morelia, Cocktail Live Altozano 30 de Junio, 9:30 pm.')
+@section('description', 'Alex Fernandez en Zamora, Diablos Wings 29 de Junio, 9:30 pm.')
 
 @section('content')
 
@@ -11,7 +11,7 @@
 	<div class="row white-text">
 		<h4>Alex Fernandez</h4>
 		<div class="divider"></div>
-		<p><i>Morelia - Cocktail Live Altozano</i></p>
+		<p><i>Zamora - Diablos Wings</i></p>
 	</div>
 	{{-- <button class="btn waves-light waves-effect red">COMPRAR BOLETOS</button> --}}
 </div>
@@ -27,7 +27,7 @@
 		</div>
 		<div id="descripcion" class="col s12 tab-content">
 			<div class="col s8 mb-30">
-				<img src="{{ asset('img/alex-banner.jpeg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/alex-banner-zamora.jpeg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m4">
@@ -39,7 +39,7 @@
 							<header>
 								<div class="col s12 m12 teal accent-4">General</div>
 							</header>
-							<div class="price col s12"><span>$180</span> Por entrada</div>
+							<div class="price col s12"><span>$160</span> Por entrada</div>
 						</div>
 					</div>
 
@@ -47,7 +47,7 @@
 
 				<div class="row">
 					<div class="divider"></div>
-					<p class="center-align mt-30">Venta de boletos en Cocktail Live Altozano</p>
+					<p class="center-align mt-30">Venta de boletos en Diablos Wings</p>
 				</div>
 			</div>
 		</div>
@@ -75,12 +75,12 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>Cocktail Live Altozano</h5>
+					<h5>Diablos Wings</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15027.98842948285!2d-101.1706844!3d19.6701288!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf42f9ad8634df860!2sCocktail+Live!5e0!3m2!1ses!2smx!4v1496295365504" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14998.649612371011!2d-102.290882!3d19.980695!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6dad7dee7bbb895e!2sDiablo+Wings!5e0!3m2!1ses!2smx!4v1498577976677" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 
 				</div>
@@ -88,10 +88,10 @@
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Blvrd. Juan Pablo II 1735, Morelia, Mich</p></li>
-						<li><i class="medium material-icons">schedule</i><p><strong>HORARIO</strong>: Martes a Domingo de 12pm a 11pm</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 6901120</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/CocktaiLiveMariscosBar/" target="_blank">https://www.facebook.com/CocktaiLiveMariscosBar/</a></p></li>
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Martínez de Navarrete 20, Col. Nueva Luneta, Centro, 59675 Zamora, Mich.</p></li>
+						<li><i class="medium material-icons">schedule</i><p><strong>HORARIO</strong>: Todos los días de 2 pm a 1 am</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 01 351 136 2432</p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/diablohotwings/" target="_blank">https://www.facebook.com/diablohotwings/</a></p></li>
 					</ul>
 				</div>
 			</div>
@@ -108,7 +108,7 @@
 </section>
 
 <section class="section-comprar">
-	<h5 class="mt-50 center-align raleway">Venta de boletos en Cocktail Live Altozano</h5>
+	<h5 class="mt-50 center-align raleway">Venta de boletos en Diablos Wings</h5>
 	<div class="row">
 		<div class="col s6 offset-s3 mt-30">
 			<div class="divider"></div>
@@ -126,11 +126,10 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-15">Lugar del evento</h5>
 		<div class="divider mb-15"></div>
-		<p><b>Cocktail Live Altozano</b></p>
-		<p><i class="material-icons">location_on</i> Blvrd. Juan Pablo II 1735, Morelia, Mich.</p>
-		<p><i class="material-icons">schedule</i><strong>HORARIO</strong>: Martes a Domingo de 12pm a 11pm</p>
-		<p><i class="material-icons">call</i> 6901120</p>
-		<p><i class="material-icons">language</i> <a title="website" href="https://www.facebook.com/CocktaiLiveMariscosBar/" target="_blank">fb/CocktaiLiveMariscosBar</a></p>
+		<p><b>Diablos Wings</b></p>
+		<p><i class="material-icons">location_on</i> Martínez de Navarrete 20, Col. Nueva Luneta, Centro, 59675 Zamora, Mich.</p>
+		<p><i class="material-icons">call</i> 01 351 136 2432</p>
+		<p><i class="material-icons">language</i> <a title="website" href="https://www.facebook.com/diablohotwings/" target="_blank">fb/diablohoteings</a></p>
 	</div>
 </section>
 
@@ -157,13 +156,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.6701288, lng: -101.1706844};
+		        var uluru = {lat: 19.980695, lng: -102.290882};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 18,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.6701288, lng: -101.1700844}
+		          center: {lat: 19.980695, lng: -102.290282}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,
