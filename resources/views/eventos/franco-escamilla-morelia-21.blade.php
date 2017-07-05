@@ -2,7 +2,7 @@
 
 @section('title', 'Franco Escamilla Morelia')
 
-@section('description', 'Franco Escamilla en Morelia, 06 de Julio, 9:30 pm boletos en bolematico.mx')
+@section('description', 'Franco Escamilla en Morelia, 21 de Julio, 7:00 pm boletos en bolematico.mx')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -15,7 +15,7 @@
 	<div class="row white-text">
 		<h4>Franco Escamilla</h4>
 		<div class="divider"></div>
-		<p><i>Morelia - Teatro Morelos 21 de Julio</i></p>
+		<p><i>Morelia - Teatro Morelos 21 de Julio (7 pm)</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a>
 </div>
@@ -31,12 +31,12 @@
 		</div>
 		<div id="descripcion" class="col s12 tab-content">
 			<div class="row">
-				<h4 class="mt-0 raleway quote">PRECIOS (21 de Julio)</h4>
+				<h4 class="mt-0 raleway quote">PRECIOS 21 de Julio (7:00 pm)</h4>
 				{{-- <div class="divider"></div> --}}
 			</div>
 
 			<div class="col s8 offset-s2 m3 mb-30">
-				<img src="{{ asset('img/franco-morelia21.jpg') }}" alt="Franco Escamilla" class="responsive-img">
+				<img src="{{ asset('img/franco-morelia217.jpg') }}" alt="Franco Escamilla" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 offset-m1">				
@@ -128,17 +128,26 @@
 				<h4 class="mt-0 raleway quote">LUGARES DE VENTA</h4>
 			</div>
 			<div class="row">
-				<h5 class="mt-50 center-align raleway">Preventa exclusiva en linea</h5>
-				<div class="row">
-					<div class="col s6 offset-s3 mt-30">
-						<div class="divider"></div>
-					</div>
+				<div class="col s12">
+					<h5>Taquillas del planetario</h5>
 				</div>
-				<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
-				<div class="row center-align">
-					<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
+				<div class="col s12 m6">									
+					<!-- ## VENUE MAP ## -->
+					<div class="qcEventlayout">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.6546912563167!2d-101.18560468584354!3d19.68473203767239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0de79c733455%3A0x2bb6c9a37c54bca5!2sPlanetario+de+Morelia!5e0!3m2!1ses!2smx!4v1499195093931" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+
 				</div>
 
+				<!-- ## ADDRESS LIST ## -->
+				<div class="col s12 m6">
+					<ul class="qcAddress">
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Av. Ventura Puente s/n, Félix Ireta, 58070 Morelia, Mich.</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 01 443 232 4400</p></li>
+						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="http://ceconexpo.com/" target="_blank">http://ceconexpo.com</a></p></li>
+					</ul>
+				</div>
 			</div>
 
 		</div>
@@ -159,8 +168,8 @@
 		</div>
 		<div class="col s12 m6">
 			@if(Auth()->check())
-				<h5 class="quote raleway">Seleccione sus boletos</h5>
-				{!! Form::open(['route'=>'payment.franco6', 'method'=>'POST']) !!}
+				<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
+				{!! Form::open(['route'=>'payment.franco7', 'method'=>'POST']) !!}
 					<div class="row">
 
 						<div class="input-field col s12">
@@ -177,12 +186,11 @@
 						</div>
 						
 					</div>
-					<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
 
 					<div class="row">
 					
 						<div class="input-field center-align">
-							{!! Form::submit('Comprar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
+							{!! Form::submit('Comprar',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
 						</div>	
 					
 					</div>
@@ -190,12 +198,15 @@
 				{!! Form::close() !!}
 			@else
 				<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
-				<div class="col s6 m4 col-center">
+				<div class="col s6 m3 col-center">
 					<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
 				</div>
 			@endif
 		</div>
+	
+	
 	</div>
+
 </section>
 
 <section class="section-lugar">
@@ -252,7 +263,7 @@
 		$("#zona").change(function(){
 			var id = $(this).val();
 			$.ajax({
-				url: '{{url('/api/getFilas')}}/Franco6/' + id,
+				url: '{{url('/api/getFilas')}}/Franco7/' + id,
 				method: 'GET',
 				// data: 'id=' + id,
 				success: function(res){
@@ -271,7 +282,7 @@
 		$("#fila").change(function(){
 			var id = $(this).val();
 			$.ajax({
-				url: '{{url('/api/getAsientos')}}/Franco6/' + id,
+				url: '{{url('/api/getAsientos')}}/Franco7/' + id,
 				method: 'GET',
 				// data: 'id=' + id,
 				success: function(res){

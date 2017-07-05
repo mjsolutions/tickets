@@ -82,7 +82,7 @@ class PaypalFranco7Controller extends Controller
 		$subtotal = $price * $cantidad;		//Subtotal de los items
 		$total = $subtotal * 1.10;
 
-		$item->setName('Franco Escamilla Morelia 7 Julio')	//Nombre del item
+		$item->setName('Franco Escamilla Morelia 21 Julio, 7 pm')	//Nombre del item
 		->setCurrency('MXN')		//Moneda
 		->setDescription('Boleto(s) Franco Escamilla. '.$description)
 		->setQuantity(1)			//Cantidad de items
@@ -103,7 +103,7 @@ class PaypalFranco7Controller extends Controller
 		$transaction = new Transaction();	//Objeto para generar la transacción y pasar los items
 		$transaction->setAmount($amount)
 		->setItemList($item_list)
-		->setDescription('Boleto(s) Franco Escamilla Morelia 7 Julio. '.$description);
+		->setDescription('Boleto(s) Franco Escamilla Morelia 21 Julio, 7pm. '.$description);
 
 		$redirect_urls = new RedirectUrls();	//Redirección para ver si se completa la compra
 		$redirect_urls->setReturnUrl(route('payment.franco7.status'))
@@ -122,10 +122,10 @@ class PaypalFranco7Controller extends Controller
 			if (\config('app.debug')) {
 				echo "Exception: " . $ex->getMessage() . $ex->getData() . PHP_EOL;
                 $err_data = json_decode($ex->getData(), true);                
-                return redirect('eventos/franco-escamilla-morelia-7')->withErrors('Error: '.$err_data['message']);
+                return redirect('eventos/franco-escamilla-morelia-21')->withErrors('Error: '.$err_data['message']);
 			} else {
 				// Flash::error('Something went wrong, Sorry for inconvenience');
-				return redirect('eventos/franco-escamilla-morelia-7')->withErrors('Algo salio mal perdon por el inconveniente');
+				return redirect('eventos/franco-escamilla-morelia-21')->withErrors('Algo salio mal perdon por el inconveniente');
 			}
 		}
 
@@ -152,7 +152,7 @@ class PaypalFranco7Controller extends Controller
 				//Corroborar que siguen disponibles los boletos
 				$asientos = Franco7::WhereIn('id', $id)->where('status', 1)->get();
 				if($asientos->count() > 0){
-					return redirect('eventos/franco-escamilla-morelia-7')->withErrors('Lo sentimos los boletos ya no estan disponibles');
+					return redirect('eventos/franco-escamilla-morelia-21')->withErrors('Lo sentimos los boletos ya no estan disponibles');
 				}
 
 				//Bloqueamos los boletos
@@ -163,14 +163,14 @@ class PaypalFranco7Controller extends Controller
 
 			}catch(\Exception $e) {
 				DB::rollBack();
-				return redirect('eventos/franco-escamilla-morelia-7')->withErrors('A ocurrido un error db');
+				return redirect('eventos/franco-escamilla-morelia-21')->withErrors('A ocurrido un error db');
 			}
 
 			//Redirecciona a ventana de login de paypal para iniciar porceso de compra
 			return redirect($redirect_url);
 		}
 		// Flash::error('Unknown error occurred');
-		return redirect('eventos/franco-escamilla-morelia-7')->withErrors('A ocurrido un error');
+		return redirect('eventos/franco-escamilla-morelia-21')->withErrors('A ocurrido un error');
 	}
 
 	public function getPaymentStatus(Request $request)
@@ -199,11 +199,11 @@ class PaypalFranco7Controller extends Controller
 
 			}catch(\Exception $e) {
 				DB::rollBack();
-				return redirect('eventos/franco-escamilla-morelia-7')->withErrors('A ocurrido un error');
+				return redirect('eventos/franco-escamilla-morelia-21')->withErrors('A ocurrido un error');
 			}
 
 			// Flash::error('Payment Failed');
-			return redirect('eventos/franco-escamilla-morelia-7')->withErrors('Proceso de compra cancelado');
+			return redirect('eventos/franco-escamilla-morelia-21')->withErrors('Proceso de compra cancelado');
 		}
 
 		//Se obtiene el id del pago
@@ -246,21 +246,21 @@ class PaypalFranco7Controller extends Controller
 
 			}catch(\Exception $e) {
 				DB::rollBack();
-				return redirect('eventos/franco-escamilla-morelia-7')->withErrors('A ocurrido un error');
+				return redirect('eventos/franco-escamilla-morelia-21')->withErrors('A ocurrido un error');
 			}
 
 			$buydata['evento'] = "Franco Escamilla en Morelia";
 			$buydata['img'] = "img/franco-morelia.jpg";
 			$buydata['lugar'] = "Teatro Morelos";
-			$buydata['fecha'] = "7 de Julio";
-			$buydata['hr'] = "9:30 pm";
+			$buydata['fecha'] = "21 de Julio";
+			$buydata['hr'] = "7 pm";
 			$buydata['descripcion'] = $descripcion;
 			$buydata['transaccion'] = $transaction_id;
 			$buydata['user'] = Auth::user()->name;
 			$buydata['email'] = Auth::user()->email;
 
-			Mail::to(Auth::user()->email, Auth::user()->name)
-			->send(new Compra($buydata));
+			// Mail::to(Auth::user()->email, Auth::user()->name)
+			// ->send(new Compra($buydata));
 
 			Flash::success('Gracias por su compra');
 			return redirect()->route('eventos.compra');
@@ -277,11 +277,11 @@ class PaypalFranco7Controller extends Controller
 
 			}catch(\Exception $e) {
 				DB::rollBack();
-				return redirect('eventos/franco-escamilla-morelia-7')->withErrors('A ocurrido un error');
+				return redirect('eventos/franco-escamilla-morelia-21')->withErrors('A ocurrido un error');
 			}
 
 			// Flash::error('Payment Failed');
-			return redirect('eventos/franco-escamilla-morelia-7')->withErrors('Pago fallo');
+			return redirect('eventos/franco-escamilla-morelia-21')->withErrors('Pago fallo');
 		}
 
 	}

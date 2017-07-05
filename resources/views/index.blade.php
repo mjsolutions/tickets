@@ -2,6 +2,25 @@
 
 @section('title', 'Inicio')
 
+@section('styles')
+	<style>
+		.label1 {
+			position: absolute;
+			top: 15px;
+			right: -5.5%;
+			padding: 5px 10px;
+			box-shadow: 1px 2px 5px #111;
+			z-index: 1;
+			transform: rotate(45deg);
+			font-size: 0.75rem;
+		}
+
+		/*.card.horizontal {
+			position: relative;
+		}*/
+	</style>
+@endsection
+
 @section('content')
 
 <section id="home">
@@ -213,47 +232,7 @@
 						</div>
 
 					</div>
-				</div>
-
-					<div class="col m4">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/alex-zamora.jpg')}}">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong>Alex Fernandez</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10"><b>Zamora</b></p>
-									<p>Diablos Wings</p>
-									<p>29 de Junio</p>
-									<p>9:30 pm.</p>
-								</div>
-								<a href="{{ url('/eventos/alex-fernandez-zamora') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
-								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
-							</div>
-						</div>
-					</div>
-
-					<div class="col m4">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/alex-morelia.jpg')}}">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong>Alex Fernandez</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10"><b>Morelia</b></p>
-									<p>Cocktail Live</p>
-									<p>30 de Junio</p>
-									<p>9:30 pm.</p>
-								</div>
-								<a href="{{ url('/eventos/alex-fernandez-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
-								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
-							</div>
-						</div>
-					</div>					
+				</div>			
 
 					<div class="col m4">
 						<div class="card horizontal ">
@@ -270,7 +249,27 @@
 									<p>9:30 pm.</p>
 								</div>
 								<a href="{{ url('/eventos/franco-escamilla-morelia-7') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
-								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4" style="position: relative;">
+							<p class="red white-text label1"><b>¡NUEVA FUNCIÓN!</b></p>
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/franco-morelia217.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Franco Escamilla</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Morelia</b></p>
+									<p>Teatro Morelos</p>
+									<p>21 de Julio</p>
+									<p><b>7 pm.</b></p>
+									
+								</div>
+								<a href="{{ url('/eventos/franco-escamilla-morelia-21') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
@@ -278,7 +277,7 @@
 					<div class="col m4">
 						<div class="card horizontal ">
 							<div class="card-image">
-								<img src="{{asset('img/franco-morelia.jpg')}}">
+								<img src="{{asset('img/franco-morelia21.jpg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
@@ -290,6 +289,25 @@
 									<p>9:30 pm.</p>
 								</div>
 								<a href="{{ url('/eventos/franco-escamilla-morelia-6') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/marisela-roberto-tapia.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Marisela | Roberto Tapia</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Morelia</b></p>
+									<p>Palacio del Arte</p>
+									<p>26 Agosto</p>
+									<p>9:00 pm.</p>
+								</div>
+								<a href="{{ url('/eventos/marisela-roberto-tapia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
 							</div>
 						</div>
