@@ -253,7 +253,7 @@
 						</div>
 					</div>
 
-					<div class="col m4" style="position: relative;">
+					{{-- <div class="col m4" style="position: relative;">
 							<p class="red white-text label1"><b>¡NUEVA FUNCIÓN!</b></p>
 						<div class="card horizontal ">
 							<div class="card-image">
@@ -272,7 +272,7 @@
 								<a href="{{ url('/eventos/franco-escamilla-morelia-21') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
-					</div>
+					</div> --}}
 
 					<div class="col m4">
 						<div class="card horizontal ">
@@ -307,7 +307,7 @@
 									<p>26 Agosto</p>
 									<p>9:00 pm.</p>
 								</div>
-								<a href="{{ url('/eventos/marisela-roberto-tapia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/marisela-roberto-tapia-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 								{{-- <a href="#!" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a> --}}
 							</div>
 						</div>
