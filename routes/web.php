@@ -108,6 +108,17 @@ Route::group(['prefix'=>'payment'],function(){
 	'uses'	=>	'PaypalFranco7Controller@getPaymentStatus',
 	));
 
+	Route::post('deloce', array(
+	'as'	=>	'payment.deloce',
+	'uses'	=>	'PaypalDeloceController@postPayment',
+	));
+
+	//Paypal redirecciona a esta ruta
+	Route::get('deloce/status', array(
+	'as'	=>	'payment.deloce.status',
+	'uses'	=>	'PaypalDeloceController@getPaymentStatus',
+	));
+
 });
 
 
