@@ -45,13 +45,15 @@ class PaypalDeloceController extends Controller
 		$cantidad = count($request->asiento);
 		switch ($request->zona) {
 			case 'Diamante':
-				$price = 790;
+				$price = 750;
 				break;
+			case 'Platino':
+				$price = 650;
 			case 'Oro':
-				$price = 590;
+				$price = 500;
 				break;
 			case 'Plata':
-				$price = 390;
+				$price = 350;
 				break;
 		}
 		$description = "Zona: ".$request->zona." Fila: ".$request->fila." Asientos:";

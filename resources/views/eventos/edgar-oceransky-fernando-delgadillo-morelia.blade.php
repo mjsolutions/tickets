@@ -59,11 +59,11 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m8 teal accent-4"><b>Diamante</b></div>
+								<div class="col s12 m8 cyan lighten-3">Diamante</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s6"><span>$790</span> Por entrada</div>
-							<div class="filas col s6">Filas: A - Ñ</div>
+							<div class="price col s6"><span>$750</span> Por entrada</div>
+							<div class="filas col s6">Filas: A - L</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
@@ -71,10 +71,22 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m8">ORO</div>
+								<div class="col s12 m8 teal accent-4">Platino</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s6"><span>$590</span> Por entrada</div>
+							<div class="price col s6"><span>650</span> Por entrada</div>
+							<div class="filas col s6">Filas: M - Ñ</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
+								<div class="col s12 m8 amber accent-3">ORO</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							</header>
+							<div class="price col s6"><span>$500</span> Por entrada</div>
 							<div class="filas col s6">Filas: Q - X</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 						</div>
@@ -86,7 +98,7 @@
 								<div class="col s12 m8 grey lighten-1">PLATA</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s6"><span>$390</span> Por entrada</div>
+							<div class="price col s6"><span>$350</span> Por entrada</div>
 							<div class="filas col s6">Filas: Y - Z</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 						</div>
@@ -204,7 +216,7 @@
 					<div class="row">
 
 						<div class="input-field col s12">
-							{!! Form::select('zona', ['Diamante' => 'Diamante', 'Oro' => 'Oro', 'Plata' => 'Plata'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Seleccione una zona']) !!}
+							{!! Form::select('zona', ['Diamante' => 'Diamante', 'Platino' => 'Platino', 'Oro' => 'Oro', 'Plata' => 'Plata'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Seleccione una zona']) !!}
 							{!! Form::label('zona', 'Zona') !!}
 						</div>
 						<div class="input-field col s12">

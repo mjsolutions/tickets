@@ -96,12 +96,20 @@ trait AuthenticatesUsers
      */
     protected function sendLoginResponse(Request $request)
     {
+
         $request->session()->regenerate();
 
         $this->clearLoginAttempts($request);
 
+        if($request->ajax()){
+
+            return response('success');            
+
+        }
+        
         return $this->authenticated($request, $this->guard()->user())
                 ?: redirect()->intended($this->redirectPath());
+
     }
 
     /**
