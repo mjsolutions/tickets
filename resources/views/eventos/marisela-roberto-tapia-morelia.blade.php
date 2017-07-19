@@ -50,7 +50,7 @@
 			</div>
 
 			<div class="col s8 offset-s2 m4 mb-30">
-				<img src="{{ asset('img/marisela-roberto-tapia.jpg') }}" alt="Santiago Cruz Morelia" class="responsive-img">
+				<img src="{{ asset('img/marisela-roberto-tapia.jpg') }}" alt="Santiago Cruz Morelia" class="responsive-img materialboxed">
 			</div>
 			
 			<div class="col s12 m8 ">				
@@ -59,23 +59,11 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m8 teal accent-4"><b>VIP1</b></div>
+								<div class="col s12 m8 teal accent-4">Diamante</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$1,680</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: A - Ñ</div> --}}
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
-						</div>
-					</div>
-										
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
-							<header>
-								<div class="col s12 m8 purple lighten-1"><b>VIP2</b></div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
-							</header>
-							<div class="price col s12"><span>$1,260</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Q - X</div> --}}
+							<div class="price col s6"><span>$1,680</span> Por entrada</div>
+							<div class="filas col s6">Filas: A - J</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
@@ -83,11 +71,35 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m8 blue">Preferente</div>
+								<div class="col s12 m8 orange">Oro</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$895</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Q - X</div> --}}
+							<div class="price col s6"><span>$1,260</span> Por entrada</div>
+							<div class="filas col s6">Filas: K - O</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
+								<div class="col s12 m8 purple lighten-1">VIP</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							</header>
+							<div class="price col s12"><span>$3,150</span> Por periquera con 4 asientos</div>
+							{{-- <div class="filas col s6">Num. Asientos: 4</div> --}}
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
+								<div class="col s12 m8 green lighten-4 black-text">Plata</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							</header>
+							<div class="price col s6"><span>$895</span> Por entrada</div>
+							<div class="filas col s6">Filas: A - D</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
@@ -115,7 +127,7 @@
 
 		<div id="biografia" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/marisela-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/marisela-bio.jpg') }}" class="responsive-img materialboxed">
 				<div class="flex">
 					<a href="https://www.facebook.com/ladamadehierroofficial/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 					<a href="https://www.instagram.com/mariselaoficial/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
@@ -229,7 +241,52 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	<h5 class="mt-50 center-align raleway">Venta de boletos en taquillas del planetario y palacio del arte <br> <small>- Próximamente venta en línea -</small></h5>
+	 <div class="row">
+		<div class="col s12 m5">
+			<img src="{{asset('img/palacio-arte.jpg')}}" alt="Teatro Morelos" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/palacio-arte.jpg')}}">
+			<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
+		</div>
+		<div class="col s12 m5 offset-m1">
+			@if(Auth()->check())
+				<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
+				{!! Form::open(['route'=>'payment.rtm', 'method'=>'POST']) !!}
+					<div class="row">
+
+						<div class="input-field col s12">
+							{!! Form::select('zona', ['VIP' => 'VIP', 'Diamante' => 'Diamante', 'Oro' => 'Oro', 'Plata' => 'Plata', 'General' => 'General'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Seleccione una zona']) !!}
+							{!! Form::label('zona', 'Zona') !!}
+						</div>
+						<div class="input-field col s12" id="select-fila">
+							{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Seleccione primero una zona']) !!}
+							{!! Form::label('fila', 'Fila') !!}
+						</div>
+						<div class="input-field col s12" id="select-asiento">
+							{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
+							{!! Form::label('asiento', 'Asiento') !!}
+						</div>
+						
+					</div>
+
+					<div class="row">
+					
+						<div class="input-field center-align">
+							{!! Form::submit('Comprar',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
+						</div>	
+					
+					</div>
+						
+				{!! Form::close() !!}
+			@else
+				<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
+				<div class="col s6 m3 col-center">
+					<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
+				</div>
+			@endif
+		</div>
+	
+	
+	</div>
+	{{-- <h5 class="mt-50 center-align raleway">Venta de boletos en taquillas del planetario y palacio del arte <br> <small>- Próximamente venta en línea -</small></h5>
 	<div class="row">
 		<div class="col s6 offset-s3 mt-30">
 			<div class="divider"></div>
@@ -238,7 +295,7 @@
 	<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
 	<div class="row center-align">
 		<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
-	</div>
+	</div> --}}
 </section>
 
 <section class="section-lugar">
@@ -264,7 +321,13 @@
 @endsection
 
 @section('scripts')
+	<script type="text/javascript" src="{{asset('js/jquery.elevatezoom.js')}}"></script>
 	<script>
+		$("#zoom_01").elevateZoom({
+			scrollZoom : true,
+			zoomType: "inner"
+		});
+
 		$('#modal-video-open').leanModal({
 			opacity: .8,
 			ready: function() {
@@ -290,6 +353,137 @@
 		          map: map
 		        });
 		      }
+
+		$("#zona").change(function(){
+
+			var id = $(this).val();
+
+			//reset a asientos
+			$("#asiento").html("<option value='' selected disabled>Selecciona primero una fila</option>");
+			$("#asiento").material_select();
+
+			if(id == 'General'){
+
+				$.ajax({
+					url: '{{url('/api/getFilas')}}/RTM/' + id,
+					method: 'GET',
+					// data: 'id=' + id,
+					success: function(res){
+						if(res > 0){
+							$("#select-fila").addClass('hidden');
+							$("#select-asiento").removeClass('hidden');
+							$("#fila").val('');
+							$("#fila").attr('required', false);
+							$("#asiento").attr('required', 'required');
+							$("#asiento").attr('multiple', false);
+							$("#asiento").attr('name', 'asiento');
+							var options = "<option value='' selected disabled>Cantidad de asientos</option>";
+
+							if(res > 10){
+
+								for(i=1; i<11; i++){
+									options += '<option value='+i+'>'+ i +'</option>';
+								}
+
+							}else{
+								
+								for(i=1; i<=res; i++){
+									options += '<option value='+i+'>'+ i +'</option>';
+								}
+
+							}
+
+							$("#asiento").html(options);
+							$("#asiento").material_select();
+						}else{
+
+							alert('Lo sentimos boletos agotados para esta sección');
+							$("#select-fila").addClass('hidden');
+							$("#select-asiento").addClass('hidden');
+							$("#fila").val('');
+							$("#fila").attr('required', 'required');
+							$("#asiento").attr('required', 'required');
+							$("#asiento").attr('multiple', false);
+						}
+					}
+				});
+
+
+			}else if(id == 'VIP'){
+
+				$.ajax({
+					url: '{{url('/api/getFilas')}}/RTM/' + id,
+					method: 'GET',
+					// data: 'id=' + id,
+					success: function(res){
+						var filas = res;
+						var options = "<option value='' selected disabled>Selecciona periquera</option>";
+						for(i=0; i<filas.length; i++){
+							options += '<option value="'+filas[i].fila+'">'+ filas[i].fila +'</option>';
+						}
+						$("#select-fila").removeClass('hidden');
+						$("#select-asiento").addClass('hidden');
+						$("#fila").attr('required', 'required');
+						$("#asiento").attr('required', false);
+						$("#fila").html(options);
+						$("#fila").material_select();
+
+					}
+				});
+
+
+			}else{
+
+				$.ajax({
+					url: '{{url('/api/getFilas')}}/RTM/' + id,
+					method: 'GET',
+					// data: 'id=' + id,
+					success: function(res){
+						var filas = res;
+						var options = "<option value='' selected disabled>Selecciona una fila</option>";
+						for(i=0; i<filas.length; i++){
+							options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
+						}
+						$("#select-fila").removeClass('hidden');
+						$("#select-asiento").removeClass('hidden');
+						$("#fila").attr('required', 'required');
+						$("#asiento").attr('required', 'required');
+						$("#asiento").attr('multiple', true);
+						$("#asiento").attr('name', 'asiento[]');
+						$("#fila").html(options);
+						$("#fila").material_select();
+
+					}
+				});
+
+			}
+		});
+
+		$("#fila").change(function(){
+
+			var fila = $(this).val();
+			var zona = $("#zona").val();
+
+			$.ajax({
+				url: '{{url('/api/getAsientos2')}}/RTM/' + zona + '/' + fila,
+				method: 'GET',
+				// data: 'id=' + id,
+				success: function(res){
+					var asientos = res;
+					var options = "<option value='' selected disabled>Seleccione los asientos</option>";
+					for(i=0; i<asientos.length; i++){
+						options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
+					}
+					$("#asiento").html(options);
+					$("#asiento").material_select();
+
+				}
+			});
+		});
+
+		// $("#asiento").change(function(){
+		// 	alert($(this).val());
+		// });
 	</script>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>

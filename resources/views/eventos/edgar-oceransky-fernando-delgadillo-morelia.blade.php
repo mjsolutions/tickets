@@ -207,7 +207,7 @@
 <section id="compra" class="section-comprar">
 	<div class="row">
 		<div class="col s12 m6">
-			<img src="{{asset('img/teatro-morelos.svg')}}" alt="Teatro Morelos" class="responsive-img">
+			<img src="{{asset('img/teatro-morelos2.svg')}}" alt="Teatro Morelos" class="responsive-img materialboxed">
 		</div>
 		<div class="col s12 m6">
 			@if(Auth()->check())

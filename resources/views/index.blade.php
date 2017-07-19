@@ -234,25 +234,6 @@
 					</div>
 				</div>			
 
-					<div class="col m4">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/franco-morelia.jpg')}}">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong>Franco Escamilla</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10"><b>Morelia</b></p>
-									<p>Teatro Morelos</p>
-									<p>7 de Julio</p>
-									<p>9:30 pm.</p>
-								</div>
-								<a href="{{ url('/eventos/franco-escamilla-morelia-7') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
-					</div>
-
 					<div class="col m4" style="position: relative;">
 							<p class="red white-text label1"><b>¡NUEVA FUNCIÓN!</b></p>
 						<div class="card horizontal ">
@@ -311,6 +292,25 @@
 							</div>
 						</div>
 					</div>
+
+					{{-- <div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/manu-nna.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>Manu NNa</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Morelia</b></p>
+									<p>Cocktail Live</p>
+									<p>01 Septiembre</p>
+									<p>10:00 pm.</p>
+								</div>
+								<a href="{{ url('/eventos/manu-nna-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div> --}}
 
 					<div class="col m4">
 						<div class="card horizontal ">

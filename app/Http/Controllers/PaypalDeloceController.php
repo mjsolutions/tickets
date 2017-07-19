@@ -153,7 +153,7 @@ class PaypalDeloceController extends Controller
 
 			try{
 				//Corroborar que siguen disponibles los boletos
-				$asientos = Deloce::WhereIn('id', $id)->where('status', 1)->get();
+				$asientos = Deloce::WhereIn('id', $id)->where('status', '<>', 0)->get();
 				if($asientos->count() > 0){
 					return redirect('eventos/edgar-oceransky-fernando-delgadillo-morelia')->withErrors('Lo sentimos los boletos ya no estan disponibles');
 				}
