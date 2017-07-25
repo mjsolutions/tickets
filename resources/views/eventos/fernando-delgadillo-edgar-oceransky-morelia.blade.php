@@ -2,7 +2,7 @@
 
 @section('title', 'Edgar Oceransky y Fernando Delgadillo')
 
-@section('description', 'Edgar Oceransky y Fernando Delgadillo, Morelia 13 de octubre 2017, 9 pm')
+@section('description', 'Fernando Delgadillo y Edgar Oceransky, Morelia 13 de octubre 2017, 9 pm')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -27,7 +27,7 @@
 <div class="image-header bg-morelos overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Edgar Oceransky / Fernando Delgadillo</h4>
+		<h4>Fernando Delgadillo / Edgar Oceransky</h4>
 		<div class="divider"></div>
 		<p><i>Morelia - Teatro Morelos</i></p>
 	</div>
@@ -60,11 +60,11 @@
 						<div class="box col s12">
 							<header>
 								<div class="col s12 m8 cyan lighten-3">Diamante</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s6"><span>$750</span> Por entrada</div>
 							<div class="filas col s6">Filas: A - L</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
 
@@ -72,11 +72,11 @@
 						<div class="box col s12">
 							<header>
 								<div class="col s12 m8 teal accent-4">Platino</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s6"><span>650</span> Por entrada</div>
 							<div class="filas col s6">Filas: M - Ñ</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
 
@@ -84,11 +84,11 @@
 						<div class="box col s12">
 							<header>
 								<div class="col s12 m8 amber accent-3">ORO</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s6"><span>$500</span> Por entrada</div>
 							<div class="filas col s6">Filas: Q - X</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
 
@@ -96,11 +96,11 @@
 						<div class="box col s12">
 							<header>
 								<div class="col s12 m8 grey lighten-1">PLATA</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s6"><span>$350</span> Por entrada</div>
 							<div class="filas col s6">Filas: Y - Z</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
 
@@ -209,7 +209,7 @@
 		<div class="col s12 m6">
 			<img src="{{asset('img/teatro-morelos2.svg')}}" alt="Teatro Morelos" class="responsive-img materialboxed">
 		</div>
-		<div class="col s12 m6">
+		{{-- <div class="col s12 m6">
 			@if(Auth()->check())
 				<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
 				{!! Form::open(['route'=>'payment.deloce', 'method'=>'POST']) !!}
@@ -245,6 +245,16 @@
 					<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
 				</div>
 			@endif
+		</div> --}}
+		<h5 class="mt-50 center-align raleway">Venta de boletos en las taquillas del planetario</h5>
+		<div class="row">
+			<div class="col s6 offset-s3 mt-30">
+				<div class="divider"></div>
+			</div>
+		</div>
+		<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
+		<div class="row center-align">
+			<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
 		</div>
 	
 	

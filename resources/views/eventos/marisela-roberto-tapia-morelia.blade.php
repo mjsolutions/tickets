@@ -60,11 +60,11 @@
 						<div class="box col s12">
 							<header>
 								<div class="col s12 m8 teal accent-4">Diamante</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b>{{--  <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s6"><span>$1,680</span> Por entrada</div>
 							<div class="filas col s6">Filas: A - J</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b>{{--  <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
 
@@ -72,11 +72,11 @@
 						<div class="box col s12">
 							<header>
 								<div class="col s12 m8 orange">Oro</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b>{{--  <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s6"><span>$1,260</span> Por entrada</div>
 							<div class="filas col s6">Filas: K - O</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b>{{--  <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
 
@@ -84,11 +84,11 @@
 						<div class="box col s12">
 							<header>
 								<div class="col s12 m8 purple lighten-1">VIP</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b>{{--  <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s12"><span>$3,150</span> Por periquera con 4 asientos</div>
 							{{-- <div class="filas col s6">Num. Asientos: 4</div> --}}
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b>{{--  <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
 
@@ -96,11 +96,11 @@
 						<div class="box col s12">
 							<header>
 								<div class="col s12 m8 green lighten-4 black-text">Plata</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b>{{--  <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s6"><span>$895</span> Por entrada</div>
 							<div class="filas col s6">Filas: A - D</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b>{{--  <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
 
@@ -108,11 +108,11 @@
 						<div class="box col s12">
 							<header>
 								<div class="col s12 m8 grey lighten-1">General</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b>{{--  <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s12"><span>$420</span> Por entrada</div>
 							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a></div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b>{{--  <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
 
@@ -246,7 +246,7 @@
 			<img src="{{asset('img/palacio-arte.jpg')}}" alt="Teatro Morelos" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/palacio-arte.jpg')}}">
 			<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
 		</div>
-		<div class="col s12 m5 offset-m1">
+		{{-- <div class="col s12 m5 offset-m1">
 			@if(Auth()->check())
 				<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
 				{!! Form::open(['route'=>'payment.rtm', 'method'=>'POST']) !!}
@@ -282,20 +282,20 @@
 					<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
 				</div>
 			@endif
-		</div>
+		</div> --}}
 	
 	
-	</div>
-	{{-- <h5 class="mt-50 center-align raleway">Venta de boletos en taquillas del planetario y palacio del arte <br> <small>- Próximamente venta en línea -</small></h5>
-	<div class="row">
-		<div class="col s6 offset-s3 mt-30">
-			<div class="divider"></div>
+		<h5 class="mt-50 center-align raleway">Venta de boletos en taquillas del planetario y palacio del arte <br> <small>- Próximamente venta en línea -</small></h5>
+		<div class="row">
+			<div class="col s6 offset-s3 mt-30">
+				<div class="divider"></div>
+			</div>
+		</div>
+		<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
+		<div class="row center-align">
+			<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
 		</div>
 	</div>
-	<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
-	<div class="row center-align">
-		<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
-	</div> --}}
 </section>
 
 <section class="section-lugar">

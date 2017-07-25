@@ -234,7 +234,7 @@
 					</div>
 				</div>			
 
-					<div class="col m4" style="position: relative;">
+					{{-- <div class="col m4" style="position: relative;">
 							<p class="red white-text label1"><b>¡NUEVA FUNCIÓN!</b></p>
 						<div class="card horizontal ">
 							<div class="card-image">
@@ -272,7 +272,7 @@
 								<a href="{{ url('/eventos/franco-escamilla-morelia-6') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
-					</div>
+					</div> --}}
 
 					<div class="col m4">
 						<div class="card horizontal ">
@@ -319,14 +319,14 @@
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h5 style="font-size: 1.25rem"><strong>Edgar Oceransky | Fernando Degadillo</strong></h5>
+									<h5 style="font-size: 1.25rem"><strong>Fernando Degadillo | Edgar Oceransky</strong></h5>
 									<div class="divider"></div>
 									<p class="mt-10"><b>Morelia</b></p>
 									<p>Teatro Morelos</p>
 									<p>13 Octubre</p>
 									<p>9:00 pm.</p>
 								</div>
-								<a href="{{ url('/eventos/edgar-oceransky-fernando-delgadillo-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/fernando-delgadillo-edgar-oceransky-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
