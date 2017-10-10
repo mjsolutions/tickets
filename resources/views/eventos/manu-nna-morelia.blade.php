@@ -41,14 +41,16 @@
 							</header>
 							<div class="price col s12"><span>$180</span> Por entrada</div>
 						</div> --}}
+						<div class="divider"></div>
+						<p class="center-align mt-30">Mayores informes en Cocktail Live Altozano</p>
 					</div>
 
 				</div>
 
-				<div class="row">
+				{{-- <div class="row">
 					<div class="divider"></div>
 					<p class="center-align mt-30">Venta de boletos en Cocktail Live Altozano</p>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 

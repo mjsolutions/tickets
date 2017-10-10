@@ -31,7 +31,7 @@
 		<div class="divider"></div>
 		<p><i>Morelia - Teatro Morelos</i></p>
 	</div>
-	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a>
+	{{-- <a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a> --}}
 </div>
 
 <section class="container">
@@ -63,7 +63,7 @@
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s6"><span>$750</span> Por entrada</div>
-							<div class="filas col s6">Filas: A - L</div>
+							<div class="filas col s6">Filas: A - M</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
@@ -75,7 +75,7 @@
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s6"><span>650</span> Por entrada</div>
-							<div class="filas col s6">Filas: M - Ñ</div>
+							<div class="filas col s6">Filas: N - Ñ | Q - R</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
@@ -87,7 +87,7 @@
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s6"><span>$500</span> Por entrada</div>
-							<div class="filas col s6">Filas: Q - X</div>
+							<div class="filas col s6">Filas: S - Y</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
@@ -99,7 +99,7 @@
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 							</header>
 							<div class="price col s6"><span>$350</span> Por entrada</div>
-							<div class="filas col s6">Filas: Y - Z</div>
+							<div class="filas col s6">Filas: Z</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
 						</div>
 					</div>
@@ -108,7 +108,7 @@
 
 				<div class="row">
 					<div class="divider"></div>
-					<p class="center-align mt-30">Al realizar tu compra en línea Paypal realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
+					{{-- <p class="center-align mt-30">Al realizar tu compra en línea Paypal realiza un cargo extra de <b>10%</b> por concepto de servicio.</p> --}}
 				</div>
 			</div>
 		</div>
@@ -172,12 +172,12 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>Taquillas del planetario</h5>
+					<h5>RS Viajes Centro</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.6546912563167!2d-101.18560468584354!3d19.68473203767239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0de79c733455%3A0x2bb6c9a37c54bca5!2sPlanetario+de+Morelia!5e0!3m2!1ses!2smx!4v1499195093931" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.1943227085408!2d-101.18477128552061!3d19.704349286730476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e0d6bca646b%3A0x1b0a3a981724216f!2sRS+Viajes+Centro!5e0!3m2!1ses!2smx!4v1501091355750" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 
 				</div>
@@ -185,10 +185,10 @@
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Av. Ventura Puente s/n, Félix Ireta, 58070 Morelia, Mich.</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 01 443 232 4400</p></li>
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: 20 de Noviembre 917, Centro Histórico, 58000 Morelia, Mich</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 01 443 312 4639</p></li>
 						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="http://ceconexpo.com/" target="_blank">http://ceconexpo.com</a></p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/RsViajesCentro/" target="_blank">https://www.facebook.com/RsViajesCentro/</a></p></li>
 					</ul>
 				</div>
 			</div>
@@ -207,7 +207,7 @@
 <section id="compra" class="section-comprar">
 	<div class="row">
 		<div class="col s12 m6">
-			<img src="{{asset('img/teatro-morelos2.svg')}}" alt="Teatro Morelos" class="responsive-img materialboxed">
+			<img src="{{asset('img/teatro-morelos3.svg')}}" alt="Teatro Morelos" class="responsive-img materialboxed">
 		</div>
 		{{-- <div class="col s12 m6">
 			@if(Auth()->check())
@@ -246,15 +246,17 @@
 				</div>
 			@endif
 		</div> --}}
-		<h5 class="mt-50 center-align raleway">Venta de boletos en las taquillas del planetario</h5>
-		<div class="row">
-			<div class="col s6 offset-s3 mt-30">
-				<div class="divider"></div>
+		<div class="col m4 offset-m1">
+			<h5 class="mt-50 center-align raleway">Venta de boletos en RS Viajes Centro</h5>
+			<div class="row">
+				<div class="col s6 offset-s3 mt-30">
+					<div class="divider"></div>
+				</div>
 			</div>
-		</div>
-		<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
-		<div class="row center-align">
-			<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
+			<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
+			<div class="row center-align">
+				<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
+			</div>
 		</div>
 	
 	

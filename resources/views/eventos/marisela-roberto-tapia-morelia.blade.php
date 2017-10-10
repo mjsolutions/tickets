@@ -183,7 +183,7 @@
 			<div class="row">
 				<h4 class="mt-0 raleway quote">LUGARES DE VENTA</h4>
 			</div>
-			<div class="row">
+			{{-- <div class="row">
 				<div class="col s12">
 					<h5>Taquillas del planetario</h5>
 				</div>
@@ -204,7 +204,7 @@
 						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="http://ceconexpo.com/" target="_blank">http://ceconexpo.com</a></p></li>
 					</ul>
 				</div>
-			</div>
+			</div> --}}
 
 			<div class="row">
 				<div class="col s12">
@@ -285,15 +285,17 @@
 		</div> --}}
 	
 	
-		<h5 class="mt-50 center-align raleway">Venta de boletos en taquillas del planetario y palacio del arte <br> <small>- Próximamente venta en línea -</small></h5>
-		<div class="row">
-			<div class="col s6 offset-s3 mt-30">
-				<div class="divider"></div>
+		<div class="col m5 offset-m1">
+			<h5 class="mt-50 center-align raleway">Venta de boletos en el Palacio del Arte {{-- <br> <small>- Próximamente venta en línea -</small> --}}</h5>
+			<div class="row">
+				<div class="col s6 offset-s3 mt-30">
+					<div class="divider"></div>
+				</div>
 			</div>
-		</div>
-		<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
-		<div class="row center-align">
-			<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
+			<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
+			<div class="row center-align">
+				<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
+			</div>
 		</div>
 	</div>
 </section>

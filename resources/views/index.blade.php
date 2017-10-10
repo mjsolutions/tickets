@@ -234,47 +234,7 @@
 					</div>
 				</div>			
 
-					{{-- <div class="col m4" style="position: relative;">
-							<p class="red white-text label1"><b>¡NUEVA FUNCIÓN!</b></p>
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/franco-morelia217.jpg')}}">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong>Franco Escamilla</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10"><b>Morelia</b></p>
-									<p>Teatro Morelos</p>
-									<p>21 de Julio</p>
-									<p><b>7 pm.</b></p>
-									
-								</div>
-								<a href="{{ url('/eventos/franco-escamilla-morelia-21') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col m4">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/franco-morelia21.jpg')}}">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong>Franco Escamilla</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10"><b>Morelia</b></p>
-									<p>Teatro Morelos</p>
-									<p>21 de Julio</p>
-									<p>9:30 pm.</p>
-								</div>
-								<a href="{{ url('/eventos/franco-escamilla-morelia-6') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
-					</div> --}}
-
-					<div class="col m4">
+					{{-- <div class="col m4">
 						<div class="card horizontal ">
 							<div class="card-image">
 								<img src="{{asset('img/marisela-roberto-tapia.jpg')}}">
@@ -291,25 +251,6 @@
 								<a href="{{ url('/eventos/marisela-roberto-tapia-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
-					</div>
-
-					{{-- <div class="col m4">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/manu-nna.jpg')}}">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong>Manu NNa</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10"><b>Morelia</b></p>
-									<p>Cocktail Live</p>
-									<p>01 Septiembre</p>
-									<p>10:00 pm.</p>
-								</div>
-								<a href="{{ url('/eventos/manu-nna-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
 					</div> --}}
 
 					<div class="col m4">
@@ -319,7 +260,7 @@
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h5 style="font-size: 1.25rem"><strong>Fernando Degadillo | Edgar Oceransky</strong></h5>
+									<h5 style="font-size: 1.25rem"><strong>Fernando Delgadillo | Edgar Oceransky</strong></h5>
 									<div class="divider"></div>
 									<p class="mt-10"><b>Morelia</b></p>
 									<p>Teatro Morelos</p>
@@ -327,6 +268,25 @@
 									<p>9:00 pm.</p>
 								</div>
 								<a href="{{ url('/eventos/fernando-delgadillo-edgar-oceransky-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m4">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/jeans-aguascalientes.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong>JNS</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10"><b>Aguascalientes</b></p>
+									<p>Palenque de la feria</p>
+									<p>02 Diciembre</p>
+									<p>9:00 pm.</p>
+								</div>
+								<a href="{{ url('/eventos/jns-aguascalientes') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
