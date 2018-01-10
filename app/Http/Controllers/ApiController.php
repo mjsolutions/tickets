@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Franco6;
 use App\Franco7;
 use App\Deloce;
-use App\RTM;
+use App\Bronco;
 
 class ApiController extends Controller
 {
@@ -16,12 +16,14 @@ class ApiController extends Controller
             return Franco6::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
         }elseif($table == "Deloce"){
             return Deloce::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
-        }elseif($table == "RTM"){
+        }elseif($table == "Bronco"){
             if($zona == 'General'){
-                $disponibles = 2406 - (RTM::where('seccion', 'General')->sum('asiento'));
+                $disponibles = 1167 - (Bronco::where('seccion', 'General')->count());
                 return $disponibles;
             }
-            return RTM::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
+
+            $disponibles = 1216 - (Bronco::where('seccion', 'Tendido Alto')->count());
+            return $disponibles;
         }
         return Franco7::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
     }

@@ -127,7 +127,7 @@
 				<div class="col s12">
 					<h5>Taquillas del palenque de la feria</h5>
 				</div>
-				<div class="col s12 ">									
+				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d925.6144584278218!2d-102.30395967085808!3d21.878438843610546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee86fe8caba5%3A0xa67935ef5998e6bf!2sPalenque+de+la+Feria+Nacional+de+San+Marcos!5e0!3m2!1ses-419!2smx!4v1505903821107" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -136,7 +136,7 @@
 				</div>
 
 				<!-- ## ADDRESS LIST ## -->
-				<div class="col s12">
+				<div class="col s12 m6">
 					<ul class="qcAddress">
 						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Esq., Calle Nieto, Barrio de San Marcos, 20070 Aguascalientes, Ags.</p></li>
 						<li><i class="medium material-icons">schedule</i><p><strong>HORARIO</strong>: Lunes a Sabado 11:00 am - 7:00 pm</p></li>

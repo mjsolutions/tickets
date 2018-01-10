@@ -119,15 +119,15 @@ Route::group(['prefix'=>'payment'],function(){
 	'uses'	=>	'PaypalDeloceController@getPaymentStatus',
 	));
 
-	Route::post('rtm', array(
-	'as'	=>	'payment.rtm',
-	'uses'	=>	'PaypalRTMController@postPayment',
+	Route::post('bronco', array(
+	'as'	=>	'payment.bronco',
+	'uses'	=>	'PaypalBroncoController@postPayment',
 	));
 
 	//Paypal redirecciona a esta ruta
-	Route::get('rtm/status', array(
-	'as'	=>	'payment.rtm.status',
-	'uses'	=>	'PaypalRTMController@getPaymentStatus',
+	Route::get('bronco/status', array(
+	'as'	=>	'payment.bronco.status',
+	'uses'	=>	'PaypalBroncoController@getPaymentStatus',
 	));
 
 });

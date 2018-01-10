@@ -232,64 +232,28 @@
 						</div>
 
 					</div>
-				</div>			
-
-					{{-- <div class="col m4">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/marisela-roberto-tapia.jpg')}}">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong>Marisela | Roberto Tapia</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10"><b>Morelia</b></p>
-									<p>Palacio del Arte</p>
-									<p>26 Agosto</p>
-									<p>9:00 pm.</p>
-								</div>
-								<a href="{{ url('/eventos/marisela-roberto-tapia-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
-					</div> --}}
+				</div>
 
 					<div class="col m4">
 						<div class="card horizontal ">
 							<div class="card-image">
-								<img src="{{asset('img/oceransky-delgadillo.jpg')}}">
+								<img src="{{asset('img/bronco.jpg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h5 style="font-size: 1.25rem"><strong>Fernando Delgadillo | Edgar Oceransky</strong></h5>
+									<h5><strong>Bronco</strong></h5>
 									<div class="divider"></div>
-									<p class="mt-10"><b>Morelia</b></p>
-									<p>Teatro Morelos</p>
-									<p>13 Octubre</p>
-									<p>9:00 pm.</p>
+									<p class="mt-10 mb-5"><b>Morelia</b></p>
+									<p>Plaza de Toros Monumental</p>
+									<p>15 Diciembre</p>
+									{{-- <p></p> --}}
 								</div>
-								<a href="{{ url('/eventos/fernando-delgadillo-edgar-oceransky-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/bronco-morelia') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
 
-					<div class="col m4">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/jeans-aguascalientes.jpg')}}">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong>JNS</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10"><b>Aguascalientes</b></p>
-									<p>Palenque de la feria</p>
-									<p>02 Diciembre</p>
-									<p>9:00 pm.</p>
-								</div>
-								<a href="{{ url('/eventos/jns-aguascalientes') }}" class="btn light-blue darken-1 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
-					</div>
+					
 
 			</div>
 		</div>
