@@ -97,15 +97,15 @@ Route::group(['prefix'=>'payment'],function(){
 	));
 
 
-	Route::post('franco7', array(
-	'as'	=>	'payment.franco7',
-	'uses'	=>	'PaypalFranco7Controller@postPayment',
+	Route::post('ornelas', array(
+	'as'	=>	'payment.ornelas',
+	'uses'	=>	'PaypalOrnelasController@postPayment',
 	));
 
 	//Paypal redirecciona a esta ruta
-	Route::get('franco7/status', array(
-	'as'	=>	'payment.franco7.status',
-	'uses'	=>	'PaypalFranco7Controller@getPaymentStatus',
+	Route::get('ornelas/status', array(
+	'as'	=>	'payment.ornelas.status',
+	'uses'	=>	'PaypalOrnelasController@getPaymentStatus',
 	));
 
 	Route::post('deloce', array(

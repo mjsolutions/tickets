@@ -7,7 +7,7 @@ use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\BuyTicketRequest;
-use App\Franco7;
+use App\Ornelas;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use PayPal\Rest\ApiContext;
@@ -26,9 +26,9 @@ use PayPal\Api\Transaction;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Compra as Compra;
 
-class PaypalFranco7Controller extends Controller
+class PaypalOrnelasController extends Controller
 {
-        private $_api_context;
+    private $_api_context;
 
 	public function __construct()
 	{
