@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Raúl Ornelas Morelia')
+@section('title', 'Alan Saldaña Morelia')
 
-@section('description', 'Raúl Ornelas en Morelia, 23 de Febrero, 8:30 pm boletos en RS Viajes centro y en bolematico.mx')
+@section('description', 'Alan Saldaña en Morelia, 09 de Febrero, 9 pm boletos en Sky Bar y en bolematico.mx')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -10,12 +10,12 @@
 
 @section('content')
 
-<div class="image-header bg-2 overlay overlay-5">
+<div class="image-header bg-4 overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Raúl Ornelas</h4>
+		<h4>Alan Saldaña</h4>
 		<div class="divider"></div>
-		<p><i>Morelia - Teatro Stella Inda 23 de Febrero</i></p>
+		<p><i>Morelia - Anden Food Units</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -36,7 +36,7 @@
 			</div>
 
 			<div class="col s8 offset-s2 m3 mb-30 card-flyer">
-				<img src="{{ asset('img/ornelas.jpeg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/alan-09.jpeg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 offset-m1">				
@@ -46,34 +46,10 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12 card-flyer">
 							<header>
-								<div class="col s12 m8 grey lighten-1">Zona plata</div>
+								<div class="col s12 m8 teal accent-4">Zona General</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$400</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Y - Z</div> --}}
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
-						</div>
-					</div>
-					
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12 card-flyer">
-							<header>
-								<div class="col s12 m8">Zona oro</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
-							</header>
-							<div class="price col s12"><span>$600</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: Q - X</div> --}}
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
-						</div>
-					</div>
-
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12 card-flyer">
-							<header>
-								<div class="col s12 m8 teal accent-4">Zona diamante</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
-							</header>
-							<div class="price col s12"><span>$750</span> Por entrada</div>
+							<div class="price col s12">{{-- <span>$200</span> Por entrada --}}</div>
 							{{-- <div class="filas col s6">Filas: A - Ñ</div> --}}
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
@@ -84,38 +60,27 @@
 				<div class="row">
 					<div class="divider"></div>
 					<p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
+					<p class="center-align"><b>Informes:</b> <a href="tel:4433159243" style="background: #4caf50; color: #fff; padding: 5px 10px;">443 315 9243</a></p>
 				</div>
 			</div>
 		</div>
 
 		<div id="biografia" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/ornelas-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
 			</div>
-			<div class="col s12 m9">
+			<div class="col s12 m7">
 				<h4 class="mt-0 raleway quote">BIOGRAFÍA</h4>		
-				<p>Raúl Ornelas, originario de Arriaga, Chiapas, aprendió a tocar guitarra desde la secundaria. Deseaba cursar la carrera de administración de empresas turísticas, pero se dio cuenta de que lo suyo en realidad era la música, así que decidió ir a la Ciudad de México para probar suerte.</p>
-				<p>Y grabó su primera canción, Alguien Está Entre los Dos. De inmediato le surgió un contrato como cantautor y grabó su primer disco en Barcelona, España: “Ornelas en el Exilio”, que incluía la canción con la que representó a México en el Festival Viña del Mar, Chile, en 1998: Gato y Pantera.</p>
-				<p>Con su segundo disco, Manual de lo Prohibido, se dio a conocer en la mayor parte de la República Mexicana, gracias a su exitosa canción Las Cartas Sobre la Mesa, que escribió en coautoría con Roberto Ruiz.</p>
+				<p>Alan Saldaña, el AS de la comedia.</p>
+				<p>Joven y con un gran ángel y talento. Es una comedia sumamente divertida. A pesar de tener relativamente pocos años en la comedia, Alan ha cautivado y sorprendido a todo el público con sus originales monólogos y rutinas. Una verdadera inversión que provoca grandes carcajadas a todos.</p>
+				<p>Su meta no es ser el comediante más famoso del mundo, lo que Alan Saldaña quiere es conquistar toda Latinoamérica y llevar su comedia hasta donde pueda llegar, a escenarios donde tenga que poner a prueba su talento.</p>
 				
 			</div>
-			<div class="col s3 hide-on-small-only">
-				<img src="{{ asset('img/ornelas-bio.jpg') }}" class="responsive-img">
+			<div class="col m5 hide-on-small-only">
+				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
 			</div>
 			<div class="clearfix"></div>
-			<div class="col s8 offset-s2 m4">
-				<img src="{{ asset('img/ornelas-bio2.jpg') }}" class="responsive-img">
-			</div>
-			<div class="col s12 m8">
-				<p class="mt-0">Desde el 2004, Raúl Ornelas forma parte del grupo Tres de Copas, con sus grandes amigos Jaime Flores y Luis Carlos Monroy, con quienes ha compuesto un sinfín de canciones, como Se Me Hace, interpretada por Pandora, y Vete, por Rocío Dúrcal. Este grupo empezó con el pie derecho al tener la oportunidad de abrir los conciertos de Juan Gabriel y Alejandro Fernández.</p>
-				<p>Tres de Copas alcanzó la fama a nivel nacional con el tema Amor Mío, que hizo Raúl en coautoría con Jaime Flores y José Juan Monroy, y que se utilizó como tema principal de la telenovela “Belinda”.</p>
-				
-			</div>
-			<div class="clearfix"></div>
-			<p>Sitio web Oficial:</p>
-			<p><a href="hhttps://www.facebook.com/raulornelas/" target="_blank">hhttps://www.facebook.com/raulornelas/</a></p>
-			<p>Fuente:</p>
-			<p><small>http://www.sacm.org.mx/biografias/biografias-interior.asp?txtSocio=27287</small></p>
+			
 			
 		</div>
 
@@ -125,23 +90,22 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>RS Viajes Centro</h5>
+					<h5>Anden Food Units</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.1943227085408!2d-101.18477128552061!3d19.704349286730476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e0d6bca646b%3A0x1b0a3a981724216f!2sRS+Viajes+Centro!5e0!3m2!1ses!2smx!4v1501091355750" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120211.6619702815!2d-101.25805704708628!3d19.686448121413147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0ddc39c82a4b%3A0xc3f0eba6b883e1c1!2sAnd%C3%A9n+Food+Units!5e0!3m2!1ses!2smx!4v1516875471275" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
-
 				</div>
 
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: 20 de Noviembre 917, Centro Histórico, 58000 Morelia, Mich</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 01 443 312 4639</p></li>
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Vicente Sta. María #1679, Felix Ireta Morelia.</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 443 315 9243</p></li>
 						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/RsViajesCentro/" target="_blank">https://www.facebook.com/RsViajesCentro/</a></p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/AndenMorelia/" target="_blank">https://www.facebook.com/AndenMorelia/</a></p></li>
 					</ul>
 				</div>
 			</div>			
@@ -150,10 +114,10 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/XZAGu6xwxNE/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/fRteWKkANJI/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/XZAGu6xwxNE"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Raúl Ornelas - Mi Media Sandia</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/fRteWKkANJI"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Alan Saldaña / Soy bien observador...</i></p>
 	</div>
 </section>
 
@@ -203,7 +167,7 @@
 	</div> --}}
 	<div class="row">
 		<div class="col m4 offset-m4">
-			<h5 class="mt-50 center-align raleway">Venta de boletos en RS Viajes Centro</h5>
+			<h5 class="mt-50 center-align raleway">Venta de boletos en Anden Food Units Morelia</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -223,11 +187,10 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Teatro Stella Inda</b></p>
-		<p><i class="material-icons">location_on</i>Av Francisco I. Madero Pte 1200, Centro Histórico, 58000 Morelia, Mich.</p>
-		<p><i class="material-icons">call</i> 01 443 312 2880</p>
-		<p><i class="material-icons">email</i> No disponible</p>
-		
+		<p><b>Anden Food Units</b></p>
+		<p><i class="material-icons">location_on</i>Vicente Sta. María #1679, Felix Ireta Morelia.</p>
+		<p><i class="material-icons">call</i> 443 315 9243</p>
+		<p>{{-- <i class="material-icons">language</i> --}}https://www.facebook.com/AndenMorelia/</p>
 	</div>
 </section>
 
@@ -254,13 +217,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.7029521, lng: -101.2024255};
+		        var uluru = {lat: 19.686459, lng: -101.188016};
 		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 17,
+		          zoom: 16,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.7032521, lng: -101.2018855}
+		          center: {lat: 19.686459, lng: -101.187016}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

@@ -26,6 +26,31 @@
 			border-bottom: 3px solid #09bde4;
 		}
 
+		.flex-sb {
+			display: flex;
+			flex-flow:  row wrap;
+			justify-content: space-evenly;
+			align-items: center;
+		}
+
+		.btn-nav-eventos {
+			color: #444;
+			transition: all 0.3s ease;
+			background: transparent;
+		}
+
+		.btn-nav-eventos.selected,
+		.btn-nav-eventos:hover,
+		.btn-nav-eventos:active,
+		.btn-nav-eventos:focus {
+			background: #09bde4;
+			color: #FFF;
+		}
+
+		.event-date {
+			display: none;
+		}
+
 		/*.card.horizontal {
 			position: relative;
 		}*/
@@ -164,6 +189,7 @@
 		<div class="row">
 			<div class="col s12 center-align">
 				<h1 class="titulo-h1">ULTIMOS EVENTOS {{-- <span>(1)</span> --}}</h1>
+
 				{{-- <div class="filter-elements">
 					<a class="btn waves-effect waves-light green" href="#!">Todos los Eventos</a>
 					<a class="btn waves-effect waves-light blue" href="#!">Eventos Próximos</a>
@@ -237,28 +263,29 @@
 				</div> --}}
 			</div> <!-- //end filter-->
 
+			<div class="row">
+				<div class="col s12 flex-sb nav-eventos">
+					<button class="btn waves-effect waves-light btn-nav-eventos selected" data-sort-by="date">Ordenar por Fecha</button>
+					<button class="btn waves-effect waves-light btn-nav-eventos" data-sort-by="name">Ordenar por Nombre</button>
+				</div>
+			</div>
 
-			<div class="col s12 mb-30">
-				{{-- <div class="row header-produktliste">
-					<div class="col m8 s12 modelsearch offset-m2">
-						<div class="input-field col s12">
-							<input type="text" name="term" id="search" placeholder="Busca un evento en específico?, escribalo aquí y encuentre resultados mas rápido" value="" class="ui-autocomplete-input" autocomplete="off">
-						</div>
 
-					</div>
-				</div> --}}
-					<div class="col m4">
+			<div class="row mb-30 grid-eventos">
+
+					<div class="col m6 l4 evento">
 						<div class="card horizontal ">
 							<div class="card-image">
 								<img src="{{asset('img/alan-guanajuato.jpg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h5><strong>Alan Saldaña</strong></h5>
+									<h5><strong class="event-name">Alan Saldaña</strong></h5>
 									<div class="divider"></div>
 									<p class="mt-10 mb-5"><b>Guanajuato</b></p>
 									<p>Sky Bar</p>
 									<p>01 de Febrero</p>
+									<p class="event-date">01/02/2018</p>
 									{{-- <p>9:00 pm.</p> --}}
 								</div>
 								<a href="{{ url('/eventos/alan-saldana-guanajuato') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
@@ -266,18 +293,19 @@
 						</div>
 					</div>
 
-					<div class="col m4">
+					<div class="col m6 l4 evento">
 						<div class="card horizontal ">
 							<div class="card-image">
 								<img src="{{asset('img/luiki-01.jpeg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h5><strong>Luiki Wiki & Pachis</strong></h5>
+									<h5><strong class="event-name">Luiki Wiki & Pachis</strong></h5>
 									<div class="divider"></div>
 									<p class="mt-10 mb-5"><b>Xalapa</b></p>
 									<p>Barezzito Xalapa</p>
 									<p>01 de Febrero</p>
+									<p class="event-date">01/02/2018</p>
 									<p>9:00 pm.</p>
 								</div>
 								<a href="{{ url('/eventos/luiki-wiki-y-pachis-xalapa') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
@@ -285,18 +313,19 @@
 						</div>
 					</div>
 
-					<div class="col m4">
+					<div class="col m6 l4 evento">
 						<div class="card horizontal ">
 							<div class="card-image">
 								<img src="{{asset('img/luiki-02.jpeg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h5><strong>Luiki Wiki & Pachis</strong></h5>
+									<h5><strong class="event-name">Luiki Wiki & Pachis</strong></h5>
 									<div class="divider"></div>
 									<p class="mt-10 mb-5"><b>Veracruz</b></p>
 									<p>Barezzito Veracruz</p>
 									<p>02 de Febrero</p>
+									<p class="event-date">02/02/2018</p>
 									<p>8:00 pm.</p>
 								</div>
 								<a href="{{ url('/eventos/luiki-wiki-y-pachis-veracruz') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
@@ -304,18 +333,19 @@
 						</div>
 					</div>
 
-					<div class="col m4">
+					<div class="col m6 l4 evento">
 						<div class="card horizontal ">
 							<div class="card-image">
 								<img src="{{asset('img/luiki-03.jpeg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h5><strong>Luiki Wiki & Pachis</strong></h5>
+									<h5><strong class="event-name">Luiki Wiki & Pachis</strong></h5>
 									<div class="divider"></div>
 									<p class="mt-10 mb-5"><b>Cd del Carmen</b></p>
 									<p>Barezzito Cd del Carmen</p>
 									<p>03 de Febrero</p>
+									<p class="event-date">03/02/2018</p>
 									<p>8:00 pm.</p>
 								</div>
 								<a href="{{ url('/eventos/luiki-wiki-y-pachis-cd-del-carmen') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
@@ -323,18 +353,39 @@
 						</div>
 					</div>
 
-					<div class="col m4">
+					<div class="col m6 l4 evento">
+						<div class="card horizontal">
+							<div class="card-image">
+								<img src="{{asset('img/alan-morelia.jpg')}}">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong class="event-name">Alan Saldaña</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10 mb-5"><b>Morelia</b></p>
+									<p>Anden Food Units</p>
+									<p>09 de Febrero</p>
+									<p class="event-date">09/02/2018</p>
+									{{-- <p>9:00 pm.</p> --}}
+								</div>
+								<a href="{{ url('/eventos/alan-saldana-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m6 l4 evento">
 						<div class="card horizontal ">
 							<div class="card-image">
 								<img src="{{asset('img/ornelas.jpeg')}}">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h5><strong>Raúl Ornelas</strong></h5>
+									<h5><strong class="event-name">Raúl Ornelas</strong></h5>
 									<div class="divider"></div>
 									<p class="mt-10 mb-5"><b>Morelia</b></p>
 									<p>Teatro Stella Inda</p>
 									<p>23 de Febrero</p>
+									<p class="event-date">23/02/2018</p>
 									<p>9:30 pm.</p>
 								</div>
 								<a href="{{ url('/eventos/ornelas-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
@@ -342,11 +393,36 @@
 						</div>
 					</div>
 
-					
-
 			</div>
 		</div>
 	</div>
 </section>
+
+@endsection
+
+@section('scripts')
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script type="text/javascript">
+	let cards = $('.grid-eventos').isotope({
+          // options
+          itemSelector: '.evento',
+          isFitWidth: true,
+          getSortData: {
+          	name: '.event-name',
+          	date: function (elem) {
+          		let d = $(elem).find('.event-date').text().split('/');
+	            return new Date(d[2], d[1] - 1, d[0]);
+	        }
+          }
+    });
+
+    $('.nav-eventos').on( 'click', '.btn-nav-eventos', function() {
+        let sortValue = $(this).attr('data-sort-by');
+        cards.isotope({ sortBy: sortValue });
+        $('.nav-eventos').find('.selected').removeClass('selected');
+        $(this).addClass('selected');
+      });
+
+</script>
 
 @endsection

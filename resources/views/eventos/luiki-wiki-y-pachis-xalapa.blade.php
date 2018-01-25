@@ -35,7 +35,7 @@
 				{{-- <div class="divider"></div> --}}
 			</div>
 
-			<div class="col s8 offset-s2 m3 mb-30">
+			<div class="col s8 offset-s2 m3 mb-30 card-flyer">
 				<img src="{{ asset('img/luiki-01.jpeg') }}" alt="" class="responsive-img">
 			</div>
 			
@@ -44,7 +44,7 @@
 				<div class="row mt-30">
 
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
+						<div class="box col s12 card-flyer">
 							<header>
 								<div class="col s12 m8 teal accent-4">Zona General</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>

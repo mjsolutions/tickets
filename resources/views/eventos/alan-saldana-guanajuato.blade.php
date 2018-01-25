@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Alan Saldaña Veracruz')
+@section('title', 'Alan Saldaña Guanajuato')
 
-@section('description', 'Alan Saldaña en Veracruz, 02 de Febrero, 8 pm boletos en Barezzito y en bolematico.mx')
+@section('description', 'Alan Saldaña en Guanajuato, 02 de Febrero, 9 pm boletos en Sky Bar y en bolematico.mx')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -15,7 +15,7 @@
 	<div class="row white-text">
 		<h4>Alan Saldaña</h4>
 		<div class="divider"></div>
-		<p><i>Veracruz - Barezzito Veracruz</i></p>
+		<p><i>Guanajuato - Sky Bar</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -35,8 +35,8 @@
 				{{-- <div class="divider"></div> --}}
 			</div>
 
-			<div class="col s8 offset-s2 m3 mb-30">
-				<img src="{{ asset('img/luiki-02.jpeg') }}" alt="" class="responsive-img">
+			<div class="col s8 offset-s2 m3 mb-30 card-flyer">
+				<img src="{{ asset('img/alan-01.jpeg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 offset-m1">				
@@ -44,12 +44,12 @@
 				<div class="row mt-30">
 
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
+						<div class="box col s12 card-flyer">
 							<header>
 								<div class="col s12 m8 teal accent-4">Zona General</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$200</span> Por entrada</div>
+							<div class="price col s12">{{-- <span>$200</span> Por entrada --}}</div>
 							{{-- <div class="filas col s6">Filas: A - Ñ</div> --}}
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
@@ -60,33 +60,27 @@
 				<div class="row">
 					<div class="divider"></div>
 					<p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-					<p class="center-align"><b>Informes:</b> <a href="tel:2291307408" style="background: #4caf50; color: #fff; padding: 5px 10px;">2291 307408</a></p>
+					<p class="center-align"><b>Informes:</b> <a href="tel:4731189022" style="background: #4caf50; color: #fff; padding: 5px 10px;">473 118 9022</a> / <a href="tel:4731173883" style="background: #4caf50; color: #fff; padding: 5px 10px;">473 117 3883</a></p>
 				</div>
 			</div>
 		</div>
 
 		<div id="biografia" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/luiki-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
 			</div>
 			<div class="col s12 m7">
 				<h4 class="mt-0 raleway quote">BIOGRAFÍA</h4>		
-				<p>Luiki Wiki es comediante y se presenta como “el cuate que se parece a Diego Luna”... y no es un chiste.</p>
-				<p>De lejos, se parece mucho al actor, de cerca ya no tanto.</p>
-				<p>Cuando empezó a trabar en los bares como comediante, se anunciaba como Luis simplemente, pero luego apareció lo de Luiki Wiki.</p>
-				<p>La historia de nombre chistoso es igual de graciosa, comenta.</p>
-				<p>“Yo me llamo Luis, pero entrabas a una página de Internet y ponías tu nombre y salía en hawuaiano y el mío salió así”, contó.</p>
-				<p>Es originario de la ciudad de Monterrey y desde hace tres años se dedica al stand up de tiempo completo.</p>
-				<p>Estudió música, pero él en realidad quería ser doctor. Lo del piano es parte de su rutina y es una de las más divertidas.</p>
-				<p>“Estuvo muy chistoso porque yo no quería estudiar piano, casi siempre los papás te dicen que estudies algo bien y con mis papás fue al contrario, me dijeron estudia música, porque lo tuyo es fracasar”, declaró.</p>
+				<p>Alan Saldaña, el AS de la comedia.</p>
+				<p>Joven y con un gran ángel y talento. Es una comedia sumamente divertida. A pesar de tener relativamente pocos años en la comedia, Alan ha cautivado y sorprendido a todo el público con sus originales monólogos y rutinas. Una verdadera inversión que provoca grandes carcajadas a todos.</p>
+				<p>Su meta no es ser el comediante más famoso del mundo, lo que Alan Saldaña quiere es conquistar toda Latinoamérica y llevar su comedia hasta donde pueda llegar, a escenarios donde tenga que poner a prueba su talento.</p>
 				
 			</div>
 			<div class="col m5 hide-on-small-only">
-				<img src="{{ asset('img/luiki-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
 			</div>
 			<div class="clearfix"></div>
-			<p>Fuente:</p>
-			<p><small>http://www.eluniversalqueretaro.mx/vida-q/31-08-2015/luiki-wiki-se-parece-diego-luna</small></p>
+			
 			
 		</div>
 
@@ -96,22 +90,22 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>Barezzito Veracruz</h5>
+					<h5>Sky Bar</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35867.88595860982!2d-96.12654480717174!3d19.10120205626778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c340f8bbb1beb9%3A0xb9cf9373aa90c612!2sBarezzito!5e0!3m2!1ses!2smx!4v1516828003672" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119181.23028647155!2d-101.32346262405922!3d21.016136768304637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b7407e68669e5%3A0x7af73ea2077d255f!2sSKY+BAR+TERRASSE!5e0!3m2!1ses!2smx!4v1516873015486" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
 
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Plaza Vela, Boulevar Adolfo Ruiz Cortines, Playa de Oro, 94298 Boca del Río, Ver.</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 2291 307408</p></li>
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Del Truco 1, Zona Centro, 36000 Guanajuato, Gto.</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 473 118 9022 / 473 117 3883</p></li>
 						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/barezzitoveracruz/" target="_blank">https://www.facebook.com/barezzitoveracruz/</a></p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/TERRASSE.sky.b/" target="_blank">https://www.facebook.com/TERRASSE.sky.b/</a></p></li>
 					</ul>
 				</div>
 			</div>			
@@ -120,10 +114,10 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/i1GrhM8inBI/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/fRteWKkANJI/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/i1GrhM8inBI"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Luiki Wiki I @ #StandupEnComedy</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/fRteWKkANJI"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Alan Saldaña / Soy bien observador...</i></p>
 	</div>
 </section>
 
@@ -173,7 +167,7 @@
 	</div> --}}
 	<div class="row">
 		<div class="col m4 offset-m4">
-			<h5 class="mt-50 center-align raleway">Venta de boletos en Barezzito Veracruz</h5>
+			<h5 class="mt-50 center-align raleway">Venta de boletos en Sky Bar Guanajuato</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -193,10 +187,10 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Barezzito Veracruz</b></p>
-		<p><i class="material-icons">location_on</i>Plaza Vela, Boulevar Adolfo Ruiz Cortines, Playa de Oro, 94298 Boca del Río, Ver.</p>
-		<p><i class="material-icons">call</i> 2291 307408</p>
-		<p><i class="material-icons">language</i>https://www.facebook.com/barezzitoveracruz/</p>
+		<p><b>Sky Bar Guanajuato</b></p>
+		<p><i class="material-icons">location_on</i>Del Truco 1, Zona Centro, 36000 Guanajuato, Gto.</p>
+		<p><i class="material-icons">call</i> 473 118 9022 / 473 117 3883</p>
+		<p>{{-- <i class="material-icons">language</i> --}}https://www.facebook.com/TERRASSE.sky.b/</p>
 	</div>
 </section>
 
@@ -223,13 +217,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.1044, lng: -96.1111};
+		        var uluru = {lat: 21.016151, lng: -101.253422};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 15,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.1044, lng: -96.1051}
+		          center: {lat: 21.016151, lng: -101.248522}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

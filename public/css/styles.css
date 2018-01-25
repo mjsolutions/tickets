@@ -23,6 +23,10 @@ nav .nav-wrapper i {
 	line-height: 100%;
 	height: auto;
 }
+
+main {
+	background: #f5f8fa;
+}
 /* ------------
 Buttons
 ------------ */
@@ -312,7 +316,7 @@ Pendientes de acomodar
 }
 
 .quote {
-	border-left: 3px solid #FF3400;
+	border-left: 3px solid #e64a19;
 	padding-left: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -499,7 +503,7 @@ footer {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	padding: 0 .75rem;
+	/*padding: 0 .75rem;*/
 }
 
 .header-produktliste {
@@ -592,6 +596,12 @@ img {
 	text-align: center;
 }
 
+.row .col.card-flyer {
+	box-shadow: 2px 2px 5px 0 #AAA;
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .produktliste .price {
 	color: #2196f3;
 	position: relative;
@@ -608,9 +618,9 @@ img {
 }
 
 #eventos{
-	height: 100vh;
+	/*height: 100vh;*/
 	padding-top: 2rem;
-	padding-bottom: 5rem;
+	padding-bottom: 3rem;
 }
 
 .mensaje_inicio{
@@ -1033,16 +1043,20 @@ ul.qcAddress li a {
 	margin-top: 16px!important;
 }
 
+.tabs {
+	border-bottom: 3px solid #09bde4;
+}
+
 .tab-content {
 	padding: 40px 0!important;
 }
 
 .tabs .tab a {
-	color: #2196f3;
+	color: #09bde4;
 }
 
 .tabs .tab a:hover {
-	color: #222;
+	color: #e64a19;
 }
 
 .tabs .indicator {
@@ -1051,7 +1065,7 @@ ul.qcAddress li a {
 
 .tab a.active,
 .tab a.active:hover {
-	background-color: #2196f3;
+	background-color: #09bde4;
 	color: #FFF;
 }
 
