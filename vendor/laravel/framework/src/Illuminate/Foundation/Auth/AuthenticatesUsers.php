@@ -132,10 +132,20 @@ trait AuthenticatesUsers
      */
     protected function sendFailedLoginResponse(Request $request)
     {
+        if($request->ajax()){
+
+            return response(Lang::get('auth.failed'));
+
+        }
+
         return redirect()->back()
+
             ->withInput($request->only($this->username(), 'remember'))
+
             ->withErrors([
+
                 $this->username() => Lang::get('auth.failed'),
+
             ]);
     }
 

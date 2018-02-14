@@ -26,3 +26,5 @@ Route::get('/getAsientos2/{table}/{zona}/{fila}', 'ApiController@getAsientos2');
 Route::get('/getFilasSofia/{zona}', 'ApiController@getFilasSofia');
 
 Route::get('/getAsientosSofia/{fila}', 'ApiController@getAsientosSofia');
+
+Route::post('/charge_paid', 'ApiController@chargePaid');

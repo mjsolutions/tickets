@@ -130,6 +130,21 @@ Route::group(['prefix'=>'payment'],function(){
 	'uses'	=>	'PaypalBroncoController@getPaymentStatus',
 	));
 
+	Route::post('details', array(
+	'as'	=>	'payment.details',
+	'uses'	=>	'PaymentController@paymentDetails',
+	));
+
+	Route::get('confirm/status', array(
+	'as'	=>	'payment.confirm.status',
+	'uses'	=>	'PaymentController@getPaymentStatus',
+	));
+
+	Route::post('confirm', array(
+	'as'	=>	'payment.confirm',
+	'uses'	=>	'PaymentController@confirmPayment',
+	));
+
 });
 
 
