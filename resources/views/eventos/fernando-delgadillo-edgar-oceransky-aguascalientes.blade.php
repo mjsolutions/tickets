@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Edgar Oceransky y Fernando Delgadillo')
+@section('title', 'Fernando Delgadillo y Edgar Oceransky')
 
-@section('description', 'Fernando Delgadillo y Edgar Oceransky, Morelia 13 de octubre 2017, 9 pm')
+@section('description', 'Fernando Delgadillo y Edgar Oceransky, Aguascalientes Auditorio DIMO 10 de Marzo 2018, 9 pm')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -24,12 +24,12 @@
 
 @section('content')
 
-<div class="image-header bg-morelos overlay overlay-5">
+<div class="image-header bg-4 overlay overlay-5">
 
 	<div class="row white-text">
 		<h4>Fernando Delgadillo / Edgar Oceransky</h4>
 		<div class="divider"></div>
-		<p><i>Morelia - Teatro Morelos</i></p>
+		<p><i>Aguascalientes - Auditorio DIMO </i></p>
 	</div>
 	{{-- <a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-paypal" aria-hidden="true"></i></a> --}}
 </div>
@@ -49,58 +49,46 @@
 				{{-- <div class="divider"></div> --}}
 			</div>
 
-			<div class="col s8 offset-s2 m4 mb-30">
-				<img src="{{ asset('img/oceransky-delgadillo.jpg') }}" alt="Oceransky-Delgadillo" class="responsive-img">
+			<div class="col s8 offset-s2 m4 mb-30 card-flyer">
+				<img src="{{ asset('img/delgadillo-oceransky.jpeg') }}" alt="Oceransky-Delgadillo" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 ">				
 
 				<div class="row">
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
+						<div class="box col s12 card-flyer">
 							<header>
-								<div class="col s12 m8 cyan lighten-3">Diamante</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
+								<div class="col s12 m8 teal accent-4">VIP</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s6"><span>$750</span> Por entrada</div>
-							<div class="filas col s6">Filas: A - M</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
+							<div class="price col s6"><span>$740</span> Por entrada</div>
+							<div class="filas col s6">Zona: Diamante</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
+						<div class="box col s12 card-flyer">
 							<header>
-								<div class="col s12 m8 teal accent-4">Platino</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
+								<div class="col s12 m8 amber accent-4">Preferente</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s6"><span>650</span> Por entrada</div>
-							<div class="filas col s6">Filas: N - Ñ | Q - R</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
+							<div class="price col s6"><span>$580</span> Por entrada</div>
+							<div class="filas col s6">Zonas: Plata, Oro "A" y "B"</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
+						<div class="box col s12 card-flyer">
 							<header>
-								<div class="col s12 m8 amber accent-3">ORO</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
+								<div class="col s12 m8 lime darken-3">General</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s6"><span>$500</span> Por entrada</div>
-							<div class="filas col s6">Filas: S - Y</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
-						</div>
-					</div>
-
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
-							<header>
-								<div class="col s12 m8 grey lighten-1">PLATA</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
-							</header>
-							<div class="price col s6"><span>$350</span> Por entrada</div>
-							<div class="filas col s6">Filas: Z</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Boletos</b> {{-- <i class="fa fa-paypal" aria-hidden="true"></i> --}}</a></div>
+							<div class="price col s6"><span>$320</span> Por entrada</div>
+							<div class="filas col s6">Zona: Bronce</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 
@@ -108,7 +96,8 @@
 
 				<div class="row">
 					<div class="divider"></div>
-					{{-- <p class="center-align mt-30">Al realizar tu compra en línea Paypal realiza un cargo extra de <b>10%</b> por concepto de servicio.</p> --}}
+					<p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
+					<p class="center-align"><b>Informes:</b> <a href="tel:9157353" style="background: #4caf50; color: #fff; padding: 5px 10px;">915 73 53</a></p>
 				</div>
 			</div>
 		</div>
@@ -172,12 +161,12 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>RS Viajes Centro</h5>
+					<h5>Auditorio DIMOo</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.1943227085408!2d-101.18477128552061!3d19.704349286730476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e0d6bca646b%3A0x1b0a3a981724216f!2sRS+Viajes+Centro!5e0!3m2!1ses!2smx!4v1501091355750" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118479.16354343237!2d-102.37271940837408!3d21.877821196650356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee87056bf30d%3A0x9df7622fdfa4c800!2sAuditorio+DIMO!5e0!3m2!1ses!2smx!4v1516883798546" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 
 				</div>
@@ -185,10 +174,10 @@
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: 20 de Noviembre 917, Centro Histórico, 58000 Morelia, Mich</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 01 443 312 4639</p></li>
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Profr. A. Topete del Valle 108, Barrio de San Marcos, 20070 Aguascalientes, Ags.</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 915 73 53</p></li>
 						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/RsViajesCentro/" target="_blank">https://www.facebook.com/RsViajesCentro/</a></p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/auditoriodimo/" target="_blank">https://www.facebook.com/auditoriodimo/</a></p></li>
 					</ul>
 				</div>
 			</div>
@@ -206,9 +195,9 @@
 
 <section id="compra" class="section-comprar">
 	<div class="row">
-		<div class="col s12 m6">
+		{{-- <div class="col s12 m6">
 			<img src="{{asset('img/teatro-morelos3.svg')}}" alt="Teatro Morelos" class="responsive-img materialboxed">
-		</div>
+		</div> --}}
 		{{-- <div class="col s12 m6">
 			@if(Auth()->check())
 				<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
@@ -246,8 +235,8 @@
 				</div>
 			@endif
 		</div> --}}
-		<div class="col m4 offset-m1">
-			<h5 class="mt-50 center-align raleway">Venta de boletos en RS Viajes Centro</h5>
+		<div class="col m4 offset-m4">
+			<h5 class="mt-50 center-align raleway">Venta de boletos en Auditorio DIMO</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -269,11 +258,10 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Teatro Morelos</b></p>
-		<p><i class="material-icons">location_on</i>Av. Ventura Puente s/n, Félix Ireta, 58070 Morelia, Mich.</p>
-		<p><i class="material-icons">call</i> 01 443 232 4400</p>
-		<p><i class="material-icons">email</i> No disponible</p>
-		<p><i class="material-icons">language</i> <a title="website" href="http://ceconexpo.com/" target="_blank">http://ceconexpo.com</a></p>
+		<p><b>Auditorio DIMO</b></p>
+		<p><i class="material-icons">location_on</i>Profr. A. Topete del Valle 108, Barrio de San Marcos, 20070 Aguascalientes, Ags.</p>
+		<p><i class="material-icons">call</i> 915 73 53</p>
+		<p><a title="website" href="https://www.facebook.com/auditoriodimo/" target="_blank">https://www.facebook.com/auditoriodimo/</a></p>
 	</div>
 </section>
 
@@ -300,13 +288,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.6824276, lng: -101.1830612};
+		        var uluru = {lat: 21.8778323, lng: -102.3026678};
 		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 17,
+		          zoom: 15,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.6824276, lng: -101.1810612}
+		          center: {lat: 21.8778323, lng: -102.3010558}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

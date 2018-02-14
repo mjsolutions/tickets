@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Alan Saldaña Morelia')
+@section('title', 'Gon Curiel San Luis Potosi')
 
-@section('description', 'Alan Saldaña en Morelia, 09 de Febrero, 9 pm boletos en Sky Bar y en bolematico.mx')
+@section('description', 'Gon Curiel en San Luis Potosi, 03 de Febrero, 10 pm boletos en Rpdhouse y en bolematico.mx')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -13,11 +13,11 @@
 <div class="image-header bg-4 overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Alan Saldaña</h4>
+		<h4>Gon Curiel</h4>
 		<div class="divider"></div>
-		<p><i>Morelia - Anden Food Units</i></p>
+		<p><i>San Luis Potosí - Roadhouse</i></p>
 	</div>
-	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+	{{-- <a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a> --}}
 </div>
 
 <section class="container">
@@ -36,7 +36,7 @@
 			</div>
 
 			<div class="col s8 offset-s2 m3 mb-30 card-flyer">
-				<img src="{{ asset('img/alan-09.jpeg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/gon-03.jpeg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 offset-m1">				
@@ -46,12 +46,12 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12 card-flyer">
 							<header>
-								<div class="col s12 m8 teal accent-4">Zona General</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
+								<div class="col s12 m12 teal accent-4">Zona General</div>
+								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
 							</header>
 							<div class="price col s12"><span>$200</span> Por entrada</div>
 							{{-- <div class="filas col s6">Filas: A - Ñ</div> --}}
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
+							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
 						</div>
 					</div>
 
@@ -60,27 +60,29 @@
 				<div class="row">
 					<div class="divider"></div>
 					<p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-					<p class="center-align"><b>Informes:</b> <a href="tel:4433159243" style="background: #4caf50; color: #fff; padding: 5px 10px;">443 315 9243</a></p>
-				</div>
+					<p class="center-align"><b>Reservaciones:</b> <a href="tel:4442041482" style="background: #4caf50; color: #fff; padding: 5px 10px;">444 204 1482</a></div>
 			</div>
 		</div>
 
 		<div id="biografia" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/gon-bio.jpg') }}" class="responsive-img">
 			</div>
 			<div class="col s12 m7">
 				<h4 class="mt-0 raleway quote">BIOGRAFÍA</h4>		
-				<p>Alan Saldaña, el AS de la comedia.</p>
-				<p>Joven y con un gran ángel y talento. Es una comedia sumamente divertida. A pesar de tener relativamente pocos años en la comedia, Alan ha cautivado y sorprendido a todo el público con sus originales monólogos y rutinas. Una verdadera inversión que provoca grandes carcajadas a todos.</p>
-				<p>Su meta no es ser el comediante más famoso del mundo, lo que Alan Saldaña quiere es conquistar toda Latinoamérica y llevar su comedia hasta donde pueda llegar, a escenarios donde tenga que poner a prueba su talento.</p>
+		         <p>Gon Curiel se ha consolidado en México como uno de los principales comediantes de Stand Up, género de comedia que se basa en observaciones y experiencias con las que todos nos podemos identificar, provocando catarsis y carcajadas.</p>
+		         <p >En su debut cómico, ganó el primer Festival de Stand Up Comedy de Café 22, el cual le dio la oportunidad de presentarse en grandes escenarios de la comedia, sorprendiendo con su estilo innovador.</p>
+		         <p>Se ha presentado en grandes escenarios de la Ciudad de México como El Vicio, El Cuevón, Show Center, Voilà Acoustique, El Teatro de Ciudad y el Auditorio Nacional, así como en diversas ciudades de la República Mexicana y Estados Unidos.</p>
+		         <p>En 2014, la plataforma de televisión por Internet Netflix lo convirtió en uno de los primeros comediantes de Stand Up de habla hispana en tener su propio especial. Ese mismo año, Gon Curiel se volvió conductor del noticiero satírico “Ya Ni Llorar Es Bueno”.</p>
+		         <p>Actualmente, es el único comediante que presenta semanalmente su comedia en vivo en YouTube, con temas de actualidad, en su segmento viral #NotiCreas.</p>
 				
 			</div>
 			<div class="col m5 hide-on-small-only">
-				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/gon-bio.jpg') }}" class="responsive-img">
 			</div>
 			<div class="clearfix"></div>
-			
+			<p>Fuente:</p>
+			<p><small>http://goncuriel.com/goncuriel/#bio</small></p>
 			
 		</div>
 
@@ -90,22 +92,22 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>Anden Food Units</h5>
+					<h5>Roadhouse</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120211.6619702815!2d-101.25805704708628!3d19.686448121413147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0ddc39c82a4b%3A0xc3f0eba6b883e1c1!2sAnd%C3%A9n+Food+Units!5e0!3m2!1ses!2smx!4v1516875471275" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118251.32749952478!2d-101.05906520328456!3d22.1505936501156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842a98ad21464357%3A0xf9a80a35ca550a0b!2sRoadhouse!5e0!3m2!1ses!2smx!4v1517279490800" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
 
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Vicente Sta. María #1679, Felix Ireta Morelia.</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 443 315 9243</p></li>
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Av. Venustiano Carranza 1070, De Tequisquiapan, 78230 San Luis, S.L.P.</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 444 204 1482<</p></li>
 						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/AndenMorelia/" target="_blank">https://www.facebook.com/AndenMorelia/</a></p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/RoadhouseSLP/" target="_blank">https://www.facebook.com/RoadhouseSLP/</a></p></li>
 					</ul>
 				</div>
 			</div>			
@@ -114,10 +116,10 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/fRteWKkANJI/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/vkYvi2NLXzw/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/fRteWKkANJI"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Alan Saldaña / Soy bien observador...</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/vkYvi2NLXzw"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Gon Curiel / El cajero automático</i></p>
 	</div>
 </section>
 
@@ -167,7 +169,7 @@
 	</div> --}}
 	<div class="row">
 		<div class="col m4 offset-m4">
-			<h5 class="mt-50 center-align raleway">Venta de boletos en Anden Food Units Morelia</h5>
+			<h5 class="mt-50 center-align raleway">Venta de boletos en Roadhouse SLP</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -187,10 +189,10 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Anden Food Units</b></p>
-		<p><i class="material-icons">location_on</i>Vicente Sta. María #1679, Felix Ireta Morelia.</p>
-		<p><i class="material-icons">call</i> 443 315 9243</p>
-		<p>{{-- <i class="material-icons">language</i> --}}https://www.facebook.com/AndenMorelia/</p>
+		<p><b>Roadhouse SLP</b></p>
+		<p><i class="material-icons">location_on</i>Av. Venustiano Carranza 1070, De Tequisquiapan, 78230 San Luis, S.L.P.</p>
+		<p><i class="material-icons">call</i> 444 204 1482</p>
+		<p>{{-- <i class="material-icons">language</i> --}}https://www.facebook.com/RoadhouseSLP/</p>
 	</div>
 </section>
 
@@ -217,13 +219,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.686459, lng: -101.188016};
+		        var uluru = {lat: 22.1506121, lng: -100.9890250};
 		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 16,
+		          zoom: 14,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.686459, lng: -101.187016}
+		          center: {lat: 22.1506121, lng: -100.9820115}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

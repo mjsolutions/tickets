@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Alan Saldaña Morelia')
+@section('title', 'Alan Saldaña Zamora')
 
-@section('description', 'Alan Saldaña en Morelia, 09 de Febrero, 9 pm boletos en Sky Bar y en bolematico.mx')
+@section('description', 'Alan Saldaña en Zamora, 08 de Febrero, 9 pm boletos en Terraza Don Nacho y en bolematico.mx')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -15,7 +15,7 @@
 	<div class="row white-text">
 		<h4>Alan Saldaña</h4>
 		<div class="divider"></div>
-		<p><i>Morelia - Anden Food Units</i></p>
+		<p><i>Zamora - Terraza Don Nacho</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -36,7 +36,7 @@
 			</div>
 
 			<div class="col s8 offset-s2 m3 mb-30 card-flyer">
-				<img src="{{ asset('img/alan-09.jpeg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/alan-08.jpeg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 offset-m1">				
@@ -60,8 +60,7 @@
 				<div class="row">
 					<div class="divider"></div>
 					<p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-					<p class="center-align"><b>Informes:</b> <a href="tel:4433159243" style="background: #4caf50; color: #fff; padding: 5px 10px;">443 315 9243</a></p>
-				</div>
+					<p class="center-align"><b>Informes:</b> <a href="tel:3511218719" style="background: #4caf50; color: #fff; padding: 5px 10px;">351 121 8719</a> / <a href="tel:3515123781" style="background: #4caf50; color: #fff; padding: 5px 10px;">351 512 3781</a></div>
 			</div>
 		</div>
 
@@ -90,22 +89,22 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>Anden Food Units</h5>
+					<h5>Terraza Don Nacho</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120211.6619702815!2d-101.25805704708628!3d19.686448121413147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0ddc39c82a4b%3A0xc3f0eba6b883e1c1!2sAnd%C3%A9n+Food+Units!5e0!3m2!1ses!2smx!4v1516875471275" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119985.87424245695!2d-102.35576904204002!3d19.98505824968107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842e88cf7f92f521%3A0xc8f62f7042f7a4dc!2sTerraza+Don+Nacho!5e0!3m2!1ses!2smx!4v1516981909230" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
 
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Vicente Sta. María #1679, Felix Ireta Morelia.</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 443 315 9243</p></li>
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Carr. Estatal Zamora - Los Reyes 280, Centro, 59600 Zamora, Mich.</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 351 121 8719<</p></li>
 						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/AndenMorelia/" target="_blank">https://www.facebook.com/AndenMorelia/</a></p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/terrazadonnacho/" target="_blank">https://www.facebook.com/terrazadonnacho/</a></p></li>
 					</ul>
 				</div>
 			</div>			
@@ -167,7 +166,7 @@
 	</div> --}}
 	<div class="row">
 		<div class="col m4 offset-m4">
-			<h5 class="mt-50 center-align raleway">Venta de boletos en Anden Food Units Morelia</h5>
+			<h5 class="mt-50 center-align raleway">Venta de boletos en Terraza Don Nacho Zamora</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -187,10 +186,10 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Anden Food Units</b></p>
-		<p><i class="material-icons">location_on</i>Vicente Sta. María #1679, Felix Ireta Morelia.</p>
-		<p><i class="material-icons">call</i> 443 315 9243</p>
-		<p>{{-- <i class="material-icons">language</i> --}}https://www.facebook.com/AndenMorelia/</p>
+		<p><b>Terraza Don Nacho Zamora</b></p>
+		<p><i class="material-icons">location_on</i>Carr. Estatal Zamora - Los Reyes 280, Centro, 59600 Zamora, Mich.</p>
+		<p><i class="material-icons">call</i> 351 121 8719<</p>
+		<p>{{-- <i class="material-icons">language</i> --}}https://www.facebook.com/terrazadonnacho/</p>
 	</div>
 </section>
 
@@ -217,13 +216,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.686459, lng: -101.188016};
+		        var uluru = {lat: 19.985065, lng: -102.285728};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 16,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.686459, lng: -101.187016}
+		          center: {lat: 19.985165, lng: -102.284811}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

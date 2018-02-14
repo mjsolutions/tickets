@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Alan Saldaña Morelia')
+@section('title', 'Coco Aguascalientes')
 
-@section('description', 'Alan Saldaña en Morelia, 09 de Febrero, 9 pm boletos en Sky Bar y en bolematico.mx')
+@section('description', 'Coco en Aguascalientes, 11 de Marzo, 1:30 pm y 5:00 pm boletos en Auditorio DIMO y en bolematico.mx')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -10,12 +10,13 @@
 
 @section('content')
 
-<div class="image-header bg-4 overlay overlay-5">
+<div class="image-header bg-infantil overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Alan Saldaña</h4>
+		<h4>Coco</h4>
 		<div class="divider"></div>
-		<p><i>Morelia - Anden Food Units</i></p>
+		<p><i>Aguascalientes - Auditorio DIMO</i></p>
+		<p><i>1:30 pm / 5:00 pm</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -36,7 +37,7 @@
 			</div>
 
 			<div class="col s8 offset-s2 m3 mb-30 card-flyer">
-				<img src="{{ asset('img/alan-09.jpeg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/coco.jpeg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 offset-m1">				
@@ -46,10 +47,22 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12 card-flyer">
 							<header>
-								<div class="col s12 m8 teal accent-4">Zona General</div>
+								<div class="col s12 m8 teal accent-4">VIP</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$200</span> Por entrada</div>
+							<div class="price col s12"><span>$260</span> Por entrada</div>
+							{{-- <div class="filas col s6">Filas: A - Ñ</div> --}}
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12 card-flyer">
+							<header>
+								<div class="col s12 m8 lime darken-3">General</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
+							</header>
+							<div class="price col s12"><span>$210</span> Por entrada</div>
 							{{-- <div class="filas col s6">Filas: A - Ñ</div> --}}
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
@@ -60,24 +73,21 @@
 				<div class="row">
 					<div class="divider"></div>
 					<p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-					<p class="center-align"><b>Informes:</b> <a href="tel:4433159243" style="background: #4caf50; color: #fff; padding: 5px 10px;">443 315 9243</a></p>
-				</div>
+					<p class="center-align"><b>Informes:</b> <a href="tel:9157353" style="background: #4caf50; color: #fff; padding: 5px 10px;">915 7353</a></div>
 			</div>
 		</div>
 
 		<div id="biografia" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/coco.jpeg') }}" class="responsive-img">
 			</div>
 			<div class="col s12 m7">
-				<h4 class="mt-0 raleway quote">BIOGRAFÍA</h4>		
-				<p>Alan Saldaña, el AS de la comedia.</p>
-				<p>Joven y con un gran ángel y talento. Es una comedia sumamente divertida. A pesar de tener relativamente pocos años en la comedia, Alan ha cautivado y sorprendido a todo el público con sus originales monólogos y rutinas. Una verdadera inversión que provoca grandes carcajadas a todos.</p>
-				<p>Su meta no es ser el comediante más famoso del mundo, lo que Alan Saldaña quiere es conquistar toda Latinoamérica y llevar su comedia hasta donde pueda llegar, a escenarios donde tenga que poner a prueba su talento.</p>
+				<h4 class="mt-0 raleway quote">RESEÑA</h4>		
+		         <p>Ya lloraste y te divertiste en el cine viendo esta gran película de Pixar, ahora llegó el momento de verlos sobre el escenario interpretando las grandes canciones y representando las escenas más icónicas del filme, no te puedes perder Coco: El Espectáculo en vivo.</p>
 				
 			</div>
 			<div class="col m5 hide-on-small-only">
-				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/coco.jpeg') }}" class="responsive-img">
 			</div>
 			<div class="clearfix"></div>
 			
@@ -90,22 +100,22 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>Anden Food Units</h5>
+					<h5>Auditorio DIMO</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120211.6619702815!2d-101.25805704708628!3d19.686448121413147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0ddc39c82a4b%3A0xc3f0eba6b883e1c1!2sAnd%C3%A9n+Food+Units!5e0!3m2!1ses!2smx!4v1516875471275" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118479.16354343237!2d-102.37271940837408!3d21.877821196650356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee87056bf30d%3A0x9df7622fdfa4c800!2sAuditorio+DIMO!5e0!3m2!1ses!2smx!4v1516883798546" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
 
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Vicente Sta. María #1679, Felix Ireta Morelia.</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 443 315 9243</p></li>
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Profr. A. Topete del Valle 108, Barrio de San Marcos, 20070 Aguascalientes, Ags.</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 915 73 53</p></li>
 						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/AndenMorelia/" target="_blank">https://www.facebook.com/AndenMorelia/</a></p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/auditoriodimo/" target="_blank">https://www.facebook.com/auditoriodimo/</a></p></li>
 					</ul>
 				</div>
 			</div>			
@@ -114,10 +124,10 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/fRteWKkANJI/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/yg8116aeD7E/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/fRteWKkANJI"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Alan Saldaña / Soy bien observador...</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/yg8116aeD7E"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>COCO / Un poco loco</i></p>
 	</div>
 </section>
 
@@ -167,7 +177,7 @@
 	</div> --}}
 	<div class="row">
 		<div class="col m4 offset-m4">
-			<h5 class="mt-50 center-align raleway">Venta de boletos en Anden Food Units Morelia</h5>
+			<h5 class="mt-50 center-align raleway">Venta de boletos en Auditorio DIMO Aguascalientes</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -187,10 +197,10 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Anden Food Units</b></p>
-		<p><i class="material-icons">location_on</i>Vicente Sta. María #1679, Felix Ireta Morelia.</p>
-		<p><i class="material-icons">call</i> 443 315 9243</p>
-		<p>{{-- <i class="material-icons">language</i> --}}https://www.facebook.com/AndenMorelia/</p>
+		<p><b>Auditorio DIMO</b></p>
+		<p><i class="material-icons">location_on</i>Profr. A. Topete del Valle 108, Barrio de San Marcos, 20070 Aguascalientes, Ags.</p>
+		<p><i class="material-icons">call</i> 915 73 53</p>
+		<p><a title="website" href="https://www.facebook.com/auditoriodimo/" target="_blank">https://www.facebook.com/auditoriodimo/</a></p>
 	</div>
 </section>
 
@@ -217,13 +227,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.686459, lng: -101.188016};
+		        var uluru = {lat: 21.8778323, lng: -102.3026678};
 		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 16,
+		          zoom: 15,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.686459, lng: -101.187016}
+		          center: {lat: 21.8778323, lng: -102.3010558}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,
