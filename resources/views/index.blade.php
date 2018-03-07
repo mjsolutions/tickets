@@ -131,39 +131,19 @@
 					<div class="col m6 l4 evento">
 						<div class="card horizontal ">
 							<div class="card-image">
-								<img src="{{asset('img/gon-15.jpeg')}}" class="materialboxed responsive-img">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong class="event-name">Gon Curiel</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10 mb-5"><b>Cordoba Veracruz</b></p>
-									<p>Sabina</p>
-									<p>15 de Febrero</p>
-									<p class="event-date">16/02/2018</p>
-									<p>10:00 pm</p>
-								</div>
-								<a href="{{ url('/eventos/gon-curiel-cordoba') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col m6 l4 evento">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/alan-atizapan.jpg')}}" class="materialboxed responsive-img">
+								<img src="{{asset('img/alan_slp.jpg')}}" class="materialboxed responsive-img">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
 									<h5><strong class="event-name">Alan Saldaña</strong></h5>
 									<div class="divider"></div>
-									<p class="mt-10 mb-5"><b>Atizapan Edo. México</b></p>
-									<p>Hacienda San Juan</p>
-									<p>16 de Febrero</p>
-									<p class="event-date">16/02/2018</p>
+									<p class="mt-10 mb-5"><b>San Luis Potosi</b></p>
+									<p>El Bar</p>
+									<p>08 de Marzo</p>
+									<p class="event-date">08/03/2018</p>
 									{{-- <p>10:00 pm.</p> --}}
 								</div>
-								<a href="{{ url('/eventos/alan-saldana-atizapan') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/alan-saldana-san-luis-potosi') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
@@ -171,19 +151,19 @@
 					<div class="col m6 l4 evento">
 						<div class="card horizontal ">
 							<div class="card-image">
-								<img src="{{asset('img/ornelas.jpeg')}}" class="materialboxed responsive-img">
+								<img src="{{asset('img/alan_matehuala.jpg')}}" class="materialboxed responsive-img">
 							</div>
 							<div class="card-stacked">
 								<div class="card-content">
-									<h5><strong class="event-name">Raúl Ornelas</strong></h5>
+									<h5><strong class="event-name">Alan Saldaña</strong></h5>
 									<div class="divider"></div>
-									<p class="mt-10 mb-5"><b>Morelia</b></p>
-									<p>Teatro Stella Inda</p>
-									<p>23 de Febrero</p>
-									<p class="event-date">23/02/2018</p>
-									<p>9:30 pm.</p>
+									<p class="mt-10 mb-5"><b>Matehuala SLP</b></p>
+									<p>Las Chulas Shoperia</p>
+									<p>09 de Marzo</p>
+									<p class="event-date">09/03/2018</p>
+									{{-- <p>10:00 pm.</p> --}}
 								</div>
-								<a href="{{ url('/eventos/ornelas-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+								<a href="{{ url('/eventos/alan-saldana-matehuala') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>
@@ -224,6 +204,46 @@
 									<p>1:30 pm / 5:00 pm</p>
 								</div>
 								<a href="{{ url('/eventos/coco-aguascalientes') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m6 l4 evento">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/alan_villahermosa.jpg')}}" class="materialboxed responsive-img">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong class="event-name">Alan Saldaña</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10 mb-5"><b>Villahermosa</b></p>
+									<p>La Puerta de Alcalá</p>
+									<p>15 de Marzo</p>
+									<p class="event-date">15/03/2018</p>
+									{{-- <p>10:00 pm.</p> --}}
+								</div>
+								<a href="{{ url('/eventos/alan-saldana-villahermosa') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col m6 l4 evento">
+						<div class="card horizontal ">
+							<div class="card-image">
+								<img src="{{asset('img/alan_cdcarmen.jpg')}}" class="materialboxed responsive-img">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<h5><strong class="event-name">Alan Saldaña</strong></h5>
+									<div class="divider"></div>
+									<p class="mt-10 mb-5"><b>Ciudad del Carmen, Campeche</b></p>
+									<p>Barezzito</p>
+									<p>16 de Marzo</p>
+									<p class="event-date">16/03/2018</p>
+									{{-- <p>10:00 pm.</p> --}}
+								</div>
+								<a href="{{ url('/eventos/alan-saldana-ciudad-del-carmen') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 							</div>
 						</div>
 					</div>

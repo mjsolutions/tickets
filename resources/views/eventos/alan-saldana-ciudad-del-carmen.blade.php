@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Alan Saldaña Atizapan')
+@section('title', 'Alan Saldaña Ciudad del Carmen ')
 
-@section('description', 'Alan Saldaña en Atizapan, 16 de Febrero, 10 pm boletos en Hacienda San Juan y en bolematico.mx')
+@section('description', 'Alan Saldaña en Ciudad del Carmen , 16 de Marzo, 10 pm boletos en Barezzito y en bolematico.mx')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -15,7 +15,7 @@
 	<div class="row white-text">
 		<h4>Alan Saldaña</h4>
 		<div class="divider"></div>
-		<p><i>Atizapan - Hacienda San Juan</i></p>
+		<p><i>Ciudad del Carmen  - Barezzito</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -36,7 +36,7 @@
 			</div>
 
 			<div class="col s8 offset-s2 m3 mb-30 card-flyer">
-				<img src="{{ asset('img/alan-16.jpeg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/alan_cdcarmen.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 offset-m1">				
@@ -49,7 +49,7 @@
 								<div class="col s12 m8 teal accent-4">Zona General</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$300</span> Por entrada</div>
+							<div class="price col s12"><span>$250</span> Por entrada</div>
 							{{-- <div class="filas col s6">Filas: A - Ñ</div> --}}
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
@@ -59,8 +59,8 @@
 
 				<div class="row">
 					<div class="divider"></div>
-					<p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-
+					{{-- <p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p> --}}
+					<p class="center-align"><b>Informes:</b> <a href="tel:9381112670" style="background: #4caf50; color: #fff; padding: 5px 10px;">938 111 2670</a> / <a href="tel:9381393227" style="background: #4caf50; color: #fff; padding: 5px 10px;">938 139 3227</a></p>
 				</div>
 			</div>
 		</div>
@@ -90,22 +90,22 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>Hacienda San Juan</h5>
+					<h5>Barezzito</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119181.23028647155!2d-101.32346262405922!3d21.016136768304637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b7407e68669e5%3A0x7af73ea2077d255f!2sSKY+BAR+TERRASSE!5e0!3m2!1ses!2smx!4v1516873015486" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10692.296325186377!2d-91.81301516629037!3d18.650635999754062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8aeb18cc66d128a!2sBarezzito+Cd.+Del+Carmen!5e0!3m2!1ses!2smx!4v1520410804789" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
 
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Av de la Piedra 44- B, Col. José Ignacio López Rayón, (219,08 km) 52986 Ciudad López Mateos</p></li>
-						{{-- <li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 473 118 9022 / 473 117 3883</p></li> --}}
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Av Periferica Nte 52, Asa Poniente, 24197 Cd del Carmen, Camp.</p></li>
+						{{-- <li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 443 315 9243</p></li> --}}
 						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/HACIENDASANJUANN/" target="_blank">https://www.facebook.com/HACIENDASANJUANN/</a></p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/bzzcddelcarmen/" target="_blank">https://www.facebook.com/bzzcddelcarmen/</a></p></li>
 					</ul>
 				</div>
 			</div>			
@@ -124,10 +124,10 @@
 <section id="compra" class="section-comprar">
 
 	<div class="row">
-		<div class="col m4 offset-m1 mt-30 card-text">
-			<h5 class="center-align raleway">Venta de boletos en Hacienda San Juan Atizapan y en linea a través de nosotros.</h5>
+		<div class="col m4 offset-m4 mt-30">
+			<h5 class="center-align raleway">Venta de boletos en Barezzito Ciudad del Carmen .</h5>
 		</div>
-		<div class="col m5 offset-m1 mt-30">
+		{{-- <div class="col m5 offset-m1 mt-30">
 			@if(Auth()->check())
 				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
 					<div class="row">
@@ -148,9 +148,9 @@
 						</div>
 						
 						{!! Form::hidden('img', 'img/alan-16.jpeg') !!}
-						{!! Form::hidden('evento', 'Alan Saldaña en Atizapan') !!}
-						{!! Form::hidden('fecha', '16 de Febrero 2018') !!}
-						{!! Form::hidden('lugar', 'Hacienda San Juan, Atizapan') !!}
+						{!! Form::hidden('evento', 'Alan Saldaña en Ciudad del Carmen ') !!}
+						{!! Form::hidden('fecha', '16 de Marzo 2018') !!}
+						{!! Form::hidden('lugar', 'Barezzito, Ciudad del Carmen ') !!}
 						{!! Form::hidden('hora', '9:00 pm') !!}
 						{!! Form::hidden('precio', '300') !!}
 						{!! Form::hidden('event_type', 'general') !!}
@@ -180,7 +180,7 @@
 				</div>
 			@endif
 			
-		</div>
+		</div> --}}
 		<div class="clearfix"></div>
 		<div class="row">
 			<div class="col s6 offset-s3 mt-30">
@@ -200,10 +200,10 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Hacienda San Juan Atizapan</b></p>
-		<p><i class="material-icons">location_on</i> Av de la Piedra 44- B, Col. José Ignacio López Rayón, (219,08 km) 52986 Ciudad López Mateos</p>
+		<p><b>Barezzito Ciudad del Carmen </b></p>
+		<p><i class="material-icons">location_on</i> Av Periferica Nte 52, Asa Poniente, 24197 Cd del Carmen, Camp.</p>
 		{{-- <p><i class="material-icons">call</i> 473 118 9022 / 473 117 3883</p> --}}
-		<p><i class="material-icons">language</i>https://www.facebook.com/HACIENDASANJUANN/</p>
+		<p><i class="material-icons">language</i>https://www.facebook.com/bzzcddelcarmen/</p>
 	</div>
 </section>
 
@@ -230,13 +230,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.54084, lng: -99.2370111};
+		        var uluru = {lat: 18.6519856, lng: -91.81488};
 		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 16,
+		          zoom: 18,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.54084, lng: -99.2340111}
+		          center: {lat: 18.6519856, lng: -91.81388}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Alan Saldaña Zamora')
+@section('title', 'Alan Saldaña San Luis Potosí')
 
-@section('description', 'Alan Saldaña en Zamora, 08 de Febrero, 9 pm boletos en Terraza Don Nacho y en bolematico.mx')
+@section('description', 'Alan Saldaña en San Luis Potosí, 08 de Marzo, 10 pm boletos en El Bar y en bolematico.mx')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -15,7 +15,7 @@
 	<div class="row white-text">
 		<h4>Alan Saldaña</h4>
 		<div class="divider"></div>
-		<p><i>Zamora - Terraza Don Nacho</i></p>
+		<p><i>San Luis Potosí - El Bar</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -36,7 +36,7 @@
 			</div>
 
 			<div class="col s8 offset-s2 m3 mb-30 card-flyer">
-				<img src="{{ asset('img/alan-08.jpeg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/alan_slp.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m8 offset-m1">				
@@ -49,7 +49,7 @@
 								<div class="col s12 m8 teal accent-4">Zona General</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$200</span> Por entrada</div>
+							<div class="price col s12"><span>$250</span> Por entrada</div>
 							{{-- <div class="filas col s6">Filas: A - Ñ</div> --}}
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
@@ -59,8 +59,9 @@
 
 				<div class="row">
 					<div class="divider"></div>
-					<p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-					<p class="center-align"><b>Informes:</b> <a href="tel:3511218719" style="background: #4caf50; color: #fff; padding: 5px 10px;">351 121 8719</a> / <a href="tel:3515123781" style="background: #4caf50; color: #fff; padding: 5px 10px;">351 512 3781</a></div>
+					{{-- <p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p> --}}
+					<p class="center-align"><b>Informes:</b> <a href="tel:4444081739" style="background: #4caf50; color: #fff; padding: 5px 10px;">44 44 08 1739</a></p>
+				</div>
 			</div>
 		</div>
 
@@ -89,22 +90,22 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<h5>Terraza Don Nacho</h5>
+					<h5>El Bar</h5>
 				</div>
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119985.87424245695!2d-102.35576904204002!3d19.98505824968107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842e88cf7f92f521%3A0xc8f62f7042f7a4dc!2sTerraza+Don+Nacho!5e0!3m2!1ses!2smx!4v1516981909230" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120211.6619702815!2d-101.25805704708628!3d19.686448121413147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0ddc39c82a4b%3A0xc3f0eba6b883e1c1!2sAnd%C3%A9n+Food+Units!5e0!3m2!1ses!2smx!4v1516875471275" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
 
 				<!-- ## ADDRESS LIST ## -->
 				<div class="col s12 m6">
 					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Carr. Estatal Zamora - Los Reyes 280, Centro, 59600 Zamora, Mich.</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 351 121 8719<</p></li>
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Av Manuel J. Clouthier 210, A, 78260 Tequisquiapan, S.L.P.</p></li>
+						{{-- <li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 443 315 9243</p></li> --}}
 						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/terrazadonnacho/" target="_blank">https://www.facebook.com/terrazadonnacho/</a></p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/Elbarslp/" target="_blank">https://www.facebook.com/Elbarslp/</a></p></li>
 					</ul>
 				</div>
 			</div>			
@@ -121,27 +122,44 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	{{-- <div class="row">
-		<div class="col s12 m6">
-			<img src="{{asset('img/teatro-morelos.svg')}}" alt="Teatro Morelos" class="responsive-img">
+
+	<div class="row">
+		<div class="col m4 offset-m4 mt-30">
+			<h5 class="center-align raleway">Venta de boletos en El Bar San Luis Potosí</h5>
 		</div>
-		<div class="col s12 m6">
+		{{-- <div class="col m5 offset-m1 mt-30">
 			@if(Auth()->check())
-				<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
-				{!! Form::open(['route'=>'payment.franco7', 'method'=>'POST']) !!}
+				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
 					<div class="row">
+						<h5 class="quote">Zona General</h5>
+						<div class="input-field col s12">
+							{!! Form::select('asientos',
+								['1' => '1', 
+								'2' => '2', 
+								'3' => '3', 
+								'4' => '4', 
+								'5' => '5', 
+								'6' => '6', 
+								'7' => '7', 
+								'8' => '8', 
+								'9' => '9', 
+								'10' => '10'], '', ['class' => 'select-dropdown', 'id' => 'zona', 'placeholder' => 'Seleccione numero de asientos', 'required']) !!}
+							{!! Form::label('asientos', 'Asientos') !!}
+						</div>
+						
+						{!! Form::hidden('img', 'img/alan-16.jpeg') !!}
+						{!! Form::hidden('evento', 'Alan Saldaña en San Luis Potosí') !!}
+						{!! Form::hidden('fecha', '08 de Marzo 2018') !!}
+						{!! Form::hidden('lugar', 'El Bar, San Luis Potosí') !!}
+						{!! Form::hidden('hora', '10:00 pm') !!}
+						{!! Form::hidden('precio', '300') !!}
+						{!! Form::hidden('event_type', 'general') !!}
+						{!! Form::hidden('db_table', 'alan_16') !!}
+						{!! Form::hidden('seccion', '') !!}
+						{!! Form::hidden('fila', '') !!}
 
 						<div class="input-field col s12">
-							{!! Form::select('zona', ['Diamante' => 'Diamante', 'Oro' => 'Oro', 'Plata' => 'Plata'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Seleccione una zona']) !!}
-							{!! Form::label('zona', 'Zona') !!}
-						</div>
-						<div class="input-field col s12">
-							{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Seleccione primero una zona']) !!}
-							{!! Form::label('fila', 'Fila') !!}
-						</div>
-						<div class="input-field col s12">
-							{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
-							{!! Form::label('asiento', 'Asiento') !!}
+							<p><em>* Puedes seleccionar un máximo de 10 lugares</em></p>
 						</div>
 						
 					</div>
@@ -149,7 +167,7 @@
 					<div class="row">
 					
 						<div class="input-field center-align">
-							{!! Form::submit('Comprar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
+							{!! Form::submit('Confirmar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
 						</div>	
 					
 					</div>
@@ -157,25 +175,21 @@
 				{!! Form::close() !!}
 			@else
 				<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
-				<div class="col s6 m3 col-center">
+				<div class="col s6 col-center">
 					<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
 				</div>
 			@endif
-		</div>	
-	
-	</div> --}}
-	<div class="row">
-		<div class="col m4 offset-m4">
-			<h5 class="mt-50 center-align raleway">Venta de boletos en Terraza Don Nacho Zamora</h5>
-			<div class="row">
-				<div class="col s6 offset-s3 mt-30">
-					<div class="divider"></div>
-				</div>
+			
+		</div> --}}
+		<div class="clearfix"></div>
+		<div class="row">
+			<div class="col s6 offset-s3 mt-30">
+				<div class="divider"></div>
 			</div>
-			<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
-			<div class="row center-align">
-				<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
-			</div>
+		</div>
+		<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
+		<div class="row center-align">
+			<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
 		</div>
 	</div>
 </section>
@@ -186,10 +200,10 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Terraza Don Nacho Zamora</b></p>
-		<p><i class="material-icons">location_on</i>Carr. Estatal Zamora - Los Reyes 280, Centro, 59600 Zamora, Mich.</p>
-		<p><i class="material-icons">call</i> 351 121 8719<</p>
-		<p>{{-- <i class="material-icons">language</i> --}}https://www.facebook.com/terrazadonnacho/</p>
+		<p><b>El Bar San Luis Potosí</b></p>
+		<p><i class="material-icons">location_on</i> Av Manuel J. Clouthier 210, A, 78260 Tequisquiapan, S.L.P.</p>
+		{{-- <p><i class="material-icons">call</i> 473 118 9022 / 473 117 3883</p> --}}
+		<p><i class="material-icons">language</i>https://www.facebook.com/Elbarslp/</p>
 	</div>
 </section>
 
@@ -216,13 +230,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.985065, lng: -102.285728};
+		        var uluru = {lat: 22.1424588, lng: -101.0005};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 16,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.985165, lng: -102.284811}
+		          center: {lat: 22.1424588, lng: -101.000005}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,
@@ -230,43 +244,7 @@
 		        });
 		      }
 
-		// $("#zona").change(function(){
-		// 	var id = $(this).val();
-		// 	$.ajax({
-		// 		url: '{{url('/api/getFilas')}}/Franco7/' + id,
-		// 		method: 'GET',
-		// 		// data: 'id=' + id,
-		// 		success: function(res){
-		// 			var filas = res;
-		// 			var options = "<option value='' selected disabled>Selecciona una fila</option>";
-		// 			for(i=0; i<filas.length; i++){
-		// 				options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
-		// 			}
-		// 			$("#fila").html(options);
-		// 			$("#fila").material_select();
 
-		// 		}
-		// 	});
-		// });
-
-		// $("#fila").change(function(){
-		// 	var id = $(this).val();
-		// 	$.ajax({
-		// 		url: '{{url('/api/getAsientos')}}/Franco7/' + id,
-		// 		method: 'GET',
-		// 		// data: 'id=' + id,
-		// 		success: function(res){
-		// 			var asientos = res;
-		// 			var options = "<option value='' selected disabled>Seleccione los asientos</option>";
-		// 			for(i=0; i<asientos.length; i++){
-		// 				options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
-		// 			}
-		// 			$("#asiento").html(options);
-		// 			$("#asiento").material_select();
-
-		// 		}
-		// 	});
-		// });
 	</script>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
