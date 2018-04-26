@@ -148,14 +148,18 @@
 
 			<div class="col s12 z-depth-2 p-30 bg-gray">
 				@if($success)
+					
+					@if($payment == 'paid')
 					<h5 class="quote"><b>¡SE HA COMPLETADO TU COMPRA!</b></h5>
 					<div class="divider col-center col s10"></div>
-					@if($payment == 'paid')
-					<p>Para recoger tus boletos deberas presentar el email que fue enviado a tu la cuenta de correo con la que te registraste en Bolematico además de una identificación oficial en las taquillas del evento.</p>
-					<p>Tienes hasta una hora antes del dia del evento para recoger tus boletos. </p>					
+					<p>Para apartar tus lugares deberas llamar al número <b>{{ $order->line_items[0]->metadata['info'] }}</b> y realizar la reservación respectiva con tu ID de transacción el cual ha sido enviado a tu email con el que te registraste en Bolematico.</p>
+					<p>Esta información ha sido enviada a tu cuenta de correo, de no ser asi puedes contactarte con nosotros <a href="{{ route('contacto') }}">aquí</a></p>
+					{{-- <p>Tienes hasta una hora antes del dia del evento para recoger tus boletos. </p>					 --}}
 					@else
+					<h5 class="quote"><b>¡SE HA COMPLETADO TU ORDEN!</b></h5>
+					<div class="divider col-center col s10"></div>
 					<p>Hemos enviado a tu email un comprobante como el que aparece en esta página con el numero de referencia para que puedas completar tu pago.</p>
-					<p>Una vez que nos sea notificado tu pago, te enviaremos las instrucciones finales para que puedas recibir tus boletos.</p>
+					<p>Una vez que nos sea notificado tu pago, enviaremos a tu cuenta de correo las instrucciones finales para que puedas apartar tus lugares.</p>
 					<p>Cuentas con 24 hrs para realizar tu pago.</p>
 					@endif
 					
@@ -169,37 +173,71 @@
 		
 		</div>
 		@if($payment == "pending")
-		<div class="col s12 l6 offset-l1">
-			<div class="opps">
-				<div class="opps-header">
-					<div class="opps-reminder">Ficha digital. No es necesario imprimir.</div>
-					<div class="opps-info">
-						<div class="opps-brand"><img src="{{ asset('img/oxxopay_brand.png') }}" alt="OXXOPay"></div>
-						<div class="opps-ammount">
-							<h3>Monto a pagar</h3>
-							<h2>$ {{ number_format($order->amount/100, 2, '.', ',') }} <sup>MXN</sup></h2>
-							<p>OXXO cobrará una comisión adicional al momento de realizar el pago.</p>
+
+			@if( $order->charges[0]->payment_method->type == 'spei' )
+				<div class="col s12 l6 offset-l1">
+					<div class="opps">
+						<div class="opps-header">
+							<div class="opps-reminder">Ficha digital. No es necesario imprimir.</div>
+							<div class="opps-info">
+								<div class="opps-brand"><img src="{{ asset('img/spei_brand.png') }}" alt="Banorte"></div>
+								<div class="opps-ammount">
+									<h3>Monto a pagar</h3>
+									<h2>$ {{ number_format($order->amount/100, 2, '.', ',') }} <sup>MXN</sup></h2>
+									<p>Utiliza exactamente esta cantidad al realizar el pago.</p>
+								</div>
+							</div>
+							<div class="opps-reference">
+								<h3>CLABE</h3>
+								<h1>{{ $order->charges[0]->payment_method->receiving_account_number }}</h1>
+							</div>
+						</div>
+						<div class="opps-instructions">
+							<h3>Instrucciones</h3>
+							<ol class="opps-list">
+								<li>Recuerda que tu número de referencia expira el <strong>{{ $expires_at }}</strong></li>
+								<li>Accede a tu banca en línea.</li>
+								<li>Da de alta la CLABE en esta ficha. <strong>El banco deberá de ser {{ $order->charges[0]->payment_method->receiving_account_bank }}</strong>.</li>
+								<li>Realiza la transferencia correspondiente por la cantidad exacta en esta ficha, <strong>de lo contrario se rechazará el cargo</strong>.</li>
+								<li>Al confirmar tu pago, el portal de tu banco generará un comprobante digital. <strong>En el podrás verificar que se haya realizado correctamente.</strong> Conserva este comprobante de pago.</li>
+							</ol>
+							<div class="opps-footnote">Al completar estos pasos recibirás un correo de <strong>bolematico.mx</strong> confirmando tu pago.</div>
 						</div>
 					</div>
-					<div class="opps-reference">
-						<h3>Referencia</h3>
-						<h1>{{ $order->charges[0]->payment_method->reference }}</h1>
+				</div>
+			@else
+				<div class="col s12 l6 offset-l1">
+					<div class="opps">
+						<div class="opps-header">
+							<div class="opps-reminder">Ficha digital. No es necesario imprimir.</div>
+							<div class="opps-info">
+								<div class="opps-brand"><img src="{{ asset('img/oxxopay_brand.png') }}" alt="OXXOPay"></div>
+								<div class="opps-ammount">
+									<h3>Monto a pagar</h3>
+									<h2>$ {{ number_format($order->amount/100, 2, '.', ',') }} <sup>MXN</sup></h2>
+									<p>OXXO cobrará una comisión adicional al momento de realizar el pago.</p>
+								</div>
+							</div>
+							<div class="opps-reference">
+								<h3>Referencia</h3>
+								<h1>{{ $order->charges[0]->payment_method->reference }}</h1>
+							</div>
+						</div>
+						<div class="opps-instructions">
+							<h3>Instrucciones</h3>
+							<ol class="opps-list">
+								<li>Recuerda que tu número de referencia expira el <strong>{{ $expires_at }}</strong></li>
+								<li>Acude a la tienda OXXO más cercana. <a href="https://www.google.com.mx/maps/search/oxxo/" target="_blank">Encuéntrala aquí</a>.</li>
+								<li>Indica en caja que quieres realizar un pago de <strong>OXXOPay</strong>.</li>
+								<li>Dicta al cajero el número de referencia en esta ficha para que tecleé directamete en la pantalla de venta.</li>
+								<li>Realiza el pago correspondiente con dinero en efectivo.</li>
+								<li>Al confirmar tu pago, el cajero te entregará un comprobante impreso. <strong>En el podrás verificar que se haya realizado correctamente.</strong> Conserva este comprobante de pago.</li>
+							</ol>
+							<div class="opps-footnote">Al completar estos pasos recibirás un correo de <strong>bolematico.mx</strong> confirmando tu pago.</div>
+						</div>
 					</div>
 				</div>
-				<div class="opps-instructions">
-					<h3>Instrucciones</h3>
-					<ol class="opps-list">
-						<li>Recuerda que tu número de referencia expira el <strong>{{ $expires_at }}</strong></li>
-						<li>Acude a la tienda OXXO más cercana. <a href="https://www.google.com.mx/maps/search/oxxo/" target="_blank">Encuéntrala aquí</a>.</li>
-						<li>Indica en caja que quieres realizar un pago de <strong>OXXOPay</strong>.</li>
-						<li>Dicta al cajero el número de referencia en esta ficha para que tecleé directamete en la pantalla de venta.</li>
-						<li>Realiza el pago correspondiente con dinero en efectivo.</li>
-						<li>Al confirmar tu pago, el cajero te entregará un comprobante impreso. <strong>En el podrás verificar que se haya realizado correctamente.</strong> Conserva este comprobante de pago.</li>
-					</ol>
-					<div class="opps-footnote">Al completar estos pasos recibirás un correo de <strong>bolematico.mx</strong> confirmando tu pago.</div>
-				</div>
-			</div>
-		</div>
+			@endif
 		@else
 		<div class="clearfix"></div>
 		@endif

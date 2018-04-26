@@ -56,12 +56,15 @@ class PaymentController extends Controller
 
     public function confirmPayment(BuyTicketRequest $req) {
 
+    	// dd($req);
+
     	switch($req->payment_form){
 
 			case 'credit_card': 
 				return $this->ccPayment($req);
 				break;
-			case 'oxxo':
+			case 'spei':
+			case 'oxxo_cash':
 				return $this->chargePayment($req);
 				break;
 			case 'paypal':
@@ -69,10 +72,10 @@ class PaymentController extends Controller
 				break;
 		}
 
-  //   	$success = true;
-		// $payment = 'pending';
-		// $expires_at = Carbon::parse(Carbon::now()->addDays(1));
-		// return view('eventos.compra', compact('success', 'payment','expires_at'));
+    	$success = true;
+		$payment = 'pending';
+		$expires_at = Carbon::parse(Carbon::now()->addDays(1));
+		return view('eventos.compra', compact('success', 'payment','expires_at'));
 
     }
 
@@ -100,6 +103,7 @@ class PaymentController extends Controller
 			$metadata = array(
 				'event_type' => $req->event_type,
 				'db_table' => $req->db_table,
+				'info' => $req->info,
 				'event' => $req->evento,
 				'date' => $req->fecha,
 				'place' => $req->lugar,
@@ -126,7 +130,7 @@ class PaymentController extends Controller
 				  'charges' => array(
 				    array(
 				      'payment_method' => array(
-				        'type' => 'oxxo_cash',
+				        'type' => $req->payment_form,
 				        'expires_at' => $expires_at->timestamp
 				      )
 				    )
@@ -150,8 +154,8 @@ class PaymentController extends Controller
 
 		$success = true;
 		$payment = 'pending';
-		Mail::to(Auth::user()->email, Auth::user()->name)
-			->send(new OrderCreated($order, $expires_at));
+		// Mail::to(Auth::user()->email, Auth::user()->name)
+			// ->send(new OrderCreated($order, $expires_at));
 		return view('eventos.compra', compact('payment', 'success', 'order', 'expires_at'));
     }
 

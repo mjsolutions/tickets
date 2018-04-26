@@ -28,3 +28,4 @@ Route::get('/getFilasSofia/{zona}', 'ApiController@getFilasSofia');
 Route::get('/getAsientosSofia/{fila}', 'ApiController@getAsientosSofia');
 
 Route::post('/charge_paid', 'ApiController@chargePaid');
+// Route::post('/charge_created', 'ApiController@chargeCreated');

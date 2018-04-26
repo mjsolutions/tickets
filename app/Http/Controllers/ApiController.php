@@ -68,8 +68,11 @@ class ApiController extends Controller
             $event_date = $req->data['object']['line_items']['data'][0]['metadata']['date'];
             $place = $req->data['object']['line_items']['data'][0]['metadata']['place'];
             $hr = $req->data['object']['line_items']['data'][0]['metadata']['hr'];
+            $info = $req->data['object']['line_items']['data'][0]['metadata']['info'];
             $asientos = $req->data['object']['line_items']['data'][0]['quantity'];
-            $reference =  $req->data['object']['charges']['data'][0]['payment_method']['reference'];
+            $payment_type =  $req->data['object']['charges']['data'][0]['payment_method']['type'];
+            $reference =  $req->data['object']['charges']['data'][0]['id'];
+
             $user = User::where('email', $req->data['object']['customer_info']['email'])->first();
             $date = Carbon::createFromTimestamp($req->data['object']['created_at']);
             $descripcion = "";
@@ -91,7 +94,7 @@ class ApiController extends Controller
                         'asiento' => $i,
                         'status' => 2,
                         'impreso' => 0,
-                        'forma_pago' => 'OXXO',
+                        'forma_pago' => $payment_type,
                         'folio' => $new_folio,
                         'transaction_id' => $reference,
                         'user' => $user->id,
@@ -104,7 +107,7 @@ class ApiController extends Controller
 
                 }
 
-                $descripcion = $asientos;
+                $descripcion = $asientos." lugares | Tipo: ".ucwords($event_type);
 
             }
 
@@ -112,25 +115,87 @@ class ApiController extends Controller
             $buydata['lugar'] = $place;
             $buydata['fecha'] = $event_date;
             $buydata['hr'] = $hr;
+            $buydata['info'] = $info;
             $buydata['descripcion'] = $descripcion;
             $buydata['transaccion'] = $reference;
             $buydata['user'] = $user->name.' '.$user->last_name.' '.$user->second_lname;
             $buydata['email'] = $user->email;
 
             Mail::to($user->email, $user->name)
+            ->bcc('arquisbautista@hotmail.com')
             ->send(new Compra($buydata));
 
             return response()->json('success', 200); 
         
             
              
-        } elseif($req->type == 'order.created' || $req->type == 'order.pending_payment' || $req->type == 'charge.created' || $req->type == 'charge.paid') {
+        } elseif($req->type == 'order.created' || $req->type == 'order.pending_payment' || $req->type == 'charge.created' || $req->type == 'charge.paid' || $req->type == 'order.expired' || $req->type == 'charge.expired') {
             return response()->json('Webhook received', 200);
         }
 
         return response()->json('fail', 500);  
 
     }
+
+
+
+    // public function chargeCreated(Request $req) {
+
+
+    //     // echo $req->data['object']['payment_method']['object'];
+    //     $date = Carbon::createFromTimestamp($req->data['object']['created_at']);
+
+    //     $user = User::where('email', $req->data['object']['customer_info']['email'])->first();
+
+    //     $buydata = Array();
+    //     $buydata['folios'] = "";
+
+    //     if($req->type == 'order.created') {
+
+    //         $table = $req->data['object']['line_items']['data'][0]['metadata']['db_table'];
+
+    //             DB::table($table)->insert(
+    //                 ['seccion' => 'General',
+    //                 'fila' => 'Sin fila',
+    //                 'asiento' => 1,
+    //                 'status' => 2,
+    //                 'impreso' => 0,
+    //                 'forma_pago' => "OxxoPAY",
+    //                 'folio' => 2,
+    //                 'transaction_id' => "referencia",
+    //                 'user' => "1",
+    //                 'fecha_venta' => $date,
+    //                 'detalles' => '',
+
+    //                 ]);
+
+    //         $buydata['folios'] .= " *Los Folios";
+
+
+    //         $buydata['evento'] = "Felices GTO";
+    //         $buydata['lugar'] = "varias ciudades";
+    //         $buydata['fecha'] = "Abril";
+    //         $buydata['hr'] = "10pm";
+    //         $buydata['info'] = "---";
+    //         $buydata['descripcion'] = "Se ha creado el cargo correspondiente,";
+    //         $buydata['transaccion'] = "reference";
+    //         $buydata['user'] = "Nombre del cliente";
+    //         $buydata['email'] = "Email cliente";
+
+    //         Mail::to($user->email, $user->name)
+    //         ->send(new Compra($buydata));
+
+    //         return response()->json('success', 200); 
+        
+            
+             
+    //     } elseif($req->type == 'charge.created' || $req->type == 'order.pending_payment' || $req->type == 'order.paid' || $req->type == 'charge.paid') {
+    //         return response()->json('Webhook received', 200);
+    //     }
+
+    //     return response()->json('fail', 500);  
+
+    // }
 
 
 }

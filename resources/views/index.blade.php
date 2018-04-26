@@ -86,167 +86,65 @@
 
 			<div class="row mb-30 grid-eventos">
 
-					
-
-					{{-- <div class="col m6 l4 evento">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/luikiw-01.jpg')}}" class="materialboxed responsive-img">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong class="event-name">Luiki Wiki & Pachis</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10 mb-5"><b>Xalapa</b></p>
-									<p>Barezzito Xalapa</p>
-									<p>01 de Febrero</p>
-									<p class="event-date">01/02/2018</p>
-									<p>9:00 pm.</p>
-								</div>
-								<a href="{{ url('/eventos/luiki-wiki-y-pachis-xalapa') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
+				{{-- <div class="col m6 l4 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/felices_pachuca.jpg')}}" class="materialboxed responsive-img">
 						</div>
-					</div> --}}
-					
-					{{-- <div class="col m6 l4 evento">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/luikiw-02.jpg')}}" class="materialboxed responsive-img">
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">Felices Los Cuatro</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Pachuca</b></p>
+								<p>Vogga Cantabar</p>
+								<p>10 de Mayo</p>
+								<p class="event-date">10/05/2018</p>
+								<p>09:30 pm.</p>
 							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong class="event-name">Luiki Wiki & Pachis</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10 mb-5"><b>Veracruz</b></p>
-									<p>Barezzito Veracruz</p>
-									<p>02 de Febrero</p>
-									<p class="event-date">02/02/2018</p>
-									<p>8:00 pm.</p>
-								</div>
-								<a href="{{ url('/eventos/luiki-wiki-y-pachis-veracruz') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
-					</div> --}}
-
-					<div class="col m6 l4 evento">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/alan_slp.jpg')}}" class="materialboxed responsive-img">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong class="event-name">Alan Saldaña</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10 mb-5"><b>San Luis Potosi</b></p>
-									<p>El Bar</p>
-									<p>08 de Marzo</p>
-									<p class="event-date">08/03/2018</p>
-									{{-- <p>10:00 pm.</p> --}}
-								</div>
-								<a href="{{ url('/eventos/alan-saldana-san-luis-potosi') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
+							<a href="{{ url('/eventos/felices-los-cuatro-pachuca') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
+				</div> --}}
 
-					<div class="col m6 l4 evento">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/alan_matehuala.jpg')}}" class="materialboxed responsive-img">
+				<div class="col m6 l4 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/felices_slp.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">Felices Los Cuatro</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>San Luis Potosí</b></p>
+								<p>RoadHouse San Luis</p>
+								<p>11 de Mayo</p>
+								<p class="event-date">11/05/2018</p>
+								<p>09:30 pm.</p>
 							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong class="event-name">Alan Saldaña</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10 mb-5"><b>Matehuala SLP</b></p>
-									<p>Las Chulas Shoperia</p>
-									<p>09 de Marzo</p>
-									<p class="event-date">09/03/2018</p>
-									{{-- <p>10:00 pm.</p> --}}
-								</div>
-								<a href="{{ url('/eventos/alan-saldana-matehuala') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
+							<a href="{{ url('/eventos/felices-los-cuatro-slp') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
-					
-					<div class="col m6 l4 evento">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/delgadillo-oceransky-10.jpg')}}" class="materialboxed responsive-img">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong class="event-name">Delgadillo / Oceransky</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10 mb-5"><b>Aguascalientes</b></p>
-									<p>Auditorio DIMO</p>
-									<p>10 de Marzo</p>
-									<p class="event-date">10/03/2018</p>
-									<p>9:00 pm.</p>
-								</div>
-								<a href="{{ url('/eventos/fernando-delgadillo-edgar-oceransky-aguascalientes') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
-					</div>
+				</div>
 
-					<div class="col m6 l4 evento">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/coco.jpeg')}}" class="materialboxed responsive-img">
+				<div class="col m6 l4 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/rosana-morelia1.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">Rosana</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Morelia</b></p>
+								<p>Teatro Stella Inda</p>
+								<p>16 de Junio</p>
+								<p class="event-date">16/06/2018</p>
+								<p>09:00 pm.</p>
 							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong class="event-name">Coco</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10 mb-5"><b>Aguascalientes</b></p>
-									<p>Auditorio DIMO</p>
-									<p>11 de Marzo</p>
-									<p class="event-date">11/03/2018</p>
-									<p>1:30 pm / 5:00 pm</p>
-								</div>
-								<a href="{{ url('/eventos/coco-aguascalientes') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
+							<a href="{{ url('/eventos/rosana-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
-
-					<div class="col m6 l4 evento">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/alan_villahermosa.jpg')}}" class="materialboxed responsive-img">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong class="event-name">Alan Saldaña</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10 mb-5"><b>Villahermosa</b></p>
-									<p>La Puerta de Alcalá</p>
-									<p>15 de Marzo</p>
-									<p class="event-date">15/03/2018</p>
-									{{-- <p>10:00 pm.</p> --}}
-								</div>
-								<a href="{{ url('/eventos/alan-saldana-villahermosa') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col m6 l4 evento">
-						<div class="card horizontal ">
-							<div class="card-image">
-								<img src="{{asset('img/alan_cdcarmen.jpg')}}" class="materialboxed responsive-img">
-							</div>
-							<div class="card-stacked">
-								<div class="card-content">
-									<h5><strong class="event-name">Alan Saldaña</strong></h5>
-									<div class="divider"></div>
-									<p class="mt-10 mb-5"><b>Ciudad del Carmen, Campeche</b></p>
-									<p>Barezzito</p>
-									<p>16 de Marzo</p>
-									<p class="event-date">16/03/2018</p>
-									{{-- <p>10:00 pm.</p> --}}
-								</div>
-								<a href="{{ url('/eventos/alan-saldana-ciudad-del-carmen') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-							</div>
-						</div>
-					</div>
+				</div>
 
 			</div>
 		</div>

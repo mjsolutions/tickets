@@ -44,9 +44,8 @@
 				{!! Form::open(['route'=>'payment.confirm', 'method'=>'POST', 'id'=>'payment']) !!}
 					<div class="row center-align pt-40" id="form-inputs">
 
-						<div class="col m3 s6">
-							<div>
-								
+						<div class="col m4 s6">
+							<div>								
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'credit_card', '', ['id' => 'payment_card']) !!}			
 									<label for="payment_card" class="check-up"><img src="{{ asset('img/cards.svg') }}" class="responsive-img"></label>
@@ -54,15 +53,15 @@
 								</div>
 							</div>
 						</div>
-						<div class="col m3 s6">
+						<div class="col m4 s6">
 							<div>
 								<div class="col s10 offset-s1">
-									{!! Form::radio('payment_form', 'oxxo', '', ['id' => 'payment_oxxo']) !!}	
+									{!! Form::radio('payment_form', 'oxxo_cash', '', ['id' => 'payment_oxxo']) !!}	
 									<label for="payment_oxxo" class="check-up"><img src="{{ asset('img/oxxopay.svg') }}" class="responsive-img"></label>
 								</div>
 							</div>
 						</div>
-						<div class="col m3 s6">
+						<div class="col m4 s6">
 							<div>
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'spei', '', ['id' => 'payment_spei']) !!}
@@ -70,12 +69,12 @@
 								</div>
 							</div>
 						</div>
-						<div class="col m3 s6">
+						{{-- <div class="col m3 s6">
 							<div>
 								{!! Form::radio('payment_form', 'paypal', '', ['id' => 'payment_paypal']) !!}
 								<label for="payment_paypal" class="check-up"><i class="fa fa-paypal fa-2x" style="color: #7c869a"></i></label>
 							</div>
-						</div>
+						</div> --}}
 						
 						{!! Form::hidden('img', $req->img) !!}
 						{!! Form::hidden('evento', $req->evento) !!}
@@ -86,6 +85,7 @@
 						{!! Form::hidden('asientos', $req->asientos) !!}
 						{!! Form::hidden('event_type', $req->event_type) !!}
 						{!! Form::hidden('db_table', $req->db_table) !!}
+						{!! Form::hidden('info', $req->info) !!}
 						{!! Form::hidden('seccion', $req->seccion) !!}
 						{!! Form::hidden('fila', $req->fila) !!}
 						{!! Form::hidden('customer_name', Auth::user()->name.' '.Auth::user()->last_name.' '.Auth::user()->second_lname) !!}
@@ -125,10 +125,10 @@
 					<li><span class="fa-li"><i class="fa fa-check"></i></span> Se cobrará una comisión adicional del 10% del total de la compra por concepto del servicio de venta en linea</li>
 					<li><span class="fa-li"><i class="fa fa-check"></i></span> Los pagos con tarjeta de crédito, SPEI o pago en OXXO son gestionados por medio de <a href="https://www.conekta.com/es" target="_blank">Conekta</a> por lo que tus datos estan seguros, bolematico.mx no guarda informacion adicional en tus compras.</li>
 					<li><span class="fa-li"><i class="fa fa-check"></i></span> Los pagos mediante Paypal o Tarjeta de crédito son automaticos por lo que al terminar el proceso enviaremos a tu email el comprobante con las instrucciones para que recojas tu boletos</li>
-					<li><span class="fa-li"><i class="fa fa-check"></i></span> Los pagos mediante SPEI u OXXO cuentan con una vigencia de 48 hrs para que puedas completar el pago y una vez que nos sea notificado el mismo ya sea por OXXO o el banco correspondiente te enviaremos a tu email el comprobante con las instrucciones para que recojas tus boletos.</li>
+					<li><span class="fa-li"><i class="fa fa-check"></i></span> Los pagos mediante SPEI u OXXO cuentan con una vigencia de 24 hrs para que puedas completar el pago y una vez que nos sea notificado el mismo ya sea por OXXO o el banco correspondiente te enviaremos a tu email el comprobante con las instrucciones para que recojas tus boletos.</li>
 					<li><span class="fa-li"><i class="fa fa-check"></i></span> Para los pagos en OXXO deberas acudir personalmente a alguna sucursal OXXO y presentar el comprobante que se te hará llegar a tu email con el numero al que debe ser depositado el total de tu compra. El establecimiento te cobrará ademas un cargo por servicio.</li>
-					<li><span class="fa-li"><i class="fa fa-check"></i></span> En caso de seleccionar el pago mediante Paypal seras redireccionado para completar el proceso por medio de su plataforma y al terminar dicho proceso volveras automaticamente a bolematico.mx. Recuerda que debes de contar con una cuenta activa en Paypal, en caso de no tenerla puedes crear una <a href="https://www.paypal.com/mx/webapps/mpp/account-selection" target="_blank">aqui</a>.</li>
-					<li><span class="fa-li"><i class="fa fa-check"></i></span> Verifica que el email que aparece en los datos generales sea el correcto ya que es a donde te enviaremos toda la información correspondiente segun sea el tipo de pago que hayas seleccionado.</li>
+					{{-- <li><span class="fa-li"><i class="fa fa-check"></i></span> En caso de seleccionar el pago mediante Paypal seras redireccionado para completar el proceso por medio de su plataforma y al terminar dicho proceso volveras automaticamente a bolematico.mx. Recuerda que debes de contar con una cuenta activa en Paypal, en caso de no tenerla puedes crear una <a href="https://www.paypal.com/mx/webapps/mpp/account-selection" target="_blank">aqui</a>.</li> --}}
+					<li><span class="fa-li"><i class="fa fa-check"></i></span> Verifica que el email que aparece en los datos generales sea el correcto ya que es a donde te enviaremos toda la información correspondiente según sea el tipo de pago que hayas seleccionado.</li>
 				</ul>
 			</div>
 		</div>
@@ -137,8 +137,36 @@
 @endsection
 
 @section('scripts')
+<script type="text/javascript" src="https://cdn.conekta.io/js/latest/conekta.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
+
+		Conekta.setPublicKey('key_KJysdbf6PotS2ut2');
+
+		var conektaSuccessResponseHandler = function(token) {
+			var $form = $("#card-form");
+			//Inserta el token_id en la forma para que se envíe al servidor
+			$form.append($('<input type="hidden" name="conektaTokenId" id="conektaTokenId">').val(token.id));
+			$form.get(0).submit(); //Hace submit
+		};
+
+		var conektaErrorResponseHandler = function(response) {
+			var $form = $("#card-form");
+			$form.find(".card-errors").text(response.message_to_purchaser);
+			$form.find("button").prop("disabled", false);
+		};
+
+		//jQuery para que genere el token después de dar click en submit
+		$(function () {
+			$("#card-form").submit(function(event) {
+			  var $form = $(this);
+			  // Previene hacer submit más de una vez
+			  $form.find("button").prop("disabled", true);
+			  Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
+			  return false;
+			});
+		});
+
 		$("#payment").submit(function(){
 
 			$("#btn-submit").html('Validando datos...');
