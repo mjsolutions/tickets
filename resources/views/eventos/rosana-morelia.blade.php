@@ -148,10 +148,12 @@
 
 <section id="compra" class="section-comprar">
 	<div class="row">
-		<div class="col m4 offset-m4 mt-30">
-			<h5 class="center-align raleway">Venta de boletos en R.S. Viajes Centro</h5>
+		<div class="col m6 offset-m1 mt-30">
+			{{-- <h5 class="center-align raleway">Venta de boletos en R.S. Viajes Centro</h5> --}}
+			<img src="{{ asset('img/stella_inda.png') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/palacio-arte.jpg')}}">
+			<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
 		</div>
-		{{-- <div class="col m5 offset-m1 mt-30">
+		<div class="col m4  mt-30">
 			@if(Auth()->check())
 				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
 					<div class="row">
@@ -205,7 +207,7 @@
 				</div>
 			@endif
 			
-		</div> --}}
+		</div>
 		<div class="clearfix"></div>
 		<div class="row">
 			<div class="col s6 offset-s3 mt-30">
