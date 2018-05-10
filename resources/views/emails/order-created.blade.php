@@ -140,6 +140,38 @@
 	<p>Cuentas con 24 hrs para realizar tu pago.</p>
 
 	<div style="margin-top: 30px;">
+	@if( $order->charges[0]->payment_method->type == 'spei' )
+		<div class="opps">
+			<div class="opps-header">
+				<div class="opps-reminder">Ficha digital. No es necesario imprimir.</div>
+				<div class="opps-info">
+					<div class="opps-brand"><img src="{{ asset('img/spei_brand.png') }}" alt="Banorte"></div>
+					<div class="opps-ammount">
+						<h3>Monto a pagar</h3>
+						<h2>$ {{ number_format($order->amount/100, 2, '.', ',') }} <sup>MXN</sup></h2>
+						<p>Utiliza exactamente esta cantidad al realizar el pago.</p>
+					</div>
+				</div>
+				<div class="opps-reference">
+					<h3>CLABE</h3>
+					<h1>{{ $order->charges[0]->payment_method->receiving_account_number }}</h1>
+				</div>
+			</div>
+			<div class="opps-instructions">
+				<h3>Instrucciones</h3>
+				<ol class="opps-list">
+					<li>Recuerda que tu número de referencia expira el <strong>{{ $expires_at }}</strong></li>
+					<li>Accede a tu banca en línea.</li>
+					<li>Da de alta la CLABE en esta ficha. <strong>El banco deberá de ser {{ $order->charges[0]->payment_method->receiving_account_bank }}</strong>.</li>
+					<li>Realiza la transferencia correspondiente por la cantidad exacta en esta ficha, <strong>de lo contrario se rechazará el cargo</strong>.</li>
+					<li>Al confirmar tu pago, el portal de tu banco generará un comprobante digital. <strong>En el podrás verificar que se haya realizado correctamente.</strong> Conserva este comprobante de pago.</li>
+				</ol>
+				<div class="opps-footnote">Al completar estos pasos recibirás un correo de <strong>bolematico.mx</strong> confirmando tu pago.</div>
+			</div>
+		</div>
+
+	@else
+
 		<div class="opps">
 			<div class="opps-header">
 				<div class="opps-reminder">Ficha digital. No es necesario imprimir.</div>
@@ -170,6 +202,7 @@
 				<div class="opps-footnote">Al completar estos pasos recibirás un correo de <strong>bolematico.mx</strong> confirmando tu pago.</div>
 			</div>
 		</div>
+	@endif
 	</div>
 
 	<div style="color: #FFF; background: #222; margin-bottom: 0; padding: 20px 0;">

@@ -32,9 +32,20 @@
 				<p><b>Fecha:</b> {{ $req->fecha }}</p>
 				<p><b>Lugar:</b> {{ $req->lugar }}</p>
 				<p><b>Hora:</b> {{ $req->hora }}</p>
-				<p><b>Numero de Boletos:</b> {{ $req->asientos }}</p>
+				<p><b>Zona:</b> {{ $req->zona }}</p>
+				<p><b>Fila:</b> {{ $req->fila }}</p>
+				@php
+				$i=0;
+				foreach ($req->asiento as $value) {
+					$field = explode('|', $value);
+					$id[$i] = $field[0];
+					$sit[$i] = $field[1];
+					$i++;
+				}
+				@endphp
+				<p><b>Asientos:</b> *{{ implode(" *", $sit) }}</p>
 				<p><b>Email comprador:</b> {{ Auth::user()->email }}</p>
-				<p><b>Total:</b> <span class="label-precio">$ <b>{{ number_format(($req->precio * $req->asientos) * 1.10, 2, '.', ',') }}</b> MX</span></p>
+				<p><b>Total:</b> <span class="label-precio">$ <b>{{ number_format(($req->precio * sizeof($req->asiento)) * 1.10, 2, '.', ',') }}</b> MX</span></p>
 			</div>
 			<div class="col s10 offset-s1 ">
 				<div class="divider"></div>
@@ -44,7 +55,7 @@
 				{!! Form::open(['route'=>'payment.confirm', 'method'=>'POST', 'id'=>'payment']) !!}
 					<div class="row center-align pt-40" id="form-inputs">
 
-						<div class="col m4 s6">
+						{{-- <div class="col m4 s6">
 							<div>								
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'credit_card', '', ['id' => 'payment_card']) !!}			
@@ -52,8 +63,8 @@
 									
 								</div>
 							</div>
-						</div>
-						<div class="col m4 s6">
+						</div> --}}
+						<div class="col m6 s6">
 							<div>
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'oxxo_cash', '', ['id' => 'payment_oxxo']) !!}	
@@ -61,7 +72,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col m4 s6">
+						<div class="col m6 s6">
 							<div>
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'spei', '', ['id' => 'payment_spei']) !!}
@@ -82,11 +93,13 @@
 						{!! Form::hidden('lugar', $req->lugar) !!}
 						{!! Form::hidden('hora', $req->hora) !!}
 						{!! Form::hidden('precio', $req->precio) !!}
-						{!! Form::hidden('asientos', $req->asientos) !!}
+						{!! Form::hidden('asientos', "*".implode(" *", $sit) ) !!}
+						{!! Form::hidden('asientos_id', implode("-", $id) ) !!}
+						{!! Form::hidden('asientos_cantidad', sizeof($req->asiento) ) !!}
 						{!! Form::hidden('event_type', $req->event_type) !!}
 						{!! Form::hidden('db_table', $req->db_table) !!}
 						{!! Form::hidden('info', $req->info) !!}
-						{!! Form::hidden('seccion', $req->seccion) !!}
+						{!! Form::hidden('seccion', $req->zona) !!}
 						{!! Form::hidden('fila', $req->fila) !!}
 						{!! Form::hidden('customer_name', Auth::user()->name.' '.Auth::user()->last_name.' '.Auth::user()->second_lname) !!}
 						{!! Form::hidden('customer_email', Auth::user()->email) !!}

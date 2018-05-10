@@ -23,7 +23,7 @@ use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
-use App\Alan_16;
+use App\Rosana;
 use App\Mail\Compra as Compra;
 use App\Mail\OrderCreated as OrderCreated;
 
@@ -72,11 +72,6 @@ class PaymentController extends Controller
 				break;
 		}
 
-    	$success = true;
-		$payment = 'pending';
-		$expires_at = Carbon::parse(Carbon::now()->addDays(1));
-		return view('eventos.compra', compact('success', 'payment','expires_at'));
-
     }
 
     /**
@@ -90,7 +85,7 @@ class PaymentController extends Controller
 
 		//Variables
 		$customer_phone = "+5255555555";
-		$total = $req->precio * $req->asientos;
+		$total = $req->precio * $req->asientos_cantidad;
 		$expires_at = Carbon::parse(Carbon::now()->addDays(1));
 
 		if($req->customer_phone != null){
@@ -98,18 +93,43 @@ class PaymentController extends Controller
 		}
 
 		$metadata = "";
+		$id = explode( "-" ,$req->asientos_id);
 
-		if($req->event_type == 'general') {
-			$metadata = array(
-				'event_type' => $req->event_type,
-				'db_table' => $req->db_table,
-				'info' => $req->info,
-				'event' => $req->evento,
-				'date' => $req->fecha,
-				'place' => $req->lugar,
-				'hr' => $req->hora
-			);
+		$metadata = array(
+			'event_type' => $req->event_type,
+			'db_table' => $req->db_table,
+			'info' => $req->info,
+			'event' => $req->evento,
+			'ids' => $req->asientos_id,
+			'asientos' => $req->asientos,
+			'seccion' => $req->seccion,
+			'fila' => $req->fila,
+			'date' => $req->fecha,
+			'place' => $req->lugar,
+			'hr' => $req->hora
+		);
+
+		//Verificar disponibilidad de lugares
+		DB::beginTransaction();
+
+		try{
+			//Corroborar que siguen disponibles los boletos
+			
+			if( Rosana::whereIn('id', $id)->where('status', '<>', 0)->exists() ){
+				return redirect('eventos/rosana-morelia')->withErrors('Lo sentimos los boletos ya no estan disponibles');
+			}
+
+			//Bloqueamos los boletos
+			Rosana::whereIn('id', $id)->update(['status' => 3, 'user' => Auth::user()->id]);
+
+			//Se ejecuta la transaccion y se bloquean los boletos
+			DB::commit();
+
+		}catch(\Exception $e) {
+			DB::rollBack();
+			return redirect('eventos/rosana-morelia')->withErrors('A ocurrido un error db');
 		}
+
 
 		try {
 			$order = \Conekta\Order::create(array(
@@ -123,7 +143,7 @@ class PaymentController extends Controller
 				    array(
 				      'name' => 'Boletos '.$req->evento,
 				      'unit_price' => $req->precio * 100,
-				      'quantity' => $req->asientos,
+				      'quantity' => $req->asientos_cantidad,
 				      'metadata' => $metadata
 				    )
 				  ),
@@ -154,8 +174,8 @@ class PaymentController extends Controller
 
 		$success = true;
 		$payment = 'pending';
-		// Mail::to(Auth::user()->email, Auth::user()->name)
-			// ->send(new OrderCreated($order, $expires_at));
+		Mail::to(Auth::user()->email, Auth::user()->name)
+			->send(new OrderCreated($order, $expires_at));
 		return view('eventos.compra', compact('payment', 'success', 'order', 'expires_at'));
     }
 

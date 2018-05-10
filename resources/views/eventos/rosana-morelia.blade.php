@@ -83,6 +83,7 @@
 
 				<div class="row">
 					<div class="divider"></div>
+					<p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra por concepto de servicio.</p>
 					<p class="center-align"><b>Informes:</b> <a href="tel:4431880358" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 443 188 0358</a> / <a href="tel:4432274979" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 443 227 4979</a></p>
 				</div>
 			</div>
@@ -150,40 +151,36 @@
 	<div class="row">
 		<div class="col m6 offset-m1 mt-30">
 			{{-- <h5 class="center-align raleway">Venta de boletos en R.S. Viajes Centro</h5> --}}
-			<img src="{{ asset('img/stella_inda.png') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/palacio-arte.jpg')}}">
+			<img src="{{ asset('img/stella_inda.png') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/stella_inda.jpg')}}">
 			<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
 		</div>
 		<div class="col m4  mt-30">
 			@if(Auth()->check())
 				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
 					<div class="row">
-						<h5 class="quote">Zona General</h5>
+						<h5 class="quote">Elija sus boletos</h5>
 						<div class="input-field col s12">
-							{!! Form::select('asientos',
-								['1' => '1', 
-								'2' => '2', 
-								'3' => '3', 
-								'4' => '4', 
-								'5' => '5', 
-								'6' => '6', 
-								'7' => '7', 
-								'8' => '8', 
-								'9' => '9', 
-								'10' => '10'], '', ['class' => 'select-dropdown', 'id' => 'zona', 'placeholder' => 'Seleccione numero de asientos', 'required']) !!}
-							{!! Form::label('asientos', 'Asientos') !!}
+							{!! Form::select('zona', ['Diamante' => 'Diamante', 'Oro' => 'Oro', 'Plata' => 'Plata'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Seleccione una zona']) !!}
+							{!! Form::label('zona', 'Zona') !!}
+						</div>
+						<div class="input-field col s12" id="select-fila">
+							{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Seleccione primero una zona']) !!}
+							{!! Form::label('fila', 'Fila') !!}
+						</div>
+						<div class="input-field col s12" id="select-asiento">
+							{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
+							{!! Form::label('asiento', 'Asiento') !!}
 						</div>
 						
-						{!! Form::hidden('img', 'img/felices_slp.jpg') !!}
-						{!! Form::hidden('evento', 'Felices Los Cuatro en S.L.P') !!}
-						{!! Form::hidden('fecha', '11 de Mayo 2018') !!}
-						{!! Form::hidden('lugar', 'RoadHouse San Luis, S.L.P') !!}
+						{!! Form::hidden('img', 'img/rosana-morelia.jpg') !!}
+						{!! Form::hidden('evento', 'Rosana en Morelia') !!}
+						{!! Form::hidden('fecha', '16 de Junio 2018') !!}
+						{!! Form::hidden('lugar', 'Teatro Stella Inda') !!}
 						{!! Form::hidden('hora', '09:30 pm') !!}
-						{!! Form::hidden('precio', '280') !!}
-						{!! Form::hidden('event_type', 'general') !!}
-						{!! Form::hidden('db_table', 'felices_slp') !!}
-						{!! Form::hidden('info', '444 204 1482') !!}
-						{!! Form::hidden('seccion', '') !!}
-						{!! Form::hidden('fila', '') !!}
+						{!! Form::hidden('event_type', 'numerado') !!}
+						{!! Form::hidden('db_table', 'rosana') !!}
+						{!! Form::hidden('info', '4431880358') !!}
+						{!! Form::hidden('precio', '', ['id' => 'precio']) !!}
 
 						<div class="input-field col s12">
 							<p><em>* Puedes seleccionar un máximo de 10 lugares</em></p>
@@ -245,7 +242,12 @@
 @endsection
 
 @section('scripts')
+	<script type="text/javascript" src="{{asset('js/jquery.elevatezoom.js')}}"></script>
 	<script>
+		$("#zoom_01").elevateZoom({
+			scrollZoom : true,
+			zoomType: "inner"
+		});
 		$('#modal-video-open').leanModal({
 			opacity: .8,
 			ready: function() {
@@ -272,43 +274,52 @@
 		        });
 		      }
 
-		// $("#zona").change(function(){
-		// 	var id = $(this).val();
-		// 	$.ajax({
-		// 		url: '{{url('/api/getFilas')}}/Franco7/' + id,
-		// 		method: 'GET',
-		// 		// data: 'id=' + id,
-		// 		success: function(res){
-		// 			var filas = res;
-		// 			var options = "<option value='' selected disabled>Selecciona una fila</option>";
-		// 			for(i=0; i<filas.length; i++){
-		// 				options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
-		// 			}
-		// 			$("#fila").html(options);
-		// 			$("#fila").material_select();
+		$("#zona").change(function(){
+			var id = $(this).val();
+			
+			if( id == 'Diamante' ){
+				$("#precio").val('850');
+			}else if( id == 'Oro' ){
+				$("#precio").val('650');
+			}else{
+				$("#precio").val('400');
+			}
 
-		// 		}
-		// 	});
-		// });
+			$.ajax({
+				url: '{{url('/api/getFilas')}}/Rosana/' + id,
+				method: 'GET',
+				// data: 'id=' + id,
+				success: function(res){
+					var filas = res;
+					var options = "<option value='' selected disabled>Selecciona una fila</option>";
+					for(i=0; i<filas.length; i++){
+						options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
+					}
+					$("#fila").html(options);
+					$("#fila").material_select();
 
-		// $("#fila").change(function(){
-		// 	var id = $(this).val();
-		// 	$.ajax({
-		// 		url: '{{url('/api/getAsientos')}}/Franco7/' + id,
-		// 		method: 'GET',
-		// 		// data: 'id=' + id,
-		// 		success: function(res){
-		// 			var asientos = res;
-		// 			var options = "<option value='' selected disabled>Seleccione los asientos</option>";
-		// 			for(i=0; i<asientos.length; i++){
-		// 				options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
-		// 			}
-		// 			$("#asiento").html(options);
-		// 			$("#asiento").material_select();
+				}
+			});
+		});
 
-		// 		}
-		// 	});
-		// });
+		$("#fila").change(function(){
+			var id = $(this).val();
+			$.ajax({
+				url: '{{url('/api/getAsientos')}}/Rosana/' + id,
+				method: 'GET',
+				// data: 'id=' + id,
+				success: function(res){
+					var asientos = res;
+					var options = "<option value='' selected disabled>Seleccione los asientos</option>";
+					for(i=0; i<asientos.length; i++){
+						options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
+					}
+					$("#asiento").html(options);
+					$("#asiento").material_select();
+
+				}
+			});
+		});
 	</script>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
