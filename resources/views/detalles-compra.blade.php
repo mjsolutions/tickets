@@ -34,18 +34,30 @@
 				<p><b>Hora:</b> {{ $req->hora }}</p>
 				<p><b>Zona:</b> {{ $req->zona }}</p>
 				<p><b>Fila:</b> {{ $req->fila }}</p>
-				@php
-				$i=0;
-				foreach ($req->asiento as $value) {
-					$field = explode('|', $value);
-					$id[$i] = $field[0];
-					$sit[$i] = $field[1];
-					$i++;
-				}
-				@endphp
+				@if( $req->event_type == "numerado" )
+
+					@php
+					$i=0;
+					foreach ($req->asiento as $value) {
+						$field = explode('|', $value);
+						$id[$i] = $field[0];
+						$sit[$i] = $field[1];
+						$i++;
+					}
+					$num_asientos = sizeof($req->asiento);
+					@endphp
+
 				<p><b>Asientos:</b> *{{ implode(" *", $sit) }}</p>
+				@else
+					
+					@php
+					$num_asientos = $req->asiento;
+					@endphp
+				
+				<p><b>Asientos:</b> {{ $num_asientos }}</p>
+				@endif
 				<p><b>Email comprador:</b> {{ Auth::user()->email }}</p>
-				<p><b>Total:</b> <span class="label-precio">$ <b>{{ number_format(($req->precio * sizeof($req->asiento)) * 1.10, 2, '.', ',') }}</b> MX</span></p>
+				<p><b>Total:</b> <span class="label-precio">$ <b>{{ number_format(($req->precio * $num_asientos) * 1.10, 2, '.', ',') }}</b> MX</span></p>
 			</div>
 			<div class="col s10 offset-s1 ">
 				<div class="divider"></div>
@@ -93,9 +105,13 @@
 						{!! Form::hidden('lugar', $req->lugar) !!}
 						{!! Form::hidden('hora', $req->hora) !!}
 						{!! Form::hidden('precio', $req->precio) !!}
+						@if( $req->event_type == "numerado" )
 						{!! Form::hidden('asientos', "*".implode(" *", $sit) ) !!}
 						{!! Form::hidden('asientos_id', implode("-", $id) ) !!}
-						{!! Form::hidden('asientos_cantidad', sizeof($req->asiento) ) !!}
+						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}						
+						@else
+						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}		
+						@endif
 						{!! Form::hidden('event_type', $req->event_type) !!}
 						{!! Form::hidden('db_table', $req->db_table) !!}
 						{!! Form::hidden('info', $req->info) !!}

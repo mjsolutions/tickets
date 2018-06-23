@@ -84,44 +84,24 @@
 			</div>
 
 
-			<div class="row mb-30 grid-eventos">
-
-				{{-- <div class="col m6 l4 evento">
-					<div class="card horizontal ">
-						<div class="card-image">
-							<img src="{{asset('img/felices_pachuca.jpg')}}" class="materialboxed responsive-img">
-						</div>
-						<div class="card-stacked">
-							<div class="card-content">
-								<h5><strong class="event-name">Felices Los Cuatro</strong></h5>
-								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Pachuca</b></p>
-								<p>Vogga Cantabar</p>
-								<p>10 de Mayo</p>
-								<p class="event-date">10/05/2018</p>
-								<p>09:30 pm.</p>
-							</div>
-							<a href="{{ url('/eventos/felices-los-cuatro-pachuca') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-						</div>
-					</div>
-				</div> --}}
+			<div class="row mb-30 grid-eventos">				
 
 				<div class="col m6 l4 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
-							<img src="{{asset('img/felices_slp.jpg')}}" class="materialboxed responsive-img">
+							<img src="{{asset('img/slobotzky-cuerna.jpg')}}" class="materialboxed responsive-img">
 						</div>
 						<div class="card-stacked">
 							<div class="card-content">
-								<h5><strong class="event-name">Felices Los Cuatro</strong></h5>
+								<h5><strong class="event-name">Slobotzky</strong></h5>
 								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>San Luis Potosí</b></p>
-								<p>RoadHouse San Luis</p>
-								<p>11 de Mayo</p>
-								<p class="event-date">11/05/2018</p>
-								<p>09:30 pm.</p>
+								<p class="mt-10 mb-5"><b>Cuernavaca</b></p>
+								<p>Classico cuerna</p>
+								<p>22 de Junio</p>
+								<p class="event-date">22/06/2018</p>
+								<p>11:00 pm.</p>
 							</div>
-							<a href="{{ url('/eventos/felices-los-cuatro-slp') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+							<a href="{{ url('/eventos/slobotzky-cuernavaca') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
 				</div>
@@ -129,19 +109,39 @@
 				<div class="col m6 l4 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
-							<img src="{{asset('img/rosana-morelia1.jpg')}}" class="materialboxed responsive-img">
+							<img src="{{asset('img/mejorcitos-villahermosa.jpg')}}" class="materialboxed responsive-img">
 						</div>
 						<div class="card-stacked">
 							<div class="card-content">
-								<h5><strong class="event-name">Rosana</strong></h5>
+								<h5><strong class="event-name">Los Mejorcitos</strong></h5>
 								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Morelia</b></p>
-								<p>Teatro Stella Inda</p>
-								<p>16 de Junio</p>
-								<p class="event-date">16/06/2018</p>
+								<p class="mt-10 mb-5"><b>Villahermosa</b></p>
+								<p>La Puerta de Alcalá</p>
+								<p>28 de Junio</p>
+								<p class="event-date">28/06/2018</p>
 								<p>09:00 pm.</p>
 							</div>
-							<a href="{{ url('/eventos/rosana-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+							<a href="{{ url('/eventos/los-mejorcitos-villahermosa') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 l4 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/mejorcitos-cordoba.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">Los Mejorcitos</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Córdoba Ver.</b></p>
+								<p>Sabina</p>
+								<p>29 de Junio</p>
+								<p class="event-date">29/06/2018</p>
+								<p>09:30 pm.</p>
+							</div>
+							<a href="{{ url('/eventos/los-mejorcitos-cordoba') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
 				</div>

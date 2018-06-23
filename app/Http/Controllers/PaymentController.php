@@ -93,7 +93,15 @@ class PaymentController extends Controller
 		}
 
 		$metadata = "";
-		$id = explode( "-" ,$req->asientos_id);
+		$id = [];
+		$asientos = $req->asientos_cantidad;
+
+		if( $req->event_type == "numerado" ) {
+
+			$id = explode( "-" ,$req->asientos_id);
+			$asientos = $req->asientos;
+
+		}
 
 		$metadata = array(
 			'event_type' => $req->event_type,
@@ -101,7 +109,7 @@ class PaymentController extends Controller
 			'info' => $req->info,
 			'event' => $req->evento,
 			'ids' => $req->asientos_id,
-			'asientos' => $req->asientos,
+			'asientos' => $asientos,
 			'seccion' => $req->seccion,
 			'fila' => $req->fila,
 			'date' => $req->fecha,
@@ -109,26 +117,29 @@ class PaymentController extends Controller
 			'hr' => $req->hora
 		);
 
-		//Verificar disponibilidad de lugares
-		DB::beginTransaction();
 
-		try{
-			//Corroborar que siguen disponibles los boletos
-			
-			if( Rosana::whereIn('id', $id)->where('status', '<>', 0)->exists() ){
-				return redirect('eventos/rosana-morelia')->withErrors('Lo sentimos los boletos ya no estan disponibles');
+		if( $req->event_type == "numerado" ) {
+			//Verificar disponibilidad de lugares
+			DB::beginTransaction();
+
+			try{
+				//Corroborar que siguen disponibles los boletos
+				
+				if( Rosana::whereIn('id', $id)->where('status', '<>', 0)->exists() ){
+					return redirect('eventos/rosana-morelia')->withErrors('Lo sentimos los boletos ya no estan disponibles');
+				}
+
+				//Bloqueamos los boletos
+				Rosana::whereIn('id', $id)->update(['status' => 3, 'user' => Auth::user()->id]);
+
+				//Se ejecuta la transaccion y se bloquean los boletos
+				DB::commit();
+
+			}catch(\Exception $e) {
+				DB::rollBack();
+				return redirect('eventos/rosana-morelia')->withErrors('A ocurrido un error db');
 			}
-
-			//Bloqueamos los boletos
-			Rosana::whereIn('id', $id)->update(['status' => 3, 'user' => Auth::user()->id]);
-
-			//Se ejecuta la transaccion y se bloquean los boletos
-			DB::commit();
-
-		}catch(\Exception $e) {
-			DB::rollBack();
-			return redirect('eventos/rosana-morelia')->withErrors('A ocurrido un error db');
-		}
+		}	
 
 
 		try {
