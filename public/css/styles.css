@@ -281,6 +281,10 @@ Backgrounds
 	background-image: url("../img/bg-infantil.jpg");
 }
 
+.bg-roberto-tapia {
+	background-image: url("../img/roberto-banner-2.jpg");
+}
+
 .bg-blue {
 	background-color: #09bde4;
 }
@@ -323,10 +327,14 @@ icons size
 }
 
 /* ------------
-Helpers
+Helpers & Overrides
 ------------ */
 .hidden {
 	display: none;
+}
+
+.responsive-img {
+	width: 100%;
 }
 
 /* ------------

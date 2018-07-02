@@ -125,7 +125,7 @@
 <section id="compra" class="section-comprar">
 	<div class="row">
 
-		<div class="col m4 offset-m4 mt-30">
+		{{-- <div class="col m4 offset-m4 mt-30">
 			@if(Auth()->check())
 				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
 					<div class="row">
@@ -171,12 +171,8 @@
 			@endif
 			
 		</div>
-		<div class="clearfix"></div>
-		<div class="row">
-			<div class="col s6 offset-s3 mt-30">
-				<div class="divider"></div>
-			</div>
-		</div>
+		<div class="clearfix"></div> --}}
+
 		<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
 		<div class="row center-align">
 			<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
