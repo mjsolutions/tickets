@@ -5,6 +5,13 @@
 @section('description', 'Franco Escamilla en Morelia, 31 de agosto y 01 de Septiembre, 9:30 pm boletos en RS Viajes centro, bolematico.mx y taquillas del planetario de Morelia')
 
 @section('styles')
+
+<!-- Metas Facebook -->
+<meta property="og:url"  content="http://bolematico.mx/eventos/franco-morelia" />
+<meta property="og:title" content="Franco Escamilla en Morelia" />
+<meta property="og:description" content="Regresa Franco Escamilla con su nuevo show R.P.M. a Morelia, 31 de agosto y 01 de septiembre" />
+<meta property="og:image" content="http://bolematico.mx/img/franco-morelia.jpg" />
+
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
 
@@ -185,22 +192,26 @@
 
 <section id="compra" class="section-comprar">
 	<div class="row">
-		<div class="col m6 offset-m3 mt-30">
-			<h5 class="center-align raleway">Preventa exclusiva en linea 2 y 3 de Julio. <br>Venta normal a partir del 4 de Julio</h5>
-			{{-- <img src="{{ asset('img/stella_inda.png') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/stella_inda.jpg')}}">
-			<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p> --}}
+		<div class="col m6 mt-30">
+			{{-- <h5 class="center-align raleway">Preventa exclusiva en linea 2 y 3 de Julio. <br>Venta normal a partir del 4 de Julio</h5> --}}
+			<img src="{{ asset('img/teatro-morelos-fondo.svg') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/teatro-morelos-fondo.svg')}}">
+			<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
 		</div>
-		{{-- <div class="col m4  mt-30">
+		<div class="col m4 offset-m1 mt-30">
 			@if(Auth()->check())
 				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
 					<div class="row">
 						<h5 class="quote">Elija sus boletos</h5>
 						<div class="input-field col s12">
-							{!! Form::select('zona', ['Diamante' => 'Diamante', 'Oro' => 'Oro', 'Plata' => 'Plata'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Seleccione una zona']) !!}
+							{!! Form::select('fecha', ['31 de Agosto 2018' => '31 de Agosto', '01 de septiembre 2018' => '01 de septiembre'], '', ['class' => 'select-dropdown', 'required', 'id' => 'fecha', 'placeholder' => 'Selecciona Fecha']) !!}
+							{!! Form::label('fecha', 'Fecha del Evento') !!}
+						</div>
+						<div class="input-field col s12">
+							{!! Form::select('zona', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Selecciona primero una fecha']) !!}
 							{!! Form::label('zona', 'Zona') !!}
 						</div>
 						<div class="input-field col s12" id="select-fila">
-							{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Seleccione primero una zona']) !!}
+							{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Selecciona primero una zona']) !!}
 							{!! Form::label('fila', 'Fila') !!}
 						</div>
 						<div class="input-field col s12" id="select-asiento">
@@ -208,18 +219,18 @@
 							{!! Form::label('asiento', 'Asiento') !!}
 						</div>
 						
-						{!! Form::hidden('img', 'img/rosana-morelia.jpg') !!}
-						{!! Form::hidden('evento', 'Rosana en Morelia') !!}
-						{!! Form::hidden('fecha', '16 de Junio 2018') !!}
+						{!! Form::hidden('img', 'img/franco-morelia.jpg') !!}
+						{!! Form::hidden('evento', 'Franco Escamilla en Morelia') !!}
+						{{-- {!! Form::hidden('fecha', '16 de Junio 2018') !!} --}}
 						{!! Form::hidden('lugar', 'Teatro Morelos') !!}
 						{!! Form::hidden('hora', '09:30 pm') !!}
 						{!! Form::hidden('event_type', 'numerado') !!}
-						{!! Form::hidden('db_table', 'rosana') !!}
+						{!! Form::hidden('db_table', '', ['id' => 'db_table']) !!}
 						{!! Form::hidden('info', '4431880358') !!}
 						{!! Form::hidden('precio', '', ['id' => 'precio']) !!}
 
 						<div class="input-field col s12">
-							<p><em>* Puedes seleccionar un máximo de 10 lugares</em></p>
+							<p><em>* Puedes seleccionar un máximo de 8 lugares</em></p>
 						</div>
 						
 					</div>
@@ -240,7 +251,7 @@
 				</div>
 			@endif
 			
-		</div> --}}
+		</div>
 		<div class="clearfix"></div>
 		<div class="row">
 			<div class="col s6 offset-s3 mt-30">
@@ -280,10 +291,12 @@
 @section('scripts')
 	<script type="text/javascript" src="{{asset('js/jquery.elevatezoom.js')}}"></script>
 	<script>
-		// $("#zoom_01").elevateZoom({
-		// 	scrollZoom : true,
-		// 	zoomType: "inner"
-		// });
+		var tabla_evento = "";
+
+		$("#zoom_01").elevateZoom({
+			scrollZoom : true,
+			zoomType: "inner"
+		});
 		$('#modal-video-open').leanModal({
 			opacity: .8,
 			ready: function() {
@@ -310,52 +323,77 @@
 		        });
 		      }
 
-		// $("#zona").change(function(){
-		// 	var id = $(this).val();
+		$("#zona").change(function(){
+			var id = $(this).val();
 			
-		// 	if( id == 'Diamante' ){
-		// 		$("#precio").val('850');
-		// 	}else if( id == 'Oro' ){
-		// 		$("#precio").val('650');
-		// 	}else{
-		// 		$("#precio").val('400');
-		// 	}
+			if( id == 'Diamante' ){
+				$("#precio").val('750');
+			}else if( id == 'Oro' ){
+				$("#precio").val('600');
+			}else{
+				$("#precio").val('500');
+			}
 
-		// 	$.ajax({
-		// 		url: '{{url('/api/getFilas')}}/Rosana/' + id,
-		// 		method: 'GET',
-		// 		// data: 'id=' + id,
-		// 		success: function(res){
-		// 			var filas = res;
-		// 			var options = "<option value='' selected disabled>Selecciona una fila</option>";
-		// 			for(i=0; i<filas.length; i++){
-		// 				options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
-		// 			}
-		// 			$("#fila").html(options);
-		// 			$("#fila").material_select();
+			if( tabla_evento == '' ){
+				alert('Debes seleccionar primero una fecha de evento');
+				$("#fecha").val('');
+			}else{
+				$.ajax({
+					url: '{{url('/api/getFilas')}}/'+ tabla_evento +'/' + id,
+					method: 'GET',
+					// data: 'id=' + id,
+					success: function(res){
+						var filas = res;
+						var options = "<option value='' selected disabled>Selecciona una fila</option>";
+						for(i=0; i<filas.length; i++){
+							options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
+						}
+						$("#fila").html(options);
+						$("#fila").material_select();
 
-		// 		}
-		// 	});
-		// });
+					}
+				});
+			}
 
-		// $("#fila").change(function(){
-		// 	var id = $(this).val();
-		// 	$.ajax({
-		// 		url: '{{url('/api/getAsientos')}}/Rosana/' + id,
-		// 		method: 'GET',
-		// 		// data: 'id=' + id,
-		// 		success: function(res){
-		// 			var asientos = res;
-		// 			var options = "<option value='' selected disabled>Seleccione los asientos</option>";
-		// 			for(i=0; i<asientos.length; i++){
-		// 				options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
-		// 			}
-		// 			$("#asiento").html(options);
-		// 			$("#asiento").material_select();
+		});
 
-		// 		}
-		// 	});
-		// });
+		$("#fila").change(function(){
+			var id = $(this).val();
+			$.ajax({
+				url: '{{url('/api/getAsientos')}}/'+ tabla_evento +'/' + id,
+				method: 'GET',
+				// data: 'id=' + id,
+				success: function(res){
+					var asientos = res;
+					var options = "<option value='' selected disabled>Seleccione los asientos</option>";
+					for(i=0; i<asientos.length; i++){
+						options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
+					}
+					$("#asiento").html(options);
+					$("#asiento").material_select();
+
+				}
+			});
+		});
+
+		$("#fecha").change(function(){
+
+			$("#zona").html("<option value='' selected disabled>Selecciona una zona</option><option value='Diamante'>Diamante</option><option value='Oro'>Oro</option><option value='Plata'>Plata</option>");
+			$("#fila").html("<option value='' selected disabled>Selecciona primero una zona</option>");
+			$("#asiento").html("<option value='' selected disabled>Selecciona primero una fila</option>");
+			$("#zona").material_select();
+			$("#fila").material_select();
+			$("#asiento").material_select();
+
+			if( $(this).val() == "31 de Agosto 2018" ){
+				tabla_evento = 'franco31';
+				$("#db_table").val('franco31');
+			}else{
+				tabla_evento = 'franco01';
+				$("#db_table").val('franco01');
+			}
+
+		});
 	</script>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>

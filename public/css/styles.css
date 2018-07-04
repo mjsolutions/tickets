@@ -293,6 +293,17 @@ Backgrounds
 	background-color: #f2f2f2;
 }
 
+.bg-gradiente {
+	background: #373B44;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #4286f4 25%, #373B44 100%);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #4286f4 25%, #373B44 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+
+}
+
 /* ------------
 borders
 ------------ */
@@ -337,6 +348,14 @@ Helpers & Overrides
 	width: 100%;
 }
 
+.dropdown-content li {
+	min-height: auto;
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+	padding: 8px 15px;
+}
 /* ------------
 Pendientes de acomodar
 ------------ */
@@ -1208,6 +1227,10 @@ ul.qcAddress li a {
 	#contenido h1 {
 		font-size: 2.5rem;
 		letter-spacing: 3px;
+	}
+
+	.image-header {
+		height: 150px;
 	}
 
 }

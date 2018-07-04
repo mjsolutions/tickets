@@ -17,6 +17,7 @@
 	
 	<div class="container">
 		<div class="row mt-100">
+
 			<div class="col s10 m5 col-center z-depth-2 p-30 indigo">
 				
 				<h3 class="center-align white-text">¡GRACIAS POR TU MENSAJE!</h3>

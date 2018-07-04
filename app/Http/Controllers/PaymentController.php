@@ -108,6 +108,7 @@ class PaymentController extends Controller
 			'db_table' => $req->db_table,
 			'info' => $req->info,
 			'event' => $req->evento,
+			'event_photo' => $req->event_photo,
 			'ids' => $req->asientos_id,
 			'asientos' => $asientos,
 			'seccion' => $req->seccion,
@@ -125,19 +126,19 @@ class PaymentController extends Controller
 			try{
 				//Corroborar que siguen disponibles los boletos
 				
-				if( Rosana::whereIn('id', $id)->where('status', '<>', 0)->exists() ){
-					return redirect('eventos/rosana-morelia')->withErrors('Lo sentimos los boletos ya no estan disponibles');
+				if( DB::table($req->db_table)->whereIn('id', $id)->where('status', '<>', 0)->exists() ){
+					return redirect('eventos/franco-morelia')->withErrors('Lo sentimos los boletos ya no estan disponibles');
 				}
 
 				//Bloqueamos los boletos
-				Rosana::whereIn('id', $id)->update(['status' => 3, 'user' => Auth::user()->id]);
+				DB::table($req->db_table)->whereIn('id', $id)->update(['status' => 3, 'user' => Auth::user()->id]);
 
 				//Se ejecuta la transaccion y se bloquean los boletos
 				DB::commit();
 
 			}catch(\Exception $e) {
 				DB::rollBack();
-				return redirect('eventos/rosana-morelia')->withErrors('A ocurrido un error db');
+				return redirect('eventos/franco-morelia')->withErrors('A ocurrido un error db');
 			}
 		}	
 

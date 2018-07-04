@@ -159,7 +159,7 @@
 					<h5 class="quote"><b>¡SE HA COMPLETADO TU ORDEN!</b></h5>
 					<div class="divider col-center col s10"></div>
 					<p>Hemos enviado a tu email un comprobante como el que aparece en esta página con el numero de referencia para que puedas completar tu pago.</p>
-					<p>Una vez que nos sea notificado tu pago, enviaremos a tu cuenta de correo las instrucciones finales para que puedas apartar tus lugares.</p>
+					<p>Una vez que nos sea notificado tu pago, enviaremos a tu cuenta de correo la confirmación de tu pago asi como las instrucciones finales para terminar el proceso.</p>
 					<p>Cuentas con 24 hrs para realizar tu pago.</p>
 					@endif
 					

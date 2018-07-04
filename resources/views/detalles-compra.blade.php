@@ -99,7 +99,6 @@
 							</div>
 						</div> --}}
 						
-						{!! Form::hidden('img', $req->img) !!}
 						{!! Form::hidden('evento', $req->evento) !!}
 						{!! Form::hidden('fecha', $req->fecha) !!}
 						{!! Form::hidden('lugar', $req->lugar) !!}
@@ -120,6 +119,7 @@
 						{!! Form::hidden('customer_name', Auth::user()->name.' '.Auth::user()->last_name.' '.Auth::user()->second_lname) !!}
 						{!! Form::hidden('customer_email', Auth::user()->email) !!}
 						{!! Form::hidden('customer_phone', Auth::user()->tel) !!}
+						{!! Form::hidden('event_photo', asset($req->img) ) !!}
 						
 					</div>
 

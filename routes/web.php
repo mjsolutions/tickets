@@ -22,21 +22,6 @@ Route::get('/contacto', function () { return view('contacto'); })->name('contact
 
 Route::get('/quienes-somos', function () { return view('quienes-somos'); })->name('quienes-somos');
 
-// Route::get('/mail', function () { 
-// 		$data['img'] = "img/franco-morelia.jpg";
-// 		$data['evento'] = "Franco Escamilla en Morelia";
-// 			$data['img'] = "img/franco-morelia.jpg";
-// 			$data['lugar'] = "Teatro Morelos";
-// 			$data['fecha'] = "6 de Julio";
-// 			$data['hr'] = "9:30 pm";
-// 			$data['folios'] = "065465,0364684,063548";
-// 			$data['descripcion'] = "fila...";
-// 			$data['transaccion'] = "fddñflkgd";
-// 			$data['user'] = "Auth::user()->name";
-// 			$data['email'] = "Auth::user()->email";
-// 	return view('emails.compra', ['data' => $data]); 
-// });
-
 
 /**
  * Email
@@ -82,42 +67,9 @@ Route::group(['prefix'=>'eventos'],function(){
 });
 
 /**
- * Paypal
+ * Paypal y pagos
  */
 Route::group(['prefix'=>'payment'],function(){
-	Route::post('franco6', array(
-	'as'	=>	'payment.franco6',
-	'uses'	=>	'PaypalFranco6Controller@postPayment',
-	));
-
-	//Paypal redirecciona a esta ruta
-	Route::get('franco6/status', array(
-	'as'	=>	'payment.franco6.status',
-	'uses'	=>	'PaypalFranco6Controller@getPaymentStatus',
-	));
-
-
-	Route::post('ornelas', array(
-	'as'	=>	'payment.ornelas',
-	'uses'	=>	'PaypalOrnelasController@postPayment',
-	));
-
-	//Paypal redirecciona a esta ruta
-	Route::get('ornelas/status', array(
-	'as'	=>	'payment.ornelas.status',
-	'uses'	=>	'PaypalOrnelasController@getPaymentStatus',
-	));
-
-	Route::post('deloce', array(
-	'as'	=>	'payment.deloce',
-	'uses'	=>	'PaypalDeloceController@postPayment',
-	));
-
-	//Paypal redirecciona a esta ruta
-	Route::get('deloce/status', array(
-	'as'	=>	'payment.deloce.status',
-	'uses'	=>	'PaypalDeloceController@getPaymentStatus',
-	));
 
 	Route::post('bronco', array(
 	'as'	=>	'payment.bronco',
@@ -147,8 +99,26 @@ Route::group(['prefix'=>'payment'],function(){
 
 });
 
-
 /**
  * Autenticacion
  */
+
 Auth::routes();
+
+/**
+ * Panel de usuarios
+ */
+Route::group(['prefix' => 'micuenta','middleware' => 'auth'], function() {
+    
+    Route::get('perfil', [
+    	'as'	=> 'cliente.perfil',
+    	'uses'	=> 'PaneldeUsuarioController@perfil'
+
+    ]);
+
+    Route::get('eventos', [
+    	'as'	=> 'cliente.eventos',
+    	'uses'	=> 'PaneldeUsuarioController@eventos'
+
+    ]);
+});

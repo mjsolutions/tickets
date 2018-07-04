@@ -7,21 +7,19 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\User;
-use App\Franco6;
-use App\Franco7;
-use App\Deloce;
+use App\Franco31;
 use App\Bronco;
-use App\Rosana;
+use App\Franco01;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Compra as Compra;
 
 class ApiController extends Controller
 {
     public function getFilas($table, $zona) {
-        if($table == "Rosana"){
-            return Rosana::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
-        }elseif($table == "Deloce"){
-            return Deloce::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
+        if($table == "franco01"){
+            return Franco01::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
+        }elseif($table == "franco31"){
+            return Franco31::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
         }elseif($table == "Bronco"){
             if($zona == 'General'){
                 $disponibles = 1167 - (Bronco::where('seccion', 'General')->count());
@@ -35,10 +33,10 @@ class ApiController extends Controller
     }
 
     public function getAsientos($table, $fila) {
-        if($table == "Rosana"){
-            return Rosana::select('id','asiento')->where([['fila', $fila], ['status', 0]])->get();   
-        }elseif($table == "Deloce"){
-            return Deloce::select('id','asiento')->where([['fila', $fila], ['status', 0]])->get();
+        if($table == "franco01"){
+            return Franco01::select('id','asiento')->where([['fila', $fila], ['status', 0]])->get();   
+        }elseif($table == "franco31"){
+            return Franco31::select('id','asiento')->where([['fila', $fila], ['status', 0]])->get();
         }
         return Franco7::select('id','asiento')->where([['fila', $fila], ['status', 0]])->get();
     }
@@ -65,6 +63,7 @@ class ApiController extends Controller
             $table = $req->data['object']['line_items']['data'][0]['metadata']['db_table'];
             $event_type = $req->data['object']['line_items']['data'][0]['metadata']['event_type'];
             $event = $req->data['object']['line_items']['data'][0]['metadata']['event'];
+            $event_photo = $req->data['object']['line_items']['data'][0]['metadata']['event_photo'];
             $event_date = $req->data['object']['line_items']['data'][0]['metadata']['date'];
             $place = $req->data['object']['line_items']['data'][0]['metadata']['place'];
             $hr = $req->data['object']['line_items']['data'][0]['metadata']['hr'];
@@ -145,7 +144,9 @@ class ApiController extends Controller
             }
             
 
+            $buydata['type'] = $event_type;
             $buydata['evento'] = $event;
+            $buydata['img'] = $event_photo;
             $buydata['lugar'] = $place;
             $buydata['fecha'] = $event_date;
             $buydata['hr'] = $hr;
