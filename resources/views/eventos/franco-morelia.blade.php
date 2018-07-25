@@ -191,73 +191,90 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	<div class="row">
-		<div class="col m6 mt-30">
-			{{-- <h5 class="center-align raleway">Preventa exclusiva en linea 2 y 3 de Julio. <br>Venta normal a partir del 4 de Julio</h5> --}}
-			<img src="{{ asset('img/teatro-morelos-fondo.svg') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/teatro-morelos-fondo.svg')}}">
-			<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
-		</div>
-		<div class="col m4 offset-m1 mt-30">
-			@if(Auth()->check())
-				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
-					<div class="row">
-						<h5 class="quote">Elija sus boletos</h5>
-						<div class="input-field col s12">
-							{!! Form::select('fecha', ['31 de Agosto 2018' => '31 de Agosto', '01 de septiembre 2018' => '01 de septiembre'], '', ['class' => 'select-dropdown', 'required', 'id' => 'fecha', 'placeholder' => 'Selecciona Fecha']) !!}
-							{!! Form::label('fecha', 'Fecha del Evento') !!}
-						</div>
-						<div class="input-field col s12">
-							{!! Form::select('zona', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Selecciona primero una fecha']) !!}
-							{!! Form::label('zona', 'Zona') !!}
-						</div>
-						<div class="input-field col s12" id="select-fila">
-							{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Selecciona primero una zona']) !!}
-							{!! Form::label('fila', 'Fila') !!}
-						</div>
-						<div class="input-field col s12" id="select-asiento">
-							{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
-							{!! Form::label('asiento', 'Asiento') !!}
-						</div>
-						
-						{!! Form::hidden('img', 'img/franco-morelia.jpg') !!}
-						{!! Form::hidden('evento', 'Franco Escamilla en Morelia') !!}
-						{{-- {!! Form::hidden('fecha', '16 de Junio 2018') !!} --}}
-						{!! Form::hidden('lugar', 'Teatro Morelos') !!}
-						{!! Form::hidden('hora', '09:30 pm') !!}
-						{!! Form::hidden('event_type', 'numerado') !!}
-						{!! Form::hidden('db_table', '', ['id' => 'db_table']) !!}
-						{!! Form::hidden('info', '4431880358') !!}
-						{!! Form::hidden('precio', '', ['id' => 'precio']) !!}
+	@php
+		$date = \Carbon\Carbon::now(new DateTimeZone('America/Mexico_City'));
+	@endphp
 
-						<div class="input-field col s12">
-							<p><em>* Puedes seleccionar un máximo de 8 lugares</em></p>
-						</div>
-						
-					</div>
+	{{-- @if( array_has( $days, $date->dayOfWeek) ) --}}
+	@if(  !$date->isWeekend() && ( $date->hour >= '09:00:00' && $date->hour <= '23:00:00' ) )
 
-					<div class="row">
-					
-						<div class="input-field center-align">
-							{!! Form::submit('Confirmar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
-						</div>	
-					
-					</div>
-						
-				{!! Form::close() !!}
-			@else
-				<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
-				<div class="col s6 col-center">
-					<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
-				</div>
-			@endif
-			
-		</div>
-		<div class="clearfix"></div>
 		<div class="row">
-			<div class="col s6 offset-s3 mt-30">
-				<div class="divider"></div>
+			<div class="col m6 mt-30">
+				{{-- <h5 class="center-align raleway">Preventa exclusiva en linea 2 y 3 de Julio. <br>Venta normal a partir del 4 de Julio</h5> --}}
+				<img src="{{ asset('img/teatro-morelos-fondo.svg') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/teatro-morelos-fondo.svg')}}">
+				<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
 			</div>
+			<div class="col m4 offset-m1 mt-30">
+				@if(Auth()->check())
+					{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
+						<div class="row">
+							<h5 class="quote">Elija sus boletos</h5>
+							<div class="input-field col s12">
+								{!! Form::select('fecha', ['31 de Agosto 2018' => '31 de Agosto', '01 de septiembre 2018' => '01 de septiembre'], '', ['class' => 'select-dropdown', 'required', 'id' => 'fecha', 'placeholder' => 'Selecciona Fecha']) !!}
+								{!! Form::label('fecha', 'Fecha del Evento') !!}
+							</div>
+							<div class="input-field col s12">
+								{!! Form::select('zona', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Selecciona primero una fecha']) !!}
+								{!! Form::label('zona', 'Zona') !!}
+							</div>
+							<div class="input-field col s12" id="select-fila">
+								{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Selecciona primero una zona']) !!}
+								{!! Form::label('fila', 'Fila') !!}
+							</div>
+							<div class="input-field col s12" id="select-asiento">
+								{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
+								{!! Form::label('asiento', 'Asiento') !!}
+							</div>
+							
+							{!! Form::hidden('img', 'img/franco-morelia.jpg') !!}
+							{!! Form::hidden('evento', 'Franco Escamilla en Morelia') !!}
+							{{-- {!! Form::hidden('fecha', '16 de Junio 2018') !!} --}}
+							{!! Form::hidden('lugar', 'Teatro Morelos') !!}
+							{!! Form::hidden('hora', '09:30 pm') !!}
+							{!! Form::hidden('event_type', 'numerado') !!}
+							{!! Form::hidden('db_table', '', ['id' => 'db_table']) !!}
+							{!! Form::hidden('info', '4431880358') !!}
+							{!! Form::hidden('precio', '', ['id' => 'precio']) !!}
+
+							<div class="input-field col s12">
+								<p><em>* Puedes seleccionar un máximo de 8 lugares</em></p>
+							</div>
+							
+						</div>
+
+						<div class="row">
+						
+							<div class="input-field center-align">
+								{!! Form::submit('Confirmar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
+							</div>	
+						
+						</div>
+							
+					{!! Form::close() !!}
+				@else
+					<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
+					<div class="col s6 col-center">
+						<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
+					</div>
+				@endif
+				
+			</div>		
 		</div>
+
+	@else
+
+		<div class="row">
+			<h5 class="mt-50 center-align raleway">Venta en linea disponible de Lunes a Viernes de 9:00 a 23:00 hrs.</h5>
+		</div>
+
+	@endif
+
+	<div class="row">
+		<div class="col s6 offset-s3 mt-30">
+			<div class="divider"></div>
+		</div>
+	</div>
+	<div class="row">
 		<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
 		<div class="row center-align">
 			<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>

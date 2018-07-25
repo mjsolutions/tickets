@@ -78,7 +78,7 @@
 				<div class="divider"></div>
 				<div class="row  mb-0">
 	                <div class="mt-10 center-align">
-	                	<a class="red-text underline" href="!#">Olvide mi contraseña</a>
+	                	<a class="red-text underline" href="{{ url('password/reset') }}">Olvide mi contraseña</a>
 	                </div>
             	</div>
         	</form>

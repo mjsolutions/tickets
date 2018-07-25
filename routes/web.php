@@ -18,6 +18,8 @@
 
 Route::get('/', function () { return view('index'); })->name('index');
 
+Route::get('/home', function () { return redirect()->route('index'); });
+
 Route::get('/contacto', function () { return view('contacto'); })->name('contacto');
 
 Route::get('/quienes-somos', function () { return view('quienes-somos'); })->name('quienes-somos');
