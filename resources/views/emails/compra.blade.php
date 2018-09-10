@@ -56,8 +56,9 @@
 	</div>
 </div>
 <div style="text-align: center;">
-	<p>Tus boletos estan disponibles en nuestro sitio web <a href="http://bolematico.mx">bolematico.mx</a>, puedes entrar a tu cuenta y descargarlos desde ahi.</p>
-	<p>No olvides cuidar de tus entradas ya que son tu pase para el evento.</p>
+	<p>Este email es tu comprobante para poder obtener tus boletos, deberás imprimirlo y presentarlo junto con una fotocopia de tu identificación oficial vigente y tu comprobante de depósito o transferencia (en caso de aún contar con el), a partir de día 22 de agosto y hasta el 30 de agosto exclusivamente en las  <strong>TAQUILLAS DEL PLANETARIO</strong> en horario de lunes a sabado de 11:00 hrs a 19:00 hrs.</p>
+	<p>Tu ID de transacción es único por lo que solo puede ser reclamado por el titular de la cuenta con la cual se llevo a cabo la compra correspondiente.</p>
+	<p><strong>IMPORTANTE:</strong> El día del evento NO se realizaran canje de boletos</p>
 	<p>Si tienes alguna duda no dudes en contactarte con nosotros <a href="http://bolematico.mx/contacto" target="_blank">aquí</a></p>
 </div>
 <div style="color: #FFF; background: #222; margin-bottom: 0; padding: 20px 0;">

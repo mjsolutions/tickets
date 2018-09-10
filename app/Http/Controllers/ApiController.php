@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\User;
 use App\Franco31;
+use App\Franco317;
 use App\Bronco;
 use App\Franco01;
 use Illuminate\Support\Facades\Mail;
@@ -29,7 +30,7 @@ class ApiController extends Controller
             $disponibles = 1216 - (Bronco::where('seccion', 'Tendido Alto')->count());
             return $disponibles;
         }
-        return Franco7::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
+        return Franco317::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
     }
 
     public function getAsientos($table, $fila) {
@@ -38,7 +39,7 @@ class ApiController extends Controller
         }elseif($table == "franco31"){
             return Franco31::select('id','asiento')->where([['fila', $fila], ['status', 0]])->get();
         }
-        return Franco7::select('id','asiento')->where([['fila', $fila], ['status', 0]])->get();
+        return Franco317::select('id','asiento')->where([['fila', $fila], ['status', 0]])->get();
     }
 
     public function getAsientos2($table, $zona, $fila) {
@@ -190,7 +191,7 @@ class ApiController extends Controller
 
             return response()->json('success', 200);
 
-        } elseif ($req->type == 'order.created' || $req->type == 'order.pending_payment' || $req->type == 'charge.created' || $req->type == 'charge.paid' || $req->type == 'charge.expired') {            
+        } elseif ($req->type == 'order.created' || $req->type == 'order.pending_payment' || $req->type == 'charge.created' || $req->type == 'charge.paid' || $req->type == 'charge.pending_confirmation' || $req->type == 'charge.expired') {            
             return response()->json('Webhook received', 200);
         }
 

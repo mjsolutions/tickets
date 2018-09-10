@@ -84,47 +84,27 @@
 			</div>
 
 
-			<div class="row mb-30 grid-eventos">				
+			<div class="row mb-30 grid-eventos">
 
-
-				<div class="col m6 l4 evento">
+				<div class="col m6 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
-							<img src="{{asset('img/cosos-gto.jpg')}}" class="materialboxed responsive-img">
+							<img src="{{asset('img/sonora-morelia.jpg')}}" class="materialboxed responsive-img">
 						</div>
 						<div class="card-stacked">
 							<div class="card-content">
-								<h5><strong class="event-name">Cosos Cañon</strong></h5>
-								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Guanajuato</b></p>
-								<p>La Chismozza Bar</p>
-								<p>14 de Julio</p>
-								<p class="event-date">14/07/2018</p>
-							</div>
-							<a href="{{ url('/eventos/cosos-guanajuato') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col m6 l4 evento">
-					<div class="card horizontal ">
-						<div class="card-image">
-							<img src="{{asset('img/franco-morelia.jpg')}}" class="materialboxed responsive-img">
-						</div>
-						<div class="card-stacked">
-							<div class="card-content">
-								<h5><strong class="event-name">Franco Escamilla</strong></h5>
+								<h5><strong class="event-name">La Sonora Santanera</strong></h5>
 								<div class="divider"></div>
 								<p class="mt-10 mb-5"><b>Morelia</b></p>
-								<p>Teatro Morelos</p>
-								<p>31 de Agosto y <br> 01 de Septiembre</p>
-								<p class="event-date">31/01/2018</p>
-								<p>09:30 pm.</p>
+								<p>Palacio de arte</p>
+								<p>329 de septiembre </p>
+								<p class="event-date">29/09/2018</p>
+
 							</div>
-							<a href="{{ url('/eventos/franco-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+							<a href="{{ url('/eventos/la-sonora-santanera-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
-				</div>
+				</div>						
 
 			</div>
 		</div>

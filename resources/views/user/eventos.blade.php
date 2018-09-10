@@ -95,7 +95,7 @@
 						@endphp
 						<p><b>Asientos:</b> {{ $asientos }}</p>
 					</div>
-					<a href="#!" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					<a href="{{ route('cliente.ticket', 31) }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 				</div>
 				<p class="grey-text"><i>*Por cuestiones de seguridad podras descargar tus boletos en breve.</i></p>
 			</div>
@@ -126,7 +126,38 @@
 						@endphp
 						<p><b>Asientos:</b> {{ $asientos }}</p>
 					</div>
-					<a href="#!" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					<a href="{{ route('cliente.ticket', 1) }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+				</div>
+				<p class="grey-text"><i>*Por cuestiones de seguridad podras descargar tus boletos en breve.</i></p>
+			</div>
+
+			@endif
+
+			@if( $franco317->isNotEmpty() )
+			
+			<div class="col s12">
+
+				<div class="col s12 event-date-card no-padding">
+					<div class="col s12 m4 l2 no-padding">
+						<img src="{{asset('img/franco-morelia-317.jpg')}}" class="materialboxed responsive-img">
+					</div>
+					<div class="event-date-details">
+						<h5><b>FRANCO ESCAMILLA</b></h5>
+						<p><b>Ciudad:</b> Morelia</p>
+						<p><b>Lugar:</b> Teatro Morelos</p>
+						<p><b>Fecha:</b> 31 de Agosto</p>
+						<p><b>Hora:</b> 19:00 hrs</p>
+						<p><b>Seccion:</b> {{ $franco317->first()->seccion }}</p>
+						<p><b>Fila:</b> {{ $franco317->first()->fila }}</p>
+						@php
+							$asientos = "";
+							foreach ($franco317 as $row) {
+								$asientos .= " *".$row->asiento;
+							}
+						@endphp
+						<p><b>Asientos:</b> {{ $asientos }}</p>
+					</div>
+					<a href="{{ route('cliente.ticket', 317) }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 				</div>
 				<p class="grey-text"><i>*Por cuestiones de seguridad podras descargar tus boletos en breve.</i></p>
 			</div>
@@ -138,4 +169,13 @@
 
 </div>
 
+@endsection
+
+@section('scripts')
+<script type="text/javascript">
+	$('.btn-ticket').click(function(){
+		$(this).addClass('disabled');
+		$(this).html('Generando boletos...');
+	});
+</script>
 @endsection

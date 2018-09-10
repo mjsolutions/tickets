@@ -1,0 +1,331 @@
+body{
+	color: #263238 ;
+	font-size: 14px;
+}
+
+.space-top	{
+	width: 100%;
+	position: relative;
+	height: 30px;
+}
+
+.col-half {
+	width: 49%;
+	float: left;
+	position: relative;
+	height: 870px;
+	overflow: hidden;
+	/*border: 1px solid #bbb;*/
+	border-left: 1px solid #bbb;
+	border-right: 1px solid #bbb;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+.col-half > div.container {
+	width: 92%;
+	margin-left: 4%;
+/*	padding-left: 2%;
+	padding-right: 2%;*/
+	/*border: 1px solid #444;*/
+}
+
+.ml-2 {
+	margin-left: 2%;
+}
+
+.card {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	/*background: #fafafa;*/
+	background: #e8e8e8;
+	border-radius: 15px;
+	z-index: 6;
+}
+
+.barcode-container {
+	position: absolute;
+	bottom: 65px;
+	left: 0;
+	width: 100%;
+	height: 110px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	background: #fafafa;
+	border: 1px solid #bbb;
+	z-index: 6;
+}
+
+.barcode {
+	width: 90%;
+	margin-left: 5%;
+	height: 70px;
+}
+
+.barcode-container p {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
+	letter-spacing: 5px;
+	font-size: 14px;
+}
+
+.header {
+	position: relative;
+	padding-top: 25px;
+	padding-bottom: 15px;
+	margin-bottom: 20px;
+	background: #fafafa;
+	border: 1px solid #bbb;
+	z-index: 6;
+}
+
+.header h3 {
+	letter-spacing: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #bbb;
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+
+.header p {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 12px;
+}
+
+.logo-container {
+	width: 20%;
+	margin-left: 8%;
+	float: left;
+	position: relative;
+	/*border: 1px solid #111;*/
+}
+
+.header-text {
+	/*border: 1px solid #111;*/
+	width: 50%;
+	float: right;
+	margin-right: 15%;
+	/*position: relative;*/
+	/*margin-left: 4%;*/
+	color: #111;
+}
+
+.header-back{
+	letter-spacing: 5px;
+	margin-top: 40px;
+	width: 50%;
+	margin-left: 25%;
+	margin-bottom: 0;
+	padding: 5px;
+	color: #FFF;
+	display: inline-block;
+	background: #0d47a1;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.evento-img-container {
+	z-index: 6;
+}
+
+.img-evento {
+	width: 50%;
+}
+
+.img-logo {
+	width: 70px;
+}
+
+.info-evento {
+	margin-top: 20px;
+}
+
+.info-evento h2 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+.info-evento h4,
+.info-evento h5 {
+	margin: 0;
+	/*line-height: 1;*/
+}
+
+.info-compra {
+	margin-top: 20px;
+	color: #111;
+}
+
+.info-compra strong {
+	color: #0d47a1;
+}
+
+.info-compra p {
+	padding: 0 10px;
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.info-compra table {
+	width: 100%;
+}
+
+.info-compra table th {
+	padding-left: 10px;
+	color: #0d47a1;
+}
+
+.info-compra table td {
+	padding-left: 10px;
+}
+
+.precio {
+	font-size: 12px;
+}
+
+.precio span {
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.circle-top,
+.circle-bottom {
+	position: absolute;	
+	/*border: 1px solid #111;*/
+	width: 50px;
+	height: 30px;
+	background: #FFF;
+	border: 1px solid #bbb;
+	left: 50%;
+	margin-left: -25px;
+	z-index: 8;
+}
+
+.circle-top {
+	border-radius: 25px;
+	top: -15px;
+}
+
+.circle-bottom {
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	bottom: 50px;
+}
+
+.politicas {
+	width: 90%;
+	margin-left: 5%;
+	/*border: 1px solid #111;*/
+}
+
+.politicas img {
+	width: 100%;
+}
+
+.nota {
+	position: absolute;
+	bottom: 64px;
+	left: 0;
+	width: 100%;
+	border-top: 1px solid #bbb;
+	border-bottom: 2px solid #bbb;
+	background: #fafafa;
+	z-index: 6;
+}
+
+.nota p {
+	padding: 0 10px;
+	margin: 5px 0;
+}
+
+.nota-info {
+	font-size: 12px;
+	text-align: justify;
+	padding-left: 25px;
+}
+
+.nota-info li {
+	padding-right: 15px;
+}
+
+.logo-bg{
+	position: absolute;
+	/*border: 1px solid #111;*/
+}
+
+.logo-bg img {
+	width: 100%;
+}
+
+.logo-bg-1 {
+	top: 160px;
+	width: 65%;
+	left:-20%;
+	opacity: 0.16;
+}
+
+.logo-bg-2 {
+	top: 380px;
+	width: 180%;
+	right: -105%;
+	opacity: 0.2;
+	z-index: 3;
+}
+
+.logo-bg-3 {
+	top: 60px;
+	width: 80%;
+	right:-40%;
+	z-index: 2;
+	opacity: 0.16;
+}
+
+.logo-bg-4 {
+	top: 450px;
+	width: 55%;
+	opacity: 0.16;
+	left: -25%;
+}
+
+.logo-bg-5 {
+	top: 420px;
+	width: 180%;
+	right:-130%;
+	opacity: 0.2;
+	z-index: 3;
+}
+
+.logo-bg-6 {
+	top: 0;
+	width: 80%;
+	left:-30%;
+	opacity: 0.16;
+	z-index: 2;
+}
+
+.logo-bg-7 {
+	top: 250px;
+	width: 45%;
+	right: 5%;
+	opacity: 0.16;
+	z-index: 2;
+}
+
+.logo-bg-8 {
+	top: 0;
+	width: 45%;
+	right: -32%;
+	opacity: 0.16;
+	z-index: 2;
+}
+
+.page-break {
+    page-break-after: always;
+}

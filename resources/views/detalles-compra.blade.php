@@ -56,6 +56,7 @@
 				
 				<p><b>Asientos:</b> {{ $num_asientos }}</p>
 				@endif
+				<p><b>id:</b> {{ var_dump($id) }}</p>
 				<p><b>Email comprador:</b> {{ Auth::user()->email }}</p>
 				<p><b>Total:</b> <span class="label-precio">$ <b>{{ number_format(($req->precio * $num_asientos) * 1.10, 2, '.', ',') }}</b> MX</span></p>
 			</div>

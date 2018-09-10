@@ -10,7 +10,7 @@
 <meta property="og:url"  content="http://bolematico.mx/eventos/franco-morelia" />
 <meta property="og:title" content="Franco Escamilla en Morelia" />
 <meta property="og:description" content="Regresa Franco Escamilla con su nuevo show R.P.M. a Morelia, 31 de agosto y 01 de septiembre" />
-<meta property="og:image" content="http://bolematico.mx/img/franco-morelia.jpg" />
+<meta property="og:image" content="http://bolematico.mx/img/franco-morelia-317.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
@@ -43,7 +43,7 @@
 			</div>
 
 			<div class="col s8 offset-s2 m5 mb-30">
-				<img src="{{ asset('img/franco-morelia.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/franco-morelia-317.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m5 offset-m1">				
@@ -157,6 +157,29 @@
 
 			<div class="row">
 				<div class="col s12">
+					<h5>RS Viajes Periodismo</h5>
+				</div>
+				<div class="col s12 m6">									
+					<!-- ## VENUE MAP ## -->
+					<div class="qcEventlayout">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1878.3461125835147!2d-101.2256908688827!3d19.68313181288793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0c23bc1216f1%3A0xc16b3ac2516592fb!2sAv.+Periodismo+Jos%C3%A9+Tocaven+Lav%C3%ADn+1927%2C+Jardines+de+Torremolinos%2C+58197+Morelia%2C+Mich.!5e0!3m2!1ses!2smx!4v1533228065053" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+
+				</div>
+
+				<!-- ## ADDRESS LIST ## -->
+				<div class="col s12 m6">
+					<ul class="qcAddress">
+						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Av. Periodismo 1927-1, Fracc Jardines de Torremolinos Ote (Frente a la Farmacia Guadalajara).</p></li>
+						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: </p></li>
+						<li><i class="medium material-icons">schedule</i><p><strong>HORARIO</strong>: 10:00 a 19:00 hrs. Lunes a Viernes y 11:00 a 14:00 hrs. los Sabados.</p></li>
+						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: </p></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s12">
 					<h5>Taquillas del planetario</h5>
 				</div>
 				<div class="col s12 m6">									
@@ -195,12 +218,10 @@
 		$date = \Carbon\Carbon::now(new DateTimeZone('America/Mexico_City'));
 	@endphp
 
-	{{-- @if( array_has( $days, $date->dayOfWeek) ) --}}
-	@if(  !$date->isWeekend() && ( $date->hour >= '09:00:00' && $date->hour <= '23:00:00' ) )
+	{{-- @if(  !$date->isWeekend() && ( $date->hour >= '09:00:00' && $date->hour <= '23:00:00' ) ) --}}
 
-		<div class="row">
+		{{-- <div class="row">
 			<div class="col m6 mt-30">
-				{{-- <h5 class="center-align raleway">Preventa exclusiva en linea 2 y 3 de Julio. <br>Venta normal a partir del 4 de Julio</h5> --}}
 				<img src="{{ asset('img/teatro-morelos-fondo.svg') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/teatro-morelos-fondo.svg')}}">
 				<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
 			</div>
@@ -208,13 +229,13 @@
 				@if(Auth()->check())
 					{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
 						<div class="row">
-							<h5 class="quote">Elija sus boletos</h5>
+							<h5 class="quote">Elija sus boletos <small>(función 31 de Agosto 7:00 pm)</small></h5>
 							<div class="input-field col s12">
 								{!! Form::select('fecha', ['31 de Agosto 2018' => '31 de Agosto', '01 de septiembre 2018' => '01 de septiembre'], '', ['class' => 'select-dropdown', 'required', 'id' => 'fecha', 'placeholder' => 'Selecciona Fecha']) !!}
 								{!! Form::label('fecha', 'Fecha del Evento') !!}
 							</div>
 							<div class="input-field col s12">
-								{!! Form::select('zona', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Selecciona primero una fecha']) !!}
+								{!! Form::select('zona', ['Plata' => 'Plata', 'Oro' => 'Oro', 'Diamante' => 'Diamante'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Selecciona la zona']) !!}
 								{!! Form::label('zona', 'Zona') !!}
 							</div>
 							<div class="input-field col s12" id="select-fila">
@@ -226,13 +247,13 @@
 								{!! Form::label('asiento', 'Asiento') !!}
 							</div>
 							
-							{!! Form::hidden('img', 'img/franco-morelia.jpg') !!}
+							{!! Form::hidden('img', 'img/franco-morelia-317.jpg') !!}
 							{!! Form::hidden('evento', 'Franco Escamilla en Morelia') !!}
-							{{-- {!! Form::hidden('fecha', '16 de Junio 2018') !!} --}}
+							{!! Form::hidden('fecha', '31 de Agosto 2018') !!}
 							{!! Form::hidden('lugar', 'Teatro Morelos') !!}
-							{!! Form::hidden('hora', '09:30 pm') !!}
+							{!! Form::hidden('hora', '07:00 pm') !!}
 							{!! Form::hidden('event_type', 'numerado') !!}
-							{!! Form::hidden('db_table', '', ['id' => 'db_table']) !!}
+							{!! Form::hidden('db_table', 'franco317', ['id' => 'db_table']) !!}
 							{!! Form::hidden('info', '4431880358') !!}
 							{!! Form::hidden('precio', '', ['id' => 'precio']) !!}
 
@@ -259,15 +280,15 @@
 				@endif
 				
 			</div>		
-		</div>
+		</div> --}}
 
-	@else
+	{{-- @else
 
-		<div class="row">
-			<h5 class="mt-50 center-align raleway">Venta en linea disponible de Lunes a Viernes de 9:00 a 23:00 hrs.</h5>
-		</div>
 
-	@endif
+	@endif --}}
+	<div class="row">
+		<h5 class="mt-50 center-align raleway">Boletos disponibles en Rs Viajes Centro, RS Viajes Periodismo y taquillas del planetario.</h5>
+	</div>
 
 	<div class="row">
 		<div class="col s6 offset-s3 mt-30">
@@ -308,7 +329,7 @@
 @section('scripts')
 	<script type="text/javascript" src="{{asset('js/jquery.elevatezoom.js')}}"></script>
 	<script>
-		var tabla_evento = "";
+		var tabla_evento = "franco317";
 
 		$("#zoom_01").elevateZoom({
 			scrollZoom : true,
@@ -393,24 +414,24 @@
 			});
 		});
 
-		$("#fecha").change(function(){
+		// $("#fecha").change(function(){
 
-			$("#zona").html("<option value='' selected disabled>Selecciona una zona</option><option value='Diamante'>Diamante</option><option value='Oro'>Oro</option><option value='Plata'>Plata</option>");
-			$("#fila").html("<option value='' selected disabled>Selecciona primero una zona</option>");
-			$("#asiento").html("<option value='' selected disabled>Selecciona primero una fila</option>");
-			$("#zona").material_select();
-			$("#fila").material_select();
-			$("#asiento").material_select();
+		// 	$("#zona").html("<option value='' selected disabled>Selecciona una zona</option><option value='Diamante'>Diamante</option><option value='Oro'>Oro</option><option value='Plata'>Plata</option>");
+		// 	$("#fila").html("<option value='' selected disabled>Selecciona primero una zona</option>");
+		// 	$("#asiento").html("<option value='' selected disabled>Selecciona primero una fila</option>");
+		// 	$("#zona").material_select();
+		// 	$("#fila").material_select();
+		// 	$("#asiento").material_select();
 
-			if( $(this).val() == "31 de Agosto 2018" ){
-				tabla_evento = 'franco31';
-				$("#db_table").val('franco31');
-			}else{
-				tabla_evento = 'franco01';
-				$("#db_table").val('franco01');
-			}
+		// 	if( $(this).val() == "31 de Agosto 2018" ){
+		// 		tabla_evento = 'franco31';
+		// 		$("#db_table").val('franco31');
+		// 	}else{
+		// 		tabla_evento = 'franco01';
+		// 		$("#db_table").val('franco01');
+		// 	}
 
-		});
+		// });
 	</script>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
