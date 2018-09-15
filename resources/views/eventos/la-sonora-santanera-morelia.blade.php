@@ -53,7 +53,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m8 teal accent-4">Zona ruedo</div>
+								<div class="col s12 m8 teal accent-4">Ruedo</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s12"><span>$750</span> Por entrada</div>
@@ -64,7 +64,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m8 purple lighten-1">Zona butacas</div>
+								<div class="col s12 m8 purple lighten-1">Butacas</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s12"><span>$550</span> Por entrada</div>
@@ -86,7 +86,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m8 grey lighten-1">Zona general</div>
+								<div class="col s12 m8 grey lighten-1">General</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s12"><span>$170</span> Por entrada</div>
@@ -111,17 +111,17 @@
 		</div>
 
 		<div id="biografia" class="col s12 tab-content">
+			<h4 class="mt-0 raleway quote">BIOGRAFÍA</h4>		
 			<div class="col s8 offset-s2 hide-on-med-and-up">
 				<img src="{{ asset('img/sonora-bio.jpg') }}" class="responsive-img">
 			</div>
-			<div class="col s12 m9">
-				<h4 class="mt-0 raleway quote">BIOGRAFÍA</h4>		
+			<div class="col s12 m6">
 				<p>La Sonora Santanera, se ha consolidado mediante un estilo singular influenciado por el danzón, el mambo, el bolero, la rumba, el chachachá, la guaracha y la cumbia, así como canciones que son parte de la memoria colectiva de México .</p>
 				<p>Inicialmente, en mayo de 1955 formaron la agrupación llamada "Tropical Santanera", que se deriva del lugar de nacimiento de su líder fundador, Carlos Colorado.</p>
 				<p>En abril de 1960, fue lanzado como sencillo su más famoso tema La Boa. La canción se convirtió en un hit nacional al poco tiempo de su lanzamiento. El éxito no se hizo esperar y los temas se colocaron en las principales radiodifusoras. </p>
 				<p>Actualmente y con más de 60 años de carrera, <strong>La Única Internacional Sonora Santanera</strong> ha obtenido varios reconocimientos de los mas importantes es la Estrella en el Paseo de la Fama de Las Vegas Nevada, así como fueron acreedores de 2 Grammy Latino y la Nominación al Grammy Americano por sus últimos discos grabados con Sony Music los cuales son Grandes éxitos de las Sonoras, con la más grande, la Sonora Santanera y el disco 60 Aniversario</p>
 			</div>
-			<div class="col s3 hide-on-small-only">
+			<div class="col m6 hide-on-small-only">
 				<img src="{{ asset('img/sonora-bio.jpg') }}" class="responsive-img">
 			</div>
 			<div class="clearfix"></div>
@@ -216,7 +216,7 @@
 <section id="compra" class="section-comprar">
 
 	<div class="row">
-		<h5 class="mt-50 center-align raleway">Boletos disponibles en Rs Viajes Centro, RS Viajes Periodismo y taquillas del palacio del arte.</h5>
+		<h5 class="mt-50 center-align raleway">Boletos disponibles en Rs Viajes Centro, RS Viajes Periodismo y taquillas del Palacio del Arte.</h5>
 	</div>
 
 	<div class="row">
@@ -270,13 +270,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.6893096, lng: -101.1527222};
+		        var uluru = {lat: 19.6893096, lng: -101.1505222};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 17,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.6893096, lng: -101.1527222}
+		          center: {lat: 19.6893096, lng: -101.1505222}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

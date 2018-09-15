@@ -51,6 +51,18 @@
 			display: none;
 		}
 
+		@media screen and (min-width: 1151px) {
+			.card-image {
+				max-width: 20%!important;
+			}
+		}
+
+		@media screen and (min-width: 800px) {
+			.card-image {
+				max-width: 30%!important;
+			}
+		}
+
 		/*.card.horizontal {
 			position: relative;
 		}*/
@@ -93,11 +105,11 @@
 						</div>
 						<div class="card-stacked">
 							<div class="card-content">
-								<h5><strong class="event-name">La Sonora Santanera</strong></h5>
+								<h5><strong class="event-name">LA SONORA SANTANERA</strong></h5>
 								<div class="divider"></div>
 								<p class="mt-10 mb-5"><b>Morelia</b></p>
 								<p>Palacio de arte</p>
-								<p>329 de septiembre </p>
+								<p>29 de septiembre </p>
 								<p class="event-date">29/09/2018</p>
 
 							</div>
