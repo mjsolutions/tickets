@@ -655,6 +655,10 @@ img {
 	padding-right: 0;
 }
 
+.row .col.card-flyer .responsive-img {
+	display: block;
+}
+
 .card-text {
 	box-shadow: 2px 2px 5px 0 #AAA;
 	padding: 15px 30px!important;

@@ -110,8 +110,8 @@
 			<p><strong>NOTA:</strong></p>
 			<ul class="nota-info">
 				<li>Este boleto es personal y limita el acceso a la primer persona en presentarlo el día del evento.</li>
-				<li>La protección de este ticket para evitar copias del mismo es responsabilidad del usuario que generó la compra.</li>
-				<li>No olvides presentarte con tu identificación oficial para cualquer aclaración.</li>
+				<li>La protección de este ticket, para evitar copias del mismo, es responsabilidad del usuario que generó la compra.</li>
+				<li>No olvides presentarte con tu identificación oficial para cualquier aclaración.</li>
 			</ul>
 			<br>
 		</div>

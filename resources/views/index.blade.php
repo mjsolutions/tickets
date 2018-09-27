@@ -110,7 +110,7 @@
 								<p class="mt-10 mb-5"><b>Villahermosa</b></p>
 								<p>La Puerta de Alcala</p>
 								<p>27 de septiembre</p>
-								<p class="event-date">27/10/2018</p>
+								<p class="event-date">27/09/2018</p>
 
 							</div>
 							<a href="{{ url('/eventos/gon-curiel-villahermosa') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
@@ -130,7 +130,7 @@
 								<p class="mt-10 mb-5"><b>Veracruz</b></p>
 								<p>Barezzito</p>
 								<p>28 de septiembre</p>
-								<p class="event-date">28/10/2018</p>
+								<p class="event-date">28/09/2018</p>
 
 							</div>
 							<a href="{{ url('/eventos/gon-curiel-veracruz') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
@@ -150,7 +150,7 @@
 								<p class="mt-10 mb-5"><b>Xalapa</b></p>
 								<p>Barezzito</p>
 								<p>29 de septiembre</p>
-								<p class="event-date">29/10/2018</p>
+								<p class="event-date">29/09/2018</p>
 
 							</div>
 							<a href="{{ url('/eventos/gon-curiel-xalapa') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
@@ -174,6 +174,26 @@
 
 							</div>
 							<a href="{{ url('/eventos/la-sonora-santanera-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/coco.jpeg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">COCO EL ESPECTÁCULO EN VIVO</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Aguascalientes</b></p>
+								<p>Auditorio DIMO</p>
+								<p>28 de octubre</p>
+								<p class="event-date">28/10/2018</p>
+
+							</div>
+							<a href="{{ url('/eventos/coco-el-espectaculo-en-vivo-aguascalientes') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
 				</div>

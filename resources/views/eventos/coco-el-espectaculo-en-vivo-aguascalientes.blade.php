@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Coco Aguascalientes')
+@section('title', 'Coco el espectáculo en vivo - Aguascalientes')
 
-@section('description', 'Coco en Aguascalientes, 11 de Marzo, 1:30 pm y 5:00 pm boletos en Auditorio DIMO y en bolematico.mx')
+@section('description', 'Coco el espectáculo en vivo en Aguascalientes, 11 de Marzo, 1:00 pm y 5:00 pm boletos en Auditorio DIMO')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -13,12 +13,12 @@
 <div class="image-header bg-infantil overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Coco</h4>
+		<h4>Coco el espectáculo en vivo</h4>
 		<div class="divider"></div>
 		<p><i>Aguascalientes - Auditorio DIMO</i></p>
-		<p><i>1:30 pm / 5:00 pm</i></p>
+		<p><i>28 de octubre, 1:00 pm / 5:00 pm</i></p>
 	</div>
-	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+	{{-- <a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a> --}}
 </div>
 
 <section class="container">
@@ -42,29 +42,50 @@
 			
 			<div class="col s12 m8 offset-m1">				
 
-				<div class="row mt-30">
+				<div class="row">
 
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12 card-flyer">
 							<header>
-								<div class="col s12 m8 teal accent-4">VIP</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
+								<div class="col s12 m12 green darken-2">VIP</div>
+								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
 							</header>
 							<div class="price col s12"><span>$260</span> Por entrada</div>
 							{{-- <div class="filas col s6">Filas: A - Ñ</div> --}}
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
+							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
 						</div>
 					</div>
 
 					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12 card-flyer">
+						<div class="box col s12">
 							<header>
-								<div class="col s12 m8 lime darken-3">General</div>
-								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
+								<div class="col s12 m12 green lighten-1 ">Oro</div>
+								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
 							</header>
-							<div class="price col s12"><span>$210</span> Por entrada</div>
-							{{-- <div class="filas col s6">Filas: A - Ñ</div> --}}
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
+							<div class="price col s12"><span>$240</span> Por entrada</div>
+							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
+								<div class="col s12 m12 indigo lighten-1">Plata</div>
+								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
+							</header>
+							<div class="price col s12"><span>$220</span> Por entrada</div>
+							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
+								<div class="col s12 m12 brown lighten-1">Bronce</div>
+								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
+							</header>
+							<div class="price col s12"><span>$160</span> Por mesa</div>
+							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
 						</div>
 					</div>
 
@@ -72,8 +93,8 @@
 
 				<div class="row">
 					<div class="divider"></div>
-					<p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-					<p class="center-align"><b>Informes:</b> <a href="tel:9157353" style="background: #4caf50; color: #fff; padding: 5px 10px;">915 7353</a></div>
+					{{-- <p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p> --}}
+					<p class="center-align"><b>Informes:</b> <a href="tel:4499157353" style="background: #4caf50; color: #fff; padding: 5px 10px;">449 915 7353</a></div>
 			</div>
 		</div>
 

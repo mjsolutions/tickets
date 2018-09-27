@@ -130,4 +130,10 @@ Route::group(['prefix' => 'micuenta','middleware' => 'auth'], function() {
 
     ]);
 
+    // Route::get('codigo-barras', [
+    // 	'as'	=> 'cliente.codigob',
+    // 	'uses'	=> 'PaneldeUsuarioController@updateDb'
+
+    // ]); 
+
 });

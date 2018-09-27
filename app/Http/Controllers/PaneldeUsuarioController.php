@@ -7,6 +7,7 @@ use App\Franco317;
 use App\Franco01;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 // use Barryvdh\DomPDF\PDF;
 
 class PaneldeUsuarioController extends Controller
@@ -73,7 +74,7 @@ class PaneldeUsuarioController extends Controller
     // public function updateDb() {
 
     // 	for( $i = 1; $i < 1339; $i++){
-    // 		Franco01::where('id', $i)->update(['codigo_barras' => substr(md5($i),0,10)]);
+    // 		DB::table('mike_salazar_19oct')->where('id', $i)->update(['codigo_barras' => substr(md5('mike_salazar_19oct'.$i),0,10)]);
     // 	}
 
     // 	dd('done');
