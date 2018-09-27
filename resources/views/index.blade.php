@@ -101,26 +101,6 @@
 				<div class="col m6 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
-							<img src="{{asset('img/gon-villahermosa.jpg')}}" class="materialboxed responsive-img">
-						</div>
-						<div class="card-stacked">
-							<div class="card-content">
-								<h5><strong class="event-name">GON CURIEL</strong></h5>
-								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Villahermosa</b></p>
-								<p>La Puerta de Alcala</p>
-								<p>27 de septiembre</p>
-								<p class="event-date">27/09/2018</p>
-
-							</div>
-							<a href="{{ url('/eventos/gon-curiel-villahermosa') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col m6 evento">
-					<div class="card horizontal ">
-						<div class="card-image">
 							<img src="{{asset('img/gon-veracruz.jpg')}}" class="materialboxed responsive-img">
 						</div>
 						<div class="card-stacked">
@@ -174,6 +154,26 @@
 
 							</div>
 							<a href="{{ url('/eventos/la-sonora-santanera-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/mike-2018.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">MIKE SALAZAR</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Morelia</b></p>
+								<p>Teatro Morelos</p>
+								<p>19 de octubre</p>
+								<p class="event-date">19/10/2018</p>
+
+							</div>
+							<a href="{{ url('/eventos/mike-salazar-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
 				</div>
