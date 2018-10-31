@@ -138,6 +138,7 @@
 	</div>
 </div>
 
+@if($success)
 <div class="row mt-50">
 	<div class="container">
 		@if($payment == 'paid')
@@ -147,28 +148,23 @@
 		@endif
 
 			<div class="col s12 z-depth-2 p-30 bg-gray">
-				@if($success)
 					
-					@if($payment == 'paid')
-					<h5 class="quote"><b>¡SE HA COMPLETADO TU COMPRA!</b></h5>
-					<div class="divider col-center col s10"></div>
-					<p>Para apartar tus lugares deberas llamar al número <b>{{ $order->line_items[0]->metadata['info'] }}</b> y realizar la reservación respectiva con tu ID de transacción el cual ha sido enviado a tu email con el que te registraste en Bolematico.</p>
-					<p>Esta información ha sido enviada a tu cuenta de correo, de no ser asi puedes contactarte con nosotros <a href="{{ route('contacto') }}">aquí</a></p>
-					{{-- <p>Tienes hasta una hora antes del dia del evento para recoger tus boletos. </p>					 --}}
-					@else
-					<h5 class="quote"><b>¡SE HA COMPLETADO TU ORDEN!</b></h5>
-					<div class="divider col-center col s10"></div>
-					<p>Hemos enviado a tu email un comprobante como el que aparece en esta página con el numero de referencia para que puedas completar tu pago.</p>
-					<p>Una vez que nos sea notificado tu pago, enviaremos a tu cuenta de correo la confirmación de tu pago asi como las instrucciones finales para terminar el proceso.</p>
-					<p>Cuentas con 24 hrs para realizar tu pago.</p>
-					@endif
-					
-					<p>Si tienes alguna duda recuerda que puedes ponerte en <a href="{{ route('contacto') }}">contacto</a> con nosotros.</p>
-					
-					
+				@if($payment == 'paid')
+				<h5 class="quote"><b>¡SE HA COMPLETADO TU COMPRA!</b></h5>
+				<div class="divider col-center col s10"></div>
+				<p>Para apartar tus lugares deberas llamar al número <b>{{ $order->line_items[0]->metadata['info'] }}</b> y realizar la reservación respectiva con tu ID de transacción el cual ha sido enviado a tu email con el que te registraste en Bolematico.</p>
+				<p>Esta información ha sido enviada a tu cuenta de correo, de no ser asi puedes contactarte con nosotros <a href="{{ route('contacto') }}">aquí</a></p>
+				{{-- <p>Tienes hasta una hora antes del dia del evento para recoger tus boletos. </p>					 --}}
 				@else
-					{{$res}}
+				<h5 class="quote"><b>¡SE HA COMPLETADO TU ORDEN!</b></h5>
+				<div class="divider col-center col s10"></div>
+				<p>Hemos enviado a tu email un comprobante como el que aparece en esta página con el numero de referencia para que puedas completar tu pago.</p>
+				<p>Una vez que nos sea notificado tu pago, enviaremos a tu cuenta de correo la confirmación de tu pago asi como las instrucciones finales para terminar el proceso.</p>
+				<p>Cuentas con 24 hrs para realizar tu pago.</p>
 				@endif
+				
+				<p>Si tienes alguna duda recuerda que puedes ponerte en <a href="{{ route('contacto') }}">contacto</a> con nosotros.</p>
+
 			</div>
 		
 		</div>
@@ -248,5 +244,32 @@
 	</div>
 
 </div>
+
+@else
+
+<div class="row mt-100">
+	<div class="col s10 m5 col-center z-depth-2 p-30 cyan darken-2">
+
+		<h2 class="center-align white-text"><strong>ERROR</strong></h2>
+		<h4 class="center-align white-text">¡Algo anda mal!</h4>
+		<div class="divider col-center col s10"></div>
+		<p class="center-align white-text">Ha ocurrido el siguiente error:</p>
+		<p class="center-align white-text"><strong>Error:</strong><br> {{ $res }}</p>
+		<div class="divider col-center col s10"></div>
+		<p><i>(*) Agradecemos que te pongas en contacto con nosotros para informarnos de este inconveniente y poder así ayudarte en tu compra.</i></p>
+
+	</div>
+
+</div>
+
+<div class="row mt-30">
+
+	<div class="col-center col s2">
+		<a href="{{ route('index') }}" class="btn btn-block waves-effect waves-light  orange accent-3">Volver al inicio</a>
+	</div>
+
+</div>
+
+@endif
 
 @endsection

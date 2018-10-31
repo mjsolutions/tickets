@@ -98,82 +98,22 @@
 
 			<div class="row mb-30 grid-eventos">
 
-				<div class="col m6 evento">
-					<div class="card horizontal ">
-						<div class="card-image">
-							<img src="{{asset('img/gon-veracruz.jpg')}}" class="materialboxed responsive-img">
-						</div>
-						<div class="card-stacked">
-							<div class="card-content">
-								<h5><strong class="event-name">GON CURIEL</strong></h5>
-								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Veracruz</b></p>
-								<p>Barezzito</p>
-								<p>28 de septiembre</p>
-								<p class="event-date">28/09/2018</p>
-
-							</div>
-							<a href="{{ url('/eventos/gon-curiel-veracruz') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-						</div>
-					</div>
-				</div>
 
 				<div class="col m6 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
-							<img src="{{asset('img/gon-xalapa.jpg')}}" class="materialboxed responsive-img">
+							<img src="{{asset('img/raquel-sofia-gira.jpg')}}" class="materialboxed responsive-img">
 						</div>
 						<div class="card-stacked">
 							<div class="card-content">
-								<h5><strong class="event-name">GON CURIEL</strong></h5>
+								<h5><strong class="event-name">RAQUEL SOFIA</strong></h5>
 								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Xalapa</b></p>
-								<p>Barezzito</p>
-								<p>29 de septiembre</p>
-								<p class="event-date">29/09/2018</p>
-
-							</div>
-							<a href="{{ url('/eventos/gon-curiel-xalapa') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col m6 evento">
-					<div class="card horizontal ">
-						<div class="card-image">
-							<img src="{{asset('img/sonora-morelia.jpg')}}" class="materialboxed responsive-img">
-						</div>
-						<div class="card-stacked">
-							<div class="card-content">
-								<h5><strong class="event-name">LA SONORA SANTANERA</strong></h5>
-								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Morelia</b></p>
-								<p>Palacio de arte</p>
-								<p>29 de septiembre </p>
-								<p class="event-date">29/09/2018</p>
-
-							</div>
-							<a href="{{ url('/eventos/la-sonora-santanera-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col m6 evento">
-					<div class="card horizontal ">
-						<div class="card-image">
-							<img src="{{asset('img/mike-2018.jpg')}}" class="materialboxed responsive-img">
-						</div>
-						<div class="card-stacked">
-							<div class="card-content">
-								<h5><strong class="event-name">MIKE SALAZAR</strong></h5>
-								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Morelia</b></p>
-								<p>Teatro Morelos</p>
-								<p>19 de octubre</p>
+								<p class="mt-10 mb-5"><b>Gira 2:00am</b></p>
+								<p>Varias ciudades</p>
 								<p class="event-date">19/10/2018</p>
 
 							</div>
-							<a href="{{ url('/eventos/mike-salazar-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+							<a href="{{ url('/eventos/raquel-sofia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
 				</div>
@@ -181,19 +121,59 @@
 				<div class="col m6 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
-							<img src="{{asset('img/coco.jpeg')}}" class="materialboxed responsive-img">
+							<img src="{{asset('img/pate-de-fua-queretaro.jpg')}}" class="materialboxed responsive-img">
 						</div>
 						<div class="card-stacked">
 							<div class="card-content">
-								<h5><strong class="event-name">COCO EL ESPECTÁCULO EN VIVO</strong></h5>
+								<h5><strong class="event-name">PATÉ DE FUA</strong></h5>
 								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Aguascalientes</b></p>
-								<p>Auditorio DIMO</p>
-								<p>28 de octubre</p>
-								<p class="event-date">28/10/2018</p>
+								<p class="mt-10 mb-5"><b>Queretaro</b></p>
+								<p>La Glotonería</p>
+								<p>15 de noviembre</p>
+								<p class="event-date">15/11/2018</p>
 
 							</div>
-							<a href="{{ url('/eventos/coco-el-espectaculo-en-vivo-aguascalientes') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+							<a href="{{ url('/eventos/pate-de-fua-queretaro') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/pate-de-fua-ags.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">PATÉ DE FUA</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Aguascalientes</b></p>
+								<p>Patio Outdoor Disco</p>
+								<p>16 de noviembre</p>
+								<p class="event-date">16/11/2018</p>
+
+							</div>
+							<a href="{{ url('/eventos/pate-de-fua-aguascalientes') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/fernando-morelia-2018.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">FERNANDO DELGADILLO</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Morelia</b></p>
+								<p>Teatro Morelos</p>
+								<p>22 de noviembre</p>
+								<p class="event-date">22/11/2018</p>
+
+							</div>
+							<a href="{{ url('/eventos/fernando-delgadillo-morelia-2018') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
 				</div>

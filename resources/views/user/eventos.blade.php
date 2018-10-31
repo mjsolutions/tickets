@@ -71,98 +71,149 @@
 
 		<div class="col m9">
 
-			@if( $franco31->isNotEmpty() )
+			@if( $mike->isNotEmpty() )
 			
 			<div class="col s12">
 
 				<div class="col s12 event-date-card no-padding">
 					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/franco-morelia.jpg')}}" class="materialboxed responsive-img">
+						<img src="{{asset('img/mike-2018.jpg')}}" class="materialboxed responsive-img">
 					</div>
 					<div class="event-date-details">
-						<h5><b>FRANCO ESCAMILLA</b></h5>
+						<h5><b>MIKE SALAZAR</b></h5>
 						<p><b>Ciudad:</b> Morelia</p>
 						<p><b>Lugar:</b> Teatro Morelos</p>
-						<p><b>Fecha:</b> 31 de Agosto</p>
-						<p><b>Hora:</b> 21:30 hrs</p>
-						<p><b>Seccion:</b> {{ $franco31->first()->seccion }}</p>
-						<p><b>Fila:</b> {{ $franco31->first()->fila }}</p>
+						<p><b>Fecha:</b> 19 de octubre</p>
+						<p><b>Hora:</b> 21:00 hrs</p>
+						<p><b>Seccion:</b> {{ $mike->first()->seccion }}</p>
+						<p><b>Fila:</b> {{ $mike->first()->fila }}</p>
 						@php
 							$asientos = "";
-							foreach ($franco31 as $row) {
+							foreach ($mike as $row) {
 								$asientos .= " *".$row->asiento;
 							}
 						@endphp
 						<p><b>Asientos:</b> {{ $asientos }}</p>
 					</div>
-					<a href="{{ route('cliente.ticket', 31) }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					@if( $mike->first()->status == 2 )
+						<a href="{{ route('cliente.ticket', 'ms') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					@else
+						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					@endif
 				</div>
-				<p class="grey-text"><i>*Por cuestiones de seguridad podras descargar tus boletos en breve.</i></p>
+				{{-- <p class="grey-text"><i>*Por cuestiones de seguridad podras descargar tus boletos en breve.</i></p> --}}
 			</div>
-
+			
 			@endif
 
-			@if( $franco01->isNotEmpty() )
-			
+			@if( $ismael->isNotEmpty() )
 			<div class="col s12">
 
 				<div class="col s12 event-date-card no-padding">
 					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/franco-morelia.jpg')}}" class="materialboxed responsive-img">
+						<img src="{{asset('img/ismael-serrano.jpg')}}" class="materialboxed responsive-img">
 					</div>
 					<div class="event-date-details">
-						<h5><b>FRANCO ESCAMILLA</b></h5>
+						<h5><b>ISMAEL SERRANO</b></h5>
 						<p><b>Ciudad:</b> Morelia</p>
-						<p><b>Lugar:</b> Teatro Morelos</p>
-						<p><b>Fecha:</b> 01 de Septiembre</p>
-						<p><b>Hora:</b> 21:30 hrs</p>
-						<p><b>Seccion:</b> {{ $franco01->first()->seccion }}</p>
-						<p><b>Fila:</b> {{ $franco01->first()->fila }}</p>
+						<p><b>Lugar:</b> Teatro Stella Inda</p>
+						<p><b>Fecha:</b> 26 de octubre</p>
+						<p><b>Hora:</b> 20:30 hrs</p>
+						<p><b>Seccion:</b> {{ $ismael->first()->seccion }}</p>
+						<p><b>Fila:</b> {{ $ismael->first()->fila }}</p>
 						@php
 							$asientos = "";
-							foreach ($franco01 as $row) {
+							foreach ($ismael as $row) {
 								$asientos .= " *".$row->asiento;
 							}
 						@endphp
 						<p><b>Asientos:</b> {{ $asientos }}</p>
 					</div>
-					<a href="{{ route('cliente.ticket', 1) }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					@if( $ismael->first()->status == 2 )
+						<a href="{{ route('cliente.ticket', 'is') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					@else
+						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					@endif
 				</div>
-				<p class="grey-text"><i>*Por cuestiones de seguridad podras descargar tus boletos en breve.</i></p>
+				{{-- <p class="grey-text"><i>*Por cuestiones de seguridad podras descargar tus boletos en breve.</i></p> --}}
 			</div>
 
 			@endif
 
-			@if( $franco317->isNotEmpty() )
-			
-			<div class="col s12">
+			@foreach( $raquel as $ciudad => $data )
 
-				<div class="col s12 event-date-card no-padding">
-					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/franco-morelia-317.jpg')}}" class="materialboxed responsive-img">
-					</div>
-					<div class="event-date-details">
-						<h5><b>FRANCO ESCAMILLA</b></h5>
-						<p><b>Ciudad:</b> Morelia</p>
-						<p><b>Lugar:</b> Teatro Morelos</p>
-						<p><b>Fecha:</b> 31 de Agosto</p>
-						<p><b>Hora:</b> 19:00 hrs</p>
-						<p><b>Seccion:</b> {{ $franco317->first()->seccion }}</p>
-						<p><b>Fila:</b> {{ $franco317->first()->fila }}</p>
-						@php
-							$asientos = "";
-							foreach ($franco317 as $row) {
-								$asientos .= " *".$row->asiento;
-							}
-						@endphp
-						<p><b>Asientos:</b> {{ $asientos }}</p>
-					</div>
-					<a href="{{ route('cliente.ticket', 317) }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-				</div>
-				<p class="grey-text"><i>*Por cuestiones de seguridad podras descargar tus boletos en breve.</i></p>
-			</div>
+				@if( $data->isNotEmpty() )
 
-			@endif
+					@php
+						$info['ags'] = [
+								'ciudad' => 'Aguascalientes',
+								'lugar' => 'La Tercera',
+								'fecha' => '23 de noviembre',
+							];
+				        $info['cordoba'] = [
+								'ciudad' => 'Córdoba, Veracruz',
+								'lugar' => 'Sabina Live',
+								'fecha' => '02 de noviembre',
+							];
+				        $info['morelia'] = [
+								'ciudad' => 'Morelia, Mich.',
+								'lugar' => 'Café del Olmo',
+								'fecha' => '24 de noviembre',
+							];
+				        $info['orizaba'] = [
+								'ciudad' => 'Orizaba, Veracruz',
+								'lugar' => 'Mercadito Orizaba',
+								'fecha' => '01 de noviembre',
+							];
+				        $info['pachuca'] = [
+								'ciudad' => 'Pachuca, Hidalgo',
+								'lugar' => 'Alliroos Cantabar',
+								'fecha' => '09 de noviembre',
+							];
+				        $info['queretaro'] = [
+								'ciudad' => 'Querétaro',
+								'lugar' => 'Portón de Santiago',
+								'fecha' => '07 de diciembre',
+							];
+				        $info['slp'] = [
+								'ciudad' => 'San Luis Potosí',
+								'lugar' => 'Restaurante y Bar Casa Vieja',
+								'fecha' => '22 de noviembre',
+							];
+				        $info['torreon'] = [
+								'ciudad' => 'Torreón, Cohauila',
+								'lugar' => 'La Bicicleta',
+								'fecha' => '30 de noviembre',
+							];
+				    	$info['veracruz'] = [
+								'ciudad' => 'Veracruz',
+								'lugar' => 'Aguamala Bar',
+								'fecha' => '02 de noviembre',
+							];
+					@endphp
+
+					<div class="col s12">
+						<div class="col s12 event-date-card no-padding">
+							<div class="col s12 m4 l2 no-padding">
+								<img src="{{asset("img/raquel-$ciudad.jpg")}}" class="materialboxed responsive-img">
+							</div>
+							<div class="event-date-details">
+								<h5><b>RAQUEL SOFIA</b></h5>
+								<p><b>Ciudad:</b> {{ $info[$ciudad]['ciudad'] }}</p>
+								<p><b>Lugar:</b> {{ $info[$ciudad]['lugar'] }}</p>
+								<p><b>Fecha:</b> {{ $info[$ciudad]['fecha'] }}</p>
+								<p><b>Hora:</b> 20:30 hrs</p>
+								<p><b>Asientos:</b> {{ $data->count() }}</p>
+							</div>
+							<a href="{{ route('cliente.ticket', 'raquel-'.$ciudad) }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+
+						</div>
+					</div>
+					{{-- <p class="grey-text"><i>*Boletos disponibles en breve.</i></p> --}}
+				@endif
+
+			@endforeach
+
 
 		</div>
 	</div>

@@ -23,7 +23,7 @@
          @if (Auth::guest())
           <li><a class="menu modal-login-open" href="#modal-login">Login</a></li>            
          @else
-          <li><a class="menu dropdown-button user-logged" href="#!" data-activates="user_options">{{ Auth::user()->name }}<i class="material-icons right ml-0" style="margin-top: -5px;">arrow_drop_down</i></a></li>
+          <li><a class="menu dropdown-button user-logged" href="#!" data-activates="user_options">Mi cuenta <i class="material-icons right ml-0" style="margin-top: -5px;">arrow_drop_down</i></a></li>
          @endif
       </ul>
       <ul class="side-nav" id="mobile-demo">
@@ -47,7 +47,7 @@
         <li class="pl-30">
           <ul class="collapsible collapsible-accordion">
             <li>
-              <a class="collapsible-header">{{ Auth::user()->name }} <i class="material-icons right ml-0">arrow_drop_down</i></a>
+              <a class="collapsible-header">Mi cuenta <i class="material-icons right ml-0">arrow_drop_down</i></a>
               <div class="collapsible-body">
                 <ul>
                   <li>

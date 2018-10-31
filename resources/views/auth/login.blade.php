@@ -1,20 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'login')
 
 @section('description', '')
-
-@section('styles')
-
-<style>
- body {
-    background: url('{{ asset('img/slide1.jpg') }}')no-repeat center center fixed;
-    background-size: cover;
-}   
-</style>
-
-
-@endsection
 
 @section('content')
 

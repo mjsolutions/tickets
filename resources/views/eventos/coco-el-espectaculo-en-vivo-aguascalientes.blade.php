@@ -84,7 +84,7 @@
 								<div class="col s12 m12 brown lighten-1">Bronce</div>
 								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
 							</header>
-							<div class="price col s12"><span>$160</span> Por mesa</div>
+							<div class="price col s12"><span>$160</span> Por entrada</div>
 							{{-- <div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
 						</div>
 					</div>

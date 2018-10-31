@@ -30,6 +30,7 @@ h5 {
 
 main {
 	background: #f5f8fa;
+	overflow: hidden;
 }
 /* ------------
 Buttons
@@ -81,10 +82,10 @@ Padding
 	padding-top: 15px;
 }
 .pt-30 {
-	padding-top: 30px;
+	padding-top: 30px!important;
 }
 .pt-40 {
-	padding-top: 40px;
+	padding-top: 40px!important;
 }
 .ptb-10 {
 	padding-top: 10px;
@@ -161,6 +162,14 @@ Heights
 
 .minh-400 {
 	min-height: 400px!important;
+}
+
+/* ------------
+Fonts
+------------ */
+
+.text-justify {
+	text-align: justify;
 }
 
 /* ------------
@@ -297,11 +306,6 @@ Backgrounds
 	background: #373B44;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #4286f4 25%, #373B44 100%);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #4286f4 25%, #373B44 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
-
-
 }
 
 /* ------------

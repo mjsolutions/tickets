@@ -7,39 +7,42 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\User;
-use App\Franco31;
-use App\Franco317;
-use App\Bronco;
-use App\Franco01;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Compra as Compra;
 
 class ApiController extends Controller
 {
     public function getFilas($table, $zona) {
-        if($table == "franco01"){
-            return Franco01::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
-        }elseif($table == "franco31"){
-            return Franco31::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
-        }elseif($table == "Bronco"){
-            if($zona == 'General'){
-                $disponibles = 1167 - (Bronco::where('seccion', 'General')->count());
-                return $disponibles;
-            }
 
-            $disponibles = 1216 - (Bronco::where('seccion', 'Tendido Alto')->count());
-            return $disponibles;
+        if($table == 'ismael_serrano_26oct'){
+            return DB::table($table)
+                    ->select('fila')
+                    ->where([
+                        ['seccion', $zona],
+                        ['status', 0]
+                    ])
+                    ->whereNotIn('fila', ['B', 'C'])
+                    ->groupBy('fila')->get();
         }
-        return Franco317::select('fila')->where([['seccion', $zona], ['status', 0]])->groupBy('fila')->get();
+
+        return DB::table($table)
+                ->select('fila')
+                ->where([
+                    ['seccion', $zona],
+                    ['status', 0]
+                ])
+                ->groupBy('fila')->get();
+        
     }
 
     public function getAsientos($table, $fila) {
-        if($table == "franco01"){
-            return Franco01::select('id','asiento')->where([['fila', $fila], ['status', 0]])->get();   
-        }elseif($table == "franco31"){
-            return Franco31::select('id','asiento')->where([['fila', $fila], ['status', 0]])->get();
-        }
-        return Franco317::select('id','asiento')->where([['fila', $fila], ['status', 0]])->get();
+
+            return DB::table($table)
+                    ->select('id','asiento')
+                    ->where([
+                        ['fila', $fila],
+                        ['status', 0]
+                    ])->get();
     }
 
     public function getAsientos2($table, $zona, $fila) {
@@ -67,6 +70,7 @@ class ApiController extends Controller
             $event_photo = $req->data['object']['line_items']['data'][0]['metadata']['event_photo'];
             $event_date = $req->data['object']['line_items']['data'][0]['metadata']['date'];
             $place = $req->data['object']['line_items']['data'][0]['metadata']['place'];
+            $ciudad = $req->data['object']['line_items']['data'][0]['metadata']['ciudad'];
             $hr = $req->data['object']['line_items']['data'][0]['metadata']['hr'];
             $info = $req->data['object']['line_items']['data'][0]['metadata']['info'];
             $asientos = $req->data['object']['line_items']['data'][0]['metadata']['asientos'];
@@ -105,7 +109,8 @@ class ApiController extends Controller
                         'impreso' => 0,
                         'forma_pago' => $payment_type,
                         'folio' => $new_folio,
-                        'transaction_id' => $reference,
+                        'codigo_barras' => substr(md5($new_folio), 0, 10),
+                        'token_vlinea' => $reference,
                         'user' => $user->id,
                         'fecha_venta' => $date
                         ]);
@@ -123,7 +128,7 @@ class ApiController extends Controller
 
                 try{
                     
-                    DB::table($table)->whereIn('id', $ids)->update(['status' => 2, 'user' => $user->id, 'forma_pago' => $payment_type, 'transaction_id' => $reference, 'fecha_venta' => $date]);
+                    DB::table($table)->whereIn('id', $ids)->update(['status' => 2, 'user' => $user->id, 'forma_pago' => $payment_type, 'token_vlinea' => $reference, 'fecha_venta' => $date]);
                     
                     
                     foreach ($ids as $asiento) {
@@ -138,7 +143,7 @@ class ApiController extends Controller
 
                 }catch(\Exception $e) {
                     DB::rollBack();
-                    return response()->json('fail', 500);
+                    return response()->json(['message'=>'fail updating DB'], 500);
                 }
 
                 $descripcion = "Seccion: ".$seccion." | Fila: ".$fila." | Asientos: ".$asientos;
@@ -148,6 +153,7 @@ class ApiController extends Controller
             $buydata['type'] = $event_type;
             $buydata['evento'] = $event;
             $buydata['img'] = $event_photo;
+            $buydata['ciudad'] = $ciudad;
             $buydata['lugar'] = $place;
             $buydata['fecha'] = $event_date;
             $buydata['hr'] = $hr;
@@ -158,10 +164,10 @@ class ApiController extends Controller
             $buydata['email'] = $user->email;
 
             Mail::to($user->email, $user->name)
-            ->cc('arquimides@bolematico.com.mx')
+            // ->cc('arquimides@bolematico.com.mx')
             ->send(new Compra($buydata));
 
-            return response()->json('success', 200); 
+            return response()->json(['message'=>'Success update on DB'], 200); 
                      
         } elseif ($req->type == 'order.expired') {
 
@@ -184,18 +190,18 @@ class ApiController extends Controller
 
                 }catch(\Exception $e) {
                     DB::rollBack();
-                    return response()->json('fail', 500);
+                    return response()->json(['message'=>'fail updating DB on order.expired'], 500);
                 }
 
             }
 
-            return response()->json('success', 200);
+            return response()->json(['message'=>'Success update on DB on order.expired'], 200);
 
         } elseif ($req->type == 'order.created' || $req->type == 'order.pending_payment' || $req->type == 'charge.created' || $req->type == 'charge.paid' || $req->type == 'charge.pending_confirmation' || $req->type == 'charge.expired') {            
-            return response()->json('Webhook received', 200);
+            return response()->json(['message'=>'Webhook Received'], 200);
         }
 
-        return response()->json('fail', 500);  
+        return response()->json(['message'=>'Undetected webhook'], 500);  
 
     }
 
@@ -224,7 +230,7 @@ class ApiController extends Controller
     //                 'impreso' => 0,
     //                 'forma_pago' => "OxxoPAY",
     //                 'folio' => 2,
-    //                 'transaction_id' => "referencia",
+    //                 'token_vlinea' => "referencia",
     //                 'user' => "1",
     //                 'fecha_venta' => $date,
     //                 'detalles' => '',

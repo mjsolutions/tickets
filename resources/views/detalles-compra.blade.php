@@ -30,10 +30,9 @@
 			<div class="col m8">
 				<p class="mt-0"><b>Evento:</b> {{ $req->evento }}</p>
 				<p><b>Fecha:</b> {{ $req->fecha }}</p>
+				<p><b>Ciudad:</b> {{ $req->ciudad }}</p>
 				<p><b>Lugar:</b> {{ $req->lugar }}</p>
 				<p><b>Hora:</b> {{ $req->hora }}</p>
-				<p><b>Zona:</b> {{ $req->zona }}</p>
-				<p><b>Fila:</b> {{ $req->fila }}</p>
 				@if( $req->event_type == "numerado" )
 
 					@php
@@ -47,6 +46,8 @@
 					$num_asientos = sizeof($req->asiento);
 					@endphp
 
+				<p><b>Zona:</b> {{ $req->zona }}</p>
+				<p><b>Fila:</b> {{ $req->fila }}</p>
 				<p><b>Asientos:</b> *{{ implode(" *", $sit) }}</p>
 				@else
 					
@@ -56,7 +57,6 @@
 				
 				<p><b>Asientos:</b> {{ $num_asientos }}</p>
 				@endif
-				<p><b>id:</b> {{ var_dump($id) }}</p>
 				<p><b>Email comprador:</b> {{ Auth::user()->email }}</p>
 				<p><b>Total:</b> <span class="label-precio">$ <b>{{ number_format(($req->precio * $num_asientos) * 1.10, 2, '.', ',') }}</b> MX</span></p>
 			</div>
@@ -103,24 +103,26 @@
 						{!! Form::hidden('evento', $req->evento) !!}
 						{!! Form::hidden('fecha', $req->fecha) !!}
 						{!! Form::hidden('lugar', $req->lugar) !!}
+						{!! Form::hidden('ciudad', $req->ciudad) !!}
 						{!! Form::hidden('hora', $req->hora) !!}
 						{!! Form::hidden('precio', $req->precio) !!}
 						@if( $req->event_type == "numerado" )
 						{!! Form::hidden('asientos', "*".implode(" *", $sit) ) !!}
 						{!! Form::hidden('asientos_id', implode("-", $id) ) !!}
 						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}						
+						{!! Form::hidden('seccion', $req->zona) !!}
+						{!! Form::hidden('fila', $req->fila) !!}
 						@else
 						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}		
 						@endif
 						{!! Form::hidden('event_type', $req->event_type) !!}
 						{!! Form::hidden('db_table', $req->db_table) !!}
 						{!! Form::hidden('info', $req->info) !!}
-						{!! Form::hidden('seccion', $req->zona) !!}
-						{!! Form::hidden('fila', $req->fila) !!}
 						{!! Form::hidden('customer_name', Auth::user()->name.' '.Auth::user()->last_name.' '.Auth::user()->second_lname) !!}
 						{!! Form::hidden('customer_email', Auth::user()->email) !!}
 						{!! Form::hidden('customer_phone', Auth::user()->tel) !!}
 						{!! Form::hidden('event_photo', asset($req->img) ) !!}
+						{!! Form::hidden('url', $req->url) !!}
 						
 					</div>
 
@@ -139,7 +141,7 @@
 						
 				{!! Form::close() !!}
 					<div class="input-field col s12 center-align mt-0">
-							<a href="{{ URL::previous() }}" class="waves-effect waves-teal btn-flat">Cancelar compra</a>
+							<a href="{{ $req->url }}" class="waves-effect waves-teal btn-flat">Cancelar compra</a>
 						
 					</div>
 

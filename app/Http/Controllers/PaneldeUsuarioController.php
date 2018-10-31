@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Franco31;
-use App\Franco317;
-use App\Franco01;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,57 +15,103 @@ class PaneldeUsuarioController extends Controller
 
     public function eventos() {
 
-        $franco31 = Franco31::where([['user', Auth::id()], ['status', 2]])->get();
-    	$franco317 = Franco317::where([['user', Auth::id()], ['status', 2]])->get();
-    	$franco01 = Franco01::where([['user', Auth::id()], ['status', 2]])->get();
+        $mike = DB::table('mike_salazar_19oct')->where('user', Auth::id())->whereIn('status', [2, 3])->get();
+        $ismael = DB::table('ismael_serrano_26oct')->where('user', Auth::id())->whereIn('status', [2, 3])->get();
+        $raquel['ags'] = DB::table('raquel_ags_23nov')->where([['user', Auth::id()],['status', 2]])->get();
+        $raquel['cordoba'] = DB::table('raquel_cordoba_03nov')->where([['user', Auth::id()],['status', 2]])->get();
+        $raquel['morelia'] = DB::table('raquel_morelia_24nov')->where([['user', Auth::id()],['status', 2]])->get();
+        $raquel['orizaba'] = DB::table('raquel_orizaba_01nov')->where([['user', Auth::id()],['status', 2]])->get();
+        $raquel['pachuca'] = DB::table('raquel_pachuca_09nov')->where([['user', Auth::id()],['status', 2]])->get();
+        $raquel['queretaro'] = DB::table('raquel_queretaro_07dic')->where([['user', Auth::id()],['status', 2]])->get();
+        $raquel['slp'] = DB::table('raquel_slp_22nov')->where([['user', Auth::id()],['status', 2]])->get();
+        $raquel['torreon'] = DB::table('raquel_torreon_30nov')->where([['user', Auth::id()],['status', 2]])->get();
+    	$raquel['veracruz'] = DB::table('raquel_veracruz_02nov')->where([['user', Auth::id()],['status', 2]])->get();
+    	
 
-    	return view('user.eventos', compact('franco31', 'franco01', 'franco317'));
+    	return view('user.eventos', compact('mike', 'ismael', 'raquel' ));
     }
 
     public function printTicket( $id ){
 
-    	if( $id == 1 ){
-    		$db = Franco01::where([['user', Auth::id()], ['status', 2]])->get();
-            $d['fecha'] = "01 / Agosto / 2018";
-            $d['hr'] = "21:30 hrs";
-    		$d['img'] = "img/franco-morelia.jpg";
+        // $event_type = 'numerado';
 
-    		$impreso = $db->first()->impreso + 1;
+        $event_type = 'general';
 
-    		Franco01::where([['user', Auth::id()], ['status', 2]])->update(['impreso' => $impreso]);
+        $d['evento'] = "RAQUEL SOFIA GIRA 2:00 am";
+        $d['hr'] = "21:00 hrs";
+        $d['precio'] = "110.00";
+        $d['img'] = "img/$id.jpg";
+    	$d['cliente'] = Auth::user()->name.' '.Auth::user()->last_name.' '.Auth::user()->second_lname;
 
-    	}else if( $id == 31 ){
-    		$db = Franco31::where([['user', Auth::id()], ['status', 2]])->get();
-    		$d['fecha'] = "31 / Agosto / 2018";
-            $d['hr'] = "21:30 hrs";
-            $d['img'] = "img/franco-morelia.jpg";
+        $ciudad = substr($id, strpos($id, '-') + 1 );
 
-    		$impreso = $db->first()->impreso + 1;
 
-    		Franco31::where([['user', Auth::id()], ['status', 2]])->update(['impreso' => $impreso]);
-    	}else{
-            $db = Franco317::where([['user', Auth::id()], ['status', 2]])->get();
-            $d['fecha'] = "31 / Agosto / 2018";
-            $d['hr'] = "19:00 hrs";
-            $d['img'] = "img/franco-morelia-317.jpg";
-
-            $impreso = $db->first()->impreso + 1;
-
-            Franco317::where([['user', Auth::id()], ['status', 2]])->update(['impreso' => $impreso]);
+        switch( $ciudad ) {
+            case 'orizaba';
+                $d['fecha'] = '01 de noviembre 2018';
+                $d['ciudad'] = 'Orizaba Veracruz';
+                $d['lugar'] = 'Mercadito Orizaba';
+                $table = 'raquel_'.$ciudad.'_01nov';break;
+            case 'veracruz';
+                $d['fecha'] = '02 de noviembre 2018';
+                $d['ciudad'] = 'Veracruz veracruz';
+                $d['lugar'] = 'Aguamala Bar';
+                $table = 'raquel_'.$ciudad.'_02nov';break;
+            case 'cordoba';
+                $d['fecha'] = '03 de noviembre 2018';
+                $d['ciudad'] = 'Córdoba veracruz';
+                $d['lugar'] = 'Sabina Live';
+                $table = 'raquel_'.$ciudad.'_03nov';break;
+            case 'pachuca';
+                $d['fecha'] = '09 de noviembre 2018';
+                $d['ciudad'] = 'Pachuca Hidalgo';
+                $d['lugar'] = 'Alliroos Cantabar';
+                $table = 'raquel_'.$ciudad.'_09nov';break;
+            case 'slp';
+                $d['fecha'] = '22 de noviembre 2018';
+                $d['ciudad'] = 'San Luis Potosí';
+                $d['lugar'] = 'Restaurante y Bar Casa Vieja';
+                $table = 'raquel_'.$ciudad.'_22nov';break;
+            case 'ags';
+                $d['fecha'] = '23 de noviembre 2018';
+                $d['ciudad'] = 'Aguascalientes';
+                $d['lugar'] = 'La Tercera';
+                $table = 'raquel_'.$ciudad.'_23nov';break;
+            case 'morelia';
+                $d['fecha'] = '24 de noviembre 2018';
+                $d['ciudad'] = 'Morelia Michoacan';
+                $d['lugar'] = 'Café del Olmo';
+                $table = 'raquel_'.$ciudad.'_24nov';break;
+            case 'torreon';
+                $d['fecha'] = '30 de noviembre 2018';
+                $d['ciudad'] = 'Torreon Coahuila';
+                $d['lugar'] = 'La Bicicleta';
+                $d['precio'] = '165';
+                $table = 'raquel_'.$ciudad.'_30nov';break;
+            case 'queretaro';
+                $d['fecha'] = '07 de diciembre 2018';
+                $d['ciudad'] = 'Querétaro';
+                $d['lugar'] = 'Portón de Santiago';
+                $table = 'raquel_'.$ciudad.'_07dic';break;
         }
 
-    	$d['evento'] = "FRANCO ESCAMILLA";
-    	$d['lugar'] = "TEATRO MORELOS";
-    	$d['ciudad'] = "MORELIA";
-    	$d['cliente'] = Auth::user()->name.' '.Auth::user()->last_name.' '.Auth::user()->second_lname;
-    	$precio['Plata'] = "500.00";
-    	$precio['Oro'] = "600.00";
-    	$precio['Diamante'] = "750.00";
-
+    
     	$data = (object) $d;
 
-    	$pdf = \PDF::loadView('user.boleto', compact('data', 'db', 'precio'));
-    	return $pdf->download('Ticket_bolematico_Franco_Morelia.pdf');
+        $db = DB::table($table)->where([['user', Auth::id()], ['status', 2]])->get();
+        DB::table($table)->where([['user', Auth::id()], ['status', 2]])->increment('impreso');
+
+        if( $event_type == 'numerado' ) {
+
+            $pdf = \PDF::loadView('user.boleto', compact('data', 'db', 'precio'));
+            
+        }else{
+            
+            $pdf = \PDF::loadView('user.boleto-general', compact('data', 'db'));
+        }       
+
+
+    	return $pdf->download('Ticket_'.$table.'.pdf');
     }
 
     // public function updateDb() {

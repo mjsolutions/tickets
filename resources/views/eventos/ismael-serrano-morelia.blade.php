@@ -1,28 +1,28 @@
 @extends('layouts.main')
 
-@section('title', 'Mike Salazar Morelia')
+@section('title', 'Ismael Serrano Morelia')
 
-@section('description', 'Mike Salazar en Morelia, 19 de octubre, 9:00 pm boletos en RS Viajes centro, RS Viajes Periodismo, bolematico.mx y taquillas del planetario de Morelia')
+@section('description', 'Ismael Serrano en Morelia, 26 de octubre, 20:30 hrs boletos en RS Viajes centro, RS Viajes Periodismo, bolematico.mx y taquillas del planetario de Morelia')
 
 @section('styles')
 
 <!-- Metas Facebook -->
-<meta property="og:url"  content="http://bolematico.mx/eventos/mike-salazar-morelia" />
-<meta property="og:title" content="Mike Salazar en Morelia" />
-<meta property="og:description" content="Regresa Mike Salazar con su gira MKS X a Morelia, 19 de octubre, 21 hrs" />
-<meta property="og:image" content="http://bolematico.mx/img/mike-2018.jpg" />
+<meta property="og:url"  content="http://bolematico.mx/eventos/ismael-serrano-morelia" />
+<meta property="og:title" content="Ismael Serrano en Morelia" />
+<meta property="og:description" content="Regresa Ismael Serrano con su gira MKS X a Morelia, 26 de octubre, 20:30 hrs" />
+<meta property="og:image" content="http://bolematico.mx/img/ismael-serrano.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
 
 @section('content')
 
-<div class="image-header bg-morelos overlay overlay-5">
+<div class="image-header bg-3 overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Mike Salazar</h4>
+		<h4>Ismael Serrano</h4>
 		<div class="divider"></div>
-		<p><i>Morelia - Teatro Morelos 19 de octubre, 21 hrs.</i></p>
+		<p><i>Morelia - Teatro Stella Inda 26 de octubre, 20:30 hrs.</i></p>
 	</div>
 	{{-- <a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a> --}}
 </div>
@@ -43,7 +43,7 @@
 			</div>
 
 			<div class="col s8 offset-s2 m4 offset-m1 mb-30">
-				<img src="{{ asset('img/mike-2018.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/ismael-serrano-original.jpg') }}" alt="" class="responsive-img materialboxed">
 			</div>
 			
 			<div class="col s12 m5 offset-m1">				
@@ -56,7 +56,7 @@
 								<div class="col s12 m8 teal accent-4">Zona diamante</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$450</span> Por entrada</div>
+							<div class="price col s12"><span>$680</span> Por entrada</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
@@ -67,7 +67,7 @@
 								<div class="col s12 m8">Zona oro</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$350</span> Por entrada</div>
+							<div class="price col s12"><span>$530</span> Por entrada</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
@@ -78,7 +78,7 @@
 								<div class="col s12 m8 grey lighten-1">Zona plata</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$250</span> Por entrada</div>
+							<div class="price col s12"><span>$330</span> Por entrada</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
@@ -98,16 +98,18 @@
 				<h4 class="mt-0 raleway quote">BIOGRAFÍA</h4>
 			</div>
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/mike-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/ismael-bio.jpg') }}" class="responsive-img">
 			</div>
-			<div class="col s12 m7">
-				<p>Miguel Angel Salazar, conocido como Mike Salazar "El Caballero de la Comedia" nació en Santiago, Nuevo León, México el 30 de agosto de 1989.</p>
-				<p>Mike Salazar ha sido reconocido en México por su talento en comedia y acción; Gracias a su entusiasmo y gran talento, tiene la oportunidad de tener apariciones especiales en programas de televisión como Sabadazo, Guerra de Chistes, XE Marilé y otros ... Todos los programas de TV de Televisa México.</p>
-				<p>Debido a su enorme talento como actor, comediante y cantante; Mike Salazar está entre el pequeño porcentaje que ha subido a la cima entre los comediantes hispanos.</p>
-				<p>Mike Salazar ha viajado con éxito por todo México con su programa de comedia; Que realiza una rutina de buen humor, mimetismo y canciones. Su show se ha presentado en varios lugares de México, como en bares, ferias, teatros, eventos masivos y privados.</p>
+			<div class="col s12 m8 text-justify">
+				<p>Ismael Serrano Morón nace en Madrid el 9 de marzo de 1974. Crece en Vallekas (Madrid). Estudia cuatro años Ciencias Física en la Universidad Complutense de Madrid, así como solfeo y piano.</p>
+				<p>Pero el movimiento de la canción de autor no es sólo musical, sino que está estrechamente ligado a los movimientos solidarios, de modo que Ismael Serrano se compromete para siempre y desde siempre con causas como las de las Madres de la Plaza de Mayo y los zapatistas de México, los actos contra el racismo y la xenofobia y cualquier acto social que lo merezca. Toda esta temática social aparece reflejada en canciones como “México insurgente” (de su primer álbum), “A las madres de mayo” o “Vine del norte”, pertenecientes ambas a su segundo disco “La memoria de los peces” (1998). Con este álbum no sólo mantiene su éxito, sino que lo aumenta volviendo a ser disco de platino en España, de oro en Argentina y se edita también en México y Uruguay.</p>
 			</div>
-			<div class="col m5 hide-on-small-only">
-				<img src="{{ asset('img/mike-bio.jpg') }}" class="responsive-img">
+			<div class="col m4 hide-on-small-only">
+				<img src="{{ asset('img/ismael-bio.jpg') }}" class="responsive-img">
+			</div>
+			<div class="col s12 text-justify">
+				<p>Con más de 14 años de trayectoria, Ismael Serrano no sólo ha conseguido establecerse con pie muy firme en el mundo de la música sino que, además, ha ido cumpliendo el sueño de cantar junto a sus ídolos de juventud: Silvio Rodríguez (con quien toca ante más de 100.000 personas en el Estadio Nacional de Santiago de Chile), los hermanos Parra, Luis Eduardo Aute (quien ejerce de padrino musical en su primer concierto en el Palacio de Congresos de Madrid), Paco Ibáñez, Luis Pastor, Pablo Guerrero, León Gieco y Mercedes Sosa (con quien grabó “Zamba del Emigrante”).</p>
+				<p>Mas información: <small><a href="http://www.ismaelserrano.com/biografia-2/" target="_blank">http://www.ismaelserrano.com/biografia-2/</a></small></p>
 			</div>
 			
 		</div>
@@ -128,10 +130,11 @@
 							<h5><b>RS Viajes Centro</b></h5>
 							<ul class="qcAddress">
 								<li><div class="divider"></div></li>
-								<li><i class="fa fa-map-marker"></i> <strong>DIRECCIÓN</strong>: <p>20 de Noviembre 917, Centro Histórico, 58000 Morelia, Mich.</p></li>
-								<li><i class="fa fa-phone"></i> <strong>TELÉFONO</strong>: <p> 01 443 312 4639</p></li>
-								<li><i class="fa fa-calendar"></i> <strong>HORARIO</strong>: <p>10:00 a 19:00 hrs. Lunes a Viernes y 10:30 a 14:00 hrs. los Sabados.</p></li>
-								<li><i class="fa fa-globe"></i> <strong>Website</strong>: <p><a title="website" href="https://www.facebook.com/RsViajesCentro/" target="_blank">https://www.facebook.com/RsViajesCentro/</a></p></li>
+								<li><i class="fa fa-map-marker"></i> <strong>DIRECCIÓN</strong>: <br><p>20 de Noviembre 917, Centro Histórico, 58000 Morelia, Mich.</p></li>
+								<li></li>
+								<li><i class="fa fa-phone"></i> <strong>TELÉFONO</strong>: <br><p> 01 443 312 4639</p></li>
+								<li><i class="fa fa-calendar"></i> <strong>HORARIO</strong>: <br><p>10:00 a 19:00 hrs. Lunes a Viernes y 10:30 a 14:00 hrs. los Sabados.</p></li>
+								<li><i class="fa fa-globe"></i> <strong>Website</strong>: <br><p><a title="website" href="https://www.facebook.com/RsViajesCentro/" target="_blank">https://www.facebook.com/RsViajesCentro/</a></p></li>
 							</ul>
 						</div>
 					</div>
@@ -141,23 +144,22 @@
 				<div class="col s12 m6">									
 					<!-- ## VENUE MAP ## -->
 					<div class="white z-depth-2">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.6546912563167!2d-101.18560468584354!3d19.68473203767239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0de79c733455%3A0x2bb6c9a37c54bca5!2sPlanetario+de+Morelia!5e0!3m2!1ses!2smx!4v1499195093931" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1878.3461125835147!2d-101.2256908688827!3d19.68313181288793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0c23bc1216f1%3A0xc16b3ac2516592fb!2sAv.+Periodismo+Jos%C3%A9+Tocaven+Lav%C3%ADn+1927%2C+Jardines+de+Torremolinos%2C+58197+Morelia%2C+Mich.!5e0!3m2!1ses!2smx!4v1533228065053" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 					
 					<!-- ## ADDRESS LIST ## -->
 						<div class=" p-30">
-							<h5><b>Taquillas del planetario</b></h5>
+							<h5><b>RS Viajes Periodismo</b></h5>
 							<ul class="qcAddress">
 								<li><div class="divider"></div></li>
-								<li><i class="fa fa-map-marker"></i> <strong>DIRECCIÓN</strong>: <p>Av. Ventura Puente s/n, Félix Ireta, 58070 Morelia, Mich.</p></li>
-								<li><i class="fa fa-phone"></i> <strong>TELÉFONO</strong>: <p> 443 232 4400 ext. 160</p></li>
-								<li><i class="fa fa-calendar"></i> <strong>HORARIO</strong>: <p>11:00 a 19:00 hrs. Lunes a Sabado. </p></li>
-								<li><i class="fa fa-globe"></i> <strong>Website</strong>: <p><a title="website" href="http://ceconexpo.com" target="_blank"></a>http://ceconexpo.com</p></li>
+								<li><i class="fa fa-map-marker"></i> <strong>DIRECCIÓN</strong>: <br><p>Av. Periodismo 1927-1, Fracc Jardines de Torremolinos Ote (Frente a la Farmacia Guadalajara).</p></li>
+								<li><i class="fa fa-phone"></i> <strong>TELÉFONO</strong>: <br><p> N/A</p></li>
+								<li><i class="fa fa-calendar"></i> <strong>HORARIO</strong>: <br><p>10:00 a 19:00 hrs. Lunes a Viernes y 10:30 a 14:00 hrs. los Sabados.</p></li>
+								<li><i class="fa fa-globe"></i> <strong>Website</strong>:<br> <p><a title="website" href="" target="_blank"></a>N/A</p></li>
 							</ul>
 						</div>
 					</div>
 
 				</div>
-
 				
 			</div>
 	
@@ -166,10 +168,10 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/WTxmBr-U_Ag/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/9wWUtZa3MbA/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/WTxmBr-U_Ag"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Mike Salazar - Chiste de Jarochos</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/9wWUtZa3MbA"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Ismael Serrano - Y Sin Embargo (20 Años - Hoy Es Siempre)</i></p>
 	</div>
 </section>
 
@@ -182,7 +184,7 @@
 
 		{{-- <div class="row">
 			<div class="col m6 mt-30">
-				<img src="{{ asset('img/teatro-morelos-fondo.svg') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/teatro-morelos-fondo.svg')}}">
+				<img src="{{ asset('img/stella_inda.jpg') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/stella_inda.jpg')}}">
 				<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
 			</div>
 			<div class="col m4 offset-m1 mt-30">
@@ -203,16 +205,17 @@
 								{!! Form::label('asiento', 'Asiento') !!}
 							</div>
 							
-							{!! Form::hidden('img', 'img/mike-2018.jpg') !!}
-							{!! Form::hidden('evento', 'Mike Salazar en Morelia') !!}
-							{!! Form::hidden('fecha', '19 de octubre 2018') !!}
-							{!! Form::hidden('lugar', 'Teatro Morelos') !!}
-							{!! Form::hidden('hora', '09:00 pm') !!}
+							{!! Form::hidden('img', 'img/ismael-serrano-original.jpg') !!}
+							{!! Form::hidden('evento', 'Ismael Serrano en Morelia') !!}
+							{!! Form::hidden('ciudad', 'Morelia Michoacan') !!}
+							{!! Form::hidden('fecha', '26 de octubre 2018') !!}
+							{!! Form::hidden('lugar', 'Teatro Stella Inda') !!}
+							{!! Form::hidden('hora', '08:30 pm') !!}
 							{!! Form::hidden('event_type', 'numerado') !!}
-							{!! Form::hidden('db_table', 'mike_salazar_19oct') !!}
+							{!! Form::hidden('db_table', 'ismael_serrano_26oct') !!}
 							{!! Form::hidden('info', '--') !!}
 							{!! Form::hidden('precio', '', ['id' => 'precio']) !!}
-							{!! Form::hidden('url', url('eventos/mike-salazar-morelia')) !!}
+							{!! Form::hidden('url', url('eventos/ismael-serrano-morelia')) !!}
 
 							<div class="input-field col s12">
 								<p><em>* Puedes seleccionar un máximo de 8 lugares</em></p>
@@ -253,9 +256,6 @@
 
 	@endif --}}
 	<div class="row">
-		<h5 class="mt-50 center-align raleway">Boletos disponibles en Rs Viajes Centro y taquillas del planetario.</h5>
-	</div>
-	<div class="row">
 		<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
 		<div class="row center-align">
 			<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
@@ -269,11 +269,13 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Teatro Morelos</b></p>
-		<p><i class="material-icons">location_on</i>Av. Ventura Puente s/n, Félix Ireta, 58070 Morelia, Mich.</p>
-		<p><i class="material-icons">call</i> 01 443 232 4400</p>
-		<p><i class="material-icons">email</i> No disponible</p>
-		<p><i class="material-icons">language</i> <a title="website" href="http://ceconexpo.com/" target="_blank">http://ceconexpo.com</a></p>
+		<p><b>Teatro Stella Inda</b></p>
+		<ul class="fa-ul">
+			<li><i class="fa-li fa fa-map-marker"></i> Av Francisco I. Madero Pte 1200, Centro Histórico, 58000 Morelia, Mich.</li>
+			<li><i class="fa-li fa fa-phone"></i> 01 443 312 2880</li>
+			<li><i class="fa-li fa fa-globe"></i> N/A</li>
+		</ul>
+		
 	</div>
 </section>
 
@@ -289,7 +291,7 @@
 @section('scripts')
 	<script type="text/javascript" src="{{asset('js/jquery.elevatezoom.js')}}"></script>
 	<script>
-		var tabla_evento = "mike_salazar_19oct";
+		var tabla_evento = "ismael_serrano_26oct";
 
 		$("#zoom_01").elevateZoom({
 			scrollZoom : true,
@@ -307,13 +309,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.6824276, lng: -101.1830612};
+		        var uluru = {lat: 19.7029521, lng: -101.2024255};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 17,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.6824276, lng: -101.1810612}
+		          center: {lat: 19.7032521, lng: -101.2018855}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,
@@ -326,11 +328,11 @@
 			var zona = $(this).val();
 			
 			if( zona == 'Diamante' ){
-				$("#precio").val('450');
+				$("#precio").val('680');
 			}else if( zona == 'Oro' ){
-				$("#precio").val('350');
+				$("#precio").val('530');
 			}else{
-				$("#precio").val('250');
+				$("#precio").val('330');
 			}
 
 			$.ajax({
@@ -371,7 +373,6 @@
 				}
 			});
 		});
-
 	</script>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>

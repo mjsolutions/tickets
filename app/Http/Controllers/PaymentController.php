@@ -115,6 +115,7 @@ class PaymentController extends Controller
 			'fila' => $req->fila,
 			'date' => $req->fecha,
 			'place' => $req->lugar,
+			'ciudad' => $req->ciudad,
 			'hr' => $req->hora
 		);
 
@@ -127,7 +128,7 @@ class PaymentController extends Controller
 				//Corroborar que siguen disponibles los boletos
 				
 				if( DB::table($req->db_table)->whereIn('id', $id)->where('status', '<>', 0)->exists() ){
-					return redirect('eventos/franco-morelia')->withErrors('Lo sentimos los boletos ya no estan disponibles');
+					return redirect($req->url)->withErrors('Lo sentimos los boletos ya no estan disponibles');
 				}
 
 				//Bloqueamos los boletos
@@ -138,7 +139,7 @@ class PaymentController extends Controller
 
 			}catch(\Exception $e) {
 				DB::rollBack();
-				return redirect('eventos/franco-morelia')->withErrors('A ocurrido un error db');
+				return redirect($req->url)->withErrors('A ocurrido un error db');
 			}
 		}	
 

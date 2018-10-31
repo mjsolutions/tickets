@@ -66,6 +66,10 @@ Route::group(['prefix'=>'eventos'],function(){
 		return view('eventos.compra');
 	})->name('eventos.compra');
 
+	Route::get('selecciona-lugares/{ciudad}', function($ciudad){
+		return view('eventos.selecciona-lugares')->with(['ciudad' => $ciudad]);
+	})->name('eventos.selecciona-lugares');
+
 });
 
 /**

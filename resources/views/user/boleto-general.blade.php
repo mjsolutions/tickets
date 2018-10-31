@@ -45,29 +45,11 @@
 					</tr>
 					<tr>
 						<th style="width: 29%;">FOLIO:</th>
-						<td>{{ $row->folio }}</td>
+						<td>{{ str_pad($row->folio, 6, '0', STR_PAD_LEFT) }}</td>
 					</tr>
-				</tbody>
-			</table>
-			<table>
-				<thead>
 					<tr>
-						<th style="width: 29%;">SECCION:</th>
-						<th style="width: 30%;">FILA:</th>
-						<th >ASIENTO:</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td style="width: 29%;">
-							{{ $row->seccion }}
-						</td>
-						<td style="width: 30%;">
-							{{ $row->fila }}
-						</td>
-						<td >
-							{{ $row->asiento }}
-						</td>
+						<th style="width: 29%;">BOLETO:</th>
+						<td>General</td>
 					</tr>
 				</tbody>
 			</table>
@@ -76,7 +58,7 @@
 					
 					<tr>
 						<th style="width: 29%;">PRECIO:</th>
-						<td class="precio"><span>${{ $precio[$row->seccion] }}</span> MXN.</td>
+						<td class="precio"><span>${{ $data->precio }}</span> MXN.</td>
 					</tr>
 				</tbody>
 			</table>
@@ -84,16 +66,6 @@
 		<div class="barcode-container">
 			<img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($row->codigo_barras, "C39") }}" alt="barcode" class="barcode"  />
 			<p>{{ $row->codigo_barras }}</p>
-		</div>
-
-		<div class="logo-bg logo-bg-1">
-			<img src="img/logo-azul.png">
-		</div>
-		<div class="logo-bg logo-bg-2">
-			<img src="img/logo-azul.png">
-		</div>
-		<div class="logo-bg logo-bg-3">
-			<img src="img/logo-azul.png">
 		</div>
 
 		<div class="circle-bottom"></div>
@@ -116,19 +88,10 @@
 			<br>
 		</div>
 		
-		<div class="logo-bg logo-bg-4">
-			<img src="img/logo-azul.png">
-		</div>
 		<div class="logo-bg logo-bg-5">
 			<img src="img/logo-azul.png">
 		</div>
 		<div class="logo-bg logo-bg-6">
-			<img src="img/logo-azul.png">
-		</div>
-		<div class="logo-bg logo-bg-7">
-			<img src="img/logo-azul.png">
-		</div>
-		<div class="logo-bg logo-bg-8">
 			<img src="img/logo-azul.png">
 		</div>
 
