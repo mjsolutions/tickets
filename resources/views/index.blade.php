@@ -181,6 +181,26 @@
 				<div class="col m6 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
+							<img src="{{asset('img/gon-pachuca.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">GON CURIEL</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Pachuca</b></p>
+								<p>Barezzito</p>
+								<p>22 de noviembre</p>
+								<p class="event-date">22/11/2018</p>
+
+							</div>
+							<a href="{{ url('/eventos/gon-curiel-pachuca') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
 							<img src="{{asset('img/martin-valverde.jpg')}}" class="materialboxed responsive-img">
 						</div>
 						<div class="card-stacked">

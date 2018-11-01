@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Gon Curiel Xalapa')
+@section('title', 'Gon Curiel Pachuca')
 
-@section('description', 'Gon Curiel en Xalapa, 29 de septiembre, 19:00 hrs boletos en Barezzito')
+@section('description', 'Gon Curiel en Pachuca, 22 de noviembre 2018, 20:00 hrs preventa $250, evento $300')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -15,7 +15,7 @@
 	<div class="row white-text">
 		<h4>Gon Curiel</h4>
 		<div class="divider"></div>
-		<p><i>Xalapa Barezzito</i></p>
+		<p><i>Pachuca - Barezzito</i></p>
 	</div>
 	{{-- <a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a> --}}
 </div>
@@ -31,19 +31,19 @@
 		</div>
 		<div id="descripcion" class="col s12 tab-content">
 			<div class="row">
-				<h4 class="mt-0 raleway quote">PRECIOS</h4>
+				{{-- <h4 class="mt-0 raleway quote">PRECIOS</h4> --}}
 				{{-- <div class="divider"></div> --}}
 			</div>
 
-			<div class="col s8 offset-s2 m3 mb-30 card-flyer">
-				<img src="{{ asset('img/gon-xalapa.jpg') }}" alt="" class="responsive-img">
+			<div class="col s8 offset-s2 mb-30 card-flyer">
+				<img src="{{ asset('img/gon-banner-pachuca.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
-			<div class="col s12 m8 offset-m1">				
+			<div class="col s12">				
 
 				<div class="row mt-30">
 
-					<div class="qcPricing col s12 center-align mb-10">
+					<div class="qcPricing col s6 center-align mb-10">
 						<div class="box col s12">
 							<header>
 								<div class="col s12 teal accent-4">Preventa</div>
@@ -52,10 +52,10 @@
 						</div>
 					</div>
 					
-					<div class="qcPricing col s12 center-align mb-10">
+					<div class="qcPricing col s6 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 purple lighten-1">Taquilla</div>
+								<div class="col s12 purple lighten-1">Evento</div>
 							</header>
 							<div class="price col s12"><span>$300</span> Por entrada</div>
 						</div>
@@ -95,27 +95,24 @@
 			<div class="row">
 				<h4 class="mt-0 raleway quote">LUGARES DE VENTA</h4>
 			</div>
-			<div class="row">
-				<div class="col s12">
-					<h5>Barezzito Xalapa</h5>
-				</div>
-				<div class="col s12 m6">									
-					<!-- ## VENUE MAP ## -->
-					<div class="qcEventlayout">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120335.06496407432!2d-96.95329884984444!3d19.52139181697213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85db323202b47c3d%3A0x48088824fe42515f!2sBarezzito!5e0!3m2!1ses!2smx!4v1516826325721" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
-					</div>
-
-				</div>
-
+			<div class="col s12">									
+				<!-- ## VENUE MAP ## -->
+				<div class="white z-depth-2">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14987.834113437439!2d-98.762058!3d20.0940204!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd2752b3301adc3ee!2sPicanter%C3%ADa!5e0!3m2!1ses!2smx!4v1541008096347" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+				
 				<!-- ## ADDRESS LIST ## -->
-				<div class="col s12 m6">
-					<ul class="qcAddress">
-						<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Paseo de las Palmas 1, Local 32, Animas, Vista Hermosa, 91130 Xalapa Enríquez, Ver.</p></li>
-						<li><i class="medium material-icons">call</i><p><strong>TELÉFONO</strong>: 228 812 9099</p></li>
-						<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-						<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/barezzitoxalapa/" target="_blank">https://www.facebook.com/barezzitoxalapa/</a></p></li>
-					</ul>
+					<div class=" p-30">
+						<h5><b>Picanterìa</b></h5>
+						<ul class="qcAddress">
+							<li><div class="divider"></div></li>
+							<li><i class="fa fa-map-marker"></i> <strong>DIRECCIÓN</strong>: <p>Blvrd Nuevo Hidalgo 203-B, Puerta de Hierro, 42080 Pachuca de Soto, Hgo.</p></li>
+							<li><i class="fa fa-phone"></i> <strong>TELÉFONO</strong>: <p> 01 771 710 3766</p></li>
+							<li><i class="fa fa-calendar"></i> <strong>HORARIO</strong>: <p>10:00 a 22:00 hrs.</p></li>
+							<li><i class="fa fa-globe"></i> <strong>Website</strong>: <p><a title="website" href="http://picanteria.mx/" target="_blank">http://picanteria.mx/</a></p></li>
+						</ul>
+					</div>
 				</div>
+
 			</div>			
 
 		</div>
@@ -175,7 +172,7 @@
 	</div> --}}
 	<div class="row">
 		<div class="col m4 offset-m4">
-			<h5 class="mt-50 center-align raleway">Venta de boletos en Barezzito Xalapa</h5>
+			<h5 class="mt-50 center-align raleway">Preventa de boletos en Picanterìa Pachuca</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -195,10 +192,10 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Barezzito Xalapa</b></p>
-		<p><i class="material-icons">location_on</i>Paseo de las Palmas 1, Local 32, Animas, Vista Hermosa, 91130 Xalapa Enríquez, Ver.</p>
-		<p><i class="material-icons">call</i> 228 812 9099</p>
-		<p><i class="material-icons">language</i>https://www.facebook.com/barezzitoxalapa/</p>
+		<p><b>Barezzito Pachuca</b></p>
+		<p><i class="material-icons">location_on</i>Blvrd Nuevo Hidalgo 203a, Puerta de Hierro, 42083 Pachuca de Soto, Hgo.</p>
+		<p><i class="material-icons">call</i> 01 55 4163 2558</p>
+		<p><i class="material-icons">language</i>https://www.facebook.com/BarezzitoPachuca/</p>
 	</div>
 </section>
 
@@ -225,13 +222,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.5215, lng: -96.882785};
+		        var uluru = {lat: 20.0938491, lng: -98.764407};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 16,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.5215, lng: -96.882785}
+		          center: {lat: 20.0938491, lng: -98.764407}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,
