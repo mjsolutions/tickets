@@ -98,26 +98,6 @@
 
 			<div class="row mb-30 grid-eventos">
 
-
-				<div class="col m6 evento">
-					<div class="card horizontal ">
-						<div class="card-image">
-							<img src="{{asset('img/raquel-sofia-gira.jpg')}}" class="materialboxed responsive-img">
-						</div>
-						<div class="card-stacked">
-							<div class="card-content">
-								<h5><strong class="event-name">RAQUEL SOFIA</strong></h5>
-								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Gira 2:00am</b></p>
-								<p>Varias ciudades</p>
-								<p class="event-date">19/10/2018</p>
-
-							</div>
-							<a href="{{ url('/eventos/raquel-sofia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-						</div>
-					</div>
-				</div>
-
 				<div class="col m6 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
@@ -161,6 +141,26 @@
 				<div class="col m6 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
+							<img src="{{asset('img/raquel-sofia-gira.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">RAQUEL SOFIA</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Gira 2:00am</b></p>
+								<p>Varias ciudades</p>
+								<p>18 de noviembre</p>
+								<p class="event-date">18/11/2018</p>
+
+							</div>
+							<a href="{{ url('/eventos/raquel-sofia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
 							<img src="{{asset('img/fernando-morelia-2018.jpg')}}" class="materialboxed responsive-img">
 						</div>
 						<div class="card-stacked">
@@ -174,6 +174,26 @@
 
 							</div>
 							<a href="{{ url('/eventos/fernando-delgadillo-morelia-2018') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/vampire-circus.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">VAMPIRE CIRCUS</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Aguascalientes</b></p>
+								<p>Auditorio Morelos</p>
+								<p>23 de noviembre</p>
+								<p class="event-date">23/11/2018</p>
+
+							</div>
+							<a href="{{ url('/eventos/vampire-circus-aguascalientes') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
 				</div>

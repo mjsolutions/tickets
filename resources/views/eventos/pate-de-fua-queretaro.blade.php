@@ -152,7 +152,7 @@
 			</div>
 		
 			{!! Form::hidden('img', 'img/pate-de-fua-queretaro.jpg') !!}
-			{!! Form::hidden('evento', 'Paté de Fua Aguscalientes') !!}
+			{!! Form::hidden('evento', 'Paté de Fua Querétaro') !!}
 			{!! Form::hidden('fecha', '15 de noviembre 2018') !!}
 			{!! Form::hidden('lugar', 'La Glotonería') !!}
 			{!! Form::hidden('ciudad', 'Querétaro') !!}
