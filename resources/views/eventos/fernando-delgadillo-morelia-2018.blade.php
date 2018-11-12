@@ -227,7 +227,7 @@
 							</div>
 							
 							{!! Form::hidden('img', 'img/fernando-morelia-2018.jpg') !!}
-							{!! Form::hidden('evento', 'Fernando Delgadillo en Morelia') !!}
+							{!! Form::hidden('evento', 'Fernando Delgadillo') !!}
 							{!! Form::hidden('fecha', '22 de noviembre 2018') !!}
 							{!! Form::hidden('lugar', 'Teatro Morelos') !!}
 							{!! Form::hidden('ciudad', 'Morelia') !!}
@@ -235,6 +235,7 @@
 							{!! Form::hidden('event_type', 'numerado') !!}
 							{!! Form::hidden('db_table', 'fernando_morelia_22nov') !!}
 							{!! Form::hidden('info', '--') !!}
+							{!! Form::hidden('select_type', 'list') !!}
 							{!! Form::hidden('precio', '', ['id' => 'precio']) !!}
 							{!! Form::hidden('url', url('eventos/fernando-delgadillo-morelia-2018')) !!}
 

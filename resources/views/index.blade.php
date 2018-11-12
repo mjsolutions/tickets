@@ -190,10 +190,11 @@
 								<p class="mt-10 mb-5"><b>Aguascalientes</b></p>
 								<p>Auditorio Morelos</p>
 								<p>23 de noviembre</p>
+								<p><strong>21:00 hrs</strong></p>
 								<p class="event-date">23/11/2018</p>
 
 							</div>
-							<a href="{{ url('/eventos/vampire-circus-aguascalientes') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+							<a href="{{ url('/eventos/vampire-circus-aguascalientes-21hrs') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
 				</div>

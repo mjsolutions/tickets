@@ -36,18 +36,32 @@
 				@if( $req->event_type == "numerado" )
 
 					@php
+					$select_type = false;
 					$i=0;
+
+					if($req->select_type == 'manual'){
+						$select_type = true;
+					}
+
 					foreach ($req->asiento as $value) {
 						$field = explode('|', $value);
 						$id[$i] = $field[0];
 						$sit[$i] = $field[1];
+						if($select_type){
+							$row[$i] = $field[2];
+						}
 						$i++;
 					}
+
 					$num_asientos = sizeof($req->asiento);
 					@endphp
 
 				<p><b>Zona:</b> {{ $req->zona }}</p>
+
+				@if(!$select_type)
 				<p><b>Fila:</b> {{ $req->fila }}</p>
+				@endif
+
 				<p><b>Asientos:</b> *{{ implode(" *", $sit) }}</p>
 				@else
 					
@@ -107,11 +121,25 @@
 						{!! Form::hidden('hora', $req->hora) !!}
 						{!! Form::hidden('precio', $req->precio) !!}
 						@if( $req->event_type == "numerado" )
-						{!! Form::hidden('asientos', "*".implode(" *", $sit) ) !!}
 						{!! Form::hidden('asientos_id', implode("-", $id) ) !!}
 						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}						
 						{!! Form::hidden('seccion', $req->zona) !!}
+						@if(!$select_type)
+						{!! Form::hidden('asientos', "*".implode(" *", $sit) ) !!}
 						{!! Form::hidden('fila', $req->fila) !!}
+						@else
+
+						@php
+							$str_sits = "";
+							$j = 0;
+							foreach( $sit as $s ){
+								$str_sits .= " *".$row[$j]."|".$s;
+								$j++;
+							}
+						@endphp
+						{!! Form::hidden('asientos', $str_sits ) !!}
+						{!! Form::hidden('fila', '') !!}
+						@endif
 						@else
 						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}		
 						@endif

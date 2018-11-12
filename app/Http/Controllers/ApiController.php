@@ -45,9 +45,12 @@ class ApiController extends Controller
                     ])->get();
     }
 
-    public function getAsientos2($table, $zona, $fila) {
+    public function getMapAsientos($table, $bloque, $order) {
         
-        return RTM::select('id','asiento')->where([['seccion', $zona], ['fila', $fila], ['status', 0]])->get();
+        return DB::table($table)
+                ->where('bloque', $bloque)
+                ->orderBy('fila', $order)
+                ->orderBy('asiento', 'ASC')->get();
 
     }
 

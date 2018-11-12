@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Vampire CIrcus - Aguascalientes')
+@section('title', 'Vampire Circus - Aguascalientes')
 
-@section('description', 'Vampire CIrcus en Aguascalientes, 23 de noviembre, 18:00 y 21:00 hrs boletos en Auditorio DIMO y lugar del evento.')
+@section('description', 'Vampire Circus en Aguascalientes, 23 de noviembre, 18:00 y 21:00 hrs boletos en Auditorio DIMO y lugar del evento.')
 
 @section('styles')
 <meta property="og:url"  content="http://bolematico.mx/eventos/vampire-circus-aguascalientes" />
@@ -11,6 +11,83 @@
 <meta property="og:image" content="http://bolematico.mx/img/vampire-circus.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
+<style>
+	#mapa-asientos{
+		overflow: auto;
+		white-space: nowrap;
+		max-height: 450px;
+		padding-top: 40px;
+		padding-left: 40px;
+		padding-right: 20px;
+		padding-bottom: 40px;
+	    background: #FFF;
+	    border: 1px solid #ccc;
+	}
+	#mapa-escenario{
+		position: absolute;
+		background-color: #222;
+		border-radius: 50%;
+	}
+	#mapa-escenario.top-map{
+		top: -25px;
+	    height: 50px;
+	    width: 50%;
+	    left: 25%;
+	}
+	#mapa-escenario.left-map{
+		top: 10%;
+	    height: 80%;
+	    width: 50px;
+	    left: -25px;		
+	}
+	#ticket-message{
+		font-style: italic;
+		color: #AC1D39;
+	}
+	.flex-fix-height{
+		display: flex;
+	}
+	.bloque-container{
+		position: relative;
+		overflow: hidden;
+		padding-left: 0!important;
+    	margin-left: 0.75rem!important;
+	}
+	.asiento{
+		display: inline-block;
+	    margin: 2px;
+	    border: 1px solid #37ABB3;
+	    width: 25px;
+	    height: 25px;
+	    text-align: center;
+	    line-height: 25px;
+	    border-radius: 5px;
+	}
+	.row-name{
+		display: inline-block;
+		font-size: 1.2rem;
+		width: 30px;
+		height: 25px;
+		margin-top: 2px;
+		margin-bottom: 2px;
+		margin-right: 5px;
+		text-align: center;
+	    line-height: 25px;
+	    color: #017982;
+	    font-weight: 700;
+	    float: left; 
+	}
+	.ocupado {
+		background-color: #dedede;
+		border-color: #bbb;
+		color: #aaa;
+		cursor: no-drop;
+	}
+	.seleccionado {
+		background-color: #2ECC40;
+		color: #222;
+	}
+</style>
 @endsection
 
 @section('content')
@@ -18,7 +95,7 @@
 <div class="image-header bg-3 overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Vampire CIrcus</h4>
+		<h4>Vampire Circus</h4>
 		<div class="divider"></div>
 		<p><i>Aguascalientes - Auditorio Morelos</i></p>
 		<p><i>22 de noviembre, 18:00 / 21:00 hrs.</i></p>
@@ -52,10 +129,10 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12 card-flyer">
 							<header>
-								<div class="col s12 m12 red darken-3">VIP</div>
+								<div class="col s12 m8 red darken-3">VIP</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$1.050</span> Por entrada</div>
+							<div class="price col s12"><span>$1,050</span> Por entrada</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
@@ -63,7 +140,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 teal accent-4">Zona diamante</div>
+								<div class="col s12 m8 teal accent-4">Zona diamante</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s12"><span>$850</span> Por entrada</div>
@@ -74,7 +151,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m12 amber darken-1">Oro</div>
+								<div class="col s12 m8 amber darken-1">Oro</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s12"><span>$650</span> Por entrada</div>
@@ -85,7 +162,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m12 grey lighten-1">Plata</div>
+								<div class="col s12 m8 grey lighten-1">Plata</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s12"><span>$350</span> Por entrada</div>
@@ -181,49 +258,105 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	{{-- <div class="row">
+	<div class="row">
+			<div class="col s12 mb-15">
+				<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
+			</div>
 		<div class="col s12 m6">
-			<img src="{{asset('img/teatro-morelos.svg')}}" alt="Teatro Morelos" class="responsive-img">
+			@include('maps.auditorio-morelos')
 		</div>
 		<div class="col s12 m6">
-			@if(Auth()->check())
-				<p class="center-align"><i>* Solo puedes seleccionar un maximo de 10 boletos</i></p>
-				{!! Form::open(['route'=>'payment.franco7', 'method'=>'POST']) !!}
-					<div class="row">
+			<div class="col s12 mb-15 flex-fix-height">
+				<div class="col s1 grey darken-4"></div>
+				<div class="col s11">Escenario</div>
+			</div>
+			<div class="col s12 bloque-container">
+				
+				<div id="mapa-escenario" class=""></div>
+				<div id="mapa-asientos" class="col s12"></div>
+			</div>
+			<div class="col s12 mt-15">
+				<p id="ticket-message"></p>
+			</div>
+			<div class="col s12 center-align mt-15">
+				<a href="javascript:;" id="checkout" class="btn waves-effect waves-light orange accent-3 hide">SIGUIENTE</a>
+				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
 
-						<div class="input-field col s12">
-							{!! Form::select('zona', ['Diamante' => 'Diamante', 'Oro' => 'Oro', 'Plata' => 'Plata'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Seleccione una zona']) !!}
-							{!! Form::label('zona', 'Zona') !!}
-						</div>
-						<div class="input-field col s12">
-							{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Seleccione primero una zona']) !!}
-							{!! Form::label('fila', 'Fila') !!}
-						</div>
-						<div class="input-field col s12">
-							{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
-							{!! Form::label('asiento', 'Asiento') !!}
-						</div>
-						
-					</div>
-
-					<div class="row">
-					
-						<div class="input-field center-align">
-							{!! Form::submit('Comprar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
-						</div>	
-					
-					</div>
-						
+					{!! Form::hidden('asiento[]', '', ['id' => 'form_asiento']) !!}
+					{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
+					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
+					{!! Form::hidden('img', 'img/vampire-circus.jpg') !!}
+					{!! Form::hidden('evento', 'Vampire Circus') !!}
+					{!! Form::hidden('fecha', '23 de noviembre 2018') !!}
+					{!! Form::hidden('lugar', 'Auditorio Morelos') !!}
+					{!! Form::hidden('ciudad', 'Aguascalientes') !!}
+					{!! Form::hidden('hora', '21:00 hrs') !!}
+					{!! Form::hidden('event_type', 'numerado') !!}
+					{!! Form::hidden('db_table', 'the_vampire_circus_23nov') !!}
+					{!! Form::hidden('info', '--') !!}
+					{!! Form::hidden('select_type', 'manual') !!}
+					{!! Form::hidden('url', url('eventos/vampire-circus-aguascalientes-21hrs')) !!}
 				{!! Form::close() !!}
+			</div>
+		</div>
+		{{-- <div class="col s12 m3 offset-m1">
+			@if(Auth()->check())
+				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
+						<div class="row">
+							<h5 class="quote">Elija sus boletos</h5>
+							<div class="input-field col s12">
+								{!! Form::select('hora', ['18:00 hrs' => '18:00 hrs', '21:00 hrs' => '21:00 hrs'], '', ['class' => 'select-dropdown', 'required', 'id' => 'hora', 'placeholder' => 'Selecciona el horario']) !!}
+								{!! Form::label('hora', 'Hora') !!}
+							</div>
+							<div class="input-field col s12">
+								{!! Form::select('zona', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Selecciona primero horario']) !!}
+								{!! Form::label('zona', 'Zona') !!}
+							</div>
+							<div class="input-field col s12" id="select-fila">
+								{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Selecciona primero una zona']) !!}
+								{!! Form::label('fila', 'Fila') !!}
+							</div>
+							<div class="input-field col s12" id="select-asiento">
+								{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
+								{!! Form::label('asiento', 'Asiento') !!}
+							</div>
+							
+							{!! Form::hidden('img', 'img/vampire-circus.jpg') !!}
+							{!! Form::hidden('evento', 'Vampire Circus') !!}
+							{!! Form::hidden('fecha', '23 de noviembre 2018') !!}
+							{!! Form::hidden('lugar', 'Auditorio Morelos') !!}
+							{!! Form::hidden('ciudad', 'Aguascalientes') !!}
+							{!! Form::hidden('hora', '21:00 hrs') !!}
+							{!! Form::hidden('event_type', 'numerado') !!}
+							{!! Form::hidden('db_table', '', ['id' => 'db_table']) !!}
+							{!! Form::hidden('info', '--') !!}
+							{!! Form::hidden('precio', '', ['id' => 'precio']) !!}
+							{!! Form::hidden('url', url('eventos/vampire-circus-aguascalientes')) !!}
+
+							<div class="input-field col s12">
+								<p><em>* Puedes seleccionar un máximo de 8 lugares</em></p>
+							</div>
+							
+						</div>
+
+						<div class="row">
+						
+							<div class="input-field center-align">
+								{!! Form::submit('Confirmar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
+							</div>	
+						
+						</div>
+							
+					{!! Form::close() !!}
 			@else
 				<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
-				<div class="col s6 m3 col-center">
-					<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
+				<div class="col s12 center-align">
+					<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 				</div>
 			@endif
-		</div>	
+		</div> --}}	
 	
-	</div> --}}
+	</div>
 	<div class="row">
 		<div class="col m4 offset-m4">
 			<h5 class="mt-50 center-align raleway">Venta de boletos en Auditorio DIMO Aguascalientes y Auditorio Morelos</h5>
@@ -242,7 +375,7 @@
 
 <section class="section-lugar">
 	<div id="map"></div>
-	
+		
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
@@ -263,6 +396,9 @@
 
 @section('scripts')
 	<script>
+
+		var seccion = '';
+
 		$('#modal-video-open').leanModal({
 			opacity: .8,
 			ready: function() {
@@ -289,43 +425,210 @@
 		        });
 		      }
 
-		// $("#zona").change(function(){
-		// 	var id = $(this).val();
-		// 	$.ajax({
-		// 		url: '{{url('/api/getFilas')}}/Franco7/' + id,
-		// 		method: 'GET',
-		// 		// data: 'id=' + id,
-		// 		success: function(res){
-		// 			var filas = res;
-		// 			var options = "<option value='' selected disabled>Selecciona una fila</option>";
-		// 			for(i=0; i<filas.length; i++){
-		// 				options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
-		// 			}
-		// 			$("#fila").html(options);
-		// 			$("#fila").material_select();
+		function printSection(query, align, stage){
 
-		// 		}
-		// 	});
-		// });
+			let asientos = "", html = "", status = "", currentRow = "", i=0;
 
-		// $("#fila").change(function(){
-		// 	var id = $(this).val();
-		// 	$.ajax({
-		// 		url: '{{url('/api/getAsientos')}}/Franco7/' + id,
-		// 		method: 'GET',
-		// 		// data: 'id=' + id,
-		// 		success: function(res){
-		// 			var asientos = res;
-		// 			var options = "<option value='' selected disabled>Seleccione los asientos</option>";
-		// 			for(i=0; i<asientos.length; i++){
-		// 				options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
-		// 			}
-		// 			$("#asiento").html(options);
-		// 			$("#asiento").material_select();
+			if(query[i].status != 0){
+				status = 'ocupado';
+			}
 
-		// 		}
-		// 	});
-		// });
+			asientos = '<span class="row-name center-align">'+ query[i].fila +'</span><a href="javascript:;" class="asiento '+status+'" data-info="'+query[i].id+'|'+query[i].asiento+'|'+query[i].fila+'">'+ query[i].asiento +'</a>';
+			currentRow = query[i].fila;
+			i++;
+			status = "";
+
+
+			while(i<query.length){
+				if(query[i].status != 0){
+					status = 'ocupado';
+				}
+
+				if(currentRow == query[i].fila) {
+					asientos += '<a href="javascript:;" class="asiento '+status+'" data-info="'+query[i].id+'|'+query[i].asiento+'|'+query[i].fila+'">'+ query[i].asiento +'</a>';					
+				}else{
+					currentRow = query[i].fila;
+
+					html += asientos +'<br>';
+
+					html += '<span class="row-name center-align">'+ query[i].fila +'</span><a href="javascript:;" class="asiento '+status+'" data-info="'+query[i].id+'|'+query[i].asiento+'|'+query[i].fila+'">'+ query[i].asiento +'</a>';
+					asientos = "";
+					
+				}
+				if(i == query.length - 1){
+					html += asientos +'<br>';
+				}
+
+				i++;
+				status = "";
+			}
+
+			$("#mapa-escenario").attr('class', stage+'-map');
+			$("#mapa-asientos").css('text-align', align);
+			$("#mapa-asientos").html(html);
+		}
+
+		function setPrecio() {
+
+			let precio = '';
+
+			switch(seccion){
+				case 'VIP': 
+					precio = 1050;break;
+				case 'Diamante': 
+					precio = 850;break;
+				case 'Oro': 
+					precio = 650;break;
+				case 'Plata': 
+					precio = 350;break;
+
+			}
+
+			return precio;
+		}
+
+		$(".block-hover").click(function(){
+
+			$("#mapa-asientos").css('text-align', 'center');
+			$("#mapa-asientos").html('<img src="{{asset('img/loading.gif')}}">');
+
+			let bloque = $(this).attr('id'),
+				order = $(this).data('order'),
+				align = $(this).data('align'),
+				stage = $(this).data('stage');
+			
+			seccion = $(this).data('seccion');
+
+			$.ajax({
+				url: '{{url('/api/getMapAsientos')}}/the_vampire_circus_23nov/' + bloque + '/' + order,
+				method: 'GET',
+				success: function(res){
+					printSection(res, align, stage);
+					$("#checkout").removeClass('hide');
+				},
+				error: function(res){
+					alert(res);
+				}
+			});
+		});
+
+		$("#mapa-asientos").on('click', '.asiento',function(){
+
+			if(!$(this).hasClass('ocupado')){
+
+
+				if($(".seleccionado").length < 8){
+					$(this).toggleClass('seleccionado');
+				}else if($(".seleccionado").length == 8 && $(this).hasClass('seleccionado')){
+					$(this).removeClass('seleccionado');
+				}
+
+			}
+
+		});
+
+		$("#checkout").click(function(){
+			
+			let ids = '',
+				asientos = [],
+				precio = setPrecio(); 
+
+			if($(".seleccionado").length > 0){
+
+				$("#form_zona").val(seccion);
+				$("#form_precio").val(precio);
+
+				$("#ticket-message").html('');
+
+				$(".seleccionado").each(function(i, item){
+					// let data = $(item).data('info').split('|');
+					asientos.push($(item).data('info'));
+					// ids += data[0]+'|';
+				});
+			}else{
+				$("#ticket-message").html('* Debes seleccionar al menos un lugar antes de continuar');
+			}
+
+			// ids = ids.slice(0, -1);
+			console.log(asientos);
+		});
+
+
+		$("#hora").change(function(){
+
+			if($(this).val() == '18:00 hrs'){
+				tabla_evento = 'the_vampire_circus_23nov_18hrs';
+				$("#db_table").val('the_vampire_circus_23nov_18hrs');
+			}else{
+				tabla_evento = 'the_vampire_circus_23nov';				
+				$("#db_table").val('the_vampire_circus_23nov');
+			}
+
+			var options = "<option value='' selected disabled>Selecciona la zona</option><option value='VIP'>VIP</option><option value='Diamante'>Diamante</option><option value='Oro'>Oro</option><option value='Plata'>Plata</option>";
+			$("#zona").html(options);
+
+			options = "<option value='' selected disabled>Selecciona primero zona</option>";
+			$("#fila").html(options);
+
+			options = "<option value='' selected disabled>Selecciona primero fila</option>";
+			$("#asiento").html(options);
+
+			$("#zona, #fila, #asiento").material_select();
+
+		});
+
+		$("#zona").change(function(){
+
+			var zona = $(this).val();
+			
+			if( zona == 'VIP' ){
+				$("#precio").val('1050');
+			}else if( zona == 'Diamante' ){
+				$("#precio").val('850');
+			}else if( zona == 'Oro' ){
+				$("#precio").val('650');
+			}else{
+				$("#precio").val('350');
+			}
+
+			$.ajax({
+				url: '{{url('/api/getFilas')}}/'+ tabla_evento +'/' + zona,
+				// url: '{{url('/api/getFilas')}}',
+				method: 'GET',
+				// data: 'id=' + id,
+				success: function(filas){
+					var options = "<option value='' selected disabled>Selecciona una fila</option>";
+					for(i=0; i<filas.length; i++){
+						options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
+					}
+					$("#fila").html(options);
+					$("#fila").material_select();
+
+				}
+			});
+
+		});
+
+		$("#fila").change(function(){
+
+			var fila = $(this).val();
+
+			$.ajax({
+				url: '{{url('/api/getAsientos')}}/'+ tabla_evento + '/' + fila,
+				method: 'GET',
+				// data: 'id=' + id,
+				success: function(asientos){
+
+					var options = "<option value='' selected disabled>Seleccione los asientos</option>";
+					for(i=0; i<asientos.length; i++){
+						options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
+					}
+					$("#asiento").html(options);
+					$("#asiento").material_select();
+
+				}
+			});
+		});
 	</script>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
