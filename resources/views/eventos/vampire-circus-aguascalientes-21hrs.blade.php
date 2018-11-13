@@ -258,10 +258,11 @@
 </section>
 
 <section id="compra" class="section-comprar">
+	@if(Auth()->check())
 	<div class="row">
-			<div class="col s12 mb-15">
-				<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
-			</div>
+		<div class="col s12 mb-15">
+			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
+		</div>
 		<div class="col s12 m6">
 			@include('maps.auditorio-morelos')
 		</div>
@@ -280,9 +281,9 @@
 			</div>
 			<div class="col s12 center-align mt-15">
 				<a href="javascript:;" id="checkout" class="btn waves-effect waves-light orange accent-3 hide">SIGUIENTE</a>
-				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
+				{!! Form::open(['route'=>'payment.details', 'method'=>'POST', 'id' => 'checkout-form']) !!}
 
-					{!! Form::hidden('asiento[]', '', ['id' => 'form_asiento']) !!}
+					{!! Form::hidden('asiento', '', ['id' => 'form_asiento']) !!}
 					{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
 					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
 					{!! Form::hidden('img', 'img/vampire-circus.jpg') !!}
@@ -299,67 +300,19 @@
 				{!! Form::close() !!}
 			</div>
 		</div>
-		{{-- <div class="col s12 m3 offset-m1">
-			@if(Auth()->check())
-				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
-						<div class="row">
-							<h5 class="quote">Elija sus boletos</h5>
-							<div class="input-field col s12">
-								{!! Form::select('hora', ['18:00 hrs' => '18:00 hrs', '21:00 hrs' => '21:00 hrs'], '', ['class' => 'select-dropdown', 'required', 'id' => 'hora', 'placeholder' => 'Selecciona el horario']) !!}
-								{!! Form::label('hora', 'Hora') !!}
-							</div>
-							<div class="input-field col s12">
-								{!! Form::select('zona', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Selecciona primero horario']) !!}
-								{!! Form::label('zona', 'Zona') !!}
-							</div>
-							<div class="input-field col s12" id="select-fila">
-								{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Selecciona primero una zona']) !!}
-								{!! Form::label('fila', 'Fila') !!}
-							</div>
-							<div class="input-field col s12" id="select-asiento">
-								{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
-								{!! Form::label('asiento', 'Asiento') !!}
-							</div>
-							
-							{!! Form::hidden('img', 'img/vampire-circus.jpg') !!}
-							{!! Form::hidden('evento', 'Vampire Circus') !!}
-							{!! Form::hidden('fecha', '23 de noviembre 2018') !!}
-							{!! Form::hidden('lugar', 'Auditorio Morelos') !!}
-							{!! Form::hidden('ciudad', 'Aguascalientes') !!}
-							{!! Form::hidden('hora', '21:00 hrs') !!}
-							{!! Form::hidden('event_type', 'numerado') !!}
-							{!! Form::hidden('db_table', '', ['id' => 'db_table']) !!}
-							{!! Form::hidden('info', '--') !!}
-							{!! Form::hidden('precio', '', ['id' => 'precio']) !!}
-							{!! Form::hidden('url', url('eventos/vampire-circus-aguascalientes')) !!}
-
-							<div class="input-field col s12">
-								<p><em>* Puedes seleccionar un máximo de 8 lugares</em></p>
-							</div>
-							
-						</div>
-
-						<div class="row">
-						
-							<div class="input-field center-align">
-								{!! Form::submit('Confirmar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
-							</div>	
-						
-						</div>
-							
-					{!! Form::close() !!}
-			@else
-				<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
-				<div class="col s12 center-align">
-					<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
-				</div>
-			@endif
-		</div> --}}	
 	
 	</div>
+	@else
 	<div class="row">
+		<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
+		<div class="col s12 center-align">
+			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
+		</div>
+	</div>
+	@endif
+	<div class="row mt-30">
 		<div class="col m4 offset-m4">
-			<h5 class="mt-50 center-align raleway">Venta de boletos en Auditorio DIMO Aguascalientes y Auditorio Morelos</h5>
+			<h5 class="center-align raleway">Venta de boletos también en Auditorio DIMO y Auditorio Morelos, Aguascalientes</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -535,24 +488,35 @@
 
 			if($(".seleccionado").length > 0){
 
+				$("#ticket-message").html('');
+
 				$("#form_zona").val(seccion);
 				$("#form_precio").val(precio);
 
-				$("#ticket-message").html('');
-
 				$(".seleccionado").each(function(i, item){
 					// let data = $(item).data('info').split('|');
-					asientos.push($(item).data('info'));
+					asientos.push( $(item).data('info') );
+					// asientos[i] = $(item).data('info');
 					// ids += data[0]+'|';
+					// console.log(i);
 				});
+
+				$("#form_asiento").val(asientos);
+				$("#checkout-form").submit();
+
 			}else{
 				$("#ticket-message").html('* Debes seleccionar al menos un lugar antes de continuar');
 			}
 
 			// ids = ids.slice(0, -1);
-			console.log(asientos);
+			// console.log(asientos);
 		});
 
+		// $("#checkout-form").submit(function(e){
+		// 			e.preventDefault();
+		// 			console.log($(this).serialize());
+					
+		// 		});
 
 		$("#hora").change(function(){
 

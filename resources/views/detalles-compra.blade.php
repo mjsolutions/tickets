@@ -36,33 +36,54 @@
 				@if( $req->event_type == "numerado" )
 
 					@php
-					$select_type = false;
+
 					$i=0;
 
 					if($req->select_type == 'manual'){
-						$select_type = true;
-					}
 
-					foreach ($req->asiento as $value) {
-						$field = explode('|', $value);
-						$id[$i] = $field[0];
-						$sit[$i] = $field[1];
-						if($select_type){
+						$asientos = explode(',', $req->asiento);
+
+						foreach ($asientos as $asiento) {
+							$field = explode('|', $asiento);
+							$id[$i] = $field[0];
+							$sit[$i] = $field[1];
 							$row[$i] = $field[2];
+							$i++;
 						}
-						$i++;
+
+						$num_asientos = sizeof($asientos);
+
+						$str_sits = "";
+						$j = 0;
+						foreach( $sit as $s ){
+							$str_sits .= " *".$row[$j]."|".$s;
+							$j++;
+						}
+
+					}else{
+
+						foreach ($req->asiento as $value) {
+							$field = explode('|', $value);
+							$id[$i] = $field[0];
+							$sit[$i] = $field[1];
+							$i++;
+						}
+
+						$num_asientos = sizeof($req->asiento);
+
 					}
 
-					$num_asientos = sizeof($req->asiento);
 					@endphp
 
 				<p><b>Zona:</b> {{ $req->zona }}</p>
 
-				@if(!$select_type)
+				@if($req->select_type != 'manual')
 				<p><b>Fila:</b> {{ $req->fila }}</p>
+				<p><b>Asientos:</b> *{{ implode(" *", $sit) }}</p>
+				@else
+				<p><b>Fila/Asiento:</b> {{$str_sits}}</p>
 				@endif
 
-				<p><b>Asientos:</b> *{{ implode(" *", $sit) }}</p>
 				@else
 					
 					@php
@@ -124,19 +145,10 @@
 						{!! Form::hidden('asientos_id', implode("-", $id) ) !!}
 						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}						
 						{!! Form::hidden('seccion', $req->zona) !!}
-						@if(!$select_type)
+						@if($req->select_type != 'manual')
 						{!! Form::hidden('asientos', "*".implode(" *", $sit) ) !!}
 						{!! Form::hidden('fila', $req->fila) !!}
 						@else
-
-						@php
-							$str_sits = "";
-							$j = 0;
-							foreach( $sit as $s ){
-								$str_sits .= " *".$row[$j]."|".$s;
-								$j++;
-							}
-						@endphp
 						{!! Form::hidden('asientos', $str_sits ) !!}
 						{!! Form::hidden('fila', '') !!}
 						@endif
@@ -227,7 +239,10 @@
 			});
 		});
 
-		$("#payment").submit(function(){
+		$("#payment").submit(function(e){
+
+			// e.preventDefault();
+			// console.log($(this).serialize());
 
 			$("#btn-submit").html('Validando datos...');
 			$("#btn-submit").addClass('disabled');
