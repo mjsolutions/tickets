@@ -2,7 +2,7 @@
 
 @section('title', 'Confirmar compra')
 
-@section('description', 'Confirmacion de compra del evento')
+@section('description', 'Confirmacion de compra')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>

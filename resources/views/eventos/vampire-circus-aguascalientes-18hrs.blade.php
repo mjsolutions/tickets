@@ -2,12 +2,12 @@
 
 @section('title', 'Vampire Circus - Aguascalientes')
 
-@section('description', 'Vampire Circus en Aguascalientes, 23 de noviembre, 21:00 hrs boletos en Auditorio DIMO y lugar del evento.')
+@section('description', 'Vampire Circus en Aguascalientes, 23 de noviembre, 18:00 hrs boletos en Auditorio DIMO y lugar del evento.')
 
 @section('styles')
 <meta property="og:url"  content="http://bolematico.mx/eventos/vampire-circus-aguascalientes" />
 <meta property="og:title" content="Vampire Circus en Aguascalientes" />
-<meta property="og:description" content="Vampire Circus Aguascalientes 23 de noviembre 2018, 21:00 hrs." />
+<meta property="og:description" content="Vampire Circus Aguascalientes 23 de noviembre 2018, 18:00 hrs." />
 <meta property="og:image" content="http://bolematico.mx/img/vampire-circus.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -108,7 +108,7 @@
 		<h4>Vampire Circus</h4>
 		<div class="divider"></div>
 		<p><i>Aguascalientes - Auditorio Morelos</i></p>
-		<p><i>22 de noviembre, 21:00 hrs.</i></p>
+		<p><i>22 de noviembre, 18:00 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -304,12 +304,12 @@
 					{!! Form::hidden('fecha', '23 de noviembre 2018') !!}
 					{!! Form::hidden('lugar', 'Auditorio Morelos') !!}
 					{!! Form::hidden('ciudad', 'Aguascalientes') !!}
-					{!! Form::hidden('hora', '21:00 hrs') !!}
+					{!! Form::hidden('hora', '18:00 hrs') !!}
 					{!! Form::hidden('event_type', 'numerado') !!}
-					{!! Form::hidden('db_table', 'the_vampire_circus_23nov') !!}
+					{!! Form::hidden('db_table', 'the_vampire_circus_23nov_18hrs') !!}
 					{!! Form::hidden('info', '--') !!}
 					{!! Form::hidden('select_type', 'manual') !!}
-					{!! Form::hidden('url', url('eventos/vampire-circus-aguascalientes-21hrs')) !!}
+					{!! Form::hidden('url', url('eventos/vampire-circus-aguascalientes-18hrs')) !!}
 				{!! Form::close() !!}
 			</div>
 		</div>
@@ -468,7 +468,7 @@
 			$("#info-title-section").html(seccion + ' <small>bloque'+bloque.substring(bloque.indexOf('-')) + '</small>');
 
 			$.ajax({
-				url: '{{url('/api/getMapAsientos')}}/the_vampire_circus_23nov/' + bloque + '/' + order,
+				url: '{{url('/api/getMapAsientos')}}/the_vampire_circus_23nov_18hrs/' + bloque + '/' + order,
 				method: 'GET',
 				success: function(res){
 					printSection(res, align, stage);
