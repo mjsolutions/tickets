@@ -49,7 +49,7 @@
 					</tr>
 					<tr>
 						<th style="width: 29%;">BOLETO:</th>
-						<td>General</td>
+						<td>{{$row->seccion}}</td>
 					</tr>
 				</tbody>
 			</table>

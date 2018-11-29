@@ -14,17 +14,6 @@ class ApiController extends Controller
 {
     public function getFilas($table, $zona) {
 
-        if($table == 'ismael_serrano_26oct'){
-            return DB::table($table)
-                    ->select('fila')
-                    ->where([
-                        ['seccion', $zona],
-                        ['status', 0]
-                    ])
-                    ->whereNotIn('fila', ['B', 'C'])
-                    ->groupBy('fila')->get();
-        }
-
         return DB::table($table)
                 ->select('fila')
                 ->where([
@@ -105,7 +94,7 @@ class ApiController extends Controller
                     $new_folio = $folio + $i;
 
                     DB::table($table)->insert(
-                        ['seccion' => 'General',
+                        ['seccion' => $seccion,
                         'fila' => 'Sin fila',
                         'asiento' => $i,
                         'status' => 2,
@@ -122,7 +111,7 @@ class ApiController extends Controller
 
                 }
 
-                $descripcion = $asientos." lugares | Tipo: ".ucwords($event_type);
+                $descripcion = $asientos." lugares | Tipo: ".ucwords($seccion);
 
             } else {
 
@@ -167,7 +156,7 @@ class ApiController extends Controller
             $buydata['email'] = $user->email;
 
             Mail::to($user->email, $user->name)
-            // ->cc('arquimides@bolematico.com.mx')
+            ->cc('arquimides@bolematico.com.mx')
             ->send(new Compra($buydata));
 
             return response()->json(['message'=>'Success update on DB'], 200); 

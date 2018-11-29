@@ -33,6 +33,7 @@
 				<p><b>Ciudad:</b> {{ $req->ciudad }}</p>
 				<p><b>Lugar:</b> {{ $req->lugar }}</p>
 				<p><b>Hora:</b> {{ $req->hora }}</p>
+				<p><b>Zona:</b> {{ $req->zona }}</p>
 				@if( $req->event_type == "numerado" )
 
 					@php
@@ -75,8 +76,6 @@
 
 					@endphp
 
-				<p><b>Zona:</b> {{ $req->zona }}</p>
-
 				@if($req->select_type != 'manual')
 				<p><b>Fila:</b> {{ $req->fila }}</p>
 				<p><b>Asientos:</b> *{{ implode(" *", $sit) }}</p>
@@ -103,15 +102,6 @@
 				{!! Form::open(['route'=>'payment.confirm', 'method'=>'POST', 'id'=>'payment']) !!}
 					<div class="row center-align pt-40" id="form-inputs">
 
-						{{-- <div class="col m4 s6">
-							<div>								
-								<div class="col s10 offset-s1">
-									{!! Form::radio('payment_form', 'credit_card', '', ['id' => 'payment_card']) !!}			
-									<label for="payment_card" class="check-up"><img src="{{ asset('img/cards.svg') }}" class="responsive-img"></label>
-									
-								</div>
-							</div>
-						</div> --}}
 						<div class="col m6 s6">
 							<div>
 								<div class="col s10 offset-s1">
@@ -127,13 +117,7 @@
 									<label for="payment_spei" class="check-up"><img src="{{ asset('img/spei.svg') }}" alt="" class="responsive-img"></label>
 								</div>
 							</div>
-						</div>
-						{{-- <div class="col m3 s6">
-							<div>
-								{!! Form::radio('payment_form', 'paypal', '', ['id' => 'payment_paypal']) !!}
-								<label for="payment_paypal" class="check-up"><i class="fa fa-paypal fa-2x" style="color: #7c869a"></i></label>
-							</div>
-						</div> --}}
+						</div>	
 						
 						{!! Form::hidden('evento', $req->evento) !!}
 						{!! Form::hidden('fecha', $req->fecha) !!}
@@ -141,10 +125,10 @@
 						{!! Form::hidden('ciudad', $req->ciudad) !!}
 						{!! Form::hidden('hora', $req->hora) !!}
 						{!! Form::hidden('precio', $req->precio) !!}
+						{!! Form::hidden('seccion', $req->zona) !!}
 						@if( $req->event_type == "numerado" )
 						{!! Form::hidden('asientos_id', implode("-", $id) ) !!}
 						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}						
-						{!! Form::hidden('seccion', $req->zona) !!}
 						@if($req->select_type != 'manual')
 						{!! Form::hidden('asientos', "*".implode(" *", $sit) ) !!}
 						{!! Form::hidden('fila', $req->fila) !!}

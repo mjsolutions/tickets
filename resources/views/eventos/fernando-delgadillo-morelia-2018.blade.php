@@ -203,7 +203,7 @@
 
 	@if(  !$date->isWeekend() && ( $date->hour >= '09:00:00' && $date->hour <= '23:00:00' ) ) --}}
 
-		<div class="row">
+		{{-- <div class="row">
 			<div class="col m6 mt-30">
 				<img src="{{ asset('img/teatro-morelos-fondo.svg') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/teatro-morelos-fondo.svg')}}">
 				<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
@@ -262,12 +262,14 @@
 				@endif
 				
 			</div>		
-		</div>
+		</div> --}}
 
 	{{-- @else
 
+
+	@endif --}}
 	<div class="row">
-		<h5 class="mt-50 center-align raleway">Venta en línea de lunes a viernes de 9:00 a 23:00 hrs. <br>Boletos disponibles en Rs Viajes Centro, RS Viajes Periodismo y taquillas del planetario.</h5>
+		<h5 class="mt-50 center-align raleway">Boletos disponibles en Rs Viajes Centro, RS Viajes Periodismo y taquillas del planetario.</h5>
 	</div>
 
 	<div class="row">
@@ -275,8 +277,6 @@
 			<div class="divider"></div>
 		</div>
 	</div>
-
-	@endif --}}
 	<div class="row">
 		<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos.</p>
 		<div class="row center-align">

@@ -193,7 +193,12 @@
 				        $info['queretaro'] = [
 								'ciudad' => 'Querétaro',
 								'lugar' => 'La Glotonería',
-								'fecha' => '15 de diciembre',
+								'fecha' => '15 de noviembre',
+							];
+						$info['morelia'] = [
+								'ciudad' => 'Morelia',
+								'lugar' => 'Anden Food Units',
+								'fecha' => '22 de noviembre',
 							];
 					@endphp
 

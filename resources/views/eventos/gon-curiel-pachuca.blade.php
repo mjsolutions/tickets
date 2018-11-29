@@ -46,18 +46,22 @@
 					<div class="qcPricing col s6 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 teal accent-4">Preventa</div>
+								<div class="col s12 m8 teal accent-4">Preventa</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="http://goncuriel.com/boletospac" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s12"><span>$250</span> Por entrada</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="http://goncuriel.com/boletospac" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 					
 					<div class="qcPricing col s6 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 purple lighten-1">Evento</div>
+								<div class="col s12 m8 teal accent-4">Evento</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="http://goncuriel.com/boletospac" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s12"><span>$300</span> Por entrada</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="http://goncuriel.com/boletospac" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 
@@ -171,8 +175,13 @@
 	
 	</div> --}}
 	<div class="row">
-		<div class="col m4 offset-m4">
+		<div class="col m4 offset-m4 s12">
 			<h5 class="mt-50 center-align raleway">Preventa de boletos en Picanterìa Pachuca</h5>
+			<div class="row">
+				<div class="col s10 offset-s1 mt-30">
+					<a href="http://goncuriel.com/boletospac" class="btn-large waves-light waves-effect red darken-2 btn-block">COMPRAR BOLETOS</a>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>

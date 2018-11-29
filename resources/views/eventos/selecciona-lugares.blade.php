@@ -106,6 +106,7 @@ switch( $ciudad ) {
 					{!! Form::hidden('ciudad', $data['ciudad']) !!}
 					{!! Form::hidden('hora', '21:30 hrs') !!}
 					{!! Form::hidden('event_type', 'general') !!}
+					{!! Form::hidden('zona', 'General') !!}
 					{!! Form::hidden('db_table', $data['table']) !!}
 					{!! Form::hidden('info', '--') !!}
 					{!! Form::hidden('precio', $data['precio']) !!}

@@ -157,6 +157,7 @@
 			{!! Form::hidden('lugar', 'Patio Outdoor Disco') !!}
 			{!! Form::hidden('ciudad', 'Aguscalientes') !!}
 			{!! Form::hidden('hora', '21:00 hrs') !!}
+			{!! Form::hidden('zona', 'General') !!}
 			{!! Form::hidden('event_type', 'general') !!}
 			{!! Form::hidden('db_table', 'pate_de_fua_ags_16nov') !!}
 			{!! Form::hidden('info', 'Favor de comunicarte al numero 449 128 5028 para reservar tu lugar.') !!}

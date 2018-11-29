@@ -216,7 +216,7 @@
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'pachuca') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div> --}}
-					<div class="col s12 event-date-card no-padding">
+					{{-- <div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
 								<b>NOVIEMBRE</b>
@@ -247,8 +247,8 @@
 							<p>21:30 hrs.</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'ags') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div>
-					<div class="col s12 event-date-card no-padding">
+					</div> --}}
+					{{-- <div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
 								<b>NOVIEMBRE</b>
@@ -263,7 +263,7 @@
 							<p>21:30 hrs.</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div>
+					</div> --}}
 					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
@@ -359,5 +359,5 @@
 
 	</script>
 
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
+      {{-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script> --}}
 @endsection

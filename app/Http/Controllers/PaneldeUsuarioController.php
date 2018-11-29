@@ -21,6 +21,8 @@ class PaneldeUsuarioController extends Controller
         /** General **/
         $pate['ags'] = DB::table('pate_de_fua_ags_16nov')->where([['user', Auth::id()],['status', 2]])->get();
         $pate['queretaro'] = DB::table('pate_de_fua_queretaro_15nov')->where([['user', Auth::id()],['status', 2]])->get();
+        $pate['morelia'] = DB::table('pate_de_fua_morelia_22nov')->where([['user', Auth::id()],['status', 2]])->get();
+
         $raquel['ags'] = DB::table('raquel_ags_23nov')->where([['user', Auth::id()],['status', 2]])->get();
         $raquel['cordoba'] = DB::table('raquel_cordoba_03nov')->where([['user', Auth::id()],['status', 2]])->get();
         $raquel['morelia'] = DB::table('raquel_morelia_24nov')->where([['user', Auth::id()],['status', 2]])->get();
@@ -69,10 +71,15 @@ class PaneldeUsuarioController extends Controller
                     $d['lugar'] = 'Patio Outdoor Disco';
                     $table = 'pate_de_fua_'.$ciudad.'_16nov';break;
                 case 'queretaro';
-                    $d['fecha'] = '15 de diciembre 2018';
+                    $d['fecha'] = '15 de noviembre 2018';
                     $d['ciudad'] = 'Querétaro';
                     $d['lugar'] = 'La Glotonería';
                     $table = 'pate_de_fua_'.$ciudad.'_15nov';break;
+                case 'morelia';
+                    $d['fecha'] = '22 de noviembre 2018';
+                    $d['ciudad'] = 'Morelia';
+                    $d['lugar'] = 'Anden Food Units';
+                    $table = 'pate_de_fua_'.$ciudad.'_22nov';break;
             }
 
             
