@@ -250,50 +250,64 @@
 <section id="compra" class="section-comprar">
 	@if(Auth()->check())
 	<div class="row">
-		<div class="col s12 mb-15">
-			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
+		<div class="col m6 mt-30">
+			<img src="{{ asset('img/stella_inda.png') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/stella_inda.jpg')}}">
+			<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
 		</div>
-		<div class="col s12 m6">
-			@include('maps.auditorio-morelos')
-		</div>
-		<div class="col s12 m6">
-			<div class="col s12 mb-15">
-				<div class="col s1 grey darken-4" style="height: 25px;"></div>
-				<div class="col s11">
-					<div class="col s5">Escenario</div>
-					<div class="col s7 right-align" id="info-title-section"></div>
-				</div>
-			</div>
-			<div class="col s12 bloque-container">
-				
-				<div id="mapa-escenario" class=""></div>
-				<div id="mapa-asientos" class="col s12"></div>
-			</div>
-			<div class="col s12 mt-15">
-				<p id="ticket-message"></p>
-			</div>
-			<div class="col s12 center-align mt-15">
-				<a href="javascript:;" id="checkout" class="btn waves-effect waves-light orange accent-3 hide">SIGUIENTE</a>
-				{!! Form::open(['route'=>'payment.details', 'method'=>'POST', 'id' => 'checkout-form', 'style' => 'display:none;']) !!}
+		<div class="col m4 offset-m1 mt-30">
+			@if(Auth()->check())
+				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
+					<div class="row">
+						<h5 class="quote">Elija sus boletos</h5>
+						<div class="input-field col s12">
+							{!! Form::select('zona', ['Diamante' => 'Diamante', 'Oro' => 'Oro'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Selecciona la zona']) !!}
+							{!! Form::label('zona', 'Zona') !!}
+						</div>
+						<div class="input-field col s12" id="select-fila">
+							{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Selecciona primero una zona']) !!}
+							{!! Form::label('fila', 'Fila') !!}
+						</div>
+						<div class="input-field col s12" id="select-asiento">
+							{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
+							{!! Form::label('asiento', 'Asiento') !!}
+						</div>
+						
+						{!! Form::hidden('img', 'img/marwan-morelia-2019.jpg') !!}
+						{!! Form::hidden('evento', 'Marwan') !!}
+						{!! Form::hidden('fecha', '15 de Febrero, 2019') !!}
+						{!! Form::hidden('lugar', 'Teatro Stella Inda') !!}
+						{!! Form::hidden('ciudad', 'Morelia') !!}
+						{!! Form::hidden('hora', '20:30 hrs') !!}
+						{!! Form::hidden('event_type', 'numerado') !!}
+						{!! Form::hidden('db_table', 'marwan_morelia_15feb') !!}
+						{!! Form::hidden('info', '--') !!}
+						{!! Form::hidden('select_type', 'list') !!}
+						{!! Form::hidden('precio', '', ['id' => 'precio']) !!}
+						{!! Form::hidden('url', url('eventos/marwan-morelia')) !!}
 
-					{!! Form::hidden('asiento', '', ['id' => 'form_asiento']) !!}
-					{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
-					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
-					{!! Form::hidden('img', 'img/vampire-circus.jpg') !!}
-					{!! Form::hidden('evento', 'Vampire Circus') !!}
-					{!! Form::hidden('fecha', '23 de noviembre 2018') !!}
-					{!! Form::hidden('lugar', 'Auditorio Morelos') !!}
-					{!! Form::hidden('ciudad', 'Aguascalientes') !!}
-					{!! Form::hidden('hora', '18:00 hrs') !!}
-					{!! Form::hidden('event_type', 'numerado') !!}
-					{!! Form::hidden('db_table', 'the_vampire_circus_23nov_18hrs') !!}
-					{!! Form::hidden('info', '--') !!}
-					{!! Form::hidden('select_type', 'manual') !!}
-					{!! Form::hidden('url', url('eventos/vampire-circus-aguascalientes-18hrs')) !!}
+						<div class="input-field col s12">
+							<p><em>* Puedes seleccionar un máximo de 8 lugares</em></p>
+						</div>
+						
+					</div>
+
+					<div class="row">
+					
+						<div class="input-field center-align">
+							{!! Form::submit('Confirmar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
+						</div>	
+					
+					</div>
+						
 				{!! Form::close() !!}
-			</div>
-		</div>
-	
+			@else
+				<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
+				<div class="col s6 col-center">
+					<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
+				</div>
+			@endif
+			
+		</div>		
 	</div>
 	@else
 	<div class="row">
@@ -325,9 +339,9 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Auditorio Morelos</b></p>
-		<p><i class="material-icons">location_on</i>Av de la Convención de 1914 Sur Santa Elena 20230 Aguascalientes, Ags.</p>
-		<p><i class="material-icons">call</i> --- </p>
+		<p><b>Teatro Stella Inda</b></p>
+		<p><i class="material-icons">location_on</i>Av Francisco I. Madero Pte 1200, Centro Histórico, 58000 Morelia, Mich.</p>
+		<p><i class="material-icons">call</i> 01 443 312 2880</p>
 	</div>
 </section>
 
@@ -341,9 +355,14 @@
 @endsection
 
 @section('scripts')
+	<script type="text/javascript" src="{{asset('js/jquery.elevatezoom.js')}}"></script>
 	<script>
+		var tabla_evento = "marwan_morelia_15feb";
 
-		var seccion = '';
+		$("#zoom_01").elevateZoom({
+			scrollZoom : true,
+			zoomType: "inner"
+		});
 
 		$('#modal-video-open').leanModal({
 			opacity: .8,
@@ -357,13 +376,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 21.868241, lng: -102.3072059};
+		        var uluru = {lat: 19.7029521, lng: -101.2024255};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 17,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 21.868241, lng: -102.3072059}
+		          center: {lat: 19.7032521, lng: -101.2018855}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,
@@ -371,138 +390,54 @@
 		        });
 		      }
 
-		function printSection(query, align, stage){
+		$("#zona").change(function(){
 
-			let asientos = "", html = "", status = "", currentRow = "", i=0;
-
-			if(query[i].status != 0){
-				status = 'ocupado';
-			}
-
-			asientos = '<span class="row-name center-align">'+ query[i].fila +'</span><a href="javascript:;" class="asiento '+status+'" data-info="'+query[i].id+'|'+query[i].asiento+'|'+query[i].fila+'">'+ query[i].asiento +'</a>';
-			currentRow = query[i].fila;
-			i++;
-			status = "";
-
-
-			while(i<query.length){
-				if(query[i].status != 0){
-					status = 'ocupado';
-				}
-
-				if(currentRow == query[i].fila) {
-					asientos += '<a href="javascript:;" class="asiento '+status+'" data-info="'+query[i].id+'|'+query[i].asiento+'|'+query[i].fila+'">'+ query[i].asiento +'</a>';					
-				}else{
-					currentRow = query[i].fila;
-
-					html += asientos +'<br>';
-
-					html += '<span class="row-name center-align">'+ query[i].fila +'</span><a href="javascript:;" class="asiento '+status+'" data-info="'+query[i].id+'|'+query[i].asiento+'|'+query[i].fila+'">'+ query[i].asiento +'</a>';
-					asientos = "";
-					
-				}
-				if(i == query.length - 1){
-					html += asientos +'<br>';
-				}
-
-				i++;
-				status = "";
-			}
-
-			$("#mapa-escenario").attr('class', stage+'-map');
-			$("#mapa-asientos").css('text-align', align);
-			$("#mapa-asientos").html(html);
-		}
-
-		function setPrecio() {
-
-			let precio = '';
-
-			switch(seccion){
-				case 'VIP': 
-					precio = 1050;break;
-				case 'Diamante': 
-					precio = 850;break;
-				case 'Oro': 
-					precio = 650;break;
-				case 'Plata': 
-					precio = 350;break;
-
-			}
-
-			return precio;
-		}
-
-		$(".block-hover").click(function(){
-
-			$("#mapa-asientos").css('text-align', 'center');
-			$("#mapa-asientos").html('<img src="{{asset('img/loading.gif')}}">');
-
-			let bloque = $(this).attr('id'),
-				order = $(this).data('order'),
-				align = $(this).data('align'),
-				stage = $(this).data('stage');
+			var zona = $(this).val();
 			
-			seccion = $(this).data('seccion');
-
-			$("#info-title-section").html(seccion + ' <small>bloque'+bloque.substring(bloque.indexOf('-')) + '</small>');
+			if( zona == 'Diamante' ){
+				$("#precio").val('420');
+			}else{
+				$("#precio").val('320');
+			}
 
 			$.ajax({
-				url: '{{url('/api/getMapAsientos')}}/the_vampire_circus_23nov_18hrs/' + bloque + '/' + order,
+				url: '{{url('/api/getFilas')}}/'+ tabla_evento +'/' + zona,
+				// url: '{{url('/api/getFilas')}}',
 				method: 'GET',
-				success: function(res){
-					printSection(res, align, stage);
-					$("#checkout").removeClass('hide');
-				},
-				error: function(res){
-					alert(res);
+				// data: 'id=' + id,
+				success: function(filas){
+					var options = "<option value='' selected disabled>Selecciona una fila</option>";
+					for(i=0; i<filas.length; i++){
+						options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
+					}
+					$("#fila").html(options);
+					$("#fila").material_select();
+
+				}
+			});
+
+		});
+
+		$("#fila").change(function(){
+
+			var fila = $(this).val();
+
+			$.ajax({
+				url: '{{url('/api/getAsientos')}}/'+ tabla_evento +'/' + fila,
+				method: 'GET',
+				// data: 'id=' + id,
+				success: function(asientos){
+
+					var options = "<option value='' selected disabled>Seleccione los asientos</option>";
+					for(i=0; i<asientos.length; i++){
+						options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
+					}
+					$("#asiento").html(options);
+					$("#asiento").material_select();
+
 				}
 			});
 		});
-
-		$("#mapa-asientos").on('click', '.asiento',function(){
-
-			if(!$(this).hasClass('ocupado')){
-
-
-				if($(".seleccionado").length < 8){
-					$(this).toggleClass('seleccionado');
-				}else if($(".seleccionado").length == 8 && $(this).hasClass('seleccionado')){
-					$(this).removeClass('seleccionado');
-				}
-
-			}
-
-		});
-
-		$("#checkout").click(function(){
-			
-			let ids = '',
-				asientos = [],
-				precio = setPrecio(); 
-
-			if($(".seleccionado").length > 0){
-
-				$("#ticket-message").html('');
-
-				$("#form_zona").val(seccion);
-				$("#form_precio").val(precio);
-
-				$(".seleccionado").each(function(i, item){
-
-					asientos.push( $(item).data('info') );
-
-				});
-
-				$("#form_asiento").val(asientos);
-				$("#checkout-form").submit();
-
-			}else{
-				$("#ticket-message").html('* Debes seleccionar al menos un lugar antes de continuar');
-			}
-
-		});
-
 	</script>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
