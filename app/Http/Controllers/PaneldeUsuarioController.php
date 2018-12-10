@@ -164,8 +164,8 @@ class PaneldeUsuarioController extends Controller
 
     // public function updateDb() {
 
-    // 	for( $i = 1; $i < 1339; $i++){
-    // 		DB::table('mike_salazar_19oct')->where('id', $i)->update(['codigo_barras' => substr(md5('mike_salazar_19oct'.$i),0,10)]);
+    // 	for( $i = 1; $i < 487; $i++){
+    // 		DB::table('marwan_morelia_15feb')->where('id', $i)->update(['codigo_barras' => substr(md5('marwan_morelia_15feb'.$i),0,10)]);
     // 	}
 
     // 	dd('done');
