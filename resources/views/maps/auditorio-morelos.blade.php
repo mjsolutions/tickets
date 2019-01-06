@@ -39,12 +39,6 @@
                 font-weight:normal;             
             }
 
-            .diagrama-btn .fil4:hover{
-                fill: #017982;
-            }
-            .diagrama-btn .fil6:hover{
-                fill: #9AA6AB;
-            }
             .block-hover {
                 cursor: pointer;
                 transition: all 0.2s;

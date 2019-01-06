@@ -21,7 +21,7 @@ Route::get('/getFilas/{table}/{zona}', 'ApiController@getFilas');
 
 Route::get('/getAsientos/{table}/{fila}', 'ApiController@getAsientos');
 
-Route::get('/getMapAsientos/{table}/{bloque}/{order}', 'ApiController@getMapAsientos');
+Route::get('/getMapAsientos/{table}/{bloque}/{order_fila}/{order_asiento}', 'ApiController@getMapAsientos');
 
 Route::get('/getFilasSofia/{zona}', 'ApiController@getFilasSofia');
 

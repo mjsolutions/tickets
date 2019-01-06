@@ -268,7 +268,7 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	{{-- @if(Auth()->check())
+	@if(Auth()->check())
 	<div class="row">
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
@@ -322,7 +322,7 @@
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
 	</div>
-	@endif --}}
+	@endif
 	<div class="row mt-30">
 		<div class="col m4 offset-m4">
 			<h5 class="center-align raleway">Venta de boletos también en Auditorio DIMO y Auditorio Morelos, Aguascalientes</h5>

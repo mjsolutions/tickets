@@ -71,32 +71,31 @@
 
 		<div class="col m9">
 
-			@if( $fernando->isNotEmpty() )
+			@if( $marwan->isNotEmpty() )
 			
 			<div class="col s12">
 
 				<div class="col s12 event-date-card no-padding">
 					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/fernando-morelia-2018.jpg')}}" class="materialboxed responsive-img">
+						<img src="{{asset('img/marwan-morelia-2019.jpg')}}" class="materialboxed responsive-img">
 					</div>
 					<div class="event-date-details">
-						<h5><b>FERNANDO DELGADILLO</b></h5>
+						<h5><b>MARWAN</b></h5>
 						<p><b>Ciudad:</b> Morelia</p>
-						<p><b>Lugar:</b> Teatro Morelos</p>
-						<p><b>Fecha:</b> 22 de noviembre</p>
-						<p><b>Hora:</b> 21:00 hrs</p>
-						<p><b>Seccion:</b> {{ $fernando->first()->seccion }}</p>
-						<p><b>Fila:</b> {{ $fernando->first()->fila }}</p>
+						<p><b>Lugar:</b> Teatro Stella Inda</p>
+						<p><b>Fecha:</b> 15 de Febrero 2019</p>
+						<p><b>Hora:</b> 20:30 hrs</p>
+						<p><b>Seccion:</b> {{ $marwan->first()->seccion }}</p>
 						@php
-							$asientos = "";
-							foreach ($fernando as $row) {
-								$asientos .= " *".$row->asiento;
+							$fila_asiento = "";
+							foreach ($marwan as $row) {
+								$fila_asiento .= " *".$row->fila.' '.$row->asiento;
 							}
 						@endphp
-						<p><b>Asientos:</b> {{ $asientos }}</p>
+						<p><b>Fila/Asientos:</b> {{ $fila_asiento }}</p>
 					</div>
-					@if( $fernando->first()->status == 2 )
-						<a href="{{ route('cliente.ticket', 'fernando-morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					@if( $marwan->first()->status == 2 )
+						<a href="{{ route('cliente.ticket', 'marwan-morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					@else
 						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					@endif
@@ -106,81 +105,7 @@
 			
 			@endif
 
-			@foreach( $raquel as $ciudad => $data )
-
-				@if( $data->isNotEmpty() )
-
-					@php
-						$info['ags'] = [
-								'ciudad' => 'Aguascalientes',
-								'lugar' => 'La Tercera',
-								'fecha' => '23 de noviembre',
-							];
-				        $info['cordoba'] = [
-								'ciudad' => 'Córdoba, Veracruz',
-								'lugar' => 'Sabina Live',
-								'fecha' => '02 de noviembre',
-							];
-				        $info['morelia'] = [
-								'ciudad' => 'Morelia, Mich.',
-								'lugar' => 'Café del Olmo',
-								'fecha' => '24 de noviembre',
-							];
-				        $info['orizaba'] = [
-								'ciudad' => 'Orizaba, Veracruz',
-								'lugar' => 'Mercadito Orizaba',
-								'fecha' => '01 de noviembre',
-							];
-				        $info['pachuca'] = [
-								'ciudad' => 'Pachuca, Hidalgo',
-								'lugar' => 'Alliroos Cantabar',
-								'fecha' => '09 de noviembre',
-							];
-				        $info['queretaro'] = [
-								'ciudad' => 'Querétaro',
-								'lugar' => 'Portón de Santiago',
-								'fecha' => '07 de diciembre',
-							];
-				        $info['slp'] = [
-								'ciudad' => 'San Luis Potosí',
-								'lugar' => 'Restaurante y Bar Casa Vieja',
-								'fecha' => '22 de noviembre',
-							];
-				        $info['torreon'] = [
-								'ciudad' => 'Torreón, Cohauila',
-								'lugar' => 'La Bicicleta',
-								'fecha' => '30 de noviembre',
-							];
-				    	$info['veracruz'] = [
-								'ciudad' => 'Veracruz',
-								'lugar' => 'Aguamala Bar',
-								'fecha' => '02 de noviembre',
-							];
-					@endphp
-
-					<div class="col s12">
-						<div class="col s12 event-date-card no-padding">
-							<div class="col s12 m4 l2 no-padding">
-								<img src="{{asset("img/raquel-$ciudad.jpg")}}" class="materialboxed responsive-img">
-							</div>
-							<div class="event-date-details">
-								<h5><b>RAQUEL SOFIA</b></h5>
-								<p><b>Ciudad:</b> {{ $info[$ciudad]['ciudad'] }}</p>
-								<p><b>Lugar:</b> {{ $info[$ciudad]['lugar'] }}</p>
-								<p><b>Fecha:</b> {{ $info[$ciudad]['fecha'] }}</p>
-								<p><b>Hora:</b> 20:30 hrs</p>
-								<p><b>Asientos:</b> {{ $data->count() }}</p>
-							</div>
-							<a href="{{ route('cliente.ticket', 'raquel-'.$ciudad) }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-
-						</div>
-					</div>
-					{{-- <p class="grey-text"><i>*Boletos disponibles en breve.</i></p> --}}
-				@endif
-
-			@endforeach
-
-			@foreach( $pate as $ciudad => $data )
+			{{-- @foreach( $pate as $ciudad => $data )
 
 				@if( $data->isNotEmpty() )
 
@@ -219,10 +144,9 @@
 
 						</div>
 					</div>
-					{{-- <p class="grey-text"><i>*Boletos disponibles en breve.</i></p> --}}
 				@endif
 
-			@endforeach
+			@endforeach --}}
 
 
 		</div>

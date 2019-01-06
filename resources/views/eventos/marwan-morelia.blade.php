@@ -34,6 +34,36 @@
 	    width: 50%;
 	    left: 25%;
 	}
+	#mapa-escenario.bottom-map{
+		bottom: -25px;
+	    height: 50px;
+	    width: 50%;
+	    left: 25%;
+	}
+	#mapa-escenario.top-left-map{
+		top: -25px;
+	    height: 50px;
+	    width: 50%;
+	    left: -20%;
+	}
+	#mapa-escenario.top-right-map{
+		top: -25px;
+	    height: 50px;
+	    width: 50%;
+	    right: -20%;
+	}
+	#mapa-escenario.bottom-left-map{
+		bottom: -25px;
+	    height: 50px;
+	    width: 50%;
+	    left: -20%;
+	}
+	#mapa-escenario.bottom-right-map{
+		bottom: -25px;
+	    height: 50px;
+	    width: 50%;
+	    right: -20%;
+	}
 	#mapa-escenario.left-map{
 		top: 10%;
 	    height: 80%;
@@ -60,6 +90,7 @@
 		position: relative;
 		overflow: hidden;
 		padding-left: 0!important;
+		padding-right: 0!important;
     	margin-left: 0.75rem!important;
 	}
 	.asiento{
@@ -139,7 +170,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m8 teal accent-4">Zona diamante</div>
+								<div class="col s12 m8 teal accent-4">Diamante</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s12"><span>$420</span> Por entrada</div>
@@ -250,64 +281,50 @@
 <section id="compra" class="section-comprar">
 	@if(Auth()->check())
 	<div class="row">
-		<div class="col m6 mt-30">
-			<img src="{{ asset('img/stella_inda.png') }}" alt="" class="responsive-img" id="zoom_01" data-zoom-image="{{asset('img/stella_inda.jpg')}}">
-			<p class="center-align"><i>*Scroll sobre la imagen para hacer zoom</i></p>
+		<div class="col s12 mb-15">
+			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 		</div>
-		<div class="col m4 offset-m1 mt-30">
-			@if(Auth()->check())
-				{!! Form::open(['route'=>'payment.details', 'method'=>'POST']) !!}
-					<div class="row">
-						<h5 class="quote">Elija sus boletos</h5>
-						<div class="input-field col s12">
-							{!! Form::select('zona', ['Diamante' => 'Diamante', 'Oro' => 'Oro'], '', ['class' => 'select-dropdown', 'required', 'id' => 'zona', 'placeholder' => 'Selecciona la zona']) !!}
-							{!! Form::label('zona', 'Zona') !!}
-						</div>
-						<div class="input-field col s12" id="select-fila">
-							{!! Form::select('fila', [], '', ['class' => 'select-dropdown', 'required', 'id' => 'fila', 'placeholder' => 'Selecciona primero una zona']) !!}
-							{!! Form::label('fila', 'Fila') !!}
-						</div>
-						<div class="input-field col s12" id="select-asiento">
-							{!! Form::select('asiento[]', [], '', ['class' => 'select-dropdown', 'required', 'multiple','id' => 'asiento', 'placeholder' => 'Selecciona primero una fila']) !!}
-							{!! Form::label('asiento', 'Asiento') !!}
-						</div>
-						
-						{!! Form::hidden('img', 'img/marwan-morelia-2019.jpg') !!}
-						{!! Form::hidden('evento', 'Marwan') !!}
-						{!! Form::hidden('fecha', '15 de Febrero, 2019') !!}
-						{!! Form::hidden('lugar', 'Teatro Stella Inda') !!}
-						{!! Form::hidden('ciudad', 'Morelia') !!}
-						{!! Form::hidden('hora', '20:30 hrs') !!}
-						{!! Form::hidden('event_type', 'numerado') !!}
-						{!! Form::hidden('db_table', 'marwan_morelia_15feb') !!}
-						{!! Form::hidden('info', '--') !!}
-						{!! Form::hidden('select_type', 'list') !!}
-						{!! Form::hidden('precio', '', ['id' => 'precio']) !!}
-						{!! Form::hidden('url', url('eventos/marwan-morelia')) !!}
-
-						<div class="input-field col s12">
-							<p><em>* Puedes seleccionar un máximo de 8 lugares</em></p>
-						</div>
-						
-					</div>
-
-					<div class="row">
-					
-						<div class="input-field center-align">
-							{!! Form::submit('Confirmar',['class'=>'btn waves-effect waves-light  orange accent-3']) !!}
-						</div>	
-					
-					</div>
-						
-				{!! Form::close() !!}
-			@else
-				<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
-				<div class="col s6 col-center">
-					<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
+		<div class="col s12 m6">
+			@include('maps.teatro-stella-inda')
+		</div>
+		<div class="col s12 m6">
+			<div class="col s12 mb-15">
+				<div class="col s1 grey darken-4" style="height: 25px;"></div>
+				<div class="col s11">
+					<div class="col s5">Escenario</div>
+					<div class="col s7 right-align" id="info-title-section"></div>
 				</div>
-			@endif
-			
-		</div>		
+			</div>
+			<div class="col s11 bloque-container">
+				
+				<div id="mapa-escenario" class=""></div>
+				<div id="mapa-asientos" class="col s12"></div>
+			</div>
+			<div class="col s12 mt-15">
+				<p id="ticket-message"></p>
+			</div>
+			<div class="col s12 center-align mt-15">
+				<a href="javascript:;" id="checkout" class="btn waves-effect waves-light orange accent-3 hide">SIGUIENTE</a>
+				{!! Form::open(['route'=>'payment.details', 'method'=>'POST', 'id' => 'checkout-form', 'style' => 'display:none;']) !!}
+
+					{!! Form::hidden('asiento', '', ['id' => 'form_asiento']) !!}
+					{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
+					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
+					{!! Form::hidden('img', 'img/marwan-morelia-2019.jpg') !!}
+					{!! Form::hidden('evento', 'Marwan') !!}
+					{!! Form::hidden('fecha', '15 de febrero 2019') !!}
+					{!! Form::hidden('lugar', 'Teatro Stella Inda') !!}
+					{!! Form::hidden('ciudad', 'Morelia') !!}
+					{!! Form::hidden('hora', '20:30 hrs') !!}
+					{!! Form::hidden('event_type', 'numerado') !!}
+					{!! Form::hidden('db_table', 'marwan_morelia_15feb') !!}
+					{!! Form::hidden('info', '--') !!}
+					{!! Form::hidden('select_type', 'manual') !!}
+					{!! Form::hidden('url', url('eventos/marwan-morelia')) !!}
+				{!! Form::close() !!}
+			</div>
+		</div>
+	
 	</div>
 	@else
 	<div class="row">
@@ -355,14 +372,9 @@
 @endsection
 
 @section('scripts')
-	<script type="text/javascript" src="{{asset('js/jquery.elevatezoom.js')}}"></script>
 	<script>
-		var tabla_evento = "marwan_morelia_15feb";
 
-		$("#zoom_01").elevateZoom({
-			scrollZoom : true,
-			zoomType: "inner"
-		});
+		var seccion = '';
 
 		$('#modal-video-open').leanModal({
 			opacity: .8,
@@ -376,13 +388,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 19.7029521, lng: -101.2024255};
+		        var uluru = {lat: 21.868241, lng: -102.3072059};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 17,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 19.7032521, lng: -101.2018855}
+		          center: {lat: 21.868241, lng: -102.3072059}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,
@@ -390,54 +402,139 @@
 		        });
 		      }
 
-		$("#zona").change(function(){
+		function printSection(query, align, stage){
 
-			var zona = $(this).val();
-			
-			if( zona == 'Diamante' ){
-				$("#precio").val('420');
-			}else{
-				$("#precio").val('320');
+			let asientos = "", html = "", status = "", currentRow = "", fila = "", i=0;
+
+			if(query[i].status != 0){
+				status = 'ocupado';
 			}
 
-			$.ajax({
-				url: '{{url('/api/getFilas')}}/'+ tabla_evento +'/' + zona,
-				// url: '{{url('/api/getFilas')}}',
-				method: 'GET',
-				// data: 'id=' + id,
-				success: function(filas){
-					var options = "<option value='' selected disabled>Selecciona una fila</option>";
-					for(i=0; i<filas.length; i++){
-						options += '<option value='+filas[i].fila+'>'+ filas[i].fila +'</option>';
-					}
-					$("#fila").html(options);
-					$("#fila").material_select();
+			query[i].fila == 'NN'? fila = 'Ñ': fila = query[i].fila;
 
+			asientos = '<span class="row-name center-align">'+ fila +'</span><a href="javascript:;" class="asiento '+status+'" data-info="'+query[i].id+'|'+query[i].asiento+'|'+fila+'">'+ query[i].asiento +'</a>';
+			currentRow = query[i].fila;
+			i++;
+			status = "";
+
+
+			while(i<query.length){
+				if(query[i].status != 0){
+					status = 'ocupado';
+				}
+
+				query[i].fila == 'NN'? fila = 'Ñ': fila = query[i].fila;
+
+				if(currentRow == query[i].fila) {
+					asientos += '<a href="javascript:;" class="asiento '+status+'" data-info="'+query[i].id+'|'+query[i].asiento+'|'+fila+'">'+ query[i].asiento +'</a>';					
+				}else{
+					currentRow = query[i].fila;
+
+					html += asientos +'<br>';
+
+					html += '<span class="row-name center-align">'+ fila +'</span><a href="javascript:;" class="asiento '+status+'" data-info="'+query[i].id+'|'+query[i].asiento+'|'+fila+'">'+ query[i].asiento +'</a>';
+					asientos = "";
+					
+				}
+				if(i == query.length - 1){
+					html += asientos +'<br>';
+				}
+
+				i++;
+				status = "";
+			}
+
+			$("#mapa-escenario").attr('class', stage+'-map');
+			$("#mapa-asientos").css('text-align', align);
+			$("#mapa-asientos").html(html);
+		}
+
+		function setPrecio() {
+
+			let precio = '';
+
+			switch(seccion){
+				case 'Diamante': 
+					precio = 420;break;
+				case 'Oro': 
+					precio = 320;break;
+			}
+
+			return precio;
+		}
+
+		$(".block-hover").click(function(){
+
+			$("#mapa-asientos").css('text-align', 'center');
+			$("#mapa-asientos").html('<img src="{{asset('img/loading.gif')}}">');
+			$("#mapa-escenario").attr('class', 'hidden');
+
+			let bloque = $(this).attr('id'),
+				order_fila = $(this).data('order-fila'),
+				order_asiento = $(this).data('order-asiento'),
+				align = $(this).data('align'),
+				stage = $(this).data('stage');
+			
+			seccion = $(this).data('seccion');
+
+			$("#info-title-section").html(seccion + ' <small>bloque'+bloque.substring(bloque.indexOf('-')) + '</small>');
+
+			$.ajax({
+				url: '{{url('/api/getMapAsientos')}}/marwan_morelia_15feb/' + bloque + '/' + order_fila + '/' + order_asiento,
+				method: 'GET',
+				success: function(res){
+					printSection(res, align, stage);
+					$("#checkout").removeClass('hide');
+				},
+				error: function(res){
+					alert(res);
 				}
 			});
+		});
+
+		$("#mapa-asientos").on('click', '.asiento',function(){
+
+			if(!$(this).hasClass('ocupado')){
+
+
+				if($(".seleccionado").length < 8){
+					$(this).toggleClass('seleccionado');
+				}else if($(".seleccionado").length == 8 && $(this).hasClass('seleccionado')){
+					$(this).removeClass('seleccionado');
+				}
+
+			}
 
 		});
 
-		$("#fila").change(function(){
+		$("#checkout").click(function(){
+			
+			let ids = '',
+				asientos = [],
+				precio = setPrecio(); 
 
-			var fila = $(this).val();
+			if($(".seleccionado").length > 0){
 
-			$.ajax({
-				url: '{{url('/api/getAsientos')}}/'+ tabla_evento +'/' + fila,
-				method: 'GET',
-				// data: 'id=' + id,
-				success: function(asientos){
+				$("#ticket-message").html('');
 
-					var options = "<option value='' selected disabled>Seleccione los asientos</option>";
-					for(i=0; i<asientos.length; i++){
-						options += '<option value='+asientos[i].id+'|'+asientos[i].asiento+'>'+ asientos[i].asiento +'</option>';
-					}
-					$("#asiento").html(options);
-					$("#asiento").material_select();
+				$("#form_zona").val(seccion);
+				$("#form_precio").val(precio);
 
-				}
-			});
+				$(".seleccionado").each(function(i, item){
+
+					asientos.push( $(item).data('info') );
+
+				});
+
+				$("#form_asiento").val(asientos);
+				$("#checkout-form").submit();
+
+			}else{
+				$("#ticket-message").html('* Debes seleccionar al menos un lugar antes de continuar');
+			}
+
 		});
+
 	</script>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
