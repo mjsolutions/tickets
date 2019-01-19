@@ -140,6 +140,7 @@
 						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}		
 						@endif
 						{!! Form::hidden('event_type', $req->event_type) !!}
+						{!! Form::hidden('impresion_boleto', $req->impresion_boleto) !!}
 						{!! Form::hidden('db_table', $req->db_table) !!}
 						{!! Form::hidden('info', $req->info) !!}
 						{!! Form::hidden('customer_name', Auth::user()->name.' '.Auth::user()->last_name.' '.Auth::user()->second_lname) !!}

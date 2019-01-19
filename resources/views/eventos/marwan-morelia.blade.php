@@ -11,124 +11,7 @@
 <meta property="og:image" content="http://bolematico.mx/img/marwan-morelia.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
-<style>
-	#mapa-asientos{
-		overflow: auto;
-		white-space: nowrap;
-		max-height: 450px;
-		padding-top: 40px;
-		padding-left: 40px;
-		padding-right: 20px;
-		padding-bottom: 40px;
-	    background: #FFF;
-	    border: 1px solid #ccc;
-	}
-	#mapa-escenario{
-		position: absolute;
-		background-color: #222;
-		border-radius: 50%;
-	}
-	#mapa-escenario.top-map{
-		top: -25px;
-	    height: 50px;
-	    width: 50%;
-	    left: 25%;
-	}
-	#mapa-escenario.bottom-map{
-		bottom: -25px;
-	    height: 50px;
-	    width: 50%;
-	    left: 25%;
-	}
-	#mapa-escenario.top-left-map{
-		top: -25px;
-	    height: 50px;
-	    width: 50%;
-	    left: -20%;
-	}
-	#mapa-escenario.top-right-map{
-		top: -25px;
-	    height: 50px;
-	    width: 50%;
-	    right: -20%;
-	}
-	#mapa-escenario.bottom-left-map{
-		bottom: -25px;
-	    height: 50px;
-	    width: 50%;
-	    left: -20%;
-	}
-	#mapa-escenario.bottom-right-map{
-		bottom: -25px;
-	    height: 50px;
-	    width: 50%;
-	    right: -20%;
-	}
-	#mapa-escenario.left-map{
-		top: 10%;
-	    height: 80%;
-	    width: 50px;
-	    left: -25px;		
-	}
-	#ticket-message{
-		font-style: italic;
-		color: #AC1D39;
-	}
-	#info-title-section{
-		color: #006064;
-		font-size: 1.4rem;
-		font-weight: 700;
-		text-transform: uppercase;
-	}
-	#info-title-section > small {
-		background: #006064;
-	    color: #FFF;
-	    padding: 3px 5px;
-	    text-transform: none;
-	}
-	.bloque-container{
-		position: relative;
-		overflow: hidden;
-		padding-left: 0!important;
-		padding-right: 0!important;
-    	margin-left: 0.75rem!important;
-	}
-	.asiento{
-		display: inline-block;
-	    margin: 2px;
-	    border: 1px solid #37ABB3;
-	    width: 25px;
-	    height: 25px;
-	    text-align: center;
-	    line-height: 25px;
-	    font-size: 0.75rem;
-	    border-radius: 5px;
-	}
-	.row-name{
-		display: inline-block;
-		font-size: 1.2rem;
-		width: 30px;
-		height: 25px;
-		margin-top: 2px;
-		margin-bottom: 2px;
-		margin-right: 5px;
-		text-align: center;
-	    line-height: 25px;
-	    color: #017982;
-	    font-weight: 700;
-	    float: left; 
-	}
-	.ocupado {
-		background-color: #dedede;
-		border-color: #bbb;
-		color: #aaa;
-		cursor: no-drop;
-	}
-	.seleccionado {
-		background-color: #2ECC40;
-		color: #222;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/event-select-manual.css') }}">
 @endsection
 
 @section('content')
@@ -271,10 +154,10 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/Bn1HTYbkUPY/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/X98HLdKgGmM/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/Bn1HTYbkUPY"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Marwan - Ya Te Estoy Imaginando (Acústico)</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/X98HLdKgGmM"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Marwan - Un Día de Estos</i></p>
 	</div>
 </section>
 
@@ -317,6 +200,7 @@
 					{!! Form::hidden('ciudad', 'Morelia') !!}
 					{!! Form::hidden('hora', '20:30 hrs') !!}
 					{!! Form::hidden('event_type', 'numerado') !!}
+					{!! Form::hidden('impresion_boleto', true) !!}
 					{!! Form::hidden('db_table', 'marwan_morelia_15feb') !!}
 					{!! Form::hidden('info', '--') !!}
 					{!! Form::hidden('select_type', 'manual') !!}
@@ -388,13 +272,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 21.868241, lng: -102.3072059};
+		        var uluru = {lat: 19.7032, lng: -101.2034407};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 17,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 21.868241, lng: -102.3072059}
+		          center: {lat: 19.7032, lng: -101.2028407}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

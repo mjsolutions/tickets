@@ -107,6 +107,7 @@ class PaymentController extends Controller
 			'event_type' => $req->event_type,
 			'db_table' => $req->db_table,
 			'info' => $req->info,
+			'impresion_boleto' => $req->impresion_boleto,
 			'event' => $req->evento,
 			'event_photo' => $req->event_photo,
 			'ids' => $req->asientos_id,

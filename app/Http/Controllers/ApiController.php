@@ -84,6 +84,7 @@ class ApiController extends Controller
             $ciudad = $req->data['object']['line_items']['data'][0]['metadata']['ciudad'];
             $hr = $req->data['object']['line_items']['data'][0]['metadata']['hr'];
             $info = $req->data['object']['line_items']['data'][0]['metadata']['info'];
+            $impresion_boleto = $req->data['object']['line_items']['data'][0]['metadata']['impresion_boleto'];
             $asientos = $req->data['object']['line_items']['data'][0]['metadata']['asientos'];
             $seccion = $req->data['object']['line_items']['data'][0]['metadata']['seccion'];
             $fila = $req->data['object']['line_items']['data'][0]['metadata']['fila'];
@@ -169,6 +170,7 @@ class ApiController extends Controller
             $buydata['fecha'] = $event_date;
             $buydata['hr'] = $hr;
             $buydata['info'] = $info;
+            $buydata['impresion_boleto'] = $impresion_boleto;
             $buydata['descripcion'] = $descripcion;
             $buydata['transaccion'] = $reference;
             $buydata['user'] = $user->name.' '.$user->last_name.' '.$user->second_lname;

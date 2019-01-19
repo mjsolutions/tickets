@@ -90,11 +90,11 @@
 
 <div class="image-header bg-roberto-tapia overlay" style="background-attachment: initial;">
 
-	{{-- <div class="row">
+	<div class="row">
 		<h4 class="wow flipInX" data-wow-delay="0.5s">Roberto Tapia</h4>
 		<div class="divider wow fadeInLeft" data-wow-delay="0.8s" style="height: 2px; background-color: #0b529e;"></div>
-		<p class="wow flipInX" data-wow-delay="0.5s"><i>Tour 2018</i></p>
-	</div> --}}
+		<p class="wow flipInX" data-wow-delay="0.5s"><i>Tour 2019</i></p>
+	</div>
 	{{-- <a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a> --}}
 </div>
 
@@ -102,17 +102,17 @@
 	<div class="row">
 		<div class="col s12">
 			<ul class="tabs">
-				<li class="tab "><a class="active" href="#tour">TOUR 2018</a></li>
+				<li class="tab "><a class="active" href="#tour">TOUR 2019</a></li>
 				<li class="tab "><a href="#fechas">FECHAS</a></li>
 				{{-- <li class="tab "><a href="#lugares">Boletos</a></li> --}}
 			</ul>
 		</div>
 		<div id="tour" class="col s12 tab-content">
-			<div class="row mb-50">
+			{{-- <div class="row mb-50">
 				<div class="col s12">
 					<img src="{{ asset('img/roberto-tapia-banner.jpg') }}" alt="" class="responsive-img wow fadeIn">
 				</div>
-			</div>
+			</div> --}}
 			<div class="row">
 				<div class="col s12 m9 wow fadeIn" data-wow-delay="0.5s">
 					<h4 class="mt-0 mb-30 raleway quote">BIOGRAFIA</h4>
@@ -145,74 +145,60 @@
 				<div class="col s10 offset-s1">
 					<h5 class="mt-0 mb-50 raleway quote"><B>FECHAS CONFIRMADAS</B> <br><small>¡No pierdas tu lugar y compra tus boletos ya!</small></h5>
 
-					<h5 class="pl-30"><b>JUNIO</b></h5>
+					<h5 class="pl-30"><b>FEBRERO</b></h5>
 					<div class="divider mb-30"></div>
 					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
-								<b>JUNIO</b>
+								<b>FEBRERO</b>
 							</div>
 							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>01</b></h3>
+								<h3 class="mt-0 mb-0"><b>22</b></h3>
 							</div>
 						</div>
 						<div class="event-date-details">
-							<h5><b>LOUISVILLE KENTUCKY</b></h5>
-							<p>COCONUT BEACH</p>
-							<p>21:00 hrs.</p>
+							<h5><b>ORIZABA, VERACRUZ</b></h5>
+							<p>CITY NATIONAL CIVIC</p>
+							{{-- <p>21:30 hrs.</p> --}}
 						</div>
-						<a href="#!" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+						<a href="{{ route('eventos.selecciona-lugares', 'orizaba') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
 
 					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
-								<b>JUNIO</b>
+								<b>FEBRERO</b>
 							</div>
 							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>03</b></h3>
+								<h3 class="mt-0 mb-0"><b>23</b></h3>
 							</div>
 						</div>
 						<div class="event-date-details">
-							<h5><b>COLUMBUS OHIO</b></h5>
-							<p>CLUB LA BOOM</p>
-							<p>21:00 hrs.</p>
+							<h5><b>ORIZABA, VERACRUZ</b></h5>
+							<p>MICROSOFT THEATER</p>
+							{{-- <p>21:30 hrs.</p> --}}
 						</div>
-						<a href="#!" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+						<a href="{{ route('eventos.selecciona-lugares', 'orizaba') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
-					<div class="col s12 event-date-card no-padding">
-						<div class="event-date-card-calendar">
-							<div class="event-date-card-month">
-								<b>JUNIO</b>
-							</div>
-							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>08</b></h3>
-							</div>
-						</div>
-						<div class="event-date-details">
-							<h5><b>PASSAIC NEW JERSEY</b></h5>
-							<p>LA FIESTA NIGHT CLUB</p>
-							<p>21:00 hrs.</p>
-						</div>
-						<a href="#!" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div>
-					<h5 class="pl-30"><b>JULIO</b></h5>
+
+
+					<h5 class="pl-30"><b>MARZO</b></h5>
 					<div class="divider mb-30"></div>
 					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
-								<b>JULIO</b>
+								<b>MARZO</b>
 							</div>
 							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>27</b></h3>
+								<h3 class="mt-0 mb-0"><b>07</b></h3>
 							</div>
 						</div>
 						<div class="event-date-details">
-							<h5><b>URUAPAN MICHOACAN</b> <small>feat. Alta Consigna</small></h5>
-							<p>PLAZA DE TOROS LA MACARENA</p>
-							<p>21:00 hrs.</p>
+							<h5><b>QUERÉTARO</b></h5>
+							<p>ROSEMONT THEATER</p>
+							<p>21:30 hrs.</p>
 						</div>
-						<a href="#!" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+						<a href="{{ route('eventos.selecciona-lugares', 'queretaro') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
 					
 				</div>
