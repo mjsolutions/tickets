@@ -6,9 +6,71 @@
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
+<style type="text/css">
+	.table-detalles th, .table-detalles td { padding: 3px 0; }
+	.table-detalles th { width: 70px; }
+	.number-step {
+		color: #FFF;
+		margin-right: 15px;
+		padding: 3px 10px;
+		border-radius: 50%;
+	}
+</style>
 @endsection
 
 @section('content')
+
+@if( $req->event_type == "numerado" )
+
+	@php
+
+	$i=0;
+
+	if($req->select_type == 'manual'){
+
+		$asientos = explode(',', $req->asiento);
+
+		foreach ($asientos as $asiento) {
+			$field = explode('|', $asiento);
+			$id[$i] = $field[0];
+			$sit[$i] = $field[1];
+			$row[$i] = $field[2];
+			$i++;
+		}
+
+		$num_asientos = sizeof($asientos);
+
+		$str_sits = "";
+		$j = 0;
+		foreach( $sit as $s ){
+			$str_sits .= " *".$row[$j]."|".$s;
+			$j++;
+		}
+
+	}else{
+
+		foreach ($req->asiento as $value) {
+			$field = explode('|', $value);
+			$id[$i] = $field[0];
+			$sit[$i] = $field[1];
+			$i++;
+		}
+
+		$num_asientos = sizeof($req->asiento);
+
+	}
+
+	@endphp
+
+@else
+	
+	@php
+	$num_asientos = $req->asiento;
+	@endphp
+
+@endif
+
+
 
 <div class="image-header bg-5 overlay overlay-5">
 	<div class="row white-text">
@@ -19,86 +81,94 @@
 
 <div class="container">
 	<div class="row">
-		<h5 class="mt-30 quote">Verifica que los datos esten correctos y selecciona tu forma de pago.</h5>
+		<div class="col s12">
+			<h5 class="mt-30"><span class="number-step deep-orange darken-2">1</span> Verifica que los datos esten correctos.</h5>
+		</div>
 	</div>
 	
 	<div class="row mt-30 mb-50">
 		<div class="col m6">
-			<div class="col m4">
-				<img src="{{ asset($req->img) }}" alt="" class="materialboxed responsive-img">
+			<div class="col s12 card-text white">
+				<div class="col m4">
+					<img src="{{ asset($req->img) }}" alt="" class="materialboxed responsive-img">
+				</div>
+				<div class="col m8">
+					<table class="table-detalles">
+						<tbody>
+							<tr>
+								<th>Evento:</th>
+								<td><b>{{ $req->evento }}</b></td>
+							</tr>
+							<tr>
+								<th>Fecha:</th>
+								<td>{{ $req->fecha }}</td>
+							</tr>
+							<tr>
+								<th>Ciudad:</th>
+								<td>{{ $req->ciudad }}</td>
+							</tr>
+							<tr>
+								<th>Lugar:</th>
+								<td>{{ $req->lugar }}</td>
+							</tr>
+							<tr>
+								<th>Hora:</th>
+								<td>{{ $req->hora }}</td>
+							</tr>
+							<tr>
+								<th>Zona:</th>
+								<td>{{ $req->zona }}</td>
+							</tr>
+							@if( $req->event_type == "numerado" )
+
+								@if($req->select_type != 'manual')
+								<tr>
+									<th>Fila:</th>
+									<td>{{ $req->fila }}</td>
+								</tr>
+								<tr>
+									<th>Asientos:</th>
+									<td>*{{ implode(" *", $sit) }}</td>
+								</tr>
+								@else
+								<tr>
+									<th>Fila/Asiento:</th>
+									<td>{{$str_sits}}</td>
+								</tr>
+								@endif
+
+							@else
+								<tr>
+									<th>Asientos:</th>
+									<td>{{ $num_asientos }}</td>
+								</tr>			
+							@endif
+							<tr>
+								<th>Email:</th>
+								<td>{{ Auth::user()->email }}</td>
+							</tr>
+							<tr>
+								<th>Subtotal:</th>
+								<td>$ {{ number_format($req->precio * $num_asientos, 2, '.', ',') }}</td>			
+							</tr>
+							<tr>
+								<th>Servicio:</th>
+								<td>$ {{ number_format(($req->precio * $num_asientos) * 0.10, 2, '.', ',') }}</td>			
+							</tr>
+							<tr>
+								<th>TOTAL:</th>
+								<td colspan="2"><span class="label-precio">$ <b>{{ number_format(($req->precio * $num_asientos) * 1.10, 2, '.', ',') }}</b> MX</span></td>
+							</tr>					</tbody>
+
+					</table>
+				</div>
 			</div>
-			<div class="col m8">
-				<p class="mt-0"><b>Evento:</b> {{ $req->evento }}</p>
-				<p><b>Fecha:</b> {{ $req->fecha }}</p>
-				<p><b>Ciudad:</b> {{ $req->ciudad }}</p>
-				<p><b>Lugar:</b> {{ $req->lugar }}</p>
-				<p><b>Hora:</b> {{ $req->hora }}</p>
-				<p><b>Zona:</b> {{ $req->zona }}</p>
-				@if( $req->event_type == "numerado" )
 
-					@php
-
-					$i=0;
-
-					if($req->select_type == 'manual'){
-
-						$asientos = explode(',', $req->asiento);
-
-						foreach ($asientos as $asiento) {
-							$field = explode('|', $asiento);
-							$id[$i] = $field[0];
-							$sit[$i] = $field[1];
-							$row[$i] = $field[2];
-							$i++;
-						}
-
-						$num_asientos = sizeof($asientos);
-
-						$str_sits = "";
-						$j = 0;
-						foreach( $sit as $s ){
-							$str_sits .= " *".$row[$j]."|".$s;
-							$j++;
-						}
-
-					}else{
-
-						foreach ($req->asiento as $value) {
-							$field = explode('|', $value);
-							$id[$i] = $field[0];
-							$sit[$i] = $field[1];
-							$i++;
-						}
-
-						$num_asientos = sizeof($req->asiento);
-
-					}
-
-					@endphp
-
-				@if($req->select_type != 'manual')
-				<p><b>Fila:</b> {{ $req->fila }}</p>
-				<p><b>Asientos:</b> *{{ implode(" *", $sit) }}</p>
-				@else
-				<p><b>Fila/Asiento:</b> {{$str_sits}}</p>
-				@endif
-
-				@else
-					
-					@php
-					$num_asientos = $req->asiento;
-					@endphp
-				
-				<p><b>Asientos:</b> {{ $num_asientos }}</p>
-				@endif
-				<p><b>Email comprador:</b> {{ Auth::user()->email }}</p>
-				<p><b>Total:</b> <span class="label-precio">$ <b>{{ number_format(($req->precio * $num_asientos) * 1.10, 2, '.', ',') }}</b> MX</span></p>
+			<div class="col row mt-30">
+				<h5><span class="number-step deep-orange darken-2">2</span> Selecciona tu forma de pago.</h5>
 			</div>
-			<div class="col s10 offset-s1 ">
-				<div class="divider"></div>
-			</div>
-			<div class="col m12 mt-30">
-				<h5 class="center-align mb-30"><b>SELECCIONA TU FORMA DE PAGO</b></h5>
+
+			<div class="col s12 card-text white mt-30">
 				{!! Form::open(['route'=>'payment.confirm', 'method'=>'POST', 'id'=>'payment']) !!}
 					<div class="row center-align pt-40" id="form-inputs">
 
@@ -160,20 +230,20 @@
 						<div class="input-field col s12 center-align">
 							<button type="submit" id="btn-submit" class=" col s12 m8 offset-m2 btn btn-large btn-block waves-effect waves-light  deep-orange darken-2">CONFIRMAR COMPRA</button>
 							<div class="clearfix"></div>
-						</div>	
+						</div>
+						<div class="input-field col s12 center-align mt-0">
+							<a href="{{ $req->url }}" class="waves-effect waves-teal btn-flat">Cancelar compra</a>	
+						</div>
 					
 					</div>
 						
 				{!! Form::close() !!}
-					<div class="input-field col s12 center-align mt-0">
-							<a href="{{ $req->url }}" class="waves-effect waves-teal btn-flat">Cancelar compra</a>
-						
-					</div>
+					
 
 			</div>
 		</div>
 		<div class="col m6">
-			<div class="card-text">
+			<div class="card-text yellow lighten-5">
 				<div class="card-text-header deep-orange darken-2 center-align white-text">
 					<h5><b>IMPORTANTE</b></h5>
 				</div>

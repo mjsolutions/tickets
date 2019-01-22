@@ -201,6 +201,26 @@
 				<div class="col m6 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
+							<img src="{{asset('img/gon-slp.png')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">GON CURIEL</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>San Luis Potosí</b></p>
+								<p>Roadhouse</p>
+								<p>15 de febrero</p>
+								<p class="event-date">15/02/2019</p>
+
+							</div>
+							<a href="{{ url('/eventos/gon-curiel-slp') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
 							<img src="{{asset('img/marwan-morelia-2019.jpg')}}" class="materialboxed responsive-img">
 						</div>
 						<div class="card-stacked">
@@ -216,7 +236,47 @@
 							<a href="{{ url('/eventos/marwan-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
-				</div>			
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/gon-mazatlan.png')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">GON CURIEL</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Mazatlán</b></p>
+								<p>Tarros Company</p>
+								<p>28 de febrero</p>
+								<p class="event-date">28/02/2019</p>
+
+							</div>
+							<a href="{{ url('/eventos/gon-curiel-mazatlan') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/gon-durango.png')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">GON CURIEL</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Durango</b></p>
+								<p>La Quinta</p>
+								<p>01 de marzo</p>
+								<p class="event-date">01/03/2019</p>
+
+							</div>
+							<a href="{{ url('/eventos/gon-curiel-durango') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>		
 
 			</div>
 		</div>

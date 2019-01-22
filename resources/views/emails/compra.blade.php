@@ -27,8 +27,7 @@
 	<p>{{ $data['info'] }}</p>
 	@endif
 	@if($data['impresion_boleto'])
-	<p>Tus boletos estan disponibles en nuestro sitio web bolematico.mx, puedes entrar a tu cuenta y descargarlos desde la opción "Mis eventos" en el submenu desplegable "Mi cuenta" del menú principal o dando click <a href="http://bolematico.mx/micuenta/eventos
-		" target="_blank">aqui</a></p>
+	<p>Tus boletos estan disponibles en nuestro sitio web bolematico.mx, puedes entrar a tu cuenta y descargarlos desde la opción "Mis eventos" en el submenu desplegable "Mi cuenta" del menú principal o dando click <a href="http://bolematico.mx/micuenta/eventos" target="_blank">aqui</a></p>
 	<p>No olvides cuidar de tus entradas ya que son tu pase para el evento.</p>
 	@endif
 	<p>Si tienes alguna duda no dudes en contactarte con nosotros <a href="http://bolematico.mx/contacto" target="_blank">bolematico.mx/contacto</a></p>
