@@ -28,11 +28,9 @@
 		
 		</div>
 		
-		<div class="row mt-30">
-				
-			<div class="col-center col s2">
-				<a href="{{ route('index') }}" class="btn btn-block waves-effect waves-light  orange accent-3">Volver al inicio</a>
-			</div>
+		<div class="row mt-30 center-align">				
+			
+			<a href="{{ route('index') }}" class="btn waves-effect waves-light orange accent-3">Volver al inicio</a>
 		
 		</div>
 	</div>

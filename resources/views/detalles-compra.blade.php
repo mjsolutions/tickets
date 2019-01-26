@@ -15,6 +15,33 @@
 		padding: 3px 10px;
 		border-radius: 50%;
 	}
+	input[type=text] { height: 2rem; }
+	.input-field label { top: 0.3rem; }
+	.input-field label.active { transform: translateY(-110%); }
+	.input-field .prefix { 
+		font-size: 1.5rem;
+		width: 2.5rem;
+		top: 0.3rem;
+		color: #525153;
+	}
+	.input-field .prefix ~ input, .prefix ~ .select-wrapper {
+		margin-left: 2.5rem;
+		width: calc( 100% - 2.5rem );
+		padding-left: 0.5rem;
+	}
+	.select-wrapper input.select-dropdown {
+		height: 2rem;
+		line-height: 2rem;
+	}
+	.select-wrapper span.caret { top: 7px; }
+	.select-year + .select-dropdown {
+		width: calc(100% - 1rem);
+		margin-left: 1rem;
+	}
+	.dropdown-content li>span { 
+		padding: 5px 15px;
+		color: inherit;
+	}
 </style>
 @endsection
 
@@ -70,7 +97,10 @@
 
 @endif
 
-
+@php
+$months = [];
+for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_LEFT)] = str_pad($month, 2,'0', STR_PAD_LEFT);
+@endphp
 
 <div class="image-header bg-5 overlay overlay-5">
 	<div class="row white-text">
@@ -89,7 +119,7 @@
 	<div class="row mt-30 mb-50">
 		<div class="col m6">
 			<div class="col s12 card-text white">
-				<div class="col m4">
+				<div class="col m4" style="padding-top: 8px;">
 					<img src="{{ asset($req->img) }}" alt="" class="materialboxed responsive-img">
 				</div>
 				<div class="col m8">
@@ -164,7 +194,7 @@
 				</div>
 			</div>
 
-			<div class="col row mt-30">
+			<div class="col row mb-0 mt-30">
 				<h5><span class="number-step deep-orange darken-2">2</span> Selecciona tu forma de pago.</h5>
 			</div>
 
@@ -172,7 +202,15 @@
 				{!! Form::open(['route'=>'payment.confirm', 'method'=>'POST', 'id'=>'payment']) !!}
 					<div class="row center-align pt-40" id="form-inputs">
 
-						<div class="col m6 s6">
+						<div class="col s4">
+							<div>
+								<div class="col s10 offset-s1">
+									{!! Form::radio('payment_form', 'credit_card', '', ['id' => 'payment_card']) !!}
+									<label for="payment_card" class="check-up"><img src="{{ asset('img/cards.svg') }}" alt="" class="responsive-img"></label>
+								</div>
+							</div>
+						</div>
+						<div class="col s4">
 							<div>
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'oxxo_cash', '', ['id' => 'payment_oxxo']) !!}	
@@ -180,7 +218,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col m6 s6">
+						<div class="col s4">
 							<div>
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'spei', '', ['id' => 'payment_spei']) !!}
@@ -220,26 +258,69 @@
 						{!! Form::hidden('url', $req->url) !!}
 						
 					</div>
-
-					<div class="row">
-						<p id="error-response" class="center-align"></p>
-					</div>
-
-					<div class="row">
-					
-						<div class="input-field col s12 center-align">
-							<button type="submit" id="btn-submit" class=" col s12 m8 offset-m2 btn btn-large btn-block waves-effect waves-light  deep-orange darken-2">CONFIRMAR COMPRA</button>
-							<div class="clearfix"></div>
-						</div>
-						<div class="input-field col s12 center-align mt-0">
-							<a href="{{ $req->url }}" class="waves-effect waves-teal btn-flat">Cancelar compra</a>	
-						</div>
-					
-					</div>
 						
 				{!! Form::close() !!}
-					
 
+				{!! Form::open(['url'=>'', 'method'=>'POST', 'id'=>'card-form', 'class' => 'hide']) !!}
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="prefix fa fa-user"></i>
+							{!! Form::text('name', null, ['class' => 'validate', 'data-conekta' => 'card[name]', 'required']) !!}
+							{!! Form::label('name','Nombre del tarjetahabiente') !!}
+			
+						</div>
+						<div class="input-field col s12">
+							<i class="prefix fa fa-credit-card"></i>
+							{!! Form::text('number', null, ['class' => 'validate', 'data-conekta' => 'card[number]', 'required']) !!}
+							{!! Form::label('number','Número de tarjeta de crédito') !!}
+			
+						</div>
+						<div class="input-field col s3">
+							<span class="prefix" style="top: -0.1rem;"><small><b>CVC</b></small></span>
+							{!! Form::text('cvc', null, ['class' => 'validate', 'data-conekta' => 'card[cvc]', 'required']) !!}
+							{!! Form::label('cvc','CVC') !!}
+			
+						</div>
+						<div class="col s9">
+							<div class="input-field col s4" style="padding-right: 0">
+								<i class="prefix fa fa-calendar"></i>
+								{{-- {!! Form::text('exp_month', null, ['class' => 'validate', 'data-conekta' => 'card[exp_month]', 'required']) !!} --}}
+								{!! Form::select('exp_month', $months, '', ['class' => 'select-dropdown', 'id' => 'exp_month', 'placeholder' => 'MM', 'data-conekta' => 'card[exp_month]', 'required']) !!}
+								{{-- {!! Form::label('exp_month','MM') !!} --}}
+								{{-- <span> /</span> --}}
+							</div>
+							<div class="input-field col s8" style="padding-right: 0">
+								<i class="prefix fa select-year" style="width: 1rem">/</i>
+								{!! Form::selectYear('exp_year', date('Y'), 2030, '', ['class' => 'select-dropdown', 'id' => 'exp_year', 'placeholder' => 'AAAA', 'data-conekta' => 'card[exp_year]', 'required']) !!}
+								{{-- {!! Form::text('exp_year', null, ['class' => 'validate', 'data-conekta' => 'card[exp_year]', 'style' => 'width: calc(100% - 1rem); margin-left: 1rem', 'required']) !!} --}}
+								{{-- {!! Form::label('exp_year','AAAA') !!} --}}
+							</div>
+						</div>
+					</div>
+				{!! Form::close() !!}				
+
+			</div>
+
+			<div class="col row mb-0 mt-30">
+				<h5><span class="number-step deep-orange darken-2">3</span> Confirma tu compra</h5>
+			</div>
+
+			<div class="col s12 card-text white mt-30">
+				<div class="row">
+					<p id="error-response" class="center-align card-errors"></p>
+				</div>
+
+				<div class="row">
+				
+					<div class="input-field col s12 center-align">
+						<button id="btn-submit" class=" col s12 m8 offset-m2 btn btn-large btn-block waves-effect waves-light  deep-orange darken-2">CONFIRMAR COMPRA</button>
+						<div class="clearfix"></div>
+					</div>
+					<div class="input-field col s12 center-align mt-0">
+						<a href="{{ $req->url }}" class="waves-effect waves-teal btn-flat">Cancelar compra</a>	
+					</div>
+				
+				</div>
 			</div>
 		</div>
 		<div class="col m6">
@@ -267,48 +348,70 @@
 <script type="text/javascript" src="https://cdn.conekta.io/js/latest/conekta.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
+		
+		Conekta.setPublicKey('key_A45AqPGnrqTPaPV3eXto8TA');
+		// Conekta.setPublicKey('key_aYwC2MjtD5WfJDP3DJBsgYg');
 
-		Conekta.setPublicKey('key_KJysdbf6PotS2ut2');
+		//Mostar el form de tarjeta cuando se da back en el navegador
+		if($('#payment_card').is(':checked')){
+			$("#card-form").removeClass('hide');
+		}
+
+		//Click en cualquier forma de pago
+		$('input:radio').click(function(){
+			if($('#payment_card').is(':checked')){
+				$("#card-form").removeClass('hide');
+			}else{
+				$("#card-form").addClass('hide');				
+			}
+		});
 
 		var conektaSuccessResponseHandler = function(token) {
-			var $form = $("#card-form");
+			// console.log(token);
+			var $form = $("#payment");
 			//Inserta el token_id en la forma para que se envíe al servidor
 			$form.append($('<input type="hidden" name="conektaTokenId" id="conektaTokenId">').val(token.id));
-			$form.get(0).submit(); //Hace submit
+			$("#payment").trigger('submit');//Hace submit
 		};
 
 		var conektaErrorResponseHandler = function(response) {
 			var $form = $("#card-form");
-			$form.find(".card-errors").text(response.message_to_purchaser);
-			$form.find("button").prop("disabled", false);
+			$(".card-errors").html('<b class="red-text">'+response.message_to_purchaser+'</b>');
+			console.log(response);
+			$("#btn-submit").removeClass('disabled');
 		};
+		
 
-		//jQuery para que genere el token después de dar click en submit
-		$(function () {
-			$("#card-form").submit(function(event) {
-			  var $form = $(this);
-			  // Previene hacer submit más de una vez
-			  $form.find("button").prop("disabled", true);
-			  Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
-			  return false;
-			});
-		});
+		$("#btn-submit").click(function(){
 
-		$("#payment").submit(function(e){
-
-			// e.preventDefault();
-			// console.log($(this).serialize());
-
-			$("#btn-submit").html('Validando datos...');
-			$("#btn-submit").addClass('disabled');
-
-			if(!$('input:radio', this).is(':checked')){
+			//Validar que este seleccionad alguna forma de pago 
+			if(!$('input:radio').is(':checked')){
 				$("#btn-submit").removeClass('disabled');
 				$("#btn-submit").html('CONFIRMAR COMPRA');
 				$("#error-response").html('<b class="red-text">Debes seleccionar una forma de pago</b>');
 				$("#form-inputs").css('border', '2px solid #ff3400');
 				return false;
+			}else if($('#payment_card').is(':checked')){
+				$("#card-form").trigger('submit');
+			}else{
+				$("#payment").trigger('submit');
 			}
+
+		});
+
+		$("#card-form").submit(function(event) {
+		  var $form = $(this);
+		  // Previene hacer submit más de una vez
+		  $("#btn-submit").addClass('disabled');
+		  Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
+		  return false;
+		});
+
+		$("#payment").submit(function(e){
+
+			$("#btn-submit").html('Validando datos...');
+			$("#btn-submit").addClass('disabled');
+
 		});
 	});
 </script>

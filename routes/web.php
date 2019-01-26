@@ -56,12 +56,6 @@ Route::group(['prefix' => 'admin'], function() {
  */
 Route::group(['prefix'=>'eventos'],function(){
 
-	$v = "";
-	Route::get('{view}', function($view){
-		$v = 'eventos.'.$view;
-		return view($v);
-	})->name($v);
-
 	Route::get('compra', function(){
 		return view('eventos.compra');
 	})->name('eventos.compra');
@@ -69,6 +63,15 @@ Route::group(['prefix'=>'eventos'],function(){
 	Route::get('selecciona-lugares/{ciudad}', function($ciudad){
 		return view('eventos.selecciona-lugares')->with(['ciudad' => $ciudad]);
 	})->name('eventos.selecciona-lugares');
+
+	Route::get('{view}', function($view){
+
+		if(view()->exists('eventos.'.$view)){
+			return view('eventos.'.$view);			
+		}else{
+			return view('errors.404');
+		}
+	});
 
 });
 

@@ -164,7 +164,7 @@
 			{!! Form::hidden('ciudad', 'Morelia. Mich.') !!}
 			{!! Form::hidden('hora', '21:00 hrs') !!}
 			{!! Form::hidden('event_type', 'general') !!}
-			{!! Form::hidden('impresion_boleto', false) !!}
+			{!! Form::hidden('impresion_boleto', true) !!}
 			{!! Form::hidden('zona', 'Oro') !!}
 			{!! Form::hidden('db_table', 'carlos_macias_morelia_08feb') !!}
 			{!! Form::hidden('info', 'Favor de comunicarte al numero 443 188 0358 para completar tu reservación.') !!}

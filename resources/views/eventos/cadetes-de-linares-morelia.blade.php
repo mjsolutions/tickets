@@ -2,7 +2,7 @@
 
 @section('title', 'Cadetes de Linares Morelia')
 
-@section('description', 'Cadetes de Linares Morelia, 08 de febrero, 21:00 hrs boletos en RS Viajes Centro y en bolematico.mx')
+@section('description', 'Cadetes de Linares Morelia, 02 de febrero, 21:00 hrs boletos en RS Viajes Centro y en bolematico.mx')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>

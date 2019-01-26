@@ -61,14 +61,15 @@ class PaymentController extends Controller
     	switch($req->payment_form){
 
 			case 'credit_card': 
-				return $this->ccPayment($req);
+				return $this->creditCardPayment($req);
 				break;
 			case 'spei':
 			case 'oxxo_cash':
+				// dd($req->all());
 				return $this->chargePayment($req);
 				break;
 			case 'paypal':
-				$this->paypalPayment($req);
+				// $this->paypalPayment($req);
 				break;
 		}
 
@@ -157,8 +158,7 @@ class PaymentController extends Controller
 				    array(
 				      'name' => 'Boletos '.$req->evento,
 				      'unit_price' => $req->precio * 100,
-				      'quantity' => $req->asientos_cantidad,
-				      'metadata' => $metadata
+				      'quantity' => $req->asientos_cantidad
 				    )
 				  ),
 				  'charges' => array(
@@ -166,7 +166,7 @@ class PaymentController extends Controller
 				      'payment_method' => array(
 				        'type' => $req->payment_form,
 				        'expires_at' => $expires_at->timestamp
-				      )
+				      ),
 				    )
 				  ),
 				  'tax_lines' => array(
@@ -174,23 +174,34 @@ class PaymentController extends Controller
 				  		'description' => 'Servicio',
 				  		'amount' => $total * 0.10 * 100
 				  	)
-				  )
+				  ),
+				  'metadata' => $metadata
 				));
 		} catch (\Conekta\ParameterValidationError $error){
-			  $res = $error->getMessage();
-			  $success = false;
-			  return view('eventos.compra', compact('res', 'success'));
-			} catch (\Conekta\Handler $error){
-			  $res = $error->getMessage();
-			  $success = false;
-			  return view('eventos.compra', compact('res', 'success'));
-			}
+			$res = $error->getMessage();
+			$success = false;
+			return view('eventos.compra', compact('res', 'success'));
+		} catch (\Conekta\Handler $error){
+			$res = $error->getMessage();
+			$success = false;
+			return view('eventos.compra', compact('res', 'success'));
+		}
 
-		$success = true;
-		$payment = 'pending';
-		Mail::to(Auth::user()->email, Auth::user()->name)
-			->send(new OrderCreated($order, $expires_at));
-		return view('eventos.compra', compact('payment', 'success', 'order', 'expires_at'));
+		dd($order);
+
+		// $success = true;
+		// $payment = 'pending';
+		// Mail::to(Auth::user()->email, Auth::user()->name)
+		// 	->send(new OrderCreated($order, $expires_at));
+		// return view('eventos.compra', compact('payment', 'success', 'order', 'expires_at'));
+    }
+
+    /**
+    * Pay by Credit Card
+    */
+
+    public function creditCardPayment($req) {
+    	dd($req->all());
     }
 
     /**

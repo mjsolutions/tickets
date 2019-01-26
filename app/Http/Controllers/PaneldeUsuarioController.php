@@ -19,11 +19,10 @@ class PaneldeUsuarioController extends Controller
         $marwan = DB::table('marwan_morelia_15feb')->where('user', Auth::id())->whereIn('status', [2, 3])->get();
 
         /** General **/
-        // $pate['ags'] = DB::table('pate_de_fua_ags_16nov')->where([['user', Auth::id()],['status', 2]])->get();
+        $carlos = DB::table('carlos_macias_morelia_08feb')->where([['user', Auth::id()],['status', 2]])->get();
+        // $pate['ags'] = DB::table('pate_de_fua_ags_16nov')->where([['user', Auth::id()],['status', 2]])->get();    	
 
-    	
-
-    	return view('user.eventos', compact('marwan'));
+    	return view('user.eventos', compact('marwan', 'carlos'));
     }
 
     public function printTicket( $id ){
@@ -61,6 +60,15 @@ class PaneldeUsuarioController extends Controller
             }
 
             
+        }elseif( $artista == 'carlos_macias' ){
+
+            $d['evento'] = "CARLOS MACIAS";
+            $d['hr'] = "21:00 hrs";
+            $d['img'] = "img/macias-morelia.jpg";
+            $d['Precio'] = "320.00";
+            $d['ciudad'] = 'Morelia, Mich.';
+            $d['lugar'] = 'Teatro Stella Inda';
+            $table = 'marwan_morelia_15feb';
         }
         // $ciudad = substr($id, strpos($id, '-') + 1 );        
 

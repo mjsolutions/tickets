@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Compra as Compra;
+use Log;
 
 class ApiController extends Controller
 {
@@ -70,65 +71,100 @@ class ApiController extends Controller
 
     public function chargePaid(Request $req) {
 
-
         // echo $req->data['object']['payment_method']['object'];
+        $conekta_conf = config('conekta');
+        //Buscara en las ordenes creadas bajo producccion, si se hacen pruebas y se crea orden en sandbox
+        //el webhook en el server fallara ya que el metodo find buscara en las ordenes de produccion y no en las de sandbox
+        //modificar la Apikey del server si se desea que las pruebas hechas en local se vean reflejadas en el server
+        //mediante los webhooks
+        \Conekta\Conekta::setApiKey($conekta_conf['sandbox_privateKey']);
+        \Conekta\Conekta::setApiVersion("2.0.0");
 
-        if($req->type == 'order.paid') {
+        $no_action = array("order.created", "order.pending_payment", "order.paid", "order.expired", "charge.created", "charge.pending_confirmation");
 
-            $table = $req->data['object']['line_items']['data'][0]['metadata']['db_table'];
-            $event_type = $req->data['object']['line_items']['data'][0]['metadata']['event_type'];
-            $event = $req->data['object']['line_items']['data'][0]['metadata']['event'];
-            $event_photo = $req->data['object']['line_items']['data'][0]['metadata']['event_photo'];
-            $event_date = $req->data['object']['line_items']['data'][0]['metadata']['date'];
-            $place = $req->data['object']['line_items']['data'][0]['metadata']['place'];
-            $ciudad = $req->data['object']['line_items']['data'][0]['metadata']['ciudad'];
-            $hr = $req->data['object']['line_items']['data'][0]['metadata']['hr'];
-            $info = $req->data['object']['line_items']['data'][0]['metadata']['info'];
-            $impresion_boleto = $req->data['object']['line_items']['data'][0]['metadata']['impresion_boleto'];
-            $asientos = $req->data['object']['line_items']['data'][0]['metadata']['asientos'];
-            $seccion = $req->data['object']['line_items']['data'][0]['metadata']['seccion'];
-            $fila = $req->data['object']['line_items']['data'][0]['metadata']['fila'];
+        if ($req->type == 'charge.paid') {
+
+            $order_id = $req->data['object']['order_id'];
+
+            try{
+                $conekta_obj = \Conekta\Order::find($order_id);
+            }catch(\Exception $e) {
+                return response()->json(['message'=>'Conekta find order error: '.$e->getMessage()], 500);
+            }
+
+            $order = json_decode( $conekta_obj, true );
+
+            $table = $order['metadata']['db_table'];
+            $event_type = $order['metadata']['event_type'];
+            $event = $order['metadata']['event'];
+            $event_photo = $order['metadata']['event_photo'];
+            $event_date = $order['metadata']['date'];
+            $place = $order['metadata']['place'];
+            $ciudad = $order['metadata']['ciudad'];
+            $hr = $order['metadata']['hr'];
+            $info = $order['metadata']['info'];
+            $impresion_boleto = $order['metadata']['impresion_boleto'];
+            $asientos = $order['metadata']['asientos'];
+            $seccion = $order['metadata']['seccion'];
+            $fila = $order['metadata']['fila'];
             $ids = [];
+
             if($event_type == 'numerado'){
 
-            $ids = explode( "-" ,$req->data['object']['line_items']['data'][0]['metadata']['ids']);
+            $ids = explode( "-" ,$order['metadata']['ids']);
             
             }
-            $payment_type =  $req->data['object']['charges']['data'][0]['payment_method']['type'];
-            $reference =  $req->data['object']['charges']['data'][0]['id'];
 
-            $user = User::where('email', $req->data['object']['customer_info']['email'])->first();
-            $date = Carbon::createFromTimestamp($req->data['object']['created_at']);
+            $payment_type =  $order['charges'][0]['payment_method']['type'];
+            $reference =  $order['charges'][0]['id'];
+
+            $user = User::where('email', $order['customer_info']['email'])->first();
+            $date = Carbon::createFromTimestamp($order['created_at']);
             $descripcion = "";
             $buydata = Array();
             $buydata['folios'] = "";
-
 
             $folio = DB::table($table)->max('folio');
             $i = 1;
 
             if($event_type == 'general'){
 
-                for($i = 1; $i <= $asientos; $i++){
+                $rows = [];
 
-                    $new_folio = $folio + $i;
+                DB::beginTransaction();
 
-                    DB::table($table)->insert(
-                        ['seccion' => $seccion,
-                        'fila' => 'Sin fila',
-                        'asiento' => $i,
-                        'status' => 2,
-                        'impreso' => 0,
-                        'forma_pago' => $payment_type,
-                        'folio' => $new_folio,
-                        'codigo_barras' => substr(md5($new_folio), 0, 10),
-                        'token_vlinea' => $reference,
-                        'user' => $user->id,
-                        'fecha_venta' => $date
-                        ]);
+                try{
 
-                    $buydata['folios'] .= " *".$new_folio;
+                    for($i = 1; $i <= $asientos; $i++){
 
+                        $new_folio = $folio + $i;
+
+                        $row = ['seccion' => $seccion,
+                                'bloque' => '',
+                                'fila' => 'Sin fila',
+                                'asiento' => $i,
+                                'status' => 2,
+                                'impreso' => 0,
+                                'forma_pago' => $payment_type,
+                                'folio' => $new_folio,
+                                'codigo_barras' => substr(md5($new_folio), 0, 10),
+                                'token_vlinea' => $reference,
+                                'user' => $user->id,
+                                'fecha_venta' => $date];
+
+                        array_push($rows, $row);
+
+                        $buydata['folios'] .= " *".$new_folio;
+
+                    }
+
+                    DB::table($table)->insert($rows);
+
+                    DB::commit();
+
+                }catch(\Exception $e) {
+                    DB::rollBack();
+                    return response()->json(['message'=>'Error inserting in DB: '.$e->getMessage()], 500);
                 }
 
                 $descripcion = $asientos." lugares | Tipo: ".ucwords($seccion);
@@ -155,12 +191,12 @@ class ApiController extends Controller
 
                 }catch(\Exception $e) {
                     DB::rollBack();
-                    return response()->json(['message'=>'fail updating DB'], 500);
+                    return response()->json(['message'=>'Errror updating DB'.$e->getMessage()], 500);
                 }
 
                 $descripcion = "Seccion: ".$seccion." | Fila: ".$fila." | Asientos: ".$asientos;
+
             }
-            
 
             $buydata['type'] = $event_type;
             $buydata['evento'] = $event;
@@ -177,19 +213,23 @@ class ApiController extends Controller
             $buydata['email'] = $user->email;
 
             Mail::to($user->email, $user->name)
-            ->cc('arquimides@bolematico.com.mx')
+            // ->cc('arquimides@bolematico.com.mx')
             ->send(new Compra($buydata));
 
-            return response()->json(['message'=>'Success update on DB'], 200); 
-                     
-        } elseif ($req->type == 'order.expired') {
+            return response()->json(['message'=>'Success update on DB'], 200);
 
-            $event_type = $req->data['object']['line_items']['data'][0]['metadata']['event_type'];
+
+        } elseif ($req->type == 'charge.expired') {
+
+            $order_id = $req->data['object']['order_id'];
+            $order = json_decode( \Conekta\Order::find($order_id), true );
+
+            $event_type = $order['metadata']['event_type'];
 
             if( $event_type == "numerado" ){
 
-                $table = $req->data['object']['line_items']['data'][0]['metadata']['db_table'];
-                $ids = explode( "-" ,$req->data['object']['line_items']['data'][0]['metadata']['ids']);
+                $table = $order['metadata']['db_table'];
+                $ids = explode( "-" , $order['metadata']['ids']);
 
                 //Update a los boletos
                 DB::beginTransaction();
@@ -203,80 +243,20 @@ class ApiController extends Controller
 
                 }catch(\Exception $e) {
                     DB::rollBack();
-                    return response()->json(['message'=>'fail updating DB on order.expired'], 500);
+                    return response()->json(['message'=>'fail updating DB on charge.expired: '.$e->getMessage()], 500);
                 }
 
             }
 
-            return response()->json(['message'=>'Success update on DB on order.expired'], 200);
+            return response()->json(['message'=>'Success update on DB on charge.expired'], 200);
 
-        } elseif ($req->type == 'order.created' || $req->type == 'order.pending_payment' || $req->type == 'charge.created' || $req->type == 'charge.paid' || $req->type == 'charge.pending_confirmation' || $req->type == 'charge.expired') {            
-            return response()->json(['message'=>'Webhook Received'], 200);
+        } elseif ( in_array($req->type, $no_action) ) {            
+            return response()->json(['message'=>'Webhook received'], 200);
+        }else{
+            return response()->json(['message'=>'No action for this webhook'], 200);             
         }
 
-        return response()->json(['message'=>'Undetected webhook'], 500);  
-
     }
-
-
-
-    // public function chargeCreated(Request $req) {
-
-
-    //     // echo $req->data['object']['payment_method']['object'];
-    //     $date = Carbon::createFromTimestamp($req->data['object']['created_at']);
-
-    //     $user = User::where('email', $req->data['object']['customer_info']['email'])->first();
-
-    //     $buydata = Array();
-    //     $buydata['folios'] = "";
-
-    //     if($req->type == 'order.created') {
-
-    //         $table = $req->data['object']['line_items']['data'][0]['metadata']['db_table'];
-
-    //             DB::table($table)->insert(
-    //                 ['seccion' => 'General',
-    //                 'fila' => 'Sin fila',
-    //                 'asiento' => 1,
-    //                 'status' => 2,
-    //                 'impreso' => 0,
-    //                 'forma_pago' => "OxxoPAY",
-    //                 'folio' => 2,
-    //                 'token_vlinea' => "referencia",
-    //                 'user' => "1",
-    //                 'fecha_venta' => $date,
-    //                 'detalles' => '',
-
-    //                 ]);
-
-    //         $buydata['folios'] .= " *Los Folios";
-
-
-    //         $buydata['evento'] = "Felices GTO";
-    //         $buydata['lugar'] = "varias ciudades";
-    //         $buydata['fecha'] = "Abril";
-    //         $buydata['hr'] = "10pm";
-    //         $buydata['info'] = "---";
-    //         $buydata['descripcion'] = "Se ha creado el cargo correspondiente,";
-    //         $buydata['transaccion'] = "reference";
-    //         $buydata['user'] = "Nombre del cliente";
-    //         $buydata['email'] = "Email cliente";
-
-    //         Mail::to($user->email, $user->name)
-    //         ->send(new Compra($buydata));
-
-    //         return response()->json('success', 200); 
-        
-            
-             
-    //     } elseif($req->type == 'charge.created' || $req->type == 'order.pending_payment' || $req->type == 'order.paid' || $req->type == 'charge.paid') {
-    //         return response()->json('Webhook received', 200);
-    //     }
-
-    //     return response()->json('fail', 500);  
-
-    // }
 
 
 }

@@ -212,7 +212,7 @@
 		<div class="divider mb-30"></div>
 		<p><b>Roadhouse</b></p>
 		<p><i class="material-icons">location_on</i>Av. Venustiano Carranza 1070, De Tequisquiapan, 78230 San Luis, S.L.P.</p>
-		<p><i class="material-icons">call</i> 44442041482</p>
+		<p><i class="material-icons">call</i> 4442041482</p>
 		<p><i class="fa fa-facebook-official"></i> https://www.facebook.com/RoadhouseSLP/</p>
 	</div>
 </section>
