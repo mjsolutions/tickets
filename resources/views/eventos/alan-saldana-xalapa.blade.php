@@ -15,7 +15,7 @@
 	<div class="row white-text">
 		<h4>Alan Saldaña</h4>
 		<div class="divider"></div>
-		<p><i>Xalapa Ver. - Las Chulas Shoperia</i></p>
+		<p><i>Xalapa Ver. - Barezzito</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -36,7 +36,7 @@
 			</div>
 
 			<div class="col s8 offset-s2 m4 offset-m1 mb-30">
-				<img src="{{ asset('img/alan_matehuala.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/alan_xalapa.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m5 offset-m1">				
@@ -46,10 +46,21 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 m8 teal accent-4">General</div>
+								<div class="col s12 m8 teal accent-4">Preventa</div>
 								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
-							<div class="price col s12"><span>$320</span> Por entrada</div>
+							<div class="price col s12"><span>$300</span> Por entrada</div>
+							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
+								<div class="col s12 blue darken-4">Taquilla</div>
+								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><b>(En taquilla)</b></div> --}}
+							</header>
+							<div class="price col s12"><span>$350</span> Por entrada</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
@@ -59,7 +70,7 @@
 				<div class="row">
 					<div class="divider"></div>
 					<p class="center-align mt-30">Al realizar tu compra en línea se realiza un cargo extra por concepto de servicio.</p>
-					<p class="center-align"><b>Informes:</b> <a href="tel:4888827943" style="background: #4caf50; color: #fff; padding: 5px 10px;"> (488) 8827943</a> / <a href="tel:4881208718" style="background: #4caf50; color: #fff; padding: 5px 10px;"> (488) 1208718</a></p>
+					<p class="center-align"><b>Informes:</b> <a href="tel:2281441703" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 228-144-1703</a> </p>
 				</div>
 			</div>
 		</div>
@@ -90,15 +101,15 @@
 				<div class="col s12">									
 					<!-- ## VENUE MAP ## -->
 					<div class="white z-depth-2">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116940.73370426867!2d-100.71506857401447!3d23.66172346324034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8680a99460044d9d%3A0x68c22a1307701ef1!2sLas+Chulas+Shoperia!5e0!3m2!1ses!2smx!4v1520402532091" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15041.881865546287!2d-96.8832584!3d19.5214053!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x48088824fe42515f!2sBarezzito!5e0!3m2!1ses!2smx!4v1548738273494" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 					
 					<!-- ## ADDRESS LIST ## -->
 						<div class=" p-30">
-							<h5><b>Las Chulas Shoperia</b></h5>
+							<h5><b>Barezzito</b></h5>
 							<ul class="qcAddress">
-								<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: San Francisco 201-C, Guadalupe, 78786 Matehuala, S.L.P.</p></li>
+								<li><i class="medium material-icons">location_on</i><p><strong>DIRECCIÓN</strong>: Paseo de las Palmas 1, Local 32, Animas, Vista Hermosa, 91130 Xalapa Enríquez, Ver.</p></li>
 								<li><i class="medium material-icons">email</i><p><strong>EMAIL</strong>: No disponible</p></li>
-								<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/wannabeer.loungebar/" target="_blank">https://www.facebook.com/wannabeer.loungebar/</a></p></li>
+								<li><i class="medium material-icons">language</i><p><strong>Website</strong>: <a title="website" href="https://www.facebook.com/barezzitoxalapa/" target="_blank">https://www.facebook.com/barezzitoxalapa/</a></p></li>
 							</ul>
 						</div>
 					</div>
@@ -139,19 +150,19 @@
 			
 			</div>
 		
-			{!! Form::hidden('img', 'img/alan_matehuala.jpg') !!}
+			{!! Form::hidden('img', 'img/alan_xalapa.png') !!}
 			{!! Form::hidden('evento', 'Alan Saldaña') !!}
-			{!! Form::hidden('fecha', '31 de enero 2019') !!}
-			{!! Form::hidden('lugar', 'Las Chulas Shoperia') !!}
-			{!! Form::hidden('ciudad', 'Matehuala S.L.P.') !!}
+			{!! Form::hidden('fecha', '28 de febrero 2019') !!}
+			{!! Form::hidden('lugar', 'Barezzito') !!}
+			{!! Form::hidden('ciudad', 'Xalapa Ver.') !!}
 			{!! Form::hidden('hora', '20:00 hrs') !!}
 			{!! Form::hidden('event_type', 'general') !!}
-			{!! Form::hidden('impresion_boleto', false) !!}
+			{!! Form::hidden('impresion_boleto', true) !!}
 			{!! Form::hidden('zona', 'General') !!}
-			{!! Form::hidden('db_table', 'alan_saldana_slp_31ene') !!}
-			{!! Form::hidden('info', 'Favor de comunicarte al numero (488) 8827943 o al cel: (488) 1208718 para reservar tu lugar.') !!}
-			{!! Form::hidden('precio', '320') !!}
-			{!! Form::hidden('url', url('eventos/alan-saldana-matehuala')) !!}
+			{!! Form::hidden('db_table', 'alan_saldana_xalapa_28feb') !!}
+			{!! Form::hidden('info', 'Favor de comunicarte al numero 228-144-1703 para completar tu reservación.') !!}
+			{!! Form::hidden('precio', '300') !!}
+			{!! Form::hidden('url', url('eventos/alan-saldana-xalapa')) !!}
 			
 			<div class="input-field center-align">
 				{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
@@ -190,9 +201,9 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Las Chulas Shoperia Matehuala S.L.P.</b></p>
-		<p><i class="material-icons">location_on</i> San Francisco 201-C, Guadalupe, 78786 Matehuala, S.L.P.</p>
-		<p><i class="material-icons">language</i>https://www.facebook.com/wannabeer.loungebar/</p>
+		<p><b>Barezzito</b></p>
+		<p><i class="material-icons">location_on</i> Paseo de las Palmas 1, Local 32, Animas, Vista Hermosa, 91130 Xalapa Enríquez, Ver.</p>
+		<p><i class="material-icons">language</i>https://www.facebook.com/barezzitoxalapa/</p>
 	</div>
 </section>
 
@@ -219,13 +230,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 23.661832, lng: -100.6450155};
+		        var uluru = {lat: 19.5214053, lng: -96.8832584};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 16,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 23.661832, lng: -100.6438655}
+		          center: {lat: 19.5214053, lng: -96.8832584}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

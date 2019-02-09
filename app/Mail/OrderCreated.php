@@ -34,6 +34,6 @@ class OrderCreated extends Mailable
     {
         return $this->view('emails.order-created')
                     ->from('ventas@bolematico.mx', 'Ventas Bolematico') //acepta solo mails que existen
-                    ->subject('Bolematico Orden de pago');
+                    ->subject('Orden de pago');
     }
 }

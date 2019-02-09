@@ -132,12 +132,16 @@
 	</style>
 </head>
 <body>
-	<h2 style="font-family: 'Raleway', sans-serif;font-size: 1.5em;"><b>GRACIAS POR SU COMPRA</b></h2>
+	<h2 style="font-family: 'Raleway', sans-serif;font-size: 1.5em;"><b>¡GRACIAS! Tu orden ha sido creada.</b></h2>
 
 	<div style="width: 100%;height: 1px;background: #ccc;">
 	</div>
-	<p>Una vez que nos sea notificado tu pago, te enviaremos las instrucciones finales para que puedas recibir tus boletos.</p>
-	<p>Cuentas con 24 hrs para realizar tu pago.</p>
+	<p>IMPORTANTE:</p>
+	<ul>
+		<li>Una vez que nos sea notificado tu pago, te enviaremos las instrucciones finales para que puedas recibir tus boletos.</li>
+		<li>Cuentas con 24 hrs para realizar tu pago.</li>
+		<li><b>No responder este email</b>, esta cuenta es solo informativa para nuestros clientes. Si tienes alguna duda no dudes en contactarte con nosotros <a href="http://bolematico.mx/contacto" target="_blank">bolematico.mx/contacto</a></li>
+	</ul>
 
 	<div style="margin-top: 30px;">
 	@if( $order->charges[0]->payment_method->type == 'spei' )

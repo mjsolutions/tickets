@@ -83,7 +83,7 @@
 						<h5><b>MARWAN</b></h5>
 						<p><b>Ciudad:</b> Morelia</p>
 						<p><b>Lugar:</b> Teatro Stella Inda</p>
-						<p><b>Fecha:</b> 15 de Febrero 2019</p>
+						<p><b>Fecha:</b> 15 de febrero 2019</p>
 						<p><b>Hora:</b> 20:30 hrs</p>
 						<p><b>Seccion:</b> {{ $marwan->first()->seccion }}</p>
 						@php
@@ -96,6 +96,40 @@
 					</div>
 					@if( $marwan->first()->status == 2 )
 						<a href="{{ route('cliente.ticket', 'marwan-morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					@else
+						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					@endif
+				</div>
+				{{-- <p class="grey-text"><i>*Por cuestiones de seguridad podras descargar tus boletos en breve.</i></p> --}}
+			</div>
+			
+			@endif
+
+			@if( $carlos->isNotEmpty() )
+			
+			<div class="col s12">
+
+				<div class="col s12 event-date-card no-padding">
+					<div class="col s12 m4 l2 no-padding">
+						<img src="{{asset('img/macias-morelia.jpg')}}" class="materialboxed responsive-img">
+					</div>
+					<div class="event-date-details">
+						<h5><b>CARLOS MACIAS</b></h5>
+						<p><b>Ciudad:</b> Morelia</p>
+						<p><b>Lugar:</b> Café del Olmo</p>
+						<p><b>Fecha:</b> 08 de febrero 2019</p>
+						<p><b>Hora:</b> 21:00 hrs</p>
+						<p><b>Seccion:</b> {{ $carlos->first()->seccion }}</p>
+						@php
+							$fila_asiento = "";
+							foreach ($carlos as $row) {
+								$fila_asiento .= " *".$row->fila.' '.$row->asiento;
+							}
+						@endphp
+						<p><b>Fila/Asientos:</b> {{ $fila_asiento }}</p>
+					</div>
+					@if( $carlos->first()->status == 2 )
+						<a href="{{ route('cliente.ticket', 'carlos_macias-morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					@else
 						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					@endif

@@ -64,11 +64,12 @@ class PaneldeUsuarioController extends Controller
 
             $d['evento'] = "CARLOS MACIAS";
             $d['hr'] = "21:00 hrs";
+            $d['precio'] = "530.00";
             $d['img'] = "img/macias-morelia.jpg";
-            $d['Precio'] = "320.00";
+            $d['fecha'] = '08 de febrero 2019';
             $d['ciudad'] = 'Morelia, Mich.';
-            $d['lugar'] = 'Teatro Stella Inda';
-            $table = 'marwan_morelia_15feb';
+            $d['lugar'] = 'Café del Olmo';
+            $table = 'carlos_macias_morelia_08feb';
         }
         // $ciudad = substr($id, strpos($id, '-') + 1 );        
 
@@ -94,7 +95,7 @@ class PaneldeUsuarioController extends Controller
     // public function updateDb() {
 
     // 	for( $i = 1; $i < 487; $i++){
-    // 		DB::table('marwan_morelia_15feb')->where('id', $i)->update(['codigo_barras' => substr(md5('marwan_morelia_15feb'.$i),0,10)]);
+    // 		DB::table('homenaje_mj_morelia_06mar')->where('id', $i)->update(['codigo_barras' => substr(md5('homenaje_mj_morelia_06mar'.$i),0,10)]);
     // 	}
 
     // 	dd('done');

@@ -2,7 +2,7 @@
 
 @section('title', 'Carlos Macias Morelia')
 
-@section('description', 'Carlos Macias Morelia, 08 de febrero, 21:00 hrs boletos en RS Viajes Centro y en bolematico.mx')
+@section('description', 'Carlos Macias Morelia, 22 y 23 de febrero, 21:00 hrs boletos en RS Viajes Centro y en bolematico.mx')
 
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -16,9 +16,9 @@
 		<h4>Carlos Macias</h4>
 		<div class="divider"></div>
 		<p><i>Café del Olmo - Morelia</i></p>
-		<p><i>08/Feb/19 - 21:00 hrs</i></p>
+		<p><i>22 - 23/Feb/19 - 21:00 hrs</i></p>
 	</div>
-	{{-- <a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a> --}}
+	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
 
 <section class="container">
@@ -37,7 +37,7 @@
 			</div>
 
 			<div class="col s8 offset-s2 m4 offset-m1 mb-30">
-				<img src="{{ asset('img/macias-morelia.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/macias-morelia-2019.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m5 offset-m1">				
@@ -47,21 +47,10 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 amber darken-1">Oro</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
+								<div class="col s12 m8 teal accent-41">General</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s12"><span>$530</span> Por entrada</div>
-							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
-						</div>
-					</div>
-
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
-							<header>
-								<div class="col s12 grey lighten-1">Plata</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
-							</header>
-							<div class="price col s12"><span>$380</span> Por entrada</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
@@ -73,7 +62,7 @@
 					
 						<div class="col s10 offset-s1">
 							<p> * Al realizar tu compra en línea se realiza un cargo extra por concepto de servicio.</p>
-							<p> * Una vez completada tu compra es importante que te comuniques a los telefonos: <br> <a href="tel:4432757460" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 443-275-7460</a> / <a href="tel:4431880358" style="background: #4caf50; color: #fff; padding: 5px 10px;">443-188-0358</a> para confirmar tu reservación.</p>
+							<p> * Una vez completada tu compra es importante que te comuniques al telefono: <br> <a href="tel:4431880358" style="background: #4caf50; color: #fff; padding: 5px 10px;">443-188-0358</a> para confirmar tu reservación.</p>
 						</div>
 						{{-- <li>Informes:</b> <a href="tel:4431880358" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 443-188-0358</a></li> --}}
 				
@@ -137,9 +126,9 @@
 
 <section id="compra" class="section-comprar">
 	
-	{{-- <div class="row mb-30">
+	<div class="row mb-30">
 		<div class="col s12 m4 offset-m4">
-			<h5 class="mt-30 raleway quote">Selecciona los lugares para tu evento. <br><small>(Zona Oro)</small></h5>
+			<h5 class="mt-30 raleway quote">Selecciona los lugares para tu evento.</h5>
 		</div>
 	</div>
 
@@ -151,25 +140,28 @@
 		
 			<div class="row">
 				<div class="input-field col s12">
+					{!! Form::select('fecha', ['22 de febrero 2019' => '22 de febrero 2019', '23 de febrero 2019' => '23 de febrero 2019'], '', ['class' => 'select-dropdown', 'id' => 'fecha', 'placeholder' => 'Selecciona la fecha', 'required']) !!}
+					{!! Form::label('fecha', 'Fecha') !!}
+				</div>
+				<div class="input-field col s12">
 					{!! Form::select('asiento', ['1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'], '', ['class' => 'select-dropdown', 'id' => 'asiento', 'placeholder' => 'Seleccione numero de asientos', 'required']) !!}
 					{!! Form::label('asiento', 'Asientos') !!}
-				</div>					
-			
+				</div>			
 			</div>
 		
-			{!! Form::hidden('img', 'img/macias-morelia.jpg') !!}
+			{!! Form::hidden('img', 'img/macias-morelia-2019.jpg') !!}
 			{!! Form::hidden('evento', 'Carlos Macías') !!}
-			{!! Form::hidden('fecha', '08 de febrero 2019') !!}
+			{{-- {!! Form::hidden('fecha', '08 de febrero 2019') !!} --}}
 			{!! Form::hidden('lugar', 'Café del Olmo') !!}
 			{!! Form::hidden('ciudad', 'Morelia. Mich.') !!}
 			{!! Form::hidden('hora', '21:00 hrs') !!}
 			{!! Form::hidden('event_type', 'general') !!}
 			{!! Form::hidden('impresion_boleto', true) !!}
-			{!! Form::hidden('zona', 'Oro') !!}
-			{!! Form::hidden('db_table', 'carlos_macias_morelia_08feb') !!}
+			{!! Form::hidden('zona', 'General') !!}
+			{!! Form::hidden('db_table', '', ['id' => 'db_table']) !!}
 			{!! Form::hidden('info', 'Favor de comunicarte al numero 443 188 0358 para completar tu reservación.') !!}
 			{!! Form::hidden('precio', '530') !!}
-			{!! Form::hidden('url', url('eventos/carlos-macias-morelia')) !!}
+			{!! Form::hidden('url', url('eventos/carlos-macias-morelia-2019')) !!}
 			
 			<div class="input-field center-align">
 				{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
@@ -191,11 +183,11 @@
 				<i>* Se cobrara un cargo adicional por concepto de servicio.</i>
 			</p>
 		</div>
-	</div> --}}
+	</div>
 
 	
 	<div class="row">
-		<h5 class="raleway center-align">Venta de boletos en RS Viajes Centro.</h5>
+		<h5 class="raleway center-align">Venta de boletos también en RS Viajes Centro.</h5>
 		<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
 		<div class="row center-align">
 			<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
@@ -252,7 +244,15 @@
 		        });
 		      }
 
-
+		$(document).ready(function(){
+			$("#fecha").change(function(){
+				if($(this).val() == '22 de febrero 2019'){
+					$("#db_table").val('carlos_macias_morelia_22feb');
+					return;
+				}
+				$("#db_table").val('carlos_macias_morelia_23feb');
+			});
+		});
 	</script>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>

@@ -24,6 +24,15 @@ class ApiController extends Controller
                     ])
                     ->whereNotIn('fila', ['A', 'B'])
                     ->groupBy('fila')->get();
+        }elseif($table == 'oceransky_morelia_01mar'){
+             return DB::table($table)
+                    ->select('fila')
+                    ->where([
+                        ['seccion', $zona],
+                        ['status', 0]
+                    ])
+                    ->whereNotIn('fila', ['A', 'B', 'C'])
+                    ->groupBy('fila')->get();
         }
 
         return DB::table($table)
@@ -53,6 +62,12 @@ class ApiController extends Controller
                 ->where('bloque', $bloque)
                 ->orderBy('fila', $order_fila)
                 ->whereNotIn('fila', ['A', 'B'])
+                ->orderBy('asiento', $order_asiento)->get();
+        }elseif($table == 'oceransky_morelia_01mar'){
+            return DB::table($table)
+                ->where('bloque', $bloque)
+                ->orderBy('fila', $order_fila)
+                ->whereNotIn('fila', ['A', 'B', 'C'])
                 ->orderBy('asiento', $order_asiento)->get();
         }
         
@@ -194,7 +209,11 @@ class ApiController extends Controller
                     return response()->json(['message'=>'Errror updating DB'.$e->getMessage()], 500);
                 }
 
-                $descripcion = "Seccion: ".$seccion." | Fila: ".$fila." | Asientos: ".$asientos;
+                if(!empty($fila)){
+                    $descripcion = "Seccion: ".$seccion." | Fila: ".$fila." | Asientos: ".$asientos;
+                }else{
+                    $descripcion = "Seccion: ".$seccion." | Fila/Asientos: ".$asientos;                    
+                }
 
             }
 

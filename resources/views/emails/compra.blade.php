@@ -4,8 +4,8 @@
 <div style="width: 100%;height: 1px;background: #ccc;">
 </div>
 <div style="margin-top: 30px; margin-right: auto; margin-left: auto; width: 90%;">
-	<div style="width: 100%">
-		<img src="{{ $data['img'] }}" style="margin: 0 auto;">
+	<div style="width: 100%;">
+		<img src="{{ $data['img'] }}" style="display: block;margin: 0 auto;width: 350px;">
 	</div>
 	<div style="text-align: center;width: 100%">
 		<h3 style="font-size: 1.3em;"><b>{{ $data['evento'] }}</b></h3>
@@ -30,7 +30,7 @@
 	<p>Tus boletos estan disponibles en nuestro sitio web bolematico.mx, puedes entrar a tu cuenta y descargarlos desde la opción "Mis eventos" en el submenu desplegable "Mi cuenta" del menú principal o dando click <a href="http://bolematico.mx/micuenta/eventos" target="_blank">aqui</a></p>
 	<p>No olvides cuidar de tus entradas ya que son tu pase para el evento.</p>
 	@endif
-	<p>Si tienes alguna duda no dudes en contactarte con nosotros <a href="http://bolematico.mx/contacto" target="_blank">bolematico.mx/contacto</a></p>
+	<p><b>No responder este email</b>, esta cuenta es solo informativa para nuestros clientes. Si tienes alguna duda no dudes en contactarte con nosotros <a href="http://bolematico.mx/contacto" target="_blank">bolematico.mx/contacto</a></p>
 </div>
 <div style="color: #FFF; background: #222; margin-bottom: 0; padding: 20px 0;">
 	<p style="text-align: center;">Todos los derechos reservados © Bolematico {!! date('Y') !!} </p>

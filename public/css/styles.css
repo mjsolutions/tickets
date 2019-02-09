@@ -195,9 +195,13 @@ Overlays
 
 .overlay .row {
 	position: absolute;
-	top: 30%;
+	top: 0;
 	left: 0;
+	height: 100%;
 	padding: 0 5%;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
 }
 
 .overlay .btn {
@@ -1163,7 +1167,6 @@ ul.qcAddress li a {
 
 .section-video .row {
 	width: 100%;
-	top: 25%;
 }
 
 .section-video a i {
