@@ -141,26 +141,6 @@
 				<div class="col m6 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
-							<img src="{{asset('img/gon-torreon.jpg')}}" class="materialboxed responsive-img">
-						</div>
-						<div class="card-stacked">
-							<div class="card-content">
-								<h5><strong class="event-name">GON CURIEL</strong></h5>
-								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Torreón</b></p>
-								<p>El Foro</p>
-								<p>21 de febrero</p>
-								<p class="event-date">21/02/2019</p>
-
-							</div>
-							<a href="{{ url('/eventos/gon-curiel-torreon') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col m6 evento">
-					<div class="card horizontal ">
-						<div class="card-image">
 							<img src="{{asset('img/macias-morelia-2019.jpg')}}" class="materialboxed responsive-img">
 						</div>
 						<div class="card-stacked">
@@ -275,6 +255,46 @@
 
 							</div>
 							<a href="{{ url('/eventos/el-show-de-cepillin-acapulco') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/cosos-queretaro.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">COSOS CAÑON</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Querétaro</b></p>
+								<p>El Portón de Santiago</p>
+								<p>15 de marzo</p>
+								<p class="event-date">15/03/2019</p>
+
+							</div>
+							<a href="{{ url('/eventos/cosos-queretaro') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/cosos-valle.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">COSOS CAÑON</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Valle de Santiago, Gto.</b></p>
+								<p>La Chismozza Bar</p>
+								<p>16 de marzo</p>
+								<p class="event-date">16/03/2019</p>
+
+							</div>
+							<a href="{{ url('/eventos/cosos-valle-de-santiago') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
 				</div>
