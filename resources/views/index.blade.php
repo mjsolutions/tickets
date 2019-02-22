@@ -118,44 +118,22 @@
 						</div>
 					</div>
 				</div> --}}
-
-
 				<div class="col m6 evento">
 					<div class="card horizontal ">
 						<div class="card-image">
-							<img src="{{asset('img/gon-slp.png')}}" class="materialboxed responsive-img">
+							<img src="{{asset('img/roberto-mexicali.jpg')}}" class="materialboxed responsive-img">
 						</div>
 						<div class="card-stacked">
 							<div class="card-content">
-								<h5><strong class="event-name">GON CURIEL</strong></h5>
+								<h5><strong class="event-name">ROBERTO TAPIA</strong></h5>
 								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>San Luis Potosí</b></p>
-								<p>Roadhouse</p>
-								<p>15 de febrero</p>
-								<p class="event-date">15/02/2019</p>
+								<p class="mt-10 mb-5"><b>Mexicali</b></p>
+								<p>Palenque del FEX</p>
+								<p>23 de marzo</p>
+								<p class="event-date">23/03/2019</p>
 
 							</div>
-							<a href="{{ url('/eventos/gon-curiel-slp') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col m6 evento">
-					<div class="card horizontal ">
-						<div class="card-image">
-							<img src="{{asset('img/marwan-morelia-2019.jpg')}}" class="materialboxed responsive-img">
-						</div>
-						<div class="card-stacked">
-							<div class="card-content">
-								<h5><strong class="event-name">MARWAN</strong></h5>
-								<div class="divider"></div>
-								<p class="mt-10 mb-5"><b>Morelia</b></p>
-								<p>Teatro Stella Inda</p>
-								<p>15 de Febrero</p>
-								<p class="event-date">15/02/2019</p>
-
-							</div>
-							<a href="{{ url('/eventos/marwan-morelia') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+							<a href="{{ url('/eventos/roberto-tapia-mexicali') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
 				</div>
@@ -279,7 +257,27 @@
 							<a href="{{ url('/eventos/homenaje-michael-jackson') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
 						</div>
 					</div>
-				</div>	
+				</div>
+
+				<div class="col m6 evento">
+					<div class="card horizontal ">
+						<div class="card-image">
+							<img src="{{asset('img/cepillin-acapulco.jpg')}}" class="materialboxed responsive-img">
+						</div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h5><strong class="event-name">EL SHOW DE CEPILLIN ¡LA GIRA DEL ADIOS!</strong></h5>
+								<div class="divider"></div>
+								<p class="mt-10 mb-5"><b>Acapulco, Gro.</b></p>
+								<p>Hotel Calinda Beach</p>
+								<p>10 de marzo</p>
+								<p class="event-date">10/03/2019</p>
+
+							</div>
+							<a href="{{ url('/eventos/el-show-de-cepillin-acapulco') }}" class="btn deep-orange darken-2 mb-0 waves-light waves-effect">Detalles</a>
+						</div>
+					</div>
+				</div>
 
 			</div>
 		</div>

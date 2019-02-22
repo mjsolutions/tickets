@@ -162,7 +162,7 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	@if(Auth()->check())
+	{{-- @if(Auth()->check())
 	<div class="row">
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
@@ -217,7 +217,7 @@
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
 	</div>
-	@endif
+	@endif --}}
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
 			<h5 class="center-align raleway">Venta de boletos también en RS Viajes Centro y RS Viajes Periodismo</h5>

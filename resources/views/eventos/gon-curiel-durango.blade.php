@@ -72,7 +72,7 @@
 					
 						<div class="col s10 offset-s1">
 							<p> * Al realizar tu compra en línea se realiza un cargo extra por concepto de servicio.</p>
-							<p> * Una vez completada tu compra es importante que te comuniques a: <a href="tel:6181979782" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 618-197-9782</a> para confirmar tu reservación.</p>
+							<p> * Una vez completada tu compra es importante que te comuniques a: <a href="tel:6182619672" style="background: #4caf50; color: #fff; padding: 5px 10px;"> (618) 261 9672</a> para confirmar tu reservación.</p>
 						</div>
 						{{-- <li>Informes:</b> <a href="tel:4431880358" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 443-188-0358</a></li> --}}
 					
@@ -168,7 +168,7 @@
 			{!! Form::hidden('impresion_boleto', true) !!}
 			{!! Form::hidden('zona', 'General') !!}
 			{!! Form::hidden('db_table', 'gon_curiel_durango_01mar') !!}
-			{!! Form::hidden('info', 'Favor de comunicarte al numero 618 197 9782 para completar tu reservación.') !!}
+			{!! Form::hidden('info', 'Favor de comunicarte al numero (618) 261 9672 para completar tu reservación.') !!}
 			{!! Form::hidden('precio', '280') !!}
 			{!! Form::hidden('url', url('eventos/gon-curiel-durango')) !!}
 			
