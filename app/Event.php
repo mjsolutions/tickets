@@ -6,22 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    protected $table = "events";
+    protected $table = "eventos_manual";
 
-    protected $fillable = ['name', 'date', 'online_sell', 'date_online_sell', 'description','tel','website','email','place_id'];
+    protected $fillable = ['tabla', 'artista', 'lugar', 'dirección', 'municipio','fecha','url_diagrama','url_imagen','url', 'online', 'status'];
 
-    public function galleries()
-    {
-    	return $this->hasMany('App\Gallery');
-    }
-
-    public function place()
-    {
-    	return $this->belongsTo('App\Place');
-    }
-
-    public function artists()
-    {
-    	return $this->belongsToMany('App\Artist')->withTimestamps();
-    }
 }

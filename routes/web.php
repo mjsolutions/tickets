@@ -16,7 +16,10 @@
  */
 
 
-Route::get('/', function () { return view('index'); })->name('index');
+Route::get('/', [
+	'as'	=>	'index',
+	'uses'	=>	'HomeController@index'
+]);
 
 Route::get('/home', function () { return redirect()->route('index'); });
 
