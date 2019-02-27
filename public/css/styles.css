@@ -422,7 +422,7 @@ nav ul a:not(.menu.user-logged):hover:before {
 
 nav ul a.menu.modal-login-open:hover,
 nav ul a.menu.user-logged:hover {
-	background: #e64a19 ;
+	background: #08A8CA ;
 }
 
 footer {
