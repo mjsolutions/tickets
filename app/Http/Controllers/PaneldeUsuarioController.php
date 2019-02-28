@@ -16,20 +16,16 @@ class PaneldeUsuarioController extends Controller
     public function eventos() {
 
         /** Numerados **/
-        $marwan = DB::table('marwan_morelia_15feb')->where('user', Auth::id())->whereIn('status', [2, 3])->get();
         $oceransky = DB::table('oceransky_morelia_01mar')->where('user', Auth::id())->whereIn('status', [2, 3])->get();
         $mj = DB::table('homenaje_mj_morelia_06mar')->where('user', Auth::id())->whereIn('status', [2, 3])->get();
         $roberto = DB::table('roberto_tapia_mexicali_23mar')->where('user', Auth::id())->whereIn('status', [2, 3])->get();
 
         /** General **/
-        $carlos = DB::table('carlos_macias_morelia_08feb')->where([['user', Auth::id()],['status', 2]])->get();
-        $carlos22 = DB::table('carlos_macias_morelia_22feb')->where([['user', Auth::id()],['status', 2]])->get();
-        $carlos23 = DB::table('carlos_macias_morelia_23feb')->where([['user', Auth::id()],['status', 2]])->get();
-        $gon21 = DB::table('gon_curiel_torreon_21feb')->where([['user', Auth::id()],['status', 2]])->get();
+        // $gon21 = DB::table('gon_curiel_torreon_21feb')->where([['user', Auth::id()],['status', 2]])->get();
         $gon15 = DB::table('gon_curiel_slp_15feb')->where([['user', Auth::id()],['status', 2]])->get();
         // $pate['ags'] = DB::table('pate_de_fua_ags_16nov')->where([['user', Auth::id()],['status', 2]])->get();  	
 
-    	return view('user.eventos', compact('marwan', 'carlos', 'carlos22', 'gon21', 'gon15', 'carlos23', 'oceransky', 'mj', 'roberto'));
+    	return view('user.eventos', compact('gon15', 'oceransky', 'mj', 'roberto'));
     }
 
     public function printTicket( $id ){
@@ -209,6 +205,39 @@ class PaneldeUsuarioController extends Controller
     //     DB::table($table)->insert($rows);
 
     // 	dd('done');
+    // }
+
+    // public function initTable(){
+    //     $table = 'ornelas_celaya_04abr';
+
+    //     $asiento = 42;
+    //     $rows = [];
+    //     $cb = 683;
+
+    //     foreach(range('L', 'Q') as $fila){
+            
+    //         for($i = 2; $i <= $asiento; $i++){
+    //             $row = ['seccion' => 'Oro',
+    //                 'bloque' => '',
+    //                 'fila' => $fila,
+    //                 'asiento' => $i,
+    //                 'status' => 0,
+    //                 'impreso' => 0,
+    //                 'forma_pago' => null,
+    //                 'folio' => null,
+    //                 'codigo_barras' => substr(md5($table.$cb),0,10),
+    //                 'token_vlinea' => null,
+    //                 'user' => null,
+    //                 'fecha_venta' => null];
+
+    //             array_push($rows, $row);
+    //             $cb++;
+    //         }
+    //     }
+
+    //      DB::table($table)->insert($rows);
+
+    //      echo 'Inserts R done';
     // }
 
 }

@@ -47,8 +47,8 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 amber darken-1">Oro</div>
-								{{-- <div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div> --}}
+								<div class="col s12 m8 amber darken-1">Oro</div>
+								<div class="col m4 btn-buy nopadding hide-on-small-only"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
 							</header>
 							<div class="price col s12"><span>$530</span> Por entrada</div>
 							<div class="col s12 btn-buy nopadding hide-on-med-and-up"><a href="#compra" class="page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a></div>
@@ -137,7 +137,7 @@
 
 <section id="compra" class="section-comprar">
 	
-	{{-- <div class="row mb-30">
+	<div class="row mb-30">
 		<div class="col s12 m4 offset-m4">
 			<h5 class="mt-30 raleway quote">Selecciona los lugares para tu evento. <br><small>(Zona Oro)</small></h5>
 		</div>
@@ -191,7 +191,7 @@
 				<i>* Se cobrara un cargo adicional por concepto de servicio.</i>
 			</p>
 		</div>
-	</div> --}}
+	</div>
 
 	
 	<div class="row">

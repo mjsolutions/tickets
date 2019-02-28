@@ -84,47 +84,47 @@
         	<text x="27000" y="2750"  class="fil6 fnt0">ESCENARIO</text>
 		</g>
 
-		<g id="diamante-1" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+		<g id="diamante-1" class="block-hover" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
            <polygon class="fil0" points="19500,6000 22500,6000 22500,15000 16000,15000 "/>
            <text x="18000" y="12000"  class="fil6 fnt2">Bloque 1</text>
         </g>
 
-		<g id="diamante-2" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+		<g id="diamante-2" class="block-hover" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
            <polygon class="fil0" points="23000,6000 29750,6000 29750,15000 23000,15000 "/>
            <text x="24500" y="12000"  class="fil6 fnt2">Bloque 2</text>
         </g>
 
-        <g id="diamante-3" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="diamante-3" class="block-hover" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
            <polygon class="fil0" points="30250,6000 37000,6000 37000,15000 30250,15000 "/>
            <text x="31750" y="12000"  class="fil6 fnt2">Bloque 3</text>
         </g>
 
-        <g id="diamante-4" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="diamante-4" class="block-hover" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
            <polygon class="fil0" points="37500,6000 40500,6000 44000,15000 37500,15000 "/>
            <text x="38000" y="12000"  class="fil6 fnt2">Bloque 4</text>
         </g>
 
-        <g id="diamante-5" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="diamante-5" class="block-hover" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
            <polygon class="fil0" points="16000,16000 18000,16000 18000,18000 16000,18000 "/>
            <text x="16250" y="17250"  class="fil6 fnt2">B.5</text>
         </g>
 
-        <g id="diamante-6" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="diamante-6" class="block-hover" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
            <polygon class="fil0" points="42000,16000 44000,16000 44000,18000 42000,18000 "/>
            <text x="42250" y="17250"  class="fil6 fnt2">B.6</text>
         </g>
 
-        <g id="oro-1" class="block-hover" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="oro-1" class="block-hover" data-seccion="Oro" data-order-fila="asc" data-order-asiento="asc" data-align="right" data-stage="top-right">
            <polygon class="fil2" points="19375,16000 26125,16000 26125,22750 18625,22750 18625,22250 19375,22250"/>
            <text x="20750" y="19500"  class="fil1 fnt2">Bloque 1</text>
         </g>
 
-        <g id="oro-2" class="block-hover" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="oro-2" class="block-hover" data-seccion="Oro" data-order-fila="asc" data-order-asiento="asc" data-align="center" data-stage="top">
            <polygon class="fil2" points="26625,16000 33375,16000 33375,22750 26625,22750 "/>
            <text x="28000" y="19500"  class="fil1 fnt2">Bloque 2</text>
         </g>
 
-        <g id="oro-3" class="block-hover" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="oro-3" class="block-hover" data-seccion="Oro" data-order-fila="asc" data-order-asiento="asc" data-align="left" data-stage="top-left">
            <polygon class="fil2" points="33875,16000 40625,16000 40625,22250 41375,22250 41375,22750 33875,22750 "/>
            <text x="35250" y="19500"  class="fil1 fnt2">Bloque 3</text>
         </g>

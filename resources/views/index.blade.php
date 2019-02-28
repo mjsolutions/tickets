@@ -108,7 +108,7 @@
 					$date = new DateTime($evento->fecha);
 				@endphp
 				
-				<div class="col m3 evento">
+				<div class="col m4 l3 evento">
 					<div  class="col s12 no-padding z-depth-1 hoverable" >
 						<div class="evento-img-container">
 							<a href="{{ $evento_url }}">

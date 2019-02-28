@@ -144,6 +144,12 @@ Route::group(['prefix' => 'micuenta','middleware' => 'auth'], function() {
     // 	'as'	=> 'cliente.codigob',
     // 	'uses'	=> 'PaneldeUsuarioController@updateDb'
 
+    // ]);
+
+    //  Route::get('init-table', [
+    // 	'as'	=> 'cliente.init_table',
+    // 	'uses'	=> 'PaneldeUsuarioController@initTable'
+
     // ]); 
 
 });
