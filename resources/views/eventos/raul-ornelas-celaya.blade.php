@@ -2,12 +2,12 @@
 
 @section('title', 'Raúl Ornelas')
 
-@section('description', 'Raúl Ornelas, Celaya 04 de abril, 21:00 hrs boletos en Hyatt Place Celaya y bolematico.com')
+@section('description', 'Raúl Ornelas, Celaya 04 de abril, 20:30 hrs boletos en Hyatt Place Celaya y bolematico.com')
 
 @section('styles')
 <meta property="og:url"  content="http://bolematico.mx/eventos/raul-ornelas-celaya" />
 <meta property="og:title" content="Raúl Ornelas" />
-<meta property="og:description" content="Raúl Ornelas, Celaya 04 de abril, 21:00 hrs boletos en Hyatt Place Celaya y bolematico.com" />
+<meta property="og:description" content="Raúl Ornelas, Celaya 04 de abril, 20:30 hrs boletos en Hyatt Place Celaya y bolematico.com" />
 <meta property="og:image" content="http://bolematico.mx/img/ornelas-celaya.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -22,7 +22,7 @@
 		<h4>Raúl Ornelas</h4>
 		<div class="divider"></div>
 		<p class="mb-0"><i>Auditorio Tres Guerras - Celaya</i></p>
-		<p class="m-0"><i>04 de abril - 21:00 hrs.</i></p>
+		<p class="m-0"><i>04 de abril - 20:30 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -198,7 +198,7 @@
 					{!! Form::hidden('fecha', '04 de abril 2019') !!}
 					{!! Form::hidden('lugar', 'Auditorio Tres Guerras') !!}
 					{!! Form::hidden('ciudad', 'Celaya') !!}
-					{!! Form::hidden('hora', '21:00 hrs') !!}
+					{!! Form::hidden('hora', '20:30 hrs') !!}
 					{!! Form::hidden('event_type', 'numerado') !!}
 					{!! Form::hidden('impresion_boleto', true) !!}
 					{!! Form::hidden('db_table', 'ornelas_celaya_04abr') !!}

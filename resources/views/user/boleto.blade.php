@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/ticket.css">
 </head>
 <body>
-	@foreach( $db as $row )
+	@foreach( $boletos as $boleto )
 	<div class="space-top"></div>
 	<div class="col-half">
 		<div class="circle-top"></div>
@@ -21,12 +21,12 @@
 			<div class="clearfix"></div>
 		</div>
 		<div class="text-center evento-img-container">
-			<img src="{{ $data->img }}" class="img-evento">		
+			<img src="img/{{ $evento->url_imagen }}" class="img-evento">		
 		</div>
 		<div class="container text-center info-evento card">
-			<h2>{{ $data->evento }}</h2>
-			<h4>- {{ $data->lugar }} -</h4>
-			<h5>{{ $data->ciudad }}</h5>
+			<h2>{{ mb_strtoupper($evento->artista, 'UTF-8') }}</h2>
+			<h4>- {{ $evento->lugar }} -</h4>
+			<h5>{{ $evento->municipio }}</h5>
 		</div>
 		<div class="container card info-compra">
 			<table>
@@ -45,7 +45,7 @@
 					</tr>
 					<tr>
 						<th style="width: 29%;">FOLIO:</th>
-						<td>{{ str_pad($row->folio, 6, '0', STR_PAD_LEFT) }}</td>
+						<td>{{ str_pad($boleto->folio, 6, '0', STR_PAD_LEFT) }}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -60,14 +60,23 @@
 				<tbody>
 					<tr>
 						<td style="width: 29%;">
-							{{ $row->seccion }}
+							{{ $boleto->seccion }}
 						</td>
+						@if(is_null($data->asientos))
 						<td style="width: 30%;">
-							{{ $row->fila }}
+							{{ $boleto->fila }}
 						</td>
 						<td >
-							{{ $row->asiento }}
+							{{ $boleto->asiento }}
 						</td>
+						@else
+						<td style="width: 30%;">
+							N/A
+						</td>
+						<td >
+							N/A
+						</td>
+						@endif
 					</tr>
 				</tbody>
 			</table>
@@ -76,14 +85,14 @@
 					
 					<tr>
 						<th style="width: 29%;">PRECIO:</th>
-						<td class="precio"><span>${{ $precio[$row->seccion] }}</span> MXN.</td>
+						<td class="precio"><span>${{ $precio[$boleto->seccion] }}</span> MXN.</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		<div class="barcode-container">
-			<img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($row->codigo_barras, "C39") }}" alt="barcode" class="barcode"  />
-			<p>{{ $row->codigo_barras }}</p>
+			<img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($boleto->codigo_barras, "C39") }}" alt="barcode" class="barcode"  />
+			<p>{{ $boleto->codigo_barras }}</p>
 		</div>
 
 		<div class="circle-bottom"></div>

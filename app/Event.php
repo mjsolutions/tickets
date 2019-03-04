@@ -10,4 +10,8 @@ class Event extends Model
 
     protected $fillable = ['tabla', 'artista', 'lugar', 'dirección', 'municipio','fecha','url_diagrama','url_imagen','url', 'online', 'status'];
 
+    public function prices() {
+        return $this->hasMany('App\EventPrice', 'id_evento');
+    }
+
 }

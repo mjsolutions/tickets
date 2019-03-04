@@ -134,7 +134,7 @@ Route::group(['prefix' => 'micuenta','middleware' => 'auth'], function() {
 
     ]);
 
-     Route::get('ticket/{id}', [
+     Route::get('ticket/{evento}/{seccion}', [
     	'as'	=> 'cliente.ticket',
     	'uses'	=> 'PaneldeUsuarioController@printTicket'
 

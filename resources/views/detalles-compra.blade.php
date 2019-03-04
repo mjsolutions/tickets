@@ -192,6 +192,11 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 
 					</table>
 				</div>
+				{{-- @if($req->db_table == 'oceransky_morelia_01mar')
+				<div class="col m12">
+					<p><strong>NOTA:</strong>: Una vez confirmada tu orden, contarás con 4 hrs., para realizar el pago.</p>
+				</div> --}}
+				@endif
 			</div>
 
 			<div class="col row mb-0 mt-30">

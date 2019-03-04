@@ -87,7 +87,12 @@ class PaymentController extends Controller
 		//Variables
 		$customer_phone = "+5255555555";
 		$total = $req->precio * $req->asientos_cantidad;
-		$expires_at = Carbon::parse(Carbon::now()->addDays(1));
+		// if($req->db_table == 'oceransky_morelia_01mar'){
+		// 	$expires_at = Carbon::parse(Carbon::now()->addHours(4));
+		// }else{
+		// 	$expires_at = Carbon::parse(Carbon::now()->addDays(1));			
+		// }
+		$expires_at = Carbon::parse(Carbon::now()->addDays(1));			
 
 		if($req->customer_phone != null){
 			$customer_phone = $req->customer_phone;

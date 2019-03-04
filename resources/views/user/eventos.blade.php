@@ -7,47 +7,67 @@
 @section('styles')
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 <style type="text/css">
-	.event-date-card {
-		position: relative;
-		border: 1px solid #ccc;
-		background-color: #FFF;
-		margin-bottom: 20px;
+	.event-title {
+		display: inline-block;
+	    background: #FFF;
+	    color: #08566f;
+	    margin: 0;
+	    padding: 0.7rem;
+	    float: right;
+	    border: 1px solid #d4d4d4;
+	    border-bottom: none;
+	    border-top-left-radius: 3px;
+	    border-top-right-radius: 3px;
 	}
-
-	.event-date-details {
-		position: relative;
-		float: left;
-		padding-top: 10px;
-		padding-left: 15px;
+	.table-detalles th, .table-detalles td, .table-secciones th, .table-secciones td { padding: 3px 10px; }
+	/*.table-detalles tr, .table-secciones tr { padding: 0 10px; }*/
+	.table-detalles th { 
+		text-align: center;
+		color: #FFF;
+		border-radius: 0;
 	}
-	.event-date-details h5 {
+	.table-detalles thead { background-color: #006c8e }
+	table.table-secciones th { text-align: left;  }
+	.row .col.card {
+		padding: 0;
 		margin-top: 0;
 	}
-	.event-date-details p {
-		margin: 0;
+	.btn-status {
+		text-transform: none;
+	    padding: 0 15px;
+	    margin-bottom: 0;
+	    font-size: 1rem;
+	    line-height: 1.8rem;
+	    height: 1.8rem;
+	}
+	.btn-status .fa {
+		font-size: 14px;
 	}
 
-	@media screen and (max-width: 650px) {
-		.event-date-card {
-			/*height: 150px;*/
-			margin-bottom: 40px;
+	@media screen and (min-width: 992px) {
+		.card.horizontal .card-image {
+			max-width: 12%;
 		}
-		.event-date-details{
-			width: calc( 100% - 100px );
+		.card.horizontal .card-stacked {
+			max-width: 88%;
 		}
-		.event-date-card > a {
-			position: relative;
-		    /*bottom: -20px;*/
-		    /*right: 0;*/
-		    width: 100%;
-		    margin-top: 15px;
+	}
+	@media screen and (max-width: 991px){
+		.card.horizontal .card-image {
+			max-width: 30%;
 		}
-		.collection {
-			display: flex;
-			flex-flow: row nowrap;
+		.card.horizontal .card-stacked {
+			max-width: 70%;
 		}
-		.collection a.collection-item {
-			flex: 1;
+	}
+	@media screen and (max-width: 600px){
+		.card.horizontal {
+			display: block;
+		}
+		.card.horizontal .card-image,
+		.card.horizontal .card-stacked {
+			max-width: 100%;
+			width: 100%;
 		}
 	}
 </style>
@@ -65,362 +85,92 @@
 <div class="container pt-40">
 	
 	<div class="row">
-		<div class="col m3 s12">
+		<div class="col l2 m3 s12">
 			@include('layouts.nav-userpanel')
 		</div>
 
-		<div class="col m9">
+		<div class="col m9 l10">
 
-			@if( $marwan->isNotEmpty() )
+			@foreach($eventos as $evento)
+			@php
+				extract($evento);
+			@endphp
 			
 			<div class="col s12">
 
-				<div class="col s12 event-date-card no-padding">
-					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/marwan-morelia-2019.jpg')}}" class="materialboxed responsive-img">
+				<h5 class="event-title"><b>{{ mb_strtoupper($info->artista, 'UTF-8') }}</b></h5>
+				<div class="col s12 card horizontal">
+					<div class="card-image">
+						<img src="{{ asset('img').'/'.$info->url_imagen }}" class="materialboxed responsive-img">
 					</div>
-					<div class="event-date-details">
-						<h5><b>MARWAN</b></h5>
-						<p><b>Ciudad:</b> Morelia</p>
-						<p><b>Lugar:</b> Teatro Stella Inda</p>
-						<p><b>Fecha:</b> 15 de febrero 2019</p>
-						<p><b>Hora:</b> 20:30 hrs</p>
-						<p><b>Seccion:</b> {{ $marwan->first()->seccion }}</p>
-						@php
-							$fila_asiento = "";
-							foreach ($marwan as $row) {
-								$fila_asiento .= " *".$row->fila.' '.$row->asiento;
-							}
-						@endphp
-						<p><b>Fila/Asientos:</b> {{ $fila_asiento }}</p>
+					<div class="card-stacked">
+						<table class="table-detalles centered">
+							<thead>
+								<tr>
+									<th>Ciudad:</th>
+									<th>Lugar:</th>
+									<th>Fecha:</th>
+									<th>Hora:</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>{{ $info->municipio }}</td>
+									<td>{{ ucwords($info->lugar) }}</td>
+									<td>
+									@php
+									$fecha = new DateTime($info->fecha);
+									echo $fecha->format('d/m/Y');  
+									@endphp
+									</td>
+									<td>{{ $fecha->format('H:i') }} hrs.</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table-detalles centered">
+							<thead>
+								<tr>
+									<th>Sección:</th>
+									<th>Fila/Asiento:</th>
+									<th style="width: 280px;">Status:</th>
+								</tr>
+							</thead>
+							<tbody>
+							@foreach($boletos->unique('seccion') as $data)
+							@php $seccion = $data->seccion @endphp
+							<tr>
+								<td>{{ $seccion }}</td>
+								<td>
+									@php
+									$fila_asiento = "";
+									if($boletos->where('seccion', $seccion)->first()->fila == 'Sin fila'){
+										$fila_asiento = $boletos->where('seccion', $seccion)->last()->asiento.' asientos';
+									}else{
+										foreach ($boletos->where('seccion', $seccion) as $boleto) {
+											$fila_asiento .= " *".$boleto->fila.' '.$boleto->asiento;
+										}										
+									}
+									echo $fila_asiento;
+									@endphp
+								</td>
+								<td style="width: 280px;">
+									@if( $boletos->where('seccion', $seccion)->first()->status == 2 )
+										<a href="{{ route('cliente.ticket', ['evento' => $info, 'seccion' => $seccion]) }}" class="btn btn-status waves-light waves-effect btn-ticket"><b>Descargar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+									@else
+										<a href="javascript:void(0)" class="btn btn-status waves-light waves-effect disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+									@endif
+								</td>
+							</tr>
+							@endforeach
+							</tbody>
+						</table>
+						
 					</div>
-					@if( $marwan->first()->status == 2 )
-						<a href="{{ route('cliente.ticket', 'marwan-morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@else
-						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@endif
 				</div>
 				
 			</div>
-			
-			@endif
 
-			@if( $carlos->isNotEmpty() )
-			
-			<div class="col s12">
-
-				<div class="col s12 event-date-card no-padding">
-					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/macias-morelia.jpg')}}" class="materialboxed responsive-img">
-					</div>
-					<div class="event-date-details">
-						<h5><b>CARLOS MACIAS</b></h5>
-						<p><b>Ciudad:</b> Morelia</p>
-						<p><b>Lugar:</b> Café del Olmo</p>
-						<p><b>Fecha:</b> 08 de febrero 2019</p>
-						<p><b>Hora:</b> 21:00 hrs</p>
-						<p><b>Seccion:</b> {{ $carlos->first()->seccion }}</p>
-						@php
-							$fila_asiento = "";
-							foreach ($carlos as $row) {
-								$fila_asiento .= " *".$row->fila.' '.$row->asiento;
-							}
-						@endphp
-						<p><b>Fila/Asientos:</b> {{ $fila_asiento }}</p>
-					</div>
-					@if( $carlos->first()->status == 2 )
-						<a href="{{ route('cliente.ticket', 'carlos_macias-morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@else
-						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@endif
-				</div>
-				
-			</div>
-			
-			@endif
-
-			@if( $carlos22->isNotEmpty() )
-			
-			<div class="col s12">
-
-				<div class="col s12 event-date-card no-padding">
-					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/macias-morelia-2019.jpg')}}" class="materialboxed responsive-img">
-					</div>
-					<div class="event-date-details">
-						<h5><b>CARLOS MACIAS</b></h5>
-						<p><b>Ciudad:</b> Morelia</p>
-						<p><b>Lugar:</b> Café del Olmo</p>
-						<p><b>Fecha:</b> 22 de febrero 2019</p>
-						<p><b>Hora:</b> 21:00 hrs</p>
-						<p><b>Seccion:</b> {{ $carlos22->first()->seccion }}</p>
-						@php
-							$fila_asiento = "";
-							foreach ($carlos22 as $row) {
-								$fila_asiento .= " *".$row->fila.' '.$row->asiento;
-							}
-						@endphp
-						<p><b>Fila/Asientos:</b> {{ $fila_asiento }}</p>
-					</div>
-					@if( $carlos22->first()->status == 2 )
-						<a href="{{ route('cliente.ticket', 'carlos_macias22-morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@else
-						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@endif
-				</div>
-			</div>
-			
-			@endif
-
-			@if( $carlos23->isNotEmpty() )
-			
-			<div class="col s12">
-
-				<div class="col s12 event-date-card no-padding">
-					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/macias-morelia-2019.jpg')}}" class="materialboxed responsive-img">
-					</div>
-					<div class="event-date-details">
-						<h5><b>CARLOS MACIAS</b></h5>
-						<p><b>Ciudad:</b> Morelia</p>
-						<p><b>Lugar:</b> Café del Olmo</p>
-						<p><b>Fecha:</b> 23 de febrero 2019</p>
-						<p><b>Hora:</b> 21:00 hrs</p>
-						<p><b>Seccion:</b> {{ $carlos23->first()->seccion }}</p>
-						@php
-							$fila_asiento = "";
-							foreach ($carlos23 as $row) {
-								$fila_asiento .= " *".$row->fila.' '.$row->asiento;
-							}
-						@endphp
-						<p><b>Fila/Asientos:</b> {{ $fila_asiento }}</p>
-					</div>
-					@if( $carlos23->first()->status == 2 )
-						<a href="{{ route('cliente.ticket', 'carlos_macias23-morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@else
-						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@endif
-				</div>
-				
-			</div>
-			
-			@endif
-
-			@if( $oceransky->isNotEmpty() )
-			
-			<div class="col s12">
-
-				<div class="col s12 event-date-card no-padding">
-					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/oceransky-morelia.jpg')}}" class="materialboxed responsive-img">
-					</div>
-					<div class="event-date-details">
-						<h5><b>EDGAR OCERANSKY</b></h5>
-						<p><b>Ciudad:</b> Morelia</p>
-						<p><b>Lugar:</b> Teatro Stella Inda</p>
-						<p><b>Fecha:</b> 01 de marzo 2019</p>
-						<p><b>Hora:</b> 20:30 hrs</p>
-						<p><b>Seccion:</b> {{ $oceransky->first()->seccion }}</p>
-						@php
-							$fila_asiento = "";
-							foreach ($oceransky as $row) {
-								$fila_asiento .= " *".$row->fila.' '.$row->asiento;
-							}
-						@endphp
-						<p><b>Fila/Asientos:</b> {{ $fila_asiento }}</p>
-					</div>
-					@if( $oceransky->first()->status == 2 )
-						<a href="{{ route('cliente.ticket', 'oceransky-morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@else
-						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@endif
-				</div>
-				
-			</div>
-			
-			@endif
-
-			@if( $mj->isNotEmpty() )
-			
-			<div class="col s12">
-
-				<div class="col s12 event-date-card no-padding">
-					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/homenaje-michael-jackson.jpg')}}" class="materialboxed responsive-img">
-					</div>
-					<div class="event-date-details">
-						<h5><b>HOMENAJE MICHAEL JACKSON REY DEL POP</b></h5>
-						<p><b>Ciudad:</b> Morelia</p>
-						<p><b>Lugar:</b> Teatro Morelos</p>
-						<p><b>Fecha:</b> 06 de marzo 2019</p>
-						<p><b>Hora:</b> 21:00 hrs</p>
-						<p><b>Seccion:</b> {{ $mj->first()->seccion }}</p>
-						@php
-							$fila_asiento = "";
-							foreach ($mj as $row) {
-								$fila_asiento .= " *".$row->fila.' '.$row->asiento;
-							}
-						@endphp
-						<p><b>Fila/Asientos:</b> {{ $fila_asiento }}</p>
-					</div>
-					@if( $mj->first()->status == 2 )
-						<a href="{{ route('cliente.ticket', 'mj-morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@else
-						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@endif
-				</div>
-				
-			</div>
-			
-			@endif
-
-			@if( $roberto->isNotEmpty() )
-			
-			<div class="col s12">
-
-				<div class="col s12 event-date-card no-padding">
-					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/roberto-mexicali.jpg')}}" class="materialboxed responsive-img">
-					</div>
-					<div class="event-date-details">
-						<h5><b>ROBERTO TAPIA</b></h5>
-						<p><b>Ciudad:</b> Mexicali</p>
-						<p><b>Lugar:</b> Palenque del FEX</p>
-						<p><b>Fecha:</b> 23 de marzo 2019</p>
-						<p><b>Hora:</b> 21:00 hrs</p>
-						<p><b>Seccion:</b> {{ $roberto->first()->seccion }}</p>
-						@php
-							$fila_asiento = "";
-							foreach ($roberto as $row) {
-								$fila_asiento .= " *".$row->fila.' '.$row->asiento;
-							}
-						@endphp
-						<p><b>Fila/Asientos:</b> {{ $fila_asiento }}</p>
-					</div>
-					@if( $roberto->first()->status == 2 )
-						<a href="{{ route('cliente.ticket', 'roberto-mexicali') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@else
-						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@endif
-				</div>
-				
-			</div>
-			
-			@endif
-
-			@if( $gon21->isNotEmpty() )
-			
-			<div class="col s12">
-
-				<div class="col s12 event-date-card no-padding">
-					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/gon-torreon.jpg')}}" class="materialboxed responsive-img">
-					</div>
-					<div class="event-date-details">
-						<h5><b>GON CURIEL</b></h5>
-						<p><b>Ciudad:</b> Torreón</p>
-						<p><b>Lugar:</b> El Foro</p>
-						<p><b>Fecha:</b> 21 de febrero 2019</p>
-						<p><b>Hora:</b> 21:00 hrs</p>
-						<p><b>Seccion:</b> {{ $gon21->first()->seccion }}</p>
-						@php
-							$fila_asiento = "";
-							foreach ($gon21 as $row) {
-								$fila_asiento .= " *".$row->fila.' '.$row->asiento;
-							}
-						@endphp
-						<p><b>Fila/Asientos:</b> {{ $fila_asiento }}</p>
-					</div>
-					@if( $gon21->first()->status == 2 )
-						<a href="{{ route('cliente.ticket', 'gon21-torreon') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@else
-						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@endif
-				</div>
-				
-			</div>
-			
-			@endif
-
-			@if( $gon15->isNotEmpty() )
-			
-			<div class="col s12">
-
-				<div class="col s12 event-date-card no-padding">
-					<div class="col s12 m4 l2 no-padding">
-						<img src="{{asset('img/gon-slp.png')}}" class="materialboxed responsive-img">
-					</div>
-					<div class="event-date-details">
-						<h5><b>GON CURIEL</b></h5>
-						<p><b>Ciudad:</b> San Luis Potosí</p>
-						<p><b>Lugar:</b> Roadhouse</p>
-						<p><b>Fecha:</b> 15 de febrero 2019</p>
-						<p><b>Hora:</b> 21:00 hrs</p>
-						<p><b>Seccion:</b> {{ $gon15->first()->seccion }}</p>
-						@php
-							$fila_asiento = "";
-							foreach ($gon15 as $row) {
-								$fila_asiento .= " *".$row->fila.' '.$row->asiento;
-							}
-						@endphp
-						<p><b>Fila/Asientos:</b> {{ $fila_asiento }}</p>
-					</div>
-					@if( $gon15->first()->status == 2 )
-						<a href="{{ route('cliente.ticket', 'gon15-slp') }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@else
-						<a href="javascript:void(0)" class="btn waves-light mb-0 waves-effect red pull-right disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					@endif
-				</div>
-				
-			</div>
-			
-			@endif
-
-
-
-			{{-- @foreach( $pate as $ciudad => $data )
-
-				@if( $data->isNotEmpty() )
-
-					@php
-						$info['ags'] = [
-								'ciudad' => 'Aguascalientes',
-								'lugar' => 'Patio Outdoor Disco',
-								'fecha' => '16 de noviembre',
-							];
-				        $info['queretaro'] = [
-								'ciudad' => 'Querétaro',
-								'lugar' => 'La Glotonería',
-								'fecha' => '15 de noviembre',
-							];
-						$info['morelia'] = [
-								'ciudad' => 'Morelia',
-								'lugar' => 'Anden Food Units',
-								'fecha' => '22 de noviembre',
-							];
-					@endphp
-
-					<div class="col s12">
-						<div class="col s12 event-date-card no-padding">
-							<div class="col s12 m4 l2 no-padding">
-								<img src="{{asset("img/pate-de-fua-$ciudad.jpg")}}" class="materialboxed responsive-img">
-							</div>
-							<div class="event-date-details">
-								<h5><b>PATÉ DE FUA</b></h5>
-								<p><b>Ciudad:</b> {{ $info[$ciudad]['ciudad'] }}</p>
-								<p><b>Lugar:</b> {{ $info[$ciudad]['lugar'] }}</p>
-								<p><b>Fecha:</b> {{ $info[$ciudad]['fecha'] }}</p>
-								<p><b>Hora:</b> 21:00 hrs</p>
-								<p><b>Asientos:</b> {{ $data->count() }}</p>
-							</div>
-							<a href="{{ route('cliente.ticket', 'pate-'.$ciudad) }}" class="btn waves-light mb-0 waves-effect red pull-right btn-ticket"><b>Descargar boletos</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-
-						</div>
-					</div>
-				@endif
-
-			@endforeach --}}
-
+			@endforeach
 
 		</div>
 	</div>
