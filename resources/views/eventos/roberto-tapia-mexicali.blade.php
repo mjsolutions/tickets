@@ -277,7 +277,7 @@
 
 @section('scripts')
 	<script>
-		var get_map_seat = '{{url('/api/getMapAsientos')}}/roberto_tapia_mexicali_23mar';
+		var table = 'roberto_tapia_mexicali_23mar';
 		var base_path = '{{ url('/') }}';
 		var precios = {'VIP': 970, 'Numerado': 650, 'General': 270};
 

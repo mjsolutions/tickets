@@ -56,7 +56,7 @@ class PaneldeUsuarioController extends Controller
             $precio[$p->nombre] = $p->precio + $p->cxs;
         }
 
-        $d['asientos'] = $boletos->first()->fila == 'Sin fila'? $boletos->last()->asiento:null;
+        $d['asientos'] = $boletos->first()->fila == 'Sin fila'? $boletos->count():null;
     
     	$data = (object) $d;
 

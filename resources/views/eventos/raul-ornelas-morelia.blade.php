@@ -278,7 +278,7 @@
 
 @section('scripts')
 	<script>
-		var get_map_seat = '{{url('/api/getMapAsientos')}}/ornelas_morelia_05abr';
+		var table = 'ornelas_morelia_05abr';
 		var base_path = '{{ url('/') }}';
 		var precios = {'Diamante': 750, 'Oro': 550, 'General': 380};
 

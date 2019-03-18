@@ -265,7 +265,7 @@
 
 @section('scripts')
 	<script>
-		var get_map_seat = '{{url('/api/getMapAsientos')}}/alan_saldana_morelia_04abr';
+		var table = 'alan_saldana_morelia_04abr';
 		var base_path = '{{ url('/') }}';
 		var precios = {'Diamante': 450, 'Oro': 350, 'Plata': 250};
 

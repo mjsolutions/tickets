@@ -1,4 +1,5 @@
 var seccion = '';
+var get_map_seat = base_path + '/api/getMapAsientos/' + table;
 		
 function printSection(query, align, stage){
 

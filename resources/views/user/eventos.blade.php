@@ -143,8 +143,8 @@
 								<td>
 									@php
 									$fila_asiento = "";
-									if($boletos->where('seccion', $seccion)->first()->fila == 'Sin fila'){
-										$fila_asiento = $boletos->where('seccion', $seccion)->last()->asiento.' asientos';
+									if(strtolower($boletos->where('seccion', $seccion)->first()->fila) == 'sin fila'){
+										$fila_asiento = $boletos->where('seccion', $seccion)->count().' asientos';
 									}else{
 										foreach ($boletos->where('seccion', $seccion) as $boleto) {
 											$fila_asiento .= " *".$boleto->fila.' '.$boleto->asiento;

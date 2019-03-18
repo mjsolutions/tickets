@@ -183,7 +183,7 @@
 
 <section id="compra" class="section-comprar">
 	<div class="row mt-30">
-	@if(Auth()->check())
+	{{-- @if(Auth()->check())
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 		</div>
@@ -236,7 +236,7 @@
 		<div class="col s12 center-align">
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
-	@endif
+	@endif --}}
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">

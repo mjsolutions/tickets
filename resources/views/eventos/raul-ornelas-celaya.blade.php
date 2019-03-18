@@ -258,7 +258,7 @@
 
 @section('scripts')
 	<script>
-		var get_map_seat = '{{url('/api/getMapAsientos')}}/ornelas_celaya_04abr';
+		var table = 'ornelas_celaya_04abr';
 		var base_path = '{{ url('/') }}';
 		var precios = {'Diamante': 750, 'Oro': 550, 'General': 380};
 
