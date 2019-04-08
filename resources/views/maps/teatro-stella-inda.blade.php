@@ -1,8 +1,8 @@
-<svg id="teatro-stella-inda-svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 48855 28044" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="teatro-stella-inda-svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 48855 27992" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <style type="text/css">
             #teatro-stella-inda-svg{
-                width: 90%;
+                width: 100%;
             }
             .str0 {stroke:#A7A4A5;stroke-width:103.671;stroke-linecap:round;stroke-linejoin:round}
 
@@ -65,28 +65,28 @@
         <polygon class="fil4 str0" points="39738,27992 39738,21562 41669,21562 47352,12083 48803,12083 48803,52 9655,52 9655,12083 11170,12083 16853,21562 18784,21562 18784,27992 "/>
         <rect class="fil5" x="23348" y="915" width="11838" height="2566"/>
 
-        <g id="oro-1" class="block-hover" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-right">
+        <g id="oro-1" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-right">
            <polygon class="fil2" points="12113,8317 12113,10503 18554,10503 18554,8317 21732,8317 21732,1199 12288,1199 12288,3305 10613,5574 10613,8317 "/>
            <text x="14549" y="6083"  class="fil1 fnt2">Bloque 1</text>
         </g>
-        <g id="oro-2" class="block-hover" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="oro-2" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
            <polygon class="fil2" points="35186,10503 35186,4183 23348,4183 23348,10503 "/>
            <text x="27633" y="7575"  class="fil1 fnt3">Bloque 2</text>
         </g>
-        <g id="oro-3" class="block-hover" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-left">
+        <g id="oro-3" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-left">
            <polygon class="fil2" points="46370,8317 46370,10503 39930,10503 39930,8317 36751,8317 36751,1199 46872,1199 46872,3305 47871,5574 47871,8317 "/>
            <text x="40676" y="6083"  class="fil1 fnt3">Bloque 3</text>
         </g>
 
-        <g id="diamante-1" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="right" data-stage="bottom-right">
+        <g id="diamante-1" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="right" data-stage="bottom-right">
            <polygon class="fil0" points="16144,16696 17731,20685 21728,20685 21728,12083 13693,12083 15365,16696 "/>
            <text x="16912" y="16616"  class="fil6 fnt2">Bloque 1</text>
         </g>
-        <g id="diamante-2" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="diamante-2" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
            <polygon class="fil0" points="35161,12083 23348,12083 23348,20685 35161,20685 "/>
            <text x="27621" y="16616"  class="fil6 fnt2">Bloque 2</text>
         </g>
-        <g id="diamante-3" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="left" data-stage="bottom-left">
+        <g id="diamante-3" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="left" data-stage="bottom-left">
            <polygon class="fil0" points="42374,16696 40787,20685 36790,20685 36790,12083 44825,12083 43152,16696 "/>
            <text x="37547" y="16616"  class="fil6 fnt2">Bloque 3</text>
         </g>

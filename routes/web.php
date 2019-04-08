@@ -24,6 +24,7 @@ Route::get('/', [
 Route::get('/home', function () { return redirect()->route('index'); });
 
 Route::get('/contacto', function () { return view('contacto'); })->name('contacto');
+Route::get('/test-card', function () { return view('test-card'); })->name('test-card');
 
 Route::get('/quienes-somos', function () { return view('quienes-somos'); })->name('quienes-somos');
 

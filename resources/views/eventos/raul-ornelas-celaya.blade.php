@@ -162,7 +162,7 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	<div class="row mt-30">
+	{{-- <div class="row mt-30">
 	@if(Auth()->check())
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
@@ -199,7 +199,7 @@
 					{!! Form::hidden('lugar', 'Auditorio Tres Guerras') !!}
 					{!! Form::hidden('ciudad', 'Celaya') !!}
 					{!! Form::hidden('hora', '20:30 hrs') !!}
-					{!! Form::hidden('event_type', 'numerado') !!}
+					{!! Form::hidden('event_type', '', ['id' => 'form_type']) !!}
 					{!! Form::hidden('impresion_boleto', true) !!}
 					{!! Form::hidden('db_table', 'ornelas_celaya_04abr') !!}
 					{!! Form::hidden('info', '--') !!}
@@ -217,10 +217,10 @@
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
 	@endif
-	</div>
+	</div> --}}
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
-			<h5 class="center-align raleway">Venta de boletos también en Hyatt Place Celaya</h5>
+			<h5 class="center-align raleway">Venta de boletos en Hyatt Place Celaya</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>

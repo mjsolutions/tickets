@@ -82,38 +82,38 @@
 
         <rect class="fil5" x="23348" y="915" width="11838" height="2566"/>
 
-        <g id="plata-1" class="block-hover" data-seccion="Plata" data-order-fila="desc" data-order-asiento="desc" data-align="right" data-stage="bottom-right">
+        <g id="plata-1" class="block-hover" data-tipo="numerado" data-seccion="Plata" data-order-fila="desc" data-order-asiento="desc" data-align="right" data-stage="bottom-right">
            <rect class="fil7" x="12288" y="915" width="9444" height="2566"/>
            <text x="14949" y="2500"  class="fil1 fnt2">Bloque 1</text>
         </g>
 
-        <g id="plata-2" class="block-hover" data-seccion="Plata" data-order-fila="desc" data-order-asiento="desc" data-align="left" data-stage="bottom-right">
+        <g id="plata-2" class="block-hover" data-tipo="numerado" data-seccion="Plata" data-order-fila="desc" data-order-asiento="desc" data-align="left" data-stage="bottom-right">
            <rect class="fil7" x="36751" y="915" width="9619" height="2566"/>
            <text x="38751" y="2500"  class="fil1 fnt2">Bloque 2</text>
         </g>
 
-        <g id="oro-1" class="block-hover" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-right">
+        <g id="oro-1" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-right">
            <polygon class="fil2" points="12113,8317 12113,10503 18554,10503 18554,8317 21732,8317 21732,3900 12288,3900 10613,5574 10613,8317 "/>
            <text x="13549" y="6983"  class="fil1 fnt2">Bloque 1</text>
         </g>
-        <g id="oro-2" class="block-hover" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="oro-2" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
            <polygon class="fil2" points="35186,10503 35186,4183 23348,4183 23348,10503 "/>
            <text x="27633" y="7575"  class="fil1 fnt3">Bloque 2</text>
         </g>
-        <g id="oro-3" class="block-hover" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-left">
+        <g id="oro-3" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-left">
            <polygon class="fil2" points="46370,8317 46370,10503 39930,10503 39930,8317 36751,8317 36751,3900 46370,3900 47871,5574 47871,8317 "/>
            <text x="41276" y="6983"  class="fil1 fnt3">Bloque 3</text>
         </g>
 
-        <g id="diamante-1" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="right" data-stage="bottom-right">
+        <g id="diamante-1" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="right" data-stage="bottom-right">
            <polygon class="fil0" points="16144,16696 17731,20685 21728,20685 21728,12083 13693,12083 15365,16696 "/>
            <text x="16912" y="16616"  class="fil6 fnt2">Bloque 1</text>
         </g>
-        <g id="diamante-2" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="diamante-2" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
            <polygon class="fil0" points="35161,12083 23348,12083 23348,20685 35161,20685 "/>
            <text x="27621" y="16616"  class="fil6 fnt2">Bloque 2</text>
         </g>
-        <g id="diamante-3" class="block-hover" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="left" data-stage="bottom-left">
+        <g id="diamante-3" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="desc" data-align="left" data-stage="bottom-left">
            <polygon class="fil0" points="42374,16696 40787,20685 36790,20685 36790,12083 44825,12083 43152,16696 "/>
            <text x="37547" y="16616"  class="fil6 fnt2">Bloque 3</text>
         </g>

@@ -206,7 +206,57 @@ class PaymentController extends Controller
     */
 
     public function creditCardPayment($req) {
-    	dd($req->all());
+    	// dd($req->all());
+
+    	\Conekta\Conekta::setApiKey($this->_conekta_conf['sandbox_privateKey']);
+		\Conekta\Conekta::setApiVersion("2.0.0");
+
+    	try {
+			$order = \Conekta\Order::create(array(
+				  'currency' => 'MXN',
+				  'customer_info' => array(
+				    'name' => 'Martin Alanis',
+				    'email' => 'martin@gmail.com',
+				    'phone' => '5555552265'
+				  ),
+				  'line_items' => array(
+				    array(
+				      'name' => 'Boletos ',
+				      'unit_price' => 000,
+				      'quantity' => 1
+				    )
+				  ),
+				  'charges' => array(
+				    array(
+				      'payment_method' => array(
+				        'type' => 'card',
+				        // 'token_id' => $req->input('conektaTokenId')
+				        'token_id' => 'tok_test_visa_4242'
+				        // 'expires_at' => $expires_at->timestamp
+				      ),
+				    )
+				  ),
+				  'tax_lines' => array(
+				  	array(
+				  		'description' => 'Servicio',
+				  		'amount' => 0
+				  	)
+				  ),
+				  'metadata' => array()
+				));
+		} catch (\Conekta\ProcessingError $error){
+			echo $error->getMessage();
+		} catch (\Conekta\ParameterValidationError $error){
+			$res = $error->getMessage();
+			$success = false;
+			return view('eventos.compra', compact('res', 'success'));
+		} catch (\Conekta\Handler $error){
+			$res = $error->getMessage();
+			$success = false;
+			return view('eventos.compra', compact('res', 'success'));
+		}
+
+		dd($order);
     }
 
     /**

@@ -18,7 +18,7 @@ class PaneldeUsuarioController extends Controller
 
     public function eventos() {
 
-        $eventos_activos = Event::where([['status', 1],['online', 1], ['fecha', '>', Carbon::now()]])->orderBy('fecha', 'ASC')->get();
+        $eventos_activos = Event::where([['status', 1],['online', 1], ['fecha', '>', Carbon::now()->addMinutes(30)]])->orderBy('fecha', 'ASC')->get();
 
         $eventos = [];
 
@@ -104,17 +104,17 @@ class PaneldeUsuarioController extends Controller
     // }
 
     // public function initTable(){
-    //     $table = 'ornelas_celaya_04abr';
+    //     $table = 'andres_suarez_celaya_31may';
 
-    //     $asiento = 42;
+    //     $asiento = 10;
     //     $rows = [];
-    //     $cb = 683;
+    //     $cb = 100;
 
-    //     foreach(range('L', 'Q') as $fila){
+    //     foreach(range('K', 'O') as $fila){
             
-    //         for($i = 2; $i <= $asiento; $i++){
+    //         for($i = 1; $i <= $asiento; $i++){
     //             $row = ['seccion' => 'Oro',
-    //                 'bloque' => '',
+    //                 'bloque' => 'oro-1',
     //                 'fila' => $fila,
     //                 'asiento' => $i,
     //                 'status' => 0,
@@ -133,7 +133,7 @@ class PaneldeUsuarioController extends Controller
 
     //      DB::table($table)->insert($rows);
 
-    //      echo 'Inserts R done';
+    //      echo 'Insert oro done';
     // }
 
 }

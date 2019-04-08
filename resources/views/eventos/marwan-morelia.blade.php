@@ -31,16 +31,12 @@
 	<div class="row">
 		<div class="col s12">
 			<ul class="tabs">
-				<li class="tab "><a class="active" href="#descripcion">Descripción</a></li>
-				<li class="tab "><a href="#biografia">Biografía</a></li>
+				<li class="tab "><a class="active" href="#precios">Precios</a></li>
+				<li class="tab "><a href="#detalles">Detalles</a></li>
 				<li class="tab "><a href="#lugares">Lugares de venta</a></li>
 			</ul>
 		</div>
-		<div id="descripcion" class="col s12 tab-content">
-			<div class="row">
-				<h4 class="mt-0 raleway quote">PRECIOS</h4>
-				{{-- <div class="divider"></div> --}}
-			</div>
+		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s8 offset-s2 m5 mb-30 card-flyer">
 				<img src="{{ asset('img/marwan-morelia.jpg') }}" alt="" class="responsive-img">
@@ -81,7 +77,7 @@
 			</div>
 		</div>
 
-		<div id="biografia" class="col s12 tab-content">
+		<div id="detalles" class="col s12 tab-content">
 			<div class="col s12"><h4 class="mt-0 raleway quote">BIOGRAFIA</h4></div>	
 			<div class="col s8 offset-s2 hide-on-med-and-up">
 				<img src="{{ asset('img/marwan-bio.jpg') }}" class="responsive-img">
@@ -162,7 +158,7 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	{{-- @if(Auth()->check())
+	@if(Auth()->check())
 	<div class="row">
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
@@ -217,7 +213,7 @@
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
 	</div>
-	@endif --}}
+	@endif
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
 			<h5 class="center-align raleway">Venta de boletos también en RS Viajes Centro y RS Viajes Periodismo</h5>

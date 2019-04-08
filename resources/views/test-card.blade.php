@@ -47,56 +47,6 @@
 
 @section('content')
 
-@if( $req->event_type == "numerado" )
-
-	@php
-
-	$i=0;
-
-	if($req->select_type == 'manual'){
-
-		$asientos = explode(',', $req->asiento);
-
-		foreach ($asientos as $asiento) {
-			$field = explode('|', $asiento);
-			$id[$i] = $field[0];
-			$sit[$i] = $field[1];
-			$row[$i] = $field[2];
-			$i++;
-		}
-
-		$num_asientos = sizeof($asientos);
-
-		$str_sits = "";
-		$j = 0;
-		foreach( $sit as $s ){
-			$str_sits .= " *".$row[$j]."|".$s;
-			$j++;
-		}
-
-	}else{
-
-		foreach ($req->asiento as $value) {
-			$field = explode('|', $value);
-			$id[$i] = $field[0];
-			$sit[$i] = $field[1];
-			$i++;
-		}
-
-		$num_asientos = sizeof($req->asiento);
-
-	}
-
-	@endphp
-
-@else
-	
-	@php
-	$num_asientos = $req->asiento;
-	@endphp
-
-@endif
-
 @php
 $months = [];
 for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_LEFT)] = str_pad($month, 2,'0', STR_PAD_LEFT);
@@ -118,86 +68,6 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 	
 	<div class="row mt-30 mb-50">
 		<div class="col m6">
-			<div class="col s12 card-text white">
-				<div class="col m4" style="padding-top: 8px;">
-					<img src="{{ asset($req->img) }}" alt="" class="materialboxed responsive-img">
-				</div>
-				<div class="col m8">
-					<table class="table-detalles">
-						<tbody>
-							<tr>
-								<th>Evento:</th>
-								<td><b>{{ $req->evento }}</b></td>
-							</tr>
-							<tr>
-								<th>Fecha:</th>
-								<td>{{ $req->fecha }}</td>
-							</tr>
-							<tr>
-								<th>Ciudad:</th>
-								<td>{{ $req->ciudad }}</td>
-							</tr>
-							<tr>
-								<th>Lugar:</th>
-								<td>{{ $req->lugar }}</td>
-							</tr>
-							<tr>
-								<th>Hora:</th>
-								<td>{{ $req->hora }}</td>
-							</tr>
-							<tr>
-								<th>Zona:</th>
-								<td>{{ $req->zona }}</td>
-							</tr>
-							@if( $req->event_type == "numerado" )
-
-								@if($req->select_type != 'manual')
-								<tr>
-									<th>Fila:</th>
-									<td>{{ $req->fila }}</td>
-								</tr>
-								<tr>
-									<th>Asientos:</th>
-									<td>*{{ implode(" *", $sit) }}</td>
-								</tr>
-								@else
-								<tr>
-									<th>Fila/Asiento:</th>
-									<td>{{$str_sits}}</td>
-								</tr>
-								@endif
-
-							@else
-								<tr>
-									<th>Asientos:</th>
-									<td>{{ $num_asientos }}</td>
-								</tr>			
-							@endif
-							<tr>
-								<th>Email:</th>
-								<td>{{ Auth::user()->email }}</td>
-							</tr>
-							<tr>
-								<th>Subtotal:</th>
-								<td>$ {{ number_format($req->precio * $num_asientos, 2, '.', ',') }}</td>			
-							</tr>
-							<tr>
-								<th>Servicio:</th>
-								<td>$ {{ number_format(($req->precio * $num_asientos) * 0.10, 2, '.', ',') }}</td>			
-							</tr>
-							<tr>
-								<th>TOTAL:</th>
-								<td colspan="2"><span class="label-precio">$ <b>{{ number_format(($req->precio * $num_asientos) * 1.10, 2, '.', ',') }}</b> MX</span></td>
-							</tr>					</tbody>
-
-					</table>
-				</div>
-				{{-- @if($req->db_table == 'oceransky_morelia_01mar')
-				<div class="col m12">
-					<p><strong>NOTA:</strong>: Una vez confirmada tu orden, contarás con 4 hrs., para realizar el pago.</p>
-				</div>
-				@endif --}}
-			</div>
 
 			<div class="col row mb-0 mt-30">
 				<h5><span class="number-step deep-orange darken-2">2</span> Selecciona tu forma de pago.</h5>
@@ -231,36 +101,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 								</div>
 							</div>
 						</div>	
-						
-						{!! Form::hidden('evento', $req->evento) !!}
-						{!! Form::hidden('fecha', $req->fecha) !!}
-						{!! Form::hidden('lugar', $req->lugar) !!}
-						{!! Form::hidden('ciudad', $req->ciudad) !!}
-						{!! Form::hidden('hora', $req->hora) !!}
-						{!! Form::hidden('precio', $req->precio) !!}
-						{!! Form::hidden('seccion', $req->zona) !!}
-						@if( $req->event_type == "numerado" )
-						{!! Form::hidden('asientos_id', implode("-", $id) ) !!}
-						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}						
-						@if($req->select_type != 'manual')
-						{!! Form::hidden('asientos', "*".implode(" *", $sit) ) !!}
-						{!! Form::hidden('fila', $req->fila) !!}
-						@else
-						{!! Form::hidden('asientos', $str_sits ) !!}
-						{!! Form::hidden('fila', '') !!}
-						@endif
-						@else
-						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}		
-						@endif
-						{!! Form::hidden('event_type', $req->event_type) !!}
-						{!! Form::hidden('impresion_boleto', $req->impresion_boleto) !!}
-						{!! Form::hidden('db_table', $req->db_table) !!}
-						{!! Form::hidden('info', $req->info) !!}
-						{!! Form::hidden('customer_name', Auth::user()->name.' '.Auth::user()->last_name.' '.Auth::user()->second_lname) !!}
-						{!! Form::hidden('customer_email', Auth::user()->email) !!}
-						{!! Form::hidden('customer_phone', Auth::user()->tel) !!}
-						{!! Form::hidden('event_photo', asset($req->img) ) !!}
-						{!! Form::hidden('url', $req->url) !!}
+
 						
 					</div>
 						
@@ -322,7 +163,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 						<div class="clearfix"></div>
 					</div>
 					<div class="input-field col s12 center-align mt-0">
-						<a href="{{ $req->url }}" class="waves-effect waves-teal btn-flat">Cancelar compra</a>	
+						<a href="#!" class="waves-effect waves-teal btn-flat">Cancelar compra</a>	
 					</div>
 				
 				</div>

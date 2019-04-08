@@ -15,16 +15,7 @@ class ApiController extends Controller
 {
     public function getFilas($table, $zona) {
 
-        if($table == 'marwan_morelia_15feb'){
-            return DB::table($table)
-                    ->select('fila')
-                    ->where([
-                        ['seccion', $zona],
-                        ['status', 0]
-                    ])
-                    ->whereNotIn('fila', ['A', 'B'])
-                    ->groupBy('fila')->get();
-        }elseif($table == 'oceransky_morelia_01mar'){
+        if($table == 'santiago_cruz_morelia_30may'){
              return DB::table($table)
                     ->select('fila')
                     ->where([
@@ -66,13 +57,14 @@ class ApiController extends Controller
 
     public function getMapAsientos($table, $bloque, $order_fila, $order_asiento) {
 
-        if($table == 'marwan_morelia_15feb'){
-            return DB::table($table)
+        if($table == 'santiago_cruz_morelia_30may'){
+            if($bloque == 'oro-2'){
+               return DB::table($table)
                 ->where('bloque', $bloque)
                 ->orderBy('fila', $order_fila)
-                ->whereNotIn('fila', ['A', 'B'])
-                ->orderBy('asiento', $order_asiento)->get();
-        }elseif($table == 'oceransky_morelia_01mar'){
+                ->where('fila', '<>', 'I')
+                ->orderBy('asiento', $order_asiento)->get(); 
+            }
             return DB::table($table)
                 ->where('bloque', $bloque)
                 ->orderBy('fila', $order_fila)

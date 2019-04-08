@@ -319,6 +319,8 @@ borders
 	border-left: 1px solid #ddd;
 }
 
+.div-border { border: 1px solid #CCC; }
+
 .br-2{
 	border-radius: 2px;
 }
