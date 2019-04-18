@@ -47,7 +47,7 @@ class PaymentController extends Controller
 	*/
 
     public function paymentDetails(Request $req) {
-    	return view('detalles-compra', compact('req', 'user'));
+    	return view('detalles-compra', compact('req'));
     }
 
     /**
