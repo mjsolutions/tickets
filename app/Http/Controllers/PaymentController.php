@@ -109,6 +109,8 @@ class PaymentController extends Controller
 
 		}
 
+		$line_item_name = $req->evento.' | '.$req->ciudad.' | '.$req->seccion.': '.$asientos;
+
 		$metadata = array(
 			'event_type' => $req->event_type,
 			'db_table' => $req->db_table,
@@ -161,7 +163,7 @@ class PaymentController extends Controller
 				  ),
 				  'line_items' => array(
 				    array(
-				      'name' => 'Boletos '.$req->evento,
+				      'name' => $line_item_name,
 				      'unit_price' => $req->precio * 100,
 				      'quantity' => $req->asientos_cantidad
 				    )

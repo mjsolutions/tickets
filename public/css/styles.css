@@ -266,45 +266,31 @@ Backgrounds
 	height: 250px;
 }
 
-.bg-1 {
-	background-image: url("../img/slide1.jpg");
+.bg-1 { background-image: url("../img/slide1.jpg"); }
+
+.bg-2 { background-image: url("../img/bg2.jpg"); }
+
+.bg-3 { background-image: url("../img/bg3.jpg"); }
+
+.bg-4 { background-image: url("../img/bg4.jpg"); }
+
+.bg-5 { background-image: url("../img/bg5.jpg"); }
+
+.bg-morelos { background-image: url("../img/bg-morelos.jpg"); }
+
+.bg-del-olmo { 
+	background-image: url("../img/bg-del-olmo.jpg");
+	background-attachment: initial;
+	background-position: center bottom;
 }
 
-.bg-2 {
-	background-image: url("../img/bg2.jpg");
-}
+.bg-infantil { background-image: url("../img/bg-infantil.jpg"); }
 
-.bg-3 {
-	background-image: url("../img/bg3.jpg");
-}
+.bg-roberto-tapia { background-image: url("../img/roberto-banner-2.jpg"); }
 
-.bg-4 {
-	background-image: url("../img/bg4.jpg");
-}
+.bg-blue { background-color: #09bde4; }
 
-.bg-5 {
-	background-image: url("../img/bg5.jpg");
-}
-
-.bg-morelos {
-	background-image: url("../img/bg-morelos.jpg");
-}
-
-.bg-infantil {
-	background-image: url("../img/bg-infantil.jpg");
-}
-
-.bg-roberto-tapia {
-	background-image: url("../img/roberto-banner-2.jpg");
-}
-
-.bg-blue {
-	background-color: #09bde4;
-}
-
-.bg-gray {
-	background-color: #f2f2f2;
-}
+.bg-gray { background-color: #f2f2f2; }
 
 .bg-gradiente {
 	background: #373B44;  /* fallback for old browsers */

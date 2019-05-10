@@ -1,35 +1,16 @@
 @extends('layouts.main')
 
-@section('title', 'Andrés Suárez')
+@section('title', 'Juan Solo')
 
-@section('description', 'Andrés Suárez, Aguascalientes, 30 de mayo, 21:00 hrs boletos en La Tercera Llamada y bolematico.com')
+@section('description', 'Juan Solo, Aguascalientes, 21 de junio, 21:00 hrs boletos en La Tercera Llamada y bolematico.com')
 
 @section('styles')
-<meta property="og:url"  content="http://bolematico.mx/eventos/andres-suarez-aguascalientes" />
-<meta property="og:title" content="Andrés Suárez" />
-<meta property="og:description" content="Andrés Suárez, Aguascalientes, 30 de mayo, 21:00 hrs boletos en La Tercera Llamada y bolematico.com" />
-<meta property="og:image" content="http://bolematico.mx/img/andres-suarez-ags.jpg" />
-<style type="text/css">
-	.row .col .zona-radio {
-		padding: 0 3px;
-	}
-	.zona-radio > input:not(:checked)+label {
-		color: #656869;
-	}
-	.zona-radio > input:checked+label {
-		color: #111;
-		font-weight: 700;
-	}
-	#btn-lugares{
-		cursor: pointer;
-	}
-	#btn-lugares:hover {
-		color: #656869;
-	}
-</style>
+<meta property="og:url"  content="http://bolematico.mx/eventos/juan-solo-aguascalientes" />
+<meta property="og:title" content="Juan Solo" />
+<meta property="og:description" content="Juan Solo, Aguascalientes, 21 de junio, 21:00 hrs boletos en La Tercera Llamada y bolematico.com" />
+<meta property="og:image" content="http://bolematico.mx/img/juan-solo-ags.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
-<link rel="stylesheet" type="text/css" href="{{ asset('css/event-select-manual.css') }}">
 @endsection
 
 @section('content')
@@ -37,10 +18,10 @@
 <div class="image-header bg-4 overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Andrés Suárez</h4>
+		<h4>Juan Solo</h4>
 		<div class="divider"></div>
 		<p class="mb-0"><i>La Tercera Llamada - Aguascalientes</i></p>
-		<p class="m-0"><i>30 de mayo - 21:00 hrs.</i></p>
+		<p class="m-0"><i>21 de junio - 21:00 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -57,7 +38,7 @@
 		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s8 offset-s2 m4 offset-m1 mb-30 card-flyer">
-				<img src="{{ asset('img/andres-suarez-ags.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/juan-solo-ags.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m5 offset-m1">				
@@ -67,27 +48,9 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 teal accent-4">Diamante</div>
+								<div class="col s12 teal accent-4">Preventa</div>
 							</header>
-							<div class="price col s12"><span>$650</span> MXN</div>
-						</div>
-					</div>
-
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
-							<header>
-								<div class="col s12 amber darken-1">Oro</div>
-							</header>
-							<div class="price col s12"><span>$500</span> MXN</div>
-						</div>
-					</div>
-
-					<div class="qcPricing col s12 center-align mb-10">
-						<div class="box col s12">
-							<header>
-								<div class="col s12 grey lighten-1">Plata</div>
-							</header>
-							<div class="price col s12"><span>$400</span> MXN</div>
+							<div class="price col s12"><span>$280</span> MXN</div>
 						</div>
 					</div>
 
@@ -97,7 +60,7 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						<p>* Informes al: <a href="tel:4492418386" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 449 241 8386</a> </p>
+						<p>* Informes y confirmación de tu reservación (una vez realizada tu compra): <a href="tel:4492418386" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 449 241 8386</a> </p>
 					</div>
 				</div>
 			</div>
@@ -105,20 +68,22 @@
 
 		<div id="detalles" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/andres-suarez-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/juan-solo-bio.jpg') }}" class="responsive-img">
 			</div>
 				
 			<div class="col s12 m9">	
-				<p>La historia de <strong>Andrés Suárez</strong> es un ejemplo de hasta dónde puede llevar la combinación de constancia y talento. Le puede llevar, por ejemplo, de los pasillos del Metro al Wizink Center de Madrid, dos referencias que marcan el punto de partida y de llegada de un cantautor que llegó a la capital como un músico callejero y que hoy es uno de los artistas más queridos por el público, que agota las localidades de sus conciertos ya sea en un teatro o en el antiguo Palacio de los Deportes de la capital, según opte por su lado íntimo o por su vertiente de gran banda de rock.</p>
-				<p>Aquella primera vez que Andrés tocó su guitarra en el Metro, hace ya una década, la recaudación no le alcanzó para sufragar el billete. Pero este gallego de Ferrol no es de los que se arrugan fácilmente, y de la calle pasó a las terrazas de La Latina, de ahí a bares con encanto como el mítico Libertad 8 y, en un abrir y cerrar de ojos, ya estaba llenando a reventar el Palacio Vistalegre en un concierto histórico.</p>
-				<p>Los resultados de todo lo que le ocurrió después están a la vista. Las presentaciones que ha tenido que ofrecer en Madrid, un lleno detrás de otro en teatros que abarrota como lo hizo en el Wizink Center. En momentos así, Andrés no puede evitar que le venga a la memoria la primera vez que tocó la guitarra en el Metro. Mente en ebullición, repleto de pasión interior, amante de la vida y preocupado por sus fans y por darles lo mejor de sí mismo en cada momento; así es Andrés Suárez, un artista apasionado.</p>
+				<p><strong>Juan Solo</strong> es un cantante de Puebla (México) famoso por sus canciones románticas y tiernas</p>
+				<p>Juan Luis Guerra, Rubén Blades, Poncho Sánchez, Bee Gees, Earth Wind & Fire y demás grupos fueron la semilla que marcó el gusto musical de este mexicano</p>
+				<p>Creció amando la música, el baile, el fútbol, el rancho y los amigos, así que a los 18 años decidió comenzar en teatro musical en Puebla, donde actuó y cantó en 2 obras musicales: GODSPELL y FAME. Después de esas participaciones, Juan Solo empezó a cantar en diferentes lugares de la ciudad, tocando de todo: rock, pop, son cubano, salsa, siendo esta última su preferida. Para Juan Solo la carrera de medicina parecía predeterminada en su vida, pero a 2 años de cursar la misma, decidió que era momento de hacer lo que realmente le apasionaba, y fue así que ingresó a la carrera de música. Entra a estudiar Música Clásica por 6 meses. Luego se muda a la Ciudad de México donde estudia la carrera de Producción Musical.</p>
+				<p>Juan Solo compuso en esta faceta canciones para películas como "La Leyenda de la Nahuala" que le significó 2 premios Ariel y para "Nikté" donde las canciones que hizo fueron interpretadas por Sherlyn.</p>
+				<p>Paralelamente Juan Solo comenzó a buscar escenarios donde mostrarse, pero es en el DF mientras daba un show en la discoteque “La Casona” conoce a Rafa Rodríguez quien le ayudaría a dar un vuelco en su carrera.</p>
 
 			</div>
 			<div class="col s3 hide-on-small-only">
-				<img src="{{ asset('img/andres-suarez-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/juan-solo-bio.jpg') }}" class="responsive-img">
 			</div>
 			<div class="clearfix"></div>
-			<p>Fuente: <small>www.andressuarez.es</small></p>	
+			<p>Fuente: <small>www.buenamusica.com/juan-solo/biografia</small></p>	
 			
 		</div>
 
@@ -132,7 +97,7 @@
 					<h5><b>La Tercera Llamada</b></h5>
 					<ul class="qcAddress">
 						<li><div class="divider"></div></li>
-						<li><i class="fa fa-map-marker"></i> <strong>DIRECCIÓN</strong>: <p>Gral. Álvaro Obregón 355, Zona Centro, 20000 Aguascalientes, Ags.</p></li>
+						<li><i class="fa fa-map-marker"></i> <strong>DIRECCIÓN</strong>: <p>Gral Álvaro Obregón 355, Zona Centro, 20000 Aguascalientes, Ags.</p></li>
 						<li><i class="fa fa-phone"></i> <strong>TELÉFONO</strong>: <p> 9162038</p></li>
 						{{-- <li><i class="fa fa-calendar"></i> <strong>HORARIO</strong>: <p>10:00 a 19:00 hrs. Lunes a Viernes y 10:30 a 14:00 hrs. los Sabados.</p></li> --}}
 						<li><i class="fa fa-globe"></i> <strong>Website</strong>: <p><a title="website" href="https://www.facebook.com/pages/category/Restaurant/Tercera-Llamada-Restaurante-Cultural-246649588687732/" target="_blank">https://www.facebook.com/pages/category/Restaurant/Tercera-Llamada-Restaurante-Cultural-246649588687732/</a></p></li>
@@ -144,10 +109,10 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/GuE8JgULP5s/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/kh_EFl_-1oI/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/GuE8JgULP5s"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Andrés Suárez - No Saben de Ti</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/kh_EFl_-1oI"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Juan Solo - Ámame</i></p>
 	</div>
 </section>
 
@@ -165,28 +130,6 @@
 			{!! Form::open(['route' => 'payment.details', 'method' => 'POST', 'id' => 'paymentForm'])!!}
 
 			<div class="row">
-                    
-                <div class="col m4">
-                	<div class="col m12 zona-radio">
-                		{!! Form::radio('zona', 'Diamante', false, ['id' => 'diamante', 'required', 'class' => 'form_zona']) !!}
-                		{!! Form::label('diamante', 'Diamante') !!}
-                	</div>
-                </div>
-                <div class="col m4">
-                	<div class="col m12 zona-radio">
-		                {!! Form::radio('zona', 'Oro', false, ['id' => 'oro', 'required', 'class' => 'form_zona']) !!}
-		                {!! Form::label('oro', 'Oro') !!}
-		            </div>
-                </div>
-                <div class="col m4">
-	            	<div class="col m12 zona-radio">
-	            	    {!! Form::radio('zona', 'Plata', false, ['id' => 'plata', 'required', 'class' => 'form_zona']) !!}
-	            	    {!! Form::label('plata', 'Plata') !!}
-	            	</div>
-	            </div>                  
-            </div>
-		
-			<div class="row">
 				<div class="input-field col s12">
 					{!! Form::select('asiento', ['1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'], '', ['class' => 'select-dropdown', 'id' => 'asiento', 'placeholder' => 'Seleccione numero de asientos', 'required']) !!}
 					{!! Form::label('asiento', 'Asientos') !!}
@@ -194,19 +137,19 @@
 			
 			</div>
 		
-			{!! Form::hidden('img', 'img/andres-suarez-ags.jpg') !!}
-			{!! Form::hidden('evento', 'Andrés Suárez') !!}
-			{!! Form::hidden('fecha', '30 de mayo 2019') !!}
+			{!! Form::hidden('img', 'img/juan-solo-ags.jpg') !!}
+			{!! Form::hidden('evento', 'Juan Solo') !!}
+			{!! Form::hidden('fecha', '21 de junio 2019') !!}
 			{!! Form::hidden('lugar', 'La Tercera Llamada') !!}
 			{!! Form::hidden('ciudad', 'Aguascalientes') !!}
 			{!! Form::hidden('hora', '21:00 hrs') !!}
 			{!! Form::hidden('event_type', 'general') !!}
 			{!! Form::hidden('impresion_boleto', true) !!}
-			{{-- {!! Form::hidden('zona', '') !!} --}}
-			{!! Form::hidden('db_table', 'andres_suarez_ags_30may') !!}
+			{!! Form::hidden('zona', 'Preventa') !!}
+			{!! Form::hidden('db_table', 'juan_solo_ags_21jun') !!}
 			{!! Form::hidden('info', 'Favor de comunicarte al numero 449 241 8386 para completar tu reservación.') !!}
-			{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
-			{!! Form::hidden('url', url('eventos/andres-suarez-aguascalientes')) !!}
+			{!! Form::hidden('precio', '280') !!}
+			{!! Form::hidden('url', url('eventos/juan-solo-aguascalientes')) !!}
 			
 			<div class="input-field center-align">
 				{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
@@ -262,7 +205,6 @@
 
 @section('scripts')
 	<script>
-		var precios = {'Diamante': 650, 'Oro': 500, 'Plata': 400};
 		$('#modal-video-open').leanModal({
 			opacity: .8,
 			ready: function() {
@@ -288,11 +230,6 @@
 		          map: map
 		        });
 		      }
-
-		$(".form_zona").click(function(){
-			console.log($(this).val());
-			$("#form_precio").val(precios[$(this).val()]);
-		});
 
 	</script>
 

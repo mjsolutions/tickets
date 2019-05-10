@@ -2,7 +2,7 @@
 
 @section('title', 'Entre Mujeres')
 
-@section('description', 'Entre Mujeres, Morelia 09 de abril, Teatro Morelos, 19:00 hrs boletos en RS Viajes Centro, taquillas del planetario y bolematico.com')
+@section('description', 'Entre Mujeres, Morelia 09 de mayo, Teatro Morelos, 19:00 hrs boletos en RS Viajes Centro, taquillas del planetario y bolematico.com')
 
 @section('styles')
 <meta property="og:url"  content="http://bolematico.mx/eventos/entre-mujeres-morelia" />

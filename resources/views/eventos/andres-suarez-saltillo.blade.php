@@ -82,7 +82,7 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						<p>* Informes al: <a href="tel:558 687 7354" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 558 687 7354</a> </p>
+						<p>* Informes al: <a href="tel:5586877354" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 558 687 7354</a> </p>
 					</div>
 				</div>
 			</div>
