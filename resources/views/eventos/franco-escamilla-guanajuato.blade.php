@@ -2,13 +2,13 @@
 
 @section('title', 'Franco Escamilla')
 
-@section('description', 'Franco Escamilla, Guanajuato 05 de junio, 19:00 hrs boletos en bolematico.com')
+@section('description', 'Franco Escamilla, Guanajuato 05 de junio, 19:00 hrs Auditorio del estado, boletos en bolematico.com')
 
 @section('styles')
-<meta property="og:url"  content="http://bolematico.com/eventos/franco-escamilla-celaya" />
+<meta property="og:url"  content="http://bolematico.com/eventos/franco-escamilla-guanajuato" />
 <meta property="og:title" content="Franco Escamilla" />
-<meta property="og:description" content="Franco Escamilla, Guanajuato 05 de junio, 19:00 hrs boletos en bolematico.com" />
-<meta property="og:image" content="http://bolematico.com/img/franco-celaya.jpg" />
+<meta property="og:description" content="Franco Escamilla, Guanajuato 05 de junio, 19:00 hrs Auditorio del estado, boletos en bolematico.com" />
+<meta property="og:image" content="http://bolematico.com/img/franco-guanajuato.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/event-select-manual.css') }}">
@@ -39,7 +39,7 @@
 		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s8 offset-s2 m3 offset-m1 mb-30 card-flyer">
-				<img src="{{ asset('img/franco-celaya.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/franco-guanajuato.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m6 offset-m1">				
@@ -51,7 +51,7 @@
 							<header>
 								<div class="col s12 teal accent-4">Diamante</div>
 							</header>
-							<div class="price col s12"><span>$700</span> MXN</div>
+							<div class="price col s12"><span>$750</span> MXN</div>
 						</div>
 					</div>
 
@@ -59,6 +59,15 @@
 						<div class="box col s12">
 							<header>
 								<div class="col s12 amber darken-1">Oro</div>
+							</header>
+							<div class="price col s12"><span>$650</span> MXN</div>
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
+								<div class="col s12 grey lighten-1">Plata</div>
 							</header>
 							<div class="price col s12"><span>$550</span> MXN</div>
 						</div>
@@ -70,7 +79,7 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						<p>* Informes al: <a href="tel:4613458806" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 461 345 88 06</a> / <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452 174 1255</a></p>
+						{{-- <p>* Informes al: <a href="tel:4613458806" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 461 345 88 06</a> / <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452 174 1255</a></p> --}}
 					</div>
 				</div>
 			</div>
@@ -112,12 +121,11 @@
 				<h5 class="mb-30 quote">Además de Bolematico, puedes adquirir tus entradas en:</h5>
 			</div>
 
-			<div class="col s12">									
-				<!-- ## VENUE MAP ## -->
+			{{-- <div class="col s12">									
+
 				<div class="white z-depth-2">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8634.35608692352!2d-100.82337042627393!3d20.5195282465618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe3152c8f48bd2c54!2sBlvd+804+Show+Center+%26+Food!5e0!3m2!1ses!2smx!4v1556144914999!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 				
-				<!-- ## ADDRESS LIST ## -->
 					<div class=" p-30">
 						<h5 class="raleway"><b>BLVD 804</b></h5>
 						<ul class="qcAddress">
@@ -129,7 +137,7 @@
 					</div>
 				</div>
 
-			</div>			
+			</div>	 --}}		
 
 		</div>
 
@@ -149,7 +157,16 @@
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 		</div>
 		<div class="col s12 m6">
-			@include('maps.auditorio-tres-guerras-2s')
+			<ul class="tabs">
+				<li class="tab col s6"><a  href="#planta-baja">Planta Baja</a></li>
+				<li class="tab col s6"><a class="active" href="#planta-alta">Planta Alta</a></li>
+			</ul>
+			<div id="planta-baja" class="col s12">
+				@include('maps.auditorio-del-estado-gto-pbaja')		
+			</div>
+			<div id="planta-alta" class="col s12">
+				@include('maps.auditorio-del-estado-gto-palta')					
+			</div>
 		</div>
 		<div class="col s12 m6">
 			<div class="col s12 mb-15">
@@ -174,18 +191,18 @@
 					{!! Form::hidden('asiento', '', ['id' => 'form_asiento']) !!}
 					{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
 					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
-					{!! Form::hidden('img', 'img/franco-celaya.jpg') !!}
-					{!! Form::hidden('evento', 'Raúl Ornelas') !!}
-					{!! Form::hidden('fecha', '04 de junio 2019') !!}
-					{!! Form::hidden('lugar', 'Auditorio Tres Guerras') !!}
-					{!! Form::hidden('ciudad', 'Celaya') !!}
+					{!! Form::hidden('img', 'img/franco-guanajuato.jpg') !!}
+					{!! Form::hidden('evento', 'Franco Escamilla') !!}
+					{!! Form::hidden('fecha', '05 de junio 2019') !!}
+					{!! Form::hidden('lugar', 'Auditorio del estado') !!}
+					{!! Form::hidden('ciudad', 'Guanajuato') !!}
 					{!! Form::hidden('hora', '19:00 hrs') !!}
 					{!! Form::hidden('event_type', '', ['id' => 'form_type']) !!}
 					{!! Form::hidden('impresion_boleto', true) !!}
-					{!! Form::hidden('db_table', 'franco_celaya_04jun') !!}
+					{!! Form::hidden('db_table', 'franco_gto_05jun') !!}
 					{!! Form::hidden('info', '--') !!}
 					{!! Form::hidden('select_type', 'manual') !!}
-					{!! Form::hidden('url', url('eventos/franco-escamilla-celaya')) !!}
+					{!! Form::hidden('url', url('eventos/franco-escamilla-guanajuato')) !!}
 				{!! Form::close() !!}
 			</div>
 		</div>	
@@ -200,7 +217,7 @@
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
-			<h5 class="center-align raleway">Venta de boletos en BLVD 804</h5>
+			<h5 class="center-align raleway">Venta de boletos en</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -220,9 +237,9 @@
 	<div class="info-lugar">
 		<h5 class="raleway quote mb-30">Lugar del evento</h5>
 		<div class="divider mb-30"></div>
-		<p><b>Auditorio Tres Guerras</b></p>
-		<p><i class="material-icons">location_on</i>Av. El Sauz y Av. Torres Landa s/n. Col. Laureles, Celaya, Gto.</p>
-		<p><i class="material-icons">call</i> 01 461 174 3456</p>
+		<p><b>Auditorio del estado</b></p>
+		<p><i class="material-icons">location_on</i>Pueblito de Rocha S/N, Auditorio del Estado Centro de Convenciones, 36040 Guanajuato, Gto.</p>
+		<p><i class="material-icons">call</i> 01 473 732 5019</p>
 		{{-- <p><i class="material-icons">language</i> <a title="website" href="http://ceconexpo.com/" target="_blank">http://ceconexpo.com</a></p> --}}
 	</div>
 </section>
@@ -238,9 +255,9 @@
 
 @section('scripts')
 	<script>
-		var table = 'franco_celaya_04jun';
+		var table = 'franco_gto_05jun';
 		var base_path = '{{ url('/') }}';
-		var precios = {'Diamante': 700, 'Oro': 550};
+		var precios = {'Diamante': 750, 'Oro': 650, 'Plata': 550};
 
 		$('#modal-video-open').leanModal({
 			opacity: .8,
@@ -254,13 +271,13 @@
 		        }
 		    });
 		function initMap() {
-		        var uluru = {lat: 20.5360705, lng: -100.8285575};
+		        var uluru = {lat: 21.0130174, lng: -101.2741785};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 17,
 		          scrollwheel: false,
 		          navigationControl: true,
 		          draggable: true,
-		          center: {lat: 20.5360705, lng: -100.8275575}
+		          center: {lat: 21.0130174, lng: -101.2741785}
 		        });
 		        var marker = new google.maps.Marker({
 		          position: uluru,

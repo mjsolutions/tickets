@@ -175,7 +175,7 @@
 					{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
 					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
 					{!! Form::hidden('img', 'img/franco-celaya.jpg') !!}
-					{!! Form::hidden('evento', 'Raúl Ornelas') !!}
+					{!! Form::hidden('evento', 'Franco Escamilla') !!}
 					{!! Form::hidden('fecha', '04 de junio 2019') !!}
 					{!! Form::hidden('lugar', 'Auditorio Tres Guerras') !!}
 					{!! Form::hidden('ciudad', 'Celaya') !!}
