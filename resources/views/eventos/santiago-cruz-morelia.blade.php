@@ -264,6 +264,7 @@
 		var table = 'santiago_cruz_morelia_30may';
 		var base_path = '{{ url('/') }}';
 		var precios = {'Diamante': 650, 'Oro': 500, 'Plata': 400};
+		var special_char_n = 'NN';
 
 		$('#modal-video-open').leanModal({
 			opacity: .8,

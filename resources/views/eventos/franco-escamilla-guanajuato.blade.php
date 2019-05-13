@@ -2,12 +2,12 @@
 
 @section('title', 'Franco Escamilla')
 
-@section('description', 'Franco Escamilla, Guanajuato 05 de junio, 19:00 hrs Auditorio del estado, boletos en bolematico.com')
+@section('description', 'Franco Escamilla, Guanajuato 05 de junio, 19:00 hrs Auditorio del estado, boletos en Holiday Inn Express y bolematico.com')
 
 @section('styles')
 <meta property="og:url"  content="http://bolematico.com/eventos/franco-escamilla-guanajuato" />
 <meta property="og:title" content="Franco Escamilla" />
-<meta property="og:description" content="Franco Escamilla, Guanajuato 05 de junio, 19:00 hrs Auditorio del estado, boletos en bolematico.com" />
+<meta property="og:description" content="Franco Escamilla, Guanajuato 05 de junio, 19:00 hrs Auditorio del estado, boletos en Holiday Inn Express y bolematico.com" />
 <meta property="og:image" content="http://bolematico.com/img/franco-guanajuato.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -109,10 +109,8 @@
 				<p>Poco a poco, se fue apegando más a este género y consiguió lo que quería, crear un estilo de stand up comedy con un toque sarcástico, áspero, ácido y con un humor negro que lo ha caracterizado en su carrera artística.</p>
 			</div>
 			<div class="clearfix"></div>
-			<p>Sitio web Oficial:</p>
-			<p><a href="http://francoescamillaoficial.com/" target="_blank">http://francoescamillaoficial.com/</a></p>
-			<p>Fuente:</p>
-			<p><small>https://www.buenamusica.com/franco-escamilla/biografia</small></p>
+			<p>Sitio web Oficial: <br><a href="http://francoescamillaoficial.com/" target="_blank">http://francoescamillaoficial.com/</a></p>
+			<p>Fuente: <br><small>https://www.buenamusica.com/franco-escamilla/biografia</small></p>
 			
 		</div>
 
@@ -121,23 +119,23 @@
 				<h5 class="mb-30 quote">Además de Bolematico, puedes adquirir tus entradas en:</h5>
 			</div>
 
-			{{-- <div class="col s12">									
+			<div class="col s12">									
 
 				<div class="white z-depth-2">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8634.35608692352!2d-100.82337042627393!3d20.5195282465618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe3152c8f48bd2c54!2sBlvd+804+Show+Center+%26+Food!5e0!3m2!1ses!2smx!4v1556144914999!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6448.512575066592!2d-101.28772724569168!3d20.98649735190443!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x61d07a9dcfdb8f85!2sHoliday+Inn+Express+Guanajuato!5e0!3m2!1ses!2smx!4v1557692075875!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 				
 					<div class=" p-30">
-						<h5 class="raleway"><b>BLVD 804</b></h5>
+						<h5 class="raleway"><b>Holiday Inn Express</b></h5>
 						<ul class="qcAddress">
 							<li><div class="divider"></div></li>
-							<li><i class="fa fa-map-marker"></i> <p> Blvrd Adolfo López Mateos 804, Col. Centro, 38000 Celaya, Gto.</p></li>
-							<li><i class="fa fa-phone"></i><p> 01 461 273 6643</p></li>
-							<li><i class="fa fa-facebook-official"></i><p><a title="website" href="https://www.facebook.com/Blvd804Oficial/" target="_blank">https://www.facebook.com/Blvd804Oficial/</a></p></li>
+							<li><i class="fa fa-map-marker"></i> <p> Carr. Guanajuato - Juventino Rosas 120, Burocrata, 36250 Guanajuato, Gto.</p></li>
+							<li><i class="fa fa-phone"></i><p> 01 473 735 2000</p></li>
+							<li><i class="fa fa-facebook-official"></i><p><a title="website" href="https://www.ihg.com/holidayinnexpress/hotels/us/en/guanajuato/bjxgc/hoteldetail" target="_blank">https://www.ihg.com/holidayinnexpress/hotels/us/en/guanajuato/bjxgc/hoteldetail</a></p></li>
 						</ul>
 					</div>
 				</div>
 
-			</div>	 --}}		
+			</div>			
 
 		</div>
 
@@ -158,8 +156,8 @@
 		</div>
 		<div class="col s12 m6">
 			<ul class="tabs">
-				<li class="tab col s6"><a  href="#planta-baja">Planta Baja</a></li>
-				<li class="tab col s6"><a class="active" href="#planta-alta">Planta Alta</a></li>
+				<li class="tab col s6"><a class="active" href="#planta-baja">Planta Baja</a></li>
+				<li class="tab col s6"><a href="#planta-alta">Planta Alta</a></li>
 			</ul>
 			<div id="planta-baja" class="col s12">
 				@include('maps.auditorio-del-estado-gto-pbaja')		
@@ -217,7 +215,7 @@
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
-			<h5 class="center-align raleway">Venta de boletos en</h5>
+			<h5 class="center-align raleway">Venta de boletos en Holiday Inn Express</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -258,6 +256,7 @@
 		var table = 'franco_gto_05jun';
 		var base_path = '{{ url('/') }}';
 		var precios = {'Diamante': 750, 'Oro': 650, 'Plata': 550};
+		var special_char_n = 'N2';
 
 		$('#modal-video-open').leanModal({
 			opacity: .8,

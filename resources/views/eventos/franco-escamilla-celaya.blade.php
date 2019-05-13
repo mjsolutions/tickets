@@ -241,6 +241,7 @@
 		var table = 'franco_celaya_04jun';
 		var base_path = '{{ url('/') }}';
 		var precios = {'Diamante': 700, 'Oro': 550};
+		var special_char_n = 'NN';
 
 		$('#modal-video-open').leanModal({
 			opacity: .8,

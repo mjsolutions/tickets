@@ -55,12 +55,12 @@
     </g>
     <g id="diagrama">
         
-        <g id="oro-1" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="desc" data-order-asiento="asc" data-align="center" data-stage="bottom">
+        <g id="oro-1" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-1" data-seccion="Oro" data-order-fila="desc" data-order-asiento="asc" data-align="center" data-stage="bottom">
            <rect x="900" y="90" width="900" height="400" class="fil2"/>
            <text x="1270" y="320"  class="fil1 fnt1">ORO</text>
         </g>
 
-        <g id="diamante-1" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="asc" data-align="center" data-stage="bottom">
+        <g id="diamante-1" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-1" data-seccion="Diamante" data-order-fila="desc" data-order-asiento="asc" data-align="center" data-stage="bottom">
            <rect x="900" y="520" width="900" height="800" class="fil0"/>
            <text x="1190" y="920"  class="fil4 fnt1">DIAMANTE</text>
         </g>

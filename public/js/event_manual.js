@@ -10,7 +10,7 @@ function print_section(query, align, stage){
 		status = 'ocupado';
 	}
 
-	query[i].fila == 'NN'? fila = 'Ñ': fila = query[i].fila;
+	query[i].fila == special_char_n? fila = 'Ñ': fila = query[i].fila;
 
 	asientos = '<span class="row-name center-align">'+ fila +'</span><a href="javascript:;" class="asiento '+status+'" data-info="'+query[i].id+'|'+query[i].asiento+'|'+fila+'">'+ query[i].asiento +'</a>';
 	currentRow = query[i].fila;
@@ -23,7 +23,7 @@ function print_section(query, align, stage){
 			status = 'ocupado';
 		}
 
-		query[i].fila == 'NN'? fila = 'Ñ': fila = query[i].fila;
+		query[i].fila == special_char_n? fila = 'Ñ': fila = query[i].fila;
 
 		if(currentRow == query[i].fila) {
 			asientos += '<a href="javascript:;" class="asiento '+status+'" data-info="'+query[i].id+'|'+query[i].asiento+'|'+fila+'">'+ query[i].asiento +'</a>';					
@@ -65,6 +65,7 @@ $(".block-hover").click(function(){
 	$("#mapa-escenario").attr('class', 'hidden');
 
 	let bloque = $(this).attr('id'),
+		bloque_name = $(this).data('nombre-bloque'),
 		order_fila = $(this).data('order-fila'),
 		order_asiento = $(this).data('order-asiento'),
 		align = $(this).data('align'),
@@ -75,7 +76,7 @@ $(".block-hover").click(function(){
 
 	if(tipo == 'numerado'){
 
-		$("#info-title-section").html(seccion + ' <small>bloque'+bloque.substring(bloque.indexOf('-')) + '</small>');
+		$("#info-title-section").html(seccion + ' <small>'+bloque_name+ '</small>');
 		$.ajax({
 			url: get_map_seat + '/' + bloque + '/' + order_fila + '/' + order_asiento,
 			method: 'GET',

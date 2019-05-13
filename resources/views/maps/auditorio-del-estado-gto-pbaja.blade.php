@@ -62,28 +62,28 @@
             <text x="16700" y="1500" id="texto" class="fil5 fnt2">ESCENARIO</text>
         </g>
 
-        <g id="diamante-1" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="asc" data-align="right" data-stage="top">
+        <g id="diamante-1" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-1" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="asc" data-align="right" data-stage="top">
             <path class="fil3" d="M16000 2500l-500 10000l-5000 -500l1500 -10000z "/>
             <text x="12500" y="7000" class="fil1 fnt0">Bloque 1</text>
-        </g>      
-        <g id="diamante-2" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="asc" data-align="right" data-stage="top">
+        </g>
+        <g id="diamante-2" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-2" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="asc" data-align="center" data-stage="top">
             <path class="fil3" d="M20500 2500l500 10000h-5000l500 -10000z "/>
             <text x="17300" y="7000" class="fil1 fnt0">Bloque 2</text>
         </g>
-        <g id="diamante-3" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="asc" data-align="right" data-stage="top">
+        <g id="diamante-3" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-3" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="asc" data-align="left" data-stage="top">
             <path class="fil3" d="M25000 2000l1500 10000l-5000 500l-500 -10000z "/>
             <text x="22300" y="7000" class="fil1 fnt0">Bloque 3</text>
         </g>
 
-        <g id="oro-1" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="asc" data-align="right" data-stage="top">
+        <g id="oro-1" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-1" data-seccion="Oro" data-order-fila="asc" data-order-asiento="asc" data-align="left" data-stage="top">
             <path class="fil2" d="M15500 13000l-200 4000l-5400 -500l500 -4000z "/>
             <text x="11500" y="15200" class="fil1 fnt0">Bloque 1</text>
         </g>
-        <g id="oro-2" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="asc" data-align="right" data-stage="top">
+        <g id="oro-2" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-2" data-seccion="Oro" data-order-fila="asc" data-order-asiento="asc" data-align="center" data-stage="top">
             <path class="fil2" d="M21000 13000l200 4000h-5400l200 -4000z "/>
             <text x="17300" y="15200" class="fil1 fnt0">Bloque 2</text>
         </g>
-        <g id="oro-3" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="asc" data-align="right" data-stage="top">
+        <g id="oro-3" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-3" data-seccion="Oro" data-order-fila="asc" data-order-asiento="asc" data-align="right" data-stage="top">
             <path class="fil2" d="M26600 12500l500 4000l-5400 500l-200 -4000z "/>
             <text x="22800" y="15200" class="fil1 fnt0">Bloque 3</text>
         </g>

@@ -69,38 +69,55 @@ class PaneldeUsuarioController extends Controller
 
     // public function updateDb() {
 
-        // $table = 'roberto_tapia_mexicali_23mar';
+        // $table = 'franco_gto_05jun';
+        // $j = 1;
 
-    	// for( $i = 1; $i < 487; $i++){
-    	// 	DB::table('roberto_tapia_mexicali_23mar')->where('id', $i)->update(['codigo_barras' => substr(md5('roberto_tapia_mexicali_23mar'.$i),0,10)]);
+        // $rows = DB::table($table)->get();
+
+        // foreach( $rows as $row ){
+
+        //     $id = $row->id;
+        //     $seccion = $row->seccion;
+        //     $bloque = $row->bloque;
+
+        //     DB::table($table)->where([
+        //         ['id', $id],
+        //         ['seccion', $seccion],
+        //         ['bloque', $bloque],
+        //         ])->update(['id' => $j]);
+        //     $j++;
+        // }
+
+    	// for( $i = 1; $i < 1746; $i++){
+    	// 	DB::table($table)->where('id', $i)->update(['codigo_barras' => substr(md5($table.$i),0,10)]);
     	// }
 
-    //     $cb = 919;
-    //     $rows = [];
+        // $cb = 919;
+        // $rows = [];
 
-    //     for($i = 1; $i <= 2060; $i++){
+        // for($i = 1; $i <= 2060; $i++){
 
-    //         $row = ['seccion' => 'Numerado',
-    //                 'bloque' => '',
-    //                 'fila' => 'J',
-    //                 'asiento' => $i,
-    //                 'status' => 0,
-    //                 'impreso' => 0,
-    //                 'forma_pago' => null,
-    //                 'folio' => null,
-    //                 'codigo_barras' => substr(md5($table.$cb),0,10),
-    //                 'token_vlinea' => null,
-    //                 'user' => null,
-    //                 'fecha_venta' => null];
+        //     $row = ['seccion' => 'Numerado',
+        //             'bloque' => '',
+        //             'fila' => 'J',
+        //             'asiento' => $i,
+        //             'status' => 0,
+        //             'impreso' => 0,
+        //             'forma_pago' => null,
+        //             'folio' => null,
+        //             'codigo_barras' => substr(md5($table.$cb),0,10),
+        //             'token_vlinea' => null,
+        //             'user' => null,
+        //             'fecha_venta' => null];
 
-    //         array_push($rows, $row);
-    //         $cb++;
+        //     array_push($rows, $row);
+        //     $cb++;
 
-    //     }
+        // }
 
-    //     DB::table($table)->insert($rows);
+        // DB::table($table)->insert($rows);
 
-    // 	dd('done');
+    	// dd('barcodes updated');
     // }
 
     // public function initTable(){

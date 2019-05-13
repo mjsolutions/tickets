@@ -69,66 +69,66 @@
             <path id="borde" class="fil12 str0" d="M24366 1435c-2780,1906 -6926,1906 -9706,0"/>
         </g>
      
-        <g id="diamante-1" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
+        <g id="diamante-1" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-1" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
             <path class="fil3" d="M21305 3786l1548 7972c2181,-416 4259,-1238 6233,-2464l-424 -706 -97 -161 -91 -152 -104 -174 -93 -155 -91 -152 -113 -188 -84 -140 -92 -152 -120 -201 -88 -146 -89 -148 -92 -153 -95 -158 -88 -147 -96 -160 -94 -157 -93 -155 -98 -164 -94 -157 -93 -154 -112 -186 -85 -142 -93 -155 -99 -166 -93 -154 -85 -142 -112 -186 -90 -150 -89 -149 -105 -176 -98 -163 -198 -330 -93 -156 -190 -316 -289 -482c-1133,727 -2339,1202 -3618,1424z"/>
             <text x="23496" y="7224" class="fil1 fnt0">Bloque 1</text>     
         </g>
-        <g id="diamante-2" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
+        <g id="diamante-2" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-2" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
             <path class="fil3" d="M17830 3803l-1579 7969c1067,198 2158,300 3274,306 1104,-6 2183,-105 3239,-299l-1554 -7974c-548,88 -1110,130 -1685,126 -578,4 -1143,-39 -1695,-128z"/>
             <text x="18380" y="8295" class="fil1 fnt0">Bloque 2</text>
         </g>
-        <g id="diamante-3" class="block-hover" data-tipo="numerado" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
+        <g id="diamante-3" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-3" data-seccion="Diamante" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
             <path class="fil3" d="M16169 11757l1573 -7967c-1287,-220 -2500,-697 -3640,-1428l-289 482 -190 316 -93 156 -198 330 -98 163 -105 176 -89 149 -90 150 -112 186 -85 142 -93 154 -99 166 -93 155 -85 142 -112 186 -93 154 -94 157 -98 164 -93 155 -94 157 -96 160 -88 147 -95 158 -92 153 -89 148 -88 146 -120 201 -92 152 -84 140 -113 188 -91 152 -93 155 -104 174 -91 152 -97 161 -424 706c1973,1225 4050,2047 6230,2463z"/>
             <text x="13286" y="7224" class="fil1 fnt0">Bloque 3</text>
         </g>
 
-        <g id="oro-1" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
+        <g id="oro-1" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-1" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
             <path class="fil2" d="M28406 14076c850,-398 1581,-774 2192,-1128 182,-105 353,-209 514,-311l-85 -141 -89 -147 -138 -229 -99 -164 -83 -137 -129 -214 -76 -126 -87 -145 -514 -851 -530 297 301 537 58 -34 51 83c-623,366 -1283,701 -1976,1002l662 1641 27 67z"/>
             <text x="28700" y="12663" class="fil1 fnt0">B. 1</text>
         </g>
-        <g id="oro-2" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
+        <g id="oro-2" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-2" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
             <path class="fil2" d="M26392 14199l-217 -541 -236 -587c-714,261 -1473,467 -2278,615l1 -101 77 -15 -126 -571c-166,37 -333,71 -500,102l485 2499c136,-25 271,-52 407,-81 872,-184 1743,-434 2615,-751l-229 -570z"/>
             <text x="24111" y="14405" class="fil1 fnt0">B. 2</text>         
         </g>
-        <g id="oro-3" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
+        <g id="oro-3" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-3" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
             <path class="fil2" d="M22557 13198l68 597 68 -11 0 132c-350,57 -700,106 -1049,144 -6,1 -11,1 -17,2 -359,39 -719,68 -1080,84 -1,0 -2,0 -3,0 -9,0 -18,1 -27,1l-13 525 35 1 -1 65 -8 534 -9 629c845,-6 1689,-75 2534,-206 144,-22 288,-47 432,-73l31 -6 -487 -2499 -473 80z"/>
             <text x="21158" y="15038" class="fil1 fnt0">B. 3</text>         
         </g>
-        <g id="oro-4" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
+        <g id="oro-4" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-4" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
             <path class="fil2" d="M18495 15272l-8 -534 -1 -65 52 -1 -13 -524c-16,-1 -31,-1 -47,-2 -715,-31 -1430,-113 -2146,-229l0 -132 6 1 0 -1 61 10 68 -596c-160,-25 -319,-52 -478,-81l-495 2497c159,29 318,56 476,81 845,131 1689,200 2534,206l-9 -629z"/>
             <text x="16310" y="15017" class="fil1 fnt0">B. 4</text>
         </g>
-        <g id="oro-5" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
+        <g id="oro-5" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-5" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
             <path class="fil2" d="M15410 15598l493 -2498c-164,-31 -328,-65 -492,-101l-126 571 77 15 1 101c-805,-149 -1564,-354 -2278,-615l-236 587 -217 541 -229 570c872,317 1743,567 2615,751 130,28 261,54 391,78z"/>
             <text x="13365" y="14475" class="fil1 fnt0">B. 5</text>
         </g>
-        <g id="oro-6" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
+        <g id="oro-6" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-6" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
             <path class="fil2" d="M10647 14009l662 -1641c-693,-301 -1352,-636 -1976,-1002l51 -83 58 34 301 -537 -530 -297 -514 851 -87 145 -76 126 -129 214 -83 137 -99 164 -138 229 -89 147 -85 141c161,102 332,205 514,311 611,354 1342,730 2192,1128l27 -67z"/>
             <text x="8875" y="12709" class="fil1 fnt0">B. 6</text>
         </g>
-        <g id="oro-7" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
+        <g id="oro-7" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-7" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
             <path class="fil2" d="M24645 18625c2654,-538 5190,-1512 7608,-2920 175,-102 349,-206 522,-312l-88 -145 -83 -138 -158 -262 -94 -156 -83 -137 -152 -252 -94 -156 -83 -137 -157 -261 -100 -166 -76 -126 -144 -239 -101 -168 -91 -151 -139 -230c-161,102 -364,228 -546,334 -611,354 -1342,730 -2192,1128l-1785 693c-872,317 -1743,567 -2615,751 -128,27 -256,53 -384,77l594 3057c148,-27 295,-56 442,-85z"/>
             <text x="27130" y="16228" class="fil1 fnt0">Bloque 7</text>
         </g>
-        <g id="oro-8" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
+        <g id="oro-8" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-8" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
             <path class="fil2" d="M24124 18725l-596 -3057 -31 6c-152,28 -303,53 -455,77 -845,131 -1689,200 -2534,206l-1008 0 -1008 0c-845,-6 -1689,-75 -2534,-206 -158,-25 -316,-51 -475,-80l-605 3050c176,32 352,62 529,90 1345,213 2719,318 4123,314 515,1 1026,-12 1533,-40 863,-50 1720,-141 2557,-274 157,-25 314,-51 470,-79l33 -6z"/>
             <text x="18438" y="17812" class="fil1 fnt0">Bloque 8</text>
         </g>
-        <g id="oro-9" class="block-hover" data-tipo="numerado" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
+        <g id="oro-9" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-9" data-seccion="Oro" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
             <path class="fil2" d="M14797 18705l603 -3051c-131,-25 -262,-51 -393,-78 -872,-184 -1743,-434 -2615,-751l-1785 -693c-850,-398 -1581,-774 -2192,-1128 -182,-105 -368,-219 -529,-321l-131 217 -91 151 -101 168 -144 239 -76 126 -100 166 -157 261 -83 137 -94 156 -152 252 -83 137 -94 156 -158 262 -83 138 -88 145c173,106 347,210 522,312 2419,1408 4955,2382 7608,2920 139,28 277,55 417,81z"/>
             <text x="9761" y="16229" class="fil1 fnt0">Bloque 9</text>
         </g>
      
-        <g id="plata-1" class="block-hover" data-tipo="numerado" data-seccion="Plata" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
+        <g id="plata-1" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-1" data-seccion="Plata" data-order-fila="asc" data-order-asiento="desc" data-align="left" data-stage="top-left">
             <path class="fil0" d="M24481 20138c3168,-589 6174,-1771 9018,-3548l-354 -587 -120 -199 -90 -150 -132 -218c-173,106 -374,226 -548,328 -2419,1408 -4955,2382 -7608,2920 -143,29 -287,57 -431,83l266 1371z"/>
             <text x="27833" y="18784" class="fil1 fnt0" transform="rotate(-22 27833 18784)">Bloque 1</text>
             {{-- rotate(cantidad a rotar | centro de rot en x | centro de rot en y) --}}
         </g>
-        <g id="plata-2" class="block-hover" data-tipo="numerado" data-seccion="Plata" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
+        <g id="plata-2" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-2" data-seccion="Plata" data-order-fila="asc" data-order-asiento="desc" data-align="center" data-stage="top">
             <path class="fil0" d="M19513 19184c-1399,4 -2768,-101 -4108,-314 -180,-29 -359,-59 -538,-92l-270 1370c1597,293 3236,436 4916,427 1671,8 3301,-132 4890,-423l-267 -1371 -33 6c-160,29 -320,56 -481,81 -1340,213 -2709,318 -4108,314z"/>
             <text x="18439" y="20087" class="fil1 fnt0">Bloque 2</text>
         </g>   
-        <g id="plata-3" class="block-hover" data-tipo="numerado" data-seccion="Plata" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
+        <g id="plata-3" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-3" data-seccion="Plata" data-order-fila="asc" data-order-asiento="desc" data-align="right" data-stage="top-right">
             <path class="fil0" d="M14515 20133l271 -1370c-135,-25 -270,-51 -405,-79 -2654,-538 -5190,-1512 -7608,-2920 -175,-102 -376,-220 -550,-326l-131 216 -90 150 -120 199 -354 587c2835,1771 5831,2952 8988,3543z"/>
             <text x="9093" y="17984" class="fil1 fnt0" transform="rotate(22 9093 17984)">Bloque 3</text>
         </g>

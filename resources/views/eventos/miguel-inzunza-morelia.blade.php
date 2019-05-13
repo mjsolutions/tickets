@@ -246,6 +246,7 @@
 		var table = 'miguel_inzunza_morelia_15jun';
 		var base_path = '{{ url('/') }}';
 		var precios = {'Diamante': 440, 'Oro': 330};
+		var special_char_n = 'NN';
 
 		$('#modal-video-open').leanModal({
 			opacity: .8,
