@@ -2,12 +2,12 @@
 
 @section('title', 'Franco Escamilla')
 
-@section('description', 'Franco Escamilla, Celaya 04 de junio, 19:00 hrs boletos en BLVD 804 y bolematico.com')
+@section('description', 'Franco Escamilla, Celaya 04 de junio, 19:00 hrs boletos en Hyatt Place Celaya y bolematico.com')
 
 @section('styles')
 <meta property="og:url"  content="http://bolematico.mx/eventos/franco-escamilla-celaya" />
 <meta property="og:title" content="Franco Escamilla" />
-<meta property="og:description" content="Franco Escamilla, Celaya 04 de junio, 19:00 hrs boletos en BLVD 804 y bolematico.com" />
+<meta property="og:description" content="Franco Escamilla, Celaya 04 de junio, 19:00 hrs boletos en Hyatt Place Celaya y bolematico.com" />
 <meta property="og:image" content="http://bolematico.mx/img/franco-celaya.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -70,7 +70,7 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						<p>* Informes al: <a href="tel:4613458806" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 461 345 88 06</a> / <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452 174 1255</a></p>
+						<p>* Informes al: <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452 174 1255</a></p>
 					</div>
 				</div>
 			</div>
@@ -113,18 +113,17 @@
 			</div>
 
 			<div class="col s12">									
-				<!-- ## VENUE MAP ## -->
+
 				<div class="white z-depth-2">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8634.35608692352!2d-100.82337042627393!3d20.5195282465618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe3152c8f48bd2c54!2sBlvd+804+Show+Center+%26+Food!5e0!3m2!1ses!2smx!4v1556144914999!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14945.733664339117!2d-100.7796015!3d20.5294401!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3edd1d74c4435f35!2sHyatt+Place+Celaya!5e0!3m2!1ses!2smx!4v1553350637074" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 				
-				<!-- ## ADDRESS LIST ## -->
 					<div class=" p-30">
-						<h5 class="raleway"><b>BLVD 804</b></h5>
+						<h5><b>Hyatt Place Celaya</b></h5>
 						<ul class="qcAddress">
 							<li><div class="divider"></div></li>
-							<li><i class="fa fa-map-marker"></i> <p> Blvrd Adolfo López Mateos 804, Col. Centro, 38000 Celaya, Gto.</p></li>
-							<li><i class="fa fa-phone"></i><p> 01 461 273 6643</p></li>
-							<li><i class="fa fa-facebook-official"></i><p><a title="website" href="https://www.facebook.com/Blvd804Oficial/" target="_blank">https://www.facebook.com/Blvd804Oficial/</a></p></li>
+							<li><i class="fa fa-map-marker"></i> <strong>DIRECCIÓN</strong>: <p>Av. La Cano #124, Santa Rosalía, Celaya, Gto.</p></li>
+							<li><i class="fa fa-phone"></i> <strong>TELÉFONO</strong>: <p> 01 461 159 1234</p></li>
+							<li><i class="fa fa-globe"></i> <strong>Website</strong>: <p><a title="website" href="https://www.hyatt.com/es-ES/hotel/mexico/hyatt-place-celaya/qrozc" target="_blank">www.hyatt.com/es-ES/hotel/mexico/hyatt-place-celaya/qrozc</a></p></li>
 						</ul>
 					</div>
 				</div>
@@ -144,7 +143,7 @@
 
 <section id="compra" class="section-comprar">
 	<div class="row mt-30">
-	@if(Auth()->check())
+	{{-- @if(Auth()->check())
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 		</div>
@@ -196,11 +195,11 @@
 		<div class="col s12 center-align">
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
-	@endif
+	@endif --}}
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
-			<h5 class="center-align raleway">Venta de boletos en BLVD 804</h5>
+			<h5 class="center-align raleway">Venta de boletos en Hyatt Place Celaya</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>

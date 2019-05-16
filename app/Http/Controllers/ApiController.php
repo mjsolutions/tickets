@@ -239,7 +239,7 @@ class ApiController extends Controller
             $buydata['email'] = $user->email;
 
             Mail::to($user->email, $user->name)
-            // ->cc('arquimides@bolematico.com.mx')
+            ->cc('arquimides@bolematico.com.mx')
             ->send(new Compra($buydata));
 
             return response()->json(['message'=>'Success update on DB'], 200);

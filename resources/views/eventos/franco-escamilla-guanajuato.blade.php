@@ -22,7 +22,7 @@
 		<h4>Franco Escamilla</h4>
 		<div class="divider"></div>
 		<p class="mb-0"><i>Auditorio del estado - Guanajuato</i></p>
-		<p class="m-0"><i>04 de junio - 19:00 hrs.</i></p>
+		<p class="m-0"><i>05 de junio - 19:00 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -79,7 +79,7 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						{{-- <p>* Informes al: <a href="tel:4613458806" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 461 345 88 06</a> / <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452 174 1255</a></p> --}}
+						<p>* Informes al: <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452 174 1255</a></p>
 					</div>
 				</div>
 			</div>
@@ -150,7 +150,7 @@
 
 <section id="compra" class="section-comprar">
 	<div class="row mt-30">
-	@if(Auth()->check())
+	{{-- @if(Auth()->check())
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 		</div>
@@ -211,7 +211,7 @@
 		<div class="col s12 center-align">
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
-	@endif
+	@endif --}}
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">

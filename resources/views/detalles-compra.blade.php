@@ -207,15 +207,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 				{!! Form::open(['route'=>'payment.confirm', 'method'=>'POST', 'id'=>'payment']) !!}
 					<div class="row center-align pt-40" id="form-inputs">
 
-						<div class="col s4">
-							<div>
-								<div class="col s10 offset-s1">
-									{!! Form::radio('payment_form', 'credit_card', '', ['id' => 'payment_card']) !!}
-									<label for="payment_card" class="check-up"><img src="{{ asset('img/cards.svg') }}" alt="" class="responsive-img"></label>
-								</div>
-							</div>
-						</div>
-						<div class="col s4">
+						<div class="col s6">
 							<div>
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'oxxo_cash', '', ['id' => 'payment_oxxo']) !!}	
@@ -223,7 +215,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 								</div>
 							</div>
 						</div>
-						<div class="col s4">
+						<div class="col s6">
 							<div>
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'spei', '', ['id' => 'payment_spei']) !!}
@@ -266,7 +258,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 						
 				{!! Form::close() !!}
 
-				{!! Form::open(['url'=>'', 'method'=>'POST', 'id'=>'card-form', 'class' => 'hide']) !!}
+{{-- 				{!! Form::open(['url'=>'', 'method'=>'POST', 'id'=>'card-form', 'class' => 'hide']) !!}
 					<div class="row">
 						<div class="input-field col s12">
 							<i class="prefix fa fa-user"></i>
@@ -289,20 +281,16 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 						<div class="col s9">
 							<div class="input-field col s4" style="padding-right: 0">
 								<i class="prefix fa fa-calendar"></i>
-								{{-- {!! Form::text('exp_month', null, ['class' => 'validate', 'data-conekta' => 'card[exp_month]', 'required']) !!} --}}
 								{!! Form::select('exp_month', $months, '', ['class' => 'select-dropdown', 'id' => 'exp_month', 'placeholder' => 'MM', 'data-conekta' => 'card[exp_month]', 'required']) !!}
-								{{-- {!! Form::label('exp_month','MM') !!} --}}
-								{{-- <span> /</span> --}}
+
 							</div>
 							<div class="input-field col s8" style="padding-right: 0">
 								<i class="prefix fa select-year" style="width: 1rem">/</i>
 								{!! Form::selectYear('exp_year', date('Y'), 2030, '', ['class' => 'select-dropdown', 'id' => 'exp_year', 'placeholder' => 'AAAA', 'data-conekta' => 'card[exp_year]', 'required']) !!}
-								{{-- {!! Form::text('exp_year', null, ['class' => 'validate', 'data-conekta' => 'card[exp_year]', 'style' => 'width: calc(100% - 1rem); margin-left: 1rem', 'required']) !!} --}}
-								{{-- {!! Form::label('exp_year','AAAA') !!} --}}
 							</div>
 						</div>
 					</div>
-				{!! Form::close() !!}				
+				{!! Form::close() !!}	 --}}			
 
 			</div>
 

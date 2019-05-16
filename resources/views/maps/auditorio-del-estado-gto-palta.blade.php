@@ -1,7 +1,7 @@
-<svg id="auditorio-gto-pbaja-svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 27500 21590" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="auditorio-gto-palta-svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 27500 21590" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <style type="text/css">
-            #auditorio-gto-pbaja-svg{
+            #auditorio-gto-palta-svg{
                 width: 100%;
             } 
             @font-face { font-family:sans-serif,"Arial";}
