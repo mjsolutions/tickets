@@ -1,14 +1,15 @@
 @extends('layouts.main')
 
-@section('title', 'Miguel Inzunza - Morelia')
+@section('title', 'Entre Ellas')
 
-@section('description', 'Miguel Inzunza en Morelia, 15 de junio, 20:30 hrs boletos en RS Viajes Centro, RS Viajes Periodismo y Bolematico.mx')
+@section('description', 'Entre Ellas, Morelia 13 de junio, Teatro Morelos, 21:00 hrs boletos en RS Viajes Centro, taquillas del planetario y bolematico.com')
 
 @section('styles')
-<meta property="og:url"  content="http://bolematico.mx/eventos/miguel-inzunza-morelia" />
-<meta property="og:title" content="Miguel Inzunza en Morelia" />
-<meta property="og:description" content="Miguel Inzunza en Morelia, 15 de junio, 20:30 hrs boletos en RS Viajes Centro, RS Viajes Periodismo y Bolematico.mx" />
-<meta property="og:image" content="http://bolematico.mx/img/miguel-inzunza-morelia.jpg" />
+<meta property="og:url"  content="https://www.bolematico.com/eventos/entre-ellas-morelia" />
+<meta property="og:title" content="Entre Ellas" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Entre Ellas, Morelia 13 de junio, Teatro Morelos, 21:00 hrs boletos en RS Viajes Centro, taquillas del planetario y bolematico.com" />
+<meta property="og:image" content="https://www.bolematico.com/img/entre-ellas.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/event-select-manual.css') }}">
@@ -16,13 +17,13 @@
 
 @section('content')
 
-<div class="image-header bg-4 overlay overlay-5">
+<div class="image-header bg-morelos overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Miguel Inzunza</h4>
+		<h4>Entre Ellas</h4>
 		<div class="divider"></div>
-		<p><i>Teatro Stella Inda - Morelia</i></p>
-		<p><i>15 de junio - 20:30 hrs.</i></p>
+		<p class="mb-0"><i>Teatro Morelos - Morelia</i></p>
+		<p class="m-0"><i>13 de junio - 21:00 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -31,15 +32,15 @@
 	<div class="row">
 		<div class="col s12">
 			<ul class="tabs">
-				<li class="tab "><a class="active" href="#descripcion">Descripción</a></li>
-				<li class="tab "><a href="#biografia">Biografía</a></li>
+				<li class="tab "><a class="active" href="#precios">Precios</a></li>
+				<li class="tab "><a href="#detalles">Detalles</a></li>
 				<li class="tab "><a href="#lugares">Lugares de venta</a></li>
 			</ul>
 		</div>
-		<div id="descripcion" class="col s12 tab-content">
+		<div id="precios" class="col s12 tab-content">
 
-			<div class="col s8 offset-s2 m5 mb-30 card-flyer">
-				<img src="{{ asset('img/miguel-inzunza-morelia.jpg') }}" alt="" class="responsive-img">
+			<div class="col s8 offset-s2 m4 offset-m1 mb-30 card-flyer">
+				<img src="{{ asset('img/entre-ellas.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m6 offset-m1">				
@@ -51,7 +52,7 @@
 							<header>
 								<div class="col s12 teal accent-4">Diamante</div>
 							</header>
-							<div class="price col s12"><span>$440</span> MXN</div>
+							<div class="price col s12"><span>$ 550</span> MXN.</div>
 						</div>
 					</div>
 
@@ -60,7 +61,16 @@
 							<header>
 								<div class="col s12 amber darken-1">Oro</div>
 							</header>
-							<div class="price col s12"><span>$330</span> MXN</div>
+							<div class="price col s12"><span>$ 400</span> MXN.</div>
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
+								<div class="col s12 grey lighten-1">Plata</div>
+							</header>
+							<div class="price col s12"><span>$ 250</span> MXN.</div>
 						</div>
 					</div>
 
@@ -69,32 +79,25 @@
 				<div class="row">
 					<div class="divider"></div>
 					<div class="col s10 offset-s1">
-						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						<p>* Informes al: <a href="tel:4431880358" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 443 188 0358</a> / <a href="tel:4432274979" style="background: #4caf50; color: #fff; padding: 5px 10px;"><i class="fa fa-whatsapp"></i> 443 227 4979</a></p>
+						<p class="mt-30">* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
+						<p>* Informes al: <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452-174-1255</a> </p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="biografia" class="col s12 tab-content">	
-			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/miguel-inzunza-bio.jpg') }}" class="responsive-img">
-			</div>
-			<div class="col s12 m8 text-justify">
-		        <p>Compositor, cantante y productor mexicano, nominado al Latín Grammy en 2018 en la categoría de productor. Fusiona géneros y ritmos diversos que dan como resultado un sonido alternativo, fresco y emotivo, en el que la canción es hilo conductor y a la vez protagonista. Comprometido con las letras, va desde lo mas desenfadado a lo mas reflexivo, imprimiendo siempre frescura y actualidad como características principales.</p>
-				<p>Sobresale como característica el uso de la tecnología al servicio de la canción, y en su búsqueda incorpora timbres electrónicos, loops e instrumentos acústicos en una amalgama sonora de personalidad modernista y al mismo tiempo emotiva.</p>
-				<p>Ha participado en un vasto número de festivales culturales y ferias literarias de Mexico e Iberoamérica, llevando una propuesta que transita sin etiquetas entre lo cultural y lo popular.</p>
-				
-			</div>
-			<div class="col m4 hide-on-small-only">
-				<img src="{{ asset('img/miguel-inzunza-bio.jpg') }}" class="responsive-img">
-			</div>
-			<div class="clearfix"></div>
-			<p>Fuente: <small>www.miguelinzunza.com</small></p>
-			
+		<div id="detalles" class="col s12 tab-content">
+			<div class="col s12">
+				<h5 class="quote"><strong>Entre Ellas </strong> <br></h5>
+				<p>Esta comedia reúne a las mejores comediantes de México, compuesta por diferentes historias que se centran en el comportamiento entre las mujeres con las mujeres, guerra entre las mujeres, ven y no pararas de reír, descubre ¿quien será la más perra?</p>				
+			</div>			
 		</div>
 
 		<div id="lugares" class="col s12 tab-content">
+
+			<div class="col s12">
+				<h5 class="mb-30 quote">Además de Bolematico, puedes adquirir tus entradas en:</h5>
+			</div>
 
 			<div class="col s12 m6">									
 				<!-- ## VENUE MAP ## -->
@@ -134,29 +137,28 @@
 					</div>
 				</div>
 
-			</div>	
+			</div>		
 
 		</div>
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/qsx5UbVSRxY/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/TJpSZhre4Iw/hqdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/qsx5UbVSRxY"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Miguel Inzunza - Huellas De Febrero</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/TJpSZhre4Iw"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Entre ellas</i></p>
 	</div>
 </section>
-
-<section id="compra" class="row section-comprar">
-	<div class="col s12 mt-30">
+<section id="compra" class="section-comprar">
+	<div class="row mt-30">
 	@if(Auth()->check())
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 		</div>
-		<div class="col s12 m5 white div-border">
-			@include('maps.teatro-stella-inda')
+		<div class="col s12 m6">
+			@include('maps.teatro-morelos')
 		</div>
-		<div class="col s12 m7">
+		<div class="col s12 m6">
 			<div class="col s12 mb-15">
 				<div class="col s1 grey darken-4" style="height: 25px;"></div>
 				<div class="col s11">
@@ -164,7 +166,7 @@
 					<div class="col s7 right-align" id="info-title-section"></div>
 				</div>
 			</div>
-			<div class="col s12 bloque-container">
+			<div class="col s11 bloque-container">
 				
 				<div id="mapa-escenario" class=""></div>
 				<div id="mapa-asientos" class="col s12"></div>
@@ -179,18 +181,18 @@
 					{!! Form::hidden('asiento', '', ['id' => 'form_asiento']) !!}
 					{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
 					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
-					{!! Form::hidden('img', 'img/miguel-inzunza-morelia.jpg') !!}
-					{!! Form::hidden('evento', 'Miguel Inzunza') !!}
-					{!! Form::hidden('fecha', '15 de junio 2019') !!}
-					{!! Form::hidden('lugar', 'Teatro Stella Inda') !!}
+					{!! Form::hidden('img', 'img/entre-ellas.jpg') !!}
+					{!! Form::hidden('evento', 'Entre Ellas') !!}
+					{!! Form::hidden('fecha', '13 de junio 2019') !!}
+					{!! Form::hidden('lugar', 'Teatro Morelos') !!}
 					{!! Form::hidden('ciudad', 'Morelia') !!}
-					{!! Form::hidden('hora', '20:30 hrs') !!}
+					{!! Form::hidden('hora', '21:00 hrs') !!}
 					{!! Form::hidden('event_type', 'numerado') !!}
 					{!! Form::hidden('impresion_boleto', true) !!}
-					{!! Form::hidden('db_table', 'miguel_inzunza_morelia_15jun') !!}
+					{!! Form::hidden('db_table', 'entre_ellas_morelia_13jun') !!}
 					{!! Form::hidden('info', '--') !!}
 					{!! Form::hidden('select_type', 'manual') !!}
-					{!! Form::hidden('url', url('eventos/miguel-inzunza-morelia')) !!}
+					{!! Form::hidden('url', url('eventos/entre-ellas-morelia')) !!}
 				{!! Form::close() !!}
 			</div>
 		</div>
@@ -206,7 +208,7 @@
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
-			{{-- <h5 class="center-align raleway">Venta de boletos también en </h5> --}}
+			<h5 class="center-align raleway">Venta de boletos también en RS Viajes Centro y Taquillas del Planetario</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -223,23 +225,23 @@
 <section class="section-lugar">
 	<div class="row">
 		<div class="col m9">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.226523920035!2d-101.20462088561376!3d19.7029777370859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e7ceda102dd%3A0xabc0bd49d698666b!2sTeatro+Stella+Inda!5e0!3m2!1ses!2smx!4v1559066242672!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.7086236790406!2d-101.1852498856141!3d19.682432637745716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0de872e8d51b%3A0x12e74c7f08b607c2!2sTeatro+Jos%C3%A9+Mar%C3%ADa+Morelos!5e0!3m2!1ses!2smx!4v1559065457348!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 		<div class="col m3">
 			<h5 class="quote raleway">Lugar del evento</h5>
 			
-			<h5 class="mt-30">Teatro Stella Inda</h5>
+			<h5 class="mt-30">Teatro Morelos</h5>
 			<div class="col s10">
 				<div class="divider"></div>
 			</div>
 			<ul class="fa-ul" style="margin-top: 30px;">
-				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Av Francisco I. Madero Pte 1200, <br>Centro Histórico, 58000 <br>Morelia, Mich.</li>
-				{{-- <li><i class="fa-li fa fa-phone"></i> 01 461 174 3456</li> --}}
+				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Av. Ventura Puente s/n, <br>Félix Ireta, 58070 <br>Morelia, Mich.</li>
+				<li><i class="fa-li fa fa-globe"></i> <a title="website" style="color:#434546" href="http://ceconexpo.com/" target="_blank">http://ceconexpo.com/</a></li>
 			</ul>
 
 		</div>
 	</div>
-
+		
 </section>
 
 <div id="modal-video" class="modal modal-large">
@@ -253,9 +255,9 @@
 
 @section('scripts')
 	<script>
-		var table = 'miguel_inzunza_morelia_15jun';
+		var table = "entre_ellas_morelia_13jun";
 		var base_path = '{{ url('/') }}';
-		var precios = {'Diamante': 440, 'Oro': 330};
+		var precios = {'Diamante': 550, 'Oro': 400, 'Plata': 250};
 		var special_char_n = 'NN';
 
 		$('#modal-video-open').leanModal({

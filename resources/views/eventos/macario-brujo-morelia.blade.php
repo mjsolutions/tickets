@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
-@section('title', 'Juan Solo')
+@section('title', 'Macario Brujo')
 
-@section('description', 'Juan Solo, Morelia Mich., 01 de junio, 21:00 hrs boletos en RS Viajes Centro y bolematico.com')
+@section('description', 'Macario Brujo, Morelia Mich., 26 de junio, 21:00 hrs boletos en RS Viajes Centro y bolematico.com')
 
 @section('styles')
-<meta property="og:url"  content="http://bolematico.mx/eventos/juan-solo-morelia" />
-<meta property="og:title" content="Juan Solo" />
-<meta property="og:description" content="Juan Solo, Morelia Mich., 01 de junio, 21:00 hrs boletos en RS Viajes Centro y bolematico.com" />
-<meta property="og:image" content="http://bolematico.mx/img/juan-solo-morelia.jpg" />
+<meta property="og:url"  content="https://www.bolematico.com/eventos/macario-brujo-morelia" />
+<meta property="og:title" content="Macario Brujo" />
+<meta property="og:description" content="Macario Brujo, Morelia Mich., 26 de junio, 21:00 hrs boletos en RS Viajes Centro y bolematico.com" />
+<meta property="og:image" content="https://www.bolematico.com/img/macario-brujo-morelia.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
@@ -18,10 +18,10 @@
 <div class="image-header bg-del-olmo overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Juan Solo</h4>
+		<h4>Macario Brujo</h4>
 		<div class="divider"></div>
 		<p class="mb-0"><i>Café del Olmo - Morelia, Mich.</i></p>
-		<p class="m-0"><i>01 de junio - 21:00 hrs.</i></p>
+		<p class="m-0"><i>26 de junio - 21:00 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -38,30 +38,30 @@
 		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s8 offset-s2 m4 offset-m1 mb-30 card-flyer">
-				<img src="{{ asset('img/juan-solo-morelia.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/macario-brujo-morelia.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m5 offset-m1">				
 
 				<div class="row">
 
-					<div class="qcPricing col s12 center-align mb-10">
+					{{-- <div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
 								<div class="col s12 teal accent-4">Preventa</div>
 							</header>
 							<div class="price col s12"><span>$280</span> MXN</div>
 						</div>
-					</div>
+					</div> --}}
 
-					{{-- <div class="qcPricing col s12 center-align mb-10">
+					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
 								<div class="col s12 blue darken-4">General</div>
 							</header>
-							<div class="price col s12"><span>$330</span> MXN</div>
+							<div class="price col s12"><span>$150</span> MXN</div>
 						</div>
-					</div> --}}
+					</div>
 
 				</div>
 
@@ -69,7 +69,10 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						<p> * Informes y confirmación de tu reservación (una vez realizada tu compra) <br> <a href="tel:4431880358" style="background: #4caf50; color: #fff; padding: 5px 10px;">443-188-0358</a> / <a href="tel:4434369615" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 443-436-9615</a></p>
+						<p class="mb-0"> * Informes y confirmación de tu compra:</p>
+						<ul style="margin-top: 0;padding-left: 15px;">
+							<li><i style="background-color: #4caf50; color: #fff; border-radius: 50%;" class="fa fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=524521741255" target="_blank">452-174-1255</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -77,22 +80,20 @@
 
 		<div id="detalles" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/juan-solo-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/macario-brujo-bio.jpg') }}" class="responsive-img">
 			</div>
 				
 			<div class="col s12 m9">	
-				<p><strong>Juan Solo</strong> es un cantante de Puebla (México) famoso por sus canciones románticas y tiernas</p>
-				<p>Juan Luis Guerra, Rubén Blades, Poncho Sánchez, Bee Gees, Earth Wind & Fire y demás grupos fueron la semilla que marcó el gusto musical de este mexicano</p>
-				<p>Creció amando la música, el baile, el fútbol, el rancho y los amigos, así que a los 18 años decidió comenzar en teatro musical en Puebla, donde actuó y cantó en 2 obras musicales: GODSPELL y FAME. Después de esas participaciones, Juan Solo empezó a cantar en diferentes lugares de la ciudad, tocando de todo: rock, pop, son cubano, salsa, siendo esta última su preferida. Para Juan Solo la carrera de medicina parecía predeterminada en su vida, pero a 2 años de cursar la misma, decidió que era momento de hacer lo que realmente le apasionaba, y fue así que ingresó a la carrera de música. Entra a estudiar Música Clásica por 6 meses. Luego se muda a la Ciudad de México donde estudia la carrera de Producción Musical.</p>
-				<p>Juan Solo compuso en esta faceta canciones para películas como "La Leyenda de la Nahuala" que le significó 2 premios Ariel y para "Nikté" donde las canciones que hizo fueron interpretadas por Sherlyn.</p>
-				<p>Paralelamente Juan Solo comenzó a buscar escenarios donde mostrarse, pero es en el DF mientras daba un show en la discoteque “La Casona” conoce a Rafa Rodríguez quien le ayudaría a dar un vuelco en su carrera.</p>
+                <p>Héctor Fernández, más conocido como Macario Brujo, El Dios satánico del sexo, la leyenda del camino como se autodenomina, es un comediante que practica el Stand Up .</p>
+                <p>Él expresa que los mexicanos realmente no se ríen de todo como en realidad se cree “Los mexicanos nos tomamos la vida muy en serio, nos exigimos demasiado, igual no vamos a morir”.</p>
+                <p>Macario es un comediante de un humor muy ácido y que a pocos agrada, pero en la vida real conoce los problemas de la sociedad, busca mejorar profesionalmente y es consciente de la situación que el país sufre</p>
+                
 
 			</div>
 			<div class="col s3 hide-on-small-only">
-				<img src="{{ asset('img/juan-solo-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/macario-brujo-bio.jpg') }}" class="responsive-img">
 			</div>
-			<div class="clearfix"></div>
-			<p>Fuente: <small>www.buenamusica.com/juan-solo/biografia</small></p>	
+			<div class="clearfix"></div>	
 			
 		</div>
 
@@ -102,11 +103,10 @@
 			</div>
 
 			<div class="col s12">									
-				<!-- ## VENUE MAP ## -->
+
 				<div class="white z-depth-2">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.1943227085408!2d-101.18477128552061!3d19.704349286730476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e0d6bca646b%3A0x1b0a3a981724216f!2sRS+Viajes+Centro!5e0!3m2!1ses!2smx!4v1501091355750" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
-				
-				<!-- ## ADDRESS LIST ## -->
+
 					<div class=" p-30">
 						<h5><b>RS Viajes Centro</b></h5>
 						<ul class="qcAddress">
@@ -125,10 +125,10 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/kh_EFl_-1oI/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/O7EpXuSpWho/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/kh_EFl_-1oI"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Juan Solo - Ámame</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/O7EpXuSpWho"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Macario Brujo</i></p>
 	</div>
 </section>
 
@@ -153,19 +153,19 @@
 			
 			</div>
 		
-			{!! Form::hidden('img', 'img/juan-solo-morelia.jpg') !!}
-			{!! Form::hidden('evento', 'Juan Solo') !!}
-			{!! Form::hidden('fecha', '01 de junio 2019') !!}
+			{!! Form::hidden('img', 'img/macario-brujo-morelia.jpg') !!}
+			{!! Form::hidden('evento', 'Macario Brujo') !!}
+			{!! Form::hidden('fecha', '26 de junio 2019') !!}
 			{!! Form::hidden('lugar', 'Café del Olmo') !!}
 			{!! Form::hidden('ciudad', 'Morelia, Mich.') !!}
 			{!! Form::hidden('hora', '21:00 hrs') !!}
 			{!! Form::hidden('event_type', 'general') !!}
 			{!! Form::hidden('impresion_boleto', true) !!}
-			{!! Form::hidden('zona', 'Preventa') !!}
-			{!! Form::hidden('db_table', 'juan_solo_morelia_01jun') !!}
-			{!! Form::hidden('info', 'Favor de comunicarte al numero 4431880358 o 4434369615 para completar tu reservación.') !!}
-			{!! Form::hidden('precio', '280') !!}
-			{!! Form::hidden('url', url('eventos/juan-solo-morelia')) !!}
+			{!! Form::hidden('zona', 'General') !!}
+			{!! Form::hidden('db_table', 'macario_brujo_morelia_26jun') !!}
+			{!! Form::hidden('info', 'Favor de comunicarte al numero 4521741255 para completar tu reservación.') !!}
+			{!! Form::hidden('precio', '150') !!}
+			{!! Form::hidden('url', url('eventos/macario-brujo-morelia')) !!}
 			
 			<div class="input-field center-align">
 				{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}

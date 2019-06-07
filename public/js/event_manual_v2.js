@@ -6,7 +6,9 @@ function print_section(query, align, stage){
 
 	let asientos = "", html = "", status = "", currentRow = "", fila = "", i=0;
 
-	if(query[i].status != 0){
+	console.log(query[i]);
+
+	if(query[i].status != 0 || query[i].token_vlinea != null || query[i].folio != null || query[i].forma_pago != null || query[i].fecha_venta != null){
 		status = 'ocupado';
 	}
 
@@ -19,7 +21,7 @@ function print_section(query, align, stage){
 
 
 	while(i<query.length){
-		if(query[i].status != 0){
+		if(query[i].status != 0 || query[i].token_vlinea != null || query[i].folio != null || query[i].forma_pago != null || query[i].fecha_venta != null){
 			status = 'ocupado';
 		}
 
@@ -63,6 +65,11 @@ $(".block-hover").click(function(){
 	$("#mapa-asientos").css('text-align', 'center');
 	$("#mapa-asientos").html('<img src="'+base_path+'/img/loading.gif">');
 	$("#mapa-escenario").attr('class', 'hidden');
+
+
+    $('html, body').stop().animate({
+        scrollTop: $("#info-title-section").offset().top - 80
+    }, 1500, 'easeInOutExpo');
 
 	let bloque = $(this).attr('id'),
 		bloque_name = $(this).data('nombre-bloque'),

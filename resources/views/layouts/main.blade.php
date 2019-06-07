@@ -41,7 +41,7 @@
 	<div id="modal-login" class="modal">
 		<a href="#!" class="modal-close btn-flat"><i class="material-icons">close</i></a>
 		<div class="modal-content">
-			<h5 class="center-align mb-15">LOGIN</h5>
+			<h5 class="center-align mb-15">BIENVENIDO</h5>
 
 			<div class="divider mb-15"></div>
 
@@ -67,12 +67,12 @@
 					</div>
 
 					<div class="row">
-						<div class="input-field col s6 nopadding">                            
+						<div class="input-field col m6 s12 nopadding">                            
+							<input type="submit" class="blue waves-effect waves-teal btn btn-block" value="Ingresar">
+						</div>						
+						<div class="input-field col m6 s12 nopadding">                            
 	                    	<a class="blue-text center-align waves-effect waves-light btn-flat btn-block" href="{{ url('/register') }}">Registrarse</a>
 						</div>
-						<div class="input-field col s6 nopadding">                            
-							<input type="submit" class="blue waves-effect waves-teal btn btn-block">
-						</div>						
 					</div>
 				</div>
 				<div class="divider"></div>

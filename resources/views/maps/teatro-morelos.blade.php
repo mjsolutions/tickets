@@ -1,12 +1,9 @@
 <svg id="teatro-morelos-svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 35560 21590" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <style type="text/css">
-            #teatro-morelos-svg{
-                width: 90%;
-            } 
+            #teatro-morelos-svg{ width: 90%; } 
             @font-face { font-family:sans-serif,"Arial";}
             .str0 {stroke:#373435;stroke-width:50}
-            .str1 {stroke:#373435;stroke-width:50;stroke-linejoin:round}
             .fil0 {fill:#B2B3B7}
             .fil1 {fill:#373435}
             .fil2 {fill:#FAAF5E}
@@ -29,17 +26,9 @@
                 cursor: pointer;
                 transition: all 0.2s;
             }
-            .block-hover:hover .fil2 {
-                fill: #C78B4B;
-            }
-            .block-hover:hover .fil3 {
-                fill: #649D9D;
-            }
-            .block-hover:hover .fil0 {
-                fill: #939498;
-            }
-
-
+            .block-hover:hover .fil2 { fill: #C78B4B; }
+            .block-hover:hover .fil3 { fill: #649D9D; }
+            .block-hover:hover .fil0 { fill: #939498; }
         </style>
     </defs>
     <g id="svg_general">

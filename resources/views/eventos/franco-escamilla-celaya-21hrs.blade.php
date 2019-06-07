@@ -2,13 +2,13 @@
 
 @section('title', 'Franco Escamilla')
 
-@section('description', 'Franco Escamilla, Celaya 04 de junio, 19:00 hrs boletos en Hyatt Place Celaya y bolematico.com')
+@section('description', 'Franco Escamilla, Celaya 04 de junio, 21:30 hrs boletos en Hyatt Place Celaya y bolematico.com')
 
 @section('styles')
 <meta property="og:url"  content="http://bolematico.mx/eventos/franco-escamilla-celaya" />
 <meta property="og:title" content="Franco Escamilla" />
-<meta property="og:description" content="Franco Escamilla, Celaya 04 de junio, 19:00 hrs boletos en Hyatt Place Celaya y bolematico.com" />
-<meta property="og:image" content="http://bolematico.mx/img/franco-celaya.jpg" />
+<meta property="og:description" content="Franco Escamilla, Celaya 04 de junio, 21:30 hrs boletos en Hyatt Place Celaya y bolematico.com" />
+<meta property="og:image" content="https://www.bolematico.com/img/franco-celaya-21.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/event-select-manual.css') }}">
@@ -22,7 +22,7 @@
 		<h4>Franco Escamilla</h4>
 		<div class="divider"></div>
 		<p class="mb-0"><i>Auditorio Tres Guerras - Celaya</i></p>
-		<p class="m-0"><i>04 de junio - 19:00 hrs.</i></p>
+		<p class="m-0"><i>04 de junio - 21:30 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -39,7 +39,7 @@
 		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s8 offset-s2 m3 offset-m1 mb-30 card-flyer">
-				<img src="{{ asset('img/franco-celaya.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/franco-celaya-21.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m6 offset-m1">				
@@ -143,7 +143,7 @@
 
 <section id="compra" class="section-comprar">
 	<div class="row mt-30">
-	{{-- @if(Auth()->check())
+	@if(Auth()->check())
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 		</div>
@@ -173,18 +173,18 @@
 					{!! Form::hidden('asiento', '', ['id' => 'form_asiento']) !!}
 					{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
 					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
-					{!! Form::hidden('img', 'img/franco-celaya.jpg') !!}
+					{!! Form::hidden('img', 'img/franco-celaya-21.jpg') !!}
 					{!! Form::hidden('evento', 'Franco Escamilla') !!}
 					{!! Form::hidden('fecha', '04 de junio 2019') !!}
 					{!! Form::hidden('lugar', 'Auditorio Tres Guerras') !!}
 					{!! Form::hidden('ciudad', 'Celaya') !!}
-					{!! Form::hidden('hora', '19:00 hrs') !!}
+					{!! Form::hidden('hora', '21:30 hrs') !!}
 					{!! Form::hidden('event_type', '', ['id' => 'form_type']) !!}
 					{!! Form::hidden('impresion_boleto', true) !!}
-					{!! Form::hidden('db_table', 'franco_celaya_04jun') !!}
+					{!! Form::hidden('db_table', 'franco_celaya_04jun_21h') !!}
 					{!! Form::hidden('info', '--') !!}
 					{!! Form::hidden('select_type', 'manual') !!}
-					{!! Form::hidden('url', url('eventos/franco-escamilla-celaya')) !!}
+					{!! Form::hidden('url', url('eventos/franco-escamilla-celaya-21hrs')) !!}
 				{!! Form::close() !!}
 			</div>
 		</div>	
@@ -195,7 +195,7 @@
 		<div class="col s12 center-align">
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
-	@endif --}}
+	@endif
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
@@ -232,6 +232,7 @@
 
 		</div>
 	</div>
+		
 </section>
 
 <div id="modal-video" class="modal modal-large">
@@ -245,7 +246,7 @@
 
 @section('scripts')
 	<script>
-		var table = 'franco_celaya_04jun';
+		var table = 'franco_celaya_04jun_21h';
 		var base_path = '{{ url('/') }}';
 		var precios = {'Diamante': 700, 'Oro': 550};
 		var special_char_n = 'NN';
@@ -261,6 +262,7 @@
 		           $("#iframe").attr('src', $('#modal-video-open').attr("data-video"));
 		        }
 		    });
+
 	</script>
 	<script src="{{asset('js/event_manual_v2.js')}}"></script>
 

@@ -239,14 +239,23 @@
 </section>
 
 <section class="section-lugar">
-	<div id="map"></div>
-		
-	<div class="info-lugar">
-		<h5 class="raleway quote mb-30">Lugar del evento</h5>
-		<div class="divider mb-30"></div>
-		<p><b>Teatro Stella Inda</b></p>
-		<p><i class="material-icons">location_on</i>Av Francisco I. Madero Pte 1200, Centro Histórico, 58000 Morelia, Mich.</p>
-		<p><i class="material-icons">call</i> 01 443 312 2880</p>
+	<div class="row">
+		<div class="col m9">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.226523920035!2d-101.20462088561376!3d19.7029777370859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e7ceda102dd%3A0xabc0bd49d698666b!2sTeatro+Stella+Inda!5e0!3m2!1ses!2smx!4v1559066242672!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+		<div class="col m3">
+			<h5 class="quote raleway">Lugar del evento</h5>
+			
+			<h5 class="mt-30">Teatro Stella Inda</h5>
+			<div class="col s10">
+				<div class="divider"></div>
+			</div>
+			<ul class="fa-ul" style="margin-top: 30px;">
+				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Av Francisco I. Madero Pte 1200, <br>Centro Histórico, 58000 <br>Morelia, Mich.</li>
+				{{-- <li><i class="fa-li fa fa-phone"></i> 01 461 174 3456</li> --}}
+			</ul>
+
+		</div>
 	</div>
 </section>
 
@@ -277,23 +286,7 @@
 		           $("#iframe").attr('src', $('#modal-video-open').attr("data-video"));
 		        }
 		    });
-		function initMap() {
-		        var uluru = {lat: 19.702975, lng: -101.2024337};
-		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 17,
-		          scrollwheel: false,
-		          navigationControl: true,
-		          draggable: true,
-		          center: {lat: 19.702975, lng: -101.2018337}
-		        });
-		        var marker = new google.maps.Marker({
-		          position: uluru,
-		          map: map
-		        });
-		      }
 
 	</script>
-	<script src="{{asset('js/event_manual.js')}}"></script>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
+	<script src="{{asset('js/event_manual_v2.js')}}"></script>
 @endsection

@@ -21,7 +21,7 @@
         <li><a class="menu" href="#">Ayuda</a></li>
         {{-- <li><a class="menu" href="">Mi cuenta</a></li> --}}
          @if (Auth::guest())
-          <li><a class="menu modal-login-open" href="#modal-login">Login</a></li>            
+          <li><a class="menu modal-login-open" href="#modal-login">Ingresar</a></li>            
          @else
           <li><a class="menu dropdown-button user-logged" href="#!" data-activates="user_options">Mi cuenta <i class="material-icons right ml-0" style="margin-top: -5px;">arrow_drop_down</i></a></li>
          @endif
@@ -42,7 +42,7 @@
         <li class="pl-30"><a href="">Ayuda</a></li>
         <li class="pl-30"><div class="col s8 col-center divider"></div></li>
          @if (Auth::guest())
-        <li class="pl-30"><a class="menu modal-login-open" href="#modal-login">Login</a></li>            
+        <li class="pl-30"><a class="menu modal-login-open" href="#modal-login">Ingresar</a></li>            
         @else
         <li class="pl-30">
           <ul class="collapsible collapsible-accordion">

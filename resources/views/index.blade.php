@@ -7,12 +7,12 @@
 	<style>
 		.label1 {
 			position: absolute;
-			top: 15px;
-			right: -5.5%;
-			padding: 5px 10px;
+			top: 10px;
+			right: 8px;
+			padding: 5px 20px;
 			box-shadow: 1px 2px 5px #111;
 			z-index: 1;
-			transform: rotate(45deg);
+			/*transform: rotate(45deg);*/
 			font-size: 0.75rem;
 		}
 		#contenido .divider {
@@ -110,6 +110,9 @@
 				
 				<div class="col m4 l3 evento">
 					<div  class="col s12 no-padding z-depth-1 hoverable" >
+						@if($evento->id == 103)
+						<label class="label1 red white-text">Sold Out</label>
+						@endif
 						<div class="evento-img-container">
 							<a href="{{ $evento_url }}">
 								<img src="{{ asset('img/'.$evento->url_imagen) }}" class="responsive-img evento-img">

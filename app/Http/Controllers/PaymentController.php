@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\BuyTicketRequest;
 use Session;
+use Log;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -87,12 +88,12 @@ class PaymentController extends Controller
 		//Variables
 		$customer_phone = "+5255555555";
 		$total = $req->precio * $req->asientos_cantidad;
-		// if($req->db_table == 'oceransky_morelia_01mar'){
-		// 	$expires_at = Carbon::parse(Carbon::now()->addHours(4));
-		// }else{
-		// 	$expires_at = Carbon::parse(Carbon::now()->addDays(1));			
-		// }
-		$expires_at = Carbon::parse(Carbon::now()->addDays(1));			
+		if($req->db_table == 'franco_celaya_04jun' || $req->db_table == 'franco_gto_05jun'){
+			$expires_at = Carbon::parse(Carbon::now()->addHours(12));
+		}else{
+			$expires_at = Carbon::parse(Carbon::now()->addDays(1));			
+		}
+		// $expires_at = Carbon::parse(Carbon::now()->addDays(1));		
 
 		if($req->customer_phone != null){
 			$customer_phone = $req->customer_phone;
@@ -110,6 +111,11 @@ class PaymentController extends Controller
 		}
 
 		$line_item_name = $req->evento.' | '.$req->ciudad.' | '.$req->seccion.': '.$asientos;
+
+		if($req->db_table == 'franco_celaya_04jun_21h'){
+			$line_item_name = $req->evento.' | '.$req->ciudad.' 21hrs | '.$req->seccion.': '.$asientos;
+
+		}
 
 		$metadata = array(
 			'event_type' => $req->event_type,
@@ -153,48 +159,58 @@ class PaymentController extends Controller
 		}	
 
 
-		try {
-			$order = \Conekta\Order::create(array(
-				  'currency' => 'MXN',
-				  'customer_info' => array(
-				    'name' => $req->customer_name,
-				    'email' => $req->customer_email,
-				    'phone' => $customer_phone
-				  ),
-				  'line_items' => array(
-				    array(
-				      'name' => $line_item_name,
-				      'unit_price' => $req->precio * 100,
-				      'quantity' => $req->asientos_cantidad
-				    )
-				  ),
-				  'charges' => array(
-				    array(
-				      'payment_method' => array(
-				        'type' => $req->payment_form,
-				        'expires_at' => $expires_at->timestamp
-				      ),
-				    )
-				  ),
-				  'tax_lines' => array(
-				  	array(
-				  		'description' => 'Servicio',
-				  		'amount' => $total * 0.10 * 100
-				  	)
-				  ),
-				  'metadata' => $metadata
-				));
-		} catch (\Conekta\ParameterValidationError $error){
-			$res = $error->getMessage();
-			$success = false;
-			return view('eventos.compra', compact('res', 'success'));
-		} catch (\Conekta\Handler $error){
-			$res = $error->getMessage();
-			$success = false;
-			return view('eventos.compra', compact('res', 'success'));
-		}
+		// try {
+		// 	$order = \Conekta\Order::create(array(
+		// 		  'currency' => 'MXN',
+		// 		  'customer_info' => array(
+		// 		    'name' => $req->customer_name,
+		// 		    'email' => $req->customer_email,
+		// 		    'phone' => $customer_phone
+		// 		  ),
+		// 		  'line_items' => array(
+		// 		    array(
+		// 		      'name' => $line_item_name,
+		// 		      'unit_price' => $req->precio * 100,
+		// 		      'quantity' => $req->asientos_cantidad
+		// 		    )
+		// 		  ),
+		// 		  'charges' => array(
+		// 		    array(
+		// 		      'payment_method' => array(
+		// 		        'type' => $req->payment_form,
+		// 		        'expires_at' => $expires_at->timestamp
+		// 		      ),
+		// 		    )
+		// 		  ),
+		// 		  'tax_lines' => array(
+		// 		  	array(
+		// 		  		'description' => 'Servicio',
+		// 		  		'amount' => $total * 0.10 * 100
+		// 		  	)
+		// 		  ),
+		// 		  'metadata' => $metadata
+		// 		));
+		// } catch (\Conekta\ParameterValidationError $error){
+		// 	$res = $error->getMessage();
+		// 	$success = false;
+		// 	if( $req->event_type == "numerado" ){
+		// 		DB::table($req->db_table)->whereIn('id', $id)->update(['status' => 0, 'user' => NULL]);
+		// 	}
+		// 	return view('eventos.compra', compact('res', 'success'));
+		// } catch (\Conekta\Handler $error){
+		// 	$res = $error->getMessage();
+		// 	$success = false;
+		// 	if( $req->event_type == "numerado" ){
+		// 		DB::table($req->db_table)->whereIn('id', $id)->update(['status' => 0, 'user' => NULL]);
+		// 	}
+		// 	return view('eventos.compra', compact('res', 'success'));
+		// }
 
-		dd($order);
+		Log::error('Conekta error: '.$line_item_name);
+
+		//TODO: Agregar errores al LOG
+
+		dd($metadata);
 
 		// $success = true;
 		// $payment = 'pending';

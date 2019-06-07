@@ -33,7 +33,7 @@ class Compra extends Mailable
     {
         return $this->view('emails.compra')
         // ->from('contacto@bolematico.mx', $this->form['name']) //aceptar cualquier mail aunque no exista
-        ->from('ventas@bolematico.mx', 'Ventas Bolematico') //acepta solo mails que existen
+        ->from('ventas@bolematico.com', 'Ventas Bolematico') //acepta solo mails que existen
         ->subject('Comprobante de compra | '.$this->data['evento']);
     }
 }

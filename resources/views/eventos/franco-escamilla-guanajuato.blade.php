@@ -79,6 +79,7 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
+						<p>* Punto de venta solo pago en efectivo.</p>
 						<p>* Informes al: <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452 174 1255</a></p>
 					</div>
 				</div>
@@ -116,7 +117,7 @@
 
 		<div id="lugares" class="col s12 tab-content">
 			<div class="col s12">
-				<h5 class="mb-30 quote">Además de Bolematico, puedes adquirir tus entradas en:</h5>
+				<h5 class="mb-30 quote">Además de Bolematico, puedes adquirir tus entradas en: <br><small><i>(* Solo pago en efectivo.)</i></small></h5>
 			</div>
 
 			<div class="col s12">									
@@ -149,8 +150,8 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	<div class="row mt-30">
-	{{-- @if(Auth()->check())
+	{{-- <div class="row mt-30">
+	@if(Auth()->check())
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 		</div>
@@ -211,18 +212,19 @@
 		<div class="col s12 center-align">
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
-	@endif --}}
-	</div>
+	@endif
+	</div> --}}
 	<div class="row mt-30">
-		<div class="col m8 offset-m2">
-			<h5 class="center-align raleway">Venta de boletos en Holiday Inn Express</h5>
+		<div class="col m8 offset-m2 center-align">
+			<h5 class="raleway">Venta de boletos en Holiday Inn Express</h5>
+			<p><i>(Solo pago en efectivo)</i></p>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
 				</div>
 			</div>
-			<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
-			<div class="row center-align">
+			<p>Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
+			<div class="row">
 				<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
 			</div>
 		</div>
@@ -230,15 +232,23 @@
 </section>
 
 <section class="section-lugar">
-	<div id="map"></div>
-		
-	<div class="info-lugar">
-		<h5 class="raleway quote mb-30">Lugar del evento</h5>
-		<div class="divider mb-30"></div>
-		<p><b>Auditorio del estado</b></p>
-		<p><i class="material-icons">location_on</i>Pueblito de Rocha S/N, Auditorio del Estado Centro de Convenciones, 36040 Guanajuato, Gto.</p>
-		<p><i class="material-icons">call</i> 01 473 732 5019</p>
-		{{-- <p><i class="material-icons">language</i> <a title="website" href="http://ceconexpo.com/" target="_blank">http://ceconexpo.com</a></p> --}}
+	<div class="row">
+		<div class="col m9">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.487047571479!2d-101.27616508559285!3d21.013189393686762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b741881053e33%3A0x3056cd14757b16ba!2sAuditorio+del+Estado+de+Guanajuato!5e0!3m2!1ses!2smx!4v1559066091162!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+		<div class="col m3">
+			<h5 class="quote raleway">Lugar del evento</h5>
+			
+			<h5 class="mt-30">Auditorio del Estado</h5>
+			<div class="col s10">
+				<div class="divider"></div>
+			</div>
+			<ul class="fa-ul" style="margin-top: 30px;">
+				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Pueblito de Rocha s/n, Auditorio del Estado <br>Centro de Convenciones, 36040 <br>Guanajuato, Gto.</li>
+				{{-- <li><i class="fa-li fa fa-phone"></i> 01 461 174 3456</li> --}}
+			</ul>
+
+		</div>
 	</div>
 </section>
 
@@ -269,23 +279,8 @@
 		           $("#iframe").attr('src', $('#modal-video-open').attr("data-video"));
 		        }
 		    });
-		function initMap() {
-		        var uluru = {lat: 21.0130174, lng: -101.2741785};
-		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 17,
-		          scrollwheel: false,
-		          navigationControl: true,
-		          draggable: true,
-		          center: {lat: 21.0130174, lng: -101.2741785}
-		        });
-		        var marker = new google.maps.Marker({
-		          position: uluru,
-		          map: map
-		        });
-		      }
 
 	</script>
-	<script src="{{asset('js/event_manual.js')}}"></script>
+	<script src="{{asset('js/event_manual_v2.js')}}"></script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
 @endsection

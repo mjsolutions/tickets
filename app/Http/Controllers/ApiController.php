@@ -107,6 +107,7 @@ class ApiController extends Controller
         if ($req->type == 'charge.paid') {
 
             $order_id = $req->data['object']['order_id'];
+            $paid_at = $req->data['object']['paid_at'];
 
             try{
                 $conekta_obj = \Conekta\Order::find($order_id);
@@ -139,6 +140,7 @@ class ApiController extends Controller
 
             $payment_type =  $order['charges'][0]['payment_method']['type'];
             $reference =  $order['charges'][0]['id'];
+            $paid_at =  Carbon::createFromTimestamp($order['charges'][0]['paid_at']);
 
             $user = User::where('email', $order['customer_info']['email'])->first();
             $date = Carbon::createFromTimestamp($order['created_at']);
@@ -198,12 +200,19 @@ class ApiController extends Controller
 
                 try{
                     
-                    DB::table($table)->whereIn('id', $ids)->update(['status' => 2, 'user' => $user->id, 'forma_pago' => $payment_type, 'token_vlinea' => $reference, 'fecha_venta' => $date]);
+                    // DB::table($table)->whereIn('id', $ids)->update(['status' => 2, 'user' => $user->id, 'forma_pago' => $payment_type, 'token_vlinea' => $reference, 'fecha_venta' => $date]);
                     
                     
                     foreach ($ids as $asiento) {
 
-                        DB::table($table)->where('id', $asiento)->update(['folio' => ($folio + $i)]);
+                        DB::table($table)->where('id', $asiento)->update([
+                            'folio' => ($folio + $i),
+                            'status' => 2,
+                            'user' => $user->id,
+                            'forma_pago' => $payment_type,
+                            'token_vlinea' => $reference,
+                            'fecha_venta' => $date]);
+
                         $buydata['folios'] .= " *".($folio + $i);
                         $i++;
                     }
@@ -232,6 +241,7 @@ class ApiController extends Controller
             $buydata['fecha'] = $event_date;
             $buydata['hr'] = $hr;
             $buydata['info'] = $info;
+            $buydata['paid_at'] = $paid_at->format('d-m-Y');
             $buydata['impresion_boleto'] = $impresion_boleto;
             $buydata['descripcion'] = $descripcion;
             $buydata['transaccion'] = $reference;

@@ -135,10 +135,31 @@ Route::group(['prefix' => 'micuenta','middleware' => 'auth'], function() {
 
     ]);
 
-     Route::get('ticket/{evento}/{seccion}', [
+    // Route::get('ticket-of/{id}/{seccion}', [
+    // 	'as'	=> 'cliente.ticketOf',
+    // 	'uses'	=> 'PaneldeUsuarioController@printTicketForUser'
+
+    // ]);
+
+    Route::get('ticket/{evento}/{seccion}', [
     	'as'	=> 'cliente.ticket',
     	'uses'	=> 'PaneldeUsuarioController@printTicket'
 
+    ]);
+
+    Route::get('cc-manual', [
+    	'as'	=> 'cliente.comprobante',
+    	'uses'	=> 'PaneldeUsuarioController@showFormForComprobante'
+    ]);
+
+    Route::post('comprobante-manual', [
+    	'as'	=> 'cliente.enviarComprobante',
+    	'uses'	=> 'PaneldeUsuarioController@sendComprobante'
+    ]);
+
+    Route::get('ver-comprobante/{order_id}', [
+    	'as'	=> 'cliente.verComprobante',
+    	'uses'	=> 'PaneldeUsuarioController@showComprobante'
     ]);
 
     // Route::get('codigo-barras', [

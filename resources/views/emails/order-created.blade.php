@@ -140,7 +140,7 @@
 	<ul>
 		<li>Una vez que nos sea notificado tu pago, te enviaremos las instrucciones finales para que puedas recibir tus boletos.</li>
 		<li>Cuentas con 24 hrs para realizar tu pago.</li>
-		<li><b>No responder este email</b>, esta cuenta es solo informativa para nuestros clientes. Si tienes alguna duda no dudes en contactarte con nosotros <a href="http://bolematico.mx/contacto" target="_blank">bolematico.mx/contacto</a></li>
+		<li><b>No responder este email</b>, esta cuenta es solo informativa para nuestros clientes. Si tienes alguna duda no dudes en contactarte con nosotros <a href="https://www.bolematico.com/contacto" target="_blank">bolematico.com/contacto</a></li>
 	</ul>
 
 	<div style="margin-top: 30px;">
@@ -203,7 +203,7 @@
 					<li>Realiza el pago correspondiente con dinero en efectivo.</li>
 					<li>Al confirmar tu pago, el cajero te entregará un comprobante impreso. <strong>En el podrás verificar que se haya realizado correctamente.</strong> Conserva este comprobante de pago.</li>
 				</ol>
-				<div class="opps-footnote">Al completar estos pasos recibirás un correo de <strong>bolematico.mx</strong> confirmando tu pago.</div>
+				<div class="opps-footnote">Unos minutos después de realizar tu pago y de que sea notificado a Bolematico recibirás un correo de confirmación.</div>
 			</div>
 		</div>
 	@endif

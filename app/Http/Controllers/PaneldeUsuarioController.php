@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Event;
+use App\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Compra as Compra;
 use DateTime;
+use Session;
 // use Barryvdh\DomPDF\PDF;
 
 class PaneldeUsuarioController extends Controller
@@ -60,12 +64,276 @@ class PaneldeUsuarioController extends Controller
     
     	$data = (object) $d;
 
-        DB::table($evento->tabla)->where([['user', Auth::id()], ['status', 2]])->increment('impreso');
+        // DB::table($evento->tabla)->where([['user', Auth::id()], ['status', 2]])->increment('impreso');
       
         $pdf = \PDF::loadView('user.boleto', compact('data', 'boletos', 'precio', 'evento'));
 
     	return $pdf->download('ticket_'.$evento->tabla.'.pdf');
     }
+
+    public function showFormForComprobante(){
+        return view('user.comprobante-manual');
+    }
+
+    public function showComprobante($order_id){
+        $conekta_conf = config('conekta');
+
+        \Conekta\Conekta::setApiKey($conekta_conf['production_privateKey']);
+        \Conekta\Conekta::setApiVersion("2.0.0");
+
+        try{
+            $conekta_obj = \Conekta\Order::find($order_id);
+        }catch(\Exception $e) {
+            return response()->json(['message'=>'Conekta find order error: '.$e->getMessage()], 500);
+        }
+
+        $order = json_decode( $conekta_obj, true );
+
+        $table = $order['metadata']['db_table'];
+        $event_type = $order['metadata']['event_type'];
+        $event = $order['metadata']['event'];
+        $event_photo = $order['metadata']['event_photo'];
+        $event_date = $order['metadata']['date'];
+        $place = $order['metadata']['place'];
+        $ciudad = $order['metadata']['ciudad'];
+        $hr = $order['metadata']['hr'];
+        $info = $order['metadata']['info'];
+        $impresion_boleto = $order['metadata']['impresion_boleto'];
+        $asientos = $order['metadata']['asientos'];
+        $seccion = $order['metadata']['seccion'];
+        $fila = $order['metadata']['fila'];
+        $ids = [];
+
+        if($event_type == 'numerado'){
+
+        $ids = explode( "-" ,$order['metadata']['ids']);
+        
+        }
+
+        $payment_type =  $order['charges'][0]['payment_method']['type'];
+        $reference =  $order['charges'][0]['id'];
+        $paid_at =  Carbon::createFromTimestamp($order['charges'][0]['paid_at']);
+
+        $user = User::where('email', $order['customer_info']['email'])->first();
+        $date = Carbon::createFromTimestamp($order['created_at']);
+        $descripcion = "";
+        $buydata = Array();
+        $buydata['folios'] = "`---";
+
+        // $folio = DB::table($table)->max('folio');
+        // $i = 1;
+
+        if($event_type == 'general'){
+
+            $descripcion = $asientos." lugares | Tipo: ".ucwords($seccion);
+
+        } else {
+
+            if(!empty($fila)){
+                $descripcion = "Seccion: ".$seccion." | Fila: ".$fila." | Asientos: ".$asientos;
+            }else{
+                $descripcion = "Seccion: ".$seccion." | Fila/Asientos: ".$asientos;                    
+            }
+
+        }
+
+        $buydata['type'] = $event_type;
+        $buydata['evento'] = $event;
+        $buydata['img'] = $event_photo;
+        $buydata['ciudad'] = $ciudad;
+        $buydata['lugar'] = $place;
+        $buydata['fecha'] = $event_date;
+        $buydata['hr'] = $hr;
+        $buydata['info'] = $info;
+        $buydata['paid_at'] = $paid_at->format('d-m-Y');
+        $buydata['impresion_boleto'] = $impresion_boleto;
+        $buydata['descripcion'] = $descripcion;
+        $buydata['transaccion'] = $reference;
+        $buydata['user'] = $user->name.' '.$user->last_name.' '.$user->second_lname;
+        $buydata['email'] = $user->email;
+
+        // $expires_at = Carbon::parse(Carbon::now()->subHours(1));
+
+        // $order = \Conekta\Order::find($order_id);
+        // $order->update(array(
+        //   'charges' => array(
+        //             array(
+        //               'payment_method' => array(
+        //                 'expires_at' => $expires_at->timestamp
+        //               ),
+        //             )
+        //           ),
+        // ));
+
+        // dd($order);
+
+        return view('user.verificar-comprobante', ['data' => $buydata]);
+
+        
+    }
+
+    public function sendComprobante(Request $request){
+
+        $conekta_conf = config('conekta');
+
+        \Conekta\Conekta::setApiKey($conekta_conf['production_privateKey']);
+        \Conekta\Conekta::setApiVersion("2.0.0");
+
+        try{
+            $conekta_obj = \Conekta\Order::find($request->input('order_id'));
+        }catch(\Exception $e) {
+            return response()->json(['message'=>'Conekta find order error: '.$e->getMessage()], 500);
+        }
+
+        $order = json_decode( $conekta_obj, true );
+
+        $table = $order['metadata']['db_table'];
+        $event_type = $order['metadata']['event_type'];
+        $event = $order['metadata']['event'];
+        $event_photo = $order['metadata']['event_photo'];
+        $event_date = $order['metadata']['date'];
+        $place = $order['metadata']['place'];
+        $ciudad = $order['metadata']['ciudad'];
+        $hr = $order['metadata']['hr'];
+        $info = $order['metadata']['info'];
+        $impresion_boleto = $order['metadata']['impresion_boleto'];
+        $asientos = $order['metadata']['asientos'];
+        $seccion = $order['metadata']['seccion'];
+        $fila = $order['metadata']['fila'];
+        $ids = [];
+
+        if($event_type == 'numerado'){
+
+        $ids = explode( "-" ,$order['metadata']['ids']);
+        
+        }
+
+        $payment_type =  $order['charges'][0]['payment_method']['type'];
+        $reference =  $order['charges'][0]['id'];
+        $paid_at =  Carbon::createFromTimestamp($order['charges'][0]['paid_at']);
+
+        $user = User::where('email', $order['customer_info']['email'])->first();
+        $date = Carbon::createFromTimestamp($order['created_at']);
+        $descripcion = "";
+        $buydata = Array();
+        $buydata['folios'] = "";
+
+        $folio = DB::table($table)->max('folio');
+        $i = 1;
+
+        if($event_type == 'general'){
+
+            $rows = [];
+
+            DB::beginTransaction();
+
+            try{
+
+                for($i = 1; $i <= $asientos; $i++){
+
+                    $new_folio = $folio + $i;
+
+                    $row = ['seccion' => $seccion,
+                            'bloque' => '',
+                            'fila' => 'Sin fila',
+                            'asiento' => $i,
+                            'status' => 2,
+                            'impreso' => 0,
+                            'forma_pago' => $payment_type,
+                            'folio' => $new_folio,
+                            'codigo_barras' => substr(md5($new_folio), 0, 10),
+                            'token_vlinea' => $reference,
+                            'user' => $user->id,
+                            'fecha_venta' => $date];
+
+                    array_push($rows, $row);
+
+                    $buydata['folios'] .= " *".$new_folio;
+
+                }
+
+                DB::table($table)->insert($rows);
+
+                DB::commit();
+
+            }catch(\Exception $e) {
+                DB::rollBack();
+                return response()->json(['message'=>'Error inserting in DB: '.$e->getMessage()], 500);
+            }
+
+            $descripcion = $asientos." lugares | Tipo: ".ucwords($seccion);
+
+        } else {
+
+            //Update a los boletos
+            DB::beginTransaction();
+
+            try{
+                
+                DB::table($table)->whereIn('id', $ids)->update(['status' => 2, 'user' => $user->id, 'forma_pago' => $payment_type, 'token_vlinea' => $reference, 'fecha_venta' => $date]);
+                
+                
+                foreach ($ids as $asiento) {
+
+                    DB::table($table)->where('id', $asiento)->update(['folio' => ($folio + $i)]);
+                    $buydata['folios'] .= " *".($folio + $i);
+                    $i++;
+                }
+                
+                //Se ejecuta la transaccion y se bloquean los boletos
+                DB::commit();
+
+            }catch(\Exception $e) {
+                DB::rollBack();
+                return response()->json(['message'=>'Errror updating DB'.$e->getMessage()], 500);
+            }
+
+            if(!empty($fila)){
+                $descripcion = "Seccion: ".$seccion." | Fila: ".$fila." | Asientos: ".$asientos;
+            }else{
+                $descripcion = "Seccion: ".$seccion." | Fila/Asientos: ".$asientos;                    
+            }
+
+        }
+
+        $buydata['type'] = $event_type;
+        $buydata['evento'] = $event;
+        $buydata['img'] = $event_photo;
+        $buydata['ciudad'] = $ciudad;
+        $buydata['lugar'] = $place;
+        $buydata['fecha'] = $event_date;
+        $buydata['hr'] = $hr;
+        $buydata['info'] = $info;
+        $buydata['paid_at'] = $paid_at->format('d-m-Y');
+        $buydata['impresion_boleto'] = $impresion_boleto;
+        $buydata['descripcion'] = $descripcion;
+        $buydata['transaccion'] = $reference;
+        $buydata['user'] = $user->name.' '.$user->last_name.' '.$user->second_lname;
+        $buydata['email'] = $user->email;
+
+        Mail::to($user->email, $user->name)
+        ->cc('arquimides@bolematico.com.mx')
+        ->bcc('martinalanis.dev@gmail.com')
+        ->send(new Compra($buydata));
+
+        // return response()->json(['message'=>'Success update on DB'], 200);
+
+        Session::put('mensaje', 'Enviado: '.$user->email);
+
+        return redirect()->route('cliente.comprobante');
+    }
+
+    // public function printTicketForUser($id, $seccion) {
+
+    //     // dd($seccion);
+
+    //     $event = Event::find(104);
+    //     $user = User::find($id);
+
+    //     Auth::login($user);
+
+    //     return $this->printTicket($event, $seccion);
+    // }
 
     // public function updateDb() {
 

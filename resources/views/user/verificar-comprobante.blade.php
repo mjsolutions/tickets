@@ -1,3 +1,15 @@
+@extends('layouts.main')
+
+@section('title', 'Comprobante')
+
+@section('description', '')
+
+@section('styles')
+<script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
+@endsection
+
+@section('content')
+
 <h2 style="font-family: 'Raleway', sans-serif;font-size: 1.5em;text-align: center;"><b>¡GRACIAS POR TU COMPRA!</b></h2>
 <p style="text-align: center;">Tu pago ha sido confirmado en nuestra plataforma.</p>
 
@@ -33,5 +45,15 @@
 	<p><b>No responder este email</b>, esta cuenta es solo informativa para nuestros clientes. Si tienes alguna duda no dudes en contactarte con nosotros <a href="https://www.bolematico.com/contacto" target="_blank">bolematico.com/contacto</a></p>
 </div>
 <div style="color: #FFF; background: #222; margin-bottom: 0; padding: 20px 0;">
-	<p style="text-align: center;">Todos los derechos reservados © Bolematico {!! date('Y') !!} </p>
-</div>
+	<p 
+
+@endsection
+
+@section('scripts')
+<script type="text/javascript">
+	function revisarOrden(){
+		window.location.href = '{{ url('micuenta/ver-comprobante') }}/' + $("#id_orden").val();
+		// alert($("#id_orden").val());
+	}
+</script>
+@endsection

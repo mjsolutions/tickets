@@ -158,14 +158,14 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	<div class="row mb-30">
+	{{-- <div class="row mb-30">
 		<div class="col s12 m4 offset-m4">
 			<h5 class="mt-30 raleway quote">¡Aparta tus lugares!</h5>
 		</div>
-	</div>
+	</div> --}}
 
-	<div class="row mb-30">
-		@if(Auth()->check())
+	<div class="row mb-30 mt-30">
+		{{-- @if(Auth()->check())
 		<div class="col s12 m4 offset-m4">
 				
 			{!! Form::open(['route' => 'payment.details', 'method' => 'POST', 'id' => 'paymentForm'])!!}
@@ -209,7 +209,6 @@
 			{!! Form::hidden('hora', '21:00 hrs') !!}
 			{!! Form::hidden('event_type', 'general') !!}
 			{!! Form::hidden('impresion_boleto', true) !!}
-			{{-- {!! Form::hidden('zona', 'General') !!} --}}
 			{!! Form::hidden('db_table', 'santiago_cruz_ags_07jun') !!}
 			{!! Form::hidden('info', 'Favor de comunicarte al numero 449 241 8386 para completar tu reservación.') !!}
 			{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
@@ -228,13 +227,14 @@
 		<div class="col s12 m4 offset-m4 center-align">
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
-		@endif
-		<div class="col s12 m4 offset-m4 mt-30">
+		@endif --}}
+		{{-- <div class="col s12 m4 offset-m4 mt-30">
 			<p>
 				<i>* Puedes seleccionar un máximo de 10 lugares.</i><br>
 				<i>* Se cobrara un cargo adicional por concepto de servicio.</i>
 			</p>
-		</div>
+		</div> --}}
+		<h5 class="center-align raleway">¡Últimos lugares disponibles! solo en La Tercera Llamada</h5>
 	</div>
 
 	
@@ -247,14 +247,23 @@
 </section>
 
 <section class="section-lugar">
-	<div id="map"></div>
-		
-	<div class="info-lugar">
-		<h5 class="raleway quote mb-30">Lugar del evento</h5>
-		<div class="divider mb-30"></div>
-		<p><b>La Tercera Llamada</b></p>
-		<p><i class="material-icons">location_on</i>Gral Álvaro Obregón 355, Zona Centro, 20000 Aguascalientes, Ags.</p>
-		<p><i class="material-icons">call</i> 449 241 8386</p>
+	<div class="row">
+		<div class="col m9">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231.39054371113036!2d-102.29312727583974!3d21.88649691230739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee6447793003%3A0x67124546edac382d!2sCentro+Cultural+Tercera+Llamada!5e0!3m2!1ses!2smx!4v1552950651679" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+		<div class="col m3">
+			<h5 class="quote raleway">Lugar del evento</h5>
+			
+			<h5 class="mt-30">La Tercera Llamada</h5>
+			<div class="col s10">
+				<div class="divider"></div>
+			</div>
+			<ul class="fa-ul" style="margin-top: 30px;">
+				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Gral Álvaro Obregón 355, <br>Zona Centro, 20000 <br>Aguascalientes, Ags.</li>
+				{{-- <li><i class="fa-li fa fa-phone"></i> 01 461 174 3456</li> --}}
+			</ul>
+
+		</div>
 	</div>
 </section>
 
@@ -281,25 +290,11 @@
 		           $("#iframe").attr('src', $('#modal-video-open').attr("data-video"));
 		        }
 		    });
-		function initMap() {
-		        var uluru = {lat: 21.8865888, lng: -102.2928932};
-		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 17,
-		          scrollwheel: false,
-		          navigationControl: true,
-		          draggable: true,
-		          center: {lat: 21.8865888, lng: -102.2921832}
-		        });
-		        var marker = new google.maps.Marker({
-		          position: uluru,
-		          map: map
-		        });
-		      }
+
 		$(".form_zona").click(function(){
 			$("#form_precio").val(precios[$(this).val()]);
 		});
 
 	</script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
 @endsection
