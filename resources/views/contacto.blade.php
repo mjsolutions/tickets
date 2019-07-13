@@ -22,7 +22,7 @@
 				
 				<h3 class="center-align white-text">¡GRACIAS POR TU MENSAJE!</h3>
 				<div class="divider col-center col s10"></div>
-				<p class="center-align white-text">En breve nos pondremos en contacto contigo</p>
+				<p class="center-align white-text">En breve atenderemos tu caso</p>
 		
 			</div>
 		

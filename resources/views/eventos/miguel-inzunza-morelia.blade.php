@@ -39,12 +39,23 @@
 		<div id="descripcion" class="col s12 tab-content">
 
 			<div class="col s8 offset-s2 m5 mb-30 card-flyer">
-				<img src="{{ asset('img/miguel-inzunza-morelia.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/miguel-inzunza-morelia-pos.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
-			<div class="col s12 m6 offset-m1">				
+			<div class="col s12 m6 offset-m1">
+				
+				<h5 class="center-align red-text"> <strong>¡AVISO IMPORTANTE!</strong></h5>
+				<div class="divider"></div>
+				<p>Estimados amigos de Morelia, les comunicamos por este medio que por causas ajenas a Miguel Inzunza y a la productora Gyrarte se pospone hasta nuevo aviso el concierto que estaba programado para el día 15 de junio en el teatro Stella Inda. </p>
+				<p>La nueva fecha será anunciada en los próximos días.</p>
+				<p>Tus boletos seguiran siendo útiles para la nueva fecha.</p>
+				<p class="mb-0">Para más informes sobre los boletos comprados favor de comunicarse:</p>
+				<ul style="margin-top: 0;padding-left: 15px;">
+					<li> - Si compraste a través de bolematico.com al 4521741255</li>
+					<li> - Si compraste en Rs Viajes Centro al 4432274979 o al inbox de <a href="https://www.facebook.com/Gyrarte/" target="_blank">Gyrarte</a></li>
+				</ul>
 
-				<div class="row">
+				{{-- <div class="row">
 
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
@@ -72,7 +83,7 @@
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
 						<p>* Informes al: <a href="tel:4431880358" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 443 188 0358</a> / <a href="tel:4432274979" style="background: #4caf50; color: #fff; padding: 5px 10px;"><i class="fa fa-whatsapp"></i> 443 227 4979</a></p>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 
@@ -148,62 +159,62 @@
 </section>
 
 <section id="compra" class="row section-comprar">
-	<div class="col s12 mt-30">
-	@if(Auth()->check())
-		<div class="col s12 mb-15">
-			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
-		</div>
-		<div class="col s12 m5 white div-border">
-			@include('maps.teatro-stella-inda')
-		</div>
-		<div class="col s12 m7">
+	{{-- <div class="col s12 mt-30">
+		@if(Auth()->check())
 			<div class="col s12 mb-15">
-				<div class="col s1 grey darken-4" style="height: 25px;"></div>
-				<div class="col s11">
-					<div class="col s5">Escenario</div>
-					<div class="col s7 right-align" id="info-title-section"></div>
+				<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
+			</div>
+			<div class="col s12 m5 white div-border">
+				@include('maps.teatro-stella-inda')
+			</div>
+			<div class="col s12 m7">
+				<div class="col s12 mb-15">
+					<div class="col s1 grey darken-4" style="height: 25px;"></div>
+					<div class="col s11">
+						<div class="col s5">Escenario</div>
+						<div class="col s7 right-align" id="info-title-section"></div>
+					</div>
+				</div>
+				<div class="col s12 bloque-container">
+					
+					<div id="mapa-escenario" class=""></div>
+					<div id="mapa-asientos" class="col s12"></div>
+				</div>
+				<div class="col s12 mt-15">
+					<p id="ticket-message"></p>
+				</div>
+				<div class="col s12 center-align mt-15">
+					<a href="javascript:;" id="checkout" class="btn waves-effect waves-light orange accent-3 hide">SIGUIENTE</a>
+					{!! Form::open(['route'=>'payment.details', 'method'=>'POST', 'id' => 'checkout-form', 'style' => 'display:none;']) !!}
+
+						{!! Form::hidden('asiento', '', ['id' => 'form_asiento']) !!}
+						{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
+						{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
+						{!! Form::hidden('img', 'img/miguel-inzunza-morelia.jpg') !!}
+						{!! Form::hidden('evento', 'Miguel Inzunza') !!}
+						{!! Form::hidden('fecha', '15 de junio 2019') !!}
+						{!! Form::hidden('lugar', 'Teatro Stella Inda') !!}
+						{!! Form::hidden('ciudad', 'Morelia') !!}
+						{!! Form::hidden('hora', '20:30 hrs') !!}
+						{!! Form::hidden('event_type', 'numerado') !!}
+						{!! Form::hidden('impresion_boleto', true) !!}
+						{!! Form::hidden('db_table', 'miguel_inzunza_morelia_15jun') !!}
+						{!! Form::hidden('info', '--') !!}
+						{!! Form::hidden('select_type', 'manual') !!}
+						{!! Form::hidden('url', url('eventos/miguel-inzunza-morelia')) !!}
+					{!! Form::close() !!}
 				</div>
 			</div>
-			<div class="col s12 bloque-container">
-				
-				<div id="mapa-escenario" class=""></div>
-				<div id="mapa-asientos" class="col s12"></div>
-			</div>
-			<div class="col s12 mt-15">
-				<p id="ticket-message"></p>
-			</div>
-			<div class="col s12 center-align mt-15">
-				<a href="javascript:;" id="checkout" class="btn waves-effect waves-light orange accent-3 hide">SIGUIENTE</a>
-				{!! Form::open(['route'=>'payment.details', 'method'=>'POST', 'id' => 'checkout-form', 'style' => 'display:none;']) !!}
+		
 
-					{!! Form::hidden('asiento', '', ['id' => 'form_asiento']) !!}
-					{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
-					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
-					{!! Form::hidden('img', 'img/miguel-inzunza-morelia.jpg') !!}
-					{!! Form::hidden('evento', 'Miguel Inzunza') !!}
-					{!! Form::hidden('fecha', '15 de junio 2019') !!}
-					{!! Form::hidden('lugar', 'Teatro Stella Inda') !!}
-					{!! Form::hidden('ciudad', 'Morelia') !!}
-					{!! Form::hidden('hora', '20:30 hrs') !!}
-					{!! Form::hidden('event_type', 'numerado') !!}
-					{!! Form::hidden('impresion_boleto', true) !!}
-					{!! Form::hidden('db_table', 'miguel_inzunza_morelia_15jun') !!}
-					{!! Form::hidden('info', '--') !!}
-					{!! Form::hidden('select_type', 'manual') !!}
-					{!! Form::hidden('url', url('eventos/miguel-inzunza-morelia')) !!}
-				{!! Form::close() !!}
+		@else
+
+			<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
+			<div class="col s12 center-align">
+				<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 			</div>
-		</div>
-	
-
-	@else
-
-		<p class="center-align raleway">Debes iniciar sesion para poder realizar la compra</p>
-		<div class="col s12 center-align">
-			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
-		</div>
-	@endif
-	</div>
+		@endif
+	</div> --}}
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
 			{{-- <h5 class="center-align raleway">Venta de boletos también en </h5> --}}

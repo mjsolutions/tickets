@@ -45,6 +45,8 @@ class PaymentController extends Controller
 
 	/**
 	* See details before accepting purchase
+	* TODO
+	* Crear un Request especifico para las ordenes, asegurar que lleva todos los datos	
 	*/
 
     public function paymentDetails(Request $req) {

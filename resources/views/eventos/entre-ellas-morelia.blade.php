@@ -25,7 +25,6 @@
 		<p class="mb-0"><i>Teatro Morelos - Morelia</i></p>
 		<p class="m-0"><i>13 de junio - 21:00 hrs.</i></p>
 	</div>
-	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
 
 <section class="container">
@@ -45,7 +44,7 @@
 			
 			<div class="col s12 m6 offset-m1">				
 
-				<div class="row">
+				{{-- <div class="row">
 
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
@@ -74,6 +73,16 @@
 						</div>
 					</div>
 
+				</div> --}}
+				<div class="row">
+					<h5 class="center-align red-text"> <strong>¡AVISO IMPORTANTE!</strong></h5>
+					<div class="divider"></div>
+					<p>La obra de teatro “Entre Ellas” protagonizada por artistas como Lucila Mariscal (Lencha);Liliana Arriaga (La Chupitos); Aida Pierce, Bárbara Torres (Excelsa); Bettina Salazar (Olga Sana); Alejandra Rivera (La Jarocha) e Isabel Martínez (La Tarabilla); que estaba programada una presentación el próximo día JUEVES 13 DE JUNIO, en las instalaciones del Teatro Morelos de la ciudad de Morelia, Mich. <strong>NO SE LLEVARA A CABO</strong>, debido a causas de fuerza Mayor provocados por empresarios que llevarían la misma obra de teatro a la Ciudad de Los Reyes Mich, incumpliendo acuerdos que forzan a la producción de dicha obra a tener que cancelar la presentación en la Capital del estado</p>
+					<p>La empresa PRODUCCIONES MICHOACAN al igual que la Producción de la Obra “ENTRE ELLAS” tratando de lograr algún acuerdo, toman la decisión de tener que CANCELAR LA PRESENTACION. Considerando que ambas partes no tienen responsabilidad civil o legal alguna ante dicha cancelación</p>
+					<p>La empresa BOLEMATICO, será la encargada de realizar los reembolsos correspondientes en las taquillas del Planetario a partir de la publicación del presente, en un horario de Lunes a Sábado de las 11:00 a las 19:00 Horas, las personas que adquirieron sus boletos a través de este portal favor de comunicarse al 4521741255 para sus reembolsos.</p>
+					<p>A los medios de comunicación les agradecemos sus atenciones para la difusión de dicha obra de teatro y de igual forma es solicitamos el esparcimiento del presente comunicado; Sin más por el momento, nos espedimos quedando a sus apreciables órdenes</p>
+					<p class="center-align">ATENTAMENTE</p>
+					<p class="center-align">PRODUCCIONES MICHOACAN & BOLEMATICO</p>
 				</div>
 
 				<div class="row">
@@ -150,7 +159,7 @@
 	</div>
 </section>
 <section id="compra" class="section-comprar">
-	<div class="row mt-30">
+	{{-- <div class="row mt-30">
 	@if(Auth()->check())
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
@@ -205,10 +214,10 @@
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
 	@endif
-	</div>
+	</div> --}}
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
-			<h5 class="center-align raleway">Venta de boletos también en RS Viajes Centro y Taquillas del Planetario</h5>
+			<h5 class="center-align raleway">Venta de boletos en RS Viajes Centro y Taquillas del Planetario</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>

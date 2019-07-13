@@ -129,7 +129,7 @@
 			<h5 class="mt-30 raleway quote">¡Aparta tus lugares!</h5>
 		</div>
 	</div>
-	<div class="row mt-30">
+	{{-- <div class="row mt-30">
 	@if(Auth()->check())
 	<div class="col s12 m4 offset-m4">
 				
@@ -172,7 +172,7 @@
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
 	@endif
-	</div>
+	</div> --}}
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
 			<h5 class="center-align raleway">Venta de boletos El Portón de Santiago</h5>

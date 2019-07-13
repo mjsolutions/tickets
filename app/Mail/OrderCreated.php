@@ -33,7 +33,7 @@ class OrderCreated extends Mailable
     public function build()
     {
         return $this->view('emails.order-created')
-                    ->from('ventas@bolematico.mx', 'Ventas Bolematico') //acepta solo mails que existen
+                    ->from('ventas@bolematico.com', 'Ventas Bolematico') //acepta solo mails que existen
                     ->subject('Orden de pago');
     }
 }

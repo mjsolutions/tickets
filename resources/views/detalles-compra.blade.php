@@ -177,6 +177,12 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 								<th>Email:</th>
 								<td>{{ Auth::user()->email }}</td>
 							</tr>
+							@if ($req->db_table == 'jaime_flores_morelia_02ago')
+							<tr>
+								<th>DONATIVO:</th>
+								<td colspan="2"><span class="label-precio">$ <b>{{ number_format(($req->precio * $num_asientos) * 1.10, 2, '.', ',') }}</b> MX</span></td>
+							</tr>
+							@else
 							<tr>
 								<th>Subtotal:</th>
 								<td>$ {{ number_format($req->precio * $num_asientos, 2, '.', ',') }}</td>			
@@ -188,7 +194,9 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 							<tr>
 								<th>TOTAL:</th>
 								<td colspan="2"><span class="label-precio">$ <b>{{ number_format(($req->precio * $num_asientos) * 1.10, 2, '.', ',') }}</b> MX</span></td>
-							</tr>					</tbody>
+							</tr>
+							@endif
+						</tbody>
 
 					</table>
 				</div>

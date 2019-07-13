@@ -65,10 +65,16 @@ class PaneldeUsuarioController extends Controller
     	$data = (object) $d;
 
         // DB::table($evento->tabla)->where([['user', Auth::id()], ['status', 2]])->increment('impreso');
-      
-        $pdf = \PDF::loadView('user.boleto', compact('data', 'boletos', 'precio', 'evento'));
 
-    	return $pdf->download('ticket_'.$evento->tabla.'.pdf');
+        // if($evento->id == 123){            
+        //     $pdf = \PDF::loadView('user.boleto-info-extra', compact('data', 'boletos', 'precio', 'evento'));
+        // }else{
+        // }
+            $pdf = \PDF::loadView('user.boleto', compact('data', 'boletos', 'precio', 'evento'));
+      
+
+    	// return $pdf->download('ticket_'.$evento->tabla.'.pdf');
+        return $pdf->stream('ticket_'.$evento->tabla.'.pdf');
     }
 
     public function showFormForComprobante(){
@@ -389,17 +395,20 @@ class PaneldeUsuarioController extends Controller
     // }
 
     // public function initTable(){
-    //     $table = 'andres_suarez_celaya_31may';
+    //     $table = 'silvia_pinal';
 
-    //     $asiento = 10;
+    //     // $asiento = 22;
     //     $rows = [];
-    //     $cb = 100;
+    //     $filas = [23,27,29,31,31,31,31,31,31,31,31,31,20,20,20,20,20,31,31,31,31,31,31,32,14];
+    //     $filas_pos = 0;
+    //     $cb = 1;
+    //     // $fila = 'A';
 
-    //     foreach(range('K', 'O') as $fila){
+    //     foreach(range('A', 'Y') as $fila){
             
-    //         for($i = 1; $i <= $asiento; $i++){
-    //             $row = ['seccion' => 'Oro',
-    //                 'bloque' => 'oro-1',
+    //         for($i = 1; $i <= $filas[$filas_pos]; $i++){
+    //             $row = ['seccion' => 'Diamante',
+    //                 'bloque' => '',
     //                 'fila' => $fila,
     //                 'asiento' => $i,
     //                 'status' => 0,
@@ -414,11 +423,13 @@ class PaneldeUsuarioController extends Controller
     //             array_push($rows, $row);
     //             $cb++;
     //         }
+
+    //         $filas_pos++;
     //     }
 
     //      DB::table($table)->insert($rows);
 
-    //      echo 'Insert oro done';
+    //      echo 'Insert All done';
     // }
 
 }

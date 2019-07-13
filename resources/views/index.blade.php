@@ -99,9 +99,6 @@
 				</div>
 			</div>
 
-
-			<div class="col s12 mb-30 grid-eventos no-padding">
-
 				@foreach($eventos as $evento)
 				@php
 					$evento_url = !empty($evento->url)?url('/eventos').'/'.$evento->url: 'javascript:void;';
@@ -110,9 +107,6 @@
 				
 				<div class="col m4 l3 evento">
 					<div  class="col s12 no-padding z-depth-1 hoverable" >
-						@if($evento->id == 103)
-						<label class="label1 red white-text">Sold Out</label>
-						@endif
 						<div class="evento-img-container">
 							<a href="{{ $evento_url }}">
 								<img src="{{ asset('img/'.$evento->url_imagen) }}" class="responsive-img evento-img">
@@ -139,6 +133,7 @@
 				</div>
 
 				@endforeach
+				
 				
 			</div>
 		</div>

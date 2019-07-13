@@ -7,6 +7,7 @@
 	<style type="text/css">
 	h3 {
 		margin-bottom: 10px;
+		margin-top: 0;
 		font-size: 15px;
 		font-weight: 600;
 		text-transform: uppercase;

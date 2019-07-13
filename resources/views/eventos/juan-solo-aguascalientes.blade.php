@@ -5,10 +5,10 @@
 @section('description', 'Juan Solo, Aguascalientes, 21 de junio, 21:00 hrs boletos en La Tercera Llamada y bolematico.com')
 
 @section('styles')
-<meta property="og:url"  content="http://bolematico.mx/eventos/juan-solo-aguascalientes" />
+<meta property="og:url"  content="https://www.bolematico.com/eventos/juan-solo-aguascalientes" />
 <meta property="og:title" content="Juan Solo" />
 <meta property="og:description" content="Juan Solo, Aguascalientes, 21 de junio, 21:00 hrs boletos en La Tercera Llamada y bolematico.com" />
-<meta property="og:image" content="http://bolematico.mx/img/juan-solo-ags.jpg" />
+<meta property="og:image" content="https://www.bolematico.com/img/juan-solo-ags.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
@@ -117,13 +117,13 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	<div class="row mb-30">
+{{--	<div class="row mb-30">
 		<div class="col s12 m4 offset-m4">
 			<h5 class="mt-30 raleway quote">¡Aparta tus lugares!</h5>
 		</div>
 	</div>
 
-	<div class="row mb-30">
+ 	<div class="row mb-30">
 		@if(Auth()->check())
 		<div class="col s12 m4 offset-m4">
 				
@@ -171,7 +171,7 @@
 				<i>* Se cobrara un cargo adicional por concepto de servicio.</i>
 			</p>
 		</div>
-	</div>
+	</div> --}}
 
 	
 	<div class="row">

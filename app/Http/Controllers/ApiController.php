@@ -15,25 +15,16 @@ class ApiController extends Controller
 {
     public function getFilas($table, $zona) {
 
-        if($table == 'santiago_cruz_morelia_30may'){
-             return DB::table($table)
-                    ->select('fila')
-                    ->where([
-                        ['seccion', $zona],
-                        ['status', 0]
-                    ])
-                    ->whereNotIn('fila', ['A', 'B', 'C'])
-                    ->groupBy('fila')->get();
-        }elseif($table == 'ornelas_morelia_05abr'){
-             return DB::table($table)
-                    ->select('fila')
-                    ->where([
-                        ['seccion', $zona],
-                        ['status', 0]
-                    ])
-                    ->whereNotIn('fila', ['A', 'B', 'C'])
-                    ->groupBy('fila')->get();
-        }
+        // if($table == 'santiago_cruz_morelia_30may'){
+        //      return DB::table($table)
+        //             ->select('fila')
+        //             ->where([
+        //                 ['seccion', $zona],
+        //                 ['status', 0]
+        //             ])
+        //             ->whereNotIn('fila', ['A', 'B', 'C'])
+        //             ->groupBy('fila')->get();
+        // }
 
         return DB::table($table)
                 ->select('fila')
@@ -57,20 +48,7 @@ class ApiController extends Controller
 
     public function getMapAsientos($table, $bloque, $order_fila, $order_asiento) {
 
-        if($table == 'santiago_cruz_morelia_30may'){
-            if($bloque == 'oro-2'){
-               return DB::table($table)
-                ->where('bloque', $bloque)
-                ->orderBy('fila', $order_fila)
-                ->where('fila', '<>', 'I')
-                ->orderBy('asiento', $order_asiento)->get(); 
-            }
-            return DB::table($table)
-                ->where('bloque', $bloque)
-                ->orderBy('fila', $order_fila)
-                ->whereNotIn('fila', ['A', 'B', 'C'])
-                ->orderBy('asiento', $order_asiento)->get();
-        }elseif($table == 'ornelas_morelia_05abr'){
+        if($table == 'ornelas_morelia_05abr'){
             return DB::table($table)
                 ->where('bloque', $bloque)
                 ->orderBy('fila', $order_fila)
