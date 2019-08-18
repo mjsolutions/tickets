@@ -23,12 +23,12 @@
 		<div class="text-center evento-img-container">
 			<img src="img/{{ $evento->url_imagen }}" class="img-evento">		
 		</div>
-		<div class="container text-center info-evento card">
+		<div class="container text-center info-evento card" style="margin-top:5px;">
 			<h2>{{ mb_strtoupper($evento->artista, 'UTF-8') }}</h2>
 			<h4>- {{ $evento->lugar }} -</h4>
 			<h5>{{ $evento->municipio }}</h5>
 		</div>
-		<div class="container card info-compra">
+		<div class="container card info-compra" style="margin-top:5px;">
 			<table>
 				<tbody>
 					<tr>
@@ -90,8 +90,13 @@
 				</tbody>
 			</table>
 		</div>
+		@if( $boleto->seccion == 'Diamante' || $boleto->seccion == 'Oro Plus')
+			<div class="container">
+				<p style="font-size: 12px;text-align: center;margin-top: 5px;"><strong style="text-decoration: underline;">IMPORTANTE:</strong> <br>Este boleto incluye acceso al Meet&Greet, para poder ser parte de el, deberás estar a las 7:45pm en el teatro.</p>
+			</div>
+		@endif
 		<div class="barcode-container">
-			<img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($boleto->codigo_barras, "C39") }}" alt="barcode" class="barcode"  />
+			<img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($boleto->codigo_barras, "C39") }}" alt="barcode" class="barcode" style="height: 60px;margin-top: 10px" />
 			<p>{{ $boleto->codigo_barras }}</p>
 		</div>
 

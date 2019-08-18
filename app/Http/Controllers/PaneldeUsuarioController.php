@@ -66,15 +66,15 @@ class PaneldeUsuarioController extends Controller
 
         // DB::table($evento->tabla)->where([['user', Auth::id()], ['status', 2]])->increment('impreso');
 
-        // if($evento->id == 123){            
-        //     $pdf = \PDF::loadView('user.boleto-info-extra', compact('data', 'boletos', 'precio', 'evento'));
-        // }else{
-        // }
+        if($evento->id == 123){
+            $pdf = \PDF::loadView('user.boleto-info-extra', compact('data', 'boletos', 'precio', 'evento'));
+        }else{
             $pdf = \PDF::loadView('user.boleto', compact('data', 'boletos', 'precio', 'evento'));
+        }
       
 
-    	// return $pdf->download('ticket_'.$evento->tabla.'.pdf');
-        return $pdf->stream('ticket_'.$evento->tabla.'.pdf');
+    	return $pdf->download('ticket_'.$evento->tabla.'.pdf');
+        // return $pdf->stream('ticket_'.$evento->tabla.'.pdf');
     }
 
     public function showFormForComprobante(){

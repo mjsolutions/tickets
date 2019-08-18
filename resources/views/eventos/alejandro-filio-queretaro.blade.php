@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
-@section('title', 'Jaime Flores y Luis Carlos Monroy')
+@section('title', 'Alejandro Filio')
 
-@section('description', 'Jaime Flores y Luis Carlos Monroy, Querétaro 01 de agosto, El Portón de Santiago, 21:00 hrs boletos en El Portón de Santiago y bolematico.com')
+@section('description', 'Alejandro Filio, Querétaro 28 de septiembre, El Portón de Santiago, 21:30 hrs boletos en El Portón de Santiago y bolematico.com')
 
 @section('styles')
-<meta property="og:url"  content="https://www.bolematico.com/eventos/jaime-flores-queretaro" />
-<meta property="og:title" content="Jaime Flores y Luis Carlos Monroy" />
-<meta property="og:description" content="Jaime Flores y Luis Carlos Monroy, Querétaro 01 de agosto, El Portón de Santiago, 21:00 hrs boletos en El Portón de Santiago y bolematico.com" />
-<meta property="og:image" content="https://www.bolematico.com/img/jaime-flores-queretaro.jpg" />
+<meta property="og:url"  content="https://www.bolematico.com/eventos/alejandro-filio-queretaro" />
+<meta property="og:title" content="Alejandro Filio" />
+<meta property="og:description" content="Alejandro Filio, Querétaro 28 de septiembre, El Portón de Santiago, 21:30 hrs boletos en El Portón de Santiago y bolematico.com" />
+<meta property="og:image" content="https://www.bolematico.com/img/alejandro-filio-queretaro.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
@@ -18,10 +18,10 @@
 <div class="image-header bg-4 overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Jaime Flores y Luis Carlos Monroy</h4>
+		<h4>Alejandro Filio</h4>
 		<div class="divider"></div>
 		<p class="mb-0"><i>El Portón de Santiago - Querétaro</i></p>
-		<p class="m-0"><i>01 de agosto - 20:30 hrs.</i></p>
+		<p class="m-0"><i>28 de septiembre - 20:30 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -38,7 +38,7 @@
 		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s10 offset-s1 m4 offset-m1 mb-30 card-flyer">
-				<img src="{{ asset('img/jaime-flores-queretaro.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/alejandro-filio-queretaro.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m6 offset-m1">				
@@ -50,18 +50,18 @@
 							<header>
 								<div class="col s12 teal accent-4">Diamante</div>
 							</header>
-							<div class="price col s12"><span>$350</span> MXN</div>
+							<div class="price col s12"><span>$650</span> MXN</div>
 						</div>
 					</div>
 
-					<div class="qcPricing col s12 center-align mb-10">
+					{{-- <div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
 								<div class="col s12 amber darken-1">Oro</div>
 							</header>
-							<div class="price col s12"><span>$300</span> MXN</div>
+							<div class="price col s12"><span>$450</span> MXN</div>
 						</div>
-					</div>
+					</div> --}}
 
 				</div>
 
@@ -80,37 +80,20 @@
 		</div>
 
 		<div id="detalles" class="col s12 tab-content">
-			<div class="col s12">
-				<h5 class="raleway quote">Jaime Flores</h5>
-			</div>
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/jaime-flores-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/alejandro-filio-bio.jpg') }}" class="responsive-img">
 			</div>
 			<div class="col s12 m7">
-				<p>Desde Huejutla, Hidalgo, llegó Jaime Flores, quien desde los 4 años se inició en el mundo de la música gracias a su padre y hermanos. A los 11 años ya tenía un disco ranchero y recorrió el país entero. Desde esta temprana edad pisó los escenarios de diversos palenques al lado de artistas como Denisse de Kalaffe, Dulce y Estela Núñez</p>
-				<p>Aunque el ámbito profesional lo llevó en un principio a estudiar odontología, el destino lo llevó de regreso a la música en 1991 cuando llegó al Distrito Federal para participar en el Festival Valores Juveniles, donde obtuvo destacados lugares por tres años consecutivos; además, como en los viejos tiempos tuvo una gran oportunidad en la XEW en un concurso de talento.</p>
-				<p>Después de pasar por bares, pequeños teatros, algunos programas de TV y radio, fue en 2003 cuando se unió a Luis Carlos y Raúl para formar 3 de Copas.</p>
+				<p>Alejandro Filio , trovador contemporáneo, lucha hoy por un “canto mejor” y apoya el momento de cambio en su país, México, que exige la presencia de artistas verdaderos y comprometidos con un canto honesto, congruente y de calidad.</p>
+				<p>Un canto con mensaje y sensibilidad. Un canto hecho poesía. Poesía accesible a toda la gente que gusta de lo estético.</p>
+				<p>Alejandro Filio busca romper fronteras y llegar a todos los países de habla hispana para compartir su poesía hecha canción, que es un reflejo del pensar y sentir de México.</p>
+				<p>Las canciones de Alejandro Filio han sido grabadas por varios interpretes y cuantautores entre los que podemos nombrar: Silvio Rodríguez, Víctor Manuel, Luis Eduardo Aute, Pedro Guerra, Tania Libertad, Alberto Cortez, Alejandro Lerner, Vicente Feliú, León Gieco, Juan Carlos Baglietto, Gerardo Alfonso, Carlos Varela, Amaury Pérez y Raúl Torres.</p>
 				
 			</div>
 			<div class="col m5 hide-on-small-only">
-				<img src="{{ asset('img/jaime-flores-bio.jpg') }}" class="responsive-img">
-			</div>
-			<div class="col s10 offset-s1">
-				<div class="divider"></div>
+				<img src="{{ asset('img/alejandro-filio-bio.jpg') }}" class="responsive-img">
 			</div>
 			<div class="clearfix"></div>
-			<div class="col s12">
-				<h5 class="raleway quote">Luis Carlos Monroy</h5>	
-			</div>
-			<div class="col s12 m4">
-				<img src="{{ asset('img/luis-monroy-bio.jpg') }}" class="responsive-img">
-			</div>
-			<div class="col s12 m8">
-				<p>Historia muy similar es la de Luis Carlos Monroy, quien dejó su casa en Hermosillo, Sonora a los 18 años. Vivió en Tepic, Guadalajara y finalmente en el DF, en todos estos lugares mostró su propuesta musical en festivales y bares.</p>
-				<p>En la capital del país, Luis Carlos experimentó también como actor. Participó como extra en telenovelas como Valeria y Maximiliano y programas humorísticos como el de Anabel Ferreira Presenta. Fue además corista, participó en eventos sociales, hizo jingles comerciales e incluso fue parte del conjunto Los Canallas, de corte popular.</p>
-        <p>Sus influencias van desde Juan Gabriel y José Alfredo Jiménez hasta Joan Manuel Serrat y Mario Benedetti.</p>
-        <p>Fue en 1992, en el Festival Valores Juveniles donde conoció a Jaime Flores y aunque coincidieron en su forma de hacer música pasaron varios años hasta que formaron 3 de Copas.</p>
-			</div>	
 			
 		</div>
 
@@ -120,18 +103,16 @@
 				<h5 class="mb-30 quote">Además de Bolematico, puedes adquirir tus entradas en:</h5>
 			</div>
 
-			<div class="col s12">									
-				<!-- ## VENUE MAP ## -->
+			<div class="col s12">
 				<div class="white z-depth-2">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.799498426775!2d-100.39395018559972!3d20.596244107779615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b2975a8d68f%3A0xdf13453c0e244eca!2sEl+Porton+de+Santiago!5e0!3m2!1ses!2smx!4v1550796654851" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-				
-				<!-- ## ADDRESS LIST ## -->
+
 					<div class=" p-30">
 						<h5 class="raleway"><b>El Portón de Santiago</b></h5>
 						<ul class="qcAddress">
 							<li><div class="divider"></div></li>
 							<li><i class="fa fa-map-marker"></i> <p> Av. Prol. Luis Pasteur 37, Centro, 76000 Santiago de Querétaro, Qro.</p></li>
-							<li><i class="fa fa-phone"></i><p> 01 442 688 9491</p></li>
+							<li><i class="fa fa-phone"></i><p> 442-740-0671</p></li>
 							<li><i class="fa fa-facebook-official"></i><p><a title="website" href="https://www.facebook.com/ElPortondeSantiago/" target="_blank">https://www.facebook.com/ElPortondeSantiago/</a></p></li>
 						</ul>
 					</div>
@@ -143,10 +124,10 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/CUo1mTDazug/hqdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/7NJRWT0HcbM/hqdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/CUo1mTDazug"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Amor mío - Jaime Flores</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/7NJRWT0HcbM"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Alejandro Filio - Aunque no estás</i></p>
 	</div>
 </section>
 
@@ -162,21 +143,22 @@
 				
 			{!! Form::open(['route' => 'payment.details', 'method' => 'POST', 'id' => 'paymentForm'])!!}
 
-			<div class="row">
+			{{-- <div class="row">
                     
-        <div class="col m6">
-          <div class="col m12 zona-radio">
-            {!! Form::radio('zona', 'Diamante', false, ['id' => 'diamante', 'required', 'class' => 'form_zona']) !!}
-            {!! Form::label('diamante', 'Diamante') !!}
-          </div>
-        </div>
-        <div class="col m6">
-          <div class="col m12 zona-radio">
-            {!! Form::radio('zona', 'Oro', false, ['id' => 'oro', 'required', 'class' => 'form_zona']) !!}
-            {!! Form::label('oro', 'Oro') !!}
-          </div>
-        </div>
-                
+		        <div class="col m6">
+		          <div class="col m12 zona-radio">
+		            {!! Form::radio('zona', 'Diamante', false, ['id' => 'diamante', 'required', 'class' => 'form_zona']) !!}
+		            {!! Form::label('diamante', 'Diamante') !!}
+		          </div>
+		        </div>
+		        <div class="col m6">
+		          <div class="col m12 zona-radio">
+		            {!! Form::radio('zona', 'Oro', false, ['id' => 'oro', 'required', 'class' => 'form_zona']) !!}
+		            {!! Form::label('oro', 'Oro') !!}
+		          </div>
+		        </div>
+		    </div> --}}
+		                
 		
 			<div class="row">
 				<div class="input-field col s12">
@@ -186,19 +168,19 @@
 			
 			</div>
 		
-			{!! Form::hidden('img', 'img/jaime-flores-queretaro.jpg') !!}
-			{!! Form::hidden('evento', 'Jaime Flores y Luis Carlos Monroy') !!}
-			{!! Form::hidden('fecha', '01 de agosto 2019') !!}
+			{!! Form::hidden('img', 'img/alejandro-filio-queretaro.jpg') !!}
+			{!! Form::hidden('evento', 'Alejandro Filio') !!}
+			{!! Form::hidden('fecha', '28 de septiembre 2019') !!}
 			{!! Form::hidden('lugar', 'El Portón de Santiago') !!}
 			{!! Form::hidden('ciudad', 'Querétaro') !!}
-			{!! Form::hidden('hora', '21:00 hrs') !!}
+			{!! Form::hidden('hora', '21:30 hrs') !!}
 			{!! Form::hidden('event_type', 'general') !!}
 			{!! Form::hidden('impresion_boleto', true) !!}
-			{{-- {!! Form::hidden('zona', '') !!} --}}
-			{!! Form::hidden('db_table', 'jaime_flores_queretaro_01ago') !!}
+			{!! Form::hidden('zona', 'Diamante') !!}
+			{!! Form::hidden('db_table', 'alejandro_filio_queretaro_28sep') !!}
 			{!! Form::hidden('info', 'Favor de comunicarte al numero 442-740-0671 para completar tu reservación.') !!}
-			{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
-			{!! Form::hidden('url', url('eventos/jaime-flores-queretaro')) !!}
+			{!! Form::hidden('precio', 650) !!}
+			{!! Form::hidden('url', url('eventos/alejandro-filio-queretaro')) !!}
 			
 			<div class="input-field center-align">
 				{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
@@ -208,12 +190,12 @@
 			
 		</div>
 		<div class="clearfix"></div>
-		@else
+	@else
 		<p class="center-align raleway">Debes iniciar sesión para poder realizar la compra</p>
 		<div class="col s12 m4 offset-m4 center-align">
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
-		@endif
+	@endif
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
@@ -264,22 +246,22 @@
 
 @section('scripts')
 	<script>
-    var precios = {'Diamante': 350, 'Oro': 300};
+    	// var precios = {'Diamante': 650, 'Oro': 450};
 		$('#modal-video-open').leanModal({
-        opacity: .8,
-        ready: function() {
-          var videoSCR = $('#modal-video-open').attr("data-video");
-          var videoSCRPlay = videoSCR + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1";
-          $("#iframe").attr('src', videoSCRPlay);
-        },
-        complete: function() { 
-            $("#iframe").attr('src', $('#modal-video-open').attr("data-video"));
-        }
-      });
+	        opacity: .8,
+	        ready: function() {
+	          var videoSCR = $('#modal-video-open').attr("data-video");
+	          var videoSCRPlay = videoSCR + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1";
+	          $("#iframe").attr('src', videoSCRPlay);
+	        },
+	        complete: function() { 
+	            $("#iframe").attr('src', $('#modal-video-open').attr("data-video"));
+	        }
+	     });
 
-    $(".form_zona").click(function(){
-			$("#form_precio").val(precios[$(this).val()]);
-		});
+  //   	$(".form_zona").click(function(){
+		// 	$("#form_precio").val(precios[$(this).val()]);
+		// });
 
 	</script>
 

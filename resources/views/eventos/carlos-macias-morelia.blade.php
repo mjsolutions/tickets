@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
-@section('title', 'Miguel Inzunza - Morelia')
+@section('title', 'Carlos Macias')
 
-@section('description', 'Miguel Inzunza en Morelia, 06 de septiembre, 21:00 hrs boletos en RS Viajes Centro y bolematico.com')
+@section('description', 'Carlos Macias, Morelia Mich., 30 de agosto, 21:00 hrs boletos en RS Viajes Centro y bolematico.com')
 
 @section('styles')
-<meta property="og:url"  content="https://www.bolematico.com/eventos/miguel-inzunza-morelia" />
-<meta property="og:title" content="Miguel Inzunza en Morelia" />
-<meta property="og:description" content="Miguel Inzunza en Morelia, 06 de septiembre, 21:00 hrs boletos en RS Viajes Centro y bolematico.com" />
-<meta property="og:image" content="https://www.bolematico.com/img/miguel-inzunza-morelia.jpg" />
+<meta property="og:url"  content="https:www//bolematico.com/eventos/carlos-macias-morelia" />
+<meta property="og:title" content="Carlos Macias" />
+<meta property="og:description" content="Carlos Macias, Morelia Mich., 30 de agosto, 21:00 hrs boletos en RS Viajes Centro y bolematico.com" />
+<meta property="og:image" content="https://www.bolematico.com/img/carlos-macias-morelia.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
@@ -18,10 +18,10 @@
 <div class="image-header bg-del-olmo overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Miguel Inzunza</h4>
+		<h4>Carlos Macias</h4>
 		<div class="divider"></div>
-		<p class="mb-0"><i>Cafe del Olmo - Morelia</i></p>
-		<p class="m-0"><i>06 de septiembre - 21:00 hrs.</i></p>
+		<p class="mb-0"><i>Café del Olmo - Morelia, Mich.</i></p>
+		<p class="m-0"><i>30 de agosto - 21:00 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -30,30 +30,40 @@
 	<div class="row">
 		<div class="col s12">
 			<ul class="tabs">
-				<li class="tab "><a class="active" href="#descripcion">Descripción</a></li>
+				<li class="tab "><a class="active" href="#precios">Precios</a></li>
 				<li class="tab "><a href="#detalles">Detalles</a></li>
-				<li class="tab "><a href="#lugares">Lugares de venta</a></li>
+				<li class="tab "><a id="tab_link-lugares" href="#lugares">Lugares de venta</a></li>
 			</ul>
 		</div>
-		<div id="descripcion" class="col s12 tab-content">
+		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s8 offset-s2 m4 offset-m1 mb-30 card-flyer">
-				<img src="{{ asset('img/miguel-inzunza-morelia.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/carlos-macias-morelia.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
-			<div class="col s12 m5 offset-m1">
-				
+			<div class="col s12 m5 offset-m1">				
+
 				<div class="row">
 
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 teal accent-4">Preventa</div>
+								<div class="col s12 teal accent-4">Diamante</div>
 							</header>
-							<div class="price col s12"><span>$350</span> MXN</div>
+							<div class="price col s12"><span>$650</span> MXN</div>
 						</div>
 					</div>
-					<p class="center-align">Dia del evento $400 MXN</p>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
+								<div class="col s12 amber darken-1">Oro</div>
+							</header>
+							<div class="price col s12"><span>$500</span> MXN</div>
+						</div>
+					</div>
+
+					<p class="center-align">Zona Oro de venta exlusivamente en: <br> <b>RS Viajes Centro</b></p>
 
 				</div>
 
@@ -61,36 +71,35 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						<p> * Informes y confirmación de tu reservación (una vez realizada tu compra) <br> <a href="tel:4431880358" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 443-188-0358</a> / <a href="tel:4432274979" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 443-227-4979</a></p>
+						<p> * Informes y confirmación de tu reservación (una vez realizada tu compra) <br> <a href="tel:4431880358" style="background: #4caf50; color: #fff; padding: 5px 10px;">443-188-0358</a> / <a href="tel:4434369615" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 443-436-9615</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="detalles" class="col s12 tab-content">	
+		<div id="detalles" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/miguel-inzunza-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/carlos-macias-bio.jpg') }}" class="responsive-img">
 			</div>
-			<div class="col s12 m8 text-justify">
-		        <p>Compositor, cantante y productor mexicano, nominado al Latín Grammy en 2018 en la categoría de productor. Fusiona géneros y ritmos diversos que dan como resultado un sonido alternativo, fresco y emotivo, en el que la canción es hilo conductor y a la vez protagonista. Comprometido con las letras, va desde lo mas desenfadado a lo mas reflexivo, imprimiendo siempre frescura y actualidad como características principales.</p>
-				<p>Sobresale como característica el uso de la tecnología al servicio de la canción, y en su búsqueda incorpora timbres electrónicos, loops e instrumentos acústicos en una amalgama sonora de personalidad modernista y al mismo tiempo emotiva.</p>
-				<p>Ha participado en un vasto número de festivales culturales y ferias literarias de Mexico e Iberoamérica, llevando una propuesta que transita sin etiquetas entre lo cultural y lo popular.</p>
 				
+			<div class="col s12 m9">	
+				<p><strong>Carlos Macías</strong>, cantautor, músico, compositor y productor musical originario de Chaipa de Corzo, Chiapas, el cual ha recibido grandes reconocimientos tales como nominaciones a los Grammys, premios lo nuestro y Bilboard. Ha sido compositor de artistas como Myriam, Pablo Montero, Cristian Castro y muy recientemente Luis Miguel ademas de colaborar con grandes personalidades del medio como Armando Manzanero, el cual lo ha descrito como "El cantautor más exquisito de la nueva generación de compositores".</p>
 			</div>
-			<div class="col m4 hide-on-small-only">
-				<img src="{{ asset('img/miguel-inzunza-bio.jpg') }}" class="responsive-img">
+			<div class="col m3 hide-on-small-only">
+				<img src="{{ asset('img/carlos-macias-bio.jpg') }}" class="responsive-img">
 			</div>
-			<div class="clearfix"></div>
-			<p>Fuente: <small>www.miguelinzunza.com</small></p>
-			
+			<div class="clearfix"></div>			
 		</div>
 
 		<div id="lugares" class="col s12 tab-content">
+			<div class="col s12">
+				<h5 class="mb-30 quote">Además de Bolematico, puedes adquirir tus entradas en:</h5>
+			</div>
 
 			<div class="col s12">									
 				<div class="white z-depth-2">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.1943227085408!2d-101.18477128552061!3d19.704349286730476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e0d6bca646b%3A0x1b0a3a981724216f!2sRS+Viajes+Centro!5e0!3m2!1ses!2smx!4v1501091355750" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
-
+				
 					<div class=" p-30">
 						<h5><b>RS Viajes Centro</b></h5>
 						<ul class="qcAddress">
@@ -109,17 +118,16 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/qsx5UbVSRxY/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/HFOjUum13ts/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/qsx5UbVSRxY"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Miguel Inzunza - Huellas De Febrero</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/HFOjUum13ts"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Carlos Macias - Divina Tú</i></p>
 	</div>
 </section>
-
 <section id="compra" class="section-comprar">
 	<div class="row mb-30">
 		<div class="col s12 m4 offset-m4">
-			<h5 class="mt-30 raleway quote">¡Aparta tus lugares!</h5>
+			<h5 class="mt-30 raleway quote">¡Aparta tus lugares! <br> <small>Zona Diamante</small></h5>
 		</div>
 	</div>
 
@@ -137,19 +145,19 @@
 			
 			</div>
 		
-			{!! Form::hidden('img', 'img/miguel-inzunza-morelia.jpg') !!}
-			{!! Form::hidden('evento', 'Miguel Inzunza') !!}
-			{!! Form::hidden('fecha', '06 de septiembre 2019') !!}
+			{!! Form::hidden('img', 'img/carlos-macias-morelia.jpg') !!}
+			{!! Form::hidden('evento', 'Carlos Macias') !!}
+			{!! Form::hidden('fecha', '30 de agosto 2019') !!}
 			{!! Form::hidden('lugar', 'Café del Olmo') !!}
 			{!! Form::hidden('ciudad', 'Morelia, Mich.') !!}
 			{!! Form::hidden('hora', '21:00 hrs') !!}
 			{!! Form::hidden('event_type', 'general') !!}
 			{!! Form::hidden('impresion_boleto', true) !!}
-			{!! Form::hidden('db_table', 'miguel_inzunza_morelia_06sep') !!}
-      		{!! Form::hidden('info', 'Favor de comunicarte al numero 4431880358 para completar tu reservación.') !!}
-			{!! Form::hidden('zona', 'Preventa') !!}
-			{!! Form::hidden('precio', 350) !!}  
-			{!! Form::hidden('url', url('eventos/miguel-inzunza-morelia')) !!}
+			{!! Form::hidden('zona', 'Diamante') !!}
+			{!! Form::hidden('db_table', 'carlos_macias_morelia_30ago') !!}
+			{!! Form::hidden('info', 'Favor de comunicarte al numero 4431880358 o 4434369615 para completar tu reservación.') !!}
+			{!! Form::hidden('precio', '650') !!}
+			{!! Form::hidden('url', url('eventos/carlos-macias-morelia')) !!}
 			
 			<div class="input-field center-align">
 				{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
@@ -175,7 +183,6 @@
 
 	
 	<div class="row">
-		<h5 class="raleway center-align">Venta de boletos también en RS Viajes Centro</h5>
 		<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
 		<div class="row center-align">
 			<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
@@ -202,7 +209,6 @@
 
 		</div>
 	</div>
-
 </section>
 
 <div id="modal-video" class="modal modal-large">
@@ -216,7 +222,6 @@
 
 @section('scripts')
 	<script>
-
 		$('#modal-video-open').leanModal({
 			opacity: .8,
 			ready: function() {
@@ -230,5 +235,4 @@
 		    });
 
 	</script>
-
 @endsection

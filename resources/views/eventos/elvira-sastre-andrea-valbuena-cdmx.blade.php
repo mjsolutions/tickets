@@ -12,6 +12,18 @@
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/event-select-manual.css') }}">
+<style type="text/css">
+	.label-new-section {
+		padding: 5px 10px;
+	    background: #EF5350;
+	    border-radius: 25px;
+	    color: #FFF;
+	    position: absolute;
+	    left: 15px;
+	    top: -7px;
+	    box-shadow: 1px 1px 0px 1px #d2b500;
+	}
+</style>
 @endsection
 
 @section('content')
@@ -50,6 +62,16 @@
 						<div class="box col s12">
 							<header>
 								<div class="col s12 teal accent-4">Diamante <small>(Incluye Meet&Greet)</small></div>
+							</header>
+							<div class="price col s12"><span>$ 850</span> MXN.</div>
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10" style="position: relative">
+						<span class="label-new-section">NUEVO</span>
+						<div class="box col s12">
+							<header>
+								<div class="col s12 red lighten-1">Oro plus <small>(Incluye Meet&Greet)</small></div>
 							</header>
 							<div class="price col s12"><span>$ 850</span> MXN.</div>
 						</div>
@@ -157,7 +179,7 @@
 				<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 			</div>
 			<div class="col s12 m6 white div-border" style="padding-top:10px;">
-				@include('maps.teatro-silvia-pinal')
+				@include('maps.teatro-silvia-pinal-4s')
 			</div>
 			<div class="col s12 m6">
 				<div class="col s12 mb-15">
@@ -256,7 +278,7 @@
 	<script>
 		var table = 'elvira_andrea_mexico_12sep';
 		var base_path = '{{ url('/') }}';
-		var precios = {'Diamante': 850, 'Oro': 550, 'Plata': 400};
+		var precios = {'Diamante': 850, 'Oro Plus': 850, 'Oro': 550, 'Plata': 400};
 		var special_char_n = 'NN';
 
 		$('#modal-video-open').leanModal({

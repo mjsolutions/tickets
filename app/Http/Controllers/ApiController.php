@@ -235,6 +235,8 @@ class ApiController extends Controller
 
         } elseif ($req->type == 'charge.expired') {
 
+            //TODO: Agregar tabla de excepciones para las ordenes apartadas que pagan directamente a Arqui antes de vencer y el sistema manda notificacion cuando vence (evitar que se modifiquen estas ordenes) 
+
             $order_id = $req->data['object']['order_id'];
             $order = json_decode( \Conekta\Order::find($order_id), true );
 

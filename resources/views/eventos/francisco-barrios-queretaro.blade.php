@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
-@section('title', 'Macario Brujo')
+@section('title', 'Francisco Barrios "El Mastuerzo"')
 
-@section('description', 'Macario Brujo, Querétaro 25 de junio, El Portón de Santiago, 20:30 hrs boletos en El Portón de Santiago y bolematico.com')
+@section('description', 'Francisco Barrios "El Mastuerzo", Querétaro 08 de agosto, El Portón de Santiago, 21:00 hrs boletos en El Portón de Santiago y bolematico.com')
 
 @section('styles')
-<meta property="og:url"  content="https://www.bolematico.com/eventos/macario-brujo-queretaro" />
-<meta property="og:title" content="Macario Brujo" />
-<meta property="og:description" content="Macario Brujo, Querétaro 25 de junio, El Portón de Santiago, 20:30 hrs boletos en El Portón de Santiago y bolematico.com" />
-<meta property="og:image" content="https://www.bolematico.com/img/macario-brujo-queretaro.jpg" />
+<meta property="og:url"  content="https://www.bolematico.com/eventos/francisco-barrios-queretaro" />
+<meta property="og:title" content='Francisco Barrios "El Mastuerzo"' />
+<meta property="og:description" content='Francisco Barrios "El Mastuerzo", Querétaro 08 de agosto, El Portón de Santiago, 21:00 hrs boletos en El Portón de Santiago y bolematico.com' />
+<meta property="og:image" content="https://www.bolematico.com/img/francisco-barrios-queretaro.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
@@ -18,10 +18,10 @@
 <div class="image-header bg-4 overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Macario Brujo</h4>
+		<h4>Francisco Barrios <br> <small>"El Mastuerzo"</small></h4>
 		<div class="divider"></div>
 		<p class="mb-0"><i>El Portón de Santiago - Querétaro</i></p>
-		<p class="m-0"><i>25 de junio - 20:30 hrs.</i></p>
+		<p class="m-0"><i>08 de agosto - 21:00 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -38,7 +38,7 @@
 		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s10 offset-s1 m4 offset-m1 mb-30 card-flyer">
-				<img src="{{ asset('img/macario-brujo-queretaro.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/francisco-barrios-queretaro.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m6 offset-m1">				
@@ -50,7 +50,7 @@
 							<header>
 								<div class="col s12 teal accent-4">General</div>
 							</header>
-							<div class="price col s12"><span>$150</span> MXN</div>
+							<div class="price col s12"><span>$200</span> MXN</div>
 						</div>
 					</div>
 
@@ -63,7 +63,6 @@
 						<p class="mb-0"> * Informes y confirmación de tu compra:</p>
 						<ul style="margin-top: 0;padding-left: 15px;">
 							<li><i style="background-color: #4caf50; color: #fff; border-radius: 50%;" class="fa fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=524427400671" target="_blank">442-740-0671</a></li>
-							<li><i style="background-color: #4caf50; color: #fff; border-radius: 50%;" class="fa fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=524521741255" target="_blank">452-174-1255</a></li>
 						</ul>
 					</div>
 				</div>
@@ -72,18 +71,21 @@
 
 		<div id="detalles" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/macario-brujo-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/francisco-barrios-bio.jpg') }}" class="responsive-img">
 			</div>
 				
 			<div class="col s12 m9">	
-                <p>Héctor Fernández, más conocido como Macario Brujo, El Dios satánico del sexo, la leyenda del camino como se autodenomina, es un comediante que practica el Stand Up .</p>
-                <p>Él expresa que los mexicanos realmente no se ríen de todo como en realidad se cree “Los mexicanos nos tomamos la vida muy en serio, nos exigimos demasiado, igual no vamos a morir”.</p>
-                <p>Macario es un comediante de un humor muy ácido y que a pocos agrada, pero en la vida real conoce los problemas de la sociedad, busca mejorar profesionalmente y es consciente de la situación que el país sufre</p>
-                
+        	<p>Francisco Arturo Barrios Martínez, mejor conocido como El mastuerzo, nació un 23 de noviembre en Tulancingo, Hidalgo. Es el cuarto y menor de los hijos de la señora Raquel Martínez; su padre David Barrios y sus hermanos Gloria Edith, Clemente y David. Es antropólogo de carrera pero “psiquiatra de naturaleza”, afirma.</p>
+        	<p>Emigra a la Ciudad de México en 1971 donde estudia el nivel medio superior y, de 1976 a 1984, forma parte del grupo Los nakos, surgido como brigada cultural del Consejo Nacional de Huelga del Movimiento Estudiantil de 1968, agrupación con la que realiza materiales discográficos como Los nakos y La lengua, entre otros. Además, participa en diversas giras, festivales y encuentros de canción y teatro en países de Europa, así como Estados Unidos, Cuba y, por supuesto, México, entre otros</p>
+        	<p>Paralelamente a este proyecto, en 1983 junto con Armando Vega-Gil y Sergio Arau, forma una de las bandas más representativas del rock mexicano: Botellita de Jerez, que graba discos como Charrock and Roll y ¡Naco es chido!, sólo por mencionar algunos.</p>
+        	<p>En 1996 el cuarteto se despide y realiza el concierto El último Guacarrock, que le da título a la última grabación de la banda que, años después, se reencuentra con los integrantes originales y comienza una nueva etapa con distintas producciones como Viva Tin-Tan (banda sonora de la película Piedras Verdes) y Tributo a Los Tigres del Norte.</p>
+        	<p>En 1996, como una necesidad de expresión individual, lanza su primera producción como solista titulada Prohibido, bajo el sello discográfico BMG-Culebra, que mezcla canciones con temáticas de amor, protesta, humor y sátira. Cinco años más tarde, El mastuerzo saca su segundo disco Podrid@, acompañado por la Banda Karnede®es y la participación de su hija Valentina Barrios, mientras que en 2008 lanza Tributo a la otra Kanción Popular Mexicana, homenaje a los que se dedican a la creación de la canción y al quehacer artístico.</p>
+        	<p>En 2015, la Sociedad de Autores y Compositores de México (SACM) le entrega el reconocimiento Trayectoria 25 y Más…</p>
+        	<p>Fuente: <small>http://www.sacm.org.mx/biografias/biografias-interior.asp?txtSocio=25028</small></p>                
 
 			</div>
 			<div class="col s3 hide-on-small-only">
-				<img src="{{ asset('img/macario-brujo-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/francisco-barrios-bio.jpg') }}" class="responsive-img">
 			</div>
 			<div class="clearfix"></div>	
 			
@@ -118,10 +120,10 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/O7EpXuSpWho/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/0ZChXSrHu-Y/hqdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/O7EpXuSpWho"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Macario Brujo</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/0ZChXSrHu-Y"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Francisco Barrios "El Mastuerzo" - Prohibido</i></p>
 	</div>
 </section>
 
@@ -145,19 +147,19 @@
 			
 			</div>
 		
-			{!! Form::hidden('img', 'img/macario-brujo-queretaro.jpg') !!}
-			{!! Form::hidden('evento', 'Macario Brujo') !!}
-			{!! Form::hidden('fecha', '25 de junio 2019') !!}
+			{!! Form::hidden('img', 'img/francisco-barrios-queretaro.jpg') !!}
+			{!! Form::hidden('evento', 'Francisco Barrios "El Mastuerzo"') !!}
+			{!! Form::hidden('fecha', '08 de agosto 2019') !!}
 			{!! Form::hidden('lugar', 'El Portón de Santiago') !!}
 			{!! Form::hidden('ciudad', 'Querétaro, Quer.') !!}
-			{!! Form::hidden('hora', '20:30 hrs') !!}
+			{!! Form::hidden('hora', '21:00 hrs') !!}
 			{!! Form::hidden('event_type', 'general') !!}
 			{!! Form::hidden('impresion_boleto', true) !!}
 			{!! Form::hidden('zona', 'General') !!}
-			{!! Form::hidden('db_table', 'macario_brujo_quer_25jun') !!}
+			{!! Form::hidden('db_table', 'fco_barrios_quer_08ago') !!}
 			{!! Form::hidden('info', 'Favor de comunicarte al numero 442-740-0671 para completar tu reservación.') !!}
-			{!! Form::hidden('precio', '150') !!}
-			{!! Form::hidden('url', url('eventos/macario-brujo-queretaro')) !!}
+			{!! Form::hidden('precio', 200) !!}
+			{!! Form::hidden('url', url('eventos/francisco-barrios-queretaro')) !!}
 			
 			<div class="input-field center-align">
 				{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
