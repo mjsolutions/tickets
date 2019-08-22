@@ -25,14 +25,14 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-    	return view('admin.users.create');
+            return view('admin.users.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
+public function create()
+    {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */

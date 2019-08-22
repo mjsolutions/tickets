@@ -703,6 +703,7 @@ img {
 [type="radio"]+label.check-up:after {
 	left: 50%;
 	top: -150%;
+	margin-left: -8px;
 }
 
 

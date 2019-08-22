@@ -15,7 +15,7 @@
 		padding: 3px 10px;
 		border-radius: 50%;
 	}
-	input[type=text] { height: 2rem; }
+	input[type=text], input[type=email] { height: 2rem; }
 	.input-field label { top: 0.3rem; }
 	.input-field label.active { transform: translateY(-110%); }
 	.input-field .prefix { 
@@ -41,6 +41,10 @@
 	.dropdown-content li>span { 
 		padding: 5px 15px;
 		color: inherit;
+	}
+	.fa.fa-money { 
+		color: #7C869A;
+		line-height: 0.6;
 	}
 </style>
 @endsection
@@ -213,8 +217,26 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 
 			<div class="col s12 card-text white mt-30">
 				{!! Form::open(['route'=>'payment.confirm', 'method'=>'POST', 'id'=>'payment']) !!}
-					<div class="row center-align pt-40" id="form-inputs">
-
+					<div class="row center-align pt-40" id="form-radios">
+						
+					@if(Auth::user()->isPuntoDeVenta())
+						<div class="col s4">
+							<div>
+								<div class="col s10 offset-s1">
+									{!! Form::radio('payment_form', 'Efectivo', '', ['id' => 'payment_cash']) !!}	
+									<label for="payment_cash" class="check-up center-align"><i class="fa fa-money fa-3x"></i></label>
+								</div>
+							</div>
+						</div>
+						<div class="col s4">
+							<div>
+								<div class="col s10 offset-s1">
+									{!! Form::radio('payment_form', 'Tarjeta', '', ['id' => 'payment_card']) !!}	
+									<label for="payment_card" class="check-up"><img src="{{ asset('img/cards.svg') }}" class="responsive-img"></label>
+								</div>
+							</div>
+						</div>
+					@else
 						<div class="col s6">
 							<div>
 								<div class="col s10 offset-s1">
@@ -223,46 +245,70 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 								</div>
 							</div>
 						</div>
-						<div class="col s6">
+					@endif
+						<div class="col @if(Auth::user()->isPuntoDeVenta()) s4 @else s6 @endif">
 							<div>
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'spei', '', ['id' => 'payment_spei']) !!}
 									<label for="payment_spei" class="check-up"><img src="{{ asset('img/spei.svg') }}" alt="" class="responsive-img"></label>
 								</div>
 							</div>
-						</div>	
-						
-						{!! Form::hidden('evento', $req->evento) !!}
-						{!! Form::hidden('fecha', $req->fecha) !!}
-						{!! Form::hidden('lugar', $req->lugar) !!}
-						{!! Form::hidden('ciudad', $req->ciudad) !!}
-						{!! Form::hidden('hora', $req->hora) !!}
-						{!! Form::hidden('precio', $req->precio) !!}
-						{!! Form::hidden('seccion', $req->zona) !!}
-						@if( $req->event_type == "numerado" )
-						{!! Form::hidden('asientos_id', implode("-", $id) ) !!}
-						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}						
-						@if($req->select_type != 'manual')
-						{!! Form::hidden('asientos', "*".implode(" *", $sit) ) !!}
-						{!! Form::hidden('fila', $req->fila) !!}
-						@else
-						{!! Form::hidden('asientos', $str_sits ) !!}
-						{!! Form::hidden('fila', '') !!}
-						@endif
-						@else
-						{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}		
-						@endif
-						{!! Form::hidden('event_type', $req->event_type) !!}
-						{!! Form::hidden('impresion_boleto', $req->impresion_boleto) !!}
-						{!! Form::hidden('db_table', $req->db_table) !!}
-						{!! Form::hidden('info', $req->info) !!}
-						{!! Form::hidden('customer_name', Auth::user()->name.' '.Auth::user()->last_name.' '.Auth::user()->second_lname) !!}
-						{!! Form::hidden('customer_email', Auth::user()->email) !!}
-						{!! Form::hidden('customer_phone', Auth::user()->tel) !!}
-						{!! Form::hidden('event_photo', asset($req->img) ) !!}
-						{!! Form::hidden('url', $req->url) !!}
-						
+						</div>
 					</div>
+
+					@if(Auth::user()->isPuntoDeVenta())
+					<div class="row" id="form-inputs">
+						<div class="input-field col s10 offset-s1">
+	
+							{!! Form::label('customer_name','Nombre completo') !!}
+							{!! Form::text('customer_name', null, ['class' => 'validate', 'required']) !!}
+			
+						</div>
+						<div class="input-field col s10 offset-s1">
+	
+							{!! Form::label('customer_email','Email') !!}
+							{!! Form::email('customer_email', null, ['class' => 'validate', 'required']) !!}
+			
+						</div>
+						<div class="input-field col s10 offset-s1">
+	
+							{!! Form::label('customer_phone','Telefono') !!}
+							{!! Form::text('customer_phone', null, ['class' => 'validate', 'required']) !!}
+			
+						</div>
+					</div>
+					@else
+					{!! Form::hidden('customer_name', Auth::user()->name.' '.Auth::user()->last_name.' '.Auth::user()->second_lname) !!}
+					{!! Form::hidden('customer_email', Auth::user()->email) !!}
+					{!! Form::hidden('customer_phone', Auth::user()->tel) !!}
+					@endif
+						
+					{!! Form::hidden('evento', $req->evento) !!}
+					{!! Form::hidden('fecha', $req->fecha) !!}
+					{!! Form::hidden('lugar', $req->lugar) !!}
+					{!! Form::hidden('ciudad', $req->ciudad) !!}
+					{!! Form::hidden('hora', $req->hora) !!}
+					{!! Form::hidden('precio', $req->precio) !!}
+					{!! Form::hidden('seccion', $req->zona) !!}
+					@if( $req->event_type == "numerado" )
+					{!! Form::hidden('asientos_id', implode("-", $id) ) !!}					
+					@if($req->select_type != 'manual')
+					{!! Form::hidden('asientos', "*".implode(" *", $sit) ) !!}
+					{!! Form::hidden('fila', $req->fila) !!}
+					@else
+					{!! Form::hidden('asientos', $str_sits ) !!}
+					{!! Form::hidden('fila', '') !!}
+					@endif
+					@endif
+					{!! Form::hidden('asientos_cantidad', $num_asientos ) !!}	
+					{!! Form::hidden('event_type', $req->event_type) !!}
+					{!! Form::hidden('impresion_boleto', $req->impresion_boleto) !!}
+					{!! Form::hidden('db_table', $req->db_table) !!}
+					{!! Form::hidden('info', $req->info) !!}
+					{!! Form::hidden('event_photo', asset($req->img) ) !!}
+					{!! Form::hidden('url', $req->url) !!}
+						
+					
 						
 				{!! Form::close() !!}
 
@@ -346,66 +392,32 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 @endsection
 
 @section('scripts')
-<script type="text/javascript" src="https://cdn.conekta.io/js/latest/conekta.js"></script>
+
 <script type="text/javascript">
-	$(document).ready(function(){
-		
-		Conekta.setPublicKey('key_A45AqPGnrqTPaPV3eXto8TA');
-		// Conekta.setPublicKey('key_aYwC2MjtD5WfJDP3DJBsgYg');
 
-		//Mostar el form de tarjeta cuando se da back en el navegador
-		if($('#payment_card').is(':checked')){
-			$("#card-form").removeClass('hide');
-		}
+	function print_error(message){
+		$("#error-response").html('<b class="red-text">'+message+'</b>');
+		$("#form-radios").css('border', 'none');
+	}
 
-		//Click en cualquier forma de pago
-		$('input:radio').click(function(){
-			if($('#payment_card').is(':checked')){
-				$("#card-form").removeClass('hide');
-			}else{
-				$("#card-form").addClass('hide');				
-			}
-		});
-
-		var conektaSuccessResponseHandler = function(token) {
-			// console.log(token);
-			var $form = $("#payment");
-			//Inserta el token_id en la forma para que se envíe al servidor
-			$form.append($('<input type="hidden" name="conektaTokenId" id="conektaTokenId">').val(token.id));
-			$("#payment").trigger('submit');//Hace submit
-		};
-
-		var conektaErrorResponseHandler = function(response) {
-			var $form = $("#card-form");
-			$(".card-errors").html('<b class="red-text">'+response.message_to_purchaser+'</b>');
-			console.log(response);
-			$("#btn-submit").removeClass('disabled');
-		};
-		
+	$(document).ready(function(){		
 
 		$("#btn-submit").click(function(){
 
-			//Validar que este seleccionad alguna forma de pago 
+			// Validar que este seleccionado alguna forma de pago 
 			if(!$('input:radio').is(':checked')){
-				$("#btn-submit").removeClass('disabled');
-				$("#btn-submit").html('CONFIRMAR COMPRA');
-				$("#error-response").html('<b class="red-text">Debes seleccionar una forma de pago</b>');
-				$("#form-inputs").css('border', '2px solid #ff3400');
-				return false;
-			}else if($('#payment_card').is(':checked')){
-				$("#card-form").trigger('submit');
-			}else{
-				$("#payment").trigger('submit');
+				print_error('Debes seleccionar una forma de pago');
+				$("#form-radios").css('border', '2px solid #ff3400');
+				return;
 			}
 
-		});
+			if( $.trim( $("#customer_name").val() ) == '' || $.trim( $("#customer_email").val() ) == '' || $.trim( $("#customer_phone").val() ) == '' ){
+				print_error('Todos los campos del formulario son requeridos');
+				$("#form-inputs").css('border', '2px solid #ff3400');
+				return;
+			}
 
-		$("#card-form").submit(function(event) {
-		  var $form = $(this);
-		  // Previene hacer submit más de una vez
-		  $("#btn-submit").addClass('disabled');
-		  Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
-		  return false;
+			$("#payment").trigger('submit');
 		});
 
 		$("#payment").submit(function(e){

@@ -151,20 +151,23 @@
 			<div class="col s12 z-depth-2 p-30 bg-gray">
 					
 				@if($payment == 'paid')
-				<h5 class="quote"><b>¡SE HA COMPLETADO TU COMPRA!</b></h5>
+				<h5 class="quote"><b>¡SE HA COMPLETADO LA COMPRA!</b></h5>
 				<div class="divider col-center col s10"></div>
-				<p>Para apartar tus lugares deberas llamar al número <b>{{ $order->line_items[0]->metadata['info'] }}</b> y realizar la reservación respectiva con tu ID de transacción el cual ha sido enviado a tu email con el que te registraste en Bolematico.</p>
-				<p>Esta información ha sido enviada a tu cuenta de correo, de no ser asi puedes contactarte con nosotros <a href="{{ route('contacto') }}">aquí</a></p>
-				{{-- <p>Tienes hasta una hora antes del dia del evento para recoger tus boletos. </p>					 --}}
+					@if( Auth::user()->isPuntoDeVenta() )
+					<p>Los boletos han sido enviados a la cuenta de correo {{ $email }}</p>
+					<p class="center-align"><a href="{{ $url }}" class="btn waves-effect waves-light  green darken-2">Volver al evento</a></p>
+					@else
+					<p>Esta información ha sido enviada a tu cuenta de correo, de no ser asi puedes contactarte con nosotros <a href="{{ route('contacto') }}">aquí</a></p>
+					@endif
 				@else
 				<h5 class="quote"><b>¡SE HA COMPLETADO TU ORDEN!</b></h5>
 				<div class="divider col-center col s10"></div>
 				<p>Hemos enviado a tu email un comprobante como el que aparece en esta página con el numero de referencia para que puedas completar tu pago.</p>
 				<p>Una vez que nos sea notificado tu pago, enviaremos a tu cuenta de correo la confirmación de tu pago asi como las instrucciones finales para terminar el proceso.</p>
 				<p>Cuentas con 24 hrs para realizar tu pago.</p>
+				<p>Si tienes alguna duda recuerda que puedes ponerte en <a href="{{ route('contacto') }}">contacto</a> con nosotros.</p>
 				@endif
 				
-				<p>Si tienes alguna duda recuerda que puedes ponerte en <a href="{{ route('contacto') }}">contacto</a> con nosotros.</p>
 
 			</div>
 		

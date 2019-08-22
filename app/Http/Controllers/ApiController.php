@@ -13,48 +13,8 @@ use Log;
 
 class ApiController extends Controller
 {
-    public function getFilas($table, $zona) {
-
-        // if($table == 'santiago_cruz_morelia_30may'){
-        //      return DB::table($table)
-        //             ->select('fila')
-        //             ->where([
-        //                 ['seccion', $zona],
-        //                 ['status', 0]
-        //             ])
-        //             ->whereNotIn('fila', ['A', 'B', 'C'])
-        //             ->groupBy('fila')->get();
-        // }
-
-        return DB::table($table)
-                ->select('fila')
-                ->where([
-                    ['seccion', $zona],
-                    ['status', 0]
-                ])
-                ->groupBy('fila')->get();
-        
-    }
-
-    public function getAsientos($table, $fila) {
-
-            return DB::table($table)
-                    ->select('id','asiento')
-                    ->where([
-                        ['fila', $fila],
-                        ['status', 0]
-                    ])->get();
-    }
-
+    
     public function getMapAsientos($table, $bloque, $order_fila, $order_asiento) {
-
-        if($table == 'ornelas_morelia_05abr'){
-            return DB::table($table)
-                ->where('bloque', $bloque)
-                ->orderBy('fila', $order_fila)
-                ->whereNotIn('fila', ['A', 'B', 'C'])
-                ->orderBy('asiento', $order_asiento)->get();
-        }
         
         return DB::table($table)
                 ->where('bloque', $bloque)

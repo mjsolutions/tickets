@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
-@section('title', 'Alejandro Filio')
+@section('title', 'Daniel Sosa')
 
-@section('description', 'Alejandro Filio, Querétaro 28 de septiembre, El Portón de Santiago, 21:30 hrs boletos en El Portón de Santiago y bolematico.com')
+@section('description', 'Daniel Sosa, Acapulco 28 de septiembre, Hotel Calinda Beach, 21:00 hrs boletos en Hotel Calinda Beach y bolematico.com')
 
 @section('styles')
-<meta property="og:url"  content="https://www.bolematico.com/eventos/alejandro-filio-queretaro" />
-<meta property="og:title" content="Alejandro Filio" />
-<meta property="og:description" content="Alejandro Filio, Querétaro 28 de septiembre, El Portón de Santiago, 21:30 hrs boletos en El Portón de Santiago y bolematico.com" />
-<meta property="og:image" content="https://www.bolematico.com/img/alejandro-filio-queretaro.jpg" />
+<meta property="og:url"  content="https://www.bolematico.com/eventos/daniel-sosa-acapulco" />
+<meta property="og:title" content="Daniel Sosa" />
+<meta property="og:description" content="Daniel Sosa, Acapulco 28 de septiembre, Hotel Calinda Beach, 21:00 hrs boletos en Hotel Calinda Beach y bolematico.com" />
+<meta property="og:image" content="https://www.bolematico.com/img/daniel-sosa-acapulco.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
@@ -18,10 +18,10 @@
 <div class="image-header bg-4 overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Alejandro Filio</h4>
+		<h4>Daniel Sosa</h4>
 		<div class="divider"></div>
-		<p class="mb-0"><i>El Portón de Santiago - Querétaro</i></p>
-		<p class="m-0"><i>28 de septiembre - 21:30 hrs.</i></p>
+		<p class="mb-0"><i>Hotel Calinda Beach - Acapulco</i></p>
+		<p class="m-0"><i>28 de septiembre - 21:00 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -38,7 +38,7 @@
 		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s10 offset-s1 m4 offset-m1 mb-30 card-flyer">
-				<img src="{{ asset('img/alejandro-filio-queretaro.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/daniel-sosa-acapulco.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m6 offset-m1">				
@@ -50,18 +50,18 @@
 							<header>
 								<div class="col s12 teal accent-4">Diamante</div>
 							</header>
-							<div class="price col s12"><span>$650</span> MXN</div>
+							<div class="price col s12"><span>$430</span> MXN</div>
 						</div>
 					</div>
 
-					{{-- <div class="qcPricing col s12 center-align mb-10">
+					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 amber darken-1">Oro</div>
+								<div class="col s12 grey lighten-1">Plata</div>
 							</header>
-							<div class="price col s12"><span>$450</span> MXN</div>
+							<div class="price col s12"><span>$380</span> MXN</div>
 						</div>
-					</div> --}}
+					</div>
 
 				</div>
 
@@ -69,11 +69,7 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1 m8 offset-m2">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						<p class="mb-0"> * Informes y confirmación de tu compra:</p>
-						<ul style="margin-top: 0;padding-left: 15px;">
-							<li><i style="background-color: #4caf50; color: #fff; border-radius: 50%;" class="fa fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=524427400671" target="_blank">442-740-0671</a></li>
-							{{-- <li><i style="background-color: #4caf50; color: #fff; border-radius: 50%;" class="fa fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=524521741255" target="_blank">452-174-1255</a></li> --}}
-						</ul>
+						<p class="mb-0"> * Informes: <br> <a href="tel:5571701175" style="background: #4caf50; color: #fff; padding: 5px 10px;">557-170-1175</a> / <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;">452-174-1255</a></p>
 					</div>
 				</div>
 			</div>
@@ -81,17 +77,17 @@
 
 		<div id="detalles" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/alejandro-filio-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/daniel-bio2.jpg') }}" class="responsive-img">
 			</div>
-			<div class="col s12 m7">
-				<p>Alejandro Filio , trovador contemporáneo, lucha hoy por un “canto mejor” y apoya el momento de cambio en su país, México, que exige la presencia de artistas verdaderos y comprometidos con un canto honesto, congruente y de calidad.</p>
-				<p>Un canto con mensaje y sensibilidad. Un canto hecho poesía. Poesía accesible a toda la gente que gusta de lo estético.</p>
-				<p>Alejandro Filio busca romper fronteras y llegar a todos los países de habla hispana para compartir su poesía hecha canción, que es un reflejo del pensar y sentir de México.</p>
-				<p>Las canciones de Alejandro Filio han sido grabadas por varios interpretes y cuantautores entre los que podemos nombrar: Silvio Rodríguez, Víctor Manuel, Luis Eduardo Aute, Pedro Guerra, Tania Libertad, Alberto Cortez, Alejandro Lerner, Vicente Feliú, León Gieco, Juan Carlos Baglietto, Gerardo Alfonso, Carlos Varela, Amaury Pérez y Raúl Torres.</p>
+			<div class="col s12 m8">
+				<p>Con tan solo 23 años de edad y cuatro de trayectoria como comediante, Daniel está totalmente convencido de que lo mejor que pudo haber hecho fue renunciar a su vida godín para dedicarse por completo a su verdadera pasión, el mundo de la comedia.</p>
+				<p>Después de eso, Sosa, que también es conocido por su faceta en el mundo de los vines, se preparó a nivel profesional en el Teatro de la Comedia y a pesar de que la situación en su casa no fue tan motivante como él esperaba, estaba completamente decidido, se subió al escenario por primera vez y su sorpresa fue más grande que sus nervios.</p>
+				<p>Sobre su estilo, Sosa menciona que es un comediante anecdótico, sus chistes se basan en problemas elementales, incluso utiliza cuestiones que le provocan incomodidad, “Puedo hablar de los godínez, de cosas que no entiendo, de anécdotas propias y hasta de cosas que por ahí escucho y me parecen buenos elementos para armar un chiste”.</p>
+				<p>Daniel también nos platicó sobre algunos de los personajes que más admira, durante su infancia era fanático de las películas de Cantinflas así como de los chistes de Polo Polo, ambos referentes importantes de la comedia mexicana.</p>
 				
 			</div>
-			<div class="col m5 hide-on-small-only">
-				<img src="{{ asset('img/alejandro-filio-bio.jpg') }}" class="responsive-img">
+			<div class="col m4 hide-on-small-only">
+				<img src="{{ asset('img/daniel-bio2.jpg') }}" class="responsive-img">
 			</div>
 			<div class="clearfix"></div>
 			
@@ -105,15 +101,15 @@
 
 			<div class="col s12">
 				<div class="white z-depth-2">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.799498426775!2d-100.39395018559972!3d20.596244107779615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b2975a8d68f%3A0xdf13453c0e244eca!2sEl+Porton+de+Santiago!5e0!3m2!1ses!2smx!4v1550796654851" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15273.65162081165!2d-99.861045!3d16.855457!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x121a0b1baaf27ced!2sHotel+Calinda+Beach+Acapulco!5e0!3m2!1ses!2smx!4v1550594831928" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 					<div class=" p-30">
-						<h5 class="raleway"><b>El Portón de Santiago</b></h5>
+						<h5 class="raleway"><b>Hotel Calinda Beach</b></h5>
 						<ul class="qcAddress">
 							<li><div class="divider"></div></li>
-							<li><i class="fa fa-map-marker"></i> <p> Av. Prol. Luis Pasteur 37, Centro, 76000 Santiago de Querétaro, Qro.</p></li>
-							<li><i class="fa fa-phone"></i><p> 442-740-0671</p></li>
-							<li><i class="fa fa-facebook-official"></i><p><a title="website" href="https://www.facebook.com/ElPortondeSantiago/" target="_blank">https://www.facebook.com/ElPortondeSantiago/</a></p></li>
+							<li><i class="fa fa-map-marker"></i> <p> Av Costera Miguel Alemán 1260, Deportivo, 39690 Acapulco, Gro.</p></li>
+							<li><i class="fa fa-phone"></i><p> 557-170-1175</p></li>
+							<li><i class="fa fa-facebook-official"></i><p><a title="website" href="hotelcalindabeach.com" target="_blank">hotelcalindabeach.com</a></p></li>
 						</ul>
 					</div>
 				</div>
@@ -124,10 +120,10 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/7NJRWT0HcbM/hqdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/ZuSIGN-lMlA/hqdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/7NJRWT0HcbM"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Alejandro Filio - Aunque no estás</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/ZuSIGN-lMlA"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>El Caballo De Troya | Daniel Sosa</i></p>
 	</div>
 </section>
 
@@ -160,46 +156,46 @@
 		    </div> --}}
 		                
 		
-			<div class="row">
+			{{-- <div class="row">
 				<div class="input-field col s12">
 					{!! Form::select('asiento', ['1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'], '', ['class' => 'select-dropdown', 'id' => 'asiento', 'placeholder' => 'Seleccione numero de asientos', 'required']) !!}
 					{!! Form::label('asiento', 'Asientos') !!}
 				</div>					
 			
-			</div>
+			</div> --}}
 		
-			{!! Form::hidden('img', 'img/alejandro-filio-queretaro.jpg') !!}
-			{!! Form::hidden('evento', 'Alejandro Filio') !!}
+			{!! Form::hidden('img', 'img/daniel-sosa-acapulco.jpg') !!}
+			{!! Form::hidden('evento', 'Daniel Sosa') !!}
 			{!! Form::hidden('fecha', '28 de septiembre 2019') !!}
-			{!! Form::hidden('lugar', 'El Portón de Santiago') !!}
-			{!! Form::hidden('ciudad', 'Querétaro') !!}
-			{!! Form::hidden('hora', '21:30 hrs') !!}
+			{!! Form::hidden('lugar', 'Hotel Calinda Beach') !!}
+			{!! Form::hidden('ciudad', 'Acapulco') !!}
+			{!! Form::hidden('hora', '21:00 hrs') !!}
 			{!! Form::hidden('event_type', 'general') !!}
 			{!! Form::hidden('impresion_boleto', true) !!}
 			{!! Form::hidden('zona', 'Diamante') !!}
-			{!! Form::hidden('db_table', 'alejandro_filio_queretaro_28sep') !!}
+			{!! Form::hidden('db_table', 'daniel_sosa_acapulco_28sep') !!}
 			{!! Form::hidden('info', 'Favor de comunicarte al numero 442-740-0671 para completar tu reservación.') !!}
 			{!! Form::hidden('precio', 650) !!}
-			{!! Form::hidden('url', url('eventos/alejandro-filio-queretaro')) !!}
+			{!! Form::hidden('url', url('eventos/daniel-sosa-acapulco')) !!}
 			
-			<div class="input-field center-align">
+			{{-- <div class="input-field center-align">
 				{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
-			</div>	
+			</div> --}}	
 			
 			{!! Form::close() !!}
 			
 		</div>
 		<div class="clearfix"></div>
 	@else
-		<p class="center-align raleway">Debes iniciar sesión para poder realizar la compra</p>
+		{{-- <p class="center-align raleway">Debes iniciar sesión para poder realizar la compra</p>
 		<div class="col s12 m4 offset-m4 center-align">
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
-		</div>
+		</div> --}}
 	@endif
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
-			<h5 class="center-align raleway">Venta de boletos El Portón de Santiago</h5>
+			<h5 class="center-align raleway">Venta de boletos a partir del 22 de agosto</h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -216,17 +212,17 @@
 <section class="section-lugar">
 	<div class="row">
 		<div class="col m9">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.799498426775!2d-100.39395018559972!3d20.596244107779615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b2975a8d68f%3A0xdf13453c0e244eca!2sEl+Porton+de+Santiago!5e0!3m2!1ses!2smx!4v1550796654851" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15273.65162081165!2d-99.861045!3d16.855457!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x121a0b1baaf27ced!2sHotel+Calinda+Beach+Acapulco!5e0!3m2!1ses!2smx!4v1550594831928" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 		<div class="col m3">
 			<h5 class="quote raleway">Lugar del evento</h5>
 			
-			<h5 class="mt-30">El Portón de Santiago</h5>
+			<h5 class="mt-30">Hotel Calinda Beach</h5>
 			<div class="col s10">
 				<div class="divider"></div>
 			</div>
 			<ul class="fa-ul" style="margin-top: 30px;">
-				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Av. Prol. Luis Pasteur 37, <br> Centro, 76000 <br> Santiago de Querétaro, Qro.</li>
+				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Av Costera Miguel Alemán 1260, <br>Deportivo, 39690 <br>Acapulco, Gro.</li>
 				{{-- <li><i class="fa-li fa fa-phone"></i> 01 461 174 3456</li> --}}
 			</ul>
 

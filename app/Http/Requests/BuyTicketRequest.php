@@ -24,14 +24,14 @@ class BuyTicketRequest extends FormRequest
     public function rules()
     {
         return [
-            'asiento' => 'max:8',
+            'asientos_cantidad' => 'max:8',
         ];
     }
 
     public function messages()
     {
         return [
-        'asiento.max' => 'No puedes seleccionar mas de 10 boletos',
+        'asientos_cantidad.max' => 'No puedes seleccionar mas de 8 boletos',
         ];
     }
 }

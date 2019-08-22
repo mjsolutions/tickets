@@ -17,15 +17,7 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::get('/getFilas/{table}/{zona}', 'ApiController@getFilas');
-
-Route::get('/getAsientos/{table}/{fila}', 'ApiController@getAsientos');
-
 Route::get('/getMapAsientos/{table}/{bloque}/{order_fila}/{order_asiento}', 'ApiController@getMapAsientos');
-
-Route::get('/getFilasSofia/{zona}', 'ApiController@getFilasSofia');
-
-Route::get('/getAsientosSofia/{fila}', 'ApiController@getAsientosSofia');
 
 Route::post('/charge_paid', 'ApiController@chargePaid');
 // Route::post('/charge_created', 'ApiController@chargeCreated');

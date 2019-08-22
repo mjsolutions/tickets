@@ -6,47 +6,28 @@ use Illuminate\Http\Request;
 use App\Http\Requests\BuyTicketRequest;
 use Session;
 use Log;
+use PDF;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use PayPal\Rest\ApiContext;
-use PayPal\Auth\OAuthTokenCredential;
-use PayPal\Api\Amount;
-use PayPal\Api\Details;
-use PayPal\Api\Item;
-use PayPal\Api\ItemList;
-use PayPal\Api\Payer;
-use PayPal\Api\Payment;
-use PayPal\Api\RedirectUrls;
-use PayPal\Api\Sale;
-use PayPal\Api\ExecutePayment;
-use PayPal\Api\PaymentExecution;
-use PayPal\Api\Transaction;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
-use App\Rosana;
+use App\Event;
 use App\Mail\Compra as Compra;
 use App\Mail\OrderCreated as OrderCreated;
 
 class PaymentController extends Controller
 {
 
-	private $_api_context;
 	private $_conekta_conf;
 
 	public function __construct()
 	{
 		$this->_conekta_conf = config('conekta');
-		$paypal_conf = config('paypal');
-
-		$this->_api_context = new ApiContext(new OAuthTokenCredential($paypal_conf['client_id'], $paypal_conf['secret']));
-		$this->_api_context->setConfig($paypal_conf['settings']);
 	}
 
 	/**
 	* See details before accepting purchase
-	* TODO
-	* Crear un Request especifico para las ordenes, asegurar que lleva todos los datos	
 	*/
 
     public function paymentDetails(Request $req) {
@@ -59,22 +40,129 @@ class PaymentController extends Controller
 
     public function confirmPayment(BuyTicketRequest $req) {
 
-    	// dd($req);
+    	if(Auth::user()->isPuntoDeVenta()) {
+    		
+    		return $this->onSitePayment($req);
 
-    	switch($req->payment_form){
+    	} else {
+	    	switch($req->payment_form){
 
-			case 'credit_card': 
-				return $this->creditCardPayment($req);
-				break;
-			case 'spei':
-			case 'oxxo_cash':
-				// dd($req->all());
-				return $this->chargePayment($req);
-				break;
-			case 'paypal':
-				// $this->paypalPayment($req);
-				break;
+				case 'credit_card': 
+					return $this->creditCardPayment($req);
+					break;
+				case 'spei':
+				case 'oxxo_cash':
+					return $this->chargePayment($req);
+					break;
+				case 'paypal':
+					// $this->paypalPayment($req);
+					break;
+			}
+    	}
+
+
+    }
+
+    public function onSitePayment($req){
+
+    	$total = $req->precio * $req->asientos_cantidad;
+    	$response = '';
+    	$buydata = Array();
+        $buydata['folios'] = "";
+        $buydata["nombre"] = ucwords($req->customer_name);
+        $buydata["email"] = strtolower($req->customer_email);
+        $user_id = Auth::id();
+        $date = Carbon::now();
+        $folio = DB::table($req->db_table)->max('folio');
+        $comentarios = $buydata["email"].' | '.$buydata["nombre"].' | '.$req->customer_phone;
+
+        // dd($date);
+
+		if( $req->event_type == "numerado" ) {
+
+			DB::beginTransaction();
+
+    		$ids = [];
+			$ids = explode( "-" ,$req->asientos_id);
+			$i = 1;
+
+			try{
+				//Corroborar que siguen disponibles los boletos
+				
+				if( DB::table($req->db_table)->whereIn('id', $ids)->where(function($query){
+					return $query->where('status', '<>', 0)
+							->orWhereNotNull('forma_pago');
+				})->exists() ){
+					return redirect($req->url)->withErrors('Lo sentimos los boletos ya no estan disponibles');
+				}
+
+				//Guardar en la bd
+				foreach ($ids as $asiento) {
+
+                    DB::table($req->db_table)->where('id', $asiento)->update([
+                        'folio' => ($folio + $i),
+                        'status' => 2,
+                        'user' => $user_id,
+                        'forma_pago' => $req->payment_form,
+                        'token_vlinea' => '5dxxxxxxxxxx',
+                        'comentarios' => $comentarios,
+                        'fecha_venta' => $date]);
+
+                    $buydata['folios'] .= " *".($folio + $i);
+                    $i++;
+                }
+
+				//Se ejecuta la transaccion
+				DB::commit();
+
+			}catch(\Exception $e) {
+				DB::rollBack();
+				Log::error($e->getMessage());
+				return redirect($req->url)->withErrors('A ocurrido un error db: '.$e->getMessage());
+			}
+
+			//Send tickets
+			$evento = Event::where('tabla', $req->db_table)->first();
+			// dd($evento->tabla);
+			$boletos = DB::table($req->db_table)->whereIn('id', $ids)->get();
+			$buydata['imagen'] = $evento->url_imagen;
+			$buydata['lugar'] = $req->lugar;
+			$buydata['ciudad'] = $req->ciudad;
+			$buydata['hora'] = $req->hora;
+			$buydata['fecha'] = $req->fecha;
+			$buydata['evento'] = $req->evento;
+			$precio = [];
+
+			foreach ($evento->prices as $p) {
+	            $precio[$p->nombre] = $p->precio + $p->cxs;
+	        }
+
+			$pdf = PDF::loadView('user.boleto-onsite', compact('buydata', 'boletos', 'precio'));
+
+			try{
+	            Mail::send('emails.send-ticket', $buydata, function($message)use($buydata,$pdf, $req) {
+	            $message->from('ventas@bolematico.com', 'Ventas Bolematico')
+		            ->to($buydata["email"], $buydata["nombre"])
+		            ->subject('Boletos::'.$req->evento)
+		            ->attachData($pdf->output(), $req->db_table.".pdf");
+	            });
+	        }catch(JWTException $exception){
+	            $response .= $exception->getMessage().' | ';
+	        }
+	        if (Mail::failures()) {
+	        	// return redirect($req->url)->withErrors('No se ha podido enviar el email: '.$e->getMessage());
+	            $response .= 'No se envio email';
+	        }else{
+	        	$response .= 'Email enviado';
+	        }	
+
 		}
+
+		$success = true;
+		$payment = 'paid';
+		$email = $buydata["email"];
+		$url = $req->url;
+		return view('eventos.compra', compact('payment', 'success', 'email', 'url'));
 
     }
 
@@ -84,18 +172,15 @@ class PaymentController extends Controller
 
     public function chargePayment($req) {
 
-    	\Conekta\Conekta::setApiKey($this->_conekta_conf['sandbox_privateKey']);
+    	// \Conekta\Conekta::setApiKey($this->_conekta_conf['sandbox_privateKey']);
+    	\Conekta\Conekta::setApiKey($this->_conekta_conf['production_privateKey']);
 		\Conekta\Conekta::setApiVersion("2.0.0");
 
 		//Variables
 		$customer_phone = "+5255555555";
 		$total = $req->precio * $req->asientos_cantidad;
-		if($req->db_table == 'franco_celaya_04jun' || $req->db_table == 'franco_gto_05jun'){
-			$expires_at = Carbon::parse(Carbon::now()->addHours(12));
-		}else{
-			$expires_at = Carbon::parse(Carbon::now()->addDays(1));			
-		}
-		// $expires_at = Carbon::parse(Carbon::now()->addDays(1));		
+
+		$expires_at = Carbon::parse(Carbon::now()->addDays(1));		
 
 		if($req->customer_phone != null){
 			$customer_phone = $req->customer_phone;
@@ -113,11 +198,6 @@ class PaymentController extends Controller
 		}
 
 		$line_item_name = $req->evento.' | '.$req->ciudad.' | '.$req->seccion.': '.$asientos;
-
-		if($req->db_table == 'franco_celaya_04jun_21h'){
-			$line_item_name = $req->evento.' | '.$req->ciudad.' 21hrs | '.$req->seccion.': '.$asientos;
-
-		}
 
 		$metadata = array(
 			'event_type' => $req->event_type,
@@ -161,137 +241,62 @@ class PaymentController extends Controller
 		}	
 
 
-		// try {
-		// 	$order = \Conekta\Order::create(array(
-		// 		  'currency' => 'MXN',
-		// 		  'customer_info' => array(
-		// 		    'name' => $req->customer_name,
-		// 		    'email' => $req->customer_email,
-		// 		    'phone' => $customer_phone
-		// 		  ),
-		// 		  'line_items' => array(
-		// 		    array(
-		// 		      'name' => $line_item_name,
-		// 		      'unit_price' => $req->precio * 100,
-		// 		      'quantity' => $req->asientos_cantidad
-		// 		    )
-		// 		  ),
-		// 		  'charges' => array(
-		// 		    array(
-		// 		      'payment_method' => array(
-		// 		        'type' => $req->payment_form,
-		// 		        'expires_at' => $expires_at->timestamp
-		// 		      ),
-		// 		    )
-		// 		  ),
-		// 		  'tax_lines' => array(
-		// 		  	array(
-		// 		  		'description' => 'Servicio',
-		// 		  		'amount' => $total * 0.10 * 100
-		// 		  	)
-		// 		  ),
-		// 		  'metadata' => $metadata
-		// 		));
-		// } catch (\Conekta\ParameterValidationError $error){
-		// 	$res = $error->getMessage();
-		// 	$success = false;
-		// 	if( $req->event_type == "numerado" ){
-		// 		DB::table($req->db_table)->whereIn('id', $id)->update(['status' => 0, 'user' => NULL]);
-		// 	}
-		// 	return view('eventos.compra', compact('res', 'success'));
-		// } catch (\Conekta\Handler $error){
-		// 	$res = $error->getMessage();
-		// 	$success = false;
-		// 	if( $req->event_type == "numerado" ){
-		// 		DB::table($req->db_table)->whereIn('id', $id)->update(['status' => 0, 'user' => NULL]);
-		// 	}
-		// 	return view('eventos.compra', compact('res', 'success'));
-		// }
-
-		Log::error('Conekta error: '.$line_item_name);
-
-		//TODO: Agregar errores al LOG
-
-		dd($metadata);
-
-		// $success = true;
-		// $payment = 'pending';
-		// Mail::to(Auth::user()->email, Auth::user()->name)
-		// 	->send(new OrderCreated($order, $expires_at));
-		// return view('eventos.compra', compact('payment', 'success', 'order', 'expires_at'));
-    }
-
-    /**
-    * Pay by Credit Card
-    */
-
-    public function creditCardPayment($req) {
-    	// dd($req->all());
-
-    	\Conekta\Conekta::setApiKey($this->_conekta_conf['sandbox_privateKey']);
-		\Conekta\Conekta::setApiVersion("2.0.0");
-
-    	try {
+		try {
 			$order = \Conekta\Order::create(array(
 				  'currency' => 'MXN',
 				  'customer_info' => array(
-				    'name' => 'Martin Alanis',
-				    'email' => 'martin@gmail.com',
-				    'phone' => '5555552265'
+				    'name' => $req->customer_name,
+				    'email' => $req->customer_email,
+				    'phone' => $customer_phone
 				  ),
 				  'line_items' => array(
 				    array(
-				      'name' => 'Boletos ',
-				      'unit_price' => 000,
-				      'quantity' => 1
+				      'name' => $line_item_name,
+				      'unit_price' => $req->precio * 100,
+				      'quantity' => $req->asientos_cantidad
 				    )
 				  ),
 				  'charges' => array(
 				    array(
 				      'payment_method' => array(
-				        'type' => 'card',
-				        // 'token_id' => $req->input('conektaTokenId')
-				        'token_id' => 'tok_test_visa_4242'
-				        // 'expires_at' => $expires_at->timestamp
+				        'type' => $req->payment_form,
+				        'expires_at' => $expires_at->timestamp
 				      ),
 				    )
 				  ),
 				  'tax_lines' => array(
 				  	array(
 				  		'description' => 'Servicio',
-				  		'amount' => 0
+				  		'amount' => $total * 0.10 * 100
 				  	)
 				  ),
-				  'metadata' => array()
+				  'metadata' => $metadata
 				));
-		} catch (\Conekta\ProcessingError $error){
-			echo $error->getMessage();
 		} catch (\Conekta\ParameterValidationError $error){
 			$res = $error->getMessage();
 			$success = false;
+			if( $req->event_type == "numerado" ){
+				DB::table($req->db_table)->whereIn('id', $id)->update(['status' => 0, 'user' => NULL]);
+			}
+			Log::error('Conekta error: '.$res);
 			return view('eventos.compra', compact('res', 'success'));
 		} catch (\Conekta\Handler $error){
 			$res = $error->getMessage();
 			$success = false;
+			if( $req->event_type == "numerado" ){
+				DB::table($req->db_table)->whereIn('id', $id)->update(['status' => 0, 'user' => NULL]);
+			}
+			Log::error('Conekta error: '.$res);
 			return view('eventos.compra', compact('res', 'success'));
 		}
 
-		dd($order);
+		//dd($order);
+
+		$success = true;
+		$payment = 'pending';
+		Mail::to(Auth::user()->email, Auth::user()->name)
+		 	->send(new OrderCreated($order, $expires_at));
+		return view('eventos.compra', compact('payment', 'success', 'order', 'expires_at'));
     }
 
-    /**
-    * Pay by Paypal
-    */
-
-    public function paypalPayment($req) {
-
-    }
-
-    /**
-    * Paypal status after making a charge
-    */
-
-    public function getPaymentStatus(Request $request) {
-
-    }
 }

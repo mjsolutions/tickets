@@ -33,7 +33,7 @@
 			<ul class="tabs">
 				<li class="tab "><a class="active" href="#precios">Precios</a></li>
 				<li class="tab "><a href="#detalles">Detalles</a></li>
-				{{-- <li class="tab "><a href="#lugares">Lugares de venta</a></li> --}}
+				<li class="tab "><a href="#lugares">Lugares de venta</a></li>
 			</ul>
 		</div>
 		<div id="precios" class="col s12 tab-content">
@@ -100,9 +100,9 @@
 			
 		</div>
 
-		{{-- <div id="lugares" class="col s12 tab-content">
+		<div id="lugares" class="col s12 tab-content">
 			<div class="col s12">
-				<h5 class="mb-30 quote">Además de Bolematico, puedes adquirir tus entradas en: <br><small><i>(* Solo pago en efectivo.)</i></small></h5>
+				<h5 class="mb-30 quote">Además de Bolematico, puedes adquirir tus entradas en:</h5>
 			</div>
 
 			<div class="col s12">									
@@ -123,7 +123,7 @@
 
 			</div>			
 
-		</div> --}}
+		</div>
 
 	</div>
 </section>
@@ -201,13 +201,6 @@
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2 center-align">
-			{{-- <h5 class="raleway">Venta de boletos en Holiday Inn Express</h5>
-			<p><i>(Solo pago en efectivo)</i></p>
-			<div class="row">
-				<div class="col s6 offset-s3 mt-30">
-					<div class="divider"></div>
-				</div>
-			</div> --}}
 			<p>Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
 			<div class="row">
 				<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>

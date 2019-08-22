@@ -16,9 +16,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password', 'type','last_name','second_lname', 'birthdate', 'sex', 'city', 'state', 'country', 'address', 'colony', 'zip', 'tel', 'status', 'photo'
-    ];
+    ];    /**
 
-    /**
+
      * The attributes that should be hidden for arrays.
      *
      * @var array
@@ -29,14 +29,14 @@ class User extends Authenticatable
 
     //Funciones para middlewares
     public function isSuper() {
-        return $this->type === 'super';
+        return $this->type === 'Super';
     }
 
-    public function isP_venta() {
-        return $this->type === 'p_venta';
+    public function isPuntoDeVenta() {
+        return $this->type === 'Punto de venta';
     }
 
     public function isCliente() {
-        return $this->type === 'cliente';
+        return $this->type === 'Cliente';
     }
 }
