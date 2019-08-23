@@ -143,10 +143,10 @@
 								<td>
 									@php
 									$fila_asiento = "";
-									if(strtolower($boletos->where('seccion', $seccion)->first()->fila) == 'sin fila'){
-										$fila_asiento = $boletos->where('seccion', $seccion)->count().' asientos';
+									if(strtolower($boletos->where('seccion', $seccion)->where('status', 2)->first()->fila) == 'Sin fila'){
+										$fila_asiento = $boletos->where('seccion', $seccion)->where('status', 2)->count().' asientos';
 									}else{
-										foreach ($boletos->where('seccion', $seccion) as $boleto) {
+										foreach ($boletos->where('seccion', $seccion)->where('status', 2) as $boleto) {
 											$fila_asiento .= " *".$boleto->fila.' '.$boleto->asiento;
 										}										
 									}
@@ -154,14 +154,34 @@
 									@endphp
 								</td>
 								<td style="width: 280px;">
-									@if( $boletos->where('seccion', $seccion)->first()->status == 2 )
-										<a href="{{ route('cliente.ticket', ['evento' => $info, 'seccion' => $seccion]) }}" class="btn btn-status waves-light waves-effect btn-ticket"><b>Descargar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-									@else
-										<a href="javascript:void(0)" class="btn btn-status waves-light waves-effect disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-									@endif
+									<a href="{{ route('cliente.ticket', ['evento' => $info, 'seccion' => $seccion]) }}" class="btn btn-status waves-light waves-effect btn-ticket"><b>Descargar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 								</td>
 							</tr>
 							@endforeach
+
+							@foreach($boletos->unique('seccion') as $data)
+							@php $seccion = $data->seccion @endphp
+							<tr>
+								<td>{{ $seccion }}</td>
+								<td>
+									@php
+									$fila_asiento = "";
+									if(strtolower($boletos->where('seccion', $seccion)->where('status', 3)->first()->fila) == 'Sin fila'){
+										$fila_asiento = $boletos->where('seccion', $seccion)->where('status', 3)->count().' asientos';
+									}else{
+										foreach ($boletos->where('seccion', $seccion)->where('status', 3) as $boleto) {
+											$fila_asiento .= " *".$boleto->fila.' '.$boleto->asiento;
+										}										
+									}
+									echo $fila_asiento;
+									@endphp
+								</td>
+								<td style="width: 280px;">
+									<a href="javascript:void(0)" class="btn btn-status waves-light waves-effect disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+								</td>
+							</tr>
+							@endforeach
+										
 							</tbody>
 						</table>
 						

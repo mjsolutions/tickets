@@ -67,6 +67,7 @@ class PaymentController extends Controller
 
     	$total = $req->precio * $req->asientos_cantidad;
     	$response = '';
+    	$email_sent = true;
     	$buydata = Array();
         $buydata['folios'] = "";
         $buydata["nombre"] = ucwords($req->customer_name);
@@ -147,14 +148,13 @@ class PaymentController extends Controller
 		            ->attachData($pdf->output(), $req->db_table.".pdf");
 	            });
 	        }catch(JWTException $exception){
-	            $response .= $exception->getMessage().' | ';
+	        	Log::error($exception->getMessage());
 	        }
+
 	        if (Mail::failures()) {
-	        	// return redirect($req->url)->withErrors('No se ha podido enviar el email: '.$e->getMessage());
-	            $response .= 'No se envio email';
-	        }else{
-	        	$response .= 'Email enviado';
-	        }	
+	        	Log::error('Email no enviado: '.$buydata["email"]);
+	        	$email_sent = false;
+	        }
 
 		}
 
@@ -162,7 +162,7 @@ class PaymentController extends Controller
 		$payment = 'paid';
 		$email = $buydata["email"];
 		$url = $req->url;
-		return view('eventos.compra', compact('payment', 'success', 'email', 'url'));
+		return view('eventos.compra', compact('payment', 'success', 'email', 'url', 'email_sent'));
 
     }
 

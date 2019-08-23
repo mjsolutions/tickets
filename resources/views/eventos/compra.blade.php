@@ -154,7 +154,11 @@
 				<h5 class="quote"><b>¡SE HA COMPLETADO LA COMPRA!</b></h5>
 				<div class="divider col-center col s10"></div>
 					@if( Auth::user()->isPuntoDeVenta() )
+					@if($email_sent)
 					<p>Los boletos han sido enviados a la cuenta de correo {{ $email }}</p>
+					@else
+					<p>Boletos registrados corectamente. <br><span class="red-text">Error al enviar email.</span></p>
+					@endif
 					<p class="center-align"><a href="{{ $url }}" class="btn waves-effect waves-light  green darken-2">Volver al evento</a></p>
 					@else
 					<p>Esta información ha sido enviada a tu cuenta de correo, de no ser asi puedes contactarte con nosotros <a href="{{ route('contacto') }}">aquí</a></p>
