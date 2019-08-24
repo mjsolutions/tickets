@@ -153,7 +153,7 @@
 				@if($payment == 'paid')
 				<h5 class="quote"><b>¡SE HA COMPLETADO LA COMPRA!</b></h5>
 				<div class="divider col-center col s10"></div>
-					@if( Auth::user()->isPuntoDeVenta() )
+					@if( !Auth::user()->isCliente() )
 					@if($email_sent)
 					<p>Los boletos han sido enviados a la cuenta de correo {{ $email }}</p>
 					@else

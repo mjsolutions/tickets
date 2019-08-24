@@ -85,7 +85,11 @@
 					
 					<tr>
 						<th style="width: 29%;">PRECIO:</th>
+						@if($boleto->forma_pago == 'Cortesia')
+						<td class="precio">CORTESÍA</td>
+						@else
 						<td class="precio"><span>${{ $precio[$boleto->seccion] }}</span> MXN.</td>
+						@endif
 					</tr>
 				</tbody>
 			</table>

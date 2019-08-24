@@ -10,10 +10,10 @@
 Labels
 ------------ */
 body{
-	/*display: flex;*/
+	display: flex;
 	/*font-family: 'Raleway', sans-serif;*/
-	/*min-height: 100vh;*/
-	/*flex-direction: column;*/
+	min-height: 100vh;
+	flex-direction: column;
 }
 /*main{
 	flex: 1 0 auto;
@@ -29,6 +29,7 @@ h5 {
 }
 
 main {
+	flex: 1;
 	background: #f5f8fa;
 	overflow: hidden;
 }

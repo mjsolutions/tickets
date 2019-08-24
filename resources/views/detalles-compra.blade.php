@@ -42,7 +42,9 @@
 		padding: 5px 15px;
 		color: inherit;
 	}
-	.fa.fa-money { 
+	.fa.fa-money { font-size: 2.5em; }
+	.fa.fa-money,
+	.fa.fa-credit-card { 
 		color: #7C869A;
 		line-height: 0.6;
 	}
@@ -121,7 +123,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 	</div>
 	
 	<div class="row mt-30 mb-50">
-		<div class="col m6">
+		<div class="col l6 m10 offset-m1">
 			<div class="col s12 card-text white">
 				<div class="col m4" style="padding-top: 8px;">
 					<img src="{{ asset($req->img) }}" alt="" class="materialboxed responsive-img">
@@ -204,11 +206,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 
 					</table>
 				</div>
-				{{-- @if($req->db_table == 'oceransky_morelia_01mar')
-				<div class="col m12">
-					<p><strong>NOTA:</strong>: Una vez confirmada tu orden, contarás con 4 hrs., para realizar el pago.</p>
-				</div>
-				@endif --}}
+
 			</div>
 
 			<div class="col row mb-0 mt-30">
@@ -219,20 +217,31 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 				{!! Form::open(['route'=>'payment.confirm', 'method'=>'POST', 'id'=>'payment']) !!}
 					<div class="row center-align pt-40" id="form-radios">
 						
-					@if(Auth::user()->isPuntoDeVenta())
-						<div class="col s4">
+					@if(!Auth::user()->isCliente())
+						<div class="col s3">
 							<div>
 								<div class="col s10 offset-s1">
-									{!! Form::radio('payment_form', 'Efectivo', '', ['id' => 'payment_cash']) !!}	
-									<label for="payment_cash" class="check-up center-align"><i class="fa fa-money fa-3x"></i></label>
+									{!! Form::radio('payment_form', 'Cortesia', '', ['id' => 'payment_free']) !!}	
+									<label for="payment_free" class="check-up center-align"><b>CORTESÍA</b></label>
 								</div>
 							</div>
 						</div>
-						<div class="col s4">
+						<div class="col s3">
+							<div>
+								<div class="col s10 offset-s1">
+									{!! Form::radio('payment_form', 'Efectivo', '', ['id' => 'payment_cash']) !!}	
+									<label for="payment_cash" class="check-up center-align"><i class="fa fa-money"></i></label>
+								</div>
+							</div>
+						</div>
+						<div class="col s3">
 							<div>
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'Tarjeta', '', ['id' => 'payment_card']) !!}	
-									<label for="payment_card" class="check-up"><img src="{{ asset('img/cards.svg') }}" class="responsive-img"></label>
+									<label for="payment_card" class="check-up">
+										<img src="{{ asset('img/cards.svg') }}" class="responsive-img hide-on-small-only">
+										<i class="fa fa-credit-card fa-2x hide-on-med-and-up"></i>
+									</label>
 								</div>
 							</div>
 						</div>
@@ -246,7 +255,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 							</div>
 						</div>
 					@endif
-						<div class="col @if(Auth::user()->isPuntoDeVenta()) s4 @else s6 @endif">
+						<div class="col @if(!Auth::user()->isCliente()) s3 @else s6 @endif">
 							<div>
 								<div class="col s10 offset-s1">
 									{!! Form::radio('payment_form', 'spei', '', ['id' => 'payment_spei']) !!}
@@ -256,7 +265,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 						</div>
 					</div>
 
-					@if(Auth::user()->isPuntoDeVenta())
+					@if(!Auth::user()->isCliente())
 					<div class="row" id="form-inputs">
 						<div class="input-field col s10 offset-s1">
 	
@@ -283,6 +292,8 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 					{!! Form::hidden('customer_phone', Auth::user()->tel) !!}
 					@endif
 						
+					{!! Form::hidden('user_type', Auth::user()->type, ['id' => 'user_type']) !!}
+
 					{!! Form::hidden('evento', $req->evento) !!}
 					{!! Form::hidden('fecha', $req->fecha) !!}
 					{!! Form::hidden('lugar', $req->lugar) !!}
@@ -310,41 +321,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 						
 					
 						
-				{!! Form::close() !!}
-
-{{-- 				{!! Form::open(['url'=>'', 'method'=>'POST', 'id'=>'card-form', 'class' => 'hide']) !!}
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="prefix fa fa-user"></i>
-							{!! Form::text('name', null, ['class' => 'validate', 'data-conekta' => 'card[name]', 'required']) !!}
-							{!! Form::label('name','Nombre del tarjetahabiente') !!}
-			
-						</div>
-						<div class="input-field col s12">
-							<i class="prefix fa fa-credit-card"></i>
-							{!! Form::text('number', null, ['class' => 'validate', 'data-conekta' => 'card[number]', 'required']) !!}
-							{!! Form::label('number','Número de tarjeta de crédito') !!}
-			
-						</div>
-						<div class="input-field col s3">
-							<span class="prefix" style="top: -0.1rem;"><small><b>CVC</b></small></span>
-							{!! Form::text('cvc', null, ['class' => 'validate', 'data-conekta' => 'card[cvc]', 'required']) !!}
-							{!! Form::label('cvc','CVC') !!}
-			
-						</div>
-						<div class="col s9">
-							<div class="input-field col s4" style="padding-right: 0">
-								<i class="prefix fa fa-calendar"></i>
-								{!! Form::select('exp_month', $months, '', ['class' => 'select-dropdown', 'id' => 'exp_month', 'placeholder' => 'MM', 'data-conekta' => 'card[exp_month]', 'required']) !!}
-
-							</div>
-							<div class="input-field col s8" style="padding-right: 0">
-								<i class="prefix fa select-year" style="width: 1rem">/</i>
-								{!! Form::selectYear('exp_year', date('Y'), 2030, '', ['class' => 'select-dropdown', 'id' => 'exp_year', 'placeholder' => 'AAAA', 'data-conekta' => 'card[exp_year]', 'required']) !!}
-							</div>
-						</div>
-					</div>
-				{!! Form::close() !!}	 --}}			
+				{!! Form::close() !!}			
 
 			</div>
 
@@ -352,7 +329,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 				<h5><span class="number-step deep-orange darken-2">3</span> Confirma tu compra</h5>
 			</div>
 
-			<div class="col s12 card-text white mt-30">
+			<div class="col s12 card-text white mt-30 mb-30">
 				<div class="row">
 					<p id="error-response" class="center-align card-errors"></p>
 				</div>
@@ -370,7 +347,7 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 				</div>
 			</div>
 		</div>
-		<div class="col m6">
+		<div class="col l6 m8 offset-m2">
 			<div class="card-text yellow lighten-5">
 				<div class="card-text-header deep-orange darken-2 center-align white-text">
 					<h5><b>IMPORTANTE</b></h5>
@@ -411,7 +388,11 @@ for ($month = 1; $month < 13; $month++) $months[str_pad($month, 2,'0', STR_PAD_L
 				return;
 			}
 
-			if( $.trim( $("#customer_name").val() ) == '' || $.trim( $("#customer_email").val() ) == '' || $.trim( $("#customer_phone").val() ) == '' ){
+			if( $('#user_type').val() != 'Cliente' && (
+			 	$.trim( $("#customer_name").val() ) == '' ||
+				$.trim( $("#customer_email").val() ) == '' ||
+				$.trim( $("#customer_phone").val() ) == '' ) )
+			{
 				print_error('Todos los campos del formulario son requeridos');
 				$("#form-inputs").css('border', '2px solid #ff3400');
 				return;

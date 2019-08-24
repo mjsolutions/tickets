@@ -40,7 +40,7 @@ class PaymentController extends Controller
 
     public function confirmPayment(BuyTicketRequest $req) {
 
-    	if(Auth::user()->isPuntoDeVenta()) {
+    	if(!Auth::user()->isCliente()) {
     		
     		return $this->onSitePayment($req);
 
@@ -65,11 +65,10 @@ class PaymentController extends Controller
 
     public function onSitePayment($req){
 
-    	$total = $req->precio * $req->asientos_cantidad;
     	$response = '';
     	$email_sent = true;
     	$buydata = Array();
-        $buydata['folios'] = "";
+    	$boletos = null;
         $buydata["nombre"] = ucwords($req->customer_name);
         $buydata["email"] = strtolower($req->customer_email);
         $user_id = Auth::id();
@@ -105,11 +104,9 @@ class PaymentController extends Controller
                         'status' => 2,
                         'user' => $user_id,
                         'forma_pago' => $req->payment_form,
-                        'token_vlinea' => '5dxxxxxxxxxx',
                         'comentarios' => $comentarios,
                         'fecha_venta' => $date]);
 
-                    $buydata['folios'] .= " *".($folio + $i);
                     $i++;
                 }
 
@@ -122,41 +119,84 @@ class PaymentController extends Controller
 				return redirect($req->url)->withErrors('A ocurrido un error db: '.$e->getMessage());
 			}
 
-			//Send tickets
-			$evento = Event::where('tabla', $req->db_table)->first();
-			// dd($evento->tabla);
 			$boletos = DB::table($req->db_table)->whereIn('id', $ids)->get();
-			$buydata['imagen'] = $evento->url_imagen;
-			$buydata['lugar'] = $req->lugar;
-			$buydata['ciudad'] = $req->ciudad;
-			$buydata['hora'] = $req->hora;
-			$buydata['fecha'] = $req->fecha;
-			$buydata['evento'] = $req->evento;
-			$precio = [];
+		}else{
 
-			foreach ($evento->prices as $p) {
-	            $precio[$p->nombre] = $p->precio + $p->cxs;
-	        }
+			$rows = [];
+			$rows_ticket = [];
 
-			$pdf = PDF::loadView('user.boleto-onsite', compact('buydata', 'boletos', 'precio'));
+            DB::beginTransaction();
 
-			try{
-	            Mail::send('emails.send-ticket', $buydata, function($message)use($buydata,$pdf, $req) {
-	            $message->from('ventas@bolematico.com', 'Ventas Bolematico')
-		            ->to($buydata["email"], $buydata["nombre"])
-		            ->subject('Boletos::'.$req->evento)
-		            ->attachData($pdf->output(), $req->db_table.".pdf");
-	            });
-	        }catch(JWTException $exception){
-	        	Log::error($exception->getMessage());
-	        }
+            try{
 
-	        if (Mail::failures()) {
-	        	Log::error('Email no enviado: '.$buydata["email"]);
-	        	$email_sent = false;
-	        }
+                for($i = 1; $i <= $req->asientos_cantidad; $i++){
+
+                    $new_folio = $folio + $i;
+
+                    $row = ['seccion' => $req->seccion,
+                            'bloque' => '',
+                            'fila' => 'Sin fila',
+                            'asiento' => $i,
+                            'status' => 2,
+                            'impreso' => 0,
+                            'forma_pago' => $req->payment_form,
+                            'folio' => $new_folio,
+                            'codigo_barras' => substr(md5($new_folio), 0, 10),
+                            'user' => $user_id,
+                            'comentarios' => $comentarios,
+                            'fecha_venta' => $date];
+
+                    array_push($rows, $row);
+                    array_push($rows_ticket, (object)$row);
+
+                }
+
+                DB::table($req->db_table)->insert($rows);
+
+                DB::commit();
+
+            }catch(\Exception $e) {
+                DB::rollBack();
+                return redirect($req->url)->withErrors('Error inserting in DB: '.$e->getMessage());
+            }
+
+			$boletos = $rows_ticket;
 
 		}
+
+		// dd($boletos);
+
+		//Send tickets
+		$evento = Event::where('tabla', $req->db_table)->first();
+		$buydata['imagen'] = $evento->url_imagen;
+		$buydata['lugar'] = $req->lugar;
+		$buydata['ciudad'] = $req->ciudad;
+		$buydata['hora'] = $req->hora;
+		$buydata['fecha'] = $req->fecha;
+		$buydata['evento'] = $req->evento;
+		$precio = [];
+
+		foreach ($evento->prices as $p) {
+            $precio[$p->nombre] = $p->precio + $p->cxs;
+        }
+
+		$pdf = PDF::loadView('user.boleto-onsite', compact('buydata', 'boletos', 'precio'));
+
+		try{
+            Mail::send('emails.send-ticket', $buydata, function($message)use($buydata,$pdf, $req) {
+            $message->from('ventas@bolematico.com', 'Ventas Bolematico')
+	            ->to($buydata["email"], $buydata["nombre"])
+	            ->subject('Boletos::'.$req->evento)
+	            ->attachData($pdf->output(), $req->db_table.".pdf");
+            });
+        }catch(JWTException $exception){
+        	Log::error($exception->getMessage());
+        }
+
+        if (Mail::failures()) {
+        	Log::error('Email no enviado: '.$buydata["email"]);
+        	$email_sent = false;
+        }
 
 		$success = true;
 		$payment = 'paid';

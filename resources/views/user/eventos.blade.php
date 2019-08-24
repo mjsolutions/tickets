@@ -138,6 +138,7 @@
 							<tbody>
 							@foreach($boletos->unique('seccion') as $data)
 							@php $seccion = $data->seccion @endphp
+							@if($boletos->where('seccion', $seccion)->where('status', 2)->count() > 0)
 							<tr>
 								<td>{{ $seccion }}</td>
 								<td>
@@ -157,10 +158,12 @@
 									<a href="{{ route('cliente.ticket', ['evento' => $info, 'seccion' => $seccion]) }}" class="btn btn-status waves-light waves-effect btn-ticket"><b>Descargar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 								</td>
 							</tr>
+							@endif
 							@endforeach
 
 							@foreach($boletos->unique('seccion') as $data)
 							@php $seccion = $data->seccion @endphp
+							@if($boletos->where('seccion', $seccion)->where('status', 3)->count() > 0)
 							<tr>
 								<td>{{ $seccion }}</td>
 								<td>
@@ -180,6 +183,7 @@
 									<a href="javascript:void(0)" class="btn btn-status waves-light waves-effect disabled"><b>Pendiente de pago</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 								</td>
 							</tr>
+							@endif
 							@endforeach
 										
 							</tbody>
