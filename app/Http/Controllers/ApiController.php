@@ -23,6 +23,25 @@ class ApiController extends Controller
 
     }
 
+    public function getFilas($table, $zona) {
+        $filas = DB::table($table)->select('fila')->where([
+                ['seccion', $zona],
+                ['status', 0]])
+            ->whereNull('forma_pago')
+            ->groupBy('fila')->get();
+        return response()->json($filas);
+    }
+
+    public function getAsientos($table, $zona, $fila) {
+        $asientos = DB::table($table)->where([
+                ['seccion', $zona],
+                ['fila', $fila],
+                ['status', 0]])
+            ->whereNull('forma_pago')
+            ->get();
+        return response()->json($asientos);
+    }
+
     /**
     * Recive information for Conkecta webhook once the previous charge has been paid
     * receives a json object

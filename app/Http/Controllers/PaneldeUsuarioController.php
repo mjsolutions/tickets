@@ -395,22 +395,22 @@ class PaneldeUsuarioController extends Controller
     // }
 
     // public function initTable(){
-    //     $table = 'silvia_pinal';
+    //     $table = 'daniel_sosa_acapulco_28sep';
 
     //     // $asiento = 22;
     //     $rows = [];
-    //     $filas = [23,27,29,31,31,31,31,31,31,31,31,31,20,20,20,20,20,31,31,31,31,31,31,32,14];
+    //     $filas = [4,4,4,4,4,4,4,4,4,4,4,4 ,10,10,10,10,10,10,10,10];
     //     $filas_pos = 0;
-    //     $cb = 1;
+    //     $cb = 201;
     //     // $fila = 'A';
 
-    //     foreach(range('A', 'Y') as $fila){
+    //     foreach(range(59, 78) as $fila){
             
     //         for($i = 1; $i <= $filas[$filas_pos]; $i++){
-    //             $row = ['seccion' => 'Diamante',
+    //             $row = ['seccion' => 'Plata',
     //                 'bloque' => '',
-    //                 'fila' => $fila,
-    //                 'asiento' => $i,
+    //                 'fila' => 'Mesa '.$fila,
+    //                 'asiento' => 1,
     //                 'status' => 0,
     //                 'impreso' => 0,
     //                 'forma_pago' => null,
@@ -429,7 +429,7 @@ class PaneldeUsuarioController extends Controller
 
     //      DB::table($table)->insert($rows);
 
-    //      echo 'Insert All done';
+    //      echo 'Insert Plata done';
     // }
 
 }

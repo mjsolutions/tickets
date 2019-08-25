@@ -9,6 +9,20 @@
 <meta property="og:title" content="Daniel Sosa" />
 <meta property="og:description" content="Daniel Sosa, Acapulco 28 de septiembre, Hotel Calinda Beach, 21:00 hrs boletos en Hotel Calinda Beach y bolematico.com" />
 <meta property="og:image" content="https://www.bolematico.com/img/daniel-sosa-acapulco.jpg" />
+<style type="text/css">
+	.row .col .zona-radio { padding: 0 3px;	}
+	.zona-radio > input + label { 
+		font-size: 1.2em !important;
+		line-height: 0.9 !important;
+	}
+	.zona-radio > input:not(:checked)+label {
+		color: #656869;
+	}
+	.zona-radio > input:checked+label {
+		color: #111;
+		font-weight: 700;
+	}
+</style>
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
@@ -69,6 +83,7 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1 m8 offset-m2">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
+						<p>* Los lugares son asignados conforme vayan llegando al evento.</p>
 						<p class="mb-0"> * Informes: <br> <a href="tel:5571701175" style="background: #4caf50; color: #fff; padding: 5px 10px;">557-170-1175</a> / <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;">452-174-1255</a></p>
 					</div>
 				</div>
@@ -128,79 +143,84 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	<div class="row mb-30">
-		<div class="col s12 m4 offset-m4">
-			<h5 class="mt-30 raleway quote">¡Aparta tus lugares!</h5>
+	@if(Auth()->check())
+	<div class="row mt-30">
+		<div class="col m8 border">
+			<img src="{{ asset('img/calinda-beach.jpg') }}" alt="" class="responsive-img z-depth-1 materialboxed">
+		</div>
+		<div class="col m4">
+			<div class="col s12 mb-30">
+				<h5 class="mt-30 raleway quote">¡Aparta tus lugares!</h5>
+			</div>		
+			
+			<div class="col s12">
+					
+				{!! Form::open(['route' => 'payment.details', 'method' => 'POST', 'id' => 'paymentForm'])!!}
+		
+				<div class="row">
+		                    
+			        <div class="col m6">
+			          <div class="col m12 zona-radio">
+			            {!! Form::radio('zona', 'Diamante', false, ['id' => 'diamante', 'required', 'class' => 'form_zona']) !!}
+			            <label for="diamante">Diamante <br><small>Mesa 1 - 58</small></label>
+			          </div>
+			        </div>
+			        <div class="col m6">
+			          <div class="col m12 zona-radio">
+			            {!! Form::radio('zona', 'Plata', false, ['id' => 'plata', 'required', 'class' => 'form_zona']) !!}
+			            <label for="plata">Plata <br><small>Mesa 59 - 78</small></label>
+			          </div>
+			        </div>
+			    </div>
+			    
+			    <div class="row">
+					<div class="input-field col s12">
+						{!! Form::select('fila', [], null, ['class' => 'select-dropdown', 'id' => 'fila', 'placeholder' => 'Selecciona primero la zona', 'required']) !!}
+						{!! Form::label('fila', 'Mesa') !!}
+					</div>			
+				</div>    
+			
+				<div class="row">
+					<div class="input-field col s12">
+						{!! Form::select('asiento[]', [], null, ['class' => 'select-dropdown', 'id' => 'asiento', 'required', 'multiple']) !!}
+						{!! Form::label('asiento', 'Asientos') !!}
+					</div>			
+				</div>
+			
+				{!! Form::hidden('img', 'img/daniel-sosa-acapulco.jpg') !!}
+				{!! Form::hidden('evento', 'Daniel Sosa') !!}
+				{!! Form::hidden('fecha', '28 de septiembre 2019') !!}
+				{!! Form::hidden('lugar', 'Hotel Calinda Beach') !!}
+				{!! Form::hidden('ciudad', 'Acapulco') !!}
+				{!! Form::hidden('hora', '21:00 hrs') !!}
+				{!! Form::hidden('event_type', 'numerado') !!}
+				{!! Form::hidden('select_type', 'list') !!}
+				{!! Form::hidden('impresion_boleto', true) !!}
+				{{-- {!! Form::hidden('zona', 'Diamante') !!} --}}
+				{!! Form::hidden('db_table', 'daniel_sosa_acapulco_28sep') !!}
+				{!! Form::hidden('info', '') !!}
+				{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
+				{!! Form::hidden('url', url('eventos/daniel-sosa-acapulco')) !!}
+				
+				<div class="input-field center-align">
+					{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
+				</div>	
+				
+				{!! Form::close() !!}
+				
+			</div>		
 		</div>
 	</div>
-	<div class="row mt-30">
-    @if(Auth()->check())
-		<div class="col s12 m4 offset-m4">
-				
-			{!! Form::open(['route' => 'payment.details', 'method' => 'POST', 'id' => 'paymentForm'])!!}
-
-			{{-- <div class="row">
-                    
-		        <div class="col m6">
-		          <div class="col m12 zona-radio">
-		            {!! Form::radio('zona', 'Diamante', false, ['id' => 'diamante', 'required', 'class' => 'form_zona']) !!}
-		            {!! Form::label('diamante', 'Diamante') !!}
-		          </div>
-		        </div>
-		        <div class="col m6">
-		          <div class="col m12 zona-radio">
-		            {!! Form::radio('zona', 'Oro', false, ['id' => 'oro', 'required', 'class' => 'form_zona']) !!}
-		            {!! Form::label('oro', 'Oro') !!}
-		          </div>
-		        </div>
-		    </div> --}}
-		                
-		
-			{{-- <div class="row">
-				<div class="input-field col s12">
-					{!! Form::select('asiento', ['1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'], '', ['class' => 'select-dropdown', 'id' => 'asiento', 'placeholder' => 'Seleccione numero de asientos', 'required']) !!}
-					{!! Form::label('asiento', 'Asientos') !!}
-				</div>					
-			
-			</div> --}}
-		
-			{!! Form::hidden('img', 'img/daniel-sosa-acapulco.jpg') !!}
-			{!! Form::hidden('evento', 'Daniel Sosa') !!}
-			{!! Form::hidden('fecha', '28 de septiembre 2019') !!}
-			{!! Form::hidden('lugar', 'Hotel Calinda Beach') !!}
-			{!! Form::hidden('ciudad', 'Acapulco') !!}
-			{!! Form::hidden('hora', '21:00 hrs') !!}
-			{!! Form::hidden('event_type', 'general') !!}
-			{!! Form::hidden('impresion_boleto', true) !!}
-			{!! Form::hidden('zona', 'Diamante') !!}
-			{!! Form::hidden('db_table', 'daniel_sosa_acapulco_28sep') !!}
-			{!! Form::hidden('info', 'Favor de comunicarte al numero 442-740-0671 para completar tu reservación.') !!}
-			{!! Form::hidden('precio', 650) !!}
-			{!! Form::hidden('url', url('eventos/daniel-sosa-acapulco')) !!}
-			
-			{{-- <div class="input-field center-align">
-				{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
-			</div> --}}	
-			
-			{!! Form::close() !!}
-			
-		</div>
-		<div class="clearfix"></div>
 	@else
-		{{-- <p class="center-align raleway">Debes iniciar sesión para poder realizar la compra</p>
+	<div class="row">
+		<p class="center-align raleway">Debes iniciar sesión para poder realizar la compra</p>
 		<div class="col s12 m4 offset-m4 center-align">
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
-		</div> --}}
-	@endif
+		</div>
 	</div>
+	@endif
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
-			<h5 class="center-align raleway">Venta de boletos a partir del 22 de agosto</h5>
-			<div class="row">
-				<div class="col s6 offset-s3 mt-30">
-					<div class="divider"></div>
-				</div>
-			</div>
 			<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>
 			<div class="row center-align">
 				<a href="{{ route('contacto') }}" class="btn waves-light waves-effect green center-align ls-1">CONTACTO</a>
@@ -242,7 +262,8 @@
 
 @section('scripts')
 	<script>
-    	// var precios = {'Diamante': 650, 'Oro': 450};
+    	var precios = {'Diamante': 430, 'Plata': 380};
+    	var zona = '';
 		$('#modal-video-open').leanModal({
 	        opacity: .8,
 	        ready: function() {
@@ -255,9 +276,50 @@
 	        }
 	     });
 
-  //   	$(".form_zona").click(function(){
-		// 	$("#form_precio").val(precios[$(this).val()]);
-		// });
+    	$(".form_zona").click(function(){
+    		zona = $(this).val();
+			$("#form_precio").val(precios[zona]);
+			$.ajax({
+				url: '{{ url('api/getFilas') }}/daniel_sosa_acapulco_28sep/'+zona,
+				type: 'get',
+				dataType: 'json',
+				success: function(res) {
+					var filas = '<option disabled>Seleccione el número de mesa</option>';
+					var arr = res.map(function(item){
+						return parseInt(item.fila.split(" ")[1]);
+					}).sort(function(a,b){ return a - b; });
+					$.each(arr, function(index, fila){
+						filas += '<option value="Mesa '+fila+'">Mesa '+fila+'</option>'
+					});
+					$("#fila").html(filas);
+					$("#asiento").html('<option>Seleccione la mesa</option>');
+					$("#fila, #asiento").material_select();
+				},
+				error: function(err) {
+					console.log(err);
+				}
+			});
+		});
+
+		$("#fila").change(function(){
+			var fila = $(this).val();
+			$.ajax({
+				url: '{{ url('api/getAsientos') }}/daniel_sosa_acapulco_28sep/'+zona+'/'+fila,
+				type: 'get',
+				dataType: 'json',
+				success: function(res) {
+					var asientos = '<option disabled>Seleccione el número de asientos</option>';
+					$.each(res, function(index, i){
+						asientos += '<option value="'+i.id+'|'+i.asiento+'">Asiento #'+(index+1)+'</option>';
+					});
+					$("#asiento").html(asientos);
+					$("#asiento").material_select();
+				},
+				error: function(err) {
+					console.log(err);
+				}
+			});
+		});
 
 	</script>
 

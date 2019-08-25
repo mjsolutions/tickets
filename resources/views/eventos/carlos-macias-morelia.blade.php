@@ -156,7 +156,7 @@
 			{!! Form::hidden('zona', 'Diamante') !!}
 			{!! Form::hidden('db_table', 'carlos_macias_morelia_30ago') !!}
 			{!! Form::hidden('info', 'Favor de comunicarte al numero 4431880358 o 4434369615 para completar tu reservación.') !!}
-			{!! Form::hidden('precio', '650') !!}
+			{!! Form::hidden('precio', 650) !!}
 			{!! Form::hidden('url', url('eventos/carlos-macias-morelia')) !!}
 			
 			<div class="input-field center-align">

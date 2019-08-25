@@ -80,20 +80,9 @@ Route::group(['prefix'=>'eventos'],function(){
 });
 
 /**
- * Paypal y pagos
+ * Pagos
  */
 Route::group(['prefix'=>'payment'],function(){
-
-	Route::post('bronco', array(
-	'as'	=>	'payment.bronco',
-	'uses'	=>	'PaypalBroncoController@postPayment',
-	));
-
-	//Paypal redirecciona a esta ruta
-	Route::get('bronco/status', array(
-	'as'	=>	'payment.bronco.status',
-	'uses'	=>	'PaypalBroncoController@getPaymentStatus',
-	));
 
 	Route::post('details', array(
 	'as'	=>	'payment.details',
@@ -168,10 +157,10 @@ Route::group(['prefix' => 'micuenta','middleware' => 'auth'], function() {
 
     // ]);
 
-     Route::get('init-table', [
-    	'as'	=> 'cliente.init_table',
-    	'uses'	=> 'PaneldeUsuarioController@initTable'
+    //  Route::get('init-table', [
+    // 	'as'	=> 'cliente.init_table',
+    // 	'uses'	=> 'PaneldeUsuarioController@initTable'
 
-    ]); 
+    // ]); 
 
 });
