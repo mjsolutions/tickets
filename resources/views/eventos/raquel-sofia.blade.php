@@ -1,11 +1,10 @@
 @extends('layouts.main')
 
-@section('title', 'Raquel Sofia Gira 2:00 am')
+@section('title', 'Raquel Sofia Gira 2019')
 
-@section('description', 'Raquel Sofia en su gira 2:00 am 2018, boletos en bolematico.mx')
+@section('description', 'Raquel Sofia en su gira 2019, boletos en bolematico.com')
 
 @section('styles')
-<script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 <style type="text/css">
 	.flex {
 		margin: 0 auto;
@@ -35,24 +34,31 @@
 		color: #FFF;
 		float: left;
 		border-right: 1px solid #ccc;
+		display: flex;
+		flex-flow: column wrap;
 	}
 	.event-date-card-month {
 		width: 100%;
-		height: 30%;
 		background-color: #004040;
-		display: flex;
-		flex-flow: row wrap;
-		align-items: center;
-		justify-content: center;
+		text-align: center;
+	    font-weight: 500;
+	    padding: 3px 5px;
 	}
 	.event-date-card-number {
 		width: 100%;
-		height: 70%;
+		flex: 1;
 		background-color: #008080;
 		display: flex;
-		flex-flow: row wrap;
+		flex-flow: column wrap;
 		align-items: center;
 		justify-content: center;
+	}
+	.event-date-card-number h3 {
+		line-height: 1;
+		font-weight: 600;
+	}
+	.event-date-card-number small {
+		font-size: 85%;
 	}
 	.event-date-details {
 		position: relative;
@@ -84,6 +90,7 @@
 		}
 	}
 </style>
+<script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 @endsection
 
 @section('content')
@@ -93,7 +100,7 @@
 	<div class="row">
 		<h4 class="wow flipInX" data-wow-delay="0.5s">Raquel Sofía</h4>
 		<div class="divider wow fadeInLeft" data-wow-delay="0.8s" style="height: 2px; background-color: #0b529e;"></div>
-		<p class="wow flipInX" data-wow-delay="0.5s"><i>Gira 2:00am</i></p>
+		<p class="wow flipInX" data-wow-delay="0.5s"><i>Gira 2019</i></p>
 	</div>
 	{{-- <a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a> --}}
 </div>
@@ -102,8 +109,8 @@
 	<div class="row">
 		<div class="col s12">
 			<ul class="tabs">
-				<li class="tab "><a class="active" href="#tour">GIRA 2:00</a></li>
-				<li class="tab "><a href="#fechas">BOLETOS</a></li>
+				<li class="tab "><a class="active" href="#fechas">FECHAS</a></li>
+				<li class="tab "><a href="#tour">SOBRE SOFIA</a></li>
 				{{-- <li class="tab "><a href="#lugares">Boletos</a></li> --}}
 			</ul>
 		</div>
@@ -114,15 +121,12 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col s12">
-					<h4 class="mt-0 mb-30 raleway quote">BIOGRAFIA</h4>
-				</div>
 				<div class="col s12 m8 wow fadeIn" data-wow-delay="0.5s">
 					<div class="text-justify">
-						<p>La nominada al GRAMMY latino Raquel Sofia, es el fenómeno indie que surgió en esta década. Antes de lanzar un álbum, ya había escrito y colaborado con algunos de los artistas más populares e influyentes del mercado latino, incluidos Shakira y Juanes. Las habilidades de Raquel Sofía se extienden más allá de su música.</p>
+						<p>La nominada al GRAMMY latino <b>Raquel Sofia</b>, es el fenómeno indie que surgió en esta década. Antes de lanzar un álbum, ya había escrito y colaborado con algunos de los artistas más populares e influyentes del mercado latino, incluidos Shakira y Juanes. Las habilidades de Raquel Sofía se extienden más allá de su música.</p>
 						<p>Ella habla y canta tres idiomas diferentes; Español, inglés y portugués. Se graduó de la reconocida Universidad de Miami Frost School of Music.</p>
 						<p>En 2014, Raquel Sofia lanzó su NPR "Tiny Desk Concert" y también fue elegida como la primera artista latina en participar en el programa original de VEVO "Vevo DSCVR" y obtuvo más de 100,000 visitas en las primeras 2 semanas. El segundo sencillo de Raquel "Agridulce" ha recaudado más de 8.5 millones de transmisiones en Spotify. Agridulce también fue elegido como una de las mejores canciones de Beats Music "Best of 2014 Pop".</p>
-						<p>Raquel Sofia escribió e interpretó en la cinta de videojuegos Game Of Thrones de HBO para 2015. En febrero de 2015, Raquel lanzó su primer EP "Te Odio Los Sabados" con su exitoso single "Te Amo Idiota", que obtuvo más de 9 millones de transmisiones en Spotify en 4 meses.</p>
+						<p>Raquel Sofia escribió e interpretó en la cinta de videojuegos Game Of Thrones de HBO para 2015. En febrero de 2015, Raquel lanzó su primer EP "Te Odio Los Sábados" con su exitoso single "Te Amo Idiota", que obtuvo más de 9 millones de transmisiones en Spotify en 4 meses.</p>
 					</div>
 					<p>Sitio web Oficial: <a href="https://www.raquelsofia.com/" target="_blank">raquelsofia.com/</a></p>
 				</div>
@@ -147,160 +151,139 @@
 			<div class="row">
 				
 				<div class="col s10 offset-s1">
-					<h5 class="mt-0 mb-50 raleway quote"><B>FECHAS CONFIRMADAS</B> <br><small>¡No pierdas tu lugar y compra tus boletos ya!</small></h5>
+					{{-- <h5 class="mt-0 mb-50 raleway quote"><B>FECHAS CONFIRMADAS</B> <br><small>¡No pierdas tu lugar y compra tus boletos ya!</small></h5> --}}
+
+					<h5 class="pl-30"><b>OCTUBRE</b></h5>
+					<div class="divider mb-30"></div>
+
+					<div class="col s12 event-date-card no-padding">
+						<div class="event-date-card-calendar">
+							<div class="event-date-card-month">
+								OCTUBRE 
+							</div>
+							<div class="event-date-card-number">
+								<h3 class="mt-0 mb-0">31</h3>
+								<small>Jueves</small>
+							</div>
+						</div>
+						<div class="event-date-details">
+							<h5><b>XALAPA, VERACRUZ</b></h5>
+							<p>CANTINA MADERO</p>
+							<p>21:00 hrs.</p>
+						</div>
+						<a href="{{ route('eventos.selecciona-lugares', 'xalapa') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					</div>
 
 					<h5 class="pl-30"><b>NOVIEMBRE</b></h5>
 					<div class="divider mb-30"></div>
-					{{-- <div class="col s12 event-date-card no-padding">
+					
+					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
-								<b>NOVIEMBRE</b>
+								NOVIEMBRE 
 							</div>
 							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>01</b></h3>
+								<h3 class="mt-0 mb-0">01</h3>
+								<small>Viernes</small>
 							</div>
 						</div>
 						<div class="event-date-details">
-							<h5><b>ORIZABA, VERACRUZ</b></h5>
-							<p>MERCADITO ORIZABA</p>
-							<p>21:30 hrs.</p>
-						</div>
-						<a href="{{ route('eventos.selecciona-lugares', 'orizaba') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div> --}}
-
-					{{-- <div class="col s12 event-date-card no-padding">
-						<div class="event-date-card-calendar">
-							<div class="event-date-card-month">
-								<b>NOVIEMBRE</b>
-							</div>
-							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>02</b></h3>
-							</div>
-						</div>
-						<div class="event-date-details">
-							<h5><b>VERACRUZ, VERACRUZ</b></h5>
-							<p>AGUAMALA BAR</p>
-							<p>21:30 hrs.</p>
-						</div>
-						<a href="{{ route('eventos.selecciona-lugares', 'veracruz') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div> --}}
-					{{-- <div class="col s12 event-date-card no-padding">
-						<div class="event-date-card-calendar">
-							<div class="event-date-card-month">
-								<b>NOVIEMBRE</b>
-							</div>
-							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>03</b></h3>
-							</div>
-						</div>
-						<div class="event-date-details">
-							<h5><b>CÓRDOBA, VERACRUZ</b></h5>
-							<p>SABINA LIVE</p>
-							<p>21:30 hrs.</p>
+							<h5><b>CORDOBA, VERACRUZ</b></h5>
+							<p>SABINA LIVE BAR</p>
+							<p>21:00 hrs.</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'cordoba') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div> --}}
-					{{-- <div class="col s12 event-date-card no-padding">
-						<div class="event-date-card-calendar">
-							<div class="event-date-card-month">
-								<b>NOVIEMBRE</b>
-							</div>
-							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>09</b></h3>
-							</div>
-						</div>
-						<div class="event-date-details">
-							<h5><b>PACHUCA, HIDALGO</b></h5>
-							<p>ALLIROOS CANTABAR</p>
-							<p>21:30 hrs.</p>
-						</div>
-						<a href="{{ route('eventos.selecciona-lugares', 'pachuca') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div> --}}
-					{{-- <div class="col s12 event-date-card no-padding">
-						<div class="event-date-card-calendar">
-							<div class="event-date-card-month">
-								<b>NOVIEMBRE</b>
-							</div>
-							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>22</b></h3>
-							</div>
-						</div>
-						<div class="event-date-details">
-							<h5><b>SAN LUIS POTOSÍ</b></h5>
-							<p>RESTAURANTE & BAR CASA VIEJA</p>
-							<p>21:30 hrs.</p>
-						</div>
-						<a href="{{ route('eventos.selecciona-lugares', 'slp') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
 					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
-								<b>NOVIEMBRE</b>
+								NOVIEMBRE 
 							</div>
 							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>23</b></h3>
+								<h3 class="mt-0 mb-0">02</h3>
+								<small>Sábado</small>
 							</div>
 						</div>
 						<div class="event-date-details">
-							<h5><b>AGUASCALIENTES</b></h5>
+							<h5><b>BOCA DEL RÍO, VERACRUZ</b></h5>
+							<p>FORO BOCA</p>
+							<p>21:00 hrs.</p>
+						</div>
+						<a href="{{ route('eventos.selecciona-lugares', 'boca') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					</div>
+					<div class="col s12 event-date-card no-padding">
+						<div class="event-date-card-calendar">
+							<div class="event-date-card-month">
+								NOVIEMBRE 
+							</div>
+							<div class="event-date-card-number">
+								<h3 class="mt-0 mb-0">21</h3>
+								<small>Jueves</small>
+							</div>
+						</div>
+						<div class="event-date-details">
+							<h5><b>AGUASCALIENTES, AGS.</b></h5>
 							<p>LA TERCERA</p>
-							<p>21:30 hrs.</p>
+							<p>21:00 hrs.</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'ags') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div> --}}
-					{{-- <div class="col s12 event-date-card no-padding">
+					</div>
+					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
-								<b>NOVIEMBRE</b>
+								NOVIEMBRE 
 							</div>
 							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>24</b></h3>
+								<h3 class="mt-0 mb-0">22</h3>
+								<small>Viernes</small>
 							</div>
 						</div>
 						<div class="event-date-details">
-							<h5><b>MORELIA, MICHOACAN</b></h5>
+							<h5><b>CELAYA, GTO.</b></h5>
+							<p>BLVD 804</p>
+							<p>21:00 hrs.</p>
+						</div>
+						<a href="{{ route('eventos.selecciona-lugares', 'celaya') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+					</div>
+					<div class="col s12 event-date-card no-padding">
+						<div class="event-date-card-calendar">
+							<div class="event-date-card-month">
+								NOVIEMBRE 
+							</div>
+							<div class="event-date-card-number">
+								<h3 class="mt-0 mb-0">23</h3>
+								<small>Sábado</small>
+							</div>
+						</div>
+						<div class="event-date-details">
+							<h5><b>MORELIA, MICH.</b></h5>
 							<p>CAFÉ DEL OLMO</p>
-							<p>21:30 hrs.</p>
+							<p>21:00 hrs.</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div> --}}
-					{{-- <div class="col s12 event-date-card no-padding">
-						<div class="event-date-card-calendar">
-							<div class="event-date-card-month">
-								<b>NOVIEMBRE</b>
-							</div>
-							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>30</b></h3>
-							</div>
-						</div>
-						<div class="event-date-details">
-							<h5><b>TORREÓN, COAHUILA</b></h5>
-							<p>LA BICICLETA</p>
-							<p>21:30 hrs.</p>
-						</div>
-						<a href="{{ route('eventos.selecciona-lugares', 'torreon') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div> --}}
-
+					</div>
 
 					<h5 class="pl-30"><b>DICIEMBRE</b></h5>
 					<div class="divider mb-30"></div>
-					{{-- <div class="col s12 event-date-card no-padding">
+					
+					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
-								<b>DICIEMBRE</b>
+								DICIEMBRE 
 							</div>
 							<div class="event-date-card-number">
-								<h3 class="mt-0 mb-0"><b>07</b></h3>
+								<h3 class="mt-0 mb-0">06</h3>
+								<small>Viernes</small>
 							</div>
 						</div>
 						<div class="event-date-details">
-							<h5><b>QUERÉTARO</b></h5>
-							<p>PORTÓN DE SANTIAGO</p>
-							<p>21:30 hrs.</p>
+							<h5><b>QUERETARO, QRO.</b></h5>
+							<p>EL PORTÓN DE SANTIAGO</p>
+							<p>21:00 hrs.</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'queretaro') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div> --}}
-					
+					</div>				
+
 				</div>
 
 			</div>

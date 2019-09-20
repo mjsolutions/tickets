@@ -48,13 +48,13 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 teal accent-4">Preventa</div>
+								<div class="col s12 teal accent-4">General</div>
 							</header>
-							<div class="price col s12"><span>$ 200</span> MXN.</div>
+							<div class="price col s12"><span>$ 300</span> MXN.</div>
 						</div>
 					</div>
 
-					<p class="center-align raleway">Día del evento $ <strong>250</strong> MXN</p>
+					{{-- <p class="center-align raleway">Día del evento $ <strong>250</strong> MXN</p> --}}
 
 				</div>
 
@@ -145,7 +145,7 @@
 			{!! Form::hidden('precio', 200) !!}
 			{!! Form::hidden('zona', 'Preventa') !!}
 			@else
-			{!! Form::hidden('precio', 250) !!}
+			{!! Form::hidden('precio', 300) !!}
 			{!! Form::hidden('zona', 'General') !!}
 			@endif
 			{!! Form::hidden('url', url('eventos/la-mole-celaya')) !!}

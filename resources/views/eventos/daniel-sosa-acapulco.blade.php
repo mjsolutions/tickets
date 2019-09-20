@@ -308,7 +308,7 @@
 				type: 'get',
 				dataType: 'json',
 				success: function(res) {
-					var asientos = '<option disabled>Seleccione el número de asientos</option>';
+					var asientos = '<option disabled>Selecciona tus asientos</option>';
 					$.each(res, function(index, i){
 						asientos += '<option value="'+i.id+'|'+i.asiento+'">Asiento #'+(index+1)+'</option>';
 					});
