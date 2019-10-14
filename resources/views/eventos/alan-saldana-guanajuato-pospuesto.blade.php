@@ -87,14 +87,14 @@
 
 		<div id="detalles" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/alan-saldana-bio.jpg') }}" class="responsive-img">
 			</div>
 				
 			<div class="col s12 m9">	
 				<p>Alan Saldaña, el AS de la comedia.</p><p>Joven y con un gran ángel y talento. Es una comedia sumamente divertida. A pesar de tener relativamente pocos años en la comedia, Alan ha cautivado y sorprendido a todo el público con sus originales monólogos y rutinas. Una verdadera inversión que provoca grandes carcajadas a todos.</p><p>Su meta no es ser el comediante más famoso del mundo, lo que Alan Saldaña quiere es conquistar toda Latinoamérica y llevar su comedia hasta donde pueda llegar, a escenarios donde tenga que poner a prueba su talento.</p>
 			</div>
 			<div class="col m3 hide-on-small-only">
-				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/alan-saldana-bio.jpg') }}" class="responsive-img">
 			</div>
 			<div class="clearfix"></div>
 			

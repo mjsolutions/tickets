@@ -24,9 +24,24 @@ class PaneldeUsuarioController extends Controller
 
         $eventos_activos = Event::where([['status', 1],['online', 1], ['fecha', '>', Carbon::now()->addMinutes(30)]])->orderBy('fecha', 'ASC')->get();
 
+        $eventos_raquel = Event::where([['status', 1],['url', 'raquel-sofia'], ['fecha', '>', Carbon::now()->addMinutes(30)]])->orderBy('fecha', 'ASC')->get();
+
         $eventos = [];
 
         foreach ($eventos_activos as $evento) {
+            $res = DB::table($evento->tabla)->where('user', Auth::id())->whereIn('status', [2, 3])->get();
+            if($res->isNotEmpty()){
+
+                $data = [
+                        'info'      =>  $evento,
+                        'boletos'   =>  $res
+                    ];
+
+                array_push($eventos, $data);             
+            }
+        }
+
+        foreach ($eventos_raquel as $evento) {
             $res = DB::table($evento->tabla)->where('user', Auth::id())->whereIn('status', [2, 3])->get();
             if($res->isNotEmpty()){
 
@@ -74,7 +89,6 @@ class PaneldeUsuarioController extends Controller
       
 
     	return $pdf->download('ticket_'.$evento->tabla.'.pdf');
-        // return $pdf->stream('ticket_'.$evento->tabla.'.pdf');
     }
 
     public function showFormForComprobante(){
@@ -394,42 +408,85 @@ class PaneldeUsuarioController extends Controller
     	// dd('barcodes updated');
     // }
 
-    // public function initTable(){
-    //     $table = 'daniel_sosa_acapulco_28sep';
+    public function initTable(){
+        $table = 'fernando_delgadillo_cordoba_21dic';
 
-    //     // $asiento = 22;
-    //     $rows = [];
-    //     $filas = [4,4,4,4,4,4,4,4,4,4,4,4 ,10,10,10,10,10,10,10,10];
-    //     $filas_pos = 0;
-    //     $cb = 201;
-    //     // $fila = 'A';
+        // $asiento = 22;
+        $rows = [];
+        $filas = [];
+        $filas_pos = 0;
+        $cb = 1;
+        // $fila = 'A';
 
-    //     foreach(range(59, 78) as $fila){
+        for ($p=1; $p <=38 ; $p++) { 
+            for($i = 1; $i <=  4; $i++){
+                $row = ['seccion' => 'Periqueras',
+                    'bloque' => 'Periquera '.$p,
+                    'fila' => 'Periquera '.$p,
+                    'asiento' => $i,
+                    'status' => 0,
+                    'impreso' => 0,
+                    'forma_pago' => null,
+                    'folio' => null,
+                    'codigo_barras' => substr(md5($table.$cb),0,10),
+                    'token_vlinea' => null,
+                    'user' => null,
+                    'fecha_venta' => null];
+
+                array_push($rows, $row);
+                $cb++;
+            }
+        }
+
+        foreach(range('A', 'E') as $fila){
             
-    //         for($i = 1; $i <= $filas[$filas_pos]; $i++){
-    //             $row = ['seccion' => 'Plata',
-    //                 'bloque' => '',
-    //                 'fila' => 'Mesa '.$fila,
-    //                 'asiento' => 1,
-    //                 'status' => 0,
-    //                 'impreso' => 0,
-    //                 'forma_pago' => null,
-    //                 'folio' => null,
-    //                 'codigo_barras' => substr(md5($table.$cb),0,10),
-    //                 'token_vlinea' => null,
-    //                 'user' => null,
-    //                 'fecha_venta' => null];
+            for($i = 1; $i <=  50; $i++){
+                $row = ['seccion' => 'Platino',
+                    'bloque' => '',
+                    'fila' => $fila,
+                    'asiento' => $i,
+                    'status' => 0,
+                    'impreso' => 0,
+                    'forma_pago' => null,
+                    'folio' => null,
+                    'codigo_barras' => substr(md5($table.$cb),0,10),
+                    'token_vlinea' => null,
+                    'user' => null,
+                    'fecha_venta' => null];
 
-    //             array_push($rows, $row);
-    //             $cb++;
-    //         }
+                array_push($rows, $row);
+                $cb++;
+            }
 
-    //         $filas_pos++;
-    //     }
+            $filas_pos++;
+        }
 
-    //      DB::table($table)->insert($rows);
+        foreach(range('F', 'J') as $fila){
+            
+            for($i = 1; $i <=  30; $i++){
+                $row = ['seccion' => 'Preferente',
+                    'bloque' => '',
+                    'fila' => $fila,
+                    'asiento' => $i,
+                    'status' => 0,
+                    'impreso' => 0,
+                    'forma_pago' => null,
+                    'folio' => null,
+                    'codigo_barras' => substr(md5($table.$cb),0,10),
+                    'token_vlinea' => null,
+                    'user' => null,
+                    'fecha_venta' => null];
 
-    //      echo 'Insert Plata done';
-    // }
+                array_push($rows, $row);
+                $cb++;
+            }
+
+            $filas_pos++;
+        }
+
+         DB::table($table)->insert($rows);
+
+         echo 'Insert done';
+    }
 
 }

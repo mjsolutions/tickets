@@ -21,7 +21,7 @@
 	    background: #FFF;
 	}
 	button.selector-button:focus {
-		background-color: unset;
+		background-color: #FFF;
 	}
 	.selector-button:active {
   		background: #ccc !important;
@@ -39,7 +39,7 @@
 	}
 	.selector-button-input {
 		width: 100% !important;
-		padding-left: 34px !important;
+		padding-left: 25px !important;
 		padding-right: 20px !important;
 		height: 35px !important;
 		text-align: center !important;
@@ -62,13 +62,13 @@
 @php
 
 $data['img'] = 'img/raquel-'.$ciudad.'.jpg';
-$data['precio'] = '110';
+$data['precio'] = '200';
 
 switch( $ciudad ) {
 	case 'xalapa';
 		$data['fecha'] = '31 de octubre 2019';
 		$data['ciudad'] = 'Xalapa Veracruz';
-		$data['lugar'] = 'Cantina Madero';
+		$data['lugar'] = 'Café Tierra Luna';
 		$data['table'] = 'raquel_'.$ciudad.'_31oct';break;
 	case 'cordoba';
 		$data['fecha'] = '01 de noviembre 2019';
@@ -127,7 +127,7 @@ switch( $ciudad ) {
 
 				<h5 class="mb-0"><strong>Raquel Sofía Gira 2019</strong></h5>
 				<p class="mt-0">- {{ $data['ciudad'] }} -</p>
-				<p class="mb-30"><strong>Costo por entrada:</strong> $ <span style="font-size: 1.3rem; font-weight: 700">{{ number_format($data['precio'], 2,'.',',') }}</span> MXN.</p>
+				<p class="mb-30"><strong>Costo por entrada:</strong> <br class="hide-on-med-and-up"> $ <span style="font-size: 1.3rem; font-weight: 700">{{ number_format($data['precio'], 2,'.',',') }}</span> MXN.</p>
 
 				@if(Auth()->check())
 				
@@ -140,7 +140,7 @@ switch( $ciudad ) {
 						</div>	 --}}
 						<div class="seats-selector-container">
 							<button id="btn-minus" type="button" class="waves-effect waves-light selector-button selector-button-left"><i class="fa fa-minus"></i></button>
-							<input id="num-asientos" min="1" type="number" name="asiento" class="selector-button-input" value="1" required>
+							<input id="num-asientos" min="1" max="10" type="number" name="asiento" class="selector-button-input" value="1" required>
 							<button id="btn-plus" type="button" class="waves-effect waves-light selector-button selector-button-right"><i class="fa fa-plus"></i></button>
 						</div>			
 			
@@ -168,8 +168,8 @@ switch( $ciudad ) {
 
 				@else
 					<p class="center-align raleway">Debes iniciar sesion para poder seleccionar tus lugares</p>
-					<div class="col s6 col-center">
-						<a href="#modal-login" class="modal-login-open btn btn-block waves-light orange accent-3">Login</a>
+					<div class="center-align">
+						<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Ingresar</a>
 					</div>
 				@endif
 
@@ -195,7 +195,9 @@ switch( $ciudad ) {
 <script type="text/javascript">
 	$("#btn-plus").click(function(){
 	    var value = $("#num-asientos").val();
-	    $("#num-asientos").val(++value);
+	    if(value < 10){
+	    	$("#num-asientos").val(++value);
+	    }
 	});
 	$("#btn-minus").click(function(){
 	    var value = $("#num-asientos").val();
@@ -207,6 +209,10 @@ switch( $ciudad ) {
 		if($("#num-asientos").val() < 1){
 			Materialize.toast('La cantidad minima de boletos es: 1',2000);
 			$("#num-asientos").val(1);
+			return false;
+		}else if($("#num-asientos").val() > 10){
+			Materialize.toast('Puedes seleccionar hasta 10 boletos',2000);
+			$("#num-asientos").val(10);
 			return false;
 		}
 		return true;

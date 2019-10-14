@@ -5,6 +5,10 @@
 @section('description', 'Raquel Sofia en su gira 2019, boletos en bolematico.com')
 
 @section('styles')
+<meta property="og:url"  content="https://www.bolematico.com/eventos/raquel-sofia" />
+<meta property="og:title" content="Raquel Sofía gira 2019" />
+<meta property="og:description" content="Raquel Sofía en su gira 2019, varias ciudades, boletos a tráves de bolemtico.com" />
+<meta property="og:image" content="https://www.bolematico.com/img/raquel-sofia-2019.jpg" />
 <style type="text/css">
 	.flex {
 		margin: 0 auto;
@@ -68,9 +72,28 @@
 	}
 	.event-date-details h5 {
 		margin-top: 0;
+		margin-bottom: 0;
 	}
 	.event-date-details p {
 		margin: 0;
+	}
+	.event-date-details p:first-of-type {
+		color: #004040;
+		font-weight: 500;
+		opacity: 0.9;
+	}
+	.event-date-details p:last-child {
+		display: inline-block;
+		margin-top: 10px;
+		font-weight: 500;
+		background: #008080;
+	    color: #fff;
+	    padding: 1px 8px
+	}
+	.event-hr {
+		padding:1px 0.5rem;
+		margin-left: 0.5rem;
+		border-left: 1px solid #999;
 	}
 
 	@media screen and (max-width: 650px) {
@@ -115,13 +138,13 @@
 			</ul>
 		</div>
 		<div id="tour" class="col s12 tab-content">
-			<div class="row mb-50">
+			{{-- <div class="row mb-50">
 				<div class="col s12">
-					{{-- <img src="{{ asset('img/roberto-tapia-banner.jpg') }}" alt="" class="responsive-img wow fadeIn"> --}}
+					<img src="{{ asset('img/roberto-tapia-banner.jpg') }}" alt="" class="responsive-img wow fadeIn">
 				</div>
-			</div>
+			</div> --}}
 			<div class="row">
-				<div class="col s12 m8 wow fadeIn" data-wow-delay="0.5s">
+				<div class="col s12 m6 l8 wow fadeIn" data-wow-delay="0.5s">
 					<div class="text-justify">
 						<p>La nominada al GRAMMY latino <b>Raquel Sofia</b>, es el fenómeno indie que surgió en esta década. Antes de lanzar un álbum, ya había escrito y colaborado con algunos de los artistas más populares e influyentes del mercado latino, incluidos Shakira y Juanes. Las habilidades de Raquel Sofía se extienden más allá de su música.</p>
 						<p>Ella habla y canta tres idiomas diferentes; Español, inglés y portugués. Se graduó de la reconocida Universidad de Miami Frost School of Music.</p>
@@ -131,7 +154,7 @@
 					<p>Sitio web Oficial: <a href="https://www.raquelsofia.com/" target="_blank">raquelsofia.com/</a></p>
 				</div>
 
-				<div class="col s12 m4">
+				<div class="col s12 m6 l4">
 					<img src="{{ asset('img/raquel-bio.jpg') }}" class="responsive-img materialboxed wow fadeInRight" data-wow-delay="0.5s">
 					<div class="flex">
 						<a href="https://www.facebook.com/raquelsofiamusic" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -149,6 +172,12 @@
 
 		<div id="fechas" class="col s12 tab-content">
 			<div class="row">
+				<div class="col s10 offset-s1 m4 offset-m1">
+					<img src="{{ asset('img/raquel-sofia-2019.jpg') }}" alt="" class="responsive-img wow fadeIn">
+				</div>
+				<div class="col m6 s12">
+					<iframe width="100%" height="350" src="https://www.youtube.com/embed/R6uSvPrL9dg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
 				
 				<div class="col s10 offset-s1">
 					{{-- <h5 class="mt-0 mb-50 raleway quote"><B>FECHAS CONFIRMADAS</B> <br><small>¡No pierdas tu lugar y compra tus boletos ya!</small></h5> --}}
@@ -168,8 +197,8 @@
 						</div>
 						<div class="event-date-details">
 							<h5><b>XALAPA, VERACRUZ</b></h5>
-							<p>CANTINA MADERO</p>
-							<p>21:00 hrs.</p>
+							<p>Café Tierra Luna<span class="event-hr">21:00 hrs</span></p>
+							<p>$ 200 MXN</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'xalapa') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
@@ -189,8 +218,8 @@
 						</div>
 						<div class="event-date-details">
 							<h5><b>CORDOBA, VERACRUZ</b></h5>
-							<p>SABINA LIVE BAR</p>
-							<p>21:00 hrs.</p>
+							<p>Sabina Live Bar<span class="event-hr">21:00 hrs</span></p>
+							<p>$ 200 MXN</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'cordoba') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
@@ -206,10 +235,10 @@
 						</div>
 						<div class="event-date-details">
 							<h5><b>BOCA DEL RÍO, VERACRUZ</b></h5>
-							<p>FORO BOCA</p>
-							<p>21:00 hrs.</p>
+							<p>Foro Boca<span class="event-hr">21:00 hrs</span></p>
+							<p></p>
 						</div>
-						<a href="{{ route('eventos.selecciona-lugares', 'boca') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
+						{{-- <a href="{{ route('eventos.selecciona-lugares', 'boca') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a> --}}
 					</div>
 					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
@@ -223,8 +252,8 @@
 						</div>
 						<div class="event-date-details">
 							<h5><b>AGUASCALIENTES, AGS.</b></h5>
-							<p>LA TERCERA</p>
-							<p>21:00 hrs.</p>
+							<p>La Tercera<span class="event-hr">21:00 hrs</span></p>
+							<p>$ 200 MXN</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'ags') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
@@ -240,8 +269,8 @@
 						</div>
 						<div class="event-date-details">
 							<h5><b>CELAYA, GTO.</b></h5>
-							<p>BLVD 804</p>
-							<p>21:00 hrs.</p>
+							<p>BLVD 804<span class="event-hr">21:00 hrs</span></p>
+							<p>$ 200 MXN</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'celaya') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
@@ -257,8 +286,8 @@
 						</div>
 						<div class="event-date-details">
 							<h5><b>MORELIA, MICH.</b></h5>
-							<p>CAFÉ DEL OLMO</p>
-							<p>21:00 hrs.</p>
+							<p>Café del Olmo<span class="event-hr">21:00 hrs</span></p>
+							<p>$ 200 MXN</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
@@ -278,8 +307,8 @@
 						</div>
 						<div class="event-date-details">
 							<h5><b>QUERETARO, QRO.</b></h5>
-							<p>EL PORTÓN DE SANTIAGO</p>
-							<p>21:00 hrs.</p>
+							<p>El Portón de Santiago<span class="event-hr">21:00 hrs</span></p>
+							<p>$ 200 MXN</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'queretaro') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>				
@@ -293,12 +322,12 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/MWW2HxBFuZE/maxresdefault.jpg');">
+{{-- <section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/R6uSvPrL9dg/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/MWW2HxBFuZE"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Raquel Sofía - Sonrisa Vertical (Live)</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/R6uSvPrL9dg"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>Raquel Sofía, PJ Sin Suela - A Las Rocas</i></p>
 	</div>
-</section>
+</section> --}}
 
 <section id="compra" class="section-comprar mt-50 mb-50">
 	

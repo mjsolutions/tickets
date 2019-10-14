@@ -1,0 +1,47 @@
+.seats-selector-container {
+	width: 130px;
+    position: relative;
+    margin: 0 auto;
+}
+.selector-button {
+	position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 0;
+    border: 1px solid #cdcdcd;
+    color: #004c45 ;
+    background: #FFF;
+}
+button.selector-button:focus {
+	background-color: #FFF;
+}
+.selector-button:active {
+		background: #ccc !important;
+		color: #f44336 !important;
+}
+.selector-button-left {
+    left: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.selector-button-right {
+	right: 0;
+	border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.selector-button-input {
+	width: 100% !important;
+	padding-left: 25px !important;
+	padding-right: 20px !important;
+	height: 35px !important;
+	text-align: center !important;
+	font-size: 1.5rem !important;
+	border: 1px solid #cdcdcd !important;
+	border-radius: 5px !important;
+	background: rgba(255,255,255,0.6) !important;
+	margin-bottom: 15px !important;
+	box-sizing: border-box !important;
+}
+.selector-button-input:focus {
+	box-shadow: none !important;
+}

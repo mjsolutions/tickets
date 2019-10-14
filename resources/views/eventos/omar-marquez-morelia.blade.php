@@ -112,9 +112,9 @@
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/J9wb6DX5em8/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/j6pCHLfo0KI/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/J9wb6DX5em8"><i class="material-icons">play_circle_filled</i></a>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/j6pCHLfo0KI"><i class="material-icons">play_circle_filled</i></a>
 		<p class="white-text"><i>Omar Marquez - El Culpable</i></p>
 	</div>
 </section>

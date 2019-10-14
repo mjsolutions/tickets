@@ -55,9 +55,10 @@
 				<img src="{{ asset('img/daniel-sosa-acapulco.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
-			<div class="col s12 m6 offset-m1">				
+			<div class="col s12 m5 offset-m1">				
+				<img src="{{ asset('img/daniel-sosa-acapulco-cancelacion.jpg') }}" alt="" class="responsive-img">
 
-				<div class="row">
+				{{-- <div class="row">
 
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
@@ -86,7 +87,7 @@
 						<p>* Los lugares son asignados conforme vayan llegando al evento.</p>
 						<p class="mb-0"> * Informes: <br> <a href="tel:5571701175" style="background: #4caf50; color: #fff; padding: 5px 10px;">557-170-1175</a> / <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;">452-174-1255</a></p>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 
@@ -143,7 +144,7 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	@if(Auth()->check())
+	{{-- @if(Auth()->check())
 	<div class="row mt-30">
 		<div class="col m8 border">
 			<img src="{{ asset('img/calinda-beach.jpg') }}" alt="" class="responsive-img z-depth-1 materialboxed">
@@ -196,7 +197,6 @@
 				{!! Form::hidden('event_type', 'numerado') !!}
 				{!! Form::hidden('select_type', 'list') !!}
 				{!! Form::hidden('impresion_boleto', true) !!}
-				{{-- {!! Form::hidden('zona', 'Diamante') !!} --}}
 				{!! Form::hidden('db_table', 'daniel_sosa_acapulco_28sep') !!}
 				{!! Form::hidden('info', '') !!}
 				{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
@@ -218,7 +218,7 @@
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
 	</div>
-	@endif
+	@endif --}}
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
 			<p class="center-align">Si tienes alguna duda sobre este evento no dudes en contactarnos</p>

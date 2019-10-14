@@ -157,10 +157,10 @@ Route::group(['prefix' => 'micuenta','middleware' => 'auth'], function() {
 
     // ]);
 
-    //  Route::get('init-table', [
-    // 	'as'	=> 'cliente.init_table',
-    // 	'uses'	=> 'PaneldeUsuarioController@initTable'
+    Route::get('init-table', [
+    	'as'	=> 'cliente.init_table',
+    	'uses'	=> 'PaneldeUsuarioController@initTable'
 
-    // ]); 
+    ]); 
 
 });

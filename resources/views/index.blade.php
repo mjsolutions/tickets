@@ -3,6 +3,10 @@
 @section('title', '')
 
 @section('styles')
+	<meta property="og:url"  content="https://www.bolematico.com" />
+	<meta property="og:title" content="Bolematico" />
+	<meta property="og:description" content="Bolematico, los mejores espectaculos y eventos nacionales" />
+	<meta property="og:image" content="https://www.bolematico.com/img/logotipo-nuevo-negro.png" />
 	<script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 	<style>
 		.label1 {
@@ -99,6 +103,35 @@
 				</div>
 			</div>
 
+				{{-- Gira Raquel --}}
+				<div class="col m4 l3 evento">
+					<div  class="col s12 no-padding z-depth-1 hoverable" >
+						<div class="evento-img-container">
+							<a href="{{ url('/eventos').'/raquel-sofia' }}">
+								<img src="{{ asset('img/raquel-sofia-2019.jpg') }}" class="responsive-img evento-img">
+							</a>
+						</div>
+						<div class="col s12 evento-info white">
+							<div class="col s12">
+								<h5 class="evento-artista">
+									<strong class="event-name">
+										<a href="{{ url('/eventos').'/raquel-sofia' }}">RAQUEL SOFÍA</a>
+									</strong> <br> 
+									<small class="evento-detalles-ciudad">Varias Ciudades</small>
+									<small><i>Gira 2019</i></small>
+								</h5>								
+							</div>
+							{{-- <div class="col s3 center-align evento-fecha">
+								<p class="mb-0">{{ $mes[intval($date->format('m'))] }}</p>
+								<h5 class="mt-0">{{ $date->format('d') }}</h5>
+							</div> --}}
+							{{-- <p class="event-date">{{ $evento->fecha }}</p>							 --}}
+						</div>
+					</div>
+
+				</div>
+
+				{{-- {{ dd($eventos) }} --}}
 				@foreach($eventos as $evento)
 				@php
 					$evento_url = !empty($evento->url)?url('/eventos').'/'.$evento->url: 'javascript:void;';
@@ -134,8 +167,6 @@
 
 				@endforeach
 				
-				
-			</div>
 		</div>
 	</div>
 </section>
