@@ -13,6 +13,17 @@
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/event-select-manual.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/event-select-general.css') }}">
+<style type="text/css">
+	.svg-buttons {
+		position: absolute;
+		left: 10px;
+		bottom: 10px;
+	}
+	.svg-buttons button {
+		margin: 0 3px;
+	}
+	#svg-container { position: relative; }
+</style>
 
 @endsection
 
@@ -61,7 +72,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 teal accent-4">Periqueras</div>
+								<div class="col s12 pink darken-1">Periqueras</div>
 							</header>
 							<div class="price col s12"><span>$ 850</span> MXN.</div>
 						</div>
@@ -70,7 +81,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 pink darken-1">Platino</div>
+								<div class="col s12 teal accent-4">Platino</div>
 							</header>
 							<div class="price col s12"><span>$ 550</span> MXN.</div>
 						</div>
@@ -103,7 +114,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 teal accent-4">Periqueras</div>
+								<div class="col s12 pink darken-1">Periqueras</div>
 							</header>
 							<div class="price col s12"><span>$ 1,000</span> MXN.</div>
 						</div>
@@ -112,7 +123,7 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 pink darken-1">Platino</div>
+								<div class="col s12 teal accent-4">Platino</div>
 							</header>
 							<div class="price col s12"><span>$ 600</span> MXN.</div>
 						</div>
@@ -207,8 +218,19 @@
 			<div class="col s12 mb-15">
 				<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 			</div>
-			<div class="col s12 m6 white div-border" style="padding-top:10px;">
+			<div class="col s12 m6 white div-border" id="svg-container" style="padding-top:10px;">
 				@include('maps.exhacienda-toxpan')
+				<div class="svg-buttons">
+					<button title="disminuir" id="zoom-out" class="btn-floating waves-effect waves-light">
+						<i class="material-icons">zoom_out</i>				
+					</button>
+					<button title="reset" id="zoom-reset" class="btn-floating waves-effect waves-light">
+						<i class="material-icons">crop_free</i>
+					</button>
+					<button title="aumentar" id="zoom-in" class="btn-floating waves-effect waves-light">
+						<i class="material-icons">zoom_in</i>
+					</button>
+				</div>
 			</div>
 			<div class="col s12 m6">
 				<div class="col s12 mb-15">
@@ -308,10 +330,41 @@
 @endsection
 
 @section('scripts')
+	<script src="{{asset('plugins/svg-pan-zoom.js')}}"></script>
 	<script>
+		svgMap = svgPanZoom('#exhacienda-toxpan', {
+		    zoomEnabled: true,
+		    controlIconsEnabled: false,
+		    fit: true,
+		    center: true,
+		    minZoom: 0.1
+		});
+		$("#svg-container").height(svgMap.getSizes().height);
+
+		$("#zoom-in").click(function(){
+			svgMap.zoomIn();
+		});
+
+		$("#zoom-out").click(function(){
+			svgMap.zoomOut();
+		});
+
+		$("#zoom-reset").click(function(){
+			svgMap.resetZoom();
+			svgMap.center();
+		});
+
+		$(window).resize(function(){
+			svgMap.resize();
+			svgMap.fit();
+		});
+
+		// zoom out
+  		// panZoomInstance.zoom(0.2);
+
 		@if($preventa)
 		var table = 'fernando_delgadillo_cordoba_21dic_prev';
-		var precios = {'Periqueras': 850, 'Platino': 550, 'Preferente': 400, 'General': 300};
+		var precios = {'Periqueras': 850, 'Platino': 550, 'Preferente': 400, 'General Preventa': 300};
 		@else
 		var table = 'fernando_delgadillo_cordoba_21dic';
 		var precios = {'Periqueras': 1000, 'Platino': 600, 'Preferente': 450, 'General': 350};
