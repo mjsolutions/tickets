@@ -178,7 +178,7 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	{{-- <div class="row mt-30">
+	<div class="row mt-30">
 	@if(Auth()->check())
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
@@ -233,7 +233,7 @@
 			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 		</div>
 	@endif
-	</div> --}}
+	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
 			<h5 class="center-align raleway">Venta de boletos en RS Viajes Centro y Taquillas del Planetario</h5>
@@ -273,9 +273,12 @@
 
 @section('scripts')
 	<script>
-		var get_map_seat = '{{url('/api/getMapAsientos')}}/oceransky_morelia_01mar';
-		var base_path = '{{ url('/') }}';
+		// var get_map_seat = '{{url('/api/getMapAsientos')}}/oceransky_morelia_01mar';
+		// var base_path = '{{ url('/') }}';
+		var table = 'oceransky_morelia_01mar';
 		var precios = {'Diamante': 600, 'Oro': 450, 'Plata': 350};
+		var base_path = '{{ url('/') }}';
+		var special_char_n = 'N-';
 
 		$('#modal-video-open').leanModal({
 			opacity: .8,
@@ -304,7 +307,7 @@
 		      }
 
 	</script>
-	<script src="{{asset('js/event_manual.js')}}"></script>
+	<script src="{{asset('js/event_manual_v3.js')}}"></script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOT9N6QdDeq0bnmSb1bw2SKw5CXQmOeA&callback=initMap"></script>
 @endsection

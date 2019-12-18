@@ -31,6 +31,10 @@ class PaymentController extends Controller
 	*/
 
     public function paymentDetails(Request $req) {
+
+    	if( !is_numeric($req->precio) ) {
+    		return back()->withErrors('Ocurrió un error, selecciona de nuevo tus lugares');
+    	}
     	return view('detalles-compra', compact('req'));
     }
 

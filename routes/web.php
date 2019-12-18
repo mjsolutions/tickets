@@ -151,11 +151,11 @@ Route::group(['prefix' => 'micuenta','middleware' => 'auth'], function() {
     	'uses'	=> 'PaneldeUsuarioController@showComprobante'
     ]);
 
-    // Route::get('codigo-barras', [
-    // 	'as'	=> 'cliente.codigob',
-    // 	'uses'	=> 'PaneldeUsuarioController@updateDb'
+    Route::get('codigo-barras', [
+    	'as'	=> 'cliente.codigob',
+    	'uses'	=> 'PaneldeUsuarioController@updateDb'
 
-    // ]);
+    ]);
 
     Route::get('init-table', [
     	'as'	=> 'cliente.init_table',

@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
-@section('title', 'Alan Saldaña')
+@section('title', 'José Luis Zagar, Ojitos de Huevo y Pipirin')
 
-@section('description', 'Alan Saldaña, Guanajuato 21 de noviembre, 21:00 hrs Teatro Cervantes, boletos en bolematico.com')
+@section('description', 'José Luis Zagar, Ojitos de Huevo y Pipirin, Morelia 28 de noviembre, 21:00 hrs Auditorio Samuel Ramos, boletos en bolematico.com')
 
 @section('styles')
-<meta property="og:url"  content="https://www.bolematico.com/eventos/alans-saldana-guanajuato" />
-<meta property="og:title" content="Alan Saldaña" />
-<meta property="og:description" content="Alan Saldaña, Guanajuato 21 de noviembre, 21:00 hrs Teatro Cervantes, boletos en bolematico.com" />
-<meta property="og:image" content="https://www.bolematico.com/img/alan-saldana-guanajuato.jpg" />
+<meta property="og:url"  content="https://www.bolematico.com/eventos/zagar-ojitos-pipirin-morelia" />
+<meta property="og:title" content="José Luis Zagar, Ojitos de Huevo y Pipirin" />
+<meta property="og:description" content="José Luis Zagar, Ojitos de Huevo y Pipirin, Morelia 28 de noviembre, 21:00 hrs Auditorio Samuel Ramos, boletos en bolematico.com" />
+<meta property="og:image" content="https://www.bolematico.com/img/zagar-ojitos-pipirin-morelia.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/event-select-manual.css') }}">
@@ -19,10 +19,10 @@
 <div class="image-header bg-4 overlay overlay-5">
 
 	<div class="row white-text">
-		<h4>Alan Saldaña</h4>
+		<h4>José Luis Zagar, Ojitos de Huevo y Pipirin</h4>
 		<div class="divider"></div>
-		<p class="mb-0"><i>Teatro Cervantes - Guanajuato</i></p>
-		<p class="m-0"><i>21 de noviembre - 21:00 hrs.</i></p>
+		<p class="mb-0"><i>Auditorio Samuel Ramos - Morelia</i></p>
+		<p class="m-0"><i>28 de noviembre - 21:00 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -33,13 +33,13 @@
 			<ul class="tabs">
 				<li class="tab "><a class="active" href="#precios">Precios</a></li>
 				<li class="tab "><a href="#detalles">Detalles</a></li>
-				<li class="tab "><a href="#lugares">Lugares de venta</a></li>
+				{{-- <li class="tab "><a href="#lugares">Lugares de venta</a></li> --}}
 			</ul>
 		</div>
 		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s8 offset-s2 m3 offset-m1 mb-30 card-flyer">
-				<img src="{{ asset('img/alan-saldana-guanajuato.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/zagar-ojitos-pipirin-morelia.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m6 offset-m1">				
@@ -51,7 +51,7 @@
 							<header>
 								<div class="col s12 teal accent-4">Diamante</div>
 							</header>
-							<div class="price col s12"><span>$380</span> MXN</div>
+							<div class="price col s12"><span>$750</span> MXN</div>
 						</div>
 					</div>
 
@@ -60,7 +60,16 @@
 							<header>
 								<div class="col s12 amber darken-1">Oro</div>
 							</header>
-							<div class="price col s12"><span>$280</span> MXN</div>
+							<div class="price col s12"><span>$600</span> MXN</div>
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
+								<div class="col s12 grey">Plata</div>
+							</header>
+							<div class="price col s12"><span>$400</span> MXN</div>
 						</div>
 					</div>
 
@@ -70,7 +79,7 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						<p>* Informes: <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452-174-1255</a></p>
+						{{-- <p>* Informes:<a href="tel:9384058424" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 938-405-8424</a> / <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452-174-1255</a></p> --}}
 					</div>
 				</div>
 			</div>
@@ -78,20 +87,39 @@
 
 		<div id="detalles" class="col s12 tab-content">
 			<div class="col s8 offset-s2 hide-on-med-and-up">
-				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/zagar-bio.jpg') }}" class="responsive-img">
 			</div>
+			<div class="col s12 m9">
+				<h5 class="raleway quote">José Luis Zagar</h5>
+				<p>José Luis comenzó su carrera de comediante en El Unicornio Azul en el año 2001, posteriormente se fue a Hermosillo, Sonora al bar “El Rincón de Venancio cómo telonero de muchos comediantes que iban de Monterrey, Guadalajara y CDMX. Dos años después, regresó a Monterrey y se convirtió en el comediante favorito del público.</p>
+				<p>Dio la vuelta a la república Mexicana en eventos privados y ha trabajado con personalidades como Polo Polo, El Norteño, Platanito, Teo Gonzalez, Jorge Falcón, Adal Ramones, Omar Chaparro y muchos más en diversos programas de Televisión, entre los que se destacan Stand Parados, Sabadazo, Noches de Humor, Comedy Central y en centros de espectáculo diverso.</p>
 				
-			<div class="col s12 m9">	
-				<p>Alan Saldaña, el AS de la comedia.</p><p>Joven y con un gran ángel y talento. Es una comedia sumamente divertida. A pesar de tener relativamente pocos años en la comedia, Alan ha cautivado y sorprendido a todo el público con sus originales monólogos y rutinas. Una verdadera inversión que provoca grandes carcajadas a todos.</p><p>Su meta no es ser el comediante más famoso del mundo, lo que Alan Saldaña quiere es conquistar toda Latinoamérica y llevar su comedia hasta donde pueda llegar, a escenarios donde tenga que poner a prueba su talento.</p>
 			</div>
 			<div class="col m3 hide-on-small-only">
-				<img src="{{ asset('img/alan-bio.jpg') }}" class="responsive-img">
+				<img src="{{ asset('img/zagar-bio.jpg') }}" class="responsive-img">
+			</div>
+			<div class="col s10 offset-s1 mb-30 mt-30">
+				<div class="divider"></div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col s12 m3">
+				<img src="{{ asset('img/alexis-bio.jpg') }}" class="responsive-img">
+			</div>
+			<div class="col s12 m9">
+				<h5 class="raleway quote">Alexis Ojitos de Huevo</h5>	
+				<p>Su nombre es Alexis Arroyo nació ciego hace 24 años en Querétaro. Es periodista, escritor y comediante de Stand Up y ha demostrado ser un gran talento sobre el escenario.</p>
+				<p>Desde niño se interesó por la comedia, a los seis años escuchaba canciones de comedia y admiraba a la gente que se dedicaba hacer reír como Polo Polo. Siempre le gustó la idea de ser el centro de atención y divertir a la gente; además le gusta cantar y el teatro.</p>
+		        <p>Empezó en el mundo del Stand Up, luego de acompañar a un amigo que en aquél momento era DJ de un bar, le dijeron que podía subir al escenario como aficionado y lo hizo. Desde entonces no ha soltado el micrófono y posteriormente tuvo su primera aparición en televisión, de ahí surgieron los primeros shows.</p>
+		        <p>Una de las personas que apoyó a Alexis para iniciar como Standopero fue Hugo Alberto Pérez Acevedo, el Cojo Feliz.</p>
+		        <p>Ha destacado por hacer reír al público en 'Beer Hall' un bar de la Condesa donde tienen lugar los tradicionales ?Open Mic?, sesiones en las que los comediantes acuden a probar material nuevo delante del público.</p>
+		        <p>En 2015 participó en el  canal de televisión Comedy Central y recientemente fue ganador del 'Stand wars' de Telehit 2017, lo cual lo hizo merecedor de un programa especial transmitido a todo Hispanoamérica.</p>
+		        <p>Fuera del escenario Alexis Arroyo es activista a favor de la inclusión de personas con discapacidades y hace llegar su trabajo a través de su canal en YouTube.</p>
 			</div>
 			<div class="clearfix"></div>
 			
 		</div>
 
-		<div id="lugares" class="col s12 tab-content">
+		{{-- <div id="lugares" class="col s12 tab-content">
 			<div class="col s12">
 				<h5 class="mb-30 quote">Además de Bolematico, puedes adquirir tus entradas a partir del 11 de noviembre en:</h5>
 			</div>
@@ -114,14 +142,14 @@
 
 			</div>			
 
-		</div>
+		</div> --}}
 
 	</div>
 </section>
-<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/3Sbdd-L0_zQ/maxresdefault.jpg');">
+<section class="section-video overlay overlay-5" style="background-image: url('https://img.youtube.com/vi/0mOj3wbNL9o/maxresdefault.jpg');">
 	<div class="row center-align">
-		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/3Sbdd-L0_zQ"><i class="material-icons">play_circle_filled</i></a>
-		<p class="white-text"><i>Alan Saldaña | Monologo "MUJERES CELOSAS"</i></p>
+		<a class="white-text" id="modal-video-open" href="#modal-video" data-video="https://www.youtube.com/embed/0mOj3wbNL9o"><i class="material-icons">play_circle_filled</i></a>
+		<p class="white-text"><i>José Luis Zagar - Halloween</i></p>
 	</div>
 </section>
 
@@ -132,7 +160,7 @@
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 		</div>
 		<div class="col s12 m6 white div-border" id="svg-container" style="padding-top:10px;">
-				@include('maps.teatro-cervantes')
+				@include('maps.samuel-ramos')
 			</div>
 		<div class="col s12 m6">
 			<div class="col s12 mb-15">
@@ -157,18 +185,18 @@
 					{!! Form::hidden('asiento', '', ['id' => 'form_asiento']) !!}
 					{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
 					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
-					{!! Form::hidden('img', 'img/alan-saldana-guanajuato.jpg') !!}
-					{!! Form::hidden('evento', 'Alan Saldaña') !!}
-					{!! Form::hidden('fecha', '21 de noviembre 2019') !!}
-					{!! Form::hidden('lugar', 'Teatro Cervantes') !!}
-					{!! Form::hidden('ciudad', 'Guanajuato') !!}
+					{!! Form::hidden('img', 'img/zagar-ojitos-pipirin-morelia.jpg') !!}
+					{!! Form::hidden('evento', 'Zagar, Ojitos de huevo y Pipirin') !!}
+					{!! Form::hidden('fecha', '28 de noviembre 2019') !!}
+					{!! Form::hidden('lugar', 'Auditorio Samuel Ramos') !!}
+					{!! Form::hidden('ciudad', 'Morelia, Mich.') !!}
 					{!! Form::hidden('hora', '21:00 hrs') !!}
 					{!! Form::hidden('event_type', '', ['id' => 'form_type']) !!}
 					{!! Form::hidden('impresion_boleto', true) !!}
-					{!! Form::hidden('db_table', 'alan_saldana_gto_21nov') !!}
+					{!! Form::hidden('db_table', 'zagar_morelia_28nov') !!}
 					{!! Form::hidden('info', '--') !!}
 					{!! Form::hidden('select_type', 'manual') !!}
-					{!! Form::hidden('url', url('eventos/alan-saldana-guanajuato')) !!}
+					{!! Form::hidden('url', url('eventos/zagar-ojitos-pipirin-morelia')) !!}
 				{!! Form::close() !!}
 			</div>
 		</div>	
@@ -193,17 +221,17 @@
 <section class="section-lugar">
 	<div class="row">
 		<div class="col m9">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14897.937412540734!2d-101.2506756!3d21.0132973!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xce2da59e5a3091dd!2sTeatro%20Cervantes!5e0!3m2!1ses!2smx!4v1571163496789!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15025.178790933667!2d-101.177231!3d19.7000737!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc8917239218e626f!2sAuditorio%20Universitario%20Dr.%20Samuel%20Ramos!5e0!3m2!1ses!2smx!4v1572578547609!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 		</div>
 		<div class="col m3">
 			<h5 class="quote raleway">Lugar del evento</h5>
 			
-			<h5 class="mt-30">Teatro Cervantes</h5>
+			<h5 class="mt-30">Auditorio Samuel Ramos</h5>
 			<div class="col s10">
 				<div class="divider"></div>
 			</div>
 			<ul class="fa-ul" style="margin-top: 30px;">
-				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Zona Centro, <br>36000 Guanajuato, Gto.</li>
+				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Av. Tata Vasco, <br>Vasco de Quiroga, 58230 <br>Morelia, Mich.</li>
 				{{-- <li><i class="fa-li fa fa-phone"></i> 01 461 174 3456</li> --}}
 			</ul>
 
@@ -222,9 +250,9 @@
 
 @section('scripts')
 	<script>
-		var table = 'alan_saldana_gto_21nov';
+		var table = 'zagar_morelia_28nov';
 		var base_path = '{{ url('/') }}';
-		var precios = {'Diamante': 380, 'Oro': 280};
+		var precios = {'Diamante': 750, 'Oro': 600, 'Plata': 400};
 		var special_char_n = 'N-';
 
 		$('#modal-video-open').leanModal({
@@ -240,6 +268,6 @@
 		    });
 
 	</script>
-	<script src="{{asset('js/event_manual_v2.js')}}"></script>
+	<script src="{{asset('js/event_manual_v3.js')}}"></script>
 
 @endsection

@@ -2,13 +2,13 @@
 
 @section('title', 'Alan Saldaña')
 
-@section('description', 'Alan Saldaña, Guanajuato 21 de noviembre, 21:00 hrs Teatro Cervantes, boletos en bolematico.com')
+@section('description', 'Alan Saldaña, Campeche 14 de noviembre, 21:00 hrs Teatro Francisco de Paula Toro, boletos en bolematico.com')
 
 @section('styles')
-<meta property="og:url"  content="https://www.bolematico.com/eventos/alans-saldana-guanajuato" />
+<meta property="og:url"  content="https://www.bolematico.com/eventos/alans-saldana-campeche" />
 <meta property="og:title" content="Alan Saldaña" />
-<meta property="og:description" content="Alan Saldaña, Guanajuato 21 de noviembre, 21:00 hrs Teatro Cervantes, boletos en bolematico.com" />
-<meta property="og:image" content="https://www.bolematico.com/img/alan-saldana-guanajuato.jpg" />
+<meta property="og:description" content="Alan Saldaña, Campeche 14 de noviembre, 21:00 hrs Teatro Francisco de Paula Toro, boletos en bolematico.com" />
+<meta property="og:image" content="https://www.bolematico.com/img/alan-saldana-campeche.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/event-select-manual.css') }}">
@@ -21,8 +21,8 @@
 	<div class="row white-text">
 		<h4>Alan Saldaña</h4>
 		<div class="divider"></div>
-		<p class="mb-0"><i>Teatro Cervantes - Guanajuato</i></p>
-		<p class="m-0"><i>21 de noviembre - 21:00 hrs.</i></p>
+		<p class="mb-0"><i>Teatro Francisco de Paula Toro - Campeche</i></p>
+		<p class="m-0"><i>14 de noviembre - 21:00 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -33,13 +33,13 @@
 			<ul class="tabs">
 				<li class="tab "><a class="active" href="#precios">Precios</a></li>
 				<li class="tab "><a href="#detalles">Detalles</a></li>
-				<li class="tab "><a href="#lugares">Lugares de venta</a></li>
+				{{-- <li class="tab "><a href="#lugares">Lugares de venta</a></li> --}}
 			</ul>
 		</div>
 		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s8 offset-s2 m3 offset-m1 mb-30 card-flyer">
-				<img src="{{ asset('img/alan-saldana-guanajuato.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/alan-saldana-campeche.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 m6 offset-m1">				
@@ -49,9 +49,18 @@
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
+								<div class="col s12 purple lighten-1">VIP</div>
+							</header>
+							<div class="price col s12"><span>$450</span> MXN</div>
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
 								<div class="col s12 teal accent-4">Diamante</div>
 							</header>
-							<div class="price col s12"><span>$380</span> MXN</div>
+							<div class="price col s12"><span>$350</span> MXN</div>
 						</div>
 					</div>
 
@@ -60,7 +69,16 @@
 							<header>
 								<div class="col s12 amber darken-1">Oro</div>
 							</header>
-							<div class="price col s12"><span>$280</span> MXN</div>
+							<div class="price col s12"><span>$300</span> MXN</div>
+						</div>
+					</div>
+
+					<div class="qcPricing col s12 center-align mb-10">
+						<div class="box col s12">
+							<header>
+								<div class="col s12 grey">Plata</div>
+							</header>
+							<div class="price col s12"><span>$250</span> MXN</div>
 						</div>
 					</div>
 
@@ -70,7 +88,7 @@
 					<div class="divider"></div>
 					<div class="col s10 offset-s1">
 						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						<p>* Informes: <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452-174-1255</a></p>
+						<p>* Informes: <a href="tel:4521741255" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 452-174-1255</a> / <a href="tel:9384058424" style="background: #4caf50; color: #fff; padding: 5px 10px;"> 938-405-8424</a></p>
 					</div>
 				</div>
 			</div>
@@ -91,7 +109,7 @@
 			
 		</div>
 
-		<div id="lugares" class="col s12 tab-content">
+		{{-- <div id="lugares" class="col s12 tab-content">
 			<div class="col s12">
 				<h5 class="mb-30 quote">Además de Bolematico, puedes adquirir tus entradas a partir del 11 de noviembre en:</h5>
 			</div>
@@ -114,7 +132,7 @@
 
 			</div>			
 
-		</div>
+		</div> --}}
 
 	</div>
 </section>
@@ -131,9 +149,22 @@
 		<div class="col s12 mb-15">
 			<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 		</div>
-		<div class="col s12 m6 white div-border" id="svg-container" style="padding-top:10px;">
-				@include('maps.teatro-cervantes')
+		<div class="col s12 m6 white div-border">
+			<ul class="tabs">
+				<li class="tab col s6"><a class="active" href="#planta-baja">Planta Baja</a></li>
+				<li class="tab col s6"><a href="#primer-nivel">1er Nivel</a></li>
+				<li class="tab col s6"><a href="#segundo-nivel">2do Nivel</a></li>
+			</ul>
+			<div id="planta-baja" class="col s12">
+				@include('maps.paula-toro-pb')
 			</div>
+			<div id="primer-nivel" class="col s12">
+				@include('maps.paula-toro-1n')
+			</div>
+			<div id="segundo-nivel" class="col s12">
+				@include('maps.paula-toro-2n')
+			</div>
+		</div>
 		<div class="col s12 m6">
 			<div class="col s12 mb-15">
 				<div class="col s1 grey darken-4" style="height: 25px;"></div>
@@ -157,18 +188,18 @@
 					{!! Form::hidden('asiento', '', ['id' => 'form_asiento']) !!}
 					{!! Form::hidden('zona', '', ['id' => 'form_zona']) !!}
 					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
-					{!! Form::hidden('img', 'img/alan-saldana-guanajuato.jpg') !!}
+					{!! Form::hidden('img', 'img/alan-saldana-campeche.jpg') !!}
 					{!! Form::hidden('evento', 'Alan Saldaña') !!}
-					{!! Form::hidden('fecha', '21 de noviembre 2019') !!}
-					{!! Form::hidden('lugar', 'Teatro Cervantes') !!}
-					{!! Form::hidden('ciudad', 'Guanajuato') !!}
+					{!! Form::hidden('fecha', '14 de noviembre 2019') !!}
+					{!! Form::hidden('lugar', 'Teatro Francisco de Paula Toro') !!}
+					{!! Form::hidden('ciudad', 'Campeche') !!}
 					{!! Form::hidden('hora', '21:00 hrs') !!}
 					{!! Form::hidden('event_type', '', ['id' => 'form_type']) !!}
 					{!! Form::hidden('impresion_boleto', true) !!}
-					{!! Form::hidden('db_table', 'alan_saldana_gto_21nov') !!}
+					{!! Form::hidden('db_table', 'alan_saldana_campeche_14nov') !!}
 					{!! Form::hidden('info', '--') !!}
 					{!! Form::hidden('select_type', 'manual') !!}
-					{!! Form::hidden('url', url('eventos/alan-saldana-guanajuato')) !!}
+					{!! Form::hidden('url', url('eventos/alan-saldana-campeche')) !!}
 				{!! Form::close() !!}
 			</div>
 		</div>	
@@ -193,17 +224,17 @@
 <section class="section-lugar">
 	<div class="row">
 		<div class="col m9">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14897.937412540734!2d-101.2506756!3d21.0132973!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xce2da59e5a3091dd!2sTeatro%20Cervantes!5e0!3m2!1ses!2smx!4v1571163496789!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15011.47269833611!2d-90.5346869!3d19.84553!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1727b431111521b9!2sTEATRO%20de%20la%20Ciudad%20Francisco%20de%20Paula%20Toro!5e0!3m2!1ses!2smx!4v1571862997642!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 		</div>
 		<div class="col m3">
 			<h5 class="quote raleway">Lugar del evento</h5>
 			
-			<h5 class="mt-30">Teatro Cervantes</h5>
+			<h5 class="mt-30">Teatro Francisco de Paula Toro</h5>
 			<div class="col s10">
 				<div class="divider"></div>
 			</div>
 			<ul class="fa-ul" style="margin-top: 30px;">
-				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Zona Centro, <br>36000 Guanajuato, Gto.</li>
+				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Calle 12 #139, <br>Zona Centro, <br>24000 Campeche, Camp.</li>
 				{{-- <li><i class="fa-li fa fa-phone"></i> 01 461 174 3456</li> --}}
 			</ul>
 
@@ -222,9 +253,9 @@
 
 @section('scripts')
 	<script>
-		var table = 'alan_saldana_gto_21nov';
+		var table = 'alan_saldana_campeche_14nov';
 		var base_path = '{{ url('/') }}';
-		var precios = {'Diamante': 380, 'Oro': 280};
+		var precios = {'VIP': 450, 'Diamante-pb': 350, 'Diamante-1n': 350, 'Oro': 300, 'Plata': 250};
 		var special_char_n = 'N-';
 
 		$('#modal-video-open').leanModal({
@@ -240,6 +271,6 @@
 		    });
 
 	</script>
-	<script src="{{asset('js/event_manual_v2.js')}}"></script>
+	<script src="{{asset('js/event_manual_v3.js')}}"></script>
 
 @endsection

@@ -53,8 +53,7 @@
 				<thead>
 					<tr>
 						<th style="width: 29%;">SECCION:</th>
-						<th style="width: 30%;">FILA:</th>
-						<th >ASIENTO:</th>
+						<th style="width: 30%;">PRECIO:</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -62,39 +61,15 @@
 						<td style="width: 29%;">
 							{{ $boleto->seccion }}
 						</td>
-						@if(is_null($data->asientos))
-						<td style="width: 30%;">
-							{{ $boleto->fila }}
-						</td>
-						<td >
-							{{ $boleto->asiento }}
-						</td>
-						@else
-						<td style="width: 30%;">
-							N/A
-						</td>
-						<td >
-							N/A
-						</td>
-						@endif
-					</tr>
-				</tbody>
-			</table>
-			<table>
-				<tbody>
-					
-					<tr>
-						<th style="width: 29%;">PRECIO:</th>
 						<td class="precio"><span>${{ $precio[$boleto->seccion] }}</span> MXN.</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		@if( $boleto->seccion == 'Diamante' || $boleto->seccion == 'Oro Plus')
-			<div class="container">
-				<p style="font-size: 12px;text-align: center;margin-top: 5px;"><strong style="text-decoration: underline;">IMPORTANTE:</strong> <br>Deberás presentarte el día del evento a las 16:00 hrs en las taquillas de la monumental con identificación oficial para intercambiar este documento por tus entradas.</p>
-			</div>
-		@endif
+		<div class="container">
+			<p style="font-size: 12px;text-align: center;margin-top: 5px;"><strong style="text-decoration: underline;">IMPORTANTE:</strong> <br>Deberás presentarte el día del evento a las 16:00 hrs en las taquillas de la monumental con identificación oficial para intercambiar este documento por tus entradas.</p>
+		</div>
+
 		<div class="barcode-container">
 			<img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($boleto->codigo_barras, "C39") }}" alt="barcode" class="barcode" style="height: 60px;margin-top: 10px" />
 			<p>{{ $boleto->codigo_barras }}</p>

@@ -32,7 +32,7 @@
 @php
 
 	$preventa = false;
-	if(\Carbon\Carbon::now() < '2019-12-15 23:59:59'){
+	if(\Carbon\Carbon::now() < '2019-11-15 23:59:59'){
 		$preventa = true;
 	}
 @endphp
@@ -58,7 +58,7 @@
 		<div id="precios" class="col s12 tab-content">
 
 			<div class="col s8 offset-s2 m4 offset-m1 mb-30 card-flyer">
-				<img src="{{ asset('img/fernando-delgadillo-cordoba-prom13.jpg') }}" alt="" class="responsive-img">
+				<img src="{{ asset('img/fernando-delgadillo-cordoba.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
 			<div class="col s12 offset-m1 m5">
@@ -66,7 +66,7 @@
 				@if($preventa)
 				<div class="row">
 					<div class=" qcPricing col s12 mb-15">
-						<h5 class="quote raleway">Precios especiales en zona Platino y Preferente</h5>
+						<h5 class="quote raleway">Precios de preventa (después un poco más).</h5>
 					</div>
 
 					<div class="qcPricing col s12 center-align mb-10">
@@ -74,7 +74,7 @@
 							<header>
 								<div class="col s12 pink darken-1">VIP Periqueras</div>
 							</header>
-							<div class="price col s12"><span>$ 1,000</span> MXN.</div>
+							<div class="price col s12"><span>$ 850</span> MXN.</div>
 						</div>
 					</div>
 
@@ -83,7 +83,7 @@
 							<header>
 								<div class="col s12 teal accent-4">Platino</div>
 							</header>
-							<div class="price col s12"><small style="text-decoration: line-through; color: #aaa;font-size: 1.2rem">$600</small><span>$ 300</span> MXN.</div>
+							<div class="price col s12"><span>$ 550</span> MXN.</div>
 						</div>
 					</div>
 
@@ -92,7 +92,7 @@
 							<header>
 								<div class="col s12 purple lighten-1">Preferente</div>
 							</header>
-							<div class="price col s12"><small style="text-decoration: line-through; color: #aaa;font-size: 1.2rem">$450</small><span>$ 225</span> MXN.</div>
+							<div class="price col s12"><span>$ 400</span> MXN.</div>
 						</div>
 					</div>
 
@@ -101,7 +101,7 @@
 							<header>
 								<div class="col s12 brown lighten-1">General</div>
 							</header>
-							<div class="price col s12"><span>$ 350</span> MXN.</div>
+							<div class="price col s12"><span>$ 300</span> MXN.</div>
 						</div>
 					</div>
 
@@ -214,14 +214,12 @@
 
 <section id="compra" class="row section-comprar">
 	<div class="col s12 mt-30">
-	@if($preventa)
-
 		@if(Auth()->check())
 			<div class="col s12 mb-15">
 				<h5 class="mt-30 raleway quote">Da clic en el bloque que deseas para mostrar los asientos disponibles</h5>
 			</div>
 			<div class="col s12 m6 white div-border" id="svg-container" style="padding-top:10px;">
-				@include('maps.exhacienda-toxpan')
+				@include('maps.exhacienda-toxpan')	
 			</div>
 			<div class="col s12 m6">
 				<div class="col s12 mb-15">
@@ -255,7 +253,7 @@
 						{!! Form::hidden('event_type', '', ['id' => 'form_type']) !!}
 						{!! Form::hidden('impresion_boleto', true) !!}
 						@if($preventa)
-						{!! Form::hidden('db_table', 'fernando_delgadillo_cordoba_21dic_desc13') !!}
+						{!! Form::hidden('db_table', 'fernando_delgadillo_cordoba_21dic_prev') !!}
 						@else
 						{!! Form::hidden('db_table', 'fernando_delgadillo_cordoba_21dic') !!}
 						@endif
@@ -274,8 +272,6 @@
 				<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
 			</div>
 		@endif
-		
-	@endif
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
@@ -356,8 +352,8 @@
   		// panZoomInstance.zoom(0.2);
 
 		@if($preventa)
-		var table = 'fernando_delgadillo_cordoba_21dic_desc13';
-		var precios = {'VIP Periqueras': 1000, 'Platino': 300, 'Preferente': 225, 'General': 350};
+		var table = 'fernando_delgadillo_cordoba_21dic_prev';
+		var precios = {'VIP Periqueras': 850, 'Platino': 550, 'Preferente': 400, 'General Preventa': 300};
 		@else
 		var table = 'fernando_delgadillo_cordoba_21dic';
 		var precios = {'VIP Periqueras': 1000, 'Platino': 600, 'Preferente': 450, 'General': 350};

@@ -118,6 +118,10 @@
 
 @section('content')
 
+@php
+$today = \Carbon\Carbon::today();
+@endphp
+
 <div class="image-header overlay" style="background-attachment: initial; background-image: url('{{asset('img/raquel-banner.jpg')}}') ">
 
 	<div class="row">
@@ -182,7 +186,7 @@
 				<div class="col s10 offset-s1">
 					{{-- <h5 class="mt-0 mb-50 raleway quote"><B>FECHAS CONFIRMADAS</B> <br><small>¡No pierdas tu lugar y compra tus boletos ya!</small></h5> --}}
 
-					<h5 class="pl-30"><b>OCTUBRE</b></h5>
+					{{-- <h5 class="pl-30"><b>OCTUBRE</b></h5>
 					<div class="divider mb-30"></div>
 
 					<div class="col s12 event-date-card no-padding">
@@ -201,12 +205,12 @@
 							<p>$ 200 MXN</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'xalapa') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div>
+					</div> --}}
 
 					<h5 class="pl-30"><b>NOVIEMBRE</b></h5>
 					<div class="divider mb-30"></div>
-					
-					<div class="col s12 event-date-card no-padding">
+				
+					{{-- <div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
 								NOVIEMBRE 
@@ -223,6 +227,7 @@
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'cordoba') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
+					
 					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
@@ -238,8 +243,9 @@
 							<p>Foro Boca<span class="event-hr">21:00 hrs</span></p>
 							<p></p>
 						</div>
-						{{-- <a href="{{ route('eventos.selecciona-lugares', 'boca') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a> --}}
-					</div>
+					</div> --}}
+
+					@if($today < '2019-11-21 21:00:00')
 					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
@@ -257,6 +263,9 @@
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'ags') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
+					@endif
+
+					@if($today < '2019-11-22 21:00:00')
 					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
@@ -274,6 +283,9 @@
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'celaya') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
+					@endif
+					
+					@if($today < '2019-11-23 21:00:00')
 					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
@@ -291,10 +303,13 @@
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'morelia') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 					</div>
+					@endif
 
 					<h5 class="pl-30"><b>DICIEMBRE</b></h5>
 					<div class="divider mb-30"></div>
+
 					
+					@if($today < '2019-12-06 21:00:00')
 					<div class="col s12 event-date-card no-padding">
 						<div class="event-date-card-calendar">
 							<div class="event-date-card-month">
@@ -311,7 +326,8 @@
 							<p>$ 200 MXN</p>
 						</div>
 						<a href="{{ route('eventos.selecciona-lugares', 'queretaro') }}" class="btn waves-light mb-0 waves-effect red pull-right"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
-					</div>				
+					</div>
+					@endif			
 
 				</div>
 

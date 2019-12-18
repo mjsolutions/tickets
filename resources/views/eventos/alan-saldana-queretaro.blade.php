@@ -81,7 +81,7 @@
                         <p> * Al realizar tu compra en línea se realiza un cargo extra por concepto de servicio.</p>
                         <p class="mb-0"> * Informes</p>
                         <ul style="margin-top: 0;padding-left: 15px;">
-                            <li><i class="fa fa-phone"></i> <a href="tel:4421741255" target="_blank">442-174-1255</a></li>
+                            <li><i class="fa fa-phone"></i> <a href="tel:4521741255" target="_blank">452-174-1255</a></li>
                         </ul>
                     </div>
 					

@@ -148,7 +148,7 @@
 										$fila_asiento = $boletos->where('seccion', $seccion)->where('status', 2)->count().' asientos';
 									}else{
 										foreach ($boletos->where('seccion', $seccion)->where('status', 2) as $boleto) {
-											$fila_asiento .= " *".$boleto->fila.' '.$boleto->asiento;
+											$fila_asiento .= " *".$boleto->fila.'|'.$boleto->asiento;
 										}										
 									}
 									echo $fila_asiento;
@@ -173,7 +173,7 @@
 										$fila_asiento = $boletos->where('seccion', $seccion)->where('status', 3)->count().' asientos';
 									}else{
 										foreach ($boletos->where('seccion', $seccion)->where('status', 3) as $boleto) {
-											$fila_asiento .= " *".$boleto->fila.' '.$boleto->asiento;
+											$fila_asiento .= " *".$boleto->fila.'|'.$boleto->asiento;
 										}										
 									}
 									echo $fila_asiento;
