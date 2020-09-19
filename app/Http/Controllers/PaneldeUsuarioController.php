@@ -54,34 +54,6 @@ class PaneldeUsuarioController extends Controller
             }
         }
 
-        $res = DB::table('fernando_delgadillo_cordoba_21dic_bf')->where('user', Auth::id())->whereIn('status', [2, 3])->get();
-            if($res->isNotEmpty()){
-
-                $evento = Event::find(152);
-
-                $data = [
-                        'info'      =>  $evento,
-                        'boletos'   =>  $res
-                    ];
-
-                array_push($eventos, $data);             
-            }
-
-        $res = DB::table('fernando_delgadillo_cordoba_21dic_prev')->where('user', Auth::id())->whereIn('status', [2, 3])->get();
-            if($res->isNotEmpty()){
-
-                $evento = Event::find(144);
-
-                $data = [
-                        'info'      =>  $evento,
-                        'boletos'   =>  $res
-                    ];
-
-                array_push($eventos, $data);             
-            }
-
-        // dd($eventos);
-
     	return view('user.eventos', compact('eventos'));
     }
 
@@ -113,7 +85,8 @@ class PaneldeUsuarioController extends Controller
             $pdf = \PDF::loadView('user.boleto', compact('data', 'boletos', 'precio', 'evento'));
         }      
 
-    	return $pdf->download('ticket_'.$evento->tabla.'.pdf');
+    	// return $pdf->download('ticket_'.$evento->tabla.'.pdf');
+        return $pdf->stream('ticket_'.$evento->tabla.'.pdf');
     }
 
     public function showFormForComprobante(){
@@ -382,16 +355,14 @@ class PaneldeUsuarioController extends Controller
 
     public function updateDb() {
 
-        $table = 'fito_paez_morelia_24oct';
+        $table = 'alan_saldana_zamora_19mar';
 
-        $rows = DB::table($table)->where('fila', '!=', 'Sin Fila')->get();
+        $rows = DB::table($table)->get();
 
         foreach( $rows as $row ){
 
             $id = $row->id;
             $seccion = $row->seccion;
-            $bloque = $row->bloque;
-
             DB::table($table)->where('id', $id)->update(['codigo_barras' => substr(md5($table.$id),0,10)]);
 
         }
@@ -400,25 +371,22 @@ class PaneldeUsuarioController extends Controller
     }
 
     public function initTable(){
-        $table = 'zagar_morelia_28nov';
+        $table = 'alan_saldana_zamora_19mar';
 
         // $asiento = 22;
         $rows = [];
         $filas = [
-            20,36,36,38,40,
-            40,42,42,42,42,
-            44,44,44,44,44,
-            44,44,44,44,44,
-            44,28
+            23,24,25,26,27,
+            28,29,28,29,28,
+            29,28,29,27
         ];
         $filas_pos = 0;
-        $cb = 1;
+        // $cb = 1;
         
-        // VIP
-        foreach(range('A', 'V') as $fila){
+        foreach(range('A', 'N') as $fila){
             
             for($i = 1; $i <= $filas[$filas_pos]; $i++){
-                $row = ['seccion' => '',
+                $row = ['seccion' => 'Diamante',
                     'bloque' => '',
                     'fila' => $fila,
                     'asiento' => $i,
@@ -426,22 +394,94 @@ class PaneldeUsuarioController extends Controller
                     'impreso' => 0,
                     'forma_pago' => null,
                     'folio' => null,
-                    'codigo_barras' => substr(md5($table.$cb),0,10),
+                    'codigo_barras' => '',
                     'token_vlinea' => null,
                     'user' => null,
                     'fecha_venta' => null];
 
                 array_push($rows, $row);
-                $cb++;
+                // $cb++;
             }
 
             $filas_pos++;
         }
 
+        for($i = 1; $i <= 23; $i++){
+            $row = ['seccion' => 'Diamante',
+                'bloque' => '',
+                'fila' => 'Ñ',
+                'asiento' => $i,
+                'status' => 0,
+                'impreso' => 0,
+                'forma_pago' => null,
+                'folio' => null,
+                'codigo_barras' => '',
+                'token_vlinea' => null,
+                'user' => null,
+                'fecha_venta' => null];
+
+            array_push($rows, $row);
+            // $cb++;
+        }
+
+        $filas_b2 = [
+            'O' => 22,
+            'P' => 17,
+            'PB' => 120,
+            'PN' => 86
+        ];
+
+        foreach($filas_b2 as $fila => $asientos){
+            
+            for($i = 1; $i <= $asientos; $i++){
+                $row = ['seccion' => 'Diamante',
+                    'bloque' => '',
+                    'fila' => $fila,
+                    'asiento' => $i,
+                    'status' => 0,
+                    'impreso' => 0,
+                    'forma_pago' => null,
+                    'folio' => null,
+                    'codigo_barras' => '',
+                    'token_vlinea' => null,
+                    'user' => null,
+                    'fecha_venta' => null];
+
+                array_push($rows, $row);
+                // $cb++;
+            }
+        }
+
+        $filas_b3 = [
+            'SN' => 76,
+            'TN' => 74
+        ];
+
+        foreach($filas_b3 as $fila => $asientos){
+            
+            for($i = 1; $i <= $asientos; $i++){
+                $row = ['seccion' => 'Oro',
+                    'bloque' => '',
+                    'fila' => $fila,
+                    'asiento' => $i,
+                    'status' => 0,
+                    'impreso' => 0,
+                    'forma_pago' => null,
+                    'folio' => null,
+                    'codigo_barras' => '',
+                    'token_vlinea' => null,
+                    'user' => null,
+                    'fecha_venta' => null];
+
+                array_push($rows, $row);
+                // $cb++;
+            }
+        }
+
 
          DB::table($table)->insert($rows);
 
-         echo 'Insert zagar cd carmen done';
+         echo 'Insert alan zamora';
     }
 
 }

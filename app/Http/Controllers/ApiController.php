@@ -230,7 +230,7 @@ class ApiController extends Controller
                 DB::beginTransaction();
 
                 try{
-                    
+                    // TODO: Agregar metodo para cuando se cambie el status a pagado de manera manual, no cambie el estatus porque el cargo expire
                     DB::table($table)->whereIn('id', $ids)->update(['status' => 0, 'user' => null]);
                     
                     //Se ejecuta la transaccion y se bloquean los boletos

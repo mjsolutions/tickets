@@ -2,12 +2,12 @@
 
 @section('title', 'Oxígeno - Edgar Oceransky/Diego Ojeda')
 
-@section('description', 'Oxígeno - Edgar Oceransky/Diego Ojeda, Celaya Gto., 29 de febrero, 20:30 hrs boletos en restaurante El Trapio y bolematico.com')
+@section('description', 'Oxígeno - Edgar Oceransky/Diego Ojeda, Celaya Gto., 29 de febrero, 20:30 hrs boletos en BLVD 804 y bolematico.com')
 
 @section('styles')
 <meta property="og:url"  content="https:www//bolematico.com/eventos/oceransky-ojeda-celaya" />
 <meta property="og:title" content="Oxígeno - Edgar Oceransky/Diego Ojeda" />
-<meta property="og:description" content="Oxígeno - Edgar Oceransky/Diego Ojeda, Celaya Gto., 29 de febrero, 20:30 hrs boletos en restaurante El Trapio y bolematico.com" />
+<meta property="og:description" content="Oxígeno - Edgar Oceransky/Diego Ojeda, Celaya Gto., 29 de febrero, 20:30 hrs boletos en BLVD 804 y bolematico.com" />
 <meta property="og:image" content="https://www.bolematico.com/img/oceransky-ojeda-celaya.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
@@ -39,7 +39,7 @@
 	<div class="row white-text">
 		<h4>Oxígeno - Edgar Oceransky/Diego Ojeda</h4>
 		<div class="divider"></div>
-		<p class="mb-0"><i>Restaurante El Trapio - Celaya Gto.</i></p>
+		<p class="mb-0"><i>BLVD 804 - Celaya Gto.</i></p>
 		<p class="m-0"><i>29 de febrero - 20:30 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
@@ -136,13 +136,13 @@
 					{!! Form::hidden('img', 'img/oceransky-ojeda-celaya.jpg') !!}
 					{!! Form::hidden('evento', 'Oxígeno - Edgar Oceransky/Diego Ojeda') !!}
 					{!! Form::hidden('fecha', '29 de febrero 2019') !!}
-					{!! Form::hidden('lugar', 'Restaurante El Trapio') !!}
+					{!! Form::hidden('lugar', 'BLVD 804') !!}
 					{!! Form::hidden('ciudad', 'Celaya, Gto.') !!}
 					{!! Form::hidden('hora', '20:30 hrs') !!}
 					{!! Form::hidden('event_type', 'general') !!}
 					{!! Form::hidden('impresion_boleto', true) !!}
 					{!! Form::hidden('db_table', 'oceransky_ojeda_celaya_29feb') !!}
-					{!! Form::hidden('info', 'Favor de comunicarte al numero 461 614 3812 ó 461 330 3431 para completar tu reservación.') !!}
+					{!! Form::hidden('info', 'Favor de comunicarte al numero 461 345 8806 ó 461 330 3431 para completar tu reservación.') !!}
 					{!! Form::hidden('precio', 650, ['id' => 'form_precio']) !!}
 					{!! Form::hidden('url', url('eventos/oceransky-ojeda-celaya')) !!}
 					
@@ -153,9 +153,9 @@
 					{!! Form::close() !!}
 
 					<p>
-						<i>* Puedes seleccionar un máximo de 10 lugares.</i><br>
-						<i>* Se cobrara un cargo adicional por concepto de servicio.</i>
+						<i>* Puedes seleccionar un máximo de 10 lugares.</i>
 					</p>
+					<p> * Al realizar tu compra en línea se realiza un cargo extra de 10% por concepto de servicio.</p>
 
 					@else
 						<p class="center-align raleway">Debes iniciar sesion para poder seleccionar tus lugares</p>
@@ -164,7 +164,7 @@
 						</div>
 					@endif
 						<p>* Informes</p>
-						<p><a href="tel:4616143812" style="background: #4caf50; color: #fff; padding: 5px 10px;">461 614 3812</a> / <a href="tel:4434603155" style="background: #4caf50; color: #fff; padding: 5px 10px;">443 460 3155</a></p>
+						<p><a href="tel:4613458806" style="background: #4caf50; color: #fff; padding: 5px 10px;">461 345 8806</a> / <a href="tel:4434603155" style="background: #4caf50; color: #fff; padding: 5px 10px;">443 460 3155</a></p>
 				
 				</div>
 			</div>
@@ -215,16 +215,16 @@
 
 			<div class="col s12">									
 				<div class="white z-depth-2">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14946.628176951328!2d-100.829715!3d20.5202807!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x34ab037f3705abf2!2sEl%20Trapio!5e0!3m2!1ses!2smx!4v1572890267088!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-				
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8634.35608692352!2d-100.82337042627393!3d20.5195282465618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe3152c8f48bd2c54!2sBlvd+804+Show+Center+%26+Food!5e0!3m2!1ses!2smx!4v1556144914999!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
 					<div class=" p-30">
-						<h5><b>Restaurante El Trapio</b></h5>
+						<h5 class="raleway"><b>BLVD 804</b></h5>
 						<ul class="qcAddress">
 							<li><div class="divider"></div></li>
-							<li><i class="fa fa-map-marker"></i> <strong>DIRECCIÓN</strong>: <p>Miguel Cabrera 108, Las Fuentes, 38040 Celaya, Gto.</p></li>
-							<li><i class="fa fa-phone"></i> <strong>TELÉFONO</strong>: <p> 461 614 3812 / 461 330 3431</p></li>
-							<li><i class="fa fa-calendar"></i> <strong>HORARIO</strong>: <p>13:00 a 23:00 hrs. Lunes a Sabado y 13:00 a 19:00 hrs. los Domingos.</p></li>
-							<li><i class="fa fa-globe"></i> <strong>Website</strong>: <p><a title="website" href="https://www.facebook.com/eltrapiocelaya/" target="_blank">https://www.facebook.com/eltrapiocelaya/</a></p></li>
+							<li><i class="fa fa-map-marker"></i> <p> Blvrd Adolfo López Mateos 804, Col. Centro, 38000 Celaya, Gto.</p></li>
+							<li><i class="fa fa-phone"></i><p> 461-345-8806</p></li>
+							<li><i class="fa fa-clock-o"></i><p> Martes a Sabado: 1pm a 10pm</p></li>
+							<li><i class="fa fa-facebook-official"></i><p><a title="website" href="https://www.facebook.com/Blvd804Oficial/" target="_blank">https://www.facebook.com/Blvd804Oficial/</a></p></li>
 						</ul>
 					</div>
 				</div>
@@ -254,18 +254,18 @@
 <section class="section-lugar">
 	<div class="row">
 		<div class="col m9">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14946.628176951328!2d-100.829715!3d20.5202807!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x34ab037f3705abf2!2sEl%20Trapio!5e0!3m2!1ses!2smx!4v1572890267088!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8634.35608692352!2d-100.82337042627393!3d20.5195282465618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe3152c8f48bd2c54!2sBlvd+804+Show+Center+%26+Food!5e0!3m2!1ses!2smx!4v1556144914999!5m2!1ses!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 		<div class="col m3">
 			<h5 class="quote raleway">Lugar del evento</h5>
 			
-			<h5 class="mt-30">Restaurante El Trapio</h5>
+			<h5 class="mt-30">BLVD 804</h5>
 			<div class="col s10">
 				<div class="divider"></div>
 			</div>
 			<ul class="fa-ul" style="margin-top: 30px;">
-				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Miguel Cabrera 108, <br>Las Fuentes, 38040 <br>Celaya, Gto.</li>
-				<li><i class="fa-li fa fa-facebook"></i> <a title="website" style="color:#434546" href="https://www.facebook.com/eltrapiocelaya/" target="_blank">ElTrapioCelaya</a></li>
+				<li class="mb-10"><i class="fa-li fa fa-map-marker"></i> Blvd. Adolfo López Mateos #804, <br>Col. Centro C.P. 38070 <br>Celaya, Gto.</li>
+				{{-- <li><i class="fa-li fa fa-phone"></i> 01 461 174 3456</li> --}}
 			</ul>
 
 		</div>

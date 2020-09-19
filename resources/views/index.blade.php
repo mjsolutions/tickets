@@ -70,6 +70,11 @@
 			flex: 1;
 			overflow: hidden;
 		}
+		.evento-img-container img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 		.event-name a{ 
 			color: #323536; 
 			transition: all 0.3s;
@@ -102,23 +107,21 @@
 					<button class="btn waves-effect waves-light btn-nav-eventos right selected" data-sort-by="date"><i class="fa fa-calendar"></i></button>
 				</div>
 			</div>
-
-				{{-- Gira Raquel --}}
 				<div class="col m4 l3 evento">
 					<div  class="col s12 no-padding z-depth-1 hoverable" >
 						<div class="evento-img-container">
-							<a href="{{ url('/eventos').'/raquel-sofia' }}">
-								<img src="{{ asset('img/raquel-sofia-2019.jpg') }}" class="responsive-img evento-img">
+							<a href="{{ url('/eventos').'/under-side-821' }}">
+								<img src="{{ asset('img/under-side/infogira.jpg') }}" class="responsive-img evento-img">
 							</a>
 						</div>
 						<div class="col s12 evento-info white">
 							<div class="col s12">
 								<h5 class="evento-artista">
 									<strong class="event-name">
-										<a href="{{ url('/eventos').'/raquel-sofia' }}">RAQUEL SOFÍA</a>
+										<a href="{{ url('/eventos').'/under-side-821' }}">UNDER SIDE 821</a>
 									</strong> <br> 
 									<small class="evento-detalles-ciudad">Varias Ciudades</small>
-									<small><i>Gira 2019</i></small>
+									<small><i>Gira  Diciembre 2020</i></small>
 								</h5>								
 							</div>
 							{{-- <div class="col s3 center-align evento-fecha">
@@ -131,7 +134,32 @@
 
 				</div>
 
-				{{-- {{ dd($eventos) }} --}}
+				<div class="col m4 l3 evento">
+					<div class="col s12 no-padding z-depth-1 hoverable">
+						<div class="evento-img-container">
+							<a href="https://www.bolematico.com/eventos/alan-saldana-morelia">
+								<img src="https://www.bolematico.com/img/alan-saldana-morelia.jpg" class="responsive-img evento-img">
+							</a>
+						</div>
+						<div class="col s12 evento-info white">
+							<div class="col s9">
+								<h5 class="evento-artista">
+									<strong class="event-name">
+										<a href="https://www.bolematico.com/eventos/alan-saldana-morelia">ALAN SALDAÑA</a>
+									</strong> <br> 
+									<small class="evento-detalles-ciudad">Morelia, Mich.</small>
+									<small class="evento-detalles-lugar">Pospuesto</small>
+								</h5>								
+							</div>
+							<div class="col s3 center-align evento-fecha">
+								<p class="mb-0">--</p>
+							</div>
+							<p class="event-date">2020-03-20 21:00:00</p>							
+						</div>
+					</div>
+
+				</div>
+
 				@foreach($eventos as $evento)
 				@php
 					$evento_url = !empty($evento->url)?url('/eventos').'/'.$evento->url: 'javascript:void;';

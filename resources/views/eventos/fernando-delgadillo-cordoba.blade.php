@@ -214,7 +214,6 @@
 
 <section id="compra" class="row section-comprar">
 	<div class="col s12 mt-30">
-	@if($preventa)
 
 		@if(Auth()->check())
 			<div class="col s12 mb-15">
@@ -275,7 +274,6 @@
 			</div>
 		@endif
 		
-	@endif
 	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">

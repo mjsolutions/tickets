@@ -2,15 +2,34 @@
 
 @section('title', 'Alejandro Filio')
 
-@section('description', 'Alejandro Filio, Querétaro 28 de septiembre, El Portón de Santiago, 21:30 hrs boletos en El Portón de Santiago y bolematico.com')
+@section('description', 'Alejandro Filio, Querétaro 29 de febrero, El Portón de Santiago, 21:30 hrs boletos en El Portón de Santiago y bolematico.com')
 
 @section('styles')
 <meta property="og:url"  content="https://www.bolematico.com/eventos/alejandro-filio-queretaro" />
 <meta property="og:title" content="Alejandro Filio" />
-<meta property="og:description" content="Alejandro Filio, Querétaro 28 de septiembre, El Portón de Santiago, 21:30 hrs boletos en El Portón de Santiago y bolematico.com" />
+<meta property="og:description" content="Alejandro Filio, Querétaro 29 de febrero, El Portón de Santiago, 21:30 hrs boletos en El Portón de Santiago y bolematico.com" />
 <meta property="og:image" content="https://www.bolematico.com/img/alejandro-filio-queretaro.jpg" />
 
 <script src="https://use.fontawesome.com/9b9c9dc667.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/event-select-general.css') }}">
+<style type="text/css">
+	.row .col .zona-radio {
+		padding: 0 3px;
+	}
+	.zona-radio > input:not(:checked)+label {
+		color: #656869;
+	}
+	.zona-radio > input:checked+label {
+		color: #111;
+		font-weight: 700;
+	}
+	#btn-lugares{
+		cursor: pointer;
+	}
+	#btn-lugares:hover {
+		color: #656869;
+	}
+</style>
 @endsection
 
 @section('content')
@@ -21,7 +40,7 @@
 		<h4>Alejandro Filio</h4>
 		<div class="divider"></div>
 		<p class="mb-0"><i>El Portón de Santiago - Querétaro</i></p>
-		<p class="m-0"><i>28 de septiembre - 21:30 hrs.</i></p>
+		<p class="m-0"><i>29 de febrero - 21:30 hrs.</i></p>
 	</div>
 	<a href="#compra" class="btn waves-light waves-effect page-scroll"><b>Comprar</b> <i class="fa fa-ticket" aria-hidden="true"></i></a>
 </div>
@@ -37,44 +56,101 @@
 		</div>
 		<div id="precios" class="col s12 tab-content">
 
-			<div class="col s10 offset-s1 m4 offset-m1 mb-30 card-flyer">
+			<div class="col s8 offset-s2 m4 mb-30 card-flyer">
 				<img src="{{ asset('img/alejandro-filio-queretaro.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
-			<div class="col s12 m6 offset-m1">				
+			<div class="col s12 m4">				
 
 				<div class="row">
-
 					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
 								<div class="col s12 teal accent-4">Diamante</div>
 							</header>
-							<div class="price col s12"><span>$650</span> MXN</div>
+							<div class="price col s12"><span>$680</span> MXN</div>
 						</div>
 					</div>
 
-					{{-- <div class="qcPricing col s12 center-align mb-10">
+					<div class="qcPricing col s12 center-align mb-10">
 						<div class="box col s12">
 							<header>
-								<div class="col s12 amber darken-1">Oro</div>
+								<div class="col s12 grey">General</div>
 							</header>
-							<div class="price col s12"><span>$450</span> MXN</div>
+							<div class="price col s12"><span>$480</span> MXN</div>
 						</div>
-					</div> --}}
+					</div>
 
 				</div>
 
-				<div class="row">
-					<div class="divider"></div>
-					<div class="col s10 offset-s1 m8 offset-m2">
-						<p>* Al realizar tu compra en línea se realiza un cargo extra de <b>10%</b> por concepto de servicio.</p>
-						<p class="mb-0"> * Informes y confirmación de tu compra:</p>
-						<ul style="margin-top: 0;padding-left: 15px;">
-							<li><i style="background-color: #4caf50; color: #fff; border-radius: 50%;" class="fa fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=524427400671" target="_blank">442-740-0671</a></li>
-							{{-- <li><i style="background-color: #4caf50; color: #fff; border-radius: 50%;" class="fa fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=524521741255" target="_blank">452-174-1255</a></li> --}}
-						</ul>
+			</div>
+
+			<div class="col s12 m4">
+				<div class="row center-align">
+					
+					@if(Auth()->check())
+
+					<p class="">Selecciona tu zona y numero de lugares</p>
+				
+					{!! Form::open(['route' => 'payment.details', 'method' => 'POST', 'id' => 'eventForm'])!!}
+					
+					<div class="row">
+						<div class="col m6">
+							<div class="col m12 zona-radio">
+								{!! Form::radio('zona', 'Diamante', false, ['id' => 'diamante', 'class' => 'form_zona']) !!}
+								{!! Form::label('diamante', 'Diamante') !!}
+							</div>
+						</div>
+						<div class="col m6">
+							<div class="col m12 zona-radio">
+								{!! Form::radio('zona', 'General', false, ['id' => 'general', 'class' => 'form_zona']) !!}
+								{!! Form::label('general', 'General') !!}
+							</div>
+						</div>
 					</div>
+					<div class="row">
+
+						<div class="seats-selector-container">
+							<button id="btn-minus" type="button" class="waves-effect waves-light selector-button selector-button-left"><i class="fa fa-minus"></i></button>
+							<input id="num-asientos" min="1" max="10" type="number" name="asiento" class="selector-button-input" value="1" required>
+							<button id="btn-plus" type="button" class="waves-effect waves-light selector-button selector-button-right"><i class="fa fa-plus"></i></button>
+						</div>			
+						
+					</div>
+
+					{!! Form::hidden('img', 'img/alejandro-filio-queretaro.jpg') !!}
+					{!! Form::hidden('evento', 'Alejandro Filio') !!}
+					{!! Form::hidden('fecha', '29 de febrero 2019') !!}
+					{!! Form::hidden('lugar', 'El Portón de Santiago') !!}
+					{!! Form::hidden('ciudad', 'Querétaro') !!}
+					{!! Form::hidden('hora', '21:30 hrs') !!}
+					{!! Form::hidden('event_type', 'general') !!}
+					{!! Form::hidden('impresion_boleto', true) !!}
+					{!! Form::hidden('db_table', 'alejandro_filio_queretaro_29feb') !!}
+					{!! Form::hidden('info', 'Favor de comunicarte al numero 442-740-0671 para completar tu reservación.') !!}
+					{!! Form::hidden('precio', '', ['id' => 'form_precio']) !!}
+					{!! Form::hidden('url', url('eventos/alejandro-filio-queretaro')) !!}
+					
+					<div class="input-field center-align">
+						{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
+					</div>	
+						
+					{!! Form::close() !!}
+
+					<p>
+						<i>* Puedes seleccionar un máximo de 10 lugares.</i>
+					</p>
+          <p> * Al realizar tu compra en línea se realiza un cargo extra de 10% por concepto de servicio.</p>
+
+					@else
+						<p class="center-align raleway">Debes iniciar sesion para poder seleccionar tus lugares</p>
+						<div class="center-align">
+							<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Ingresar</a>
+						</div>
+					@endif
+					<p>* Informes</p>
+					<p><a href="tel:4427400671" style="background: #4caf50; color: #fff; padding: 5px 10px;">442-740-0671</a></p>
+				
 				</div>
 			</div>
 		</div>
@@ -132,74 +208,10 @@
 </section>
 
 <section id="compra" class="section-comprar">
-	<div class="row mb-30">
-		<div class="col s12 m4 offset-m4">
-			<h5 class="mt-30 raleway quote">¡Aparta tus lugares!</h5>
-		</div>
-	</div>
-	<div class="row mt-30">
-    @if(Auth()->check())
-		<div class="col s12 m4 offset-m4">
-				
-			{!! Form::open(['route' => 'payment.details', 'method' => 'POST', 'id' => 'paymentForm'])!!}
 
-			{{-- <div class="row">
-                    
-		        <div class="col m6">
-		          <div class="col m12 zona-radio">
-		            {!! Form::radio('zona', 'Diamante', false, ['id' => 'diamante', 'required', 'class' => 'form_zona']) !!}
-		            {!! Form::label('diamante', 'Diamante') !!}
-		          </div>
-		        </div>
-		        <div class="col m6">
-		          <div class="col m12 zona-radio">
-		            {!! Form::radio('zona', 'Oro', false, ['id' => 'oro', 'required', 'class' => 'form_zona']) !!}
-		            {!! Form::label('oro', 'Oro') !!}
-		          </div>
-		        </div>
-		    </div> --}}
-		                
-		
-			<div class="row">
-				<div class="input-field col s12">
-					{!! Form::select('asiento', ['1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'], '', ['class' => 'select-dropdown', 'id' => 'asiento', 'placeholder' => 'Seleccione numero de asientos', 'required']) !!}
-					{!! Form::label('asiento', 'Asientos') !!}
-				</div>					
-			
-			</div>
-		
-			{!! Form::hidden('img', 'img/alejandro-filio-queretaro.jpg') !!}
-			{!! Form::hidden('evento', 'Alejandro Filio') !!}
-			{!! Form::hidden('fecha', '28 de septiembre 2019') !!}
-			{!! Form::hidden('lugar', 'El Portón de Santiago') !!}
-			{!! Form::hidden('ciudad', 'Querétaro') !!}
-			{!! Form::hidden('hora', '21:30 hrs') !!}
-			{!! Form::hidden('event_type', 'general') !!}
-			{!! Form::hidden('impresion_boleto', true) !!}
-			{!! Form::hidden('zona', 'Diamante') !!}
-			{!! Form::hidden('db_table', 'alejandro_filio_queretaro_28sep') !!}
-			{!! Form::hidden('info', 'Favor de comunicarte al numero 442-740-0671 para completar tu reservación.') !!}
-			{!! Form::hidden('precio', 650) !!}
-			{!! Form::hidden('url', url('eventos/alejandro-filio-queretaro')) !!}
-			
-			<div class="input-field center-align">
-				{!! Form::submit('Siguiente',['class'=>'btn waves-effect waves-light orange accent-3']) !!}
-			</div>	
-			
-			{!! Form::close() !!}
-			
-		</div>
-		<div class="clearfix"></div>
-	@else
-		<p class="center-align raleway">Debes iniciar sesión para poder realizar la compra</p>
-		<div class="col s12 m4 offset-m4 center-align">
-			<a href="#modal-login" class="modal-login-open btn waves-light orange accent-3">Login</a>
-		</div>
-	@endif
-	</div>
 	<div class="row mt-30">
 		<div class="col m8 offset-m2">
-			<h5 class="center-align raleway">Venta de boletos El Portón de Santiago</h5>
+			<h5 class="center-align raleway">Venta de boletos también en <b>El Portón de Santiago</b></h5>
 			<div class="row">
 				<div class="col s6 offset-s3 mt-30">
 					<div class="divider"></div>
@@ -246,22 +258,53 @@
 
 @section('scripts')
 	<script>
-    	// var precios = {'Diamante': 650, 'Oro': 450};
+    var precios = {'Diamante': 680, 'General': 480};
 		$('#modal-video-open').leanModal({
-	        opacity: .8,
-	        ready: function() {
-	          var videoSCR = $('#modal-video-open').attr("data-video");
-	          var videoSCRPlay = videoSCR + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1";
-	          $("#iframe").attr('src', videoSCRPlay);
-	        },
-	        complete: function() { 
-	            $("#iframe").attr('src', $('#modal-video-open').attr("data-video"));
-	        }
-	     });
+        opacity: .8,
+        ready: function() {
+          var videoSCR = $('#modal-video-open').attr("data-video");
+          var videoSCRPlay = videoSCR + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1";
+          $("#iframe").attr('src', videoSCRPlay);
+        },
+        complete: function() { 
+            $("#iframe").attr('src', $('#modal-video-open').attr("data-video"));
+        }
+     });
 
-  //   	$(".form_zona").click(function(){
-		// 	$("#form_precio").val(precios[$(this).val()]);
-		// });
+  $(".form_zona").click(function(){
+			$("#form_precio").val(precios[$(this).val()]);
+		})
+
+		$("#btn-plus").click(function(){
+		    var value = $("#num-asientos").val();
+		    if(value < 10){
+		    	$("#num-asientos").val(++value);
+		    }
+		});
+		$("#btn-minus").click(function(){
+		    var value = $("#num-asientos").val();
+		    if(value > 1) {
+		    	$("#num-asientos").val(--value);
+		    }
+		});
+		$("#eventForm").submit(function(e){
+			if($("#num-asientos").val() < 1){
+				Materialize.toast('La cantidad minima de boletos es: 1',3000);
+				$("#num-asientos").val(1);
+				return false;
+			}else if($("#num-asientos").val() > 10){
+				Materialize.toast('Puedes seleccionar hasta 10 boletos',3000);
+				$("#num-asientos").val(10);
+				return false;
+			}
+
+			if( !$(".form_zona").is(':checked') ){
+				Materialize.toast('Selecciona una zona',3000);
+				return false;
+			}
+			return true;
+		});
+
 
 	</script>
 

@@ -56,7 +56,7 @@
 		</div>
 		<div id="precios" class="col s12 tab-content" style="padding: 40px 0.75rem!important;">
 
-			<div class="col s8 offset-s2 m4 mb-30 card-flyer">
+			<div class="col s8 offset-s2 m4 offset-m4 mb-30 card-flyer">
 				<img src="{{ asset('img/syr-morelia.jpg') }}" alt="" class="responsive-img">
 			</div>
 			
@@ -77,7 +77,7 @@
 							<header>
 								<div class="col s12 amber darken-1">Oro</div>
 							</header>
-							<div class="price col s12"><span>$380</span> MXN</div>
+							<div class="price col s12"><span>$430</span> MXN</div>
 						</div>
 					</div>
 
@@ -97,16 +97,16 @@
 					<div class="row">
 						<div class="col m6">
 							<div class="col m12 zona-radio">
-								{!! Form::radio('zona', 'Diamante', false, ['id' => 'diamante', 'required', 'class' => 'form_zona']) !!}
+								{!! Form::radio('zona', 'Diamante', false, ['id' => 'diamante', 'class' => 'form_zona']) !!}
 								{!! Form::label('diamante', 'Diamante') !!}
 							</div>
 						</div>
-						<div class="col m6">
+						{{-- <div class="col m6">
 							<div class="col m12 zona-radio">
-								{!! Form::radio('zona', 'Oro', false, ['id' => 'oro', 'required', 'class' => 'form_zona']) !!}
+								{!! Form::radio('zona', 'Oro', false, ['id' => 'oro', 'class' => 'form_zona']) !!}
 								{!! Form::label('oro', 'Oro') !!}
 							</div>
-						</div>
+						</div> --}}
 					</div>
 					<div class="row">
 
@@ -138,9 +138,9 @@
 					{!! Form::close() !!}
 
 					<p>
-						<i>* Puedes seleccionar un máximo de 10 lugares.</i><br>
-						<i>* Se cobrara un cargo adicional por concepto de servicio.</i>
+						<i>* Puedes seleccionar un máximo de 10 lugares.</i>
 					</p>
+                    <p> * Al realizar tu compra en línea se realiza un cargo extra de 10% por concepto de servicio.</p>
 
 					@else
 						<p class="center-align raleway">Debes iniciar sesion para poder seleccionar tus lugares</p>
@@ -265,7 +265,7 @@
 
 @section('scripts')
 	<script>
-		var precios = {'Diamante': 480, 'Oro': 380};
+		var precios = {'Diamante': 480, 'Oro': 430};
 		$('#modal-video-open').leanModal({
 				opacity: .8,
 				ready: function() {
@@ -294,14 +294,19 @@
 		    	$("#num-asientos").val(--value);
 		    }
 		});
-		$("#eventForm").submit(function(){
+		$("#eventForm").submit(function(e){
 			if($("#num-asientos").val() < 1){
-				Materialize.toast('La cantidad minima de boletos es: 1',2000);
+				Materialize.toast('La cantidad minima de boletos es: 1',3000);
 				$("#num-asientos").val(1);
 				return false;
 			}else if($("#num-asientos").val() > 10){
-				Materialize.toast('Puedes seleccionar hasta 10 boletos',2000);
+				Materialize.toast('Puedes seleccionar hasta 10 boletos',3000);
 				$("#num-asientos").val(10);
+				return false;
+			}
+
+			if( !$(".form_zona").is(':checked') ){
+				Materialize.toast('Selecciona una zona',3000);
 				return false;
 			}
 			return true;

@@ -65,15 +65,15 @@
         <polygon class="fil4 str0" points="39738,27992 39738,21562 41669,21562 47352,12083 48803,12083 48803,52 9655,52 9655,12083 11170,12083 16853,21562 18784,21562 18784,27992 "/>
         <rect class="fil5" x="23348" y="915" width="11838" height="2566"/>
 
-        <g id="oro-1" class="" data-tipo="numerado" data-nombre-bloque="Bloque-1" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-right">
+        <g id="oro-1" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-1" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-right">
            <polygon class="fil2" points="12113,8317 12113,10503 18554,10503 18554,8317 21732,8317 21732,1199 12288,1199 12288,3305 10613,5574 10613,8317 "/>
            <text x="14549" y="6083"  class="fil1 fnt2">Bloque 1</text>
         </g>
-        <g id="oro-2" class="" data-tipo="numerado" data-nombre-bloque="Bloque-2" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
+        <g id="oro-2" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-2" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom">
            <polygon class="fil2" points="35186,10503 35186,4183 23348,4183 23348,10503 "/>
            <text x="27633" y="7575"  class="fil1 fnt3">Bloque 2</text>
         </g>
-        <g id="oro-3" class="" data-tipo="numerado" data-nombre-bloque="Bloque-3" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-left">
+        <g id="oro-3" class="block-hover" data-tipo="numerado" data-nombre-bloque="Bloque-3" data-seccion="Oro" data-order-fila="desc" data-order-asiento="desc" data-align="center" data-stage="bottom-left">
            <polygon class="fil2" points="46370,8317 46370,10503 39930,10503 39930,8317 36751,8317 36751,1199 46872,1199 46872,3305 47871,5574 47871,8317 "/>
            <text x="40676" y="6083"  class="fil1 fnt3">Bloque 3</text>
         </g>
